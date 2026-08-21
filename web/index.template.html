@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>문제 풀이 뷰어</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="topbar">
+  <div class="controls">
+    <strong id="title">문제 풀이</strong>
+    <select id="subjectFilter" title="과목 필터"></select>
+    <select id="typeFilter" title="유형 필터"></select>
+    <button id="loadBtn" type="button">📂 MD 불러오기</button>
+    <button id="exportBtn" type="button">📤 공유 HTML</button>
+    <button id="shuffleBtn" type="button">🔀 셔플</button>
+    <button id="wrongBtn" type="button">📕 오답노트</button>
+    <button id="resetBtn" type="button">↺ 진도초기화</button>
+    <input type="file" id="fileInput" accept=".md,.markdown,.txt" multiple hidden>
+    <span id="progress" class="progress-text">0 / 0</span>
+  </div>
+  <div class="progressbar"><div id="progressFill"></div></div>
+</header>
+
+<main>
+  <section id="card" aria-live="polite">
+    <div class="meta">
+      <span id="qNumber" class="q-number"></span>
+      <span id="qType" class="tag"></span>
+      <span id="qTier" class="tag tier"></span>
+      <span id="qSource" class="tag source"></span>
+    </div>
+    <h2 id="stem" class="stem"></h2>
+    <div id="passage" class="passage"></div>
+    <div id="options" class="options"></div>
+    <div id="essayBox" class="essay-box hidden">
+      <textarea id="userAnswer" class="essay-input" placeholder="답을 직접 입력해 보세요"></textarea>
+      <button id="revealBtn" type="button" class="reveal-btn">비교 / 정답 보기</button>
+    </div>
+    <div id="answerPanel" class="answer-panel hidden">
+      <div class="answer-head">
+        <span class="answer-label">정답</span>
+        <span id="answerText" class="answer-text"></span>
+      </div>
+      <div id="autoStatus" class="auto-status hidden"></div>
+      <div id="diffBox" class="diff-box hidden"></div>
+      <div id="explanation" class="explanation"></div>
+      <div class="mark-row" id="markRow">
+        <button id="correctBtn" type="button" class="mark correct">✅ 맞았어요</button>
+        <button id="wrongMarkBtn" type="button" class="mark wrong">❌ 틀렸어요</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<nav id="navbar">
+  <button id="prevBtn" type="button">← 이전</button>
+  <button id="nextBtn" type="button">다음 →</button>
+</nav>
+
+<p class="hint">← / → : 이동 &nbsp;·&nbsp; 스페이스 : 정답 공개 &nbsp;·&nbsp; 카드 클릭 : 정답 공개</p>
+
+<div id="dropHint" class="drop-hint hidden">
+  <div class="drop-inner">
+    <h3>문제 MD를 여기로 끌어다 놓으세요</h3>
+    <p>또는 <button id="dropLoadBtn" type="button" class="reveal-btn">MD 파일 선택</button></p>
+    <p class="sub">output/ 의 <code>*.md</code> 를 그대로 올리면 됩니다. (Python 변환 불필요)</p>
+  </div>
+</div>
+
+<script src="parser.js"></script>
+<script id="quiz-data" src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

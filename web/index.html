@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>문제 풀이 뷰어</title>
+<style>
+:root {
+  --bg: #f4f1ea;
+  --card: #fffdf8;
+  --ink: #2b2b2b;
+  --muted: #8a8170;
+  --line: #e3ddcf;
+  --accent: #3b6ea5;
+  --good: #2e7d4f;
+  --bad: #c0392b;
+  --reveal: #f3e9c6;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", system-ui, sans-serif;
+  line-height: 1.7;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#topbar {
+  position: sticky;
+  top: 0;
+  background: var(--card);
+  border-bottom: 1px solid var(--line);
+  z-index: 10;
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+}
+.controls #title { margin-right: auto; font-size: 15px; }
+select, button {
+  font: inherit;
+  font-size: 13px;
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+}
+button:hover { background: #f0ebdd; }
+.progress-text { font-size: 13px; color: var(--muted); margin-left: 4px; }
+.progressbar {
+  height: 4px;
+  background: var(--line);
+}
+#progressFill {
+  height: 100%;
+  width: 0;
+  background: var(--accent);
+  transition: width .2s ease;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 24px 16px;
+}
+#card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 6px 24px rgba(0,0,0,.06);
+  width: 100%;
+  max-width: 760px;
+  padding: 28px 32px 36px;
+  cursor: pointer;
+}
+
+.meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-bottom: 14px; }
+.q-number { font-weight: 700; font-size: 18px; color: var(--accent); margin-right: 4px; }
+.tag {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #eee7d6;
+  color: #6b5f44;
+}
+.tag.tier { background: #e4eef7; color: #2c5e8f; }
+.tag.source { background: #efe7f3; color: #6b4a7a; }
+
+.stem { font-size: 19px; margin: 6px 0 14px; line-height: 1.5; }
+.passage {
+  background: #faf7ef;
+  border-left: 3px solid var(--accent);
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 18px;
+  white-space: pre-wrap;
+  font-size: 15px;
+}
+.passage:empty { display: none; }
+
+.options { display: flex; flex-direction: column; gap: 10px; }
+.option {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  transition: background .15s, border-color .15s;
+}
+.option .num { font-weight: 700; color: var(--accent); flex: 0 0 auto; }
+.option.correct { background: #e8f5ec; border-color: var(--good); }
+.option.wrong { background: #fbeae8; border-color: var(--bad); }
+.option.chosen:not(.correct):not(.wrong) { border-color: var(--accent); }
+
+.reveal-btn {
+  margin-top: 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  font-size: 15px;
+  padding: 12px 18px;
+}
+.reveal-btn:hover { background: #325d8c; }
+
+.answer-panel {
+  margin-top: 18px;
+  background: var(--reveal);
+  border: 1px solid #e3d49a;
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+.answer-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.answer-label {
+  font-size: 12px; font-weight: 700; color: #8a6d00;
+  background: #fff; border: 1px solid #e3d49a; border-radius: 6px; padding: 2px 8px;
+}
+.answer-text { font-size: 18px; font-weight: 700; color: #6b5300; }
+.explanation { font-size: 14px; color: #4a4434; white-space: pre-wrap; }
+
+.mark-row { display: flex; gap: 10px; margin-top: 14px; }
+.mark { flex: 1; }
+.mark.correct { background: #e8f5ec; border-color: var(--good); color: var(--good); }
+.mark.wrong { background: #fbeae8; border-color: var(--bad); color: var(--bad); }
+.mark.active { outline: 2px solid currentColor; }
+
+.hidden { display: none !important; }
+
+#navbar {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 12px;
+  border-top: 1px solid var(--line);
+  background: var(--card);
+}
+#navbar button { font-size: 15px; padding: 10px 22px; }
+.hint {
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+
+.drop-hint {
+  position: fixed;
+  inset: 0;
+  background: rgba(244, 241, 234, .96);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  text-align: center;
+}
+.drop-hint.dragover { background: rgba(59, 110, 165, .12); outline: 3px dashed var(--accent); outline-offset: -16px; }
+.drop-inner h3 { margin: 0 0 12px; font-size: 20px; }
+.drop-inner p { margin: 8px 0; }
+.drop-inner .sub { font-size: 13px; color: var(--muted); }
+.drop-inner code { background: #eee7d6; padding: 1px 6px; border-radius: 5px; }
+
+/* 서답형 입력 */
+.essay-input {
+  width: 100%;
+  min-height: 110px;
+  margin-top: 16px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font: inherit;
+  font-size: 15px;
+  line-height: 1.6;
+  resize: vertical;
+  background: #fff;
+  color: var(--ink);
+}
+.essay-input:focus { outline: 2px solid var(--accent); border-color: var(--accent); }
+.user-answer {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #4a4434;
+  background: #faf7ef;
+  border-left: 3px solid var(--muted);
+  padding: 8px 12px;
+  border-radius: 6px;
+  white-space: pre-wrap;
+}
+.user-answer .ua-label { font-weight: 700; color: var(--muted); margin-right: 6px; }
+
+/* 정답과 다른 부분 하이라이트 */
+.diff-box { margin-top: 6px; }
+.diff {
+  color: var(--bad);
+  font-weight: 700;
+  background: #fbeae8;
+  border-radius: 4px;
+  padding: 0 2px;
+}
+
+/* 객관식 자동 판정 배지 */
+.auto-status { margin-top: 10px; font-weight: 700; font-size: 15px; }
+.auto-status.ok { color: var(--good); }
+.auto-status.no { color: var(--bad); }
+.auto-status.none { color: var(--muted); font-weight: 400; font-size: 13px; }
+
+
+
+</style>
+</head>
+<body>
+<header id="topbar">
+  <div class="controls">
+    <strong id="title">문제 풀이</strong>
+    <select id="subjectFilter" title="과목 필터"></select>
+    <select id="typeFilter" title="유형 필터"></select>
+    <button id="loadBtn" type="button">📂 MD 불러오기</button>
+    <button id="exportBtn" type="button">📤 공유 HTML</button>
+    <button id="shuffleBtn" type="button">🔀 셔플</button>
+    <button id="wrongBtn" type="button">📕 오답노트</button>
+    <button id="resetBtn" type="button">↺ 진도초기화</button>
+    <input type="file" id="fileInput" accept=".md,.markdown,.txt" multiple hidden>
+    <span id="progress" class="progress-text">0 / 0</span>
+  </div>
+  <div class="progressbar"><div id="progressFill"></div></div>
+</header>
+
+<main>
+  <section id="card" aria-live="polite">
+    <div class="meta">
+      <span id="qNumber" class="q-number"></span>
+      <span id="qType" class="tag"></span>
+      <span id="qTier" class="tag tier"></span>
+      <span id="qSource" class="tag source"></span>
+    </div>
+    <h2 id="stem" class="stem"></h2>
+    <div id="passage" class="passage"></div>
+    <div id="options" class="options"></div>
+    <div id="essayBox" class="essay-box hidden">
+      <textarea id="userAnswer" class="essay-input" placeholder="답을 직접 입력해 보세요"></textarea>
+      <button id="revealBtn" type="button" class="reveal-btn">비교 / 정답 보기</button>
+    </div>
+    <div id="answerPanel" class="answer-panel hidden">
+      <div class="answer-head">
+        <span class="answer-label">정답</span>
+        <span id="answerText" class="answer-text"></span>
+      </div>
+      <div id="autoStatus" class="auto-status hidden"></div>
+      <div id="diffBox" class="diff-box hidden"></div>
+      <div id="explanation" class="explanation"></div>
+      <div class="mark-row" id="markRow">
+        <button id="correctBtn" type="button" class="mark correct">✅ 맞았어요</button>
+        <button id="wrongMarkBtn" type="button" class="mark wrong">❌ 틀렸어요</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<nav id="navbar">
+  <button id="prevBtn" type="button">← 이전</button>
+  <button id="nextBtn" type="button">다음 →</button>
+</nav>
+
+<p class="hint">← / → : 이동 &nbsp;·&nbsp; 스페이스 : 정답 공개 &nbsp;·&nbsp; 카드 클릭 : 정답 공개</p>
+
+<div id="dropHint" class="drop-hint hidden">
+  <div class="drop-inner">
+    <h3>문제 MD를 여기로 끌어다 놓으세요</h3>
+    <p>또는 <button id="dropLoadBtn" type="button" class="reveal-btn">MD 파일 선택</button></p>
+    <p class="sub">output/ 의 <code>*.md</code> 를 그대로 올리면 됩니다. (Python 변환 불필요)</p>
+  </div>
+</div>
+
+<script>
+// parser.js — 마크다운 문제지를 브라우저에서 직접 파싱.
+// tools/md2quiz.py 와 동일 로직. output/*.md 를 굳이 변환 안 거치고
+// 웹에서 드래그앤드롭/파일선택으로 바로 불러오기 위함.
+(function () {
+  "use strict";
+
+  var OPTION_RE = /^\s*([①②③④⑤])\s*(.*)$/m;
+  var PROB_RE = /^\s*\*\*(\d+)\.\*\*\s*(.*)$/m;
+  var TAG_RE = /\[([A-Za-z0-9\-]+)·?(T\d)\s*\]/;
+  var H1_RE = /^\s*#\s+(.*)$/m;
+  var ANSWER_H_RE = /^\s*#\s*정답/m;
+
+  var SUBJECT_MAP = [
+    [/통합과학|과학/, "science"],
+    [/영어/, "english"],
+    [/수학/, "math"],
+    [/국어/, "korean"]
+  ];
+
+  function detectSubject(text) {
+    for (var i = 0; i < SUBJECT_MAP.length; i++) {
+      if (SUBJECT_MAP[i][0].test(text)) return SUBJECT_MAP[i][1];
+    }
+    return "unknown";
+  }
+
+  var SPLIT_OPTION_RE = /\s*([①②③④⑤])\s*/;
+  var LEADING_OPTION_RE = /^\s*([①②③④⑤])\s*(.*)$/;
+
+  function splitLineOptions(line) {
+    // 줄이 원숫자로 '시작'할 때만 선지로 간주(지문 중간 numbering 은 회피).
+    // 한 줄에 ①…②…③… 가 몰려 있어도 circle-number 경계로 쪼갠다.
+    var lead = LEADING_OPTION_RE.exec(line);
+    if (!lead) return [];
+    var parts = line.split(SPLIT_OPTION_RE);
+    // split 결과: ["", "①", "text", "②", "text", ...]
+    var opts = [];
+    for (var i = 1; i + 1 < parts.length; i += 2) {
+      var num = parts[i];
+      var body = (parts[i + 1] || "").trim();
+      if (body) opts.push(num + " " + body);
+    }
+    return opts;
+  }
+
+  function parseOptionsAndPassage(lines) {
+    var passage = [], options = [], inOption = false;
+    for (var i = 0; i < lines.length; i++) {
+      var opts = splitLineOptions(lines[i]);
+      if (opts.length) {
+        inOption = true;
+        for (var k = 0; k < opts.length; k++) options.push(opts[k]);
+      } else if (inOption) {
+        continue;
+      } else if (lines[i].trim()) {
+        passage.push(lines[i].trim());
+      }
+    }
+    return { passage: passage.join("\n").trim(), options: options };
+  }
+
+  function splitProblems(sectionLines) {
+    var blocks = [], cur = null;
+    for (var i = 0; i < sectionLines.length; i++) {
+      var ln = sectionLines[i];
+      var m = PROB_RE.exec(ln);
+      if (m) {
+        if (cur) blocks.push(cur);
+        cur = { number: parseInt(m[1], 10), stem: m[2].trim(), body: [] };
+      } else if (cur) {
+        if (/^\s*#{1,2}\s/m.test(ln)) { blocks.push(cur); cur = null; }
+        else cur.body.push(ln);
+      }
+    }
+    if (cur) blocks.push(cur);
+    return blocks;
+  }
+
+  function parseAnswerTable(lines) {
+    var answers = {}, inTable = false;
+    for (var i = 0; i < lines.length; i++) {
+      var s = lines[i].trim();
+      if (s.indexOf("|") === 0) {
+        inTable = true;
+        var cells = s.replace(/^\|/, "").replace(/\|$/, "").split("|").map(function (c) { return c.trim(); });
+        if (!cells.length) continue;
+        if (cells[0] === "문항" || cells[0] === "" || /^[-: ]+$/.test(cells[0])) continue;
+        var numM = /^\s*(\d+)/.exec(cells[0]);
+        if (!numM) continue;
+        var num = parseInt(numM[1], 10);
+        var typeTier = cells[2] || "";
+        var tm = TAG_RE.exec(typeTier);
+        answers[num] = {
+          answer: cells[1] || "",
+          typeId: tm ? tm[1] : "",
+          tier: tm ? tm[2] : "",
+          explanation: cells[3] || ""
+        };
+      } else if (inTable && s) {
+        break;
+      }
+    }
+    return answers;
+  }
+
+  function splitSections(rawLines) {
+    var sections = { select: [], essay: [], answer: [] };
+    var cur = null;
+    for (var i = 0; i < rawLines.length; i++) {
+      var ln = rawLines[i];
+      var s = ln.trim();
+      if (s.indexOf("## 선택형") === 0) { cur = "select"; continue; }
+      if (s.indexOf("## 서답형") === 0 || s.indexOf("## 서술형") === 0 || s.indexOf("## 단답형") === 0) { cur = "essay"; continue; }
+      if (ANSWER_H_RE.test(ln)) { cur = "answer"; continue; }
+      if (/^\s*#{1,2}\s/m.test(ln) && cur !== null && cur !== "answer") {
+        if (cur === "select" || cur === "essay") cur = null;
+        continue;
+      }
+      if (cur !== null) sections[cur].push(ln);
+    }
+    return sections;
+  }
+
+  function convertText(text, sourceKey) {
+    var rawLines = text.split("\n");
+    var title = "";
+    for (var i = 0; i < rawLines.length; i++) {
+      var m = H1_RE.exec(rawLines[i]);
+      if (m) { title = m[1].trim(); break; }
+    }
+    var subject = detectSubject(title + " " + (sourceKey || ""));
+    var sections = splitSections(rawLines);
+    var selBlocks = splitProblems(sections.select);
+    var essBlocks = splitProblems(sections.essay);
+    var answers = parseAnswerTable(sections.answer);
+    var problems = [];
+    var all = selBlocks.concat(essBlocks);
+    all.sort(function (a, b) { return a.number - b.number; });
+    for (var j = 0; j < all.length; j++) {
+      var blk = all[j];
+      var po = parseOptionsAndPassage(blk.body);
+      var qtype = po.options.length ? "choice" : "essay";
+      var ans = answers[blk.number] || {};
+      var stem = blk.stem;
+      if (!ans.typeId) {
+        var tm = TAG_RE.exec(stem);
+        if (tm) { ans.typeId = tm[1]; ans.tier = tm[2]; }
+      }
+      problems.push({
+        id: sourceKey + "#" + blk.number,
+        sourceKey: sourceKey,
+        subject: subject,
+        number: blk.number,
+        qtype: qtype,
+        stem: stem.replace(/\s*\[[^\]]*\]\s*$/, "").trim(),
+        passage: po.passage,
+        options: po.options,
+        answer: ans.answer || "",
+        typeId: ans.typeId || "",
+        tier: ans.tier || "",
+        explanation: ans.explanation || ""
+      });
+    }
+    return { title: title, subject: subject, problems: problems };
+  }
+
+  // 여러 md 텍스트 -> window.QUIZ_DATA 구조
+  function parseAll(files) {
+    // files: [{ name, text }]
+    var sources = [], problems = [];
+    for (var i = 0; i < files.length; i++) {
+      var key = files[i].name.replace(/\.[^.]+$/, "") || ("doc" + (i + 1));
+      var info = convertText(files[i].text, key);
+      sources.push({ file: files[i].name, title: info.title, subject: info.subject, count: info.problems.length });
+      problems = problems.concat(info.problems);
+    }
+    return { generatedAt: new Date().toISOString(), sources: sources, problems: problems };
+  }
+
+  window.QuizParser = { convertText: convertText, parseAll: parseAll };
+})();
+
+</script>
+<script id="quiz-data">
+window.QUIZ_DATA = {
+ "generatedAt": "2026-07-15T19:19:41",
+ "sources": [
+  {
+   "file": "output/260714/공통영어1_모의25.md",
+   "title": "공통영어1 모의 문제 — 25문항 (상산고 유형 기반 생성)",
+   "subject": "english",
+   "count": 25
+  }
+ ],
+ "problems": [
+  {
+   "id": "260714#1",
+   "sourceKey": "260714",
+   "subject": "english",
+   "number": 1,
+   "qtype": "choice",
+   "stem": "다음 글의 **주제**로 가장 적절한 것은?",
+   "passage": "For most of human history, doing one thing at a time was not a virtue but a necessity. The modern workplace, however, treats attention as if it were infinitely divisible—an assumption that neuroscience has steadily undermined. When we believe we are multitasking, what the brain is actually doing is switching rapidly between separate tasks, and each switch carries a hidden toll. Researchers who study this cost describe it as \"attention residue,\" a fragment of the previous task that lingers and clouds the next one. Studies suggest that people who juggle several streams of information perform worse on tests of memory and concentration than those who focus on a single task, even when they feel more productive. In a culture that prizes constant busyness, the rarest and most valuable skill may be the willingness to do less, more deeply.",
+   "options": [
+    "① the neurological benefits of handling several tasks at once",
+    "② the hidden cost of multitasking and the value of focused attention",
+    "③ why modern workplaces are more productive than in the past",
+    "④ historical changes in how people organize their working day",
+    "⑤ methods for measuring memory and concentration in the laboratory"
+   ],
+   "answer": "②",
+   "typeId": "T-01",
+   "tier": "T2",
+   "explanation": "멀티태스킹의 숨은 비용 + 집중의 가치. ①은 정반대(E1), ③④⑤는 지엽·언급 안 됨"
+  },
+  {
+   "id": "260714#2",
+   "sourceKey": "260714",
+   "subject": "english",
+   "number": 2,
+   "qtype": "choice",
+   "stem": "다음 글의 **제목**으로 가장 적절한 것은?",
+   "passage": "On a summer evening, a city can be several degrees warmer than the countryside around it, a phenomenon known as the urban heat island. The cause is largely material: concrete and asphalt absorb heat all day and release it slowly at night, while glass and steel trap warmth between buildings. Cars, air conditioners, and crowds add still more. The effect is not trivial; it raises energy use, worsens air quality, and endangers the elderly during heat waves. Fortunately, the remedies are well understood. Planting trees, painting roofs white, and creating parks can all cool a city measurably, turning a problem of design into an opportunity for it.",
+   "options": [
+    "① Why Cities Grow Faster Than Rural Areas",
+    "② The Urban Heat Island and How to Cool It",
+    "③ The Hidden Dangers of Air Conditioning",
+    "④ How Trees Clean the Air We Breathe",
+    "⑤ The Long History of Concrete and Steel"
+   ],
+   "answer": "②",
+   "typeId": "T-01",
+   "tier": "T2",
+   "explanation": "열섬 현상 + 해결책. ③④⑤ 지엽, ① 무관"
+  },
+  {
+   "id": "260714#3",
+   "sourceKey": "260714",
+   "subject": "english",
+   "number": 3,
+   "qtype": "choice",
+   "stem": "밑줄 친 **\"you cannot pour expertise into a mind the way you pour water into a glass\"** 가 다음 글에서 의미하는 바로 가장 적절한 것은?",
+   "passage": "A beginner and an expert can look at the same chessboard and see entirely different things. Where the novice sees thirty-two separate pieces, the master perceives familiar patterns, threats, and opportunities grouped into meaningful wholes. Years of practice have reshaped not just what the expert knows but how she sees. This is why simply handing someone information rarely creates skill. As one researcher put it, \"you cannot pour expertise into a mind the way you pour water into a glass.\" Real mastery is built slowly, through thousands of encounters that gradually train perception itself.",
+   "options": [
+    "① Experts are often unwilling to share what they know.",
+    "② Expertise cannot be transferred instantly as mere information.",
+    "③ The human mind has a strictly limited storage capacity.",
+    "④ Drinking enough water improves concentration and learning.",
+    "⑤ Beginners and experts think in exactly the same way."
+   ],
+   "answer": "②",
+   "typeId": "T-03",
+   "tier": "T3",
+   "explanation": "\"물 붓듯 전문성을 부을 수 없다\"=정보 전달만으론 즉시 숙련 안 됨. ④ 표면 직역 함정(E3)"
+  },
+  {
+   "id": "260714#4",
+   "sourceKey": "260714",
+   "subject": "english",
+   "number": 4,
+   "qtype": "choice",
+   "stem": "밑줄 친 **\"the meaning a patient attaches to a pill can be as powerful as the chemistry inside it\"** 가 다음 글에서 의미하는 바로 가장 적절한 것은?",
+   "passage": "A sugar pill should do nothing, and yet, again and again, patients who take one report real relief. This is the placebo effect, and it is far stranger than mere imagination. Brain scans show that a convincing placebo can trigger the release of the body's own painkillers, producing measurable changes. In other words, the belief that one is being treated can itself become a form of treatment. Doctors have long known that \"the meaning a patient attaches to a pill can be as powerful as the chemistry inside it.\" Understanding this has forced medicine to take seriously something it once dismissed.",
+   "options": [
+    "① Expensive medicines always work better than cheap ones.",
+    "② A patient's beliefs can influence healing as much as the drug itself.",
+    "③ Doctors should stop prescribing chemically active medication.",
+    "④ Sugar pills secretly contain hidden active chemicals.",
+    "⑤ Physical pain is entirely imaginary and never real."
+   ],
+   "answer": "②",
+   "typeId": "T-03",
+   "tier": "T3",
+   "explanation": "믿음(의미)이 약만큼 치유에 영향. ①④⑤ 과장·왜곡"
+  },
+  {
+   "id": "260714#5",
+   "sourceKey": "260714",
+   "subject": "english",
+   "number": 5,
+   "qtype": "choice",
+   "stem": "다음 글의 내용과 **일치하지 않는** 것은?",
+   "passage": "When a honeybee discovers a rich source of food, it returns to the hive and performs a remarkable \"waggle dance\" to tell the others where to go. By moving in a figure-eight pattern and waggling its body, the bee encodes two crucial pieces of information: the direction of the food relative to the sun, and its distance from the hive. The longer the waggle, the farther away the food lies. Other bees follow closely, reading the message through touch and vibration in the dark hive. This dance is one of the few known examples of a non-human animal communicating abstract information about a distant place.",
+   "options": [
+    "① The waggle dance conveys both direction and distance.",
+    "② A longer waggle indicates food that is farther away.",
+    "③ Bees interpret the dance through touch and vibration.",
+    "④ The dance communicates the location of a distant food source.",
+    "⑤ The direction is encoded relative to the hive entrance."
+   ],
+   "answer": "⑤",
+   "typeId": "T-02",
+   "tier": "T2",
+   "explanation": "방향은 **태양** 기준이지 벌집 입구 기준 아님(E6 좌우·기준 뒤집기)"
+  },
+  {
+   "id": "260714#6",
+   "sourceKey": "260714",
+   "subject": "english",
+   "number": 6,
+   "qtype": "essay",
+   "stem": "다음 글의 밑줄 친 부분 중, **어법상 틀린** 것은?",
+   "passage": "Scientists once believed that a memory, once stored, remained ①**fixed** forever. Recent research, however, has revealed a process ②**calling** reconsolidation, in which the simple act of recalling a memory makes it temporarily unstable. During this brief window, the memory can be altered before it ③**is stored** again. This helps explain why two people who ④**witnessed** the same event often remember it differently. Each time they retell the story, they may unknowingly reshape it, ⑤**adding** details that were never there.\n---",
+   "options": [],
+   "answer": "②",
+   "typeId": "T-04",
+   "tier": "T3",
+   "explanation": "a process **calling→called**(과거분사 수동). 나머지 어법 정상"
+  },
+  {
+   "id": "260714#7",
+   "sourceKey": "260714",
+   "subject": "english",
+   "number": 7,
+   "qtype": "essay",
+   "stem": "다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 **적절하지 않은** 것은?",
+   "passage": "When a species arrives in a new environment where it has no natural predators, its population can explode. Freed from the checks that once ①**limited** its growth, it spreads rapidly, often ②**outcompeting** native species for food and space. Such invaders can ③**disrupt** entire ecosystems within a few years. Efforts to remove them are usually expensive and, once the species is well established, rarely ④**successful**. For this reason, scientists stress that ⑤**encouraging** the arrival of foreign species is far cheaper than reversing the damage they cause.\n---",
+   "options": [],
+   "answer": "⑤",
+   "typeId": "T-05",
+   "tier": "T2",
+   "explanation": "encouraging→**preventing**(유입 '방지'가 복구보다 싸다). E1 정반대"
+  },
+  {
+   "id": "260714#8",
+   "sourceKey": "260714",
+   "subject": "english",
+   "number": 8,
+   "qtype": "essay",
+   "stem": "다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 **적절하지 않은** 것은?",
+   "passage": "Boredom has a bad reputation, but psychologists now see it as a useful signal rather than a ①**flaw**. When an activity fails to engage us, boredom ②**pushes** us to seek something more meaningful. In this sense, it acts like hunger, telling us that our current situation is no longer ③**rewarding**. Studies even suggest that mild boredom can ④**reduce** creativity, because a restless mind begins to wander and generate new ideas. The danger appears only when we escape boredom through ⑤**constant** distraction, never giving our thoughts the space to develop.\n---",
+   "options": [],
+   "answer": "④",
+   "typeId": "T-05",
+   "tier": "T3",
+   "explanation": "reduce→**boost**(뒤 \"새 아이디어 생성\"이 근거). E1 정반대"
+  },
+  {
+   "id": "260714#9",
+   "sourceKey": "260714",
+   "subject": "english",
+   "number": 9,
+   "qtype": "choice",
+   "stem": "다음 빈칸에 들어갈 말로 가장 적절한 것은?",
+   "passage": "Every choice we make, however small, draws on the same limited pool of mental energy. Psychologists call the gradual exhaustion of this resource \"decision fatigue,\" and its effects are surprisingly wide-reaching. Judges, for instance, grant parole far more often early in the day than just before lunch, when their capacity for careful deliberation has been worn thin. The same mechanism explains why shoppers who have spent an hour comparing products often abandon their standards at the checkout, grabbing whatever is nearest. What looks like a failure of character is frequently just a brain that has run low on fuel. This is why many successful people deliberately reduce the number of trivial decisions they face, so that their sharpest judgment is saved for ________________.",
+   "options": [
+    "① the many small choices of daily life",
+    "② whatever decision happens to come first",
+    "③ the few decisions that truly matter",
+    "④ the moments when they feel most tired",
+    "⑤ tasks that others have already completed"
+   ],
+   "answer": "③",
+   "typeId": "T-06",
+   "tier": "T3",
+   "explanation": "\"가장 중요한 소수 결정\"에 판단력 아껴둠(본문 what truly matters)"
+  },
+  {
+   "id": "260714#10",
+   "sourceKey": "260714",
+   "subject": "english",
+   "number": 10,
+   "qtype": "choice",
+   "stem": "다음 빈칸에 들어갈 말로 가장 적절한 것은?",
+   "passage": "Imagine a pasture shared by many herders, where anyone may graze as many animals as they wish. Each herder gains the full benefit of adding one more animal, while the cost of overgrazing is spread across everyone. Acting rationally in his own interest, each herder keeps adding animals, and the pasture is eventually destroyed. This grim logic, known as the tragedy of the commons, appears wherever a shared resource is open to all. It explains overfished oceans, polluted air, and crowded roads. The pattern reveals that individual rationality and collective well-being ________________.",
+   "options": [
+    "① always point in the same direction",
+    "② can sharply conflict with each other",
+    "③ depend entirely on government control",
+    "④ matter only to professional economists",
+    "⑤ steadily improve as more people join"
+   ],
+   "answer": "②",
+   "typeId": "T-06",
+   "tier": "T3",
+   "explanation": "개인 합리성 ↔ 집단 후생이 충돌(공유지의 비극). ① 정반대(E1)"
+  },
+  {
+   "id": "260714#11",
+   "sourceKey": "260714",
+   "subject": "english",
+   "number": 11,
+   "qtype": "choice",
+   "stem": "다음 빈칸에 들어갈 말로 가장 적절한 것은?",
+   "passage": "During World War II, analysts examined planes returning from battle and noted where they were most often riddled with bullet holes: the wings and tail. The obvious response was to add armor to those areas. A statistician named Abraham Wald, however, reached the opposite conclusion. The planes he was studying were the ones that had survived; the bullet holes showed where a plane could be hit and still return home. The truly dangerous spots were the places with no holes at all, because planes struck there never made it back to be counted. Wald's insight was that the most important evidence was ________________.",
+   "options": [
+    "① found in the planes that never returned",
+    "② visible in the most heavily damaged wings",
+    "③ simply the number of bullet holes per plane",
+    "④ far easier to gather than anyone expected",
+    "⑤ irrelevant to the design of the armor"
+   ],
+   "answer": "①",
+   "typeId": "T-06",
+   "tier": "T4",
+   "explanation": "생존자 편향—돌아오지 못한 비행기에 핵심 증거. 반직관 발상(T4)"
+  },
+  {
+   "id": "260714#12",
+   "sourceKey": "260714",
+   "subject": "english",
+   "number": 12,
+   "qtype": "essay",
+   "stem": "다음 글에서 전체 흐름과 **관계 없는** 문장은?",
+   "passage": "Sleep does far more than rest the body; it actively strengthens what we learn. ① During deep sleep, the brain replays the day's experiences, transferring fragile new memories into more permanent storage. ② Students who sleep after studying consistently outperform those who stay awake, even when total study time is equal. ③ Regular physical exercise has been shown to lower the risk of heart disease in older adults. ④ Dreaming, which occurs mainly in the later stages of sleep, may help the brain connect new information to old knowledge. ⑤ For this reason, a full night's sleep before an exam is often more valuable than a few extra hours of review.\n---",
+   "options": [],
+   "answer": "③",
+   "typeId": "T-09",
+   "tier": "T2",
+   "explanation": "운동-심장질환 문장은 수면·학습 주제와 무관"
+  },
+  {
+   "id": "260714#13",
+   "sourceKey": "260714",
+   "subject": "english",
+   "number": 13,
+   "qtype": "choice",
+   "stem": "주어진 글 다음에 이어질 글의 **순서**로 가장 적절한 것은?",
+   "passage": "Paper money seems obviously convenient today, but its acceptance was once a remarkable leap of faith.\n- (A) This trust, however, took centuries to build, and early experiments often collapsed when governments printed too much.\n- (B) The idea first appeared in China, where merchants tired of hauling heavy strings of coins began leaving them with trusted agents in exchange for written receipts.\n- (C) Those receipts could then be traded directly, and people gradually accepted the paper itself as if it were the metal it represented.",
+   "options": [
+    "① (A)-(C)-(B)",
+    "② (B)-(A)-(C)",
+    "③ (B)-(C)-(A)",
+    "④ (C)-(A)-(B)",
+    "⑤ (C)-(B)-(A)"
+   ],
+   "answer": "③",
+   "typeId": "T-07",
+   "tier": "T3",
+   "explanation": "(B)중국 기원→(C)영수증 유통→(A)신뢰는 수세기·붕괴"
+  },
+  {
+   "id": "260714#14",
+   "sourceKey": "260714",
+   "subject": "english",
+   "number": 14,
+   "qtype": "choice",
+   "stem": "주어진 글 다음에 이어질 글의 **순서**로 가장 적절한 것은?",
+   "passage": "Fireflies flashing on a summer night are the most familiar example, but bioluminescence is far more common in the ocean.\n- (A) There, in the darkness of the deep sea, the ability has evolved independently many times.\n- (B) Each species uses its glow for a specific purpose, from luring prey to confusing predators.\n- (C) A few even use light to communicate, flashing signals that only members of their own kind can read.",
+   "options": [
+    "① (A)-(B)-(C)",
+    "② (A)-(C)-(B)",
+    "③ (B)-(A)-(C)",
+    "④ (C)-(A)-(B)",
+    "⑤ (C)-(B)-(A)"
+   ],
+   "answer": "①",
+   "typeId": "T-07",
+   "tier": "T3",
+   "explanation": "(A)심해서 진화→(B)각 종의 용도→(C)일부는 소통"
+  },
+  {
+   "id": "260714#15",
+   "sourceKey": "260714",
+   "subject": "english",
+   "number": 15,
+   "qtype": "essay",
+   "stem": "글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?",
+   "passage": "> Yet this seemingly empty symbol turned out to be one of the most powerful ideas in all of mathematics.\nFor most of history, people counted without any symbol for nothing. ( ① ) The ancient Romans, for example, had no zero, which made their numerals clumsy for calculation. ( ② ) The concept was fully developed in India, where scholars first treated zero as a number in its own right. ( ③ ) At first, many thinkers resisted the notion, unable to see how nothing could be something. ( ④ ) From there it spread to the Arab world and eventually to Europe. ( ⑤ ) Without it, modern arithmetic, algebra, and computing would be impossible.\n---",
+   "options": [],
+   "answer": "④",
+   "typeId": "T-08",
+   "tier": "T3",
+   "explanation": "저항(③) 뒤 \"Yet 강력한 아이디어\" 대조 → ④ 자리"
+  },
+  {
+   "id": "260714#16",
+   "sourceKey": "260714",
+   "subject": "english",
+   "number": 16,
+   "qtype": "essay",
+   "stem": "글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?",
+   "passage": "> When the water grows too warm, however, the coral expels these algae and turns a ghostly white.\nCoral reefs owe their brilliant colors to tiny algae that live inside them. ( ① ) These algae produce food through photosynthesis and share it with their coral hosts. ( ② ) In return, the coral provides the algae with shelter and nutrients, a partnership that has lasted for millions of years. ( ③ ) Stripped of its colorful partners, the coral is left starving and vulnerable. ( ④ ) If cooler conditions return quickly, the algae may come back and the reef can recover. ( ⑤ ) But if the heat persists, the coral dies, and the entire reef begins to collapse.\n---",
+   "options": [],
+   "answer": "③",
+   "typeId": "T-08",
+   "tier": "T3",
+   "explanation": "삽입문(백화)이 ③ \"colorful partners를 잃고 굶주림\" 앞에 옴"
+  },
+  {
+   "id": "260714#17",
+   "sourceKey": "260714",
+   "subject": "english",
+   "number": 17,
+   "qtype": "choice",
+   "stem": "다음 글의 내용을 아래와 같이 요약하고자 한다. 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?",
+   "passage": "Empathy and compassion are often treated as the same thing, yet researchers increasingly argue that they pull us in different directions. Empathy makes us feel another person's pain as if it were our own, which sounds admirable but can quietly exhaust us. Nurses and aid workers who absorb every patient's suffering frequently burn out and withdraw. Compassion, by contrast, does not require us to share the pain; it moves us to act to relieve it while keeping a steadying distance. In one study, volunteers trained in compassion reported more warmth and less distress than those trained only to empathize.\n> Although empathy makes us __(A)__ another's pain, it can lead to exhaustion; compassion instead drives us to __(B)__ while keeping emotional distance.\n(A)　　　(B)",
+   "options": [
+    "① share ...... help",
+    "② ignore ...... help",
+    "③ share ...... avoid",
+    "④ cause ...... observe",
+    "⑤ feel ...... criticize"
+   ],
+   "answer": "①",
+   "typeId": "T-10",
+   "tier": "T3",
+   "explanation": "(A) share (B) help"
+  },
+  {
+   "id": "260714#18",
+   "sourceKey": "260714",
+   "subject": "english",
+   "number": 18,
+   "qtype": "choice",
+   "stem": "다음 글 [A], [B]를 읽고, 내용과 가장 **일치하는** 것은?",
+   "passage": "[A] For centuries, solitude was seen as a path to wisdom. Philosophers and religious thinkers withdrew from society precisely because being alone allowed them to reflect deeply, free from the noise of others' opinions. In this tradition, the ability to be comfortable alone was a mark of maturity.\n[B] Modern psychology, however, warns that too much solitude can be harmful. Humans are social by nature, and prolonged isolation is linked to anxiety, depression, and even physical decline. From this view, regular connection with others is not a luxury but a basic need.",
+   "options": [
+    "① [A] regards solitude as a sign of immaturity.",
+    "② [B] claims that humans thrive best in complete isolation.",
+    "③ [A] and [B] both regard solitude as entirely harmful.",
+    "④ [A] values solitude for reflection, while [B] warns of its dangers.",
+    "⑤ [B] argues that connection with others is an unnecessary luxury."
+   ],
+   "answer": "④",
+   "typeId": "T-12",
+   "tier": "T4",
+   "explanation": "[A]성찰 가치 / [B]위험 경고. ①②③⑤ 왜곡"
+  },
+  {
+   "id": "260714#19",
+   "sourceKey": "260714",
+   "subject": "english",
+   "number": 19,
+   "qtype": "choice",
+   "stem": "다음 글의 내용과 **일치하는** 것은?",
+   "passage": "Before Johannes Gutenberg introduced movable type to Europe around 1450, books were copied by hand, a slow process that made them rare and expensive. Gutenberg's press did not invent printing itself, which had existed in East Asia for centuries, but it combined several innovations that made mass production practical in Europe. Within decades, the number of books in Europe multiplied enormously, and ideas that had once been confined to a few monasteries began to circulate widely. Historians often credit this flood of printed material with fueling the Reformation and the scientific revolution.",
+   "options": [
+    "① Gutenberg was the first person in the world to invent printing.",
+    "② Before Gutenberg, European books were produced quickly and cheaply.",
+    "③ Gutenberg's press had little effect on the spread of ideas.",
+    "④ Printing had existed in East Asia before Gutenberg's press.",
+    "⑤ The number of books in Europe fell after the press appeared."
+   ],
+   "answer": "④",
+   "typeId": "T-02",
+   "tier": "T2",
+   "explanation": "인쇄술은 동아시아에 먼저 존재. ①②③⑤ 본문과 반대·왜곡"
+  },
+  {
+   "id": "260714#20",
+   "sourceKey": "260714",
+   "subject": "english",
+   "number": 20,
+   "qtype": "choice",
+   "stem": "다음 빈칸에 들어갈 말로 가장 적절한 것은?",
+   "passage": "Modern life is filling the world with noise, and researchers warn that we are losing something valuable: natural quiet. Constant background sound, from traffic to ventilation systems, keeps our nervous system in a low state of alert, subtly raising stress even when we stop noticing it. True silence, by contrast, gives the brain a chance to reset. In one experiment, two minutes of silence lowered blood pressure more than relaxing music did. This suggests that quiet is not merely the absence of sound but ________________.",
+   "options": [
+    "① a sign that something has gone wrong",
+    "② an active ingredient of good health",
+    "③ nearly impossible to find in a modern city",
+    "④ far less important than pleasant music",
+    "⑤ a distraction from truly meaningful work"
+   ],
+   "answer": "②",
+   "typeId": "T-06",
+   "tier": "T3",
+   "explanation": "\"소리의 부재가 아니라 건강의 능동적 요소\". ④ 실험과 모순(E1)"
+  },
+  {
+   "id": "260714#21",
+   "sourceKey": "260714",
+   "subject": "english",
+   "number": 21,
+   "qtype": "essay",
+   "stem": "[서답형·조건 영작] 윗글(1번)의 내용을 바탕으로, 다음 우리말을 <조건>에 맞게 영작하시오. [4점]",
+   "passage": "> 우리말: **여러 정보의 흐름을 다루는(juggle) 사람들은 한 가지 일에 집중하는 사람들보다 더 나쁜 성과를 낸다.**\n> <조건> ① **관계대명사를 반드시 포함**할 것. ② 다음 표현을 활용할 것(어형 변화 가능): `juggle several streams of information / perform / worse / than / those / focus on a single task`",
+   "options": [],
+   "answer": "People **who** juggle several streams of information perform worse than those who focus on a single task.",
+   "typeId": "W-01",
+   "tier": "T3",
+   "explanation": "관계대명사 who 필수. 비교급 than"
+  },
+  {
+   "id": "260714#22",
+   "sourceKey": "260714",
+   "subject": "english",
+   "number": 22,
+   "qtype": "essay",
+   "stem": "[서답형·조건 영작] 다음 우리말을 <조건>에 맞게 영작하시오. [4점]",
+   "passage": "> 우리말: **결정 피로라고 불리는 이 현상은 판사들에게서도 관찰되어 왔다.**\n> <조건> ① **수동태를 반드시 포함**할 것(현재완료 수동 사용). ② 다음 표현을 활용할 것(어형 변화 가능): `this phenomenon / call / decision fatigue / observe / in judges`",
+   "options": [],
+   "answer": "This phenomenon, **which is called** decision fatigue, **has been observed** in judges.",
+   "typeId": "W-01",
+   "tier": "T3",
+   "explanation": "현재완료 수동(has been observed) 필수"
+  },
+  {
+   "id": "260714#23",
+   "sourceKey": "260714",
+   "subject": "english",
+   "number": 23,
+   "qtype": "essay",
+   "stem": "[서답형·어휘] <보기>에서 알맞은 표현을 골라 문장을 완성하시오. 필요하면 어형을 바꿀 것. [각 1점, 총 5점]",
+   "passage": "> <보기> `run low on / burn out / stand out / carry a toll / come back`\n> (a) After months of overwork, many nurses eventually ________ and leave the profession.\n> (b) By evening, the judge's willpower had ________ fuel, and his decisions grew careless.\n> (c) Every task switch ________ on our concentration, even if we do not notice it.\n> (d) If cooler water returns, the algae may ________ and the reef can recover.\n> (e) In a sea of ordinary applications, her essay was the one that truly ________.",
+   "options": [],
+   "answer": "(a) burn out (b) run low on (c) carries a toll (d) come back (e) stood out",
+   "typeId": "W-02",
+   "tier": "T2",
+   "explanation": "어형 변화: carries(3인칭), stood(과거)"
+  },
+  {
+   "id": "260714#24",
+   "sourceKey": "260714",
+   "subject": "english",
+   "number": 24,
+   "qtype": "essay",
+   "stem": "[서답형·서술] 9번 지문에서, **성공한 사람들이 사소한 결정의 수를 일부러 줄이는 이유**를 본문에 근거하여 우리말로 서술하시오. [4점, 부분점수 있음]",
+   "passage": "",
+   "options": [],
+   "answer": "결정을 내릴 때마다 한정된 정신적 에너지가 소모되어(결정 피로) 판단력이 흐려지므로, 사소한 결정을 줄여 **가장 중요한 일에 가장 예리한 판단력을 아껴두기 위해서**.",
+   "typeId": "W-03",
+   "tier": "T3",
+   "explanation": "부분점수: '에너지 소모' + '중요한 일에 판단력 보존'"
+  },
+  {
+   "id": "260714#25",
+   "sourceKey": "260714",
+   "subject": "english",
+   "number": 25,
+   "qtype": "essay",
+   "stem": "[서답형·영작] 다음 대화를 읽고, 전문가가 했을 조언을 **완결된 한 문장의 영어**로 쓰시오. (1번 지문의 요지를 반영할 것) [4점]",
+   "passage": "> A: I try to study, check my phone, and listen to messages all at the same time, but somehow I remember almost nothing.\n> Expert: ________________________________________\n---\n---",
+   "options": [],
+   "answer": "(예시) \"You should focus on one task at a time, because switching between tasks leaves an 'attention residue' that weakens your memory and concentration.\"",
+   "typeId": "W-04",
+   "tier": "T3",
+   "explanation": "1번 요지(집중) 반영 + 완결 문장"
+  }
+ ]
+};
+
+</script>
+<script>
+(function () {
+  "use strict";
+  var DATA = window.QUIZ_DATA || { problems: [] };
+  var LS = {
+    status: "quiz_status_v1",
+    choice: "quiz_choice_v1",
+    revealed: "quiz_revealed_v1",
+    md: "quiz_md_v1",
+    answer: "quiz_answer_v1"
+  };
+  var SUBJECT_LABEL = {
+    english: "영어", science: "통합과학", math: "수학",
+    korean: "국어", unknown: "기타"
+  };
+  function load(k) { try { return JSON.parse(localStorage.getItem(k)) || {}; } catch (e) { return {}; } }
+  function save(k, v) { localStorage.setItem(k, JSON.stringify(v)); }
+  var status = load(LS.status);
+  var choice = load(LS.choice);
+  var revealed = load(LS.revealed);
+  var answers = load(LS.answer);
+
+  var state = { list: [], idx: 0, shuffle: false, wrongOnly: false,
+                subject: "all", type: "all" };
+
+  // ---- DOM ----
+  var $ = function (id) { return document.getElementById(id); };
+  var el = {
+    title: $("title"), subjectFilter: $("subjectFilter"), typeFilter: $("typeFilter"),
+    loadBtn: $("loadBtn"), exportBtn: $("exportBtn"),
+    shuffleBtn: $("shuffleBtn"), wrongBtn: $("wrongBtn"), resetBtn: $("resetBtn"),
+    progress: $("progress"), progressFill: $("progressFill"),
+    qNumber: $("qNumber"), qType: $("qType"), qTier: $("qTier"), qSource: $("qSource"),
+    stem: $("stem"), passage: $("passage"), options: $("options"),
+    essayBox: $("essayBox"), userAnswer: $("userAnswer"), revealBtn: $("revealBtn"),
+    answerPanel: $("answerPanel"), answerText: $("answerText"),
+    diffBox: $("diffBox"), autoStatus: $("autoStatus"), explanation: $("explanation"),
+    markRow: $("markRow"), correctBtn: $("correctBtn"), wrongMarkBtn: $("wrongMarkBtn"),
+    prevBtn: $("prevBtn"), nextBtn: $("nextBtn"), card: $("card"),
+    fileInput: $("fileInput"), dropHint: $("dropHint"), dropLoadBtn: $("dropLoadBtn")
+  };
+
+  // ---- helpers ----
+  function esc(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+  function md(s) {
+    return esc(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+  }
+  function correctNum(answer) {
+    var m = /^([①②③④⑤])/.exec(answer || "");
+    return m ? m[1] : null;
+  }
+  function shuffleArr(a) {
+    a = a.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+
+  // ---- diff (서답형: 모범답안 기준, 구두점/공백/대소문자 무시) ----
+  var WORD_RE = /[A-Za-z0-9가-힣]+/g;
+  function wordsOf(text) {
+    var m, out = [], re = new RegExp(WORD_RE);
+    while ((m = re.exec(text)) !== null) out.push(m[0]);
+    return out;
+  }
+  function lcsMatch(a, b) {
+    var n = a.length, m = b.length, i, j;
+    if (!n || !m) return new Array(n).fill(false);
+    var dp = [];
+    for (i = 0; i <= n; i++) dp[i] = new Array(m + 1).fill(0);
+    for (i = 1; i <= n; i++) {
+      for (j = 1; j <= m; j++) {
+        dp[i][j] = (a[i - 1] === b[j - 1]) ? dp[i - 1][j - 1] + 1 : Math.max(dp[i - 1][j], dp[i][j - 1]);
+      }
+    }
+    var matched = new Array(n).fill(false);
+    i = n; j = m;
+    while (i > 0 && j > 0) {
+      if (a[i - 1] === b[j - 1]) { matched[i - 1] = true; i--; j--; }
+      else if (dp[i - 1][j] >= dp[i][j - 1]) i--;
+      else j--;
+    }
+    return matched;
+  }
+  function renderDiff(userText, modelText) {
+    userText = (userText || "").trim();
+    if (!userText) return md(modelText);
+    var uWords = wordsOf(userText).map(function (w) { return w.toLowerCase(); });
+    var mWords = wordsOf(modelText);
+    var mNorm = mWords.map(function (w) { return w.toLowerCase(); });
+    var matched = lcsMatch(mNorm, uWords);
+    var re = /([A-Za-z0-9가-힣]+)|([^A-Za-z0-9가-힣])/g, out = "", m, wi = 0;
+    while ((m = re.exec(modelText)) !== null) {
+      if (m[1] !== undefined) {
+        var raw = m[1];
+        out += matched[wi] ? esc(raw) : '<span class="diff">' + esc(raw) + "</span>";
+        wi++;
+      } else {
+        out += esc(m[2]);
+      }
+    }
+    return out;
+  }
+
+  // ---- filters / list ----
+  function buildFilters() {
+    var subs = {}, types = {};
+    DATA.problems.forEach(function (p) {
+      subs[p.subject] = true;
+      if (p.typeId) types[p.typeId] = true;
+    });
+    el.subjectFilter.innerHTML = '<option value="all">과목: 전체</option>' +
+      Object.keys(subs).map(function (s) {
+        return '<option value="' + s + '">' + (SUBJECT_LABEL[s] || s) + "</option>";
+      }).join("");
+    el.typeFilter.innerHTML = '<option value="all">유형: 전체</option>' +
+      Object.keys(types).sort().map(function (t) {
+        return '<option value="' + t + '">' + t + "</option>";
+      }).join("");
+    if (DATA.sources && DATA.sources[0]) el.title.textContent = DATA.sources[0].title;
+  }
+
+  function computeList() {
+    var list = DATA.problems.filter(function (p) {
+      if (state.subject !== "all" && p.subject !== state.subject) return false;
+      if (state.type !== "all" && p.typeId !== state.type) return false;
+      if (state.wrongOnly && status[p.id] !== "wrong") return false;
+      return true;
+    });
+    if (state.shuffle) list = shuffleArr(list);
+    state.list = list;
+    if (state.idx >= list.length) state.idx = list.length - 1;
+    if (state.idx < 0) state.idx = 0;
+  }
+
+  // ---- render ----
+  function render() {
+    computeList();
+    var total = state.list.length;
+    if (total === 0) {
+      el.stem.textContent = state.wrongOnly ? "오답 노트가 비어 있습니다." : "해당 조건의 문제가 없습니다.";
+      el.qNumber.textContent = ""; el.qType.textContent = ""; el.qTier.textContent = "";
+      el.qSource.textContent = ""; el.passage.innerHTML = ""; el.options.innerHTML = "";
+      el.essayBox.classList.add("hidden"); el.answerPanel.classList.add("hidden");
+      el.progress.textContent = "0 / 0"; el.progressFill.style.width = "0%";
+      return;
+    }
+    var p = state.list[state.idx];
+    var isRev = !!revealed[p.id];
+
+    el.qNumber.textContent = p.number + "번";
+    el.qType.textContent = p.qtype === "choice" ? "객관식" : "서답형";
+    el.qTier.textContent = (p.typeId || "") + (p.tier ? "·" + p.tier : "");
+    el.qSource.textContent = (SUBJECT_LABEL[p.subject] || p.subject);
+    el.stem.innerHTML = md(p.stem);
+    el.passage.innerHTML = md(p.passage);
+
+    el.options.innerHTML = "";
+    if (p.qtype === "choice") {
+      el.essayBox.classList.add("hidden");
+      var cNum = correctNum(p.answer);
+      var chNum = choice[p.id];
+      p.options.forEach(function (opt) {
+        var num = opt.charAt(0);
+        var div = document.createElement("div");
+        div.className = "option";
+        var body = opt.slice(1).trim();
+        div.innerHTML = '<span class="num">' + esc(num) + "</span><span>" + md(body) + "</span>";
+        if (isRev) {
+          if (num === cNum) div.classList.add("correct");
+          else if (num === chNum) div.classList.add("wrong");
+        } else if (num === chNum) {
+          div.classList.add("chosen");
+        }
+        div.addEventListener("click", function (e) {
+          e.stopPropagation();
+          choice[p.id] = num; save(LS.choice, choice);
+          revealed[p.id] = true; save(LS.revealed, revealed);
+          render();
+        });
+        el.options.appendChild(div);
+      });
+    } else {
+      el.essayBox.classList.remove("hidden");
+      if (document.activeElement !== el.userAnswer) el.userAnswer.value = answers[p.id] || "";
+    }
+
+    // answer panel
+    if (isRev) {
+      el.answerPanel.classList.remove("hidden");
+      el.revealBtn.classList.add("hidden");
+      if (p.qtype === "choice") {
+        el.answerText.innerHTML = md(p.answer);
+        el.diffBox.classList.add("hidden");
+        el.autoStatus.classList.remove("hidden");
+        el.markRow.classList.add("hidden");
+        var ch = choice[p.id];
+        if (ch) {
+          status[p.id] = (ch === cNum) ? "correct" : "wrong";
+          save(LS.status, status);
+        }
+        if (!ch) { el.autoStatus.textContent = "보기를 선택하면 자동 채점됩니다"; el.autoStatus.className = "auto-status none"; }
+        else if (ch === cNum) { el.autoStatus.textContent = "✅ 정답"; el.autoStatus.className = "auto-status ok"; }
+        else { el.autoStatus.textContent = "❌ 오답 (정답 " + cNum + ")"; el.autoStatus.className = "auto-status no"; }
+        el.explanation.innerHTML = md(p.explanation);
+      } else {
+        el.autoStatus.classList.add("hidden");
+        el.markRow.classList.remove("hidden");
+        updateEssayDiff(p);
+        el.explanation.innerHTML = md(p.explanation);
+        el.correctBtn.classList.toggle("active", status[p.id] === "correct");
+        el.wrongMarkBtn.classList.toggle("active", status[p.id] === "wrong");
+      }
+    } else {
+      el.answerPanel.classList.add("hidden");
+      if (p.qtype === "essay") el.revealBtn.classList.remove("hidden");
+    }
+
+    el.progress.textContent = (state.idx + 1) + " / " + total;
+    el.progressFill.style.width = ((state.idx + 1) / total * 100) + "%";
+    el.prevBtn.disabled = state.idx === 0;
+    el.nextBtn.disabled = state.idx === total - 1;
+    window.scrollTo(0, 0);
+  }
+
+  function revealCurrent() {
+    var p = state.list[state.idx];
+    if (!p) return;
+    revealed[p.id] = true; save(LS.revealed, revealed);
+    render();
+  }
+
+  function updateEssayDiff(p) {
+    if (!revealed[p.id]) return;
+    el.answerText.innerHTML = renderDiff(answers[p.id] || "", p.answer);
+    var ua = (answers[p.id] || "").trim();
+    if (ua) {
+      el.diffBox.classList.remove("hidden");
+      el.diffBox.innerHTML = '<div class="user-answer"><span class="ua-label">내 답</span>' + esc(answers[p.id]) + "</div>";
+    } else {
+      el.diffBox.classList.add("hidden");
+    }
+  }
+
+  function go(delta) {
+    var n = state.idx + delta;
+    if (n < 0 || n >= state.list.length) return;
+    state.idx = n;
+    render();
+  }
+
+  function mark(val) {
+    var p = state.list[state.idx];
+    if (!p) return;
+    if (status[p.id] === val) { delete status[p.id]; }
+    else { status[p.id] = val; }
+    save(LS.status, status);
+    render();
+  }
+
+  // ---- 단일 HTML 내보내기 (서버/Python 불필요) ----
+  function exportStandalone() {
+    if (!DATA.problems.length) { alert("내보낼 문제가 없습니다."); return; }
+    var json = JSON.stringify(DATA).replace(/</g, "\\u003c");
+    var html = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+    // 실제 데이터 태그만 제거 (app.js 내 동일 문자열 리터럴과 구분하기 위해
+    // 바로 뒤의 window.QUIZ_DATA = 로 앵커링)
+    html = html.replace(/<script id="quiz-data">\s*\nwindow\.QUIZ_DATA =[\s\S]*?<\/script>/i, "");
+    var injected = "window.QUIZ_EMBEDDED = true;\nwindow.QUIZ_DATA = " + json + ";";
+    html = html.replace(/(<head[^>]*>)/i, "$1\n<script>" + injected + "<\/script>");
+    var blob = new Blob([html], { type: "text/html;charset=utf-8" });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    var base = (DATA.sources && DATA.sources[0] && DATA.sources[0].title) ? DATA.sources[0].title : "quiz";
+    a.href = url; a.download = base.replace(/[\\/:*?"<>|]/g, "_") + ".html";
+    document.body.appendChild(a); a.click();
+    setTimeout(function () { URL.revokeObjectURL(url); a.remove(); }, 0);
+  }
+
+  // ---- MD 파일 로드 (Python 변환 없이 브라우저에서 직접) ----
+  function loadFiles(fileList) {
+    var files = Array.prototype.slice.call(fileList);
+    if (!files.length) return;
+    var pending = files.length, store = [];
+    files.forEach(function (f) {
+      var reader = new FileReader();
+      reader.onload = function () {
+        store.push({ name: f.name, text: String(reader.result || "") });
+        pending--;
+        if (pending === 0) finishLoad(store);
+      };
+      reader.readAsText(f, "utf-8");
+    });
+  }
+  function finishLoad(store) {
+    if (!store.length) return;
+    DATA = window.QuizParser.parseAll(store);
+    save(LS.md, store);
+    buildFilters();
+    state.idx = 0;
+    el.dropHint.classList.add("hidden");
+    render();
+  }
+  function restoreMd() {
+    try {
+      var store = JSON.parse(localStorage.getItem(LS.md));
+      if (store && store.length) { DATA = window.QuizParser.parseAll(store); return true; }
+    } catch (e) {}
+    return false;
+  }
+
+  // ---- events ----
+  el.subjectFilter.addEventListener("change", function () { state.subject = this.value; state.idx = 0; render(); });
+  el.typeFilter.addEventListener("change", function () { state.type = this.value; state.idx = 0; render(); });
+  el.shuffleBtn.addEventListener("click", function () {
+    state.shuffle = !state.shuffle; this.classList.toggle("active", state.shuffle);
+    state.idx = 0; render();
+  });
+  el.wrongBtn.addEventListener("click", function () {
+    state.wrongOnly = !state.wrongOnly; this.classList.toggle("active", state.wrongOnly);
+    state.idx = 0; render();
+  });
+  el.resetBtn.addEventListener("click", function () {
+    if (confirm("맞음/틀림 기록과 공개 상태를 초기화할까요?")) {
+      status = {}; choice = {}; revealed = {}; answers = {};
+      save(LS.status, status); save(LS.choice, choice); save(LS.revealed, revealed); save(LS.answer, answers);
+      render();
+    }
+  });
+  el.revealBtn.addEventListener("click", function (e) { e.stopPropagation(); revealCurrent(); });
+  el.card.addEventListener("click", function () { revealCurrent(); });
+  el.correctBtn.addEventListener("click", function (e) { e.stopPropagation(); mark("correct"); });
+  el.wrongMarkBtn.addEventListener("click", function (e) { e.stopPropagation(); mark("wrong"); });
+  el.prevBtn.addEventListener("click", function () { go(-1); });
+  el.nextBtn.addEventListener("click", function () { go(1); });
+  el.exportBtn.addEventListener("click", function () { exportStandalone(); });
+
+  // 서답형 입력
+  el.userAnswer.addEventListener("click", function (e) { e.stopPropagation(); });
+  el.userAnswer.addEventListener("input", function () {
+    var p = state.list[state.idx];
+    if (!p) return;
+    answers[p.id] = el.userAnswer.value;
+    save(LS.answer, answers);
+    if (revealed[p.id]) updateEssayDiff(p);
+  });
+
+  el.loadBtn.addEventListener("click", function () { el.fileInput.click(); });
+  el.dropLoadBtn.addEventListener("click", function () { el.fileInput.click(); });
+  el.fileInput.addEventListener("change", function () { loadFiles(this.files); this.value = ""; });
+  ["dragenter", "dragover"].forEach(function (ev) {
+    document.addEventListener(ev, function (e) { e.preventDefault(); el.dropHint.classList.add("dragover"); });
+  });
+  ["dragleave", "drop"].forEach(function (ev) {
+    document.addEventListener(ev, function (e) { e.preventDefault(); el.dropHint.classList.remove("dragover"); });
+  });
+  document.addEventListener("drop", function (e) {
+    if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files.length) {
+      loadFiles(e.dataTransfer.files);
+    }
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.target && /^(SELECT|INPUT|TEXTAREA)$/.test(e.target.tagName)) return;
+    if (e.key === "ArrowRight") { go(1); }
+    else if (e.key === "ArrowLeft") { go(-1); }
+    else if (e.key === " " || e.key === "Enter") { e.preventDefault(); revealCurrent(); }
+  });
+
+  // ---- init ----
+  if (window.QUIZ_EMBEDDED) {
+    DATA = window.QUIZ_DATA || { problems: [] };
+  } else if (!restoreMd() && !(window.QUIZ_DATA && window.QUIZ_DATA.problems.length)) {
+    DATA = { problems: [] };
+  }
+  buildFilters();
+  render();
+  if (!DATA.problems.length) el.dropHint.classList.remove("hidden");
+})();
+
+</script>
+</body>
+</html>

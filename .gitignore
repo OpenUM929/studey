@@ -1,0 +1,16 @@
+# 원본 기출 자료 및 중간 산출물 (재생성 가능)
+origin_data/
+extracted/
+
+# OS / 편집기
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Node
+node_modules/
