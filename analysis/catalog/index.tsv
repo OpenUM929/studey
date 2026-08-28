@@ -1,0 +1,132 @@
+﻿type_id	subject_code	unit_major	unit_minor	importance	status_code
+T-01	english	-	-	★★★	verified
+T-02	english	-	-	★★★	verified
+T-03	english	-	-	★★★	verified
+T-04	english	-	-	★★★	verified
+T-05	english	-	-	★★★	verified
+T-06	english	-	-	★★★	verified
+T-07	english	-	-	★★★	verified
+T-08	english	-	-	★★★	verified
+T-09	english	-	-	★★	verified
+T-10	english	-	-	★★★	verified
+T-11	english	-	-	★★	verified
+T-12	english	-	-	★★	verified
+W-01	english	-	-	★★★	verified
+W-02	english	-	-	★★★	verified
+W-03	english	-	-	★★	verified
+W-04	english	-	-	★	verified
+F-01	history	-	-	★★★	verified
+F-02	history	-	-	★★★	verified
+F-03	history	-	-	★★	verified
+F-04	history	-	-	★★★	verified
+F-05	history	-	-	★★	verified
+F-06	history	-	-	★★	verified
+F-07	history	-	-	★★★	verified
+F-08	history	-	-	★★★	verified
+K-01	korean	-	-	★★★	verified
+K-02	korean	-	-	★★★	verified
+K-03	korean	-	-	★★★	verified
+K-04	korean	-	-	★	verified
+K-05	korean	-	-	★★★	verified
+K-06	korean	-	-	★★★	verified
+K-07	korean	-	-	★★★	verified
+K-08	korean	-	-	★★	verified
+K-09	korean	-	-	★★★	verified
+K-10	korean	-	-	★★	verified
+K-11	korean	-	-	★★	verified
+K-12	korean	-	-	★★★	verified
+SM-01	math1	-	-	★★★	verified
+SM-02	math1	-	-	★★★	verified
+SM-03	math1	-	-	★★★	verified
+SM-04	math1	-	-	★★★	verified
+SM-05	math1	-	-	★★★	verified
+SM-06	math1	-	-	★★★	verified
+SM-07	math1	-	-	★★★	verified
+SM-08	math1	-	-	★★★	verified
+SM-09	math1	-	-	★★★	verified
+SM-10	math1	-	-	★★	verified
+SM-11	math1	-	-	★★	verified
+SM-12	math1	-	-	★★★	verified
+SM-13	math1	-	-	★★★	verified
+SM-14	math1	-	-	★★★	verified
+SM-15	math1	-	-	★★★	verified
+SM-16	math1	-	-	★★★	verified
+SM-17	math1	-	-	★★★	verified
+SM-18	math1	-	-	★★	verified
+SM2-01	math2	I.도형의방정식	1.평면좌표	★★	verified_aux
+SM2-02	math2	I.도형의방정식	1.평면좌표	★★	verified_aux
+SM2-03	math2	I.도형의방정식	1.평면좌표	★★	verified_aux
+SM2-04	math2	I.도형의방정식	1.평면좌표	★★	verified_aux
+SM2-05	math2	I.도형의방정식	1.평면좌표	★★	verified_aux
+SM2-06	math2	I.도형의방정식	1.평면좌표	★★	verified_aux
+SM2-07	math2	I.도형의방정식	2.직선의방정식	★★	verified_aux
+SM2-08	math2	I.도형의방정식	2.직선의방정식	★★	verified_aux
+SM2-09	math2	I.도형의방정식	2.직선의방정식	★★★	verified_aux
+SM2-10	math2	I.도형의방정식	2.직선의방정식	★★	verified_aux
+SM2-11	math2	I.도형의방정식	2.직선의방정식	★★	verified_aux
+SM2-12	math2	I.도형의방정식	2.직선의방정식	★★	verified_aux
+SM2-13	math2	I.도형의방정식	2.직선의방정식	★★★	verified_aux
+SM2-14	math2	I.도형의방정식	2.직선의방정식	★★	verified_aux
+SM2-15	math2	I.도형의방정식	3.원의방정식	★★	verified_aux
+SM2-16	math2	I.도형의방정식	3.원의방정식	★★★	verified_aux
+SM2-17	math2	I.도형의방정식	3.원의방정식	★★	verified_aux
+SM2-18	math2	I.도형의방정식	3.원의방정식	★★	verified_aux
+SM2-19	math2	I.도형의방정식	3.원의방정식	★★	verified_aux
+SM2-20	math2	I.도형의방정식	3.원의방정식	★★	verified_aux
+SM2-21	math2	I.도형의방정식	3.원의방정식	★★	verified_aux
+SM2-22	math2	I.도형의방정식	3.원의방정식	★★	verified_aux
+SM2-23	math2	I.도형의방정식	3.원의방정식	★★	verified_aux
+SM2-24	math2	I.도형의방정식	3.원의방정식	★★★	verified_aux
+SM2-25	math2	I.도형의방정식	3.원의방정식	★★	verified_aux
+SM2-26	math2	I.도형의방정식	4.도형의이동	★★	verified_aux
+SM2-27	math2	I.도형의방정식	4.도형의이동	★★	verified_aux
+SM2-28	math2	I.도형의방정식	4.도형의이동	★★★	verified_aux
+SM2-29	math2	I.도형의방정식	4.도형의이동	★★	verified_aux
+SM2-30	math2	I.도형의방정식	4.도형의이동	★★	verified_aux
+SM2-31	math2	I.도형의방정식	4.도형의이동	★★	verified_aux
+SM2-32	math2	I.도형의방정식	4.도형의이동	★★	verified_aux
+SM2-33	math2	I.도형의방정식	4.도형의이동	★★★	verified_aux
+BI-01	science	물질과	규칙성	★★	verified
+BI-02	science	생명시스템	> 유전자와 단백질(핵산)	★★★	verified
+BI-03	science	생명시스템	> 유전자 발현(중심원리)	★★★	verified
+BI-04	science	생명시스템	> 세포와 세포 소기관	★★★	verified
+BI-05	science	생명시스템	> 세포막을 통한 물질 이동	★★★	verified
+BI-06	science	생명시스템	> 물질대사와 효소	★★★	verified
+BI-07	science	물질과	규칙성	★★	verified
+CH-01	science	물질과	규칙성 > 원소의 주기성	★★★	verified
+CH-02	science	물질과	규칙성 > 원자의 전자 배치	★★★	verified
+CH-03	science	물질과	규칙성 > 화학 결합	★★★	verified
+CH-04	science	물질과	규칙성 > 원소의 주기성(반응성)	★★	verified
+CH-05	science	물질과	규칙성 > 규산염 광물 (지각 구성)	★★★	verified
+CH-06	science	물질과	규칙성 > 구성 원소	★★	verified
+ER-01	science	시스템과	상호작용 > 지구시스템(지권)	★★★	verified
+ER-02	science	지구시스템(기권)	-	★★★	verified
+ER-03	science	지구시스템(수권)	-	★★	verified
+ER-04	science	지구시스템(판	구조론)	★★	verified
+ER-05	science	지구시스템(물질	순환·상호작용)	★★★	verified
+ER-06	science	지구시스템(에너지원·상호작용)	-	★★	verified
+GB-01	science	과학의	기초 > 측정과 측정 표준 · 시간과 공간의 측정	★★	verified
+GB-02	science	과학의	기초 > 측정 표준	★	verified
+GB-03	science	과학의	기초 > 측정 표준	★	verified
+GT-01	science	시스템	-	★★★	verified
+GT-02	science	신소재와	반도체	★★★	verified
+GT-03	science	신소재와	반도체	★★	verified
+GT-04	science	과학의	기초 > 정보의 발생·전달, 신소재	★	verified
+GT-05	science	신소재	-	★★	verified
+MC-01	science	시스템과	상호작용 > 역학적 시스템(중력)	★★★	verified
+MC-02	science	시스템과	상호작용 > 역학적 시스템(포물선 운동)	★★★	verified
+MC-03	science	시스템과	상호작용 > 역학적 시스템(운동량·충격량)	★★★	verified
+MC-04	science	시스템과	상호작용 > 역학적 시스템(충돌과 안전)	★★★	verified
+MC-05	science	시스템과	상호작용 > 역학적 시스템(관성·평형)	★★	verified
+MC-06	science	시스템과	상호작용 > 역학적 시스템(중력과 원운동)	★	verified
+UN-01	science	물질과	규칙성 > 우주 초기의 원소 생성	★★★	verified
+UN-02	science	물질과	규칙성 > 별의 진화와 원소 생성	★★★	verified
+UN-03	science	물질과	규칙성 > 스펙트럼과 원소	★★	verified
+UN-04	science	물질과	규칙성 > 지구와 생명체를 구성하는 원소	★★	verified
+F-01	social	-	-	★★★	verified
+F-02	social	-	-	★★★	verified
+F-03	social	-	-	★★★	verified
+F-04	social	-	-	★★★	verified
+F-05	social	-	-	★★★	verified
+F-06	social	-	-	★★	verified
+F-07	social	-	-	★★★	verified

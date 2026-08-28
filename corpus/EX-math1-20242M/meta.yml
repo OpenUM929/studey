@@ -1,0 +1,14 @@
+id: EX-math1-20242M
+title: "2024_2학기_중간_1학년_수학_고사원안.hwp"
+grade: 1
+exam_code: "2024-2M"
+variant: master
+pages: null
+items: 22
+render_dpi: null
+render_tool: "hwp2md.py"
+transcribed_at: 2026-08-26
+method: "hwp2md.py(hwp5html) 본문 변환 + pyhwp ViewText(distdoc 배포용 문서) 레코드 직접 파싱으로 EQED 수식 복원 — marker 161개 = 스크립트 보유 160개 + 빈 개체 1개, 분절 수식 3건은 레코드 순 보존"
+confidence: high
+answer_key: "2학기 중간고사 1학년 선택형 정답.pdf; 2학기 중간고사 1학년 서답형 정답.pdf"
+catalog_ref: null

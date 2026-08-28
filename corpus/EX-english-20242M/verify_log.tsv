@@ -1,0 +1,9 @@
+﻿date	step	target	decision	evidence	reason	confidence	actor
+2026-08-27	transcribe	표지·header	transcribe	txt L1-L14(표지)	총 12쪽·선택형 24문항·서답형 6문항·시행일 2024-10-11 1교시·고사반영 비율 30/30/40·유의사항 전문 등 인쇄값을 그대로 전사했다. 쪽번호 [12 - 4] 포함.	high	type-extractor
+2026-08-27	transcribe	[[BIN0001.jpg]]~[[BIN0006.bmp]] (imgrefs 6건)	transcribe	bindata/BIN0001.jpg(24132),BIN0002.bmp(267174),BIN0003.bmp(819054),BIN0004.bmp(154362),BIN0005.bmp(147530),BIN0006.bmp(6032214) ↔ txt 마커 6건	bindata=6 imgrefs=6 전건 해소 — a(이미지 판독 전사)=6, b(unreadable 보고)=0, m=6 → a+b==m 성립, 미해소 0건. BIN0001 표지 로고, BIN0002 Starry Night 도판, BIN0003 Seasons 도판, BIN0004·0005 대화 아이콘(문자 없음), BIN0006 서답형6 회화 도판(원근 이전 hierarchical scale).	high	type-extractor
+2026-08-27	transcribe	선택형 1~10	transcribe	txt 선택형1~10 블록	지문·보기·선택지·밑줄(ⓐⓑⓒⓓ, ①②③) 및 배점 3.1/3.3/2.8/2.8/2.6/2.7/2.7/2.6/2.6/3.1점을 축자 전사했다. 2번의 표 2개+대화 표 1개 구조 보존.	high	type-extractor
+2026-08-27	transcribe	선택형 11~18	transcribe	txt 선택형11~18 블록	선택형 11~18의 지문(최면·원숭이·AI·Skinner·군중·농구·과학불신·예술보편성) 전문과 요약표·순서표·삽입문 위치 표식(①②③④⑤)을 축자 전사했다. 배점 2.6/2.5/2.5/2.9/3.1/2.5/2.5/3.2점 인쇄값 보존.	high	type-extractor
+2026-08-27	transcribe	선택형 19~24	transcribe	txt 선택형19~24 블록	선택형 19~24의 빈칸·지문(학교·뇌·전자통신·MNM·신문·사진) 전문과 선택지 표를 축자 전사했다. 배점 2.9/3.5/3.5/3.1/3.4/3.5점 인쇄값 보존.	high	type-extractor
+2026-08-27	transcribe	서답형 1~6	transcribe	txt 서답형1~6 블록	서답형 1(사진 편향/ Cartier-Bresson 인터뷰 요약 빈칸 4개·조건 2개), 2(디지털 암흑시대 16단어 영작·필수 6개 단어), 3(구동사 3칸), 4(기후위기 지문+질문 [A]), 5(가정법 (1)(2)(3)), 6(원근법 지문+그림 평가 (A)(B)) 전문과 조건·배점 4/6/6/4/6/4점을 축자 전사했다.	high	type-extractor
+2026-08-27	transcribe	문항 계수 대조	transcribe	txt 전체+표지 선언	표지 선언(선택형 24·서답형 6)과 실측(선택형 1~24 결번·중복 0, 서답형 1~6 결번·중복 0, 총 30문항)이 일치한다. 배점 합계 선택형 70.0+서답형 30.0=100.0 산술 일치. 오차 ±0.	high	type-extractor
+2026-08-27	transcribe	변환 결함 점검(EQED·이미지)	transcribe	origin_data hwp raw bindata vs txt	도구 결함 경고에 따라 HWP 원본 bindata와 변환 txt를 대조한 결과 EQED 수식 레코드 해당 없음(영어 과목 특성상 수식 객체 0건), 표·이미지 마커 6건 전량 보존 — 문자·이미지 손실 없음을 확인했다.	high	type-extractor

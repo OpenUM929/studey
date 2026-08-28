@@ -1,0 +1,7 @@
+date	step	target	decision	evidence	reason	confidence	actor
+2026-08-26	transcribe	전체 25문항(선택형 1~18 + 단답형 1~7)	transcribe	origin_data HWP 복호화 Section0(표지)+Section1(본문) PARA_TEXT 레코드 + hwp2md 변환본 대조	머리말 선언(선택형 18·서답형 7)과 실제 문항 수 25가 일치하고 번호가 연속 — 결번·중복 없음	high	type-extractor
+2026-08-26	transcribe	Section1 수식(EQED) 객체 전수 검사	transcribe	복호화+압축 해제 스트림 50,041바이트 ASCII/UTF-16LE 스캔	hwp2md 알려진 결함(EQED 무흔적 소실) 점검 — EQED 0건이라 소실 대상 없음 확인, 복원 불요	high	type-extractor
+2026-08-26	transcribe	25개 코드 블록의 줄바꿈·들여쓰기	transcribe	Section1 PARA_TEXT 레코드 문자 스트림(임시 스크립트 pyhwp ParaTextChunks 이용)	hwp2md가 표 셀 안 코드를 공백 평탄화 — 원문 문자 스트림에서 줄바꿈·들여쓰기를 직독 복원(8번 3칸 들여쓰기·단답형5 for-else 등 인쇄 그대로)	high	type-extractor
+2026-08-26	transcribe	BIN0001.jpg (imgrefs 1/1 해소)	transcribe	corpus/_images/EX-info-20252F/bindata/BIN0001.jpg 육안 판독	회색 블록+자홍색 세로 띠의 표지 장식 그래픽, 문자 정보 없음 — 문항 내용 무관, a(해소 1)+b(불가 0)=m(1) 충족	high	type-extractor
+2026-08-26	transcribe	머리말 시행 일시 행	transcribe	Section1 레코드 "제 1학년 전반  2025년 12월 15일   2교시" + 변환본 동일	문서 기재값(2025-12-15 2교시)을 전사 — 발주 지시문 smoke-test 값(2025-09-29 3교시)과 불일치하므로 대조 기록 남김	high	type-extractor
+2026-08-26	transcribe	누름틀 필드 "[ 전체 3면 중 N 면 ]" 2위치	transcribe	hwp5html 렌더 결과(변환본 2곳 모두 "1 면")	필드 내부값이 문자 스트림에 직접 노출되지 않아 변환기 렌더값 채택 — 두 위치 모두 "1"로 인쇄된 사실만 기록	medium	type-extractor

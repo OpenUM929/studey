@@ -1,0 +1,10 @@
+date	step	target	decision	evidence	reason	confidence	actor
+2026-08-27	transcribe	표지·header	transcribe	txt L1-L14(표지) + BIN0006	총 7쪽·선택형 24문항·서술형 4문항·시행일 2024-10-08 3교시·고사반영 비율 30/30/40·유의사항 5항 전문 등 인쇄값을 그대로 전사했다. 쪽번호 [ 7 - 4 ] 포함. 로고 BIN0006 해소 완료.	high	type-extractor
+2026-08-27	transcribe	[[BIN0001.jpg]]~[[BIN0007.bmp]] (고유 7건, 마커 8건)	transcribe	bindata/BIN0001.bmp(1059750),BIN0002.bmp(348150),BIN0003.bmp(1430870),BIN0004.bmp(978234),BIN0005.bmp(858678),BIN0006.jpg(24132),BIN0007.bmp(1900470) ↔ txt 마커 8건(고유 7)	bindata=7 imgrefs=7(고유)·txt 마커 8(중복 1 포함) 전건 해소 — a(이미지 판독 전사)=7, b(unreadable 보고)=0, m=7(고유) → a+b==m 성립, 미해소 0건. BIN0003은 동일 이미지 1건에 마커 2회(변환 표 평탄화 중복) — 전사본에 중복 마커 그대로 보존. 고유 7건 해소 내역은 transcript 내 판독 블록 참조.	high	type-extractor
+2026-08-27	transcribe	선택형 1~6	transcribe	txt 선택형1~6 블록	지문·보기·선택지(5지선다) 및 배점 2.3/2.4/2.4/2.5/2.5/2.7점을 축자 전사했다. 2번 BIN0003 판화 삽화, 6번 BIN0005 태극기 도안 포함.	high	type-extractor
+2026-08-27	transcribe	선택형 7~12	transcribe	txt 선택형7~12 블록	선택형 7(BIN0001 베트남 후에 사진)~12(BIN0007 김가진 인물카드)의 지문·<보기>·선택지 및 배점 2.4/2.4/2.5/2.5/2.5/2.7점을 축자 전사했다.	high	type-extractor
+2026-08-27	transcribe	선택형 13~18	transcribe	txt 선택형13~18 블록	선택형 13~18의 지문(3대 문제·신교육·헤이그 만평 BIN0004 포함) 전문과 <보기>·선택지 및 배점 2.4/2.4/2.5/2.5/2.5/2.5점을 축자 전사했다.	high	type-extractor
+2026-08-27	transcribe	선택형 19~24	transcribe	txt 선택형19~24 블록	선택형 19~24의 지문(이범윤 간도, ㈎·㈏ 의병, 이들 도매업, ㈎·㈏ 보안회/지방관, 교육조서, 국채) 전문과 <보기>·선택지 및 배점 2.5/2.5/2.6/2.7/2.6/2.5점을 축자 전사했다.	high	type-extractor
+2026-08-27	transcribe	서술형 1~4	transcribe	txt 서술형1~4 블록	서술형1(조약 불평등 이유 2가지 8점), 서술형2(울릉도 법령·기념일 10점), 서술형3(러일전쟁 개전·조약 10점), 서술형4(광무개혁 12점) 전문과 하위 배점(4/4, 5+2+3, 2+3+2+3, 4+4+4)을 축자 전사했다.	high	type-extractor
+2026-08-27	transcribe	문항 계수 대조	transcribe	txt 전체+표지 선언	표지 선언(선택형 24·서술형 4)과 실측(선택형 1~24 결번·중복 0, 서술형 1~4 결번·중복 0, 총 28문항)이 일치한다. 배점 합계 선택형 60.0+서술형 40.0=100.0 산술 일치. 오차 ±0.	high	type-extractor
+2026-08-27	transcribe	변환 결함 점검(EQED·이미지)	transcribe	origin_data hwp raw bindata vs txt	도구 결함 경고에 따라 HWP 원본 bindata(7)와 변환 txt 마커(8, 고유 7)를 대조한 결과 EQED 수식 레코드 해당 없음(한국사 과목 특성상 수식 객체 0건), 중복 마커 1건은 표 평탄화 산물로 확인 — 문자·이미지 손실 없음을 확인했다.	high	type-extractor

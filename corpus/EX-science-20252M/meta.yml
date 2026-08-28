@@ -1,0 +1,14 @@
+id: EX-science-20252M
+title: "2025_2학기_중간_1학년_통합과학2_고사원안.hwp"
+grade: 1
+exam_code: "2025-2M"
+variant: master
+pages: 7
+items: 29
+render_dpi: null
+render_tool: "hwp2md.py"
+transcribed_at: 2026-08-27
+method: "hwp2md.py 변환 텍스트 + ViewText/Section1 EQED 81건·PARA_TEXT 527건 대조"
+confidence: medium
+answer_key: "2025학년도 2학기 중간고사 정답.pdf"
+catalog_ref: null

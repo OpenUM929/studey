@@ -1,0 +1,4 @@
+﻿date	step	target	decision	evidence	reason	confidence	actor
+2026-08-27	transcribe	표지·문항 계수	transcribed	extracted\2025-2학기\중간\정보.txt L1-L15 + 정답.pdf p1,p2	표지의 3쪽·선택형 18·서답형 7 선언과 본문의 선택형 1~18·단답형 1~7 연속 표기를 대조했다. 선택형 70점+단답형 30점=100점이다.	high	Codex/OMX
+2026-08-27	transcribe	본문·파이썬 코드 25문항	transcribed	extracted\2025-2학기\중간\정보.txt (7301 bytes)	변환 텍스트의 코드·선택지·배점·단답형 답란을 축자 전사했다. 표 셀 안 코드의 줄바꿈은 변환본의 공백 평탄화 상태를 보존했다.	high	Codex/OMX
+2026-08-27	transcribe	BIN0001.jpg	transcribed	corpus/_images/EX-info-20252M/bindata/BIN0001.jpg + extracted\2025-2학기\중간\정보.txt L12	고유 bindata와 본문 참조가 모두 1건이다. 학교 로고 장식으로 문자 정보가 없으며 판독불가 0건이다.	high	Codex/OMX

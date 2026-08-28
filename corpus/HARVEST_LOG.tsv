@@ -1,0 +1,38 @@
+﻿date	corpus_id	new_types	freq_update	weakness_evidence	remaining	note
+260825	SUP-math2-2026	SM2-01~SM2-33	-	WK-01(E5) 보강	93문항 전사본 유실; 별도 세션 재판독	소급 등록(구 EXTRACTION_LOG #37) — ID v2 명명 적용(SUP-M2-2026→SUP-math2-2026)
+260825	EX-korean-20241M	-	-	-	-	소급 등록 — 레거시 위치 유지(origin_data/2024_1학기_1학년_중간/); 회차 공용 정답지 2건 동반
+260825	EX-math1-20241M	-	-	-	-	〃 (⚠ HWP 수식 개체 소실)
+260825	EX-english-20241M	-	-	-	-	〃
+260825	EX-science-20241M	-	-	-	-	〃
+260825	EX-social-20241M	-	-	-	-	〃
+260825	EX-history-20241M	-	-	-	-	〃
+260825	EX-korean-20241F	-	-	-	-	소급 등록 — 레거시 위치 유지(origin_data/2024_1학기_1학년_기말/); 회차 공용 정답지 2건 동반
+260825	EX-math1-20241F	-	-	-	-	〃 (⚠ HWP 수식 개체 소실)
+260825	EX-english-20241F	-	-	-	-	〃
+260825	EX-science-20241F	-	-	-	-	〃
+260825	EX-social-20241F	-	-	-	-	〃
+260825	EX-history-20241F	-	-	-	-	〃
+260825	EX-korean-20251M	-	-	-	-	소급 등록 — 레거시 위치 유지(origin_data/2025_1학기_1학년_중간/); 공식 정답 1건 동반
+260825	EX-math1-20251M	-	-	-	-	〃 (⚠ HWP 수식 개체 소실)
+260825	EX-english-20251M	-	-	-	-	〃
+260825	EX-science-20251M	-	-	WK-01(E5) 기원(중간 9번 SM-11)	-	〃 + 통합과학 스캔 중복본 동반(구 #17)
+260825	EX-social-20251M	-	-	-	-	〃
+260825	EX-history-20251M	-	-	-	-	〃
+260825	EX-korean-20251F	-	-	-	-	소급 등록 — 레거시 위치 유지(origin_data/2025_1학기_1학년_기말/); 공식 정답 1건 동반
+260825	EX-math1-20251F	-	-	-	-	〃 (⚠ HWP 수식 개체 소실)
+260825	EX-english-20251F	-	-	-	-	〃
+260825	EX-science-20251F	-	-	-	-	〃
+260825	EX-social-20251F	-	-	-	-	〃
+260825	EX-history-20251F	-	-	-	-	〃
+260825	EX-math1-20261M	-	-	오답분석 대상(학생 필기)	텍스트 전사 미완	260825 origin_data/26_1_1/에서 이전(PRD A7) — variant=student(학생 응시본)
+260825	EX-math1-20261F	-	-	〃	〃	〃
+260825	EX-english-20261M	-	-	〃	〃	〃
+260825	EX-english-20261F	-	-	〃	〃	〃
+260825	EX-science-20261M	-	-	〃	〃	〃
+260825	EX-science-20261F	-	-	〃	〃	〃
+260825	EX-social-20261M	-	-	〃	〃	〃
+260825	EX-social-20261F	-	-	〃	〃	〃
+260825	EX-history-20261M	-	-	〃	〃	〃
+260825	EX-history-20261F	-	-	〃	〃	〃
+260825	NY-math1-2021	-	배점 실측(난이도 루브릭)	-	-	260825 루트 test/에서 이전(PRD A6, git 추적 파일) — 문제·답 pdf/txt 4건
+260825	NY-math1-2022	-	배점 실측(난이도 루브릭)	-	-	〃

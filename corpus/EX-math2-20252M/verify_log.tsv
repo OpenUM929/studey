@@ -1,0 +1,9 @@
+﻿date	step	target	decision	evidence	reason	confidence	actor
+2026-08-27	transcribe	전체 문항(서술형 1~4·단답형 1~18)	transcribed	HWP ViewText/Section1 EQED 188건 + PARA_TEXT 66문단 + hwp2md 텍스트	수식 개체 누락을 원본 제어 레코드와 문단 순서로 재삽입; 문항수 4+18=22, 배점 40.0+60.0=100.0, 결번·중복 0	medium	Codex/OMX
+2026-08-27	transcribe	그림 3건(BIN0001~BIN0003)	transcribed	corpus/_images/EX-math2-20252M/bindata 3파일 ↔ 원문 참조 3건	표지 로고·15번 원 이동 도식·17번 포물선/접선/원 도식을 원본 파일과 대조	medium	Codex/OMX
+2026-08-27	transcribe	17번 풀이표 (가)	transcribed	원본 EQED 스크립트 154 + 본문/표 제어 레코드	(가) 자리에 `-1/(2a)`가 기록됨. (나) 및 f(k) 값은 본 전사 단계에서 확정하지 않음	medium	Codex/OMX
+
+2026-08-28	transcribe	그림 3건(BIN0001~BIN0003)	corrected	origin_data/2025_2학기_1학년_중간/2025_2학기_중간_1학년_공통수학2_고사원안.hwp:BinData/* -> corpus/EX-math2-20252M/_images/bindata/*	Previously cited image directory was absent; three source streams were re-extracted byte-for-byte. BIN0002.bmp sha256=5bfb3b081a12a0a2967ce3c4f6a4671ffc7960780bcb760432b855dc91b199b0.	high	type-extractor
+2026-08-28	transcribe	단답형 15 <보기> 5개	corrected	ViewText/Section1 EQED seqno 1384,1386,1392,1394,1400 + corpus/EX-math2-20252M/_images/bindata/BIN0002.bmp	Five original equation scripts and the embedded diagram were transcribed; no answer or type judgment was added.	high	type-extractor
+2026-08-28	transcribe	단답형 17 f 정의	unreadable	ViewText/Section1 EQED seqno 1668 f(a); seqno 1672 f(k)	The source contains symbols f(a) and f(k) but no defining equation for f; final f(k) must not be inferred from the item or answer key.	high	type-extractor
+2026-08-28	transcribe	meta.yml answer_key	corrected	docs/DATA_STANDARD.md 5.7 answer_key + origin_data/2025_2학기_1학년_중간/2학기 중간고사 정답 - 1학년.pdf	The shared answer PDF is not an answers.* file within this corpus unit, so answer_key is null; external answer-key comparison requires an explicit frozen input.	high	type-extractor

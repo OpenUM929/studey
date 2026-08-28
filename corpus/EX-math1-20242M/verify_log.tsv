@@ -1,0 +1,9 @@
+date	step	target	decision	evidence	reason	confidence	actor
+2026-08-26	transcribe	표지·머리말(시행일·쪽수·문항수·배점·유의사항)	transcribe	extracted/2024-2학기/중간/수학.txt L1-13 + ViewText/Section0 레코드 전사본 상호 대조	2024-10-10 1교시, 총 6쪽, 단답형 18·서술형 4, 고사반영 30/30/40 인쇄값을 두 경로에서 동일하게 확인	high	type-extractor
+2026-08-26	transcribe	단답형 1~9번	transcribe	ViewText/Section1 레코드 + extracted txt L16-47	hwp5html이 삭제한 EQED 수식을 레코드에서 복원, 계수·부호·단위 원본 그대로; 보기(2·7번) 표 구조는 hwp2md 변환본 인용	high	type-extractor
+2026-08-26	transcribe	단답형 10~18번	transcribe	ViewText/Section1 레코드 + extracted txt L48-63	동일 방법 복원; 배점 3.4~3.72 인쇄값 기록, 단답형 합계 60.00점 산술 확인	high	type-extractor
+2026-08-26	transcribe	서술형 1~4번	transcribe	ViewText/Section2 레코드 + extracted txt L70-75	각 10점(서술형3은 소문항 3/3/4점), (가)(나)(다) 조건 포함 전문 전사	high	type-extractor
+2026-08-26	transcribe	EQED 수식 복원(전체)	transcribe	ViewText/Section0-2 총 2120레코드, EQED 개체 161개	hwp2md.py가 수식을 흔적 없이 삭제하는 결함(260826 경고)에 대해 레코드 직접 파싱으로 복원 — marker 161 = script 160 + 빈 개체 1, 고아 스크립트 0	high	type-extractor
+2026-08-26	transcribe	빈 수식 개체(단답형 7~8 사이)	transcribe	ViewText/Section1 idx=560 EQED payload(hex 00000000 0000 4c04…)	스크립트 길이 0의 공식 개체 — 내용 없음을 레코드로 실증, 판독불가가 아님	high	type-extractor
+2026-08-26	transcribe	BIN0001.jpg(표지 로고 그래픽)	transcribe	corpus/_images/EX-math1-20242M/bindata/BIN0001.jpg	회색 사각형 4개+자홍색 세로 막대 로고형 그래픽, 문자 없음; imgrefs 1 = bindata 1 (a+b==m 성립)	high	type-extractor
+2026-08-26	transcribe	분절 수식 3건(단답형 16·18, 서술형3 U 정의)	transcribe	ViewText 레코드 순서	한 수식이 수식 개체 3개+본문 조각으로 분절 기록 — 원문 배열 추정 대신 레코드 순 그대로 두고 ⌈⌉ 표시, 해석 개입 없음	medium	type-extractor

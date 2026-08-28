@@ -1,0 +1,4 @@
+date	step	target	decision	evidence	reason	confidence	actor
+2026-08-27	transcribe	전체 문항(선택형 23·서술형 6)	transcribed	변환 텍스트+표지 선언+배점 표식 31건	문항수 23+6=29 일치; 선택형 배점 23건·서술 소문항 배점 8건을 원문 그대로 보존	medium	Codex/OMX
+2026-08-27	transcribe	수식 EQED 81건	transcribed	HWP ViewText/Section1 제어 레코드	변환 공란 수식의 원문 제어문자열을 별도 부록에 순서 보존; 표·그래픽 내부 위치 판정은 보류	medium	Codex/OMX
+2026-08-27	transcribe	이미지 참조 22회/18건	transcribed	원문 marker와 bindata 18파일	고유 참조와 원본 bindata 파일 수 일치	medium	Codex/OMX

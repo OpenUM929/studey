@@ -6,25 +6,25 @@
 
 **세 축으로 문제를 준비한다:**
 - **내용 축(무엇을)** — 아래 과목별 카탈로그.
-- **형식·인지 축(어떻게 묻는가)** — [catalog/출제유형_마스터.md](catalog/출제유형_마스터.md) ⭐ *단원 독립.*
-- **난이도 축(어느 수준으로)** — [catalog/난이도_루브릭.md](catalog/난이도_루브릭.md) ⭐ *목표 배점→특징 레시피+자기검증.*
+- **형식·인지 축(어떻게 묻는가)** — [catalog/TYPE_MASTER.md](catalog/TYPE_MASTER.md) ⭐ *단원 독립.*
+- **난이도 축(어느 수준으로)** — [catalog/DIFFICULTY_RUBRIC.md](catalog/DIFFICULTY_RUBRIC.md) ⭐ *목표 배점→특징 레시피+자기검증.*
 
 | 과목 | 정본 파일 | 상태 |
 |------|----------|------|
-| **출제 유형 마스터(단원 독립)** | [catalog/출제유형_마스터.md](catalog/출제유형_마스터.md) | ✅ ⭐ |
-| 공통 출제 문법 | [catalog/공통유형.md](catalog/공통유형.md) | ✅ |
-| 통합과학1 | [catalog/통합과학.md](catalog/통합과학.md) | ✅ (24·25·26 전 6회) |
-| 공통수학1 | [catalog/수학.md](catalog/수학.md) | ✅ (26 정밀) |
-| **공통수학2 (2학기)** | [catalog/공통수학2.md](catalog/공통수학2.md) | ✅ (26 부교재 93문항 / SM2-01~33) |
-| 공통영어1 | [catalog/영어.md](catalog/영어.md) | ✅ (24·25) |
-| 통합사회1 | [catalog/통합사회.md](catalog/통합사회.md) | ✅ (24·25) |
-| 한국사1 | [catalog/한국사.md](catalog/한국사.md) | ✅ (24·25) |
-| 공통국어1 | [catalog/국어.md](catalog/국어.md) | ✅ (24·25) |
+| **출제 유형 마스터(단원 독립)** | [catalog/TYPE_MASTER.md](catalog/TYPE_MASTER.md) | ✅ ⭐ |
+| 공통 출제 문법 | [catalog/COMMON_TYPES.md](catalog/COMMON_TYPES.md) | ✅ |
+| 통합과학1 | [catalog/science.md](catalog/science.md) | ✅ (24·25·26 전 6회) |
+| 공통수학1 | [catalog/math1.md](catalog/math1.md) | ✅ (26 정밀) |
+| **공통수학2 (2학기)** | [catalog/math2.md](catalog/math2.md) | ✅ (26 부교재 93문항 / SM2-01~33) |
+| 공통영어1 | [catalog/english.md](catalog/english.md) | ✅ (24·25) |
+| 통합사회1 | [catalog/social.md](catalog/social.md) | ✅ (24·25) |
+| 한국사1 | [catalog/history.md](catalog/history.md) | ✅ (24·25) |
+| 공통국어1 | [catalog/korean.md](catalog/korean.md) | ✅ (24·25) |
 
-- **특정 회차 시험 유형 예측(중간/기말 대비)**: [`시험예측_지침.md`](시험예측_지침.md) ⭐
+- **특정 회차 시험 유형 예측(중간/기말 대비)**: [`FORECAST_GUIDE.md`](FORECAST_GUIDE.md) ⭐
   — 기출(1차)과 부교재(2차)를 **합쳐** 회차별 유형 **A~E 등급**을 산정하는 절차.
   회차 범위 확정, 적중률 3지표(반영률·커버율·**사각지대**), 사후 채점 루프를 담는다.
-- **생성 실전 운영(파이프라인·모델·저작권·검증)**: [catalog/생성_운영지침.md](catalog/생성_운영지침.md) ⭐
+- **생성 실전 운영(파이프라인·모델·저작권·검증)**: [catalog/AUTHORING_GUIDE.md](catalog/AUTHORING_GUIDE.md) ⭐
 - **범위 가드(교육과정 대조)**: [`curriculum_2022.md`](curriculum_2022.md) — 공통수학2의 외분 삭제·
   임의 직선 대칭 초과 출제 등 **문제 생성 전 반드시 확인**
 - 원본 자료 처리 현황: [`EXTRACTION_LOG.md`](EXTRACTION_LOG.md) (중복 추출 방지 정본)
@@ -33,5 +33,5 @@
 ## 구(舊) 시연 유형의 이관 기록 (append-only 원칙)
 
 초기 시연 유형 M-01~M-04(역학적 시스템, 260713 등록)는 삭제하지 않고
-[catalog/통합과학.md](catalog/통합과학.md)의 "시연 유형(기출 미확인)" 절로 이관했다.
+[catalog/science.md](catalog/science.md)의 "시연 유형(기출 미확인)" 절로 이관했다.
 기출 분석에서 동일 유형이 확인되면 해당 파일에서 상태를 `검증`으로 올린다.

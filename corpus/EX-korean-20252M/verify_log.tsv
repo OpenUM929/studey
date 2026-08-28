@@ -1,0 +1,12 @@
+﻿date	step	target	decision	evidence	reason	confidence	actor
+2026-08-27	transcribe	표지·header	transcribe	txt L1-L13(표지)	총 15쪽·선택형 29문항·서술형 3문항·시행 2025-10-01 1교시·고사반영 30/30/40 인쇄값을 그대로 전사했다. 유의사항 전문 포함.	high	type-extractor
+2026-08-27	transcribe	[[BIN0001.jpg]]	transcribe	bindata/BIN0001.jpg(939 bytes)	imgrefs 1건을 직접 해소했다 — 표지 중앙 상산고 로고 장식(회색 2×2 사각 + 진홍 세로 띠, 문자 없음). 미해소 0건(a=1,b=0,m=1,a+b==m).	high	type-extractor
+2026-08-27	transcribe	선택형 1~6	transcribe	txt [1~4] 블록 + [5~6] 블록	지문(제망매가 전문·원문 한자 병기) 및 문항 1~6을 축자 전사했다. 배점 1.7/2.2/1.5/2.5/2.5/1.6 인쇄값 보존. 고유문자(生死路隱 등)는 변환 매핑값 그대로 보존.	high	type-extractor
+2026-08-27	transcribe	선택형 7~12 + 서술형 1	transcribe	txt [서술형 1] 블록 포함 7~12	지문(오백년 도읍지—길재, 속미인곡—정철) 및 문항 7~12, 서술형 1-1(음보율 10자 이내 7점)·1-2(표현법 15자 이내 6점)를 축자 전사했다. 배점 2.1/1.7/2.6/1.4/2.1/2.1 인쇄값 보존. Private Use 문자(· 등)는 변환값 축자 보존.	high	type-extractor
+2026-08-27	transcribe	선택형 13~17 + 서술형2	transcribe	txt [13~17, 서술형2] 블록	지문(춘향전 판소리계 소설 [가][나] 전문) 및 문항 13~17, 서술형2([나] 반어 문장 ㊀ + 시련 상징 보조관념 2개 ㊁, 15점, 보조관념 주어 서술 조건)를 축자 전사했다. 배점 2.1/1.6/1.7/2.8/1.9 인쇄값 보존.	high	type-extractor
+2026-08-27	transcribe	선택형 18~22	transcribe	txt [18~22] 블록	지문(백석 수라 전문 + 오리 망아지 토끼·남신의주 유동 박시봉방 보기) 및 문항 18~22를 축자 전사했다. 배점 2.1/1.6/2.1/2.5/2.6 인쇄값 보존. 각주(* 삿·쥔·딜옹배기 등) 전문 포함.	high	type-extractor
+2026-08-27	transcribe	선택형 23~26 + 서술형 3	transcribe	txt [23, 서술형 3] + [24~26] 블록	지문(윤흥길 아홉 켤레의 구두로 남은 사내 전문 — ㉠~㉤, ⓐ~ⓔ 포함) 및 문항 23~26, 서술형 3(ⓐ·ⓑ 각 6점, 표 「인물|성격|근거」)을 축자 전사했다. 배점 2.4/1.2/2.4/1.5 인쇄값 보존. 중략 표시 포함.	high	type-extractor
+2026-08-27	transcribe	선택형 27~29	transcribe	txt [27~29] 블록	지문(공선옥 명랑한 밤길 전문 — Ⓐ 포함) 및 보기(택배—정호승, 곡비—문정희) 와 문항 27~29를 축자 전사했다. 배점 2.3/2.5/2.7 인쇄값 보존. 말미 저작권 문구 반복 포함.	high	type-extractor
+2026-08-27	transcribe	문항 계수 대조	transcribe	txt 전체 + 표지 선언	표지 선언(선택형 29·서술형 3)=32 ↔ 추출(선택형 1~29 연속 29건 + 서술형 블록 3건)=32 일치, 결번 0건·중복 0건·편차 ±0. 배점 표기 32건([n.n 점] 정규식) 확인.	high	type-extractor
+2026-08-27	transcribe	변환 고유문자·EQED	transcribe	origin_data hwp raw + txt	HWP 옛한글 Private Use 문자(······· 등)는 변환 매핑값 그대로 보존(판독불가 아님). 국어 과목 특성상 수식·좌표 객체 EQED 해당 0건 — 수식 손실 없음 확인.	high	type-extractor
+2026-08-27	transcribe	이미지 수율·판독불가	transcribe	bindata vs imgrefs + 전 문항	imgrefs 1건 전건 해소(b=0,m=1,a+b==m), 판독불가 0건. 전 문항 문자·지문·보기·각주·표 모두 판독 가능.	high	type-extractor

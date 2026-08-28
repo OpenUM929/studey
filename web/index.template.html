@@ -5,6 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>문제 풀이 뷰어</title>
 <link rel="stylesheet" href="style.css">
+<style>
+  .mark.unsure { background:#fff6df; border-color:#d9a400; color:#8a6d00; }
+  .mark.blank  { background:#f0f1f3; border-color:#b9bfc7; color:#5a616b; }
+  /* 오답 귀인 선택 (DATA_STANDARD §4.1-A) */
+  .fail-row { display:flex; align-items:center; gap:6px; flex-wrap:wrap; margin-top:8px; }
+  .fail-row.hidden { display:none; }
+  .fail-label { font-size:13px; font-weight:600; color:#8a2b2b; }
+  .fail-btn { padding:3px 10px; border:1px solid #d9a9a9; border-radius:12px;
+              background:#fff; color:#8a2b2b; font-size:13px; cursor:pointer; }
+  .fail-btn.active { background:#8a2b2b; border-color:#8a2b2b; color:#fff; }
+  .fail-hint { font-size:12px; color:#8b93a1; }
+</style>
 </head>
 <body>
 <header id="topbar">
@@ -14,6 +26,7 @@
     <select id="typeFilter" title="유형 필터"></select>
     <button id="loadBtn" type="button">📂 MD 불러오기</button>
     <button id="exportBtn" type="button">📤 공유 HTML</button>
+    <button id="exportTsvBtn" type="button">🧾 채점 TSV</button>
     <button id="shuffleBtn" type="button">🔀 셔플</button>
     <button id="wrongBtn" type="button">📕 오답노트</button>
     <button id="resetBtn" type="button">↺ 진도초기화</button>
@@ -48,8 +61,11 @@
       <div id="explanation" class="explanation"></div>
       <div class="mark-row" id="markRow">
         <button id="correctBtn" type="button" class="mark correct">✅ 맞았어요</button>
+        <button id="unsureBtn" type="button" class="mark unsure">△ 애매해요</button>
         <button id="wrongMarkBtn" type="button" class="mark wrong">❌ 틀렸어요</button>
+        <button id="blankBtn" type="button" class="mark blank">/ 백지</button>
       </div>
+      <div class="fail-row hidden" id="failRow"></div>
     </div>
   </section>
 </main>

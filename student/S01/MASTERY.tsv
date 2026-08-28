@@ -1,0 +1,132 @@
+﻿type_id	unit	importance	attempts	o_count	amb_count	wrong_count	blank_count	last3	status_code
+T-01	-/-	★★★	0	0	0	0	0	---	unmeasured
+T-02	-/-	★★★	0	0	0	0	0	---	unmeasured
+T-03	-/-	★★★	0	0	0	0	0	---	unmeasured
+T-04	-/-	★★★	0	0	0	0	0	---	unmeasured
+T-05	-/-	★★★	0	0	0	0	0	---	unmeasured
+T-06	-/-	★★★	0	0	0	0	0	---	unmeasured
+T-07	-/-	★★★	0	0	0	0	0	---	unmeasured
+T-08	-/-	★★★	0	0	0	0	0	---	unmeasured
+T-09	-/-	★★	0	0	0	0	0	---	unmeasured
+T-10	-/-	★★★	0	0	0	0	0	---	unmeasured
+T-11	-/-	★★	0	0	0	0	0	---	unmeasured
+T-12	-/-	★★	0	0	0	0	0	---	unmeasured
+W-01	-/-	★★★	0	0	0	0	0	---	unmeasured
+W-02	-/-	★★★	0	0	0	0	0	---	unmeasured
+W-03	-/-	★★	0	0	0	0	0	---	unmeasured
+W-04	-/-	★	0	0	0	0	0	---	unmeasured
+F-01	-/-	★★★	0	0	0	0	0	---	unmeasured
+F-02	-/-	★★★	0	0	0	0	0	---	unmeasured
+F-03	-/-	★★	0	0	0	0	0	---	unmeasured
+F-04	-/-	★★★	0	0	0	0	0	---	unmeasured
+F-05	-/-	★★	0	0	0	0	0	---	unmeasured
+F-06	-/-	★★	0	0	0	0	0	---	unmeasured
+F-07	-/-	★★★	0	0	0	0	0	---	unmeasured
+F-08	-/-	★★★	0	0	0	0	0	---	unmeasured
+K-01	-/-	★★★	0	0	0	0	0	---	unmeasured
+K-02	-/-	★★★	0	0	0	0	0	---	unmeasured
+K-03	-/-	★★★	0	0	0	0	0	---	unmeasured
+K-04	-/-	★	0	0	0	0	0	---	unmeasured
+K-05	-/-	★★★	0	0	0	0	0	---	unmeasured
+K-06	-/-	★★★	0	0	0	0	0	---	unmeasured
+K-07	-/-	★★★	0	0	0	0	0	---	unmeasured
+K-08	-/-	★★	0	0	0	0	0	---	unmeasured
+K-09	-/-	★★★	0	0	0	0	0	---	unmeasured
+K-10	-/-	★★	0	0	0	0	0	---	unmeasured
+K-11	-/-	★★	0	0	0	0	0	---	unmeasured
+K-12	-/-	★★★	0	0	0	0	0	---	unmeasured
+SM-01	-/-	★★★	0	0	0	0	0	---	unmeasured
+SM-02	-/-	★★★	0	0	0	0	0	---	unmeasured
+SM-03	-/-	★★★	0	0	0	0	0	---	unmeasured
+SM-04	-/-	★★★	0	0	0	0	0	---	unmeasured
+SM-05	-/-	★★★	0	0	0	0	0	---	unmeasured
+SM-06	-/-	★★★	0	0	0	0	0	---	unmeasured
+SM-07	-/-	★★★	0	0	0	0	0	---	unmeasured
+SM-08	-/-	★★★	0	0	0	0	0	---	unmeasured
+SM-09	-/-	★★★	0	0	0	0	0	---	unmeasured
+SM-10	-/-	★★	0	0	0	0	0	---	unmeasured
+SM-11	-/-	★★	0	0	0	0	0	---	unmeasured
+SM-12	-/-	★★★	0	0	0	0	0	---	unmeasured
+SM-13	-/-	★★★	0	0	0	0	0	---	unmeasured
+SM-14	-/-	★★★	0	0	0	0	0	---	unmeasured
+SM-15	-/-	★★★	0	0	0	0	0	---	unmeasured
+SM-16	-/-	★★★	0	0	0	0	0	---	unmeasured
+SM-17	-/-	★★★	0	0	0	0	0	---	unmeasured
+SM-18	-/-	★★	0	0	0	0	0	---	unmeasured
+SM2-01	I.도형의방정식/1.평면좌표	★★	0	0	0	0	0	---	unmeasured
+SM2-02	I.도형의방정식/1.평면좌표	★★	0	0	0	0	0	---	unmeasured
+SM2-03	I.도형의방정식/1.평면좌표	★★	0	0	0	0	0	---	unmeasured
+SM2-04	I.도형의방정식/1.평면좌표	★★	0	0	0	0	0	---	unmeasured
+SM2-05	I.도형의방정식/1.평면좌표	★★	0	0	0	0	0	---	unmeasured
+SM2-06	I.도형의방정식/1.평면좌표	★★	0	0	0	0	0	---	unmeasured
+SM2-07	I.도형의방정식/2.직선의방정식	★★	0	0	0	0	0	---	unmeasured
+SM2-08	I.도형의방정식/2.직선의방정식	★★	0	0	0	0	0	---	unmeasured
+SM2-09	I.도형의방정식/2.직선의방정식	★★★	0	0	0	0	0	---	unmeasured
+SM2-10	I.도형의방정식/2.직선의방정식	★★	0	0	0	0	0	---	unmeasured
+SM2-11	I.도형의방정식/2.직선의방정식	★★	0	0	0	0	0	---	unmeasured
+SM2-12	I.도형의방정식/2.직선의방정식	★★	0	0	0	0	0	---	unmeasured
+SM2-13	I.도형의방정식/2.직선의방정식	★★★	0	0	0	0	0	---	unmeasured
+SM2-14	I.도형의방정식/2.직선의방정식	★★	0	0	0	0	0	---	unmeasured
+SM2-15	I.도형의방정식/3.원의방정식	★★	0	0	0	0	0	---	unmeasured
+SM2-16	I.도형의방정식/3.원의방정식	★★★	0	0	0	0	0	---	unmeasured
+SM2-17	I.도형의방정식/3.원의방정식	★★	0	0	0	0	0	---	unmeasured
+SM2-18	I.도형의방정식/3.원의방정식	★★	0	0	0	0	0	---	unmeasured
+SM2-19	I.도형의방정식/3.원의방정식	★★	0	0	0	0	0	---	unmeasured
+SM2-20	I.도형의방정식/3.원의방정식	★★	0	0	0	0	0	---	unmeasured
+SM2-21	I.도형의방정식/3.원의방정식	★★	0	0	0	0	0	---	unmeasured
+SM2-22	I.도형의방정식/3.원의방정식	★★	0	0	0	0	0	---	unmeasured
+SM2-23	I.도형의방정식/3.원의방정식	★★	0	0	0	0	0	---	unmeasured
+SM2-24	I.도형의방정식/3.원의방정식	★★★	0	0	0	0	0	---	unmeasured
+SM2-25	I.도형의방정식/3.원의방정식	★★	0	0	0	0	0	---	unmeasured
+SM2-26	I.도형의방정식/4.도형의이동	★★	0	0	0	0	0	---	unmeasured
+SM2-27	I.도형의방정식/4.도형의이동	★★	0	0	0	0	0	---	unmeasured
+SM2-28	I.도형의방정식/4.도형의이동	★★★	0	0	0	0	0	---	unmeasured
+SM2-29	I.도형의방정식/4.도형의이동	★★	0	0	0	0	0	---	unmeasured
+SM2-30	I.도형의방정식/4.도형의이동	★★	0	0	0	0	0	---	unmeasured
+SM2-31	I.도형의방정식/4.도형의이동	★★	0	0	0	0	0	---	unmeasured
+SM2-32	I.도형의방정식/4.도형의이동	★★	0	0	0	0	0	---	unmeasured
+SM2-33	I.도형의방정식/4.도형의이동	★★★	0	0	0	0	0	---	unmeasured
+BI-01	물질과/규칙성	★★	0	0	0	0	0	---	unmeasured
+BI-02	생명시스템/> 유전자와 단백질(핵산)	★★★	0	0	0	0	0	---	unmeasured
+BI-03	생명시스템/> 유전자 발현(중심원리)	★★★	0	0	0	0	0	---	unmeasured
+BI-04	생명시스템/> 세포와 세포 소기관	★★★	0	0	0	0	0	---	unmeasured
+BI-05	생명시스템/> 세포막을 통한 물질 이동	★★★	0	0	0	0	0	---	unmeasured
+BI-06	생명시스템/> 물질대사와 효소	★★★	0	0	0	0	0	---	unmeasured
+BI-07	물질과/규칙성	★★	0	0	0	0	0	---	unmeasured
+CH-01	물질과/규칙성 > 원소의 주기성	★★★	0	0	0	0	0	---	unmeasured
+CH-02	물질과/규칙성 > 원자의 전자 배치	★★★	0	0	0	0	0	---	unmeasured
+CH-03	물질과/규칙성 > 화학 결합	★★★	0	0	0	0	0	---	unmeasured
+CH-04	물질과/규칙성 > 원소의 주기성(반응성)	★★	0	0	0	0	0	---	unmeasured
+CH-05	물질과/규칙성 > 규산염 광물 (지각 구성)	★★★	0	0	0	0	0	---	unmeasured
+CH-06	물질과/규칙성 > 구성 원소	★★	0	0	0	0	0	---	unmeasured
+ER-01	시스템과/상호작용 > 지구시스템(지권)	★★★	0	0	0	0	0	---	unmeasured
+ER-02	지구시스템(기권)/-	★★★	0	0	0	0	0	---	unmeasured
+ER-03	지구시스템(수권)/-	★★	0	0	0	0	0	---	unmeasured
+ER-04	지구시스템(판/구조론)	★★	0	0	0	0	0	---	unmeasured
+ER-05	지구시스템(물질/순환·상호작용)	★★★	0	0	0	0	0	---	unmeasured
+ER-06	지구시스템(에너지원·상호작용)/-	★★	0	0	0	0	0	---	unmeasured
+GB-01	과학의/기초 > 측정과 측정 표준 · 시간과 공간의 측정	★★	0	0	0	0	0	---	unmeasured
+GB-02	과학의/기초 > 측정 표준	★	0	0	0	0	0	---	unmeasured
+GB-03	과학의/기초 > 측정 표준	★	0	0	0	0	0	---	unmeasured
+GT-01	시스템/-	★★★	0	0	0	0	0	---	unmeasured
+GT-02	신소재와/반도체	★★★	0	0	0	0	0	---	unmeasured
+GT-03	신소재와/반도체	★★	0	0	0	0	0	---	unmeasured
+GT-04	과학의/기초 > 정보의 발생·전달, 신소재	★	0	0	0	0	0	---	unmeasured
+GT-05	신소재/-	★★	0	0	0	0	0	---	unmeasured
+MC-01	시스템과/상호작용 > 역학적 시스템(중력)	★★★	0	0	0	0	0	---	unmeasured
+MC-02	시스템과/상호작용 > 역학적 시스템(포물선 운동)	★★★	0	0	0	0	0	---	unmeasured
+MC-03	시스템과/상호작용 > 역학적 시스템(운동량·충격량)	★★★	0	0	0	0	0	---	unmeasured
+MC-04	시스템과/상호작용 > 역학적 시스템(충돌과 안전)	★★★	0	0	0	0	0	---	unmeasured
+MC-05	시스템과/상호작용 > 역학적 시스템(관성·평형)	★★	0	0	0	0	0	---	unmeasured
+MC-06	시스템과/상호작용 > 역학적 시스템(중력과 원운동)	★	0	0	0	0	0	---	unmeasured
+UN-01	물질과/규칙성 > 우주 초기의 원소 생성	★★★	0	0	0	0	0	---	unmeasured
+UN-02	물질과/규칙성 > 별의 진화와 원소 생성	★★★	0	0	0	0	0	---	unmeasured
+UN-03	물질과/규칙성 > 스펙트럼과 원소	★★	0	0	0	0	0	---	unmeasured
+UN-04	물질과/규칙성 > 지구와 생명체를 구성하는 원소	★★	0	0	0	0	0	---	unmeasured
+F-01	-/-	★★★	0	0	0	0	0	---	unmeasured
+F-02	-/-	★★★	0	0	0	0	0	---	unmeasured
+F-03	-/-	★★★	0	0	0	0	0	---	unmeasured
+F-04	-/-	★★★	0	0	0	0	0	---	unmeasured
+F-05	-/-	★★★	0	0	0	0	0	---	unmeasured
+F-06	-/-	★★	0	0	0	0	0	---	unmeasured
+F-07	-/-	★★★	0	0	0	0	0	---	unmeasured

@@ -1,0 +1,14 @@
+id: EX-math2-20252M
+title: "2025_2학기_중간_1학년_공통수학2_고사원안.hwp"
+grade: 1
+exam_code: "2025-2M"
+variant: master
+pages: 5
+items: 22
+render_dpi: null
+render_tool: "hwp2md.py"
+transcribed_at: 2026-08-27
+method: "hwp2md.py(HWP)+ViewText/Section1 EQED 스크립트 188건+PARA_TEXT 66문단 대조"
+confidence: medium
+answer_key: null
+catalog_ref: null

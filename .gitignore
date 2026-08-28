@@ -1,6 +1,12 @@
-# 원본 기출 자료 및 중간 산출물 (재생성 가능)
-origin_data/
+# 원본 기출 자료 및 중간 산출물 (재생성 가능) — 단 git 추적 중이던 자료는 유지(A14·F5)
+origin_data/*
+!origin_data/NY-math1-2021/
+!origin_data/NY-math1-2022/
+!origin_data/SUP-math2-2026/
 extracted/
+
+# 판독용 렌더 이미지 — 원본 PDF에서 결정론적으로 재생성 가능 (260825)
+corpus/_images/
 
 # OS / 편집기
 Thumbs.db
@@ -14,3 +20,6 @@ __pycache__/
 
 # Node
 node_modules/
+
+# Shrimp Task Manager (세션 태스크 보드)
+.shrimp/

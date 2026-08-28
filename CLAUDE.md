@@ -17,7 +17,7 @@
 | 학기 | 과목 | 정본 카탈로그 |
 |------|------|--------------|
 | 1학기 | 통합과학1·공통수학1 등 7과목 | `analysis/catalog/*.md` |
-| **2학기** | **공통수학2 — 도형의 방정식** (사용자 확정) | `analysis/catalog/공통수학2.md` (SM2-01~33) |
+| **2학기** | **공통수학2 — 도형의 방정식** (사용자 확정) | `analysis/catalog/math2.md` (SM2-01~33) |
 
 > ⚠️ **2학기 중간 범위는 확인 요망.** 근거 자료가 부교재 단독이고, 1학기 실측 분할 패턴은
 > **"중간 = 대단원 I 전체 + 대단원 II 앞부분"** 이었다(중간 = 다항식 전체 + 방정식과 부등식 일부).
@@ -26,7 +26,7 @@
 
 ## 핵심 원칙 (우선순위 순)
 
-1. **정본은 유형 카탈로그** — 문제 생성 시 원본 기출(`data/raw/`)을 다시 읽지 말고
+1. **정본은 유형 카탈로그** — 문제 생성 시 원본 기출(`origin_data/`)·정제본(`corpus/`)을 다시 읽지 말고
    [`analysis/TYPE_CATALOG.md`](analysis/TYPE_CATALOG.md)를 정본으로 삼는다.
    원본은 카탈로그 구축·갱신 작업에서만 읽는다. (context 절약)
 2. **범위 가드** — 기출에서 확인된(상태: 검증) 유형만 기본 출제 대상이다.
@@ -43,22 +43,131 @@
    부교재만 근거인 유형을 "출제된다"고 서술하지 마라. 상태는 `검증(부교재)`로 둔다.
 7. **부교재 범위 ≠ 시험범위** — 부교재가 한 대단원만 다뤄도 시험은 그 너머까지 걸칠 수 있다.
    회차 범위는 **학교 공지·진도표로 확인**하고, 없으면 과거 분할 패턴으로 추정하되
-   **⚠️ 범위 미확정** 을 산출물 머리말에 붙인다. 절차는 [`analysis/시험예측_지침.md`](analysis/시험예측_지침.md).
+   **⚠️ 범위 미확정** 을 산출물 머리말에 붙인다. 절차는 [`analysis/FORECAST_GUIDE.md`](analysis/FORECAST_GUIDE.md).
+8. **검토·수정 분리** — 검토 기능을 가진 주체(에이전트 포함)는 **자기가 작성하지 않은 문서를
+   직접 수정하지 않는다.** 재검토에서 문제·의문이 발견되면 `output/<YYMMDD>/rev/`(산출물) 또는
+   `analysis/rev/`(정본·시스템 — [`analysis/DOC_LOCATION.md`](analysis/DOC_LOCATION.md)) 검토서로
+   패키징하고, 수정 제안은 반드시 **체크박스(`- [ ]`) 승인 요청**으로 기록한다.
+   승인된 항목만 작성 주체(item-writer 또는 사용자)가 원본에 반영하며, 모든 추적은
+   [`analysis/REV_LOG.md`](analysis/REV_LOG.md)(append-only)에 남긴다. 규격은
+   [`analysis/REV_GUIDE.md`](analysis/REV_GUIDE.md).
+9. **비가역 조작 방어** (260826 신설) — **되돌릴 수 없는 것은 만들기 전에 정책을 먼저 등록한다.**
+   (a) **비가역 식별자**(코퍼스ID·유형ID·접두어·subject_code)는 부여 전에 그 명명 정책과 근거를
+   [`analysis/catalog/CODE_REGISTRY.md`](analysis/catalog/CODE_REGISTRY.md)에 **먼저 기록**한다
+   — 운영원칙 ①이 소급 개명을 금지하므로 "일단 만들고 나중에 정리"는 불가능하다.
+   같은 상황에 두 정책(분리 vs 병합)이 공존하면 그 자체가 결함이다.
+   (b) **append-only 원장**(`student/*/ATTEMPT_LOG.tsv` 등)에는 시뮬·데모·테스트 행을 쓰지 않는다.
+   시험은 반드시 **샌드박스 경로**(`student/_sim/` 등 도구의 `--student-dir`)에서 돌리고,
+   실행 전후 실원장 파일의 **해시를 기록해 무손상을 증거로 남긴다**. 표식은 ASCII로만 적는다.
+   (c) **정본 본문에 적는 식별자·열거·수치는 레지스트리 실측과 대조한 값만 쓴다** (260826 신설).
+   ①-b(b)의 실측 의무는 회람문에만 걸려 있었으나 실제 사고는 전부 **정본 본문**에서 났다 —
+   실재하지 않는 접두어 `E`를 정책 문장에 열거(판정 C2), 게이트 수용기준에 플레이스홀더 `N`을 방치(C3),
+   `docs/DATA_STANDARD.md` §1.3 정규식을 통과하지 못하는 세트ID `SET-260826-math2-40-I3`을 예시로 창작(C4).
+   따라서 (i) **ID를 예시로 적기 전에 §1.3 정규식에 실제로 넣어 본다** (ii) **접두어·과목 목록은
+   재열거하지 말고 원본 표를 참조한다** — 사본 열거는 반드시 원본과 어긋난다(C2가 그 실증) (iii)
+   수용기준·게이트 문구에 **플레이스홀더(`N`·`<...>`·TBD) 금지**, 실측 수치 또는 산술식으로 적는다.
+   근거: 260826 판정 BF2·BF4 + Round-2 조건 C2·C3·C4.
+10. **동반 갱신 목록** (260826 신설) — **정본을 고치면 그 정본을 참조하는 것들을 같은 작업에서 함께 고친다.**
+   정본↔실행 주체(`.claude/agents/*.md`)↔도구 코드(`tools/*.py`, `web/*.js`)의 동기화는 자동이 아니므로,
+   한쪽만 고치면 "규정은 있는데 아무도 안 지키는" 구멍이 생긴다(실증: REV_GUIDE §2-b D가
+   260826에 신설됐으나 rev-writer·rev-auditor 정의의 기준 목록에는 며칠간 반영되지 않았다).
+   각 정본은 자기 **「동반 갱신 목록」** 을 문서 안에 명시하고, 개정 시 그 목록을 체크한다.
+   신규 과목 신설처럼 다중 문서가 걸리는 절차는 CODE_REGISTRY §6 온보딩 목록을 따른다.
+   근거: 260826 판정 BF3·BF5.
+11. **게이트는 fail-closed** (260826 신설) — 자동 검사 도구의 통과 판정을 **exit code 하나로 정의하지 않는다.**
+   게이트 수용기준은 `명령 + 기대 출력 문자열 + 경고 0줄 + 기대 카운트`로 적고, 실행 로그(명령과 출력)를
+   증거로 첨부한다. 도구가 문제를 발견하고도 0을 반환하면(fail-open) **도구를 고치는 것이 먼저다** —
+   지침으로 "눈으로 확인하라"고 덮지 않는다. 실행할 수 없는 환경이면 통과가 아니라 `▲ blocked`다.
+   **기대 카운트는 실측 수치나 산술식으로 확정한다 — `(N rows)` 같은 플레이스홀더는 게이트가 아니다**
+   (원칙 9-c-iii). 도구가 문제를 발견하고도 `[OK]` 줄을 **먼저** 출력하는 경우가 있으므로
+   (`build_catalog_index.py --check` 실측), 수용기준은 `[OK]` 문자열 하나로 끝내지 말고
+   **경고 0줄 + exit 0을 함께** 요구한다.
+   근거: 260826 판정 BF3(`build_catalog_index.py --check`가 `[WARN]`에도 exit 0) + Round-2 조건 C3.
 
 ## 작업 흐름
 
 | 상황 | 절차 | 서브에이전트 |
 |------|------|-------------|
-| 새 기출·부교재 도착 | EXTRACTION_LOG 중복 확인 → 유형 추출 → 과목 카탈로그 갱신(빈도·용어·함정·**변형 축**) | `type-extractor` (자료 단위 병렬) |
-| **특정 회차 유형 예측** (중간/기말 대비) | ① 회차 **범위 확정**(공지 우선, 없으면 과거 분할 패턴 + ⚠️ 표시) → ② 기출·부교재를 **합쳐** 유형별 **A~E 등급** 산정 → ③ **사각지대(E)** 별도 명시 → ④ `analysis/forecast/`에 저장 → ⑤ 그 등급표로 문항 세트 배분. 절차: [`analysis/시험예측_지침.md`](analysis/시험예측_지침.md) | — |
+| **신규 데이터 도착 — 운영 사이클 개시 게이트** | ① 메인 루프가 `output/<YYMMDD>/`에 **운영 PRD 작성**(데이터 명세·단계·게이트·수용기준) → ② 검토(둘 중 택일, **라벨을 실제 배우와 일치시킨다**): `rev-writer`⇄`rev-auditor`를 실제로 호출하거나, 작성 주체가 겸하면 원장 라벨도 `self-check(작성자)`로 적는다 — **에이전트 라벨(t1/t2) 도용 금지**. 어느 쪽이든 **수렴 선언은 작성자 측이 하지 않는다**(REV_GUIDE §3 rule 2, 종결권은 tier-3) → **Claude Code PRD 검토 라운드** 회람 → arbiter 판정(승인/수정요구/기각) → ③ 승인된 PRD가 그 사이클의 정본이 되고, 이후 아래 흐름표 행들(REFINE→PROPOSE→예측→생성→게이트→원장)은 PRD 단계표에 따라 실행. **PRD 미승인 상태로 데이터 가공 금지**. PRD 자체의 검토 기준은 REV_GUIDE §2-b E | 작성 메인 루프 · 검토 `rev-writer`⇄`rev-auditor` **또는** self-check(작성자 겸임) · 판정 `rev-arbiter`(Claude Code) |
+| 새 기출·부교재 도착 | **데이터 도착 게이트(윗행) 통과 선행** → EXTRACTION_LOG 중복 확인 → **REFINE**(Codex/OMX): `type-extractor`가 `corpus/<ID>/`(transcript·meta.yml·_images·verify_log) 산출 → **PROPOSE**(클로드코드): `type-proposer`가 output/<YYMMDD>/ 제안서 작성(유형 배정·카탈로그 갱신안·공통 패턴 후보) → 3단계 검토 루프(REV_GUIDE §3-b) → arbiter 판정 → 메인 루프가 승인분을 카탈로그·HARVEST_LOG·EXTRACTION_LOG에 반영 | 정제 `type-extractor` · 제안/판정 `type-proposer`/`rev-arbiter` · 검토 `rev-writer`⇄`rev-auditor` |
+| **특정 회차 유형 예측** (중간/기말 대비) | ① 회차 **범위 확정**(공지 우선, 없으면 과거 분할 패턴 + ⚠️ 표시) → ② 기출·부교재를 **합쳐** 유형별 **A~E 등급** 산정 → ③ **사각지대(E)** 별도 명시 → ④ `analysis/forecast/`에 저장 → ⑤ 그 등급표로 문항 세트 배분. 절차: [`analysis/FORECAST_GUIDE.md`](analysis/FORECAST_GUIDE.md) | 작성 `forecast-writer` · 검토 범위 확실도별 차등(확정=t1 `forecast-reviewer` / 미확정=t1⇄t2 ≤5R) → 분쟁시 `forecast-arbiter`, 메인 루프 구동 |
 | **새 기출로 예측 채점** | 기존 예측 보고서를 열어 적중 여부를 **추가 기록**(삭제 금지) → 빗나간 축의 원인 한 줄 → 등급 기준 보정 | — |
-| 문제 생성 요청 | 과목 카탈로그 + `curriculum_2022.md` 범위 가드 로드 → 유형 ID 기반 생성 → `output/YYMMDD/`에 저장 | `item-writer` |
-| 생성 직후 (필수) | 전 문항 solve-back — 정답 유일성·조건 충분성·Tier 적합 검증. **통과 전 사용자에게 내놓지 않는다** | `solve-back-verifier` |
+| 문제 생성 요청 | 과목 카탈로그 + `curriculum_2022.md` 범위 가드 로드 → 유형 ID 기반 생성, 세트 frontmatter에 `intended_use: practice\|exam` 기록 → `output/<YYMMDD>/`에 저장 | `item-writer` |
+| 생성 직후 (전 세트 필수 게이트) | `solve-back-verifier`가 맹목 풀이로 전 문항 검증 — 정답 유일성·조건 충분성·Tier 적합·해설 중간식 재유도. **게이트 통과 전 그 누구에게도 내놓지 않는다** | `solve-back-verifier` |
+| 세트 검토·투입 허가 | practice 세트: tier-1 1회 통과(지적은 item-writer가 흔적 남겨 반영). exam 세트: 3단계 루프(REV_GUIDE §3-b) → arbiter 승인 + **사용자 확인** → 투입 허가. 미승인 세트는 미투입 표시 유지 | `rev-writer`⇄`rev-auditor`→`rev-arbiter`, 메인 루프 구동 |
+| **재검토에서 문제·의문 발견** | Three-tier loop (REV_GUIDE): tier-1 `rev-writer` review report + `_index.md` ledger row → tier-2 `rev-auditor` independent cross-check (≤5 rounds, duplicate-dispute escalation) → convergence → decision request → tier-3 `rev-arbiter` (Claude Code Opus, same repo) ruling approve/revise-required/reject → approved fixes applied by authoring owner with trace rows → REV_LOG update → catalog forbidden/caution entries. Spec: [`analysis/REV_GUIDE.md`](analysis/REV_GUIDE.md) | `rev-writer`→`rev-auditor`→`rev-arbiter`, main loop drives |
 | 검수 피드백 | 해당 유형의 금지·주의 항목에 기록 (원칙 4) | — |
 | **학생 오답 도착** | 유형ID·Tier·DF 축으로 교차 집계 → 취약 **축** 명명 → `analysis/student/`에 분석 기록 → 취약 축마다 T2→T3→T4 사다리로 유사 문제 생성 | `item-writer` |
+| **원장 운용(채점·집계·공유)** | 채점 TSV(웹 export 또는 손작성) → `tools/import_grading.py`(§6 검증·ATTEMPT_LOG append·MASTERY 재생성·WEAK_LEDGER 갱신 **제안만**) → 약점 승격은 교사 판정 → `tools/build_report.py`(단일 HTML + SHARE_LOG append). 정본은 TSV 원장 — 웹·도구는 입력기/뷰어. 인덱스 재생성은 카탈로그 갱신 시 `tools/build_catalog_index.py` | tools (main loop 구동) |
 
 > 서브에이전트 정의는 `.claude/agents/*.md`에 있다. 각 정의가 읽어야 할 정본 경로를 스스로 담고 있으므로,
 > 맥락 없이 호출해도 동작한다. 한 파일을 두 에이전트가 동시에 쓰게 하지 마라.
+
+## 서브에이전트 공통 실행 규격 (260826 신설)
+
+**① 회람 수신·발신** — Claude Code 측 에이전트(`type-proposer`·`rev-arbiter`·
+`forecast-writer`·`forecast-arbiter`)에 검토·분석을 요청하는 단계에서는 메인 루프가 반드시
+[`analysis/REV_GUIDE.md`](analysis/REV_GUIDE.md) **§6-b 규격의 회람문을 대화창에 출력**한다
+(사용자가 복사해 전달). 회람문 필수 항목: ①대상 문서 경로 ②이번 라운드에 요청 측이
+생성·수정한 파일 목록 ③실행 주체(에이전트명 또는 본체 직접) ④판정 요청 목록 ⑤회신 위치·형식
+⑥제약(write surface·무커밋 등).
+
+**①-c 역방향 실행 지시문 (260826 신설)** — 위 ①은 **Codex/OMX → external Claude Code CLI** 한 방향만
+규정했다. 반대 방향(Claude Code가 판정·승인·수정을 끝내고 **Codex/OMX가 실행할 차례**)에는
+규격이 없어서, 승인만 하고 실행 지시는 산문으로 흘리는 사고가 실제로 났다(260826_02 Round 2:
+approve 후 "S0 개시할까요?"로 끝나 실행 측이 받은 지시가 0). **판정이 단계를 풀었거나,
+owner 수정이 차단 조건을 해소했거나, 다음 단계를 물으면 반드시
+[`analysis/REV_GUIDE.md`](analysis/REV_GUIDE.md) §6-c 규격의 `[Codex/OMX 지시]` 블록을 출력한다** —
+①-b (a)~(e) 작성 태도를 그대로 적용하고, 실행 측이 이 세션의 발견을 볼 수 없으므로
+**도구의 알려진 결함·방금 고친 내용은 실측 증거와 함께 반드시 고지한다**.
+
+**①-b 회람문 작성 태스크(품질 기준)** — 회람문은 단순 안내문이 아니라 **붙여넣기만으로
+동작하는 하나의 Claude Code 프롬프트**다. 메인 루프는 클로드 코드 프롬프트 엔지니어 관점에서
+작성한다: (a) 수신자가 되물음 없이 바로 착수할 수 있을 만큼 자기완결 — 대상·범위·판정 형식·
+회신처가 한 문서 안에 닫힌다 (b) 경로·파일명·카운트는 **출력 직전 실측값**(grep·zip 목록 등
+재확인 후 기입)이고, 확인 못 한 값은 추측하지 않고 `⚠️미확인` 으로 라벨링한다 (c)
+`<executor>` 지정에는 한 줄 근거를 붙인다(왜 그 서브에이전트인가 — 각 정의의 description
+근거) (d) 각 판정 요청은 판정 가능한 질문형(+선지 enum)으로 쓴다 (e) 제약(write surface·
+무커밋·검증 의무)은 수신자가 위반 여부를 스스로 점검할 수 있는 문장으로 명시한다. 근거:
+260825 판정 12의 인용 소소착오(경로 미검증)·08 행수 불일치(카운트 미명시)가 실제 발생했다.
+
+**② 슬라이스 체크포인트(타임아웃·컨텍스트 한계 방어)** — 모든 서브에이전트는 작업을
+슬라이스(예: 문항 10개·유형 3개·파일 1건 단위)로 쪼개고, **각 슬라이스가 끝날 때마다 자기
+WIP 파일에 즉시 한 행을 기록**한 뒤 다음 슬라이스에 들어간다.
+- WIP 위치: `analysis/wip/<actor>_<YYMMDD>_<task>.md` — **배타 소유**(남의 WIP 수정 금지;
+  REV_GUIDE §5 단일 작성자 규칙 준용). **`<task>`는 동시 실행 인스턴스마다 고유해야 한다**
+  (260826 신설): 같은 배우를 병렬로 돌리는 경우(예: `item-writer`를 단원별로 분할) 슬러그가
+  겹치면 두 인스턴스가 서로의 `NEXT`를 덮어써 배타 소유가 깨진다. 세트ID·유형 묶음처럼
+  받은 작업에서 유도한다 — `item-writer_260826_SET-260826-math2-40_I3.md` 처럼 **세트ID
+  (`SET-260826-math2-40`, `docs/DATA_STANDARD.md` §1.3 정규식 통과분) + `_` + 분할 접미어**로
+  적는다. 분할 접미어는 파일명 요소이지 세트ID의 일부가 아니다 — 세트ID 자체에 `-I3`을 붙이면
+  `import_grading.py`의 `RE_SET`에 걸려 채점 원장 반입이 전량 실패한다(260826 조건 C4 실측).
+  `task`·`set` 같은 일반명 금지.
+- **동시 쓰기 금지의 실제 적용**: t1과 t2를 동시에 돌리지 않는다. 둘 다 같은 `_index.md`·
+  `REV_LOG.md`에 행을 덧붙이므로 병렬 실행은 원장 손상이다(REV_GUIDE §5 마지막 줄).
+  라운드는 순차다 — 이것이 "라운드"의 정의이기도 하다.
+- 형식: frontmatter(actor/task/target/status: in-progress|done|blocked/updated) +
+  슬라이스 표(`no | 범위 | state | 산출물 | 비고`) + 마지막 줄 `NEXT: <다음에 할 일>`.
+- 재개 규칙: 시작 시 자기 WIP가 in-progress로 있으면 **반드시 `NEXT`부터 이어서** 하고
+  완료 슬라이스를 재수행하지 않는다. 종료 시 status를 done으로 바꾸고 산출물 경로를 남긴다.
+- 예외 조정: `solve-back-verifier`의 "파일을 쓰지 않는다" 규칙은 **자기 WIP 1개만** 예외로
+  한다(긴 세트 맹목 풀이 중단 시 전체 판정 유실 방지).
+- WIP 삭제·정리는 **사용자만** 한다(에이전트 임의 삭제 금지).
+
+**③ 진행 맵 중계 (260826 신설)** — 서브에이전트의 return 값은 **사용자에게 보이지 않는다**
+(메인 루프만 받는다). REV_GUIDE §3 rule 5는 "사용자가 위치+결과를 한눈에 봐야 한다"고 요구하므로,
+메인 루프는 받은 3부 헤더(`Pipeline`/`Stage`/`Next`)를 **그대로 대화창에 옮긴다**. 요약하거나
+생략하면 규정은 지켜졌는데 사용자는 아무것도 못 보는 상태가 된다 — 특히 `▲ blocked`·`HOLD`·
+`⚠️` 표식은 원문 그대로 남긴다.
+
+**④ write surface는 도구 부여와 함께 정의한다 (260826 신설)** — REV_GUIDE §5가 어떤 배우에게
+쓰기 대상을 주면, 그 배우의 `.claude/agents/*.md` `tools:` 줄에 **Write(공유 원장에 행을 덧붙이면
+Edit까지)가 실제로 있어야** 한다. 정본이 "쓰라"고 하는데 도구가 없으면 그 배우는 셸로 우회하거나
+지침을 어긴다(실증: 260826 정의 감사에서 `forecast-reviewer`·`forecast-auditor`·
+`solve-back-verifier` 3종이 이 상태였다 — `AGENT_AUDIT_260826.md` A1).
+역으로 **셸은 write surface의 우회로가 아니다**: PowerShell/Bash는 계산·조회용이며 §5 밖 파일을
+리다이렉션으로 만들지 않는다. 도구 목록은 능력을 정의할 뿐 경계를 강제하지 못하므로, 경계는
+정의 본문과 §5가 함께 진다.
 
 ## 스캔 PDF 판독 (환경 제약)
 
@@ -69,18 +178,32 @@ PyMuPDF로 PNG를 렌더링한 뒤 그 PNG를 Read로 읽는다 (pymupdf·pillow
 ## 카탈로그 항목 형식
 
 ```markdown
-## 유형 <영역약자>-<번호>: <유형명>
-- 상태: 검증 | 시연 | 폐기
+## 유형 <과목약자>-<번호>: <유형명>
+- 상태: 검증 | 검증(부교재) | 시연 | 폐기
+- 중요도: ★★★(3개년 반복=최상위) | ★★(2회) | ★(1회) — 부교재는 자료 내 문항 수 기준
 - 영역/단원: <2022 개정 기준>
 - 성취기준: <코드>
-- 출제 빈도: <연도(횟수)>
+- 출제 빈도: <시험 식별자(문항번호)> 나열
+- 배점대: <실제 배점 범위>
 - 패턴: <자극 제시 방식 → 요구 행동>
+- 변형 축: <문제를 새로 만들 때 바꿀 수 있는 모든 변수>
 - 사용 용어·공식: <기출에서 실제 쓰인 표기만>
 - 함정 요소: <오답 유도 포인트>
 - 대표 예시: <기출 위치 또는 예시 문제>
 - 금지·주의: <검수 피드백 누적>
 - 이력: <YYMMDD 변경 내용>
 ```
+
+- 유형 ID 부여 규칙·접두어 충돌 판정은 [`analysis/catalog/CODE_REGISTRY.md`](analysis/catalog/CODE_REGISTRY.md)가
+  정본이다. 신규 ID는 선점 확인 후 부여, 기존 ID 소급 개명 금지.
+- 항목 형식의 수정 기준은 `catalog/_README.md`다. 양쪽이 어긋나면 _README를 고치고 이곳을 동기화한다.
+- **중요도 별표는 근거 축을 함께 적는다** (260826 신설) — 별표 기준이 자료 등급에 따라 **다른 축**이기
+  때문이다: 부교재 근거 = **자료 내 문항 수**, 기출 근거 = **연도 반복 횟수**(★★★=3개년/★★=2회/★=1회).
+  따라서 `검증(부교재)` → `검증` 승격은 **별표 재산정을 동반**하며, 관측 연도가 1개년뿐이면 기출 근거만으로
+  ★★★를 줄 수 없다. 표기는 `★★(기출 2회)` / `★★★(부교재 9문항)`처럼 축을 병기하고, 두 축이 섞이면
+  분리해 적는다. 승격해도 **부교재 근거는 삭제하지 않고** 이력·대표 예시에 남긴다(원칙 3).
+  기출에서 미출제로 확인된 유형은 상태를 유지하고 주석을 다는데, 주석은 **관측 범위를 한정**해
+  적는다(예: "2025-2학기 2회차 미출제" — 미출제 ≠ 폐기). 근거: 260826 판정 BF6.
 
 ## 알려진 한계 (사용자와 합의된 전제)
 

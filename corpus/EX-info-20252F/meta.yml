@@ -1,0 +1,24 @@
+id: EX-info-20252F
+title: "2025_2학기_기말_1학년_정보_고사원안.hwp"
+grade: 1                   # 1=기출·수행 (CLAUDE.md 원칙 6 — 고사원안)
+exam_code: "2025-2F"       # §4.6 회차코드 (2025학년도 2학기 기말)
+variant: master            # 고사원안
+pages: null                # .hwp 원본 — 페이지 렌더 없음 (문서 자체 표기: 전체 3면)
+items: 25                  # 선택형 18 + 단답형 7 (머리말 선언과 일치)
+render_dpi: null           # PNG 렌더 미실시 — bindata JPG 1건만 보존
+render_tool: "hwp2md.py"
+transcribed_at: 2026-08-26
+method: >-
+  hwp2md.py(hwp5html) 변환(extracted/2025-2학기/기말/정보.txt, bindata=1 imgrefs=1) +
+  배포용 문서(distdoc) 복호화·압축 해제 후 ViewText Section0/Section1 레코드 직독 대조.
+  알려진 결함(hwp2md의 EQED 무흔적 소실) 점검: 복호화 스트림 50,041B 전수 스캔 결과
+  EQED 객체 0건 — 수식 소실 해당 없음. hwp2md가 표 셀 안 코드의 줄바꿈·들여쓰기를
+  공백으로 평탄화하여, PARA_TEXT 레코드 직독으로 25개 코드 블록의 줄바꿈·들여쓰기를
+  원문 문자 스트림에서 복원(추정 아님). 레코드 스트림에서는 코드 박스가 선택지보다
+  뒤에 저장된 문항(9·11·14·15·17)은 인쇄 순서(변환기 본문 순서)를 따름.
+  BIN0001.jpg는 표지 장식 그래픽(문자 정보 없음)으로 육안 판독.
+  선택지 다단 배치(2열)는 1열로 직렬화, 행 머리·끝 공백만 제거하고 내부 공백은 원문 그대로.
+confidence: high           # 본문·머리말 전부 원문 레코드 문자 스트림 기반. 단, 누름틀
+                           # 필드 "[ 전체 3면 중 N 면 ]"의 내부값만 변환기 렌더 의존(medium)
+answer_key: "2학기 기말고사 정답 - 1학년.pdf"
+catalog_ref: null

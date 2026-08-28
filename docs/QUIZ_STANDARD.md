@@ -6,15 +6,25 @@
 
 ## 1. 입력 MD 규격 (표준 입력)
 
-파일은 다음 순서의 블록으로 구성된다.
+파일은 다음 순서의 블록으로 구성된다. 세트 수준 메타는 YAML frontmatter로
+시작할 수 있으며(아래 "세트 프론트매터"), 파서는 `subject_code` 등의 값을
+본문 추론보다 **우선**한다(ruling 07 CB1).
 
 ```
+---
+set_id: SET-260822-math2-40     # 없으면 파일명(확장자 제외)이 set_id 가 된다
+subject_code: math2             # DATA_STANDARD §5.8 의 7코드 — 본문 추론보다 우선
+unit: I. 도형의 방정식
+scope_confirmed: false          # 원칙 7 — 부재 시 false 로 해석(fail-safe)
+intended_use: practice|exam
+---
+
 # <제목>                       <- H1 제목 (과목·회차·문항수 등)
 > <메타 설명>                  <- blockquote 메타 (생성 근거, 난이도 등)
 > ...
 
 ## 선택형                      <- 객관식(5지선다) 섹션
-**1.** <줄기> [유형ID·Tier]
+**1.** <줄기> [유형ID · Tier · DF목록 · 함정E코드]
 <지문(생략 가능)>
 ① <보기1>
 ② <보기2>
@@ -41,17 +51,40 @@
 | 21 | <모범답안> | W-01·T3 | <해설> |
 ```
 
+### 유형 태그 표준형 (ruling 07 A1 / ruling 12 CB1 — amended)
+
+본문 태그는 **네 슬롯**을 가질 수 있다:
+
+```
+[ID · Tier · DF1·DF2·… · E1~E9]        예) [SM2-18 · T3 · DF1·DF2·DF4 · E5]
+[ID · Tier · DF… (+보조ID)]            보조 예) [SM2-13 · T4 · DF1·DF2·DF5·DF8 (+SM2-11)]
+[ID · Tier]                            최소형 (DF·함정 슬롯 생략 가능)
+```
+
+- 슬롯 구분자는 중점 `·`, 슬롯 순서는 주유형 → Tier → DF목록 → 함정 E코드.
+- 함정 코드 `E1~E9`는 `TYPE_MASTER.md`의 등록 함정 계열이다.
+- 답안표 셀은 괄호 없이 `SM2-13·T4 (보조 SM2-11)` 형태를 허용한다.
+- **포용 규칙**: 파서가 알지 못하는 `·` 구분 토큰은 버리지 않고 `tagExtra`에
+  그대로 보존한다(원칙 3 — 정보 삭제 금지). 검증 RE는 ruling 07 판정서 참조.
+
 ### 합칠 키
 - 본문의 `**N.**` 번호 ↔ 답안표의 `| N |` 행
-- 두 곳의 `N`(문항 번호)로 본문·정답·해설·유형ID를 병합한다.
+- 두 곳의 `N`(문항 번호)으로 본문·정답·해설·유형ID를 병합한다.
 
 ### 문제 유형 판별
 - 블록 내에 `①`~`⑤` 보기 줄이 있으면 `choice`(객관식)
 - 없으면 `essay`(서답형/단답형)
 
+### 섹션 상태 (ruling 07 CB2)
+- 섹션 전환은 제목 키워드(`선택형`/`서답형`·`서술형`·`단답형`/`정답`·`해설`)로
+  판별하며, 단원 헤더(`## I-2 …`) 같은 다른 헤딩은 질문 구역을 리셋하지 않는다.
+  후행 보조 섹션(채점 기준·요약)도 상태를 바꾸지 않는다.
+
 ### 과목 판별
-- 제목/헤더에 `영어` → `english`, `통합과학`/`과학` → `science`
-- 그 외는 파일명/제목에서 추론, 못 하면 `unknown`
+- frontmatter `subject_code` 최우선(DATA_STANDARD §5.8의 7코드 —
+  math1·math2·science·social·history·english·korean).
+- 없으면 제목/헤더에서 위 7코드로 추론(예: `공통수학2`/`도형의 방정식` → math2),
+  못 하면 `unknown`. 레거시 `math` 값은 사용하지 않는다.
 
 ## 2. 중간 데이터 스키마 (web/data.js)
 
@@ -63,12 +96,16 @@ window.QUIZ_DATA = {
   "sources": [                          // 처리된 md 파일 목록
     { "file": "output/260714/공통영어1_모의문제_25.md",
       "title": "공통영어1 모의 문제 — 25문항",
-      "subject": "english" }
+      "subject": "english",
+      "scopeConfirmed": false,          // frontmatter 부재/false → false (원칙 7)
+      "setId": "SET-..." }
   ],
   "problems": [
     {
-      "id": "260714#1",              // sourceKey + 번호
+      "id": "SET-...#1",             // setId + 번호
       "sourceKey": "260714",         // output 하위 폴더명(회차키)
+      "setId": "SET-...",            // frontmatter set_id 또는 sourceKey
+      "scopeConfirmed": false,
       "subject": "english",
       "number": 1,
       "qtype": "choice",             // "choice" | "essay"
@@ -78,11 +115,18 @@ window.QUIZ_DATA = {
       "answer": "②",                 // 객관식: 번호 / 서답형: 모범답안 텍스트
       "typeId": "T-01",
       "tier": "T2",
+      "df": ["DF1","DF3"],           // DF 슬롯 (없으면 [])
+      "traps": [],                   // 함정 E코드 슬롯 (없으면 [])
+      "auxTypes": [],                // 보조 유형 (+ID / (보조 ID)) (없으면 [])
+      "tagExtra": [],                // 미분류 잔존 토큰 — 절대 삭제하지 않는다
       "explanation": "멀티태스킹의 숨은 비용 ..."
     }
   ]
 }
 ```
+
+> 예시의 `T-01`·`W-01` 등 ID는 `analysis/catalog/CODE_REGISTRY.md` §1에
+> 등록된 접두어다(영어 T/W 계열). 난이도 코드 `T2`와의 구분법은 같은 문서 §2.
 
 ## 3. 변환·로드 흐름
 
@@ -107,6 +151,10 @@ window.QUIZ_DATA = {
 - 클릭 시 정답 + 해설 + 유형ID·Tier 공개
 - 셔플 / 과목·유형 필터
 - 오답노트·진도를 `localStorage`에 저장(이어풀기)
+- **4상태 채점**(ruling 07 CB3): O(맞음)/△(애매)/X(틀림)//(백지) —
+  코드는 DATA_STANDARD §4.1 enum(correct/unsure/wrong/blank)
+- **🧾 채점 TSV 내보내기**: ATTEMPT_LOG §5.1과 동일 12열, UTF-8 BOM,
+  `mark_code`는 enum 단어 — `tools/import_grading.py`로 직행 검증 가능
 
 ## 5. 객관식 자동 판정 / 서답형 입력·diff
 
@@ -118,7 +166,8 @@ window.QUIZ_DATA = {
   - diff 기준: 구두점(`. ,` 등)·공백·대소문자는 정답 판단에서 **무시**(LCS 토큰 정렬).
   - 한글은 음절 단위, 영어는 단어 단위 토큰.
   - ⚠️ diff는 "모범 표현과 얼마나 달리 썼나"를 보여주는 **참고용**(의미 채점 아님,
-    유의어·어순 차이도 빨강으로 잡힘). 최종 판단은 사용자가 `맞았어요/틀렸어요` 버튼으로.
+    유의어·어순 차이도 빨강으로 잡힘). 최종 판단은 사용자가 네 채점 버튼
+    (`맞았어요 / 애매해요 / 틀렸어요 / 백지`)으로 한다.
 
 ## 6. 단일 HTML 내보내기(공유)
 

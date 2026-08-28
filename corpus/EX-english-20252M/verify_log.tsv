@@ -1,0 +1,5 @@
+﻿date	step	target	decision	evidence	reason	confidence	actor
+2026-08-27	transcribe	표지·문항 계수	transcribed	extracted\2025-2학기\중간\공통영어2.txt L1-L15 + 정답.pdf p1	표지의 11쪽·선택형 27·서답형 5 선언과 원문 전사의 선택형 1~27·서답형 1~5 연속 표기를 대조했다. 선택형 70점과 서답형 30점이 합계 100점이다.	high	Codex/OMX
+2026-08-27	transcribe	본문 전체	transcribed	extracted\2025-2학기\중간\공통영어2.txt (50067 bytes)	변환 텍스트의 문장·선택지·표·빈칸·배점 표기를 생략하거나 유형 판단을 추가하지 않고 전사했다.	high	Codex/OMX
+2026-08-27	transcribe	고유 이미지 3건·본문 참조 5건	transcribed	corpus/_images/EX-english-20252M/bindata/BIN0001.jpg,BIN0002.bmp,BIN0003.bmp + extracted\2025-2학기\중간\공통영어2.txt L12,L206-L209	고유 bindata 3건을 모두 직접 판독했다. BIN0002는 본문에서 3회 반복 참조되며, 고유 파일 수와 참조 수를 구분해 기록했다. 판독불가 0건.	high	Codex/OMX
+2026-08-27	transcribe	수식 객체 점검	transcribed	HWP ViewText/Section1 모델 검사	영어 고사원안에서 EQED 수식 객체가 확인되지 않아 수식 복원 단계는 적용되지 않는다.	high	Codex/OMX

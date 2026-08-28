@@ -1,0 +1,10 @@
+﻿date	step	target	decision	evidence	reason	confidence	actor
+2026-08-27	transcribe	표지+header	transcribe	txt L01-L14(표지)	총 7쪽·선택형 20·서답형 4·2024-12-13 3교시·고사반영 30/30/40·유의사항 5항·쪽번호 [7 - 4] 인쇄값을 그대로 전사했다.	high	type-extractor
+2026-08-27	transcribe	[[BIN0001.jpg]]~[[BIN0010.bmp]] 총 imgrefs 16건	transcribe	bindata 16개(24132~668214 bytes) + txt 마커 16개	bindata=16 imgrefs=16 전건 해소 — a(이미지 판독 전사)=16, b(unreadable 행)=0, m=16 로 a+b==m 성립, 해소 실패 0건. BIN0001 표지 엠블럼, BIN0002 수도권 전철, BIN0003/0004 대도시 내 (가)(나) 지역, BIN0005/0006 하천 유출, BIN0007 통근·통학 모식도+표, BIN0008~000D 지하철역 시간대·시설, BIN000E 예측기법 절차, BIN000F 생산가능곡선, BIN0010 생애소득 그래프.	high	type-extractor
+2026-08-27	transcribe	선택형 1~6	transcribe	txt 선택형1~6 구간	선택형 1(전통문화 재해석), 2(문화질문표 A~C), 3(갑을 다문화 갈등), 4(떡볶이 세계화), 5(다문화 갈등 해결 부적절), 6(수도권 전철 BIN0002) 범위·보기·선택지를 배점 3.9/4.4/4.2/3.9/3.6/4점 그대로 전사했다.	high	type-extractor
+2026-08-27	transcribe	선택형 7~12	transcribe	txt 선택형7~12 구간	선택형 7((가)(나) 지역 BIN0003/0004), 8(하천 유출 BIN0005/0006), 9(통근통학 BIN0007), 10(지하철역 BIN0008~000D), 11(신재생에너지 순위표), 12(지속가능발전) 범위·보기·배점 4/3.6/4.2/4.2/4.3/3.7점 그대로 전사했다.	high	type-extractor
+2026-08-27	transcribe	선택형 13~18	transcribe	txt 선택형13~18 구간	선택형13(자원민족주의), 14(과학기술 맥도날드화), 15(미래예측기법 BIN000E), 16(금융자산 A/B/C), 17(GATT/WTO 관세), 18(생산가능곡선 BIN000F) 범위·표를 배점 4.2/3.8/4/4/3.6/4.2점 그대로 전사했다.	high	type-extractor
+2026-08-27	transcribe	선택형 19~20	transcribe	txt 선택형19~20 구간	선택형19(교역조건표), 20(생애소득 BIN0010) 범위·표를 배점 4.3/3.9점 인쇄값 그대로 전사했다.	high	type-extractor
+2026-08-27	transcribe	단답형 1~4	transcribe	txt 단답형1~4 구간	단답형1(㉠㉡ 4음절·㉢ 사례 BIN 없음), 단답형2(GAN 기술), 단답형3(바젤협약 ㉠㉡), 단답형4(기회비용·절대우위·교역소비) 범위·배점(각 5점, 세부 2+2+1 등)을 그대로 전사했다.	high	type-extractor
+2026-08-27	transcribe	문항 수 대조	transcribe	txt 전체+표지 대조	표지 선언(선택형 20+서답형 4)과 실측(선택형 1~20 연속·중복0, 단답 1~4 연속·중복0, 합 24개)이 일치한다. 배점 총합 80.0+20.0=100.0 일치. 결번 0.	high	type-extractor
+2026-08-27	transcribe	변환 품질 대조(EQED·이미지)	transcribe	origin_data hwp raw bindata vs txt	고사원안 HWP의 bindata와 변환 txt의 마커를 비교해 EQED 인코딩 해당 없음(통합사회 고사원안은 특수 수식 없음), 표지·이미지 마커 16개 전부 해소 — 문자·이미지 손실 없음을 확인했다. 배점 오탈 의심은 판단 없이 기록만 했다.	high	type-extractor

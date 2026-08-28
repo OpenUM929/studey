@@ -1,0 +1,14 @@
+id: SUP-math2-2026          # §1.3 pattern v2
+title: "스무년 고1-2.pdf (단원별 문항연습 #1~#4)"
+grade: 2                    # 부교재 (CLAUDE.md 원칙 6 자료 등급)
+exam_code: null             # 회차 없는 자료(부교재)
+variant: master             # 고사원안급 프린트 원본
+pages: 18
+items: 93
+render_dpi: null            # 초기 판독 이미지는 스크래치패드에서 유실 — 재판독 시 기입(corpus/_images/<id>/pNN.png)
+render_tool: "PyMuPDF"
+transcribed_at: null        # null = 미전사 (HARVEST_LOG remaining 칸과 동일 사실)
+method: "PyMuPDF PNG(dpi130+) + LLM 판독"
+confidence: medium          # 판독 이미지 부재로 재검증 불가 — 재판독 시 갱신
+answer_key: null
+catalog_ref: "analysis/catalog/math2.md"

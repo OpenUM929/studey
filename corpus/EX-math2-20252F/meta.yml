@@ -1,0 +1,14 @@
+id: EX-math2-20252F
+title: "2025_2학기_기말_1학년_공통수학2_고사원안.hwp"
+grade: 1
+exam_code: "2025-2F"
+variant: master
+pages: null
+items: 23
+render_dpi: null
+render_tool: "hwp2md.py"
+transcribed_at: 2026-08-26
+method: "hwp2md.py(HWP)+HWP 레코드 EQED 스크립트 판독(180건)+LLM 전사"
+confidence: high
+answer_key: "2학기 기말고사 정답 - 1학년.pdf"
+catalog_ref: null

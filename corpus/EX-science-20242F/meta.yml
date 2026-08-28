@@ -1,0 +1,14 @@
+id: EX-science-20242F
+title: "2024_2학기_기말_1학년_통합과학_고사원안.hwp"
+grade: 1
+exam_code: "2024-2F"
+variant: master
+pages: 7
+items: 32
+render_dpi: 160
+render_tool: "hwp5html+PyMuPDF"
+transcribed_at: 2026-08-27
+method: "hwp2md.py --bindata (bindata=22 imgrefs=22) + bindata PNG 22건 시각 판독 + extracted TXT 대조"
+confidence: medium
+answer_key: "2학기 기말고사 1학년 선택형정답.pdf;2학기 기말고사 1학년 서답형정답.pdf"
+catalog_ref: null

@@ -1,0 +1,4 @@
+date	step	target	decision	evidence	reason	confidence	actor
+2026-08-27	transcribe	전체 문항(선택형 24·서술형 9)	transcribed	원본 표지 선언+변환 텍스트+배점 표식 33건	문항수 24+9=33 일치; 정답·유형 판단을 추가하지 않음	medium	Codex/OMX
+2026-08-27	transcribe	이미지 참조 35회/30건	transcribed	원문 marker와 bindata 30파일	고유 참조와 bindata 파일을 대조; 이미지 내용 판단은 보류	medium	Codex/OMX
+2026-08-27	transcribe	수식 EQED 75건	transcribed	HWP ViewText/Section1 제어 레코드	수식 문자열 0건을 원문 순서 부록에 보존	medium	Codex/OMX

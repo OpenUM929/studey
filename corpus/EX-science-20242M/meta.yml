@@ -1,0 +1,14 @@
+id: EX-science-20242M
+title: "2024_2학기_중간_1학년_통합과학_고사원안.pdf"
+grade: 1
+exam_code: "2024-2M"
+variant: master
+pages: 7
+items: 29
+render_dpi: 160
+render_tool: "PyMuPDF"
+transcribed_at: 2026-08-26
+method: "PyMuPDF PNG(dpi160) 렌더 후 PNG 판독 + 텍스트 추출 대조"
+confidence: high
+answer_key: "2학기 중간고사 1학년 선택형 정답.pdf; 2학기 중간고사 1학년 서답형 정답.pdf"
+catalog_ref: null

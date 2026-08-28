@@ -6,18 +6,24 @@
     choice: "quiz_choice_v1",
     revealed: "quiz_revealed_v1",
     md: "quiz_md_v1",
-    answer: "quiz_answer_v1"
+    answer: "quiz_answer_v1",
+    failCode: "quiz_failcode_v1"
   };
   var SUBJECT_LABEL = {
-    english: "영어", science: "통합과학", math: "수학",
+    english: "영어", science: "통합과학", math: "수학", math1: "공통수학1",
+    math2: "공통수학2", social: "통합사회", history: "한국사",
     korean: "국어", unknown: "기타"
   };
+  // Ruling 260825_07 CB3 — four-state scoring, codes = DATA_STANDARD §4.1 enum
+  var MARKS = ["correct", "unsure", "wrong", "blank"];   // O / △ / X / /
   function load(k) { try { return JSON.parse(localStorage.getItem(k)) || {}; } catch (e) { return {}; } }
   function save(k, v) { localStorage.setItem(k, JSON.stringify(v)); }
   var status = load(LS.status);
   var choice = load(LS.choice);
   var revealed = load(LS.revealed);
   var answers = load(LS.answer);
+  // DATA_STANDARD §4.1-A — 오답 귀인. 교사가 고른 값만 담긴다(자동 채움 금지).
+  var failCode = load(LS.failCode);
 
   var state = { list: [], idx: 0, shuffle: false, wrongOnly: false,
                 subject: "all", type: "all" };
@@ -26,7 +32,7 @@
   var $ = function (id) { return document.getElementById(id); };
   var el = {
     title: $("title"), subjectFilter: $("subjectFilter"), typeFilter: $("typeFilter"),
-    loadBtn: $("loadBtn"), exportBtn: $("exportBtn"),
+    loadBtn: $("loadBtn"), exportBtn: $("exportBtn"), exportTsvBtn: $("exportTsvBtn"),
     shuffleBtn: $("shuffleBtn"), wrongBtn: $("wrongBtn"), resetBtn: $("resetBtn"),
     progress: $("progress"), progressFill: $("progressFill"),
     qNumber: $("qNumber"), qType: $("qType"), qTier: $("qTier"), qSource: $("qSource"),
@@ -35,6 +41,7 @@
     answerPanel: $("answerPanel"), answerText: $("answerText"),
     diffBox: $("diffBox"), autoStatus: $("autoStatus"), explanation: $("explanation"),
     markRow: $("markRow"), correctBtn: $("correctBtn"), wrongMarkBtn: $("wrongMarkBtn"),
+    unsureBtn: $("unsureBtn"), blankBtn: $("blankBtn"), failRow: $("failRow"),
     prevBtn: $("prevBtn"), nextBtn: $("nextBtn"), card: $("card"),
     fileInput: $("fileInput"), dropHint: $("dropHint"), dropLoadBtn: $("dropLoadBtn")
   };
@@ -207,16 +214,22 @@
         else if (ch === cNum) { el.autoStatus.textContent = "✅ 정답"; el.autoStatus.className = "auto-status ok"; }
         else { el.autoStatus.textContent = "❌ 오답 (정답 " + cNum + ")"; el.autoStatus.className = "auto-status no"; }
         el.explanation.innerHTML = md(p.explanation);
+        renderFailRow(p);   // 선택형도 자동 wrong이 되므로 귀인 대상이다
       } else {
         el.autoStatus.classList.add("hidden");
         el.markRow.classList.remove("hidden");
         updateEssayDiff(p);
         el.explanation.innerHTML = md(p.explanation);
-        el.correctBtn.classList.toggle("active", status[p.id] === "correct");
-        el.wrongMarkBtn.classList.toggle("active", status[p.id] === "wrong");
+        MARKS.forEach(function (mk) {
+          var btn = { correct: el.correctBtn, unsure: el.unsureBtn,
+                      wrong: el.wrongMarkBtn, blank: el.blankBtn }[mk];
+          if (btn) btn.classList.toggle("active", status[p.id] === mk);
+        });
+        renderFailRow(p);
       }
     } else {
       el.answerPanel.classList.add("hidden");
+      if (el.failRow) el.failRow.classList.add("hidden");
       if (p.qtype === "essay") el.revealBtn.classList.remove("hidden");
     }
 
@@ -253,13 +266,112 @@
     render();
   }
 
+  // ---- 오답 귀인 선택 UI (DATA_STANDARD §4.1-A) ----
+  // 문항이 품은 함정(traps[])은 '후보'일 뿐이다. 교사가 고른 것만 fail_code가 되며,
+  // 고르지 않으면 "-"로 남는다 — traps를 그대로 복사하는 자동 채움은 규격상 금지.
+  function renderFailRow(p) {
+    if (!el.failRow) return;
+    var isWrong = status[p.id] === "wrong";
+    if (!isWrong || !p.traps || !p.traps.length) {
+      el.failRow.classList.add("hidden");
+      el.failRow.innerHTML = "";
+      return;
+    }
+    el.failRow.classList.remove("hidden");
+    var html = '<span class="fail-label">빠진 함정</span>';
+    p.traps.forEach(function (t) {
+      html += '<button type="button" class="fail-btn' +
+              (failCode[p.id] === t ? " active" : "") +
+              '" data-code="' + esc(t) + '">' + esc(t) + "</button>";
+    });
+    html += '<span class="fail-hint">미선택 시 <code>-</code> (교사 판정 전)</span>';
+    el.failRow.innerHTML = html;
+    Array.prototype.forEach.call(el.failRow.querySelectorAll(".fail-btn"), function (b) {
+      b.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var c = b.getAttribute("data-code");
+        if (failCode[p.id] === c) { delete failCode[p.id]; } else { failCode[p.id] = c; }
+        save(LS.failCode, failCode);
+        render();
+      });
+    });
+  }
+
   function mark(val) {
     var p = state.list[state.idx];
     if (!p) return;
     if (status[p.id] === val) { delete status[p.id]; }
     else { status[p.id] = val; }
+    // §4.1-A — fail_code는 wrong 행에서만 유효하다. 다른 상태로 바뀌면 귀인을 버린다.
+    if (status[p.id] !== "wrong" && failCode[p.id]) {
+      delete failCode[p.id];
+      save(LS.failCode, failCode);
+    }
     save(LS.status, status);
     render();
+  }
+
+  // ---- 채점 원장 TSV 내보내기 (Ruling 07 CB3) ----
+  // 12 columns per DATA_STANDARD §5.1, UTF-8 with BOM, mark_code = §4.1 enum.
+
+  // 배열은 콤마 결합, 빈 값은 "-" (§5.1 df=DF1,DF8 / aux_types=- 형식)
+  function flat(v) { return Array.isArray(v) ? (v.length ? v.join(",") : "-") : (v || "-"); }
+
+  // §5.1 ASCII 전용 규칙 — 원장은 집계용이지 답안 보관소가 아니다.
+  // 이 치환이 없으면 한글 답안이 실려 import_grading.py가 세트 전량을 거부한다(§6).
+  //
+  // 다만 곧바로 버리지 않고 **ASCII 등가 정규화를 먼저 한다**: 수학은 서답형 100%인데
+  // 답안에 유니코드 마이너스(−, U+2212)나 ≤·× 가 섞이는 것이 보통이라, 정규화 없이는
+  // 정상적인 수식 답안까지 전부 "-"로 떨어져 원장이 비어버린다.
+  // 정규화 후에도 ASCII가 아니면(서술형 한글 등) "-"로 두고, 원문은
+  // student/<학생ID>/ 답안 파일에 남겨 (set_id, qnum)으로 조인한다.
+  var ASCII_EQV = [
+    [/[−–—‐‑]/g, "-"],   // 마이너스·대시류
+    [/[“”„]/g, '"'], [/[‘’‚]/g, "'"],
+    [/×/g, "*"], [/÷/g, "/"], [/·|⋅/g, "*"],
+    [/≤/g, "<="], [/≥/g, ">="], [/≠/g, "!="],
+    [/²/g, "^2"], [/³/g, "^3"], [/√/g, "sqrt"],
+    [/π/g, "pi"], [/∞/g, "inf"], [/±/g, "+/-"],
+    [/…/g, "..."], [/ /g, " "]
+  ];
+  function ascii(v) {
+    var s = String(v == null ? "" : v).replace(/[\t\r\n]+/g, " ");
+    s = s.replace(/\*\*/g, "").replace(/`/g, "");        // 원장에 MD 마크업을 싣지 않는다
+    ASCII_EQV.forEach(function (r) { s = s.replace(r[0], r[1]); });
+    s = s.replace(/\s+/g, " ").trim();
+    if (!s) return "-";
+    return /^[\x20-\x7E]+$/.test(s) ? s : "-";
+  }
+
+  function exportTsv() {
+    if (!DATA.problems.length) { alert("내보낼 문제가 없습니다."); return; }
+    var rows = ["date\tset_id\tqnum\tmain_type\taux_types\ttier\tdf\tmark_code\tstudent_answer\tcorrect_answer\tfail_code\tnote"];
+    var today = new Date().toISOString().slice(0, 10);
+    DATA.problems.forEach(function (p) {
+      var st = status[p.id];
+      if (!st) return;
+      rows.push([
+        today,
+        p.setId || p.sourceKey || "-",
+        p.number,
+        p.typeId || "-",
+        flat(p.auxTypes),
+        p.tier || "-",
+        flat(p.df),
+        st,
+        ascii(answers[p.id]),
+        ascii(p.answer),
+        (st === "wrong" && failCode[p.id]) ? failCode[p.id] : "-",
+        "web-export"
+      ].join("\t"));
+    });
+    if (rows.length === 1) { alert("기록된 채점이 없습니다. 먼저 채점을 하세요."); return; }
+    var blob = new Blob(["\ufeff" + rows.join("\r\n")], { type: "text/tab-separated-values;charset=utf-8" });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url; a.download = "attempt_log_" + today + ".tsv";
+    document.body.appendChild(a); a.click();
+    setTimeout(function () { URL.revokeObjectURL(url); a.remove(); }, 0);
   }
 
   // ---- 단일 HTML 내보내기 (서버/Python 불필요) ----
@@ -334,10 +446,13 @@
   el.revealBtn.addEventListener("click", function (e) { e.stopPropagation(); revealCurrent(); });
   el.card.addEventListener("click", function () { revealCurrent(); });
   el.correctBtn.addEventListener("click", function (e) { e.stopPropagation(); mark("correct"); });
+  el.unsureBtn.addEventListener("click", function (e) { e.stopPropagation(); mark("unsure"); });
   el.wrongMarkBtn.addEventListener("click", function (e) { e.stopPropagation(); mark("wrong"); });
+  el.blankBtn.addEventListener("click", function (e) { e.stopPropagation(); mark("blank"); });
   el.prevBtn.addEventListener("click", function () { go(-1); });
   el.nextBtn.addEventListener("click", function () { go(1); });
   el.exportBtn.addEventListener("click", function () { exportStandalone(); });
+  el.exportTsvBtn.addEventListener("click", function () { exportTsv(); });
 
   // 서답형 입력
   el.userAnswer.addEventListener("click", function (e) { e.stopPropagation(); });

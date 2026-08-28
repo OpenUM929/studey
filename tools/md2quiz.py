@@ -16,14 +16,19 @@ from datetime import datetime
 CIRCLED = "①②③④⑤"
 OPTION_RE = re.compile(r"^\s*([①②③④⑤])\s*(.*)$")
 PROB_RE = re.compile(r"^\s*\*\*(\d+)\.\*\*\s*(.*)$")
-TAG_RE = re.compile(r"\[([A-Za-z0-9\-]+)·?(T\d)\s*\]")
+# Ruling 260825_07 CB1(amended): four-slot body tags [ID · Tier · DFlist · Ecode].
+# Unknown tail tokens survive in tagExtra (principle 3). Mirrors web/parser.js.
+BODY_TAG_RE = re.compile(r"\[\s*([A-Za-z0-9]+(?:-\d+)?)\s*·\s*(T\d)((?:\s*·\s*[^\]·]+)*)\s*\]")
+CELL_TAG_RE = re.compile(r"^\s*([A-Za-z0-9]+(?:-\d+)?)\s*·\s*(T\d)(?:\s*\(보조\s*([A-Za-z0-9\-]+)\))?")
 H1_RE = re.compile(r"^\s*#\s+(.*)$")
-ANSWER_H_RE = re.compile(r"^\s*#\s*정답")
 
 SUBJECT_MAP = [
     (re.compile(r"통합과학|과학"), "science"),
+    (re.compile(r"통합사회|사회"), "social"),
+    (re.compile(r"한국사"), "history"),
     (re.compile(r"영어"), "english"),
-    (re.compile(r"수학"), "math"),
+    (re.compile(r"도형의\s*방정식|공통수학2"), "math2"),
+    (re.compile(r"수학"), "math1"),
     (re.compile(r"국어"), "korean"),
 ]
 
@@ -33,6 +38,44 @@ def detect_subject(text):
         if pat.search(text):
             return key
     return "unknown"
+
+
+def parse_frontmatter(raw_lines):
+    if not raw_lines or raw_lines[0].strip() != "---":
+        return None
+    meta = {}
+    for ln in raw_lines[1:]:
+        if ln.strip() == "---":
+            return meta
+        m = re.match(r"^([A-Za-z_][A-Za-z0-9_]*):\s*(.*)$", ln)
+        if m:
+            meta[m.group(1)] = m.group(2).split(" #", 1)[0].strip()
+    return None
+
+
+def classify_tail(g3):
+    out = {"df": [], "traps": [], "aux": [], "extra": []}
+    if not g3:
+        return out
+    for tok in g3.split("·"):
+        tok = tok.strip()
+        if not tok:
+            continue
+        pa = re.search(r"\(\s*(\+[A-Za-z0-9\-]+)\s*\)", tok)
+        if pa:
+            out["aux"].append(pa.group(1)[1:])
+            tok = tok.replace(pa.group(0), "").strip()
+            if not tok:
+                continue
+        if re.fullmatch(r"DF\d+", tok):
+            out["df"].append(tok)
+        elif re.fullmatch(r"E\d+", tok):
+            out["traps"].append(tok)
+        elif re.fullmatch(r"\+[A-Za-z0-9\-]+", tok):
+            out["aux"].append(tok[1:])
+        else:
+            out["extra"].append(tok)
+    return out
 
 
 SPLIT_OPTION_RE = re.compile(r"\s*([①②③④⑤])\s*")
@@ -125,17 +168,21 @@ def parse_answer_table(lines):
                 num = int(re.match(r"\s*(\d+)", cells[0]).group(1))
             except (ValueError, AttributeError):
                 continue
-            # cells: [문항, 정답, 유형ID·Tier, 해설]
+            # cells: [문항, 정답, 유형ID·Tier(보조), 해설]
             answer = cells[1] if len(cells) > 1 else ""
             type_tier = cells[2] if len(cells) > 2 else ""
             explanation = cells[3] if len(cells) > 3 else ""
-            tm = TAG_RE.search(type_tier)
+            tm = CELL_TAG_RE.match(type_tier)
             type_id = tm.group(1) if tm else ""
             tier = tm.group(2) if tm else ""
+            aux = [tm.group(3)] if (tm and tm.group(3)) else []
             answers[num] = {
                 "answer": answer,
                 "typeId": type_id,
                 "tier": tier,
+                "auxTypes": aux,
+                "df": [],
+                "traps": [],
                 "explanation": explanation,
             }
         elif in_table and s:
@@ -147,6 +194,7 @@ def parse_answer_table(lines):
 def convert_file(md_path, source_key):
     text = open(md_path, encoding="utf-8").read()
     raw_lines = text.split("\n")
+    fm = parse_frontmatter(raw_lines)
 
     title = ""
     for ln in raw_lines:
@@ -154,26 +202,34 @@ def convert_file(md_path, source_key):
         if m:
             title = m.group(1).strip()
             break
-    subject = detect_subject(title + " " + os.path.basename(md_path))
+    # frontmatter subject_code has priority (ruling 07 CB1)
+    subject = (fm or {}).get("subject_code") or detect_subject(
+        title + " " + os.path.basename(md_path))
+    scope_confirmed = bool(fm and fm.get("scope_confirmed") == "true")
+    set_id = (fm or {}).get("set_id") or source_key
 
-    # 섹션 분할
+    # 섹션 분할 — Ruling 260825_07 CB2 (F9): 상태는 유형 키워드가 아니면
+    # 절대 리셋하지 않는다. 단원 헤더(## I-2 …)는 질문 구역에 콘텐츠로 남겨
+    # split_problems 가 직전 블록을 닫게 한다. 후행 보조 섹션(채점 기준 등)도
+    # 상태를 바꾸지 않는다. web/parser.js 와 동일 동작.
     sections = {"select": [], "essay": [], "answer": []}
     cur = None
     for ln in raw_lines:
         s = ln.strip()
-        if s.startswith("## 선택형"):
-            cur = "select"
-            continue
-        if s.startswith("## 서답형") or s.startswith("## 서술형") or s.startswith("## 단답형"):
-            cur = "essay"
-            continue
-        if ANSWER_H_RE.match(ln):
-            cur = "answer"
-            continue
-        if re.match(r"^\s*#{1,2}\s", ln) and cur not in (None, "answer"):
-            # 다른 섹션 헤더(예: 지문 난이도 검증) -> 본문 섹션 종료
-            if cur in ("select", "essay"):
-                cur = None
+        if re.match(r"^\s*#{1,4}\s+", s):
+            if re.search(r"채점|기준|요약|검증", s):
+                continue
+            if re.search(r"선택형", s):
+                cur = "select"
+                continue
+            if re.search(r"서답형|서술형|단답형", s):
+                cur = "essay"
+                continue
+            if re.search(r"정답|해설", s):
+                cur = "answer"
+                continue
+            if cur is not None:
+                sections[cur].append(ln)
             continue
         if cur is not None:
             sections[cur].append(ln)
@@ -187,17 +243,23 @@ def convert_file(md_path, source_key):
         num = blk["number"]
         passage, options = parse_options_and_passage(blk["body"])
         qtype = "choice" if options else "essay"
-        ans = answers.get(num, {})
-        # 줄기에서 유형ID·Tier 추출(답안표 누락 시 보완)
+        ans = dict(answers.get(num, {}))
+        # 슬롯 출처: 줄기 우선, 없으면 본문(지문 줄에 태그가 있을 수 있다)
         stem = blk["stem"]
-        if not ans.get("typeId"):
-            tm = TAG_RE.search(stem)
-            if tm:
-                ans["typeId"] = tm.group(1)
-                ans["tier"] = tm.group(2)
+        tm = BODY_TAG_RE.search(stem) or BODY_TAG_RE.search("\n".join(blk["body"]))
+        tail = classify_tail(tm.group(3)) if tm else classify_tail("")
+        if not ans.get("typeId") and tm:
+            ans["typeId"] = tm.group(1)
+            ans["tier"] = tm.group(2)
+            if not ans.get("auxTypes"):
+                ans["auxTypes"] = tail["aux"]
+        ans["df"] = tail["df"] + list(ans.get("df") or [])
+        ans["traps"] = tail["traps"] + list(ans.get("traps") or [])
         problems.append({
-            "id": "%s#%d" % (source_key, num),
+            "id": "%s#%d" % (set_id, num),
             "sourceKey": source_key,
+            "setId": set_id,
+            "scopeConfirmed": scope_confirmed,
             "subject": subject,
             "number": num,
             "qtype": qtype,
@@ -207,6 +269,10 @@ def convert_file(md_path, source_key):
             "answer": ans.get("answer", ""),
             "typeId": ans.get("typeId", ""),
             "tier": ans.get("tier", ""),
+            "df": ans.get("df", []),
+            "traps": ans.get("traps", []),
+            "auxTypes": ans.get("auxTypes", []),
+            "tagExtra": tail.get("extra", []) if tm else [],
             "explanation": ans.get("explanation", ""),
         })
 
@@ -218,6 +284,9 @@ def convert_file(md_path, source_key):
         "title": title,
         "subject": subject,
         "problems": problems,
+        "meta": {"scopeConfirmed": scope_confirmed, "setId": set_id,
+                 "unit": (fm or {}).get("unit", ""),
+                 "intendedUse": (fm or {}).get("intended_use", "")},
     }
 
 
@@ -232,11 +301,21 @@ def main():
         print("output/ 없음:", out_root)
         sys.exit(1)
 
+    answer_table_re = re.compile(r"^\|\s*문항\s*\|", re.M)
+
+    def is_quiz_input(text):
+        return bool(answer_table_re.search(text)) or len(BODY_TAG_RE.findall(text)) >= 3
+
     all_problems = []
     sources = []
     for md_path in sorted(glob.glob(os.path.join(out_root, "**", "*.md"),
                                     recursive=True)):
         rel = os.path.relpath(md_path, args.root).replace("\\", "/")
+        with open(md_path, encoding="utf-8") as f:
+            raw_head = f.read()
+        if not is_quiz_input(raw_head):
+            print("스킵(퀴즈 입력 아님):", rel)
+            continue
         source_key = os.path.basename(os.path.dirname(md_path)) or "root"
         print("변환:", rel)
         info = convert_file(md_path, source_key)
@@ -245,6 +324,8 @@ def main():
             "title": info["title"],
             "subject": info["subject"],
             "count": len(info["problems"]),
+            "scopeConfirmed": info["meta"]["scopeConfirmed"],
+            "setId": info["meta"]["setId"],
         })
         all_problems.extend(info["problems"])
 

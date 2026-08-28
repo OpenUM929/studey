@@ -6,14 +6,22 @@
 
   var OPTION_RE = /^\s*([①②③④⑤])\s*(.*)$/m;
   var PROB_RE = /^\s*\*\*(\d+)\.\*\*\s*(.*)$/m;
-  var TAG_RE = /\[([A-Za-z0-9\-]+)·?(T\d)\s*\]/;
+  // Ruling 260825_07 CB1(amended): body tags carry FOUR slots —
+  // [ID · Tier · DFlist · Ecode] (+aux). Unknown tail tokens are preserved
+  // (tagExtra), never dropped — principle 3.
+  var BODY_TAG_RE = /\[\s*([A-Za-z0-9]+(?:-\d+)?)\s*·\s*(T\d)((?:\s*·\s*[^\]·]+)*)\s*\]/;
+  // Bracketless answer-table cell: `SM2-13·T4 (보조 SM2-11)`
+  var CELL_TAG_RE = /^\s*([A-Za-z0-9]+(?:-\d+)?)\s*·\s*(T\d)(?:\s*\(보조\s*([A-Za-z0-9\-]+)\))?/;
   var H1_RE = /^\s*#\s+(.*)$/m;
-  var ANSWER_H_RE = /^\s*#\s*정답/m;
 
+  // DATA_STANDARD §5.8 — 7 subject codes (ruling 07 CB1 / ruling 12 CB2)
   var SUBJECT_MAP = [
     [/통합과학|과학/, "science"],
+    [/통합사회|사회/, "social"],
+    [/한국사/, "history"],
     [/영어/, "english"],
-    [/수학/, "math"],
+    [/도형의\s*방정식|공통수학2/, "math2"],
+    [/수학/, "math1"],
     [/국어/, "korean"]
   ];
 
@@ -22,6 +30,33 @@
       if (SUBJECT_MAP[i][0].test(text)) return SUBJECT_MAP[i][1];
     }
     return "unknown";
+  }
+
+  function parseFrontmatter(rawLines) {
+    if (!rawLines.length || rawLines[0].trim() !== "---") return null;
+    var meta = {};
+    for (var i = 1; i < rawLines.length; i++) {
+      if (rawLines[i].trim() === "---") return meta;
+      var m = /^([A-Za-z_][A-Za-z0-9_]*):\s*(.*)$/.exec(rawLines[i]);
+      if (m) meta[m[1]] = m[2].split(/\s+#/, 1)[0].trim();
+    }
+    return null;
+  }
+
+  function classifyTail(g3) {
+    var out = { df: [], traps: [], aux: [], extra: [] };
+    if (!g3) return out;
+    g3.split("·").forEach(function (t) {
+      t = t.trim();
+      if (!t) return;
+      var pa = /\(\s*(\+[A-Za-z0-9\-]+)\s*\)/.exec(t);
+      if (pa) { out.aux.push(pa[1].slice(1)); t = t.replace(pa[0], "").trim(); if (!t) return; }
+      if (/^DF\d+$/.test(t)) out.df.push(t);
+      else if (/^E\d+$/.test(t)) out.traps.push(t);
+      else if (/^\+[A-Za-z0-9\-]+$/.test(t)) out.aux.push(t.slice(1));
+      else out.extra.push(t);
+    });
+    return out;
   }
 
   var SPLIT_OPTION_RE = /\s*([①②③④⑤])\s*/;
@@ -89,11 +124,14 @@
         if (!numM) continue;
         var num = parseInt(numM[1], 10);
         var typeTier = cells[2] || "";
-        var tm = TAG_RE.exec(typeTier);
+        var tm = CELL_TAG_RE.exec(typeTier);
         answers[num] = {
           answer: cells[1] || "",
           typeId: tm ? tm[1] : "",
           tier: tm ? tm[2] : "",
+          auxTypes: (tm && tm[3]) ? [tm[3]] : [],
+          df: [],
+          traps: [],
           explanation: cells[3] || ""
         };
       } else if (inTable && s) {
@@ -104,16 +142,22 @@
   }
 
   function splitSections(rawLines) {
+    // Ruling 260825_07 CB2 (F9): section state is driven by TYPE keywords at any
+    // heading level. Unit sub-headers (`## I-2 직선의 방정식 …`) must NOT reset
+    // the question zone — they are kept as content so splitProblems can flush
+    // the previous block. Trailing auxiliary sections (채점 기준/요약/검증) never
+    // change state either.
     var sections = { select: [], essay: [], answer: [] };
     var cur = null;
     for (var i = 0; i < rawLines.length; i++) {
       var ln = rawLines[i];
       var s = ln.trim();
-      if (s.indexOf("## 선택형") === 0) { cur = "select"; continue; }
-      if (s.indexOf("## 서답형") === 0 || s.indexOf("## 서술형") === 0 || s.indexOf("## 단답형") === 0) { cur = "essay"; continue; }
-      if (ANSWER_H_RE.test(ln)) { cur = "answer"; continue; }
-      if (/^\s*#{1,2}\s/m.test(ln) && cur !== null && cur !== "answer") {
-        if (cur === "select" || cur === "essay") cur = null;
+      if (/^\s*#{1,4}\s+/.test(s)) {
+        if (/채점|기준|요약|검증/.test(s)) continue;
+        if (/선택형/.test(s)) { cur = "select"; continue; }
+        if (/서답형|서술형|단답형/.test(s)) { cur = "essay"; continue; }
+        if (/정답|해설/.test(s)) { cur = "answer"; continue; }
+        if (cur !== null) sections[cur].push(ln);
         continue;
       }
       if (cur !== null) sections[cur].push(ln);
@@ -122,13 +166,19 @@
   }
 
   function convertText(text, sourceKey) {
-    var rawLines = text.split("\n");
+    // CRLF 정규화 — 파이썬 splitlines() 동작과 일치시킨다. \r가 남으면 m 플래그 없는
+    // 행 단위 정규식(프론트매터 40행·LEADING_OPTION_RE 63행)의 (.*)$ 가 전부 실패한다.
+    var rawLines = text.split(/\r?\n/);
+    var fm = parseFrontmatter(rawLines);
     var title = "";
     for (var i = 0; i < rawLines.length; i++) {
       var m = H1_RE.exec(rawLines[i]);
       if (m) { title = m[1].trim(); break; }
     }
-    var subject = detectSubject(title + " " + (sourceKey || ""));
+    // frontmatter subject_code has priority (ruling 07 CB1)
+    var subject = (fm && fm.subject_code) ? fm.subject_code : detectSubject(title + " " + (sourceKey || ""));
+    var scopeConfirmed = !!(fm && fm.scope_confirmed === "true");
+    var setId = (fm && fm.set_id) ? fm.set_id : sourceKey;
     var sections = splitSections(rawLines);
     var selBlocks = splitProblems(sections.select);
     var essBlocks = splitProblems(sections.essay);
@@ -142,13 +192,22 @@
       var qtype = po.options.length ? "choice" : "essay";
       var ans = answers[blk.number] || {};
       var stem = blk.stem;
-      if (!ans.typeId) {
-        var tm = TAG_RE.exec(stem);
-        if (tm) { ans.typeId = tm[1]; ans.tier = tm[2]; }
+      // slot source: stem first, then passage/body (tags may sit in the stimulus)
+      var tm2 = BODY_TAG_RE.exec(stem);
+      if (!tm2) tm2 = BODY_TAG_RE.exec(blk.body.join("\n"));
+      var tail = classifyTail(tm2 ? tm2[3] : "");
+      if (!ans.typeId && tm2) {
+        ans.typeId = tm2[1]; ans.tier = tm2[2];
+        if (!ans.auxTypes || !ans.auxTypes.length) ans.auxTypes = tail.aux;
       }
+      // merge slots regardless of where typeId came from (table or tag)
+      ans.df = (tail.df || []).concat(ans.df || []);
+      ans.traps = (tail.traps || []).concat(ans.traps || []);
       problems.push({
-        id: sourceKey + "#" + blk.number,
+        id: setId + "#" + blk.number,
         sourceKey: sourceKey,
+        setId: setId,
+        scopeConfirmed: scopeConfirmed,
         subject: subject,
         number: blk.number,
         qtype: qtype,
@@ -158,10 +217,16 @@
         answer: ans.answer || "",
         typeId: ans.typeId || "",
         tier: ans.tier || "",
+        df: ans.df || [],
+        traps: ans.traps || [],
+        auxTypes: ans.auxTypes || [],
+        tagExtra: tail.extra || [],
         explanation: ans.explanation || ""
       });
     }
-    return { title: title, subject: subject, problems: problems };
+    return { title: title, subject: subject, problems: problems,
+             meta: { scopeConfirmed: scopeConfirmed, setId: setId,
+                     unit: (fm && fm.unit) || "", intendedUse: (fm && fm.intended_use) || "" } };
   }
 
   // 여러 md 텍스트 -> window.QUIZ_DATA 구조
@@ -171,7 +236,10 @@
     for (var i = 0; i < files.length; i++) {
       var key = files[i].name.replace(/\.[^.]+$/, "") || ("doc" + (i + 1));
       var info = convertText(files[i].text, key);
-      sources.push({ file: files[i].name, title: info.title, subject: info.subject, count: info.problems.length });
+      sources.push({ file: files[i].name, title: info.title, subject: info.subject,
+                     count: info.problems.length,
+                     scopeConfirmed: info.meta.scopeConfirmed,
+                     setId: info.meta.setId });
       problems = problems.concat(info.problems);
     }
     return { generatedAt: new Date().toISOString(), sources: sources, problems: problems };

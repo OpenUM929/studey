@@ -1,0 +1,10 @@
+date	step	target	decision	evidence	reason	confidence	actor
+2026-08-26	transcribe	전체 문항 1~23번	transcribed	HWP 레코드 ViewText/Section1 EQED 스크립트 180건 + hwp2md 텍스트 + 재조립 문단 스트림	hwp2md 산출물에 수식 개체 전량 미출력 → HWP 레코드의 수식 스크립트를 직접 판독해 원위치 삽입(추측 복원 아님). 문항수 23=표지 선언 23(±0), 배점 합계 100.0 실측 일치, 결번·중복 0	high	type-extractor
+2026-08-26	transcribe	그림 5건(BIN0001~BIN0005)	transcribed	corpus\_images\EX-math2-20252F\bindata 5파일 ↔ imgrefs=5	imgrefs 5건 전부 판독·기술 완료(a=5, b=5, m=5 일치), 미판독 0건. BIN0002 점근선 x=-2·y=-3·점 (1,-2), BIN0004 점 (0,7)·(3,1), BIN0003 도식(무수치), BIN0005 오각형+화살표+P 위치, BIN0001 학교 마크	high	type-extractor
+2026-08-26	transcribe	12번 수식 y=(ax+b)/(x+c) 범위 확정	transcribed	EQED 스크립트 `y = ax+b overx+c` + BIN0002(점근선 x=-2·y=-3·점 (1,-2)) + 정답지 12번 -4	over 피연산자가 분자 ax+b·분모 x+c 전체임이 그림과 정답 -4로 확정됨(분자 b만으로 읽으면 a+b+c=2로 어긋남)	high	type-extractor
+2026-08-26	transcribe	13번 수식 y=(-x+1)/(x+3) 범위 확정	transcribed	EQED 스크립트 `{-x +1} over x+3` + 정답지 13번 6	over 분모가 x+3 전체임이 정답 6으로 확정됨(분모 x만으로 읽으면 abc=0으로 어긋남)	high	type-extractor
+2026-08-26	transcribe	17번 수식 y=√(x-3) 범위 확정	transcribed	EQED 스크립트 `y = sqrt x-3` + 정답지 17번 0<m<1/6	sqrt 인수가 x-3 전체임이 정답으로 확정됨(√x-3으로 읽으면 범위 0<m<1/16으로 어긋남)	high	type-extractor
+2026-08-26	transcribe	5번 진리집합 문장 슬롯 재부착	transcribed	문단 인접 EQED 스크립트 순번 036(`p,~q,~r`)/037(`P , ~Q ,~ R`)	레코드 체인 원인으로 컨트롤 슬롯 1건이 빈 그룹+미배정 1건으로 표시됨 — 문장 성분(세 조건/진리집합 이름)과 스트림 인접 순서로 원본 스크립트 재부착, 추측 채움 아님	high	type-extractor
+2026-08-26	transcribe	12번 함수 슬롯 정렬	transcribed	문단 인접 EQED 스크립트 순번 071~073	같은 체인 원인으로 함수 자리 슬롯이 빈 그룹 처리되어 1칸 밀림 발생 — 문장 성분에 맞게 원본 스크립트 3건 재배치	high	type-extractor
+2026-08-26	transcribe	22번 기호 \ABDE·\BCD	transcribed	EQED 스크립트 순번 147·148 + BIN0005 문자 라벨	한글수식 `\` 접두어의 쇄선(overline) 렌더 여부를 이 환경에서 확인 불가 — 그림 라벨에 바가 없어 도형명을 무바로 전사함	medium	type-extractor
+2026-08-26	transcribe	정답지 사용 범위	transcribed	2학기 기말고사 정답 - 1학년.pdf p2(공통수학2 정답표)	정답지는 전사 대상에서 제외하고 12·13·17번 기호 범위 확정 근거로만 사용 — 전사본 본문에는 정답 미포함	high	type-extractor

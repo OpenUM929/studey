@@ -1,0 +1,17 @@
+id: EX-social-20242M
+title: "2024학년도 2학기 중간고사 1학년 통합사회 고사원안 (상산고등학교, 2024-10-11 3교시)"
+grade: 1
+exam_code: "2024-2M"
+variant: master
+pages: 8
+items: 28
+render_dpi: null
+render_tool: "hwp2md.py"
+transcribed_at: "2026-08-27"
+method: "hwp2md.py 변환 텍스트 축자 전사 + bindata 이미지(16건) 직접 판독"
+confidence: high
+answer_key: "2학기 중간고사 1학년 선택형 정답.pdf; 2학기 중간고사 1학년 서답형 정답.pdf"
+catalog_ref: null
+# 비고: # 2015 개정 세대 자료 (메인 루프 메타 주석)
+# items=28 산정: 표지 선언 선택형 24 + 서답형 4 =28 — 실측 24+4=28 일치(±0), 배점 합계 100.0 일치
+# confidence=high 사유: 문자 전량 추출·마커 16/16 해소(a+b==m)·문항수·배점 합계 일치, 판독불가 0건

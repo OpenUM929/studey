@@ -1,0 +1,43 @@
+date	step	target	decision	evidence	reason	confidence	actor
+2026-08-27	transcribe	표지·머리말(시행일·쪽수·문항수·비율·유의사항·인쇄번호)	transcribe	extracted/2024-2학기/기말/통합과학.txt [표지] + corpus/_images/EX-science-20242F/bindata/BIN0001.jpg	2024-12-16 3교시, 총 7쪽·선택형 24·서답형 8, OMR 뒷면, 30/30/40 비율, 유의사항 5항, 인쇄번호 [7-4] 전 면 확인	high	type-extractor
+2026-08-27	transcribe	선택형 1~3번 (질량-에너지·태양에너지·화석연료)	transcribe	extracted txt [문항1~3] + BIN 없음	3문항 축자 전사; 1ㄷ 질량 m·E=mc², 2ㄱ ¹H/⁴He 표기가 HWP EQED 유실에서 빈 괄호로 남아 인라인 unreadable 처리	medium	type-extractor
+2026-08-27	transcribe	선택형 4번 (태양전지 그림)	transcribe	extracted txt + corpus/_images/EX-science-20242F/bindata/BIN0002.bmp [4번]	태양광→태양전지→전구 전선 연결 그림을 시각 확인 후 묘사, 보기 ㄱㄴㄷ 축자 전사	high	type-extractor
+2026-08-27	transcribe	선택형 5번 (발전 방식 분류 표)	transcribe	extracted txt [5번 표]	3×2 분류표(A~D, 교류/해양/날씨) 및 보기 ㄱㄴㄷ 축자 전사; 숫·문자 원문 그대로	high	type-extractor
+2026-08-27	transcribe	선택형 6번 (수소 연료 전지 그림)	transcribe	extracted txt + corpus/_images/EX-science-20242F/bindata/BIN0006.bmp [6번]	전해질·전극·전구·ㄱ 화살표·A/B 가스 주입구 구조를 시각 확인 묘사; TXT의 "A B H 2 O" 파편화는 유지	high	type-extractor
+2026-08-27	transcribe	선택형 7번 (이온 모형 그림)	transcribe	extracted txt + corpus/_images/EX-science-20242F/bindata/BIN0011.png~BIN0013.png [7번 (가)(나)(다)]	(가) 삼각·하트, (나) 사각·삼각, (다) 별·사각 각 4개 배치 시각 확인; 이온명(Cl⁻, NaOH 등) EQED 유실로 빈 괄호 남아 unreadable	medium	type-extractor
+2026-08-27	transcribe	선택형 8번 (BTB 용액 표)	transcribe	extracted txt [8번 표]	BTB 색(파/노/초) 행은 확인되나 첨가 용액명·농도·부피가 EQED 유실로 공백/열 어긋남 — 표 구조 유실로 unreadable 행 별도 등재	low	type-extractor
+2026-08-27	transcribe	선택형 9번 (중화 실험)	transcribe	extracted txt [9번]	실험 과정 부피 수치·보기의 이온 비 전부가 EQED 유실로 빈 괄호/줄바꿈만 남아 축자 유지 불가 — 인라인 unreadable 처리	low	type-extractor
+2026-08-27	transcribe	선택형 10번 (혼합 용액 그림)	transcribe	extracted txt + corpus/_images/EX-science-20242F/bindata/BIN0016.png [10번]	(가)(나)(다) 막대/수위 도식 시각 확인(수치 라벨 판독 한계), (나) 이온 2종 조건 확인; 화학식(Mg 등) 유실은 unreadable	medium	type-extractor
+2026-08-27	transcribe	선택형 11번 (혼합 용액 표)	transcribe	extracted txt [11번 표]	부피(10/20/25) 일부 확인되나 이온명·농도 열 제목이 EQED 유실로 공백 — 인라인 unreadable	low	type-extractor
+2026-08-27	transcribe	선택형 12번 (중화 반응 실험)	transcribe	extracted txt [12번]	이온화 자료·과정·결과·보기의 모든 화학식·수치가 EQED 유실로 판독 불가 — 인라인 unreadable 별도 행 등재	low	type-extractor
+2026-08-27	transcribe	선택형 13번 (생태계 요소 그림+표)	transcribe	extracted txt + corpus/_images/EX-science-20242F/bindata/BIN0008.png [13번]	생태계→생물/비생물→개체군 A/B 화살표(ㄱㄴㄷ) 구조 시각 묘사, 표 (가)광합성·(나)연꽃·(다)? 축자 전사	high	type-extractor
+2026-08-27	transcribe	선택형 14번 (생물 요소 표)	transcribe	extracted txt [14번 표]	(가)멸치·고등어·(나)버섯·곰팡이·(다)미역·식물플랑크톤 표 및 보기 ㄱㄴㄷ 축자 전사	high	type-extractor
+2026-08-27	transcribe	선택형 15번 (잎 단면 그림)	transcribe	extracted txt + corpus/_images/EX-science-20242F/bindata/BIN0009.png [15번]	(가) 두꺼운 울타리 조직 밀집·(나) 얇은 1층 구조를 시각 확인 묘사, 보기 ㄱㄴㄷ 축자 전사	high	type-extractor
+2026-08-27	transcribe	선택형 16번 (먹이 그물 그림)	transcribe	extracted txt + corpus/_images/EX-science-20242F/bindata/BIN000A.png [16번]	식물→애벌레/나비/메뚜기→참새/거미/개구리→뱀/살쾡이→독수리 등 11노드 화살표 그물을 노드·방향까지 묘사	high	type-extractor
+2026-08-27	transcribe	선택형 17번 (레밍-쇠족제비 그래프)	transcribe	extracted txt + corpus/_images/EX-science-20242F/bindata/BIN000B.png [17번]	레밍(주황 로그) vs 쇠족제비(파랑 로그) 시계열·지연·t₁ 점선 교차를 축·범위까지 묘사	high	type-extractor
+2026-08-27	transcribe	선택형 18번 (에너지 피라미드 그림)	transcribe	extracted txt + corpus/_images/EX-science-20242F/bindata/BIN000C.bmp [18번]	(가) 4단계 피라미드 변천(㉠→㉡→㉢) 및 (나) Ⅰ~Ⅲ 역순 피라미드 형태를 범례(2차/1차/생산자) 포함 묘사	high	type-extractor
+2026-08-27	transcribe	선택형 19번 (기후 변화 보기)	transcribe	extracted txt [19번]	보기 ㄱ(고토양) ㄴ(지진 관측) ㄷ(빙하 간빙기) 축자 전사; ㄷ의 빙하 속 물질명은 EQED 유실로 unreadable	medium	type-extractor
+2026-08-27	transcribe	선택형 20번 (태평양 해류 지도)	transcribe	extracted txt + corpus/_images/EX-science-20242F/bindata/BIN000D.bmp [20번]	지도 100°E~60°W·A 쿠로시오·B 캘리포니아·C 적도·D 페루·E 서풍 해류 화살표를 위치와 함께 묘사	high	type-extractor
+2026-08-27	transcribe	선택형 21번 (바람 그림 (가)(나))	transcribe	extracted txt + corpus/_images/EX-science-20242F/bindata/BIN0003.png~BIN0004.png [21번]	(가) 직선 남북 바람(무자전)·(나) 휘어진 바람(자전) 동심원 3중 구조를 축·화살표 휨까지 묘사	high	type-extractor
+2026-08-27	transcribe	선택형 22번 (복사 에너지 그림)	transcribe	extracted txt + corpus/_images/EX-science-20242F/bindata/BIN0007.png [22번]	상단 에너지 곡선(㉠/㉡ 과잉/부족 음영)·하단 위도별 풍향 막대(A~D)를 교차점·음영까지 묘사	high	type-extractor
+2026-08-27	transcribe	선택형 23번 (동서 풍속 곡선)	transcribe	extracted txt + corpus/_images/EX-science-20242F/bindata/BIN000E.bmp [23번]	위도 60°N~60°S S자 곡선·0 점선·A(30°N)·B(60°S) 회색 띠·± 라벨을 묘사	high	type-extractor
+2026-08-27	transcribe	선택형 24번 (ENSO 등수온선 그림)	transcribe	extracted txt + corpus/_images/EX-science-20242F/bindata/BIN0015.png [24번]	x축 140°E~80°W·y축 2019.10~2020.7 등치선(실선 +/점선 -)·㉠㉡ 점선을 수치와 함께 묘사	high	type-extractor
+2026-08-27	transcribe	단답형 1번 (핵발전 제어봉)	transcribe	extracted txt [단답형1]	우라늄 235 연쇄 반응 지문 축자 전사; "²³⁵U" 등 EQED 유실은 빈 괄호로 남아 unreadable	medium	type-extractor
+2026-08-27	transcribe	단답형 2번 (적정기술 그림)	transcribe	extracted txt + corpus/_images/EX-science-20242F/bindata/BIN000F.png~BIN0010.png [단답형2]	(㉠) 기술 정의 3행 및 생명 빨대(소년·대야·빨대)·큐-드럼(파란 드럼·끈) 그림을 묘사	high	type-extractor
+2026-08-27	transcribe	단답형 3-4번 (혼합 용액 표)	transcribe	extracted txt [단답형3-4 표]	NaOH/HCl 부피(30/10, 30/20) 표 일부 확인되나 이온 수 수치는 EQED 유실로 공백 — unreadable	low	type-extractor
+2026-08-27	transcribe	단답형 5번 (군집/개체군/생태계 표)	transcribe	extracted txt [단답형5 표]	(가)생물+비생물·(나)같은 종 집단·(다)? 표 및 "(다)가 무엇인지 쓰시오" 축자 전사	high	type-extractor
+2026-08-27	transcribe	단답형 6번 (생태계 평형)	transcribe	extracted txt [단답형6]	"종류와 개체 수, 에너지 흐름이 안정적으로 유지되는 상태" 지문 축자 전사	high	type-extractor
+2026-08-27	transcribe	단답형 7번 (온실 가스)	transcribe	extracted txt [단답형7]	화석 연료·온실 효과·GWP 1 지문 축자 전사, "수불화 탄소" 원문 표기 유지	high	type-extractor
+2026-08-27	transcribe	단답형 8번 (엘니뇨 그림+보기 카드)	transcribe	extracted txt + corpus/_images/EX-science-20242F/bindata/BIN0005.png + BIN0014.png [단답형8]	워커 순환 모식도 및 학생 A/B 대화, 보기 7봉투(라니냐·엘니뇨·극·해들리·페렐·페루·인도네시아) 카드를 색·배치까지 묘사	high	type-extractor
+2026-08-27	transcribe	이미지 수율 게이트 (HWP)	transcribe	python tools/hwp2md.py --bindata 출력: bindata=22 imgrefs=22 + corpus/_images/EX-science-20242F/bindata 22파일 실측	22개 imgrefs 전건을 transcript에서 BIN0001~BIN0016 묘사로 해소 — a=22, b=0, a+b=22==m 충족, 미해소 0건	high	type-extractor
+2026-08-27	transcribe	문항 수·결번·배점 집계 검증	transcribe	extracted txt 전 문항 번호 스캔 + 선택형정답 PDF 합계 100 대조	선택형 1~24 연속, 단답형 1~8 연속, 결번·중복 없음, 배점 합 100(선택형 78.8+단답형 21.2) 표지 선언과 ±0 일치	high	type-extractor
+2026-08-27	unreadable	선택형 1ㄷ 질량·에너지 식	unreadable	extracted txt [1ㄷ] "질량 인 입자 ... 에너지는 이다" — 빈칸 2곳	bindata가 아닌 HWP EQED 인라인 수식(질량 m, E=Δmc²)이 hwp5html에서 텍스트 유실, 이미지도 없으므로 판독 불가	medium	type-extractor
+2026-08-27	unreadable	선택형 2ㄱ 원자핵 표기	unreadable	extracted txt [2ㄱ] "수소 원자핵( ) 2개 ... 헬륨 원자핵( )" 빈 괄호	HWP EQED의 동위원소 표기(¹H, ⁴He) 유실	medium	type-extractor
+2026-08-27	unreadable	선택형 7 화학식 전건	unreadable	extracted txt [7] "수산화 나트륨( )", "염화 나트륨( )", "Cl⁻", "CaCO₃/H₂" 전부 빈 괄호	NaOH/NaCl/CaCO₃/H₂ 등 화학식 일체가 EQED 유실	medium	type-extractor
+2026-08-27	unreadable	선택형 8 표 구조 및 용액명	unreadable	extracted txt [8] 첨가 용액명·농도·부피 전부 공백, 열 병합 풀림	BTB 실험의 산·염기 용액명과 농도가 EQED 또는 표 셀 병합 유실	low	type-extractor
+2026-08-27	unreadable	선택형 9 실험 수치·이온 비 전건	unreadable	extracted txt [9] V₁~V₄, Na⁺/Cl⁻ 비, 이온명 전부 빈칸	HWP EQED 수치·화학식이 전량 유실되어 문항 조건 복원 불가 — 추측 기입 금지	low	type-extractor
+2026-08-27	unreadable	선택형 11 이온명·열 제목	unreadable	extracted txt [11] "㉠ 과 ㉡ 은 각각 , , , 중 하나" 빈 칸, 열 제목 공백	혼합 용액 속 이온 농도/개수 기호가 EQED 유실	low	type-extractor
+2026-08-27	unreadable	선택형 12 자료·과정·결과·보기 전건	unreadable	extracted txt [12] 이온화 식·비·양이온 종류 전부 빈칸	3물질 이온화와 모든 수치가 EQED 유실	low	type-extractor
+2026-08-27	unreadable	선택형 19ㄷ 빙하 속 물질명	unreadable	extracted txt [19ㄷ] "빙하 속 가 낮아진다" 대상 명칭 공백	δ¹⁸O 등 동위원소 명칭 EQED 유실	medium	type-extractor
+2026-08-27	unreadable	단답형1 우라늄 표기	unreadable	extracted txt [단답형1] "우라늄 235( )는" 빈 괄호	²³⁵U 등 핵종 표기 EQED 유실	medium	type-extractor
+2026-08-27	unreadable	단답형3-4 표 수치	unreadable	extracted txt [단답형3-4] 전체 이온 수 수치 2칸 공백	혼합 용액 이온 수 수치 EQED 유실	low	type-extractor

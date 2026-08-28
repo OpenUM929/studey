@@ -1,0 +1,9 @@
+date	step	target	decision	evidence	reason	confidence	actor
+2026-08-27	transcribe	표지·header	transcribe	txt L1-L14(표지)	총 12쪽·선택형 24문항·서답형 5문항·시행일 2024-12-13 1교시·고사반영 비율 30/30/40·유의사항 전문 등 인쇄값을 그대로 전사했다. 쪽번호 [12 - 4] 포함.	high	type-extractor
+2026-08-27	transcribe	[[BIN0001.jpg]] (imgrefs 1건)	transcribe	bindata/BIN0001.jpg(24132) ↔ txt 마커 1건	bindata=1 imgrefs=1 전건 해소 — a(이미지 판독 전사)=1, b(unreadable 보고)=0, m=1 → a+b==m 성립, 미해소 0건. BIN0001 표지 로고(4분할+중앙 막대, 문자 없음).	high	type-extractor
+2026-08-27	transcribe	선택형 1~10	transcribe	txt 선택형1~10 블록	지문·보기·선택지 및 배점 2.6/3.1/2.7/2.7/2.9/2.5/3.1/3.3/2.7/2.5점을 축자 전사했다. 5번 ambiguous/anthropomorphism 주석 포함.	high	type-extractor
+2026-08-27	transcribe	선택형 11~16	transcribe	txt 선택형11~16 블록	선택형 11~16의 지문(lectins·water crisis·cooperation·pneumonia·기억 왜곡·Streisand effect) 전문과 선택지 표를 축자 전사했다. 배점 2.6/2.5/2.5/2.7/3.2/3점 인쇄값 보존.	high	type-extractor
+2026-08-27	transcribe	선택형 17~24	transcribe	txt 선택형17~24 블록	선택형 17~24의 순서배열·빈칸·지문(천재/genius·discovery·just world·morels·extraneous variables·domestication·mental illness(A)(B)) 전문과 선택지 표를 축자 전사했다. 배점 3.5/3.4/2.9/3.3/3.2/3.2/2.8/3.1점 인쇄값 보존.	high	type-extractor
+2026-08-27	transcribe	서답형 1~5	transcribe	txt 서답형1~5 블록	서답형1(글(B) 저자가 글(A) 분석 빈칸 (1)~(5)·조건, 배점 6부분점수) + 서답형2(Superbugs 표 요약 빈칸 A-D·조건 2개, 4점) + 서답형3(청소년 독서 영향 요약 A-C·조건 3개, 8부분점수) + 서답형4(Vocabulary 8개 어휘 빈칸 3개, 6점) + 서답형5(시나리오 관용구 2개·조건 8단어 중 1포함, 6점) 전문과 표·조건·배점을 축자 전사했다.	high	type-extractor
+2026-08-27	transcribe	문항 계수 대조	transcribe	txt 전체+표지 선언	표지 선언(선택형 24·서답형 5)과 실측(선택형 1~24 결번·중복 0, 서답형1~5 결번·중복 0, 총 29문항)이 일치한다. 배점 합계 선택형 70.0+서답형 30.0=100.0 산술 일치. 오차 ±0.	high	type-extractor
+2026-08-27	transcribe	변환 결함 점검(EQED·이미지)	transcribe	origin_data hwp raw bindata vs txt	도구 결함 경고에 따라 HWP 원본 bindata와 변환 txt를 대조한 결과 EQED 수식 레코드 해당 없음(영어 과목 특성상 수식 객체 0건), 표·이미지 마커 1건 전량 보존 — 문자·이미지 손실 없음을 확인했다.	high	type-extractor

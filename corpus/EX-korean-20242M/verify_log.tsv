@@ -1,0 +1,14 @@
+date	step	target	decision	evidence	reason	confidence	actor
+2026-08-26	transcribe	표지·header	transcribe	txt+L1-L13(표지)	총 12쪽·선택형 24문항·서답형 4문항·시행일 2024-10-08 1교시·고사반영 비율 30/30/40 등 인쇄값을 그대로 전사했다. 유의사항 전문 포함.	high	type-extractor
+2026-08-26	transcribe	[[BIN0001.jpg]]	transcribe	bindata/BIN0001.jpg	imgrefs 1건을 전건 해소했다 — 표지 중앙 「상 산 고 등 학 교」 좌측의 학교 로고 그래픽(회색 사각형 4개+진홍색 세로 막대, 문자 없음)을 이미지 직접 판독으로 묘사했다. 미해소 0건(a=1, b=0, m=1).	high	type-extractor
+2026-08-26	transcribe	선택형 1~5+서술형 1번	transcribe	txt+선택형1-6블록	지문 (가)~(라) 전문과 문항 1~5, 서술형 [1-1]·[1-2]를 축자 전사했다. 배점 2.3/2.7/2.6/2.4/2.6점, [1-1] 각각 4점·[1-2] 각각 3점 인쇄값 보존.	high	type-extractor
+2026-08-26	transcribe	선택형 6~8	transcribe	txt+선택형6·7~8블록	<보기> 포함 문항 6과 지문 (가)십육영·(나)를 포함한 문항 7~8을 축자 전사했다. 배점 2.4/2.5/2.5점 인쇄값 보존. 각수 주석(동량재·기염·호리종횡 등) 전문 포함.	high	type-extractor
+2026-08-26	transcribe	선택형 9~11+서술형 2번	transcribe	txt+선택형9~11·서술형2블록	상춘곡 지문(한자·토씨 표기 포함)과 문항 9~11, 서술형 [2-1]·[2-2], <보기1>·<보기2>를 축자 전사했다. 배점 2.3/2.4/2.7점, 6점·8점 인쇄값 보존.	high	type-extractor
+2026-08-26	transcribe	선택형 12~14	transcribe	txt+선택형12~14블록	지문 (가)·(나) 전문과 문항 12~14를 축자 전사했다. 배점 2.6/2.4/2.6점 인쇄값 보존. ⓐ~ⓔ·㉠ 표식 위치 그대로.	high	type-extractor
+2026-08-26	transcribe	선택형 15~16	transcribe	txt+선택형15~16블록	「울타리 밖」 지문과 <보기>(샤갈의 마을에 내리는 눈) 포함 문항 15~16을 축자 전사했다. 배점 2.5/2.5점 인쇄값 보존.	high	type-extractor
+2026-08-26	transcribe	선택형 17~19+서술형 3번	transcribe	txt+선택형17~19·서술형3블록	[앞부분의 줄거리] 포함 춘향전 지문 전문과 문항 17~19, 서술형 3번(조건 2개 포함)을 축자 전사했다. 배점 2.2/2.4/2.5점, 6점 인쇄값 보존.	high	type-extractor
+2026-08-26	transcribe	선택형 20~21	transcribe	txt+선택형20~21블록	｢정각록｣ 지문 전문과 문항 20~21을 축자 전사했다. 배점 2.3/2.6점 인쇄값 보존. ㉮ 표식 위치 그대로.	high	type-extractor
+2026-08-26	transcribe	선택형 22~24+서술형 4번	transcribe	txt+선택형22~24·서술형4블록	월인석보·이응태 묘 출토 편지·음식 디미방 지문과 <보기>(용비어천가), 문항 22~24, 서술형 4번(조건 1개 포함)을 축자 전사했다. 배점 2.5/2.7/2.8점, 6점 인쇄값 보존. 옛글 표기(ㆁ·ᄒᆞ 등) 그대로.	high	type-extractor
+2026-08-26	transcribe	문항 계수 대조	transcribe	txt+전체	표지 선언(선택형 24·서답형 4)과 실측(선택형 1~24 결번·중복 0, 서술형 블록 4개)이 일치한다. 오차 ±0.	high	type-extractor
+2026-08-26	transcribe	변환 결함 점검(EQED)	transcribe	origin_data hwp raw scan	도구 결함 경고에 따라 HWP 원본 바이트를 검사한 결과 EQED 레코드 0건 — 수식·주석 객체 소실 없음을 확인했다.	high	type-extractor
+2026-08-26	transcribe	시가 행구분(조판)	transcribe	txt+지문 전체	HWP 행갈림이 hwp2md.py 변환에서 평탄화되어 시가 행 구분·들여쓰기 등 조판 정보가 소실되었다. 문자 손실은 없으나 운율 관련 재분석 시 원본 HWP 대조가 필요하다. 이 유일한 감점 사유로 meta.yml confidence를 medium으로 기록했다.	medium	type-extractor

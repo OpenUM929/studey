@@ -1,0 +1,12 @@
+date	step	target	decision	evidence	reason	confidence	actor
+2026-08-26	transcribe	표지·머리글(계수 블록)	transcribe	origin_data HWP BodyText + extracted\2024-2학기\기말\수학.txt 1-13행	총(6)쪽·단답형(22)문항·고사반영비율(30/30/40) 등 표지 사실을 변환 본문에서 축자했다. 필드 컨트롤(쪽 자동필드)은 본문에 이미 전개된 값으로 기록된다.	high	type-extractor
+2026-08-26	transcribe	문항 1-6	transcribe	HWPTAG_CTRL_EQEDIT 레코드 EQ001-EQ032 + 수학.txt 16-27행	변환기가 수식을 전량 탈락시켜(EQED 결함) 레코드 스크립트에서 복원했다. 분수 over→(/), sqrt→√(), 첨자 _n→ₙ 선형화. 서체 토큰(rm/it)은 수학적 내용이 아니어서 제외했다.	high	type-extractor
+2026-08-26	transcribe	문항 7-13	transcribe	EQ033-EQ071 + 수학.txt 28-33행	동일 방법 복원. 문항 7 역함수 이동량 m+n, 문항 9 조건 M·m=-7(스크립트에 연산자 문자 없음 — 정답 −10과 곱 해석만 정합), 문항 13 ₙC₅=ₙC₁₃₋ₙ(it 토큰은 이탤릭 지정).	high	type-extractor
+2026-08-26	transcribe	문항 14-22	transcribe	EQ072-EQ117 + 수학.txt 34-72행 + xhtml 표 배치	동일 방법 복원. 문항 22는 표 컨트롤이 문단 선두에 고정돼 레코드 스트림상 표 내부 수식(A·B 정의)이 본문 수식보다 먼저 온다 — 시각 순서(본문→조건 표)로 재배열해 전사했다.	high	type-extractor
+2026-08-26	transcribe	문항 1 수식 ₄P₂+₅C₃	transcribe	EQ001 스크립트 rm`_4` P_2 +`_5 `C`_3 + 2학기 기말고사 1학년 서답형정답.pdf p1(문항 1 정답 22)	스크립트의 rm 인용 토큰 해석이 모호해 정답지로 교차검증했다: ₄P₂+₅C₃=12+10=22로 정답 22와 일치.	high	type-extractor
+2026-08-26	transcribe	[[BIN0001.jpg]]	resolved(그림 기술)	corpus\_images\EX-math1-20242F\bindata\BIN0001.jpg + PrvImage(표지)	표지 학교 엠블럼 그래픽(회색 사각형 4개+크림슨 세로 띠). 내용 정보 없음 — transcript 표지 절에 기술로 해소.	high	type-extractor
+2026-08-26	transcribe	[[BIN0002.tif]](문항 2 그림)	resolved(그림 기술)	bindata\BIN0002.tif(355×355) 판독	쌍곡선 그래프: 점선 점근선 x=−1·y=2, y축 라벨 1·2, x축 라벨 −1, 원점 O. 상수 a,b,c가 그림에서만 주어지므로 그림 필수로 기록했다.	high	type-extractor
+2026-08-26	transcribe	[[BIN0003.tmp]](문항 19 그림)	resolved(그림 기술)	bindata\BIN0003.tmp(640×640) 판독	원에 내접한 정십이각형 외곽선만 있고 꼭짓점·원 표시 없음. 수치(12개·3개)는 본문에 명시라 그림 없이도 지문 성립 — 사실로 기록.	high	type-extractor
+2026-08-26	transcribe	[[BIN0004.bmp]](문항 20 그림)	resolved(그림 기술)	bindata\BIN0004.bmp(516×419) 판독	사물함 배치도: 열 라벨 첫째~넷째 열, 층 라벨 첫째~넷째 층, 넷째 층 3개(넷째 열 없음)+나머지 층 각 4개=총 15개. 본문 수치 15(EQ092)와 일치. 배치 구성이 그림에서만 주어지므로 그림 필수.	high	type-extractor
+2026-08-26	transcribe	전체 수율 게이트(HWP 축)	transcribe	선언: 단답형 22문항(표지) vs 전사 22문항 / imgrefs=4 vs 해소 4건(기술 3+로고 1)	(i) 문항 수율 22/22(±0) — 결번·중복 없음(지면에 번호 인쇄 없음, 정답지 번호와 정순 대응). (ii) 이미지 수율 a+b==m: 4+0==4, 미해소 0건 — 게이트 통과.	high	type-extractor
+2026-08-26	transcribe	정답지 교차검증(참고 기록)	transcribe	2학기 기말고사 1학년 서답형정답.pdf p1 수학 열	복원 수식과 정답 정합: 1=22(₄P₂+₅C₃)·7=−1(m+n)·9=−10(M·m)·13=17(n=8,9 합)·21=426(X→Y 함수). 선택형정답.pdf는 수학 열이 없어 본 시험과 무관 — meta answer_key에는 원 지시대로 둘 다 기재.	high	type-extractor
