@@ -28,6 +28,10 @@ The author cannot audit or gate its own work. Auditor and critic use separate co
 
 External Opus comparison defaults to one main session, one active slice, no subagent dispatch, explicit usage stop threshold, and no automatic retry. Higher concurrency requires explicit user approval for that run.
 
+## Continuity boundary
+
+Codex assurance lanes stop before a new slice when remaining context is 60% or less. On Codex quota exhaustion they write only to their assigned exclusive checkpoint/output path, report `HOLD — resource exhausted`, and return control without model downgrade, replacement fan-out, automatic retry, or busy-wait. The leader resumes only after a `resume audit` verifies fresh quota, frozen hashes, artifact hashes, runtime identities, exclusive ownership, no conflicting writer, and exact WIP `NEXT`. External Opus is never covered by this automatic-resume path; its one-session/one-pilot/no-automatic-continuation rule remains absolute.
+
 ## Output bundle for Opus
 
 Each ready experiment contains only these immutable advisory artifacts:

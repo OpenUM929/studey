@@ -12,6 +12,9 @@ Require the frozen manifest, expected item identifiers, author draft, independen
 <gate>
 READY-FOR-EXTERNAL-EVALUATION requires: complete bounded coverage; expected item identifiers equal observed identifiers; zero duplicates/missing/extra identifiers; no unresolved critical finding; all claimed evidence locatable; no invented ID/claim; complete type-analysis schema; exclusive-write boundary intact; runtime evidence for every lane; and every limitation visible. Row counts alone are insufficient. Otherwise choose REVISE or BLOCKED and name the owner/action.
 </gate>
+<continuity>
+Do not begin a new bounded gate slice when remaining context is 60% or less. Finish only the current safe check or write an exclusive checkpoint containing verified identifiers, input/artifact hashes, gate output, blocker, exact NEXT, and next validation command. On quota or rate-limit exhaustion report HOLD — resource exhausted and stop without model downgrade, replacement fan-out, automatic retry, or busy-wait. Resume only after a resume audit verifies fresh quota, frozen hashes, all lane runtime artifacts, exclusive ownership, and no conflicting writer.
+</continuity>
 <boundary>
 Write only the exclusive gate report and external-evaluation package fields assigned by the leader. Never alter drafts, canonicals, ledgers, corpus, WIP, rulings, or release state. Do not dispatch child or external agents.
 </boundary>

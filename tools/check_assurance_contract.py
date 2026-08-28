@@ -13,6 +13,9 @@ import tomllib
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+
 TEXT_REQUIREMENTS = {
     "AGENTS.md": [
         "runtime identity",
@@ -20,6 +23,14 @@ TEXT_REQUIREMENTS = {
         "expected item identifiers",
         "one main session and one pilot slice",
         "actual-team",
+        "HOLD — resource exhausted",
+        "resume audit",
+        "never busy-wait",
+    ],
+    "CLAUDE.md": [
+        "HOLD — resource exhausted",
+        "resume audit",
+        "remaining context is 60% or less",
     ],
     "docs/CODEX_TEAM_ASSURANCE_GUIDE.md": [
         "runtime identity",
@@ -27,12 +38,27 @@ TEXT_REQUIREMENTS = {
         "No row-count-only",
         "one main session",
         "blocked",
+        "resource-exhaustion checkpoint",
+        "resume audit",
     ],
     "docs/OPUS_ASSURANCE_TEAM.md": [
         "runtime evidence",
         "expected item identifiers",
         "No row-count-only",
         "independent context",
+    ],
+    "docs/GLOBAL_GUIDANCE_CONTINUITY.md": [
+        "STUDY:GLOBAL-CONTINUITY:START",
+        "remaining model context is 60% or less",
+        "HOLD — resource exhausted",
+        "resume audit",
+        "busy-wait",
+    ],
+    "tools/sync_global_continuity_guidance.py": [
+        "GLOBAL-CONTINUITY:START",
+        "--check",
+        "--install",
+        "sha256",
     ],
     ".claude/agents/type-proposer.md": [
         "expected item identifiers",
@@ -82,7 +108,13 @@ for relative in ROLE_FILES:
     if role.get("model_reasoning_effort") != "high":
         fail(f"{relative}: must use runtime-supported high effort, not an inferred depth")
     instructions = role.get("developer_instructions", "")
-    for needle in ("exclusive", "runtime", "expected item identifiers"):
+    for needle in (
+        "exclusive",
+        "runtime",
+        "expected item identifiers",
+        "HOLD — resource exhausted",
+        "resume audit",
+    ):
         if needle not in instructions:
             fail(f"{relative}: missing role safeguard {needle!r}")
 

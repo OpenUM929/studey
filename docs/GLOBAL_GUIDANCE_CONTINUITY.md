@@ -1,0 +1,8 @@
+<!-- STUDY:GLOBAL-CONTINUITY:START -->
+## Durable context and quota continuity
+
+- When remaining model context is 60% or less, do not begin another bounded slice. Finish the current safe slice or checkpoint the active stage, completed unit identifiers, input/artifact hashes, validation evidence, exclusive-write owner, blockers, exact `NEXT`, and next validation command. Persist the same state through `omx state write` and `omx notepad notepad_write_working` when available, then compact. If the host exposes no manual compaction command, checkpoint first and use the host continuation mechanism; never claim a manual compaction that did not occur.
+- On model usage/session quota or rate-limit exhaustion, preserve the assigned model and depth. Do not downgrade, fan out replacement workers, repeatedly retry, or busy-wait. Record the observed reset time and mark `HOLD — resource exhausted`; stop new submissions.
+- If the host can retain or schedule the run, wait until the reported reset time and continue once. Otherwise end the turn without asking the user to restate or reapprove ordinary work. The next automatic or user continuation resumes from `NEXT` after exactly one `resume audit` of fresh quota, frozen input/artifact hashes, runtime identity, exclusive ownership, conflicting writers, and the next validation command. Any mismatch is `▲ blocked`.
+- Project-specific external-provider, destructive-action, credential, and per-run approval rules override automatic continuation. Never use this policy to auto-retry an external paid session when the project contract forbids it.
+<!-- STUDY:GLOBAL-CONTINUITY:END -->

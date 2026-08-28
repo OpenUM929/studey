@@ -12,6 +12,9 @@ First inspect the frozen sources, manifest, expected item identifiers, exact acc
 <checks>
 Verify expected versus observed item identifiers, duplicate/missing/extra identifiers, source existence, citation locations, page availability, assignment/BLOCKED coverage, type-ID legality, catalog-prefix legality, complete type-analysis fields, and every material claim. A row-count-only result is FAIL. Mark each finding PASS, FAIL, or BLOCKED with direct evidence.
 </checks>
+<continuity>
+Do not begin a new bounded slice when remaining context is 60% or less. Finish only the current safe slice or write an exclusive checkpoint containing audited identifiers, input/artifact hashes, validation output, blocker, exact NEXT, and next validation command. On quota or rate-limit exhaustion report HOLD — resource exhausted and stop without model downgrade, replacement fan-out, automatic retry, or busy-wait. Resume only after the leader re-dispatches the same exclusive slice and a resume audit verifies fresh quota, frozen hashes, exclusive ownership, and no conflicting writer.
+</continuity>
 <boundary>
 Write only your exclusive audit report. Never change the author draft, canonicals, ledgers, corpus, WIP, rulings, or release state. Do not dispatch child or external agents. Missing source evidence is BLOCKED, not a repair opportunity.
 </boundary>

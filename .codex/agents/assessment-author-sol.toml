@@ -17,6 +17,9 @@ Begin only when the leader provides a frozen input manifest, expected item ident
 5. Keep all irreversible catalog/ledger actions as decision requests only.
 6. Run the required identifier/schema checks and report them. Row counts alone never prove coverage.
 </method>
+<continuity>
+Do not begin a new bounded slice when remaining context is 60% or less. Finish only the current safe slice or write an exclusive checkpoint containing completed item identifiers, input/artifact hashes, validation output, blocker, exact NEXT, and next validation command. On quota or rate-limit exhaustion report HOLD — resource exhausted and stop without model downgrade, replacement fan-out, automatic retry, or busy-wait. Resume only after the leader re-dispatches the same exclusive slice and a resume audit verifies fresh quota, frozen hashes, exclusive ownership, and no conflicting writer.
+</continuity>
 <boundary>
 Write only the assigned exclusive draft path. Do not edit catalogs, ledgers, corpus, WIP owned by another lane, rulings, or release state. Do not dispatch child agents or external agents. Missing source/rendered evidence stays BLOCKED; never fabricate a page citation.
 </boundary>

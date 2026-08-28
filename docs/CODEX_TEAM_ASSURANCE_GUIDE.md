@@ -46,6 +46,14 @@ If any condition fails, record `blocked` and do not create a comparison output o
 - No parallel external dispatch, automatic retry, invented citation, invented identifier, canonical edit, ledger append, or release decision occurs in an experiment.
 - No missing rendered/source evidence is converted into a fabricated page citation or a complete result. Affected items are `BLOCKED`.
 
+## Context, quota, and resume gate
+
+No lane begins a new bounded slice when remaining context is 60% or less. The lane finishes only its current safe slice or writes an exclusive checkpoint; the leader then records the active stage, frozen input and produced-artifact hashes, completed identifiers, validation output, exclusive owner, blocker, exact `NEXT`, and next validation command before compaction.
+
+When a Codex/OMX usage/session quota or rate limit is exhausted, each affected lane writes a **resource-exhaustion checkpoint**, reports `HOLD — resource exhausted`, and stops new submissions. It must not switch to a weaker model, launch replacement workers, automatically retry, or busy-wait. If the host exposes a reset time and can retain or schedule the run, the leader permits one continuation after that time. Otherwise the next continuation starts without redoing completed slices.
+
+Every continuation begins with a **resume audit**: verify fresh quota, frozen input hashes, artifact hashes, runtime identities, exclusive-write ownership, absence of a conflicting writer, WIP `NEXT`, and the next deterministic validation command. Any mismatch is `BLOCKED`. This section does not relax the external Opus rule: external work never auto-continues or auto-retries and remains one main session plus one pilot slice per approved run.
+
 ## Type-analysis acceptance schema
 
 The author draft and the gate input must include all of the following: per-item assignment or `BLOCKED`; expected item identifiers; observed identifiers; duplicate/missing/extra identifier results; source citations; consolidation; at least two observed variation axes per reusable type; observed traps; source-axis-labelled importance; `COMMON_TYPES` comparison; catalog-update disposition; and `HARVEST_LOG`/`EXTRACTION_LOG` drafts. The auditor verifies every material claim; the critic challenges the semantic grouping and student-facing generation risk. Any missing field is `BLOCKED`, not a prose-quality warning.
