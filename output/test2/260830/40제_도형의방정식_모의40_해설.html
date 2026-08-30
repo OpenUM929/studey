@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<title>공통수학2 「도형의 방정식」 예상 문제 40제 — 정답·해설</title>
+<style>
+:root{--ink:#111;--mute:#555;--rule:#bbb;--accent:#1a4a7a}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:"Malgun Gothic","맑은 고딕","Apple SD Gothic Neo",sans-serif;
+  color:var(--ink);background:#8a8a8a;font-size:10.5pt;line-height:1.62;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{position:relative;width:210mm;height:297mm;padding:16mm 15mm 14mm;
+  background:#fff;margin:8mm auto;box-shadow:0 2px 14px rgba(0,0,0,.35);overflow:hidden}
+.page-inner{position:relative;height:100%;overflow:hidden}
+.masthead{border-bottom:2px solid var(--accent);padding-bottom:3mm;margin-bottom:5mm}
+.masthead h1{font-size:15pt;margin:0 0 1.5mm;letter-spacing:-.3px}
+.masthead .sub{font-size:9pt;color:var(--mute)}
+.namebar{margin-top:3mm;font-size:9.5pt;color:var(--mute);display:flex;gap:10mm}
+.namebar span{border-bottom:1px solid var(--rule);padding:0 0 1mm;min-width:38mm}
+.notice{font-size:8.6pt;color:var(--mute);border:1px solid var(--rule);
+  border-left:3px solid var(--accent);padding:2.5mm 3mm;margin:0 0 5mm;line-height:1.5}
+.section{font-size:11.5pt;font-weight:700;color:var(--accent);
+  border-bottom:1px solid var(--rule);padding-bottom:1.5mm;margin:0 0 4mm}
+/* 직선 이름 l 은 고딕에서 대문자 I·숫자 1과 구별되지 않는다(260830 육안 검수).
+   변수는 수학 관행대로 세리프 이탤릭으로 세운다. */
+em{font-family:"Times New Roman",Cambria,serif;font-style:italic;font-size:1.06em}
+.item{margin:0 0 6.5mm;padding-left:9mm;position:relative;font-size:11pt}
+.item .no{position:absolute;left:0;top:0;font-weight:700;color:var(--accent);min-width:9mm}
+.item p{margin:0 0 1.6mm}
+.item p:last-child{margin-bottom:0}
+.ans{margin:0 0 4.5mm;padding-left:9mm;position:relative;font-size:9.6pt}
+.ans .no{position:absolute;left:0;top:0;font-weight:700;color:var(--accent)}
+.ans .val{font-weight:700}
+.ans .typ{font-size:8.4pt;color:var(--mute);margin-left:2mm}
+.ans .sol{color:#333;margin-top:1mm;line-height:1.55}
+.rub{margin:0 0 5mm;font-size:9.4pt}
+.rub h3{font-size:10pt;margin:0 0 1.5mm;color:var(--accent)}
+.rub div{margin:0 0 .8mm}
+code{font-family:Consolas,"D2Coding",monospace;font-size:.92em;background:#f2f2f2;padding:0 2px}
+.pfoot{position:absolute;left:15mm;right:15mm;bottom:7mm;display:flex;
+  justify-content:space-between;font-size:8pt;color:#888;
+  border-top:1px solid #e2e2e2;padding-top:1.5mm}
+@media print{
+  body{background:#fff}
+  .page{margin:0;box-shadow:none;break-after:page;page-break-after:always}
+  .page:last-child{break-after:auto;page-break-after:auto}
+  .noprint{display:none!important}
+}
+@page{size:A4 portrait;margin:0}
+.noprint{position:fixed;top:8px;left:50%;transform:translateX(-50%);z-index:99;
+  background:#fff;border:1px solid #bbb;border-radius:4px;padding:6px 12px;
+  font-size:12px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.noprint button{font:inherit;cursor:pointer;padding:3px 10px;margin-left:8px}
+</style></head><body>
+<div class="noprint">A4 해설지 · 총 <b id="pagecount">-</b>쪽
+<button onclick="window.print()">인쇄</button></div>
+<script type="application/json" id="meta">{"setId": "SET-260822-math2-40", "kind": "해설"}</script>
+<div id="sheet"></div>
+<div id="source" style="position:absolute;left:-9999px;top:0;width:180mm">
+<div class="ans"><span class="no">1.</span><span class="val"><strong>10</strong></span><span class="typ">SM2-01·T1</span><div class="sol">P(t, 0)으로 두면 AP² = (t−1)²+9, BP² = (t−5)²+1. 등거리 조건에서 <strong>t²이 상쇄</strong>되어 −2t+10 = −10t+26 → t = 2. P(2, 0)이므로 AP² = 1+9 = <strong>10</strong>. / 함정: 제곱을 풀지 않고 이차방정식으로 오인. "x축 위"인데 x좌표를 0으로 두는 <strong>축 혼동</strong>(SM2-03 대표 오답과 같은 축). AP = √10을 답으로 쓰면 오답 — 묻는 것은 AP².</div></div>
+<div class="ans"><span class="no">2.</span><span class="val"><strong>33</strong></span><span class="typ">SM2-02·T2</span><div class="sol"><strong>그림이 없으므로 좌표축을 스스로 세운다.</strong> B(0, 0), C(6, 0), A(3, 3√3)로 두면 P(t, 0) (0 ≤ t ≤ 6). AP² = (t−3)²+27, BP² = t². f(t) = 3t²−6t+36 = 3(t−1)²+33 → t = 1일 때 최소 <strong>33</strong> (t = 1은 정의역 안). / 함정: 좌표 도입을 못 해 코사인법칙으로 우회(AP² = 36+t²−6t로 같은 결과). 계수 2를 빠뜨려 f(t)=2t²−6t+36로 계산. <strong>최솟값을 주는 t(=1) 자체를 답으로 씀</strong>. 정의역 [0, 6] 확인 누락.</div></div>
+<div class="ans"><span class="no">3.</span><span class="val"><strong>6</strong></span><span class="typ">SM2-03·T3</span><div class="sol">2 : 1 내분점 P = ((2(a+8)+(a−4))/3, (2(−a)+(9−a))/3) = (<strong>a+4, 3−a</strong>). 제1사분면 ⇒ a+4 &gt; 0 <strong>그리고</strong> 3−a &gt; 0 ⇒ −4 &lt; a &lt; 3. 정수 a = −3, −2, −1, 0, 1, 2 → <strong>6개</strong>. / 함정(<strong>E5 경계</strong>): <strong>사분면은 축을 포함하지 않아 등호가 없다.</strong> a = −4면 P(0, 7)로 y축 위, a = 3이면 P(7, 0)로 x축 위 — 둘 다 제1사분면이 아니다. ≤로 잡으면 8개(오답). 또 하나: 내분비를 1 : 2로 뒤집으면 P(a, 6−a) → 5개(오답).</div></div>
+<div class="ans"><span class="no">4.</span><span class="val"><strong>30</strong></span><span class="typ">SM2-04·T3</span><div class="sol">AB 방향 성분은 (6, 3), 3AC = 5AB ⇒ AC = (5/3)AB이므로 C = A ± (5/3)(6, 3) = (−2, 1) ± (10, 5). C₁(8, 6), C₂(−12, −4). x+y는 각각 14, −16이므로 M = 14, m = −16, M − m = <strong>30</strong>. / 함정(<strong>DF8 분기</strong>): "<strong>직선 AB 위</strong>"는 A를 기준으로 <strong>양방향 2해</strong>다 — 한쪽만 구하면 M 또는 m이 사라진다("연장선 위 + 부호 단서"였다면 1해). 3AC = 5AB를 뒤집어 AC = (3/5)AB로 쓰는 비례 오류. 기준점을 B로 잘못 잡음(이 문항의 기준은 <strong>A</strong>).</div></div>
+<div class="ans"><span class="no">5.</span><span class="val"><strong>29</strong></span><span class="typ">SM2-06·T2</span><div class="sol">중점 조건에서 C = 2M − B = (12−5, 6+2) = (7, 8). G = ((−3+5+7)/3, (4−2+8)/3) = (3, 10/3). 3p+6q = 9+20 = <strong>29</strong>. (별해: G는 중선 AM을 A에서 2 : 1로 내분하므로 C를 구하지 않아도 된다.) / 함정: <strong>계수 3, 6이 분모 3을 상쇄</strong>하도록 설계돼 있어 G를 소수로 반올림하면 정수가 안 나온다(스스로 검산 가능). C = 2M − B의 <strong>역산 방향을 뒤집어</strong> C = (M+B)/2로 계산. G를 구하지 않고 M을 무게중심으로 착각.</div></div>
+<div class="ans"><span class="no">6.</span><span class="val"><strong>(1)</strong> PR의 중점 = ((x₁+x₂+x₃+x₄)/4, (y₁+y₂+y₃+y₄)/4) = QS의 중점 (아래 해설) / <strong>(2)</strong> D(−1, 12), 중점 (2, 4)</span><span class="typ">SM2-05·T2</span><div class="sol"><strong>(1)</strong> P((x₁+x₂)/2, (y₁+y₂)/2), R((x₃+x₄)/2, (y₃+y₄)/2)이므로 PR의 중점의 x좌표는 ((x₁+x₂)/2 + (x₃+x₄)/2)/2 = (x₁+x₂+x₃+x₄)/4. 마찬가지로 Q((x₂+x₃)/2, …), S((x₄+x₁)/2, …)에서 QS의 중점의 x좌표도 (x₂+x₃+x₄+x₁)/4. y좌표도 같은 방법으로 (y₁+y₂+y₃+y₄)/4로 일치한다. <strong>따라서 사각형 ABCD의 모양에 관계없이 선분 PR의 중점과 선분 QS의 중점은 일치한다.</strong> <strong>(2)</strong> 평행사변형 ABCD ⇔ 대각선 <strong>AC와 BD</strong>의 중점이 일치. AC의 중점 = (2, 4)이므로 (5+a)/2 = 2, (−4+b)/2 = 4 → <strong>D(−1, 12)</strong>. 그때 (1)의 중점은 ((−3+5+7−1)/4, (2−4+6+12)/4) = <strong>(2, 4)</strong>. / 함정: <strong>좌표를 A(0,0), B(a,0) 같은 특수값으로 잡아 일반성을 잃음</strong>(감점). 대각선을 AB·CD로 잘못 짝지음(최다 오답 — ABCD에서 대각선은 <strong>AC·BD</strong>). 결론 문장을 쓰지 않음.</div></div>
+<div class="ans"><span class="no">7.</span><span class="val"><strong>13</strong></span><span class="typ">SM2-08·T1</span><div class="sol">직선 AB의 기울기는 (4−(−2))/(5−1) = 3/2이므로 <em>l</em>의 기울기는 <strong>−2/3</strong>. C(4, 6)을 지나므로 y − 6 = −(2/3)(x − 4) ⇒ <strong>2x + 3y − 26 = 0</strong>. y = 0을 대입하면 x = <strong>13</strong>. / 함정: 수직 조건에서 기울기의 <strong>역수만 취하고 부호를 빼먹음</strong>(2/3로 계산 → x절편 −5). x절편과 y절편을 바꿔 답함(y절편은 26/3).</div></div>
+<div class="ans"><span class="no">8.</span><span class="val"><strong>32</strong></span><span class="typ">SM2-07·T2</span><div class="sol">밑변을 AC로 잡는다. 직선 AC는 기울기 (9−3)/(5+1) = 1이므로 <strong>x − y + 4 = 0</strong>, 길이 |AC| = √(6²+6²) = 6√2. 점 B(2, k)에서 이 직선까지의 <strong>거리</strong>는 |2 − k + 4|/√(1²+(−1)²) = |6 − k|/√2. 따라서 S = ½ · 6√2 · |6 − k|/√2 = <strong>3|k − 6|</strong>. (별해: 좌표 넓이식 ½|(−1)(k−9) + 2(9−3) + 5(3−k)| = ½|36 − 6k| 도 같은 값 — 다만 이 세트의 표기 관행은 <strong>점과 직선 사이의 거리</strong>이므로 주풀이는 위쪽이다.) S = 6에서 |k − 6| = 2 → k = 4 또는 8. 곱 = <strong>32</strong>. / 함정(DF8): <strong>절댓값을 한쪽으로만</strong> 풀어 해를 하나만 얻음(k = 8만). 넓이 공식의 부호를 잘못 배열. k = 6이면 세 점이 <strong>한 직선 위</strong>에 놓여 삼각형이 되지 않는데, 이것이 |k − 6|이라는 형태로 드러난다(검산 수단).</div></div>
+<div class="ans"><span class="no">9.</span><span class="val"><strong>35</strong></span><span class="typ">SM2-09·T2</span><div class="sol">수직이등분선의 기울기가 3/2이므로 <strong>① 직선 AB의 기울기 = −2/3</strong>: (b − 3)/(5 − a) = −2/3 ⇒ 3b = 2a − 1. <strong>② 중점 ((a+5)/2, (b+3)/2)가 수직이등분선 위</strong>: 3(a+5) − 2(b+3) + 2 = 0 ⇒ 3a − 2b + 11 = 0. 연립하면 5a = −35 ⇒ <strong>a = −7, b = −5</strong>. ab = <strong>35</strong>. (검산: A(−7,3), B(5,−5)의 중점 (−1,−1)은 3x−2y+1=0 위, 기울기 −8/12 = −2/3.) / 함정: <strong>두 조건 중 하나만 써서 미결정</strong>(이 유형의 최대 오답원) — 수직 조건만 쓰면 a, b가 확정되지 않는다. 수직 기울기를 −3/2로 잘못 씀. ab 대신 a+b(=−12)를 답함. <strong>DF9 역산</strong> — 결과(수직이등분선)에서 원인(양 끝점)을 되짚는 구조.</div></div>
+<div class="ans"><span class="no">10.</span><span class="val">직선: <strong>x = −2</strong>, <strong>3x − 4y + 18 = 0</strong> / x절편의 합 <strong>−8</strong></span><span class="typ">SM2-10·T3</span><div class="sol">두 직선을 연립하면 교점 <strong>P(−2, 3)</strong>. |PA| = √(4²+2²) = 2√5 &gt; 4이므로 조건을 만족하는 직선은 <strong>2개</strong>다. 기울기가 존재한다고 두면 mx − y + 2m + 3 = 0, 거리 |4m + 2|/√(m²+1) = 4 ⇒ (4m+2)² = 16(m²+1) ⇒ <strong>16m = 12, m = 3/4</strong> — <strong>이차항이 소거되어 해가 하나뿐</strong>이다. 이것이 <strong>나머지 한 직선이 기울기가 없는 x = −2</strong>라는 신호다(점 A(2,1)에서 x = −2까지의 거리 = 4 ✓). x절편은 각각 −2와 −6이므로 합은 <strong>−8</strong>. / 함정(<strong>x = 상수 누락 — 이 유형의 감점 축</strong>): 직선 다발 (3x−2y+12) + k(x+4y−10) = 0 은 <strong>y축에 평행한 직선을 표현하지 못한다.</strong> m으로만 풀면 3x − 4y + 18 = 0 하나만 얻어 <strong>−6</strong>을 답한다. 거리 조건을 제곱할 때 이차항 소거를 "계산 실수"로 오해하고 되돌아가는 이탈도 흔하다. / 260830 수정(게이트 S-4): 종전 교점 (1, 3)·A(5, 1)은 누락 직선이 <strong>16번과 문자 그대로 같은 <code>x = 1</code></strong> 이어서 T4 16번의 핵심 발상이 선행 노출됐다. 좌표만 옮겨 골격(16m = 12)은 보존했다.</div></div>
+<div class="ans"><span class="no">11.</span><span class="val"><strong>12</strong></span><span class="typ">SM2-13·T2</span><div class="sol">밑변 BC가 공통이므로 <strong>넓이비 = 밑변비</strong>. B 쪽이 2이므로 D는 BC를 <strong>2 : 1로 내분</strong>: D = (−4 + (2/3)·12, 0) = <strong>(4, 0)</strong>. 직선 <em>l</em>은 A(2, 6), D(4, 0)을 지나므로 기울기 −3, y = −3(x − 4) ⇒ y절편 <strong>12</strong>. / 함정(<strong>방향 뒤집기</strong>): "B를 포함하는 쪽이 크다"를 놓치면 1 : 2로 잡아 D = (0, 0) → <em>l</em>이 y = 3x가 되어 y절편 <strong>0</strong>(오답). 넓이(=36)를 실제로 계산하려는 우회는 불필요. 구하는 것이 y절편인데 x절편(=4)을 답함.</div></div>
+<div class="ans"><span class="no">12.</span><span class="val"><strong>−3</strong></span><span class="typ">SM2-12·T3</span><div class="sol">두 직선의 법선 크기가 모두 5이므로 |3x − 4y + 5| = |4x + 3y + 2|. <strong>부호 두 경우로 갈라진다(± 두 개의 각의 이등분선).</strong> (+) 3x − 4y + 5 = 4x + 3y + 2 ⇒ <strong>x + 7y − 3 = 0</strong>, y = 0에서 x = <strong>3</strong>. (−) 3x − 4y + 5 = −(4x + 3y + 2) ⇒ <strong>7x − y + 7 = 0</strong>, y = 0에서 x = <strong>−1</strong>. 곱은 3 × (−1) = <strong>−3</strong>. (검산: (3,0)은 두 직선까지 모두 14/5, (−1,0)은 모두 2/5.) / 함정(<strong>DF8 분기</strong>): <strong>절댓값을 한쪽으로만 벗겨 한 점만 답함</strong> — 발문이 "<strong>모두</strong>"이고 <strong>곱</strong>을 물으므로 두 해가 반드시 필요하다. 주어진 두 직선이 서로 수직(기울기 3/4, −4/3)이므로 <strong>두 이등분선도 서로 수직</strong>이어야 한다 — 기울기 −1/7과 7의 곱이 −1임을 검산으로 쓸 수 있다.</div></div>
+<div class="ans"><span class="no">13.</span><span class="val"><strong>3</strong></span><span class="typ">SM2-14·T3</span><div class="sol">k(x − 3) − y + 2 = 0으로 정리하면 k에 대한 항등식 조건에서 <strong>정점 (3, 2)</strong>를 지나고 <strong>기울기가 k</strong>인 직선이다(y의 계수가 −1이므로 수직선은 나오지 않는다). 정점에서 A(1, −4)를 보는 기울기는 (−4−2)/(1−3) = <strong>3</strong>, B(0, 8)을 보는 기울기는 (8−2)/(0−3) = <strong>−2</strong>. 선분 AB 위의 점을 (1−s, −4+12s)로 두면 기울기는 (6−12s)/(2+s)로 s에 대해 <strong>단조감소</strong>하며 3에서 −2까지 빠짐없이 훑는다(분모 2+s ≠ 0). 따라서 <strong>−2 ≤ k ≤ 3</strong>, 정수 k는 −2, −1, 0, 1, 2, 3의 6개이고 합은 <strong>3</strong>. / 함정(<strong>E5 경계 — 이 학생의 1순위 취약축</strong>): "<strong>선분</strong> AB와 만난다"는 <strong>양 끝점 A, B를 포함</strong>하므로 등호가 살아 있다. 등호를 빼면 k = −1, 0, 1, 2만 남아 합이 <strong>2</strong>(오답). 반대로 "선분"을 "직선"으로 읽으면 정점을 지나는 모든 직선이 만나 답이 존재하지 않는다. 또 하나: 정점을 구하지 않고 k를 하나씩 대입하는 무한 시도.</div></div>
+<div class="ans"><span class="no">14.</span><span class="val"><strong>15</strong></span><span class="typ">SM2-11·T3</span><div class="sol">직선을 4x − y + 27 = 0으로 정리(√(4²+1²) = √17). P(t, −t² + 6)에서의 거리는 |4t − (−t²+6) + 27|/√17 = |t² + 4t + 21|/√17. <strong>t² + 4t + 21 = (t+2)² + 17 &gt; 0</strong>이므로 절댓값이 그대로 벗겨지고, t = <strong>−2</strong>일 때 분자가 최소 <strong>17</strong>. 따라서 m = 17/√17 = <strong>√17</strong>, m² = 17. m² + t = 17 + (−2) = <strong>15</strong>. / 함정: <strong>절댓값 안 이차식의 부호 판정을 건너뜀</strong>(판별식 16 − 84 &lt; 0이라 항상 양수 — 이 확인이 서술 채점 포인트). 최솟값 m을 구하고 <strong>"그때의 t"를 안 구함</strong>. 포물선이 아래로 볼록이므로 접선을 이용한 별해도 가능하지만 완전제곱이 정석. m = √17을 그대로 답에 넣어 √17 − 2로 쓰면 오답(묻는 것은 m²).</div></div>
+<div class="ans"><span class="no">15.</span><span class="val"><strong>(1)</strong> 3x + 2y − 14 = 0 / <strong>(2)</strong> B(6, −2), D(−2, 10) / <strong>(3)</strong> 52</span><span class="typ">SM2-09·T4</span><div class="sol"><strong>(1)</strong> 마름모의 두 대각선은 서로 <strong>수직이등분</strong>한다. AC의 중점 M(2, 4), 직선 AC의 기울기 (6−2)/(5+1) = 2/3이므로 BD의 기울기는 <strong>−3/2</strong>. y − 4 = −(3/2)(x − 2) ⇒ <strong>3x + 2y − 14 = 0</strong>. <strong>(2)</strong> MA = √(3² + 2²) = <strong>√13</strong>. 대각선이 수직이므로 직각삼각형 AMB에서 MB² = AB² − MA² = 65 − 13 = 52, <strong>MB = 2√13</strong>. BD의 방향은 기울기 −3/2, 즉 단위방향 (2, −3)/√13이므로 B = (2, 4) ± 2√13 · (2, −3)/√13 = (2, 4) ± (4, −6) ⇒ <strong>(6, −2) 또는 (−2, 10)</strong>. B의 x좌표가 더 크므로 <strong>B(6, −2), D(−2, 10)</strong>. <strong>(3)</strong> AC = 2√13, BD = 2·MB = 4√13이므로 넓이 = ½ · 2√13 · 4√13 = <strong>52</strong>. / 함정: <strong>두 조건 중 수직 조건만 쓰고 "중점을 지난다"를 빠뜨림</strong>(BD가 미결정). MB를 한 변 √65에서 곧바로 빼려 함 — <strong>직각삼각형 AMB에서의 피타고라스</strong>가 핵심 발상(DF5). 방향 성분에 √13을 곱하는 배율을 틀려 B가 격자점에서 벗어남. <strong>두 해 중 선별 조건(B의 x좌표 &gt; D의 x좌표)을 무시</strong>(DF8). 넓이를 (한 변)² = 65로 오인 — 마름모는 정사각형이 아니다. 넓이 공식 ½d₁d₂에서 ½을 빠뜨려 104.</div></div>
+<div class="ans"><span class="no">16.</span><span class="val"><strong>(1)</strong> x = 1, x − y + 5 = 0 / <strong>(2)</strong> 18</span><span class="typ">SM2-13·T4 (보조 SM2-11)</span><div class="sol"><strong>(1)</strong> 점 P를 지나고 A, B에서 같은 거리인 직선은 <strong>(ㄱ) 선분 AB와 평행한 직선</strong> 또는 <strong>(ㄴ) 선분 AB의 중점을 지나는 직선</strong> 두 가지뿐이다(그 외에는 A, B가 직선의 서로 다른 쪽에 있으면서 거리가 달라진다). 직선 AB의 기울기는 (7+1)/(5+3) = <strong>1</strong>이므로 (ㄱ)은 y − 6 = x − 1 ⇒ <strong>x − y + 5 = 0</strong> (A, B에서의 거리 모두 3/√2). AB의 중점은 <strong>M(1, 3)</strong> 인데 <strong>P(1, 6)과 x좌표가 같으므로</strong> (ㄴ)은 <strong>기울기가 존재하지 않는 x = 1</strong> (A, B에서의 거리 모두 4). <strong>(2)</strong> x = 1과 x축의 교점 (1, 0), x − y + 5 = 0과 x축의 교점 (−5, 0), 두 직선의 교점 P(1, 6)이 꼭짓점이므로 밑변 6, 높이 6 ⇒ 넓이 = ½ · 6 · 6 = <strong>18</strong>. / 함정(<strong>수직선 누락 — 부교재 #2-17 골격 재현</strong>): y − 6 = m(x − 1)로 두고 |·| 방정식을 풀면 <strong>m = 1 하나만</strong> 나온다. 이때 "답이 하나"라고 끝내면 (2)에서 <strong>삼각형이 만들어지지 않아</strong> 풀 수 없다 — 이 막힘 자체가 x = 1을 빠뜨렸다는 신호다. 그 밖에: P가 직선 AB(y = x + 2) 위에 있는지 확인 안 함(P는 위에 있지 않아 두 직선이 실제로 서로 다르다). 넓이에서 y축을 밑변으로 착각.</div></div>
+<div class="ans"><span class="no">17.</span><span class="val"><strong>13</strong></span><span class="typ">SM2-15·T1</span><div class="sol">중심을 C(a, a−1)로 <strong>1미지수화</strong>. CA² = 2a²−12a+26, CB² = 2a²−16a+34 → a=2. C(2,1), r²=10. a+b+r² = 2+1+10 = 13. <strong>함정</strong>: 중심을 (a,b) 두 미지수로 두면 계산량이 두 배가 된다.</div></div>
+<div class="ans"><span class="no">18.</span><span class="val"><strong>20</strong></span><span class="typ">SM2-16·T2</span><div class="sol">중심 (a, 2a−4), x축 접 ⇒ r² = (2a−4)². 점 A 대입 → (1−a)²+(6−2a)² = (2a−4)² → a²−10a+21=0 → a=3, 7. 중심 (3,2) r=2 / (7,10) r=10. r₁r₂ = <strong>20</strong>. <strong>함정</strong>: a에 대한 이차방정식의 <strong>두 근이 모두 유효</strong>한데 한쪽만 답하고 끝냄(DF8). 접함을 대입 후 판별식으로 처리하면 4차식이 된다 — r = |중심의 y좌표|가 정석.</div></div>
+<div class="ans"><span class="no">19.</span><span class="val"><strong>x − 3y + 5 = 0</strong></span><span class="typ">SM2-19·T2</span><div class="sol">원의 넓이를 이등분하는 직선은 반드시 <strong>그 원의 중심을 지난다.</strong> 따라서 두 원의 넓이를 동시에 이등분하려면 <strong>두 중심을 모두 지나야</strong> 한다. 표준형으로 고치면 C₁ : (x−1)²+(y−2)²=4 → 중심 (1, 2), C₂ : (x−4)²+(y−3)²=4 → 중심 (4, 3). 두 점을 지나는 직선은 기울기 1/3이므로 y − 2 = (1/3)(x − 1) → <strong>x − 3y + 5 = 0</strong>. / 함정: 현의 길이 공식이나 공통현(두 식의 차)을 꺼내 계산 폭증 — <strong>공통현은 교점을 지나는 직선이지 넓이 이등분선이 아니다.</strong> 일반형에서 r² 계산 실수(1+4−1=4). 두 반지름이 같다는 사실은 이 문제와 무관하다.</div></div>
+<div class="ans"><span class="no">20.</span><span class="val"><strong>12</strong></span><span class="typ">SM2-17·T2</span><div class="sol">PA²=4PB² → (x+2)²+y² = 4{(x−4)²+y²} → x²+y²−12x+20=0 → (x−6)²+y²=16. 중심 (6,0), r=4. 밑변 AB=6은 x축 위로 <strong>고정</strong>이므로 높이의 최대 = r = 4. S = ½·6·4 = <strong>12</strong>. <strong>함정</strong>: 자취가 원임을 못 보고 대수 전개로 헤맴 / 밑변 고정 시 높이 최대 = 반지름임을 놓침.</div></div>
+<div class="ans"><span class="no">21.</span><span class="val"><strong>4</strong></span><span class="typ">SM2-18·T3</span><div class="sol">(x−2)²+(y+1)² = 5−k 이므로 <strong>원이 될 조건 5−k&gt;0 ⇒ k&lt;5</strong>. 중심 (2,−1)에서 직선까지 d = |2−2+5|/√5 = √5. 만나지 않음 ⇔ d&gt;r ⇔ 5 &gt; 5−k ⇔ k&gt;0. 따라서 0&lt;k&lt;5, 정수 k = 1,2,3,4 → <strong>4개</strong>. <strong>함정(E5)</strong>: ① <strong>r²&gt;0 조건 누락</strong> → 상한을 못 잡아 개수가 무한이 됨 ② "만나지 않는다"에 접함을 포함시켜 등호(≥)를 씀 ③ k=5는 반지름 0(한 점)이라 원이 아님.</div></div>
+<div class="ans"><span class="no">22.</span><span class="val"><strong>28</strong></span><span class="typ">SM2-23·T3</span><div class="sol">공통현: C₁ − C₂ ⇒ 6x−8y−30=0 → <strong>3x−4y−15=0</strong>. 원점에서 이 직선까지 거리 3 ⇒ AB = 2√(25−9) = 8. 점 D(0,5)에서 직선까지 거리 = |−20−15|/5 = 7. S = ½·8·7 = <strong>28</strong>. <strong>함정</strong>: 두 교점의 좌표를 실제로 구하려다 계산 폭증(공통현은 두 식의 차) / 어느 원 기준으로 d를 잡을지 혼동(C₂ 기준으로 해도 2√(20−4)=8로 동일) / k=−1일 때만 직선이 된다는 점.</div></div>
+<div class="ans"><span class="no">23.</span><span class="val"><strong>−16</strong></span><span class="typ">SM2-20·T2</span><div class="sol">중심 (2,−1), r=√5. <strong>이동한 원</strong>이므로 y+1 = −2(x−2) ± √5·√((−2)²+1) = −2(x−2) ± 5. 두 접선 y = −2x+8, y = −2x−2. pq = 8·(−2) = <strong>−16</strong>. <strong>함정</strong>: 원점 중심 공식 y = mx ± r√(m²+1)을 이동한 원에 그대로 적용(대표 오답, y절편 ±5가 나옴) / 두 접선 사이 거리는 10/√5 = 2√5 = 2r 로 검산 가능.</div></div>
+<div class="ans"><span class="no">24.</span><span class="val"><strong>3</strong></span><span class="typ">SM2-21·T1</span><div class="sol">P(a,b)에서의 접선은 <strong>ax + by = 10</strong>, 기울기 −a/b. 주어진 직선의 기울기 −1/3과 같으므로 b = 3a. 원 위의 점이므로 a²+b² = 10 → 10a² = 10 → a=1(a&gt;0), b=3. ab = <strong>3</strong>. <strong>함정</strong>: 접선을 다시 유도하려 함 / a²+b²=r² 조건을 연립에 넣지 않아 미결정 / b=0 예외 확인.</div></div>
+<div class="ans"><span class="no">25.</span><span class="val"><strong>72</strong></span><span class="typ">SM2-22·T4</span><div class="sol">접점을 지나는 직선(접점현)은 <strong>ax + by = 9</strong>. 이것이 2x−y=3, 즉 6x−3y=9 와 같으므로 P(6, −3). d = OP = √45 = 3√5 (원 밖 확인: 45&gt;9). 중심에서 AB까지 거리 = r²/d = 9/(3√5) = 3/√5 ⇒ AB = 2√(9−9/5) = 12/√5. 높이 = d − r²/d = 12/√5. S = ½·(12/√5)² = 72/5 ⇒ 5S = <strong>72</strong>. <strong>함정(DF9)</strong>: 두 접점 좌표를 연립으로 직접 구하려다 계산 폭증 / 2x−y=3 의 우변을 9로 맞추는 <strong>비례 조정을 빼먹고</strong> a=2, b=−1 로 읽어 P(2,−1)로 오산(이 점은 2²+(−1)² = 5 &lt; 9 이므로 <strong>원 내부</strong>이며, 원 내부의 점에서는 애초에 접선을 그을 수 없다 — 오답인 것이 즉시 드러난다) / 접선의 길이 PA = √(45−9) = 6 으로 검산 가능.</div></div>
+<div class="ans"><span class="no">26.</span><span class="val"><strong>16</strong></span><span class="typ">SM2-25·T3</span><div class="sol">중심 (1,−2)에서 <em>l</em>까지 d = |3+8+24|/5 = 7 &gt; r = 4 ⇒ 원과 직선은 만나지 않는다. 원 위의 점에서 <em>l</em>까지의 거리는 <strong>[d−r, d+r] = [3, 11]</strong>을 연속적으로 움직인다. 자연수 값 3~11의 9개 중 <strong>끝값 3과 11은 각각 점이 1개</strong>, 그 사이 4~10(7개)은 <strong>각각 2개</strong>. 1+7×2+1 = <strong>16</strong>. <strong>함정(E5)</strong>: 9×2 = 18로 세는 끝값 중복 처리 오류(이 학생 1순위 취약축) / d와 r의 대소를 확인하지 않아 범위 하한을 0으로 잡음.</div></div>
+<div class="ans"><span class="no">27.</span><span class="val"><strong>P(6, 7), 넓이 24</strong></span><span class="typ">SM2-25·T4</span><div class="sol">① 직선 AB: 기울기 −1, <strong>x+y−1=0</strong>, AB = √(4²+(−4)²) = 4√2. ② 중심 (4,5)에서 AB까지 거리 d = |4+5−1|/√2 = 4√2, r = 2√2 이므로 d &gt; r (원과 AB는 만나지 않음). 높이의 최댓값 = d + r = <strong>6√2</strong>. ③ S = ½·4√2·6√2 = <strong>24</strong>. 이때 P는 중심에서 AB의 <strong>반대쪽으로</strong> 법선 방향 (1,1)/√2 으로 r만큼 간 점: P = (4,5) + 2√2·(1/√2, 1/√2) = <strong>(6, 7)</strong>. (검산: 6+7−1 = 12, 12/√2 = 6√2 ✓) <strong>함정</strong>: 반지름을 더하지 않고 d만으로 넓이 계산 / 방향을 반대로 잡아 P(2,3)(높이 최소)로 답함 / 넓이만 구하고 P를 안 구함.</div></div>
+<div class="ans"><span class="no">28.</span><span class="val"><strong>12</strong></span><span class="typ">SM2-24·T2</span><div class="sol">중심 (1,2), (6,14) ⇒ d = √(5²+12²) = 13. r₁+r₂ = 9 &lt; 13 이므로 두 원은 서로 <strong>외부</strong>에 있다(공통접선 4개). 공통<strong>외</strong>접선의 접점 거리 = √(d² − (r₁−r₂)²) = √(169−25) = <strong>12</strong>. <strong>함정(E9)</strong>: 내접선 공식 √(d²−(r₁+r₂)²) = √(169−81) = √88 을 쓰는 <strong>공식 쌍 혼동 — 이 유형의 1번 오답원</strong> / 위치 관계를 먼저 판정하지 않음.</div></div>
+<div class="ans"><span class="no">29.</span><span class="val"><strong>8</strong></span><span class="typ">SM2-24·T3</span><div class="sol">완전제곱: C₁ → (x+2)²+(y−1)² = 4 (중심 (−2,1), r₁=2), C₂ → (x−4)²+(y−9)² = 16 (중심 (4,9), r₂=4). d = √(6²+8²) = 10 &gt; r₁+r₂ = 6 ⇒ 외부. <strong>"선분 O₁O₂와 만나는 접선" = 공통내접선</strong>이므로 PQ = √(d²−(r₁+r₂)²) = √(100−36) = <strong>8</strong>. <strong>함정(E9)</strong>: 외접선 공식으로 √(100−4) = 4√6 을 답함 / 일반형에서 r² = (A/2)²+(B/2)²−C 계산 실수(C₂의 상수항 81이 그대로 상쇄) / "선분과 만난다"는 단서를 무시하고 아무 접선으로 봄.</div></div>
+<div class="ans"><span class="no">30.</span><span class="val"><strong>(1) r = 8  (2) 12√2</strong></span><span class="typ">SM2-24·T4</span><div class="sol">① 중심 O₁(−4,−1), O₂(4,14) ⇒ d = √(8²+15²) = <strong>17</strong>. ② 선분 O₁O₂와 만나는 접선 = <strong>공통내접선</strong>이므로 AB = √(d²−(r₁+r₂)²) = √(289−(7+r)²) = 8 ⇒ (7+r)² = 225 ⇒ 7+r = 15 (r&gt;0) ⇒ <strong>r = 8</strong>. 외부 조건 확인: r₁+r₂ = 15 &lt; 17 ✓ (공통접선 4개, 내접선 존재). ③ 같은 두 원의 공통<strong>외</strong>접선 접점 거리 = √(d²−(r₂−r₁)²) = √(289−(8−7)²) = √288 = <strong>12√2</strong>. <strong>함정(DF9+E9)</strong>: 역산 단계에서 외접선 공식을 써 (r−7)²=225 ⇒ r=22 로 답함(그러면 d=17 &lt; r₁+r₂=29 라 두 원이 외부에 있다는 조건과 <strong>모순</strong> — 이 모순 점검이 자기검산) / (2)에서 공식을 다시 내접선으로 씀 / 7+r = −15 를 버리는 근거(r&gt;0) 누락.</div></div>
+<div class="ans"><span class="no">31.</span><span class="val"><strong>18</strong></span><span class="typ">SM2-26·T2</span><div class="sol">(3,−1)→(−1,4)이므로 이동량은 (−4, 5). 무게중심도 같은 양만큼 옮겨지므로 ABC의 무게중심 = (2+4, 5−5) = (6, 0). 세 꼭짓점 좌표의 합 = 무게중심의 3배 ⇒ m=18, n=0, m+n=<strong>18</strong>. / <strong>함정</strong>: 이동 방향 역전(무게중심을 (−2,10)으로) → m = −6, n = 30 이므로 <strong>m+n = 24</strong>. 세 꼭짓점을 개별로 이동하려는 우회.</div></div>
+<div class="ans"><span class="no">32.</span><span class="val"><strong>36</strong></span><span class="typ">SM2-27·T2</span><div class="sol">두 포물선의 꼭짓점 (3, 2) → (−1, 5)이므로 이동량 (−4, 3). 직선의 상은 x→x+4, y→y−3 대입: 2(x+4)−(y−3)+1=0 ⇒ y = 2x + 12. x절편 −6, y절편 12 ⇒ 넓이 = ½·6·12 = <strong>36</strong>. / <strong>함정</strong>: 대입 부호를 반대로(x→x−4) 하면 y=2x−4, 넓이 4. 계수 비교로 이동량을 추정하려다 상수항만 보고 오판.</div></div>
+<div class="ans"><span class="no">33.</span><span class="val"><strong>10</strong></span><span class="typ">SM2-29·T3</span><div class="sol">P(a,b) →(y=x)→ Q(b,a) →(y축)→ R(−b, a). R가 제2사분면 ⇒ −b&lt;0, a&gt;0 ⇒ <strong>a&gt;0, b&gt;0</strong>(등호 없음). a+2b=12인 양의 정수해는 (10,1),(8,2),(6,3),(4,4),(2,5). ab=<strong>10</strong>,16,18,16,10 ⇒ 최솟값 <strong>10</strong>(a=10,b=1 및 a=2,b=5에서). / <strong>함정(E5)</strong>: 사분면은 축을 포함하지 않으므로 b=6(a=0), b=0(a=12)은 제외 — 등호를 넣으면 ab=0이 최솟값으로 둔갑한다. 사분면 조건을 아예 무시하면 b가 커질수록 ab→−∞라 <strong>최솟값이 존재하지 않는다</strong> — 즉 이 문항은 대칭이동 조건이 답을 만드는 구조다. 대칭 순서를 뒤집어 R=(−a,b)로 두면 부등식이 반대로 나옴.</div></div>
+<div class="ans"><span class="no">34.</span><span class="val"><strong>9</strong></span><span class="typ">SM2-28·T3</span><div class="sol">원은 (x+1)²+(y−3)²=8, 중심 (−1,3), r=2√2. 평행이동 후 중심 (2, 1), r=2√2. 직선 x−y+k=0 과 <strong>만난다 ⇒ d ≤ r</strong>: |2−1+k|/√2 ≤ 2√2 ⇒ |k+1| ≤ 4 ⇒ −5 ≤ k ≤ 3. 정수는 −5,…,3 의 <strong>9개</strong>. / <strong>함정(E5)</strong>: "만난다"에는 접함이 포함되므로 <strong>등호 있음</strong>. 등호를 빼면 −5&lt;k&lt;3 → 7개(대표 오답). 평면좌표의 "사분면은 등호 없음"과 방향이 반대라는 점이 이 함정의 핵심.</div></div>
+<div class="ans"><span class="no">35.</span><span class="val"><strong>−8</strong></span><span class="typ">SM2-28·T4</span><div class="sol">C′의 중심은 (2+p, −1+q). 이를 (t, s)라 하면 양축에 접하므로 |t|=|s|=r, 즉 <strong>s = t 또는 s = −t 두 계열</strong>. 중심이 y=2x+3 위: (i) s=t ⇒ t=2t+3 ⇒ t=−3, 중심 (−3,−3), r=3 ⇒ p=−5, q=−2, p+q=−7. (ii) s=−t ⇒ −t=2t+3 ⇒ t=−1, 중심 (−1,1), r=1 ⇒ p=−3, q=2, p+q=−1. 합 = <strong>−8</strong>. (r도 계열마다 함께 결정되므로 순서쌍은 (−5,−2,3), (−3,2,1) 두 개다.) / <strong>함정(DF8·E9)</strong>: 제1·3사분면형(s=t)만 보고 제2·4사분면형(s=−t)을 빠뜨림 → −7. 반지름 r을 먼저 확정하려 들면 막힘(r은 계열마다 다름). 이동량 부호(q = s+1) 역산 실수.</div></div>
+<div class="ans"><span class="no">36.</span><span class="val"><strong>−2</strong></span><span class="typ">SM2-30·T3</span><div class="sol">원점 대칭: x→−x, y→−y ⇒ <em>l</em>′: (k+2)x−(k−1)y−3k=0. k에 대해 정리하면 k(x−y−3)+(2x+y)=0 ⇒ x−y−3=0, 2x+y=0 ⇒ <strong>A(1, −2)</strong>. 원은 (x−3)²+(y−2)²=9, 중심 (3,2). 넓이 이등분 직선은 <strong>중심을 지나므로</strong> 기울기 m=(2+2)/(3−1)=2, y=2x+n에 (1,−2) 대입 ⇒ n=−4. m+n=<strong>−2</strong>. / <strong>함정</strong>: 대칭이동을 하지 않고 원래 <em>l</em>의 정점 (−1, 2)를 쓰면 기울기 0, n=2 ⇒ m+n=2(대표 오답). 넓이 이등분을 "현의 중점"으로 오해.</div></div>
+<div class="ans"><span class="no">37.</span><span class="val"><strong>(1)</strong> f(y − 4, x + 2) = 0 / <strong>(2)</strong> (−5, 5)</span><span class="typ">SM2-31·T3</span><div class="sol"><strong>(1)</strong> F 위의 점 (a,b)(f(a,b)=0)가 y=x 대칭으로 (b,a), 이어 평행이동으로 (b−2, a+4)로 간다. 이를 (x,y)라 두면 b=x+2, a=y−4. f(a,b)=0에 대입하면 G: <strong>f(y − 4, x + 2) = 0</strong>. <strong>(2)</strong> 대입하면 (y−4−1)²+(x+2+3)²−4=0 ⇒ (x+5)²+(y−5)²=4 ⇒ 중심 <strong>(−5, 5)</strong>. (검산: 중심 (1,−3) →y=x대칭→ (−3,1) →평행이동→ (−5,5).) / <strong>함정</strong>: 합성 <strong>순서를 뒤바꿔</strong> 평행이동을 먼저 적용 / 도형을 옮기면 식에는 <strong>반대 부호</strong>가 들어간다는 점을 놓쳐 f(y+4, x−2)=0으로 씀 / y=x 대칭에서 두 변수를 바꾸지 않음.</div></div>
+<div class="ans"><span class="no">38.</span><span class="val"><strong>(x + 3)² + (y − 4)² = 9, a+b+r = 4</strong></span><span class="typ">SM2-32·T3</span><div class="sol">C: (x−1)²+(y+6)²=9, 중심 A(1,−6), r=3. <strong>반지름은 대칭이동에서 불변</strong>이므로 중심만 옮기면 된다. A′(p,q)라 하면 ① 중점 ((1+p)/2, (−6+q)/2)이 <em>l</em> 위: (−6+q)/2 = 2·(1+p)/2 − 3 = p − 2 ⇒ −6+q = 2p−4 ⇒ <strong>q = 2p + 2</strong>. ② AA′ ⊥ <em>l</em>: (q+6)/(p−1) = −½ ⇒ p + 2q = −11. 연립하면 p=−3, q=−4 ⇒ A′(−3,−4). (검산: 반사 공식 — <em>l</em>을 2x−y−3=0으로 두면 k = (2·1+6−3)/(2²+1²) = 1, A′ = (1−2·2·1, −6−2·(−1)·1) = (−3,−4) ✓) 이를 x축 대칭 ⇒ (−3, 4). C″: <strong>(x+3)²+(y−4)²=9</strong>, a+b+r = −3+4+3 = <strong>4</strong>. / <strong>함정</strong>: ②(수직 조건) 누락이 최대 오답원 — 중점 조건만 쓰면 미결정. 수직 기울기 −1/m의 부호 실수. <strong>마지막 x축 대칭 합성을 잊음</strong>(답 (x+3)²+(y+4)²=9). 반지름까지 대칭시키려는 시도. ⚠️ 부교재 근거 — 교육과정 명시 범위 초과.</div></div>
+<div class="ans"><span class="no">39.</span><span class="val"><strong>24</strong></span><span class="typ">SM2-33·T4</span><div class="sol"><strong>DA = √(3²+4²) = 5 와 BC = 9 는 이미 고정</strong>이므로 최소화 대상은 AB + CD뿐이다. B(t, 0), C(t+9, 0)이므로 CD = dist((t+9,0),(4,6)) = dist((t,0), <strong>D′(−5, 6)</strong>) — D를 x축 방향으로 −9만큼 평행이동. 또 A(1,2)를 x축에 대하여 대칭시켜 <strong>A′(1, −2)</strong>. 그러면 AB+CD = A′B + BD′ ≥ A′D′ = √(6²+8²) = 10 (B가 선분 A′D′ 위, 즉 B(−½, 0)일 때 등호). 최솟값 = 10 + 9 + 5 = <strong>24</strong>. / <strong>함정</strong>: 고정된 DA·BC까지 최소화하려 함 / BC=9를 더하는 것을 잊어 15 / <strong>평행이동(−9, 0)을 빼고 대칭만</strong> 적용해 A′D = √73 / A와 D를 모두 대칭시킴.</div></div>
+<div class="ans"><span class="no">40.</span><span class="val"><strong>ab = −21, P(0, 2)</strong></span><span class="typ">SM2-33·T4</span><div class="sol">점 A(1,3)과 원의 중심 C(6,−4)는 <strong>모두 y축의 오른쪽</strong>(같은 쪽)이므로 대칭이 필요하다. A를 y축에 대하여 대칭시키면 <strong>A′(−1, 3)</strong>, AP = A′P. 또 Q가 원 위의 자유점이므로 <strong>PQ ≥ PC − r = PC − 3</strong>. 따라서 AP + PQ ≥ A′P + PC − 3 ≥ <strong>A′C − 3</strong> = √((6+1)²+(−4−3)²) − 3 = 7√2 − 3. 즉 m = −3 + 7√2 ⇒ a=−3, b=7, <strong>ab = −21</strong>. 등호는 P가 선분 A′C 위에 있을 때: 직선 A′C는 y = −x + 2 이므로 y축과의 교점 <strong>P(0, 2)</strong>. (검산: AP=√2, PC=6√2 ⇒ √2 + 6√2 − 3 = 7√2 − 3.) / <strong>함정</strong>: <strong>반지름 가감을 잊어</strong> 7√2(a=0, ab=0) / 부호를 반대로 하여 7√2+3 / 대칭을 하지 않고 AC − r = √74 − 3 / 최솟값만 구하고 <strong>그때의 점 P를 구하지 않음</strong>.</div></div>
+<div class="rub"><h3>6번 채점 기준 (배점 6점 기준 예시)</h3><div>- (1) 네 중점 P, Q, R, S의 좌표를 일반 문자로 바르게 표현 … 1점</div><div>- (1) PR·QS 두 중점을 각각 계산하여 (x₁+x₂+x₃+x₄)/4, (y₁+y₂+y₃+y₄)/4로 정리 … 2점</div><div>- (1) <strong>"모양에 관계없이 두 중점이 일치한다"는 결론 문장</strong> 명시 … 1점 (문장 누락 시 감점)</div><div>- (2) 평행사변형 ⇔ AC의 중점 = BD의 중점을 이용해 D(−1, 12) … 1점</div><div>- (2) 중점 (2, 4) … 1점</div></div>
+<div class="rub"><h3>15번 채점 기준 (배점 6점 기준 예시)</h3><div>- (1) 마름모의 대각선이 <strong>서로 수직이등분</strong>함을 근거로 제시 … 1점</div><div>- (1) 중점 M(2, 4)와 기울기 −3/2를 구해 3x + 2y − 14 = 0 … 1점</div><div>- (2) 직각삼각형에서 MB² = AB² − MA² = 52, MB = 2√13 … 2점</div><div>- (2) 두 후보 (6, −2), (−2, 10)을 <strong>모두 제시</strong>하고 선별 조건으로 B, D를 확정 … 1점 (한쪽만 쓰면 감점)</div><div>- (3) 넓이 = ½ · AC · BD = 52 … 1점</div></div>
+<div class="rub"><h3>16번 채점 기준 (배점 6점 기준 예시)</h3><div>- (1) "AB에 평행" 또는 "AB의 중점을 지남" <strong>두 경우로 나뉨</strong>을 명시 … 2점</div><div>- (1) 평행인 경우 x − y + 5 = 0 … 1점</div><div>- (1) <strong>중점 M(1, 3)과 P(1, 6)의 x좌표가 같아 x = 1</strong>임을 밝힘 … 1점 (누락 시 이 항목 0점, (2)도 연쇄 감점)</div><div>- (1) 구한 두 직선이 전부임을 설명 … 1점</div><div>- (2) 세 꼭짓점 (1, 0), (−5, 0), (1, 6)에서 넓이 18 … 1점</div><div>&gt; 아래 5문항은 260830 맹목 풀이 게이트 지적(서술형 채점기준 커버리지 3/8)으로 신설했다.</div><div>&gt; 본문 「채점 조건」에 있던 서술만으로는 배점 배분이 없어 채점이 성립하지 않았다.</div></div>
+<div class="rub"><h3>27번 채점 기준 (배점 6점 기준 예시)</h3><div>- 직선 AB: x + y − 1 = 0 과 AB = 4√2 … 1점</div><div>- 중심 (4, 5)에서 AB까지의 <strong>거리</strong> d = 4√2, r = 2√2 … 2점</div><div>- d &gt; r (원과 AB가 만나지 않음)을 확인하고 <strong>높이의 최댓값 = d + r = 6√2</strong> … 1점</div><div>- 넓이 = ½ · 4√2 · 6√2 = 24 … 1점</div><div>- P = (6, 7) — 중심에서 AB의 <strong>반대쪽</strong> 법선 방향으로 r만큼 … 1점 (방향 반대로 잡아 (2,3)이면 0점)</div></div>
+<div class="rub"><h3>30번 채점 기준 (배점 6점 기준 예시)</h3><div>- (1) 두 중심 O₁(−4, −1), O₂(4, 14)와 d = √(8²+15²) = 17 … 1점</div><div>- (1) 선분 O₁O₂와 만나는 접선이 <strong>공통내접선</strong>임을 명시 … 1점</div><div>- (1) √(d² − (r₁+r₂)²) = 8 에서 (7 + r)² = 225 … 1점</div><div>- (1) <strong>r &gt; 0</strong> 을 근거로 7 + r = 15 를 택해 r = 8 … 1점 (근거 문장 누락 시 감점)</div><div>- (1) 두 원이 서로 외부에 있음(r₁+r₂ = 15 &lt; 17 = d) 확인 … 1점</div><div>- (2) 공통<strong>외</strong>접선 √(d² − (r₂−r₁)²) = √288 = 12√2 … 1점 (내접선 공식 재사용 시 0점)</div></div>
+<div class="rub"><h3>37번 채점 기준 (배점 6점 기준 예시)</h3><div>- (1) F 위의 점을 (a, b), f(a, b) = 0 으로 두고 y = x 대칭으로 (b, a) … 1점</div><div>- (1) 이어 평행이동해 (b − 2, a + 4) … 1점</div><div>- (1) 이를 (x, y)로 놓아 <strong>a = y − 4, b = x + 2</strong> 로 역대응 … 2점 (순서를 뒤바꾸면 0점)</div><div>- (1) G : f(y − 4, x + 2) = 0 … 1점</div><div>- (2) 대입·정리해 (x+5)² + (y−5)² = 4, 중심 (−5, 5) … 1점</div></div>
+<div class="rub"><h3>38번 채점 기준 (배점 6점 기준 예시)</h3><div>- 표준형 (x−1)² + (y+6)² = 9 로 고쳐 중심 A(1, −6), r = 3 … 1점</div><div>- <strong>반지름은 대칭이동에서 불변</strong>임을 명시하고 중심만 옮김 … 1점</div><div>- ① 중점이 <em>l</em> 위에 있다는 조건에서 q = 2p + 2 … 1점</div><div>- ② AA′ ⊥ <em>l</em> 조건에서 p + 2q = −11 … 1점 (<strong>이 조건 누락 시 이 항목 0점</strong>, 이후 연쇄 감점)</div><div>- 연립해 A′(−3, −4) → x축 대칭 → (−3, 4), C″ : (x+3)² + (y−4)² = 9 … 1점</div><div>- a + b + r = 4 … 1점</div></div>
+<div class="rub"><h3>40번 채점 기준 (배점 6점 기준 예시)</h3><div>- A(1, 3)과 중심 C(6, −4)가 <strong>y축의 같은 쪽</strong>임을 확인하고 A′(−1, 3) 도입 … 1점</div><div>- AP = A′P 임을 근거로 제시 … 1점</div><div>- Q가 원 위의 자유점이므로 <strong>PQ ≥ PC − r</strong> 로 반지름을 분리 … 1점</div><div>- AP + PQ ≥ A′C − 3 = 7√2 − 3, 즉 m = 7√2 − 3 … 1점</div><div>- ab = −21 … 1점</div><div>- 등호 성립 조건에서 직선 A′C : y = −x + 2, 따라서 <strong>P(0, 2)</strong> … 1점 (P를 구하지 않으면 0점)</div><div>---</div></div>
+</div>
+<div style="position:absolute;left:-9999px">
+  <div id="masthead" class="masthead"><h1>공통수학2 「도형의 방정식」 예상 문제 40제</h1><div class="sub">2026 상산고 1학년 2학기 · 전 40문항 서답형(단답 32 · 서술 8)</div><div class="sub" style="margin-top:2mm">정답 · 해설 · 근거 유형 ID — <b>교사용</b></div></div>
+  <div id="notice" class="notice">⚠️ <b>범위 미확정</b> — 2학기 시험범위는 학교 공지·진도표 미확인 상태의 추정이다. ⚠️ <b>자료 등급</b> — 근거 유형 SM2-01~33은 전부 <b>검증(부교재)</b>이며 기출 확인분이 아니다. ⛔ <b>미투입</b> — 맹목 풀이 게이트 재통과 전이므로 실전 투입 전 교사 검수가 필요하다.</div>
+</div>
+<script>
+// A4 페이지 확정 — 사용자 규칙(260830):
+//   (1) 한 문항은 페이지를 넘어 쪼개지지 않는다.
+//   (2) 문항의 시작 위치가 본문 높이의 80%보다 아래면 다음 페이지로 넘긴다.
+// CSS로는 (2)를 표현할 수 없으므로 실제 렌더 높이를 측정해 배치한다.
+(function () {
+  var START_LIMIT = 0.80;
+  // px(브라우저 측정)와 pt(PDF 실측) 사이의 반올림 차이로 경계에서 0.3pt가량
+  // 새어 나가는 것을 막는 여유. 규칙을 느슨하게 하는 방향이 아니라 조이는 방향이다.
+  var GUARD_PX = 4;
+  var src = document.getElementById('source');
+  var sheet = document.getElementById('sheet');
+  var meta = JSON.parse(document.getElementById('meta').textContent);
+  var nodes = Array.prototype.slice.call(src.children);
+
+  var page = null, inner = null, limitPx = 0, pageNo = 0;
+
+  function newPage(withMast) {
+    pageNo++;
+    page = document.createElement('div');
+    page.className = 'page';
+    inner = document.createElement('div');
+    inner.className = 'page-inner';
+    page.appendChild(inner);
+    var f = document.createElement('div');
+    f.className = 'pfoot';
+    f.innerHTML = '<span>' + meta.setId + '</span><span>' + meta.kind +
+                  ' &middot; ' + pageNo + '</span>';
+    page.appendChild(f);
+    sheet.appendChild(page);
+    limitPx = inner.clientHeight;
+    if (withMast) {
+      var m = document.getElementById('masthead');
+      if (m) { inner.appendChild(m); }
+      var n = document.getElementById('notice');
+      if (n) { inner.appendChild(n); }
+    }
+    return inner;
+  }
+
+  // 마지막 자식의 바닥 좌표. scrollHeight는 마지막 요소의 아래 margin을
+  // 브라우저에 따라 빼먹으므로 offsetTop+offsetHeight+marginBottom으로 잰다.
+  function used() {
+    var last = inner.lastElementChild;
+    if (!last) { return 0; }
+    var mb = parseFloat(getComputedStyle(last).marginBottom) || 0;
+    return last.offsetTop + last.offsetHeight + mb;
+  }
+  function isEmpty() { return inner.children.length === 0; }
+
+  newPage(true);
+  var pendingSection = [];      // 연속된 섹션 제목을 모두 보존한다
+
+  nodes.forEach(function (node) {
+    // 섹션 제목은 단독으로 페이지 끝에 남지 않도록 다음 문항과 함께 옮긴다.
+    if (node.classList.contains('section')) { pendingSection.push(node); return; }
+
+    // 규칙 (2): 시작 위치가 본문 높이의 80%보다 아래면 다음 페이지에서 시작한다.
+    // 섹션 제목이 앞에 붙으면 그만큼 시작 위치가 내려가므로, 제목을 먼저 얹은 뒤
+    // "문항이 실제로 시작할 y"를 재서 판정한다(제목 높이를 빠뜨리면 규칙이 새어 나간다).
+    var hadContent = !isEmpty();
+    pendingSection.forEach(function (s) { inner.appendChild(s); });
+    if (hadContent && used() + GUARD_PX >= limitPx * START_LIMIT) {
+      pendingSection.forEach(function (s) {
+        if (s.parentNode === inner) { inner.removeChild(s); }
+      });
+      newPage(false);
+      pendingSection.forEach(function (s) { inner.appendChild(s); });
+    }
+    inner.appendChild(node);
+
+    // 규칙 (1): 페이지를 넘겨 쪼개지지 않게, 안 들어가면 통째로 다음 페이지로.
+    if (used() > limitPx) {
+      var moved = pendingSection;
+      inner.removeChild(node);
+      moved.forEach(function (s) {
+        if (s.parentNode === inner) { inner.removeChild(s); }
+      });
+      if (!isEmpty()) {                 // 빈 페이지를 새로 만들지 않는다
+        newPage(false);
+      }
+      moved.forEach(function (s) { inner.appendChild(s); });
+      inner.appendChild(node);
+      // 한 문항이 빈 페이지보다 큰 경우에만 넘침을 허용한다(쪼갤 수 없으므로).
+    }
+    pendingSection = [];
+  });
+
+  pendingSection.forEach(function (s) { inner.appendChild(s); });
+  src.remove();
+  document.getElementById('pagecount').textContent = pageNo;
+})();
+</script>
+</body></html>

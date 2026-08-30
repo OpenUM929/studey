@@ -111,6 +111,12 @@ def main():
     index = Path(args[1]) if len(args) > 1 else DEFAULT_INDEX
     out = Path(args[2]) if len(args) > 2 else DEFAULT_OUT
     body, warnings = build(attempt, index)
+    # Principle 11: warnings print BEFORE any [OK] line, so a reader never sees a pass
+    # marker ahead of the problem that invalidates it (the ordering defect recorded for
+    # build_catalog_index.py --check).  An attempt row naming a type absent from index.tsv
+    # is an integrity defect — a stale index or a mistyped type_id — not an advisory.
+    for w in warnings:
+        print("[WARN]", w)
     if check:
         existing = out.read_text(encoding="utf-8-sig") if out.exists() else None
         if existing != body:
@@ -119,8 +125,11 @@ def main():
     else:
         out.write_text(body, encoding="utf-8-sig", newline="")
         print(f"[OK] wrote {out} ({len(body.splitlines()) - 1} rows)")
-    for w in warnings:
-        print("[WARN]", w)
+    if warnings:
+        # Fail-closed: the regeneration still happened, but the gate does not pass.
+        print(f"[FAIL] {len(warnings)} unknown type(s) in ATTEMPT_LOG — gate not passed")
+        return 1
+    print(f"warnings={len(warnings)}")
     return 0
 
 

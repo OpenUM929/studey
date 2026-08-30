@@ -57,3 +57,12 @@
 - 260825 신설. 계기: 사용자 지적 — 카탈로그 검토서가 output 회차 폴더에 저장됨. 정본·시스템 검토의 홈으로
   `analysis/rev/` 확립, 산출물 검토(`output/<YYMMDD>/rev/`)와 이원화. Shrimp Task Manager MCP 등록으로
   향후 세션 태스크 보드 병행 예정(데이터: `.shrimp/`, gitignore 처리).
+
+## 동반 갱신 목록 (CLAUDE.md 원칙 10)
+이 문서를 개정하면 **같은 작업에서** 아래를 함께 점검한다. 한쪽만 고치면
+"규정은 있는데 아무도 안 지키는" 구멍이 생긴다.
+
+- `analysis/REV_GUIDE.md` §1(위치·명명) · `.claude/agents/rev-writer.md` · `rev-auditor.md` · `forecast-reviewer.md` · `CLAUDE.md` 원칙 8
+
+목록 자체의 존재는 `tools/check_assurance_contract.py`가 검사한다.
+근거: 260828 시스템 감사 S3 — 원칙 10이 8개 정본 중 1개에만 구현돼 있었다.

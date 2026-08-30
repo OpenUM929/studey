@@ -57,10 +57,25 @@ closes the loop.
    - `revise-required` — enumerate concrete fixes as checkboxes; the loop returns to
      tiers 1–2 (status back to `in-round`)
    - `reject` — fundamental flaws; state reasons
-4. Write `YYMMDD_NN_NAME_ruling.md`: frontmatter (status `approved|revise-required|rejected`,
-   decided_by `rev-arbiter`) → `<decision>` per-question table (question | ruling |
-   evidence | note) → `<binding_fixes>` checkboxes when applicable → `<notes>` →
-   `## history`. Append one `analysis/REV_LOG.md` row.
+4. Write `YYMMDD_NN_NAME_ruling.md` **in the REV_GUIDE §6-d standard form (260829, mandatory)**:
+   fixed section order (frontmatter → `§0 판정 요약표` → `§1 독립 재검증` → `§2 unit별 판정` →
+   `§3 follow-up` → `§4 open units` → `## history`), and the §0 table uses the seven fixed
+   columns `unit | verdict | grade | evidence | measured | closure | note`. Append one
+   `analysis/REV_LOG.md` row.
+   - `evidence` empty ⇒ the verdict is forced to `insufficient-evidence`.
+   - `measured=no` (any quoted literal — marker string, ID, regex, count, path — not produced
+     by a command THIS round) ⇒ same forced downgrade. Never copy a literal from a sibling
+     tool or from memory; run the command and paste the value.
+   - `closure` is mandatory whenever you propose OR refute a rule/regex/threshold/expected
+     count: run it over the FULL population and report `k/N` plus the residual list. When
+     refuting, also construct the **minimal repair** and report its `k/N` — naming a
+     counterexample without testing the minimal repair is `over-scoped` and its surplus
+     demands drop to `§3 follow-up`, not to blocking status.
+   - `grade` is derived from your actor row, never chosen: you write `binding` ONLY when your
+     context is genuinely fresh. Declaring the defect in `independence:` does not raise it.
+   - No placeholders (`N`, `<...>`, TBD) anywhere in the ruling (CLAUDE.md 원칙 9-c-iii).
+   - Any new checker/schema/closure rule you demand must name ≥1 known failure it catches;
+     without a fixture it is `follow-up`, not a blocker (CLAUDE.md 원칙 12-d).
 5. Return: ruling file path · verdict · count of binding fixes.
 
 ## Progress reporting (mandatory)
@@ -91,3 +106,14 @@ Next     : approve → coordinator applies & closes | revise-required → rounds
   규격 — frontmatter + slice table + `NEXT:` line), then continue. On start, resume an
   existing in-progress WIP from its `NEXT` pointer; never redo completed slices. Flip
   status to done at completion. Never touch another actor's WIP; only the user prunes.
+
+## Continuity under exhaustion (CLAUDE.md 공통 실행 규격 ⑤, 260828)
+When remaining context drops to 60% or less, do not open a new slice: finish the bounded
+slice in hand, then record in your WIP the current stage, completed unit IDs, input/output
+hashes, verification output, exclusive writer, blocking conditions, `NEXT:`, and the next
+verification command. If usage quota or a rate limit is exhausted, never lower the model,
+fan out retries, or busy-wait: close the slice in hand, append the observed reset time,
+lane runtime identity, exclusive output paths, and the exact resume command, then stop with
+`HOLD — resource exhausted`. On the next turn begin with a `resume audit` — re-confirm fresh
+quota, frozen input and existing output hashes, exclusive write rights, absence of a
+conflicting writer, and the next verification command; any mismatch is `▲ blocked`, not a pass.

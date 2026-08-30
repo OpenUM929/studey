@@ -213,6 +213,25 @@ Round rules:
    - authoring `[create]▶[pre-gate solve-back]▶[practice: t1 | exam: t1⇄t2]▶[arbiter]▶[release]`
    - forecast `[scope-fix]▶[grading A~E]▶[report]▶[review: t1 confirmed | t1⇄t2 ≤5R + arbiter on dispute, unconfirmed]▶[handoff]`
    The user must see position + outcome at a glance; blocked runs mark `▲ blocked + reason`.
+6. **정지 조건 — 라운드는 반드시 끝난다 (260829 신설).** rule 2·3은 *언제 닫히는가*만 정했고
+   *닫히지 않을 때 무엇을 하는가*는 비워 뒀다. 그 결과 260829 탐지실패 감사는
+   라운드1 `BLOCKED` → 라운드2 `REVISE-BEFORE-USER-KEY` + 라운드3 요청으로,
+   **매 라운드가 새 선행조건을 추가하며 끝나** 정지 보장이 없는 상태가 됐다.
+   각 라운드가 진짜 결함을 찾았더라도 정지 규칙 없는 검토는 산출물을 0으로 만든다.
+   - **a. open unit 단조 축소.** 모든 라운드는 머리말에 `open units: {ID, ...}` 집합을 명시한다.
+     다음 라운드의 집합은 이전 집합의 **진부분집합**이어야 한다. 크기가 줄지 않은 라운드가
+     한 번 나오면 라운드를 더 돌리지 않고 **미해결 unit을 그대로 사용자 결정으로 올린다.**
+   - **b. 신규 선행조건 신설 금지.** 라운드는 **동결 입력에서 도출되지 않는 새 요건**을
+     차단 사유로 세울 수 없다. 새 우려는 `follow-up:` 항목으로 별도 기록하되 현 라운드의
+     종결을 막지 못한다. 차단 사유가 되려면 그 요건이 동결 입력 안에서 **실측으로 위반**됨을
+     보여야 한다(§6-d 폐쇄 의무).
+   - **c. 수렴 3요건.** `수렴` 선언은 ① 신규 critical 0건 ② 모든 unit이 evidence-backed
+     (§6-d의 `evidence` 열이 빈 unit 0건) ③ open 집합 공집합 — **셋 모두** 성립할 때만 쓴다.
+     하나라도 미달이면 `수렴`이 아니라 `▲ blocked + 미달 요건`이다.
+   - **d. 상한 도달 시.** rule 3의 라운드 상한에 닿으면 미해결 unit을 **그대로 제출**한다.
+     라운드를 연장하거나 새 라운드 종류를 만들어 대체하지 않는다.
+   근거: 260829 라운드2 자기기록(`CODEX_TEAM_RESPONSE_TO_RULING.md` §7이 라운드3을 요청하며
+   S-18·exact-16·warning·typed-closure 4건을 **새 차단 조건으로 신설**).
 
 ### §3-b Pipeline mappings (260825)
 
@@ -256,13 +275,29 @@ Rows never deleted; status changes become NEW rows. Section comments per folder 
 | Tier-3 final ruling (Claude Code Opus, same repo) | `rev-arbiter` | `*_ruling.md` + REV_LOG + own WIP |
 | Applies approved fixes | authoring owner (`type-proposer` · `item-writer` / user) via coordinator | artifacts + trace rows |
 | Drives rounds · convergence bookkeeping | main loop | `_index` header state · status fields |
+| **Substantive review when the external lane is unavailable** (260828 신설) | main loop (Claude Code Opus) | own report under `analysis/rev/` or `output/<YYMMDD>/rev/` + own WIP. **tier 라벨(t1/t2/t3) 사용 금지** — `reviewer:` 는 `unset`, `author:` 에 "메인 세션"을 명시한다. `_index`·`REV_LOG` 기입은 허용하되 reviewer 열에 `main-loop`로 적는다 |
 | Pre-gate: blind solve of every set | `solve-back-verifier` | **own WIP only — no other files** (report-only otherwise); findings feed tier-1 |
+| Post-gate: novelty · achievement value · answer-key construction (260830 신설) | `item-quality-auditor` | own `*_item_quality_audit.md` under `output/<YYMMDD>/rev/` + own WIP. **공유 원장에는 기입하지 않는다** — 메인 루프가 대신 기입한다(동시 작성자 충돌 방지) |
 | Forecast authoring (Claude Code Opus) | `forecast-writer` | own report under `analysis/forecast/` + own WIP |
 | Forecast tier-1 review | `forecast-reviewer` | own reports + `_index` rows + REV_LOG + own WIP |
 | Forecast tier-2 audit | `forecast-auditor` | own `*_second.md` + `_index` rows + REV_LOG + own WIP |
 | Forecast final ruling (Claude Code Opus) | `forecast-arbiter` | `*_ruling.md` + REV_LOG + own WIP |
 
 No two actors write the same file concurrently; `_index.md` rows are the sole shared touchpoint.
+
+**메인 루프 대행 행의 발동 조건 (260828 신설).** 위 표 마지막 행은 **3단계 루프를 건너뛰는
+통로가 아니다.** 다음 두 조건이 **모두** 성립할 때만 쓴다: (a) 담당 배우(외부 Claude Code
+레인 또는 Codex/OMX 레인)가 쿼터 소진·런타임 부재 등으로 **실행 불가**임이 관측됐고,
+(b) 사용자가 대행을 지시했다. 산출물은 **제안 등급**이며 승인·투입 허가를 스스로 부여하지
+못한다 — 담당 배우가 복구되면 그 산출물은 정규 tier-1 입력으로 재투입한다. 대행 사실과
+불가 사유는 보고서 머리말에 적는다. 근거: 260828 시스템 감사 S5 — 이 행이 없던 동안
+Codex 레인 중단으로 수행된 실질 감사 2건이 규정 밖 작업이 되어 원장에 흔적이 남지 않았다.
+
+**자(ruler)는 어떤 배우의 write surface도 아니다 (260828 신설, CLAUDE.md 원칙 12).** 수용기준·
+기대값 표·게이트 코드는 위 표의 어느 행에도 쓰기 대상으로 들어가지 않는다. 검토받는 쪽은 물론
+검토하는 쪽도 자기 판정에 쓰는 자를 그 라운드 안에서 고치지 않는다 — 고쳐야 한다고 판단되면
+결정요청으로 올리고, 자가 바뀌면 그 자로 내려진 판정은 전부 stale이 되어 재실행 전까지 인용할 수
+없다. 근거: 260828 감사 F2-b·F6·F9.
 
 **WIP = `analysis/wip/<actor>_<YYMMDD>_<task>.md`** — the slice checkpoint mandated by CLAUDE.md
 「서브에이전트 공통 실행 규격」②. Exclusive ownership: an actor writes only its OWN WIP and never
@@ -364,6 +399,82 @@ Form: ONE fenced block titled ``[OC 지시] YYMMDD_NN — 요약``, so the user 
 Known-defect disclosure is mandatory: if a tool the executor will run has a known limitation
 or was just fixed, say so with the measured evidence (e.g. `hwp2md.py` HWP image loss, ruling
 260826_02 condition C1) — the executor cannot see this session's findings.
+
+### §6-d 판정 요청·판정문 표준 규격 (260829 신설)
+
+> **신설 사유.** §6·§6-b는 판정을 *요청하는* 형식만 정했고 **판정문 자체의 형식은 비어 있었다.**
+> 그 결과 260829_01 판정에서 서로 다른 세 종류의 오류가 한꺼번에 났고, 셋 다 형식으로 막을 수
+> 있는 것이었다: (i) `check_experiment.py`의 PASS 마커를 실측 없이 `[OK]`로 인용 — 실제 값은
+> `:230` `experiment-gate: PASS` (ii) span 규칙 `^#{1,6}\s`를 제안하면서 22행 전수에 돌려보지
+> 않음 — 돌렸으면 S-18 반례(146↔148)가 즉시 나왔다 (iii) 제안 등급 배우(§5 메인 루프 대행)가
+> `binding`·`approve` 라벨을 스스로 부여 — §5는 대행 산출물을 제안 등급으로 한정한다.
+> 대칭으로 라운드2 응답도 반례 1건만 제시하고 **최소 수리의 폐쇄를 시험하지 않아** 필요 개정을
+> 5종으로 과대 산정했다(실측: 경계 토큰에 수평선 1종만 추가하면 21/22 복원, 잔여 이탈은
+> 손수정된 W-04 단독). 과소명세와 과대범위는 **같은 누락 — 폐쇄 시험 부재**에서 나온다.
+
+#### (1) 요청 패킷 (`§6` 결정요청서 + `§6-b` 회람문에 추가되는 필수 필드)
+
+1. `<frozen_inputs>` — `path | bytes | sha256 | role` 표. `role` ∈
+   `source | derived | ruler | evidence | output`.
+   **직접경로 폐쇄 의무**: 동결 산출물 본문에 **경로 문자열로 등장하는 모든 파일**은 이 표에
+   있거나 `<excluded>`에 사유와 함께 적혀야 한다. 어느 쪽에도 없으면 그 패킷은 불완전이다.
+   (근거: F10 — 동결 목록을 피측정 레인이 작성하고, 자기 산출물이 `source_path` 열로 지목하는
+   원천 3종을 빼서 "측정 불가"를 자기 판정으로 냈다.)
+2. `<units>` — 판정 단위마다 고유 ID(`Q1`·`BF3` 등) + **판정 가능한 질문형** + `verdict enum`
+   + `reproduce:` 재실행 명령 1줄. 산문 요청은 unit이 아니다.
+3. `<actor_grade>` — 요청받는 배우와 그 **권한 등급**을 요청 측이 미리 적는다(아래 (3)).
+4. `<open_units>` — 이 라운드 시작 시점의 미해결 집합(§3 rule 6-a의 단조 축소 대상).
+5. `<out_of_scope>` — 이번 라운드에서 판정하지 않을 것. 비면 "전부 판정 대상"으로 읽힌다.
+6. 기존 §6-b 6필드(`<target>`·`<touched>`·`<executor>`·`<requests>`·`<reply>`·`<constraints>`).
+
+#### (2) 판정문 표준 — 고정 절 + 고정 열
+
+절 순서 고정: `frontmatter` → `§0 판정 요약표` → `§1 독립 재검증` → `§2 unit별 판정` →
+`§3 follow-up(비차단)` → `§4 open units(남은 집합)` → `## history`.
+
+**§0 요약표는 아래 7열을 그대로 쓴다.**
+
+```
+| unit | verdict | grade | evidence | measured | closure | note |
+```
+
+- `verdict` ∈ `approve | revise-required | reject | insufficient-evidence`.
+- `grade` — **판정자가 고르지 않고 배우에서 유도한다**(아래 (3)). 자기 등급 상향 금지.
+- `evidence` — **재실행 가능한 명령 또는 `path:line`**. 비어 있으면 `verdict`는 강제로
+  `insufficient-evidence`이고 다른 값을 쓸 수 없다.
+- `measured` — `yes | no`. unit 본문이 인용한 **모든 리터럴**(마커 문자열·ID·정규식·카운트·
+  경로)이 **이 라운드에서 명령으로 산출된 값**이면 `yes`. 하나라도 기억·유추·형제 도구에서
+  옮겨 적은 값이면 `no`이고, 그 unit은 `insufficient-evidence`로 강등된다.
+  (CLAUDE.md 원칙 9-c-i·ii의 판정문 적용 — 사본 열거는 반드시 원본과 어긋난다.)
+- `closure` — 규칙·정규식·임계값·기대 카운트를 **제안하거나 반박하는** unit에 필수.
+  `k/N` 형식으로 **모집단 전수 실행 결과**를 적는다.
+  - 제안 측: 제안한 규칙을 전수에 돌려 잔여 불일치 `k/N`과 그 목록을 적는다. 미실행이면
+    `insufficient-evidence`.
+  - 반박 측: 반례 제시로 끝내지 않고 **최소 수리를 구성해 전수에 돌린 `k/N`** 을 함께 적는다.
+    최소 수리를 시험하지 않고 필요 개정 목록을 늘린 unit은 `note`에 `over-scoped`로 표시하고,
+    그 초과분은 차단 사유가 아니라 §3 `follow-up`으로 내린다(§3 rule 6-b).
+- **플레이스홀더 금지** — `N`·`<...>`·TBD는 판정문 어디에도 쓰지 않는다(원칙 9-c-iii).
+- **새 검출기 제안에는 fixture 의무** — 판정이 새 검사·스키마·폐쇄 규칙을 요구하면,
+  그것이 **잡아내는 알려진 실패 사례 1건 이상**을 지목한다. 실패 사례가 없는 검출기는
+  검증되지 않은 검출기이므로(원칙 12-d) 차단 요건이 아니라 `follow-up`이다.
+
+#### (3) 권한 등급표 — 판정자가 아니라 배우가 결정한다
+
+| 판정 배우 | 등급 | 쓸 수 있는 라벨 |
+|---|---|---|
+| `rev-arbiter` (fresh context, §5) | `binding` | approve · revise-required · reject |
+| `forecast-arbiter` (fresh context) | `binding` | 〃 |
+| 메인 루프 대행 (§5 마지막 행) | `proposal` | **proposal-approve · proposal-revise · proposal-reject** |
+| Codex/OMX advisory 레인 | `advisory` | 〃 (advisory- 접두) |
+| 자기 산출물의 작성자 | 등급 없음 | 판정 불가 — 결정요청으로 올린다 |
+
+`binding`은 **fresh context가 실제로 성립할 때만** 쓴다. 이전 라운드의 발견을 이미 알고 있는
+세션은 fresh가 아니며, 그 사실을 `frontmatter: independence:`에 적더라도 등급이 올라가지 않는다.
+등급을 초과한 라벨이 발견되면 반영 주체는 **되돌려 등급 정정을 요구한다**(§3 rule 4-a 준용).
+
+> **동반 갱신 목록 (§6-d 개정 시)** — 이 규격을 고치면 같은 작업에서
+> `.claude/agents/rev-arbiter.md`·`forecast-arbiter.md`의 출력 형식 항목과 CLAUDE.md
+> 「서브에이전트 공통 실행 규격 ①·①-b」를 함께 점검한다. (CLAUDE.md 원칙 10)
 
 ## 7. Post-application feedback (CLAUDE.md principle 4)
 

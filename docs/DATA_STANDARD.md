@@ -361,3 +361,12 @@ intended_use: practice     # practice=연습용(tier-1 경량 검토) | exam=실
 - 260825 **v1.7** — A12 명문화(user decision "§1.3 명문화"): §1.5 신설 — 정답지류(회차 공용
   자료)는 코퍼스ID 미발급, HARVEST_LOG note+meta.yml answer_key로 추적, INDEX 등재 시 ID `-`,
   발견 당시 물리 위치 유지 원칙.
+
+## 동반 갱신 목록 (CLAUDE.md 원칙 10)
+이 문서를 개정하면 **같은 작업에서** 아래를 함께 점검한다. 한쪽만 고치면
+"규정은 있는데 아무도 안 지키는" 구멍이 생긴다.
+
+- `.claude/agents/item-writer.md` · `type-extractor.md` · `forecast-writer.md` · `tools/import_grading.py`(`RE_SET` 정규식) · `analysis/catalog/CODE_REGISTRY.md` · `analysis/FORECAST_GUIDE.md` · `AGENTS.md`
+
+목록 자체의 존재는 `tools/check_assurance_contract.py`가 검사한다.
+근거: 260828 시스템 감사 S3 — 원칙 10이 8개 정본 중 1개에만 구현돼 있었다.

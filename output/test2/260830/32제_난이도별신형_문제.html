@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<title>공통수학2 「도형의 방정식」 난이도별 신형 32제 — 문제</title>
+<style>
+:root{--ink:#111;--mute:#555;--rule:#bbb;--accent:#1a4a7a}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:"Malgun Gothic","맑은 고딕","Apple SD Gothic Neo",sans-serif;
+  color:var(--ink);background:#8a8a8a;font-size:10.5pt;line-height:1.62;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{position:relative;width:210mm;height:297mm;padding:16mm 15mm 14mm;
+  background:#fff;margin:8mm auto;box-shadow:0 2px 14px rgba(0,0,0,.35);overflow:hidden}
+.page-inner{position:relative;height:100%;overflow:hidden}
+.masthead{border-bottom:2px solid var(--accent);padding-bottom:3mm;margin-bottom:5mm}
+.masthead h1{font-size:15pt;margin:0 0 1.5mm;letter-spacing:-.3px}
+.masthead .sub{font-size:9pt;color:var(--mute)}
+.namebar{margin-top:3mm;font-size:9.5pt;color:var(--mute);display:flex;gap:10mm}
+.namebar span{border-bottom:1px solid var(--rule);padding:0 0 1mm;min-width:38mm}
+.notice{font-size:8.6pt;color:var(--mute);border:1px solid var(--rule);
+  border-left:3px solid var(--accent);padding:2.5mm 3mm;margin:0 0 5mm;line-height:1.5}
+.section{font-size:11.5pt;font-weight:700;color:var(--accent);
+  border-bottom:1px solid var(--rule);padding-bottom:1.5mm;margin:0 0 4mm}
+/* 직선 이름 l 은 고딕에서 대문자 I·숫자 1과 구별되지 않는다(260830 육안 검수).
+   변수는 수학 관행대로 세리프 이탤릭으로 세운다. */
+em{font-family:"Times New Roman",Cambria,serif;font-style:italic;font-size:1.06em}
+.item{margin:0 0 6.5mm;padding-left:9mm;position:relative;font-size:11pt}
+.item .no{position:absolute;left:0;top:0;font-weight:700;color:var(--accent);min-width:9mm}
+.item p{margin:0 0 1.6mm}
+.item p:last-child{margin-bottom:0}
+.ans{margin:0 0 4.5mm;padding-left:9mm;position:relative;font-size:9.6pt}
+.ans .no{position:absolute;left:0;top:0;font-weight:700;color:var(--accent)}
+.ans .val{font-weight:700}
+.ans .typ{font-size:8.4pt;color:var(--mute);margin-left:2mm}
+.ans .sol{color:#333;margin-top:1mm;line-height:1.55}
+.rub{margin:0 0 5mm;font-size:9.4pt}
+.rub h3{font-size:10pt;margin:0 0 1.5mm;color:var(--accent)}
+.rub div{margin:0 0 .8mm}
+code{font-family:Consolas,"D2Coding",monospace;font-size:.92em;background:#f2f2f2;padding:0 2px}
+.pfoot{position:absolute;left:15mm;right:15mm;bottom:7mm;display:flex;
+  justify-content:space-between;font-size:8pt;color:#888;
+  border-top:1px solid #e2e2e2;padding-top:1.5mm}
+@media print{
+  body{background:#fff}
+  .page{margin:0;box-shadow:none;break-after:page;page-break-after:always}
+  .page:last-child{break-after:auto;page-break-after:auto}
+  .noprint{display:none!important}
+}
+@page{size:A4 portrait;margin:0}
+.noprint{position:fixed;top:8px;left:50%;transform:translateX(-50%);z-index:99;
+  background:#fff;border:1px solid #bbb;border-radius:4px;padding:6px 12px;
+  font-size:12px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.noprint button{font:inherit;cursor:pointer;padding:3px 10px;margin-left:8px}
+</style></head><body>
+<div class="noprint">A4 문제지 · 총 <b id="pagecount">-</b>쪽
+<button onclick="window.print()">인쇄</button></div>
+<script type="application/json" id="meta">{"setId": "SET-260830-math2-32", "kind": "문제"}</script>
+<div id="sheet"></div>
+<div id="source" style="position:absolute;left:-9999px;top:0;width:180mm">
+<div class="section">A단계 · 기초 [T1] — 6문항</div>
+<div class="item"><span class="no">A1.</span><p>두 점 A(1, 1), B(5, 3)에서 <strong>같은 거리에 있는 점 전체가 이루는 도형</strong>의 방정식을 구하시오.</p></div>
+<div class="item"><span class="no">A2.</span><p>어떤 평행이동에 의하여 점 (−1, 4)가 점 (2, 2)로 옮겨진다.<br>이 평행이동에 의하여 <strong>옮겨진 결과가 원점이 되는 점</strong>의 좌표를 구하시오.</p></div>
+<div class="item"><span class="no">A3.</span><p>두 점 A(−4, 2), B(6, −3)에 대하여 선분 AB를 m : n으로 내분하는 점이 <strong>y축 위에 있다.</strong><br>이때 m : n을 가장 간단한 자연수의 비로 나타내시오.</p></div>
+<div class="item"><span class="no">A4.</span><p>세 점 A(−2, −1), B(1, 3), C(7, 12)에 대하여<br><strong>(1)</strong> 세 점이 한 직선 위에 있는지 판정하시오.<br><strong>(2)</strong> 점 C를 지나고 직선 AB에 평행한 직선의 방정식을 구하시오.</p></div>
+<div class="item"><span class="no">A5.</span><p>반지름의 길이가 3이고 x축과 y축에 <strong>동시에 접하는</strong> 원은 모두 몇 개인지 구하고,<br>그 원들의 중심의 좌표를 <strong>모두</strong> 쓰시오.</p></div>
+<div class="item"><span class="no">A6.</span><p>점 P를 x축에 대하여 대칭이동한 다음, 다시 직선 y = x에 대하여 대칭이동하였더니<br>점 (5, −2)가 되었다. 점 P의 좌표를 구하시오.</p></div>
+<div class="section">B단계 · 표준 [T2] — 9문항</div>
+<div class="item"><span class="no">B1.</span><p>네 점 A(1, 2), B(5, 4), C(7, 10), D(3, 8)에 대하여 어떤 학생이 다음과 같이 답하였다.</p>
+<p>이 풀이에서 <strong>잘못된 부분을 지적</strong>하고, 사각형 ABCD가 평행사변형인지 <strong>바르게 판정</strong>하시오. <strong>[서술형]</strong></p></div>
+<div class="item"><span class="no">B2.</span><p>삼각형 ABC의 무게중심이 G(2, 3)이고 두 꼭짓점이 A(−1, 5), B(4, −2)이다.<br>나머지 꼭짓점 C의 좌표를 구하시오.</p></div>
+<div class="item"><span class="no">B3.</span><p>두 직선 <em>l</em> : ax + 2y − 3 = 0, <em>m</em> : 3x + (a − 1)y + 4 = 0이 서로 <strong>평행</strong>하도록 하는<br>모든 실수 a의 값의 곱을 구하시오. (단, 두 직선은 일치하지 않는다.)</p></div>
+<div class="item"><span class="no">B4.</span><p>원 x² + y² − 4x + 2y − 4 = 0의 <strong>넓이를 이등분</strong>하고 점 (5, 3)을 지나는 직선의 방정식을 구하시오.</p></div>
+<div class="item"><span class="no">B5.</span><p>원 x² + y² = r²과 직선 3x + 4y − 20 = 0이 <strong>접한다.</strong><br><strong>(1)</strong> 양수 r의 값을 구하시오. <strong>(2)</strong> 접점의 좌표를 구하시오.</p></div>
+<div class="item"><span class="no">B6.</span><p>포물선 y = x²을 평행이동한 포물선이 두 점 (1, 0), (5, 0)을 지난다.<br>이 포물선의 방정식을 y = (x − p)² + q 꼴로 나타내시오.</p></div>
+<div class="item"><span class="no">B7.</span><p>두 직선 x + 2y − 3 = 0, 2x − y − 1 = 0의 교점을 지나고<br>직선 3x − y + 2 = 0에 <strong>수직인</strong> 직선의 방정식을 구하시오.</p></div>
+<div class="item"><span class="no">B8.</span><p>두 직선 3x − 4y + 2 = 0과 3x − 4y + k = 0 사이의 거리가 3일 때,<br>실수 k의 값을 <strong>모두</strong> 구하시오.</p></div>
+<div class="item"><span class="no">B9.</span><p>원 x² + y² − 2x + 4y + 1 = 0을 <strong>원점에 대하여</strong> 대칭이동한 원의 중심의 좌표와<br>반지름의 길이를 구하시오.</p></div>
+<div class="section">C단계 · 심화 [T3] — 10문항</div>
+<div class="item"><span class="no">C1.</span><p>x축 위를 움직이는 점 P와 두 점 A(2, 3), B(6, 1)에 대하여<br>AP² + BP²의 <strong>최솟값</strong>과 그때의 점 P의 좌표를 구하시오.</p></div>
+<div class="item"><span class="no">C2.</span><p>두 점 A(1, 2), B(4, 6)에 대하여 직선 AB 위의 점 P가 AP = k·AB (k &gt; 0)를 만족시키고,<br>점 P가 <strong>x축 위에 있다.</strong> k의 값을 구하시오.<br>(단, AP와 AB는 각각 선분 AP와 선분 AB의 길이이다.)</p></div>
+<div class="item"><span class="no">C3.</span><p>두 점 A(1, 2), B(a, b)에 대하여 선분 AB의 <strong>수직이등분선이 직선 y = −2x + 9</strong>이다.<br>점 B의 좌표를 구하시오.</p></div>
+<div class="item"><span class="no">C4.</span><p>점 (2, 3)을 지나는 직선이 x축과 y축의 <strong>양의 부분</strong>과 각각 만나서 삼각형을 이룬다.<br>이 삼각형의 넓이의 <strong>최솟값</strong>을 구하시오.</p></div>
+<div class="item"><span class="no">C5.</span><p>방정식 x² + y² − 2kx + 4y + k² − 2k − 5 = 0이 <strong>원을 나타내도록</strong> 하는<br>실수 k의 값의 범위를 구하시오.</p></div>
+<div class="item"><span class="no">C6.</span><p>점 A(4, 3)에서 원 x² + y² = 4에 그은 두 접선의 <strong>기울기의 곱</strong>을 구하시오.</p></div>
+<div class="item"><span class="no">C7.</span><p>두 원 x² + y² = 9와 (x − 3)² + y² = 4의 <strong>공통현의 길이</strong>를 구하시오.</p></div>
+<div class="item"><span class="no">C8.</span><p>원 (x − 3)² + (y − 4)² = 4 위를 움직이는 점 P와 원점 O에 대하여<br>OP²의 <strong>최댓값과 최솟값의 곱</strong>을 구하시오.</p></div>
+<div class="item"><span class="no">C9.</span><p>곡선 y = f(x)를 x축의 방향으로 2만큼 평행이동한 다음,<br>y축에 대하여 대칭이동한 곡선의 방정식을 f를 사용하여 나타내고, 그 과정을 서술하시오. <strong>[서술형]</strong></p></div>
+<div class="item"><span class="no">C10.</span><p>실수 k에 대하여 직선 (2k + 1)x + (k − 1)y − 5k + 2 = 0은 항상 일정한 점 A를 지난다.<br>점 A와 점 B(4, 6)을 이은 선분 AB를 <strong>1 : 2로 내분하는 점</strong>의 좌표를 구하시오.</p></div>
+<div class="section">D단계 · 최고난도 [T4] — 7문항</div>
+<div class="item"><span class="no">D1.</span><p>두 원 C₁ : x² + y² = 25 와 C₂ : (x − a)² + y² = 16 이 서로 다른 두 점에서 만나고,<br>그때 생기는 <strong>공통현의 길이가 6</strong>이다.</p>
+<p>모든 양수 a의 값의 합을 구하시오.</p></div>
+<div class="item"><span class="no">D2.</span><p>⚠️ 점 A(0, 4)를 직선 y = 2x에 대하여 대칭이동한 점을 A′이라 하자.<br>원점 O에 대하여 삼각형 OAA′의 넓이를 구하시오.</p>
+<p>진도 미확인 시 이 문항을 제외하고 31문항 <strong>120점</strong>으로 운영한다(D2는 5점).</p></div>
+<div class="item"><span class="no">D3.</span><p>두 점 A(5, 4), B(1, 2)와 x축 위의 점 P, y축 위의 점 Q에 대하여<br>AP + PQ + QB의 <strong>최솟값</strong>을 구하시오.</p></div>
+<div class="item"><span class="no">D4.</span><p>원 C : (x − 1)² + (y + 2)² = 4를 x축의 방향으로 p만큼, y축의 방향으로 q만큼<br>평행이동한 원이 원 D : x² + y² = 1에 <strong>외접</strong>한다.<br>이때 <strong>점 (p, q) 전체가 이루는 도형</strong>의 방정식을 구하고, 그 과정을 서술하시오. <strong>[서술형]</strong></p></div>
+<div class="item"><span class="no">D5.</span><p>원 x² + y² = 5 위의 점 P(1, 2)에서의 접선을 <em>l</em>이라 하고,<br>원점을 지나면서 <em>l</em>에 수직인 직선을 <em>m</em>이라 하자.<br>두 직선 <em>l</em>, <em>m</em>과 x축으로 둘러싸인 삼각형의 넓이를 구하시오.</p></div>
+<div class="item"><span class="no">D6.</span><p>두 직선 3x − 4y + 1 = 0과 5x + 12y − 3 = 0이 이루는 각의 이등분선의 방정식을<br><strong>모두</strong> 구하고, 그 과정을 서술하시오. <strong>[서술형]</strong></p></div>
+<div class="item"><span class="no">D7.</span><p>세 점 A(0, 0), B(4, 0), C(0, 6)을 <strong>모두 지나는 원</strong>의 방정식을 구하고,<br>그 중심의 좌표를 구하시오. 또 계산을 최소화하기 위해 이용한 성질을 서술하시오. <strong>[서술형]</strong></p></div>
+</div>
+<div style="position:absolute;left:-9999px">
+  <div id="masthead" class="masthead"><h1>공통수학2 「도형의 방정식」 난이도별 신형 32제</h1><div class="sub">2026 상산고 1학년 2학기 · A~D단계 32문항 125점</div><div class="namebar"><span>학년 반 번호</span><span>이름</span><span>점수</span></div></div>
+  <div id="notice" class="notice">⚠️ <b>범위 미확정</b> — 2학기 시험범위는 학교 공지·진도표 미확인 상태의 추정이다. ⚠️ <b>자료 등급</b> — 근거 유형 SM2-01~33은 전부 <b>검증(부교재)</b>이며 기출 확인분이 아니다. ⛔ <b>미투입</b> — 맹목 풀이 게이트 재통과 전이므로 실전 투입 전 교사 검수가 필요하다.</div>
+</div>
+<script>
+// A4 페이지 확정 — 사용자 규칙(260830):
+//   (1) 한 문항은 페이지를 넘어 쪼개지지 않는다.
+//   (2) 문항의 시작 위치가 본문 높이의 80%보다 아래면 다음 페이지로 넘긴다.
+// CSS로는 (2)를 표현할 수 없으므로 실제 렌더 높이를 측정해 배치한다.
+(function () {
+  var START_LIMIT = 0.80;
+  // px(브라우저 측정)와 pt(PDF 실측) 사이의 반올림 차이로 경계에서 0.3pt가량
+  // 새어 나가는 것을 막는 여유. 규칙을 느슨하게 하는 방향이 아니라 조이는 방향이다.
+  var GUARD_PX = 4;
+  var src = document.getElementById('source');
+  var sheet = document.getElementById('sheet');
+  var meta = JSON.parse(document.getElementById('meta').textContent);
+  var nodes = Array.prototype.slice.call(src.children);
+
+  var page = null, inner = null, limitPx = 0, pageNo = 0;
+
+  function newPage(withMast) {
+    pageNo++;
+    page = document.createElement('div');
+    page.className = 'page';
+    inner = document.createElement('div');
+    inner.className = 'page-inner';
+    page.appendChild(inner);
+    var f = document.createElement('div');
+    f.className = 'pfoot';
+    f.innerHTML = '<span>' + meta.setId + '</span><span>' + meta.kind +
+                  ' &middot; ' + pageNo + '</span>';
+    page.appendChild(f);
+    sheet.appendChild(page);
+    limitPx = inner.clientHeight;
+    if (withMast) {
+      var m = document.getElementById('masthead');
+      if (m) { inner.appendChild(m); }
+      var n = document.getElementById('notice');
+      if (n) { inner.appendChild(n); }
+    }
+    return inner;
+  }
+
+  // 마지막 자식의 바닥 좌표. scrollHeight는 마지막 요소의 아래 margin을
+  // 브라우저에 따라 빼먹으므로 offsetTop+offsetHeight+marginBottom으로 잰다.
+  function used() {
+    var last = inner.lastElementChild;
+    if (!last) { return 0; }
+    var mb = parseFloat(getComputedStyle(last).marginBottom) || 0;
+    return last.offsetTop + last.offsetHeight + mb;
+  }
+  function isEmpty() { return inner.children.length === 0; }
+
+  newPage(true);
+  var pendingSection = [];      // 연속된 섹션 제목을 모두 보존한다
+
+  nodes.forEach(function (node) {
+    // 섹션 제목은 단독으로 페이지 끝에 남지 않도록 다음 문항과 함께 옮긴다.
+    if (node.classList.contains('section')) { pendingSection.push(node); return; }
+
+    // 규칙 (2): 시작 위치가 본문 높이의 80%보다 아래면 다음 페이지에서 시작한다.
+    // 섹션 제목이 앞에 붙으면 그만큼 시작 위치가 내려가므로, 제목을 먼저 얹은 뒤
+    // "문항이 실제로 시작할 y"를 재서 판정한다(제목 높이를 빠뜨리면 규칙이 새어 나간다).
+    var hadContent = !isEmpty();
+    pendingSection.forEach(function (s) { inner.appendChild(s); });
+    if (hadContent && used() + GUARD_PX >= limitPx * START_LIMIT) {
+      pendingSection.forEach(function (s) {
+        if (s.parentNode === inner) { inner.removeChild(s); }
+      });
+      newPage(false);
+      pendingSection.forEach(function (s) { inner.appendChild(s); });
+    }
+    inner.appendChild(node);
+
+    // 규칙 (1): 페이지를 넘겨 쪼개지지 않게, 안 들어가면 통째로 다음 페이지로.
+    if (used() > limitPx) {
+      var moved = pendingSection;
+      inner.removeChild(node);
+      moved.forEach(function (s) {
+        if (s.parentNode === inner) { inner.removeChild(s); }
+      });
+      if (!isEmpty()) {                 // 빈 페이지를 새로 만들지 않는다
+        newPage(false);
+      }
+      moved.forEach(function (s) { inner.appendChild(s); });
+      inner.appendChild(node);
+      // 한 문항이 빈 페이지보다 큰 경우에만 넘침을 허용한다(쪼갤 수 없으므로).
+    }
+    pendingSection = [];
+  });
+
+  pendingSection.forEach(function (s) { inner.appendChild(s); });
+  src.remove();
+  document.getElementById('pagecount').textContent = pageNo;
+})();
+</script>
+</body></html>

@@ -35,3 +35,12 @@
 초기 시연 유형 M-01~M-04(역학적 시스템, 260713 등록)는 삭제하지 않고
 [catalog/science.md](catalog/science.md)의 "시연 유형(기출 미확인)" 절로 이관했다.
 기출 분석에서 동일 유형이 확인되면 해당 파일에서 상태를 `검증`으로 올린다.
+
+## 동반 갱신 목록 (CLAUDE.md 원칙 10)
+이 문서를 개정하면 **같은 작업에서** 아래를 함께 점검한다. 한쪽만 고치면
+"규정은 있는데 아무도 안 지키는" 구멍이 생긴다.
+
+- `CLAUDE.md` 원칙 1(정본 선언) · `AGENTS.md` · `analysis/FORECAST_GUIDE.md` · `analysis/catalog/_README.md` · `tools/build_catalog_index.py`(index.tsv 재생성) · `docs/PROMPT_math2.md` · `README.md`
+
+목록 자체의 존재는 `tools/check_assurance_contract.py`가 검사한다.
+근거: 260828 시스템 감사 S3 — 원칙 10이 8개 정본 중 1개에만 구현돼 있었다.

@@ -103,3 +103,14 @@ item's verdict inline**, so an interrupted run loses nothing. On start, resume f
 WIP's `NEXT` pointer; never re-solve items already recorded there. Flip status to done at
 the end of the run. This checkpoint file is the SOLE exception to "do not write files".
 Never touch another actor's WIP; only the user prunes.
+
+## Continuity under exhaustion (CLAUDE.md 공통 실행 규격 ⑤, 260828)
+When remaining context drops to 60% or less, do not open a new slice: finish the bounded
+slice in hand, then record in your WIP the current stage, completed unit IDs, input/output
+hashes, verification output, exclusive writer, blocking conditions, `NEXT:`, and the next
+verification command. If usage quota or a rate limit is exhausted, never lower the model,
+fan out retries, or busy-wait: close the slice in hand, append the observed reset time,
+lane runtime identity, exclusive output paths, and the exact resume command, then stop with
+`HOLD — resource exhausted`. On the next turn begin with a `resume audit` — re-confirm fresh
+quota, frozen input and existing output hashes, exclusive write rights, absence of a
+conflicting writer, and the next verification command; any mismatch is `▲ blocked`, not a pass.

@@ -32,6 +32,12 @@ the main-loop coordinator. Your ruling closes the loop.
   outside the ruling document + one REV_LOG row + your own WIP through shell redirection.
 - Write surface: ONLY the ruling document (`YYMMDD_NN_NAME_ruling.md`) plus one
   `analysis/REV_LOG.md` row. Fixes after approval flow through the authoring owner.
+- **Ruling form: REV_GUIDE §6-d standard (260829, mandatory)** — fixed section order and the
+  seven-column `§0` table (`unit | verdict | grade | evidence | measured | closure | note`).
+  Empty `evidence` or `measured=no` forces `insufficient-evidence`; any proposed OR refuted
+  rule/threshold needs a full-population `closure` run (`k/N`), and refutations must also test
+  the minimal repair or be marked `over-scoped`. `grade` derives from your actor row — write
+  `binding` only with genuinely fresh context. No placeholders.
 
 ## Forecast-specific ruling criteria
 1. Scope inference: does the historical split pattern genuinely apply to this term?
@@ -66,3 +72,14 @@ Next     : approve → coordinator applies & hands grades to item-writer | revis
   to your own WIP file `analysis/wip/forecast-arbiter_<YYMMDD>_<task>.md` (format:
   CLAUDE.md 서브에이전트 공통 실행 규격), then continue. Resume from an in-progress WIP's
   `NEXT` pointer; never redo done slices. Only the user prunes.
+
+## Continuity under exhaustion (CLAUDE.md 공통 실행 규격 ⑤, 260828)
+When remaining context drops to 60% or less, do not open a new slice: finish the bounded
+slice in hand, then record in your WIP the current stage, completed unit IDs, input/output
+hashes, verification output, exclusive writer, blocking conditions, `NEXT:`, and the next
+verification command. If usage quota or a rate limit is exhausted, never lower the model,
+fan out retries, or busy-wait: close the slice in hand, append the observed reset time,
+lane runtime identity, exclusive output paths, and the exact resume command, then stop with
+`HOLD — resource exhausted`. On the next turn begin with a `resume audit` — re-confirm fresh
+quota, frozen input and existing output hashes, exclusive write rights, absence of a
+conflicting writer, and the next verification command; any mismatch is `▲ blocked`, not a pass.

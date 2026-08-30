@@ -118,7 +118,102 @@ for relative in ROLE_FILES:
         if needle not in instructions:
             fail(f"{relative}: missing role safeguard {needle!r}")
 
+# --------------------------------------------------------------------------
+# Structural checks (260828).  The substring table above proves a marker EXISTS
+# somewhere; it cannot prove the rule REACHED the actor that must obey it.  The
+# 260828 system audit measured `resume audit` present in AGENTS.md and absent
+# from all 11 agent definitions while this file still printed PASS.  These
+# checks close that class: they read the canon and the definitions and compare.
+# --------------------------------------------------------------------------
+
+AGENT_DIR = ROOT / ".claude/agents"
+AGENT_FILES = sorted(AGENT_DIR.glob("*.md"))
+
+if not AGENT_FILES:
+    fail(".claude/agents/: no agent definitions found")
+
+# 1. Continuity rule (CLAUDE.md 서브에이전트 공통 실행 규격 ⑤) must reach every actor.
+CONTINUITY_MARKERS = ("HOLD — resource exhausted", "resume audit")
+for path in AGENT_FILES:
+    text = path.read_text(encoding="utf-8")
+    for needle in CONTINUITY_MARKERS:
+        if needle not in text:
+            fail(f".claude/agents/{path.name}: missing continuity marker {needle!r}")
+
+# 2. Tool-grant coupling (CLAUDE.md 원칙 ④ / REV_GUIDE §5).  An actor the write-surface
+#    table tells to write must actually hold Write; one that appends to a shared ledger
+#    (_index / REV_LOG) must also hold Edit.  Without this the actor shells around the
+#    grant or silently disobeys.
+rev_guide = (ROOT / "analysis/REV_GUIDE.md").read_text(encoding="utf-8")
+section5 = rev_guide.split("## 5. Actors", 1)[-1].split("\n## 6.", 1)[0]
+actor_rows = []
+for line in section5.splitlines():
+    cells = [c.strip() for c in line.strip().strip("|").split("|")]
+    if len(cells) != 3 or cells[0] in ("Role", "------"):
+        continue
+    names = [n for n in cells[1].split("`") if (AGENT_DIR / f"{n}.md").exists()]
+    if names:
+        actor_rows.append((names[0], cells[2]))
+
+if len(actor_rows) < 8:
+    fail(f"REV_GUIDE §5: parsed only {len(actor_rows)} agent rows — table shape changed")
+
+for actor, surface in actor_rows:
+    tools_line = ""
+    for line in (AGENT_DIR / f"{actor}.md").read_text(encoding="utf-8").splitlines():
+        if line.startswith("tools:"):
+            tools_line = line
+            break
+    granted = {t.strip() for t in tools_line[len("tools:"):].split(",")}
+    if "Write" not in granted:
+        fail(f".claude/agents/{actor}.md: REV_GUIDE §5 assigns a write surface but tools: has no Write")
+    if ("_index" in surface or "REV_LOG" in surface) and "Edit" not in granted:
+        fail(f".claude/agents/{actor}.md: §5 surface includes a shared ledger but tools: has no Edit")
+
+# 3. WIP checkpoint files must be resumable: declared actor, enum status, NEXT pointer.
+WIP_STATUS = {"in-progress", "done", "blocked"}
+for path in sorted((ROOT / "analysis/wip").glob("*.md")):
+    if path.name.startswith("_"):
+        continue
+    lines = path.read_text(encoding="utf-8").splitlines()
+    status = next((l.split(":", 1)[1].strip() for l in lines if l.startswith("status:")), None)
+    if status is None:
+        fail(f"analysis/wip/{path.name}: no status: field (CLAUDE.md 규격 ②)")
+    elif status not in WIP_STATUS:
+        fail(f"analysis/wip/{path.name}: status {status!r} outside {sorted(WIP_STATUS)}")
+    if not any(l.startswith("NEXT:") for l in lines):
+        fail(f"analysis/wip/{path.name}: no NEXT: line — cannot be resumed")
+
+# 4. Fail-closed tools (CLAUDE.md 원칙 11).  A tool that can print [WARN] must have a
+#    nonzero exit path; a warning channel with no failure channel is fail-open by design.
+for path in sorted((ROOT / "tools").glob("*.py")):
+    text = path.read_text(encoding="utf-8")
+    if "[WARN]" in text and "[FAIL]" not in text:
+        fail(f"tools/{path.name}: prints [WARN] but has no [FAIL] path (fail-open)")
+
+# 5. Companion-update list (CLAUDE.md 원칙 10).  A canon document that other files must
+#    follow has to name its own dependents, or an edit to it silently desynchronises them.
+COMPANION_REQUIRED = [
+    "CLAUDE.md",
+    "AGENTS.md",
+    "analysis/REV_GUIDE.md",
+    "analysis/FORECAST_GUIDE.md",
+    "analysis/DOC_LOCATION.md",
+    "analysis/TYPE_CATALOG.md",
+    "analysis/catalog/CODE_REGISTRY.md",
+    "analysis/catalog/_README.md",
+    "docs/DATA_STANDARD.md",
+]
+for relative in COMPANION_REQUIRED:
+    path = ROOT / relative
+    if not path.exists():
+        fail(f"{relative}: canon document missing")
+        continue
+    if "동반 갱신 목록" not in path.read_text(encoding="utf-8"):
+        fail(f"{relative}: no 동반 갱신 목록 section (CLAUDE.md 원칙 10)")
+
 if failures:
     print(f"assurance-contract: {failures} failure(s)")
     raise SystemExit(1)
-print("assurance-contract: PASS (0 failures)")
+print(f"assurance-contract: PASS (0 failures, {len(AGENT_FILES)} agents, "
+      f"{len(actor_rows)} §5 rows checked)")

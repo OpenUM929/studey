@@ -1,0 +1,3 @@
+fix_id	target_file	item_id	column	current_value	proposed_value	rationale	principle
+IF-01	author/items.tsv	S-05	tier	T2	T1	원문 배점 3.1점은 DIFFICULTY_RUBRIC T1 대역(3.0~3.2)이다. critic #9는 DF8(경우 분기 폭) 하나만 근거로 T1→T2 상향을 요구했으나, author가 tier_basis에 이미 제시한 배점 반증을 기록상 저울질하지 않았다. 배점은 출처가 제공한 유일한 객관 앵커이므로 우선한다.	원칙 5·6 (기출 1차 자료 우선)
+IF-02	author/items.tsv	S-05	tier_basis	원문 배점 3.1점은 T1 신호지만 교점의 유리식 도출, 분모 부호 분기, x와 y의 엄격 부등식 교집합이 필요해 DF1·DF8 기준에서는 T2 경계로 상향 판정	원문 배점 3.1점으로 T1 대역(DIFFICULTY_RUBRIC 3.0~3.2) 판정. 교점 유리식 도출·분모 부호 분기·두 엄격 부등식 교집합으로 DF1·DF8이 활성화되어 T1 상단에 위치하나, 배점 앵커를 넘어 T2로 상향할 근거는 관측되지 않음(260828 재검토)	Tier 값 변경에 맞춰 근거 문장을 동반 갱신한다. DF8 긴장은 삭제하지 않고 T1 상단이라는 표현으로 보존한다.	원칙 3·10 (근거 보존 + 동반 갱신)

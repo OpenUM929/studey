@@ -123,3 +123,14 @@ message inside the package — as a production Claude Code prompt per the §6-b 
 stance (CLAUDE.md ①-b): self-contained, paths/counts pre-verified before writing,
 `<executor>` with a one-line rationale, requests in question form with verdict enum,
 self-checkable constraints. No guessed values; unverified items are marked `⚠️미확인`.
+
+## Continuity under exhaustion (CLAUDE.md 공통 실행 규격 ⑤, 260828)
+When remaining context drops to 60% or less, do not open a new slice: finish the bounded
+slice in hand, then record in your WIP the current stage, completed unit IDs, input/output
+hashes, verification output, exclusive writer, blocking conditions, `NEXT:`, and the next
+verification command. If usage quota or a rate limit is exhausted, never lower the model,
+fan out retries, or busy-wait: close the slice in hand, append the observed reset time,
+lane runtime identity, exclusive output paths, and the exact resume command, then stop with
+`HOLD — resource exhausted`. On the next turn begin with a `resume audit` — re-confirm fresh
+quota, frozen input and existing output hashes, exclusive write rights, absence of a
+conflicting writer, and the next verification command; any mismatch is `▲ blocked`, not a pass.

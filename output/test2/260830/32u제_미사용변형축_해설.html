@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<title>공통수학2 「도형의 방정식」 미사용 변형축 32제 — 정답·해설</title>
+<style>
+:root{--ink:#111;--mute:#555;--rule:#bbb;--accent:#1a4a7a}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:"Malgun Gothic","맑은 고딕","Apple SD Gothic Neo",sans-serif;
+  color:var(--ink);background:#8a8a8a;font-size:10.5pt;line-height:1.62;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{position:relative;width:210mm;height:297mm;padding:16mm 15mm 14mm;
+  background:#fff;margin:8mm auto;box-shadow:0 2px 14px rgba(0,0,0,.35);overflow:hidden}
+.page-inner{position:relative;height:100%;overflow:hidden}
+.masthead{border-bottom:2px solid var(--accent);padding-bottom:3mm;margin-bottom:5mm}
+.masthead h1{font-size:15pt;margin:0 0 1.5mm;letter-spacing:-.3px}
+.masthead .sub{font-size:9pt;color:var(--mute)}
+.namebar{margin-top:3mm;font-size:9.5pt;color:var(--mute);display:flex;gap:10mm}
+.namebar span{border-bottom:1px solid var(--rule);padding:0 0 1mm;min-width:38mm}
+.notice{font-size:8.6pt;color:var(--mute);border:1px solid var(--rule);
+  border-left:3px solid var(--accent);padding:2.5mm 3mm;margin:0 0 5mm;line-height:1.5}
+.section{font-size:11.5pt;font-weight:700;color:var(--accent);
+  border-bottom:1px solid var(--rule);padding-bottom:1.5mm;margin:0 0 4mm}
+/* 직선 이름 l 은 고딕에서 대문자 I·숫자 1과 구별되지 않는다(260830 육안 검수).
+   변수는 수학 관행대로 세리프 이탤릭으로 세운다. */
+em{font-family:"Times New Roman",Cambria,serif;font-style:italic;font-size:1.06em}
+.item{margin:0 0 6.5mm;padding-left:9mm;position:relative;font-size:11pt}
+.item .no{position:absolute;left:0;top:0;font-weight:700;color:var(--accent);min-width:9mm}
+.item p{margin:0 0 1.6mm}
+.item p:last-child{margin-bottom:0}
+.ans{margin:0 0 4.5mm;padding-left:9mm;position:relative;font-size:9.6pt}
+.ans .no{position:absolute;left:0;top:0;font-weight:700;color:var(--accent)}
+.ans .val{font-weight:700}
+.ans .typ{font-size:8.4pt;color:var(--mute);margin-left:2mm}
+.ans .sol{color:#333;margin-top:1mm;line-height:1.55}
+.rub{margin:0 0 5mm;font-size:9.4pt}
+.rub h3{font-size:10pt;margin:0 0 1.5mm;color:var(--accent)}
+.rub div{margin:0 0 .8mm}
+code{font-family:Consolas,"D2Coding",monospace;font-size:.92em;background:#f2f2f2;padding:0 2px}
+.pfoot{position:absolute;left:15mm;right:15mm;bottom:7mm;display:flex;
+  justify-content:space-between;font-size:8pt;color:#888;
+  border-top:1px solid #e2e2e2;padding-top:1.5mm}
+@media print{
+  body{background:#fff}
+  .page{margin:0;box-shadow:none;break-after:page;page-break-after:always}
+  .page:last-child{break-after:auto;page-break-after:auto}
+  .noprint{display:none!important}
+}
+@page{size:A4 portrait;margin:0}
+.noprint{position:fixed;top:8px;left:50%;transform:translateX(-50%);z-index:99;
+  background:#fff;border:1px solid #bbb;border-radius:4px;padding:6px 12px;
+  font-size:12px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.noprint button{font:inherit;cursor:pointer;padding:3px 10px;margin-left:8px}
+</style></head><body>
+<div class="noprint">A4 해설지 · 총 <b id="pagecount">-</b>쪽
+<button onclick="window.print()">인쇄</button></div>
+<script type="application/json" id="meta">{"setId": "SET-260830-math2-32u", "kind": "해설"}</script>
+<div id="sheet"></div>
+<div id="source" style="position:absolute;left:-9999px;top:0;width:180mm">
+<div class="ans"><span class="no">A1.</span><span class="val"><strong>3</strong></span><span class="typ">SM2-26</span><div class="sol">이동한 점은 (2 + a, −1 + 3) = (2 + a, 2). 직선 위이므로 (2 + a) + 2 − 7 = 0 → <strong>a = 3</strong>. / 함정: y좌표 이동을 빠뜨리고 (2 + a, −1)로 둠. 이동 방향 역전.</div></div>
+<div class="ans"><span class="no">A2.</span><span class="val"><strong>(x − 2)² + (y + 2)² = 25</strong></span><span class="typ">SM2-15</span><div class="sol">지름의 양 끝점이면 <strong>중심은 그 중점</strong>, 반지름은 길이의 절반. 중심 (2, −2), AB = √(6² + 8²) = 10이므로 r = 5. / 함정: 반지름을 10으로 둠(지름과 혼동). 중심을 A나 B로 잡음.</div></div>
+<div class="ans"><span class="no">A3.</span><span class="val"><strong>2√2</strong></span><span class="typ">SM2-03</span><div class="sol">1 : 2 내분점 P = ((2·(−2) + 1·4)/3, (2·1 + 1·7)/3) = (0, 3). 2 : 1 내분점 Q = ((1·(−2) + 2·4)/3, (1·1 + 2·7)/3) = (2, 5). PQ = √(2² + 2²) = <strong>2√2</strong>. / 함정: 두 내분점의 <strong>계수 순서를 같게</strong> 씀(1:2와 2:1은 다르다). 삼등분점이므로 PQ = AB/3 = (6√2)/3 = 2√2로도 확인된다.</div></div>
+<div class="ans"><span class="no">A4.</span><span class="val"><strong>(−b, −a)</strong></span><span class="typ">SM2-29</span><div class="sol">y = x 대칭은 두 좌표를 서로 바꾸므로 Q(b, a). 원점 대칭은 두 좌표의 부호를 모두 바꾸므로 R<strong>(−b, −a)</strong>. / 함정: 원점 대칭을 y축 대칭(−b, a)으로 처리. 합성 순서를 뒤바꿔 (−a, −b).</div></div>
+<div class="ans"><span class="no">A5.</span><span class="val"><strong>2</strong></span><span class="typ">SM2-16</span><div class="sol">y축에 접하므로 반지름 = 중심의 x좌표의 절댓값 = a (a &gt; 0). 점 (4, 3)을 지나므로 (4 − a)² + (3 − 3)² = a² → 16 − 8a = 0 → a = <strong>2</strong>. / 함정: <strong>x축 접</strong>으로 오독해 r = 3으로 둠. 중심의 y좌표가 통과점과 같다는 점을 못 보고 계산량을 키움. / 260830 정정(게이트 조건 잉여): 종전의 <code>(단, a &gt; 0)</code>은 <strong>삭제해도 답이 바뀌지 않았다</strong> — a &lt; 0이면 원이 x ≤ 0 영역에만 놓여 점 (4, 3)을 지날 수 없기 때문이다. 그 조건이 SM2-16의 최다 오답원(사분면 케이스 누락)을 대신 막아 함정을 무력화하고 있었으므로 삭제했다.</div></div>
+<div class="ans"><span class="no">A6.</span><span class="val"><strong>−10</strong></span><span class="typ">SM2-07</span><div class="sol">기울기 일치: (k − 2)/2 = (8 − 2)/(k − 1) → (k − 2)(k − 1) = 12 → k² − 3k − 10 = 0. 근과 계수의 관계로 곱 = <strong>−10</strong>. (k = 1은 근이 아니므로 분모 조건 위배 없음) / 함정: 근 5, −2를 직접 구하느라 시간 소모. <strong>분모 k − 1 = 0 케이스 점검 누락.</strong></div></div>
+<div class="ans"><span class="no">B1.</span><span class="val"><strong>8</strong></span><span class="typ">SM2-08</span><div class="sol">"y축 위에서 만난다"는 <strong>두 직선이 점 (0, 4)를 공유</strong>한다는 뜻이다(<em>l</em>의 y절편). <em>l</em>의 기울기가 2이므로 <em>m</em>의 기울기는 −1/2. y = −x/2 + 4에서 y = 0이면 x = <strong>8</strong>. / 함정(카탈로그 명시): 이 해석을 못 하면 <em>m</em>이 미결정이라 문제를 풀 수 없다. 수직 기울기를 −2로.</div></div>
+<div class="ans"><span class="no">B2.</span><span class="val"><strong>8√2</strong></span><span class="typ">SM2-05</span><div class="sol">중점을 이은 사각형(바리뇽 평행사변형)에서 PQ ∥ AC이고 PQ = AC/2, QR ∥ BD이고 QR = BD/2. AC = √(5² + 5²) = 5√2, BD = √((−3)² + 3²) = 3√2. 둘레 = 2(AC/2 + BD/2) = <strong>AC + BD = 8√2</strong>. / 함정(카탈로그 명시): 둘레를 <strong>½(AC + BD)로 계산</strong> — 각 대각선의 절반이 2변씩이므로 합은 AC + BD다. 대각선을 AB·CD로 잘못 짝지음.</div></div>
+<div class="ans"><span class="no">B3.</span><span class="val"><strong>2x + 3y − 13 = 0</strong></span><span class="typ">SM2-10</span><div class="sol">교점 P를 구하면 2x − y = 1, x + y = 5에서 <strong>P(2, 3)</strong>. 원점에서 직선까지의 거리는 <strong>OP를 넘을 수 없고</strong>, 최대가 되는 것은 직선이 OP에 <strong>수직</strong>일 때다. OP의 기울기가 3/2이므로 구하는 직선의 기울기는 −2/3. y − 3 = −(2/3)(x − 2) → <strong>2x + 3y − 13 = 0</strong>. / 함정: 거리를 문자로 두고 미분·판별식으로 접근해 계산 폭증. 수직 조건을 놓치면 최대라는 근거가 없다.</div></div>
+<div class="ans"><span class="no">B4.</span><span class="val"><strong>1</strong></span><span class="typ">SM2-27</span><div class="sol">평행이동한 포물선은 y = (x − k)² − 4(x − k) + 7. x = 0을 대입하면 k² + 4k + 7 = 12 → k² + 4k − 5 = 0 → k = 1 또는 −5. 양수이므로 <strong>k = 1</strong>. / 함정: <strong>대입 부호</strong>(x → x − k)를 반대로. 두 근 중 양수 조건을 무시하고 −5를 답함.</div></div>
+<div class="ans"><span class="no">B5.</span><span class="val"><strong>6</strong></span><span class="typ">SM2-21</span><div class="sol">원 위의 점 P(a, b)에서의 접선은 ax + by = 20이고 기울기는 −a/b. 주어진 직선의 기울기 2와 <strong>수직</strong>이므로 (−a/b)·2 = −1 → b = 2a. a² + b² = 20에서 5a² = 20, a = 2 (a &gt; 0), b = 4. a + b = <strong>6</strong>. / 함정: <strong>수직을 평행으로</strong> 읽어 −a/b = 2로 둠. b = 0 예외 확인 습관.</div></div>
+<div class="ans"><span class="no">B6.</span><span class="val"><strong>x = 3 (오직 한 개)</strong></span><span class="typ">SM2-19</span><div class="sol">현의 길이가 8이므로 중심에서 직선까지의 거리는 √(25 − 16) = 3. 기울기가 m인 직선 y = m(x − 3)은 mx − y − 3m = 0이고 원점까지의 거리는 |−3m|/√(m² + 1) = 3 → 9m² = 9m² + 9, 즉 <strong>0 = 9로 해가 없다</strong>. 따라서 기울기가 존재하는 직선은 없고, <strong>기울기가 없는 수직선 x = 3</strong>만 조건을 만족한다. / 함정(카탈로그 명시 — 이 문항의 전부): 기울기를 m으로 두고 "해 없음"으로 끝내면 <strong>오답</strong>이다. "모든 직선"을 물으면 x = 상수를 반드시 검토해야 한다.</div></div>
+<div class="ans"><span class="no">B7.</span><span class="val">중심 <strong>(9, 0)</strong>, 반지름 <strong>3</strong></span><span class="typ">SM2-17</span><div class="sol">PA = 3PB에서 PA² = 9PB²: x² + y² = 9{(x − 8)² + y²} → 8x² − 144x + 576 + 8y² = 0 → x² − 18x + 72 + y² = 0 → (x − 9)² + y² = <strong>9</strong>. 중심 (9, 0), 반지름 3. / 함정: 비를 뒤집어 3PA = PB로 세움. 완전제곱에서 우변 계산(81 − 72) 실수. r² &gt; 0 확인.</div></div>
+<div class="ans"><span class="no">B8.</span><span class="val"><strong>(x + 1)² + (y + 3)² = 4</strong></span><span class="typ">SM2-30</span><div class="sol">y = −x에 대한 대칭은 (x, y) → (−y, −x). 중심 (3, 1) → <strong>(−1, −3)</strong>, 반지름은 대칭이동에서 <strong>불변</strong>이므로 2. / 함정: y = −x 대칭을 (−x, −y)(원점 대칭)나 (y, x)(y = x 대칭)와 혼동. 반지름까지 바꿈.</div></div>
+<div class="ans"><span class="no">B9.</span><span class="val"><strong>P(3, 5)</strong></span><span class="typ">SM2-04</span><div class="sol">2·BP = 3·AP에서 AP : BP = 2 : 3이고, <strong>P가 선분 AB 위</strong>이므로 내분점 하나로 확정된다. B − A = (10, 10)이므로 P = A + (2/5)(10, 10) = <strong>(3, 5)</strong>. / 함정: "직선 위"인 줄 알고 바깥쪽 해까지 두 개를 답함 — 이 문제는 <strong>선분 위</strong>로 한정되어 해가 하나다. 비를 3 : 2로 뒤집음.</div></div>
+<div class="ans"><span class="no">C1.</span><span class="val"><strong>P(1, 8/3)</strong></span><span class="typ">SM2-02 + SM2-06</span><div class="sol">P(x, y)로 두면 PA² + PB² + PC² = 3{(x − 1)² + (y − 8/3)²} + (상수). 즉 최소가 되는 점은 세 점의 <strong>무게중심</strong>이다. G = ((1 + 4 − 2)/3, (0 + 3 + 5)/3) = <strong>(1, 8/3)</strong>. / 함정: 최솟값을 답하고 점을 빠뜨림. 무게중심임을 못 보고 편미분·연립으로 우회.</div></div>
+<div class="ans"><span class="no">C2.</span><span class="val"><strong>(3, 4), (4, 3)</strong></span><span class="typ">SM2-01</span><div class="sol">두 점에서 등거리인 점은 <strong>선분 AB의 수직이등분선</strong> 위에 있다. 중점 (3, 4), AB의 기울기 1이므로 수직이등분선은 y = −x + 7. 원 x² + y² = 25와 연립: x² + (7 − x)² = 25 → x² − 7x + 12 = 0 → x = 3, 4. <strong>(3, 4), (4, 3)</strong>. / 함정: 원 위라는 조건을 잊고 수직이등분선만 답함. <strong>두 교점 중 하나만</strong> 씀.</div></div>
+<div class="ans"><span class="no">C3.</span><span class="val"><strong>20</strong></span><span class="typ">SM2-09</span><div class="sol">원점이 선분 AB의 수직이등분선 위에 있다는 것은 <strong>원점에서 A, B까지의 거리가 같다</strong>는 뜻이다. 따라서 a² + b² = 2² + 4² = <strong>20</strong>. / 함정(카탈로그 명시): 미지수 2개에 조건 1개이므로 <strong>a, b는 개별로 확정되지 않는다.</strong> 개별 값을 구하려 들면 막힌다 — 묻는 것이 조합식 a² + b²임을 이용해야 한다.</div></div>
+<div class="ans"><span class="no">C4.</span><span class="val"><strong>−6</strong></span><span class="typ">SM2-13</span><div class="sol">직선은 항상 점 (2, 0)을 지나며, 이 점은 변 AB 위에 있다. 전체 넓이는 ½·6·4 = 12이므로 절반은 6. 이 직선이 변 BC와 만나는 점을 (x, y)라 하면 삼각형 (2,0), B(6,0), (x, y)의 넓이 = ½·4·y = 6 → y = 3. BC의 방정식 x/6 + y/4 = 1에서 y = 3이면 x = 3/2. 두 점 (2, 0), (3/2, 3)을 지나므로 m = 3/(3/2 − 2) = <strong>−6</strong>. / 함정: 직선이 변 AC(y축)와 만난다고 가정하면 필요한 높이가 6 &gt; 4이라 <strong>불가능</strong>한데, 이를 확인하지 않으면 엉뚱한 답이 나온다. 어느 변과 만나는지 먼저 판정해야 한다.</div></div>
+<div class="ans"><span class="no">C5.</span><span class="val"><strong>2√2</strong></span><span class="typ">SM2-11</span><div class="sol">y = |x|는 두 반직선이다. x ≥ 0에서 점 (t, t)까지의 거리는 |t − t − 4|/√2 = <strong>2√2로 일정</strong>하다(직선 x − y − 4 = 0과 y = x가 평행하기 때문). x &lt; 0에서 점 (t, −t)까지는 |2t − 4|/√2인데 t &lt; 0이므로 |2t − 4| &gt; 4, 즉 2√2보다 크다. 최솟값 <strong>2√2</strong>. / 함정: 절댓값을 벗기지 않고 한 쪽만 계산. <strong>평행이라 거리가 상수</strong>임을 못 보고 미분으로 헤맴.</div></div>
+<div class="ans"><span class="no">C6.</span><span class="val"><strong>x² + y² = 13</strong></span><span class="typ">SM2-22</span><div class="sol">접선의 길이를 <em>t</em>라 하면 OP² = r² + t². 따라서 OP² = 4 + 9 = 13이고, 점 P가 그리는 도형은 <strong>중심이 원점이고 반지름이 √13인 원</strong> x² + y² = <strong>13</strong>. / 함정: 접선의 길이 3을 반지름으로 오인해 x² + y² = 9. 점 하나를 구하려 함 — 조건을 만족하는 P는 무수히 많다.</div></div>
+<div class="ans"><span class="no">C7.</span><span class="val"><strong>4 − 2√2</strong></span><span class="typ">SM2-25</span><div class="sol">AB = 4이고 x축 위에 있으므로 넓이는 P의 y좌표의 절댓값으로 결정된다. 중심 (2, 2), 반지름 √2이므로 P의 y좌표 범위는 [2 − √2, 2 + √2]이고, 원 전체가 x축 위쪽에 있으므로 최소 높이는 2 − √2. 넓이 = ½·4·(2 − √2) = <strong>4 − 2√2</strong>. / 함정: <strong>최댓값 공식(d + r)을 습관적으로</strong> 적용. 원이 x축과 만나는지(2 &gt; √2이므로 만나지 않는다) 확인하지 않으면 최솟값을 0으로 답한다.</div></div>
+<div class="ans"><span class="no">C8.</span><span class="val"><strong>4</strong></span><span class="typ">SM2-18</span><div class="sol">직선을 x − y + k = 0으로 둔다. 원 x² + y² = 2와 만남 ⇔ |k|/√2 ≤ √2 ⇔ −2 ≤ k ≤ 2. 원 (x − 4)² + y² = 2와 만나지 않음 ⇔ |4 + k|/√2 &gt; √2 ⇔ |4 + k| &gt; 2 ⇔ k &gt; −2 또는 k &lt; −6. 교집합은 <strong>−2 &lt; k ≤ 2</strong>이므로 정수 k = −1, 0, 1, 2로 <strong>4개</strong>. / 함정(카탈로그 명시): <strong>두 부등식의 교집합</strong> 처리. k = −2에서 두 번째 조건이 등호가 되어 제외됨을 놓침.</div></div>
+<div class="ans"><span class="no">C9.</span><span class="val"><strong>(x − 1)² + y² = 1 (단, 원점 제외)</strong></span><span class="typ">SM2-14</span><div class="sol">두 직선의 법선벡터 (k, −1)과 (1, k)의 내적이 k − k = 0이므로 <strong>두 직선은 항상 수직</strong>이다. 또 첫 직선은 항상 O(0, 0)을, 둘째 직선은 항상 A(2, 0)을 지난다. 따라서 ∠OPA = 90°이고, P는 <strong>선분 OA를 지름으로 하는 원</strong> 위에 있다: <strong>(x − 1)² + y² = 1</strong>. 다만 x = 2/(1 + k²) &gt; 0이므로 <strong>원점은 지나지 않는다.</strong> / 함정: 두 직선이 수직임을 못 보고 교점 좌표를 구해 k를 소거하려다 계산 폭증. <strong>제외점을 밝히지 않음</strong>(감점 축).</div></div>
+<div class="ans"><span class="no">C10.</span><span class="val"><strong>−5</strong></span><span class="typ">SM2-20</span><div class="sol">y = 2x + c로 두면 2x − y + c = 0이고, 접함 ⇔ |c|/√5 = √5 → |c| = 5 → c = ±5. y = 2x + 5는 x = −1일 때 y = 3 &gt; 0이므로 <strong>제2사분면을 지난다.</strong> y = 2x − 5는 x &lt; 0이면 y &lt; −5 &lt; 0이므로 제2사분면을 지나지 않는다. 답 <strong>−5</strong>. / 함정: 두 접선을 구하고 <strong>선별 조건을 적용하지 않아 둘 다</strong> 답함. 제2사분면을 x &gt; 0, y &lt; 0으로 착각.</div></div>
+<div class="ans"><span class="no">D1.</span><span class="val"><strong>2√5</strong></span><span class="typ">SM2-33</span><div class="sol">삼각부등식에서 |AP − BP| ≤ AB이고, 등호는 <strong>P가 직선 AB 위</strong>에 있을 때 성립한다. 직선 AB는 기울기 1/2, y = x/2 + 3/2이고 x축과 (−3, 0)에서 만나므로 P(−3, 0)에서 최대가 된다. 최댓값 = AB = √(4² + 2²) = <strong>2√5</strong>. / 함정(이 문항의 핵심): <strong>AP + BP의 최소와 혼동해 대칭점을 잡음.</strong> 차의 최대는 대칭이 아니라 <strong>직선 AB의 연장선과 축의 교점</strong>이다. 두 점이 축의 같은 쪽에 있어야 이 논법이 성립함을 확인.</div></div>
+<div class="ans"><span class="no">D2.</span><span class="val"><strong>6</strong></span><span class="typ">SM2-24</span><div class="sol"><strong>접선의 개수는 위치 관계를 그대로 번역한 값</strong>이다: 4개=외부, 3개=외접, <strong>2개=서로 다른 두 점에서 만남</strong>, 1개=내접, 0개=내부. 따라서 조건은 <code>|r₁ − r₂| &lt; d &lt; r₁ + r₂</code>, 즉 <strong>1 &lt; d &lt; 5</strong>. 중심 사이의 거리는 d = <strong>|a|</strong> 이므로 1 &lt; |a| &lt; 5. 이는 1 &lt; a &lt; 5 <strong>또는</strong> −5 &lt; a &lt; −1 이고, 해당하는 정수는 2, 3, 4와 −2, −3, −4의 <strong>6개</strong>. / 함정: <strong>a &gt; 0으로 단정</strong>해 3개만 셈 — 발문에 양수 제한이 없고 C₂의 중심 (a, 0)은 a가 음수여도 정의된다(중심 거리는 |a|). 경계 a = ±1, ±5는 <strong>접하는 경우</strong>라 접선이 1개 또는 3개이므로 제외된다(등호 포함 오류가 최다 오답). 접선 개수와 위치 관계의 대응을 외우지 않고 매번 그림으로 세려다 2개와 4개를 뒤바꿈.</div></div>
+<div class="ans"><span class="no">D3.</span><span class="val"><strong>2x + 3y − 14 = 0</strong></span><span class="typ">SM2-32 + SM2-09</span><div class="sol">두 점이 직선 <em>l</em>에 대하여 대칭이면 <em>l</em>은 <strong>선분 AB의 수직이등분선</strong>이다. 중점은 ((2 + 6)/2, (−1 + 5)/2) = <strong>(4, 2)</strong>, 직선 AB의 기울기는 (5 − (−1))/(6 − 2) = <strong>3/2</strong> 이므로 <em>l</em>의 기울기는 <strong>−2/3</strong>. y − 2 = −(2/3)(x − 4) ⇒ <strong>2x + 3y − 14 = 0</strong>. (검산: A, B에서 <em>l</em>까지의 거리가 같고 AB ⊥ <em>l</em> ✓) / 함정: 대칭축을 <strong>직선 AB 자신</strong>으로 착각 / 수직 기울기의 부호·역수 처리 실수 / 중점만 구하고 수직 조건을 빠뜨려 직선이 미결정. / 260830 정정(게이트 세트 내 누설): 종전 좌표 A(1, 2)·B(5, 4)는 <strong>D1과 문자 그대로 같아</strong>, D1에서 직선 AB의 기울기 1/2을 이미 구한 학생에게 이 서술형의 배점 2점짜리 단계가 선행 노출됐다. 좌표만 옮기고 골격은 보존했다.</div></div>
+<div class="ans"><span class="no">D4.</span><span class="val"><strong>(x − 3)² + y² = 16</strong></span><span class="typ">SM2-23 + SM2-15</span><div class="sol">두 식을 변끼리 빼면 공통현: (x² + y² − 25) − (x² − 16x + 64 + y² − 41) = 16x − 48 = 0 → <strong>x = 3</strong>. 원 x² + y² = 25에 대입하면 y² = 16, y = ±4이므로 두 교점은 (3, 4), (3, −4). 이를 지름의 양 끝으로 하면 중심 (3, 0), 반지름 4. <strong>(x − 3)² + y² = 16</strong>. / 함정: 공통현이 <strong>수직선 x = 3</strong>임을 얻고도 y를 못 구함. 지름의 양 끝점에서 반지름을 8로 둠.</div></div>
+<div class="ans"><span class="no">D5.</span><span class="val"><strong>f(x) = −g(x − 3)</strong></span><span class="typ">SM2-31</span><div class="sol">f를 x축 방향으로 −3만큼 옮기면 y = f(x + 3), 이어 x축 대칭이면 −y = f(x + 3), 즉 y = −f(x + 3). 이것이 g이므로 <strong>g(x) = −f(x + 3)</strong>. 양변에 x 대신 x − 3을 넣으면 g(x − 3) = −f(x), 따라서 <strong>f(x) = −g(x − 3)</strong>. / 함정(이 문항의 핵심): 방향이 <strong>역방향</strong>이다. g를 f로 나타내고 멈추면 문제가 요구한 것이 아니다. 평행이동 −3에서 대입 부호(x + 3)를 반대로.</div></div>
+<div class="ans"><span class="no">D6.</span><span class="val"><strong>−3</strong></span><span class="typ">SM2-28</span><div class="sol">이동한 원의 중심을 (t, s)라 하면 t = 1 + p, s = 3 + q이고 반지름은 <strong>불변인 2</strong>. y축에만 접하므로 |t| = 2이고, 제2사분면이므로 t &lt; 0에서 <strong>t = −2</strong>. 중심이 y = x + 5 위이므로 s = 3. 따라서 p = −3, q = 0이고 p + q = <strong>−3</strong>. / 함정: 양축 접으로 오독해 |t| = |s|를 강제. 사분면 조건을 쓰지 않아 t = 2까지 답함. 평행이동에서 반지름이 변한다고 착각. / 260830 보완(게이트): 발문이 "y축<strong>에만</strong> 접한다"이므로 x축에 접하지 않음도 확인해야 조건이 닫힌다 — 중심의 y좌표 3과 반지름 2가 다르므로 x축에는 접하지 않는다 ✓</div></div>
+<div class="ans"><span class="no">D7.</span><span class="val"><strong>x + y − 6 = 0</strong></span><span class="typ">SM2-12</span><div class="sol">각의 이등분선 위의 점은 두 직선에서 같은 거리에 있고, 두 직선의 법선 크기가 모두 √5로 같으므로 |x − 2y + 3| = |2x − y − 3|. <strong>(+)</strong> x − 2y + 3 = 2x − y − 3 → <strong>x + y − 6 = 0</strong>. <strong>(−)</strong> x − 2y + 3 = −2x + y + 3 → 3x − 3y = 0 → y = x. 원점을 대입하면 앞의 것은 −6 ≠ 0(지나지 않음), 뒤의 것은 0 = 0(지남). 따라서 <strong>x + y − 6 = 0</strong>. / 함정(카탈로그 명시): <strong>± 두 경우 중 하나만</strong> 구하고 끝냄. 배제 조건("원점을 지나지 않는")을 무시하고 둘 다 답함.</div></div>
+<div class="rub"><h3>D3 [6점]</h3><div>- 두 점이 직선에 대하여 대칭이면 그 직선은 <strong>수직이등분선</strong>임을 서술 … 2점</div><div>- 중점 (4, 2)를 구함 … 1점</div><div>- 직선 AB의 기울기 3/2에서 <em>l</em>의 기울기 −2/3을 구함 … 2점</div><div>- 2x + 3y − 14 = 0 … 1점</div></div>
+<div class="rub"><h3>D4 [7점]</h3><div>- 두 식을 변끼리 빼면 이차항이 소거된다는 근거 서술 … 1점</div><div>- 공통현 x = 3 … 2점</div><div>- 두 교점 (3, 4), (3, −4) … 2점</div><div>- 지름의 양 끝점이므로 중심은 중점, 반지름은 절반임을 서술 … 1점</div><div>- (x − 3)² + y² = 16 … 1점</div></div>
+<div class="rub"><h3>D5 [7점]</h3><div>- 평행이동 −3은 x 대신 <strong>x + 3</strong>을 대입함을 명시 … 2점</div><div>- x축 대칭은 y 대신 <strong>−y</strong>를 대입함을 명시 … 1점</div><div>- g(x) = −f(x + 3)을 얻음 … 2점</div><div>- x 대신 x − 3을 넣어 <strong>방향을 뒤집음</strong> … 1점</div><div>- f(x) = −g(x − 3) … 1점</div></div>
+<div class="rub"><h3>D7 [7점]</h3><div>- 각의 이등분선 = 두 직선에서 같은 거리인 점의 자취임을 서술 … 2점</div><div>- 두 직선의 법선 크기가 같음을 확인하고 |x − 2y + 3| = |2x − y − 3|을 세움 … 2점</div><div>- <strong>± 두 경우로 나눔</strong> … 1점 (한 경우만 쓰면 이 항목과 아래 1점 모두 0점)</div><div>- 두 이등분선 x + y − 6 = 0, y = x를 모두 구함 … 1점</div><div>- 원점 대입으로 선별하여 x + y − 6 = 0 … 1점</div><div>---</div></div>
+</div>
+<div style="position:absolute;left:-9999px">
+  <div id="masthead" class="masthead"><h1>공통수학2 「도형의 방정식」 미사용 변형축 32제</h1><div class="sub">2026 상산고 1학년 2학기 · A~D단계 32문항 121점</div><div class="sub" style="margin-top:2mm">정답 · 해설 · 근거 유형 ID — <b>교사용</b></div></div>
+  <div id="notice" class="notice">⚠️ <b>범위 미확정</b> — 2학기 시험범위는 학교 공지·진도표 미확인 상태의 추정이다. ⚠️ <b>자료 등급</b> — 근거 유형 SM2-01~33은 전부 <b>검증(부교재)</b>이며 기출 확인분이 아니다. ⛔ <b>미투입</b> — 맹목 풀이 게이트 재통과 전이므로 실전 투입 전 교사 검수가 필요하다.</div>
+</div>
+<script>
+// A4 페이지 확정 — 사용자 규칙(260830):
+//   (1) 한 문항은 페이지를 넘어 쪼개지지 않는다.
+//   (2) 문항의 시작 위치가 본문 높이의 80%보다 아래면 다음 페이지로 넘긴다.
+// CSS로는 (2)를 표현할 수 없으므로 실제 렌더 높이를 측정해 배치한다.
+(function () {
+  var START_LIMIT = 0.80;
+  // px(브라우저 측정)와 pt(PDF 실측) 사이의 반올림 차이로 경계에서 0.3pt가량
+  // 새어 나가는 것을 막는 여유. 규칙을 느슨하게 하는 방향이 아니라 조이는 방향이다.
+  var GUARD_PX = 4;
+  var src = document.getElementById('source');
+  var sheet = document.getElementById('sheet');
+  var meta = JSON.parse(document.getElementById('meta').textContent);
+  var nodes = Array.prototype.slice.call(src.children);
+
+  var page = null, inner = null, limitPx = 0, pageNo = 0;
+
+  function newPage(withMast) {
+    pageNo++;
+    page = document.createElement('div');
+    page.className = 'page';
+    inner = document.createElement('div');
+    inner.className = 'page-inner';
+    page.appendChild(inner);
+    var f = document.createElement('div');
+    f.className = 'pfoot';
+    f.innerHTML = '<span>' + meta.setId + '</span><span>' + meta.kind +
+                  ' &middot; ' + pageNo + '</span>';
+    page.appendChild(f);
+    sheet.appendChild(page);
+    limitPx = inner.clientHeight;
+    if (withMast) {
+      var m = document.getElementById('masthead');
+      if (m) { inner.appendChild(m); }
+      var n = document.getElementById('notice');
+      if (n) { inner.appendChild(n); }
+    }
+    return inner;
+  }
+
+  // 마지막 자식의 바닥 좌표. scrollHeight는 마지막 요소의 아래 margin을
+  // 브라우저에 따라 빼먹으므로 offsetTop+offsetHeight+marginBottom으로 잰다.
+  function used() {
+    var last = inner.lastElementChild;
+    if (!last) { return 0; }
+    var mb = parseFloat(getComputedStyle(last).marginBottom) || 0;
+    return last.offsetTop + last.offsetHeight + mb;
+  }
+  function isEmpty() { return inner.children.length === 0; }
+
+  newPage(true);
+  var pendingSection = [];      // 연속된 섹션 제목을 모두 보존한다
+
+  nodes.forEach(function (node) {
+    // 섹션 제목은 단독으로 페이지 끝에 남지 않도록 다음 문항과 함께 옮긴다.
+    if (node.classList.contains('section')) { pendingSection.push(node); return; }
+
+    // 규칙 (2): 시작 위치가 본문 높이의 80%보다 아래면 다음 페이지에서 시작한다.
+    // 섹션 제목이 앞에 붙으면 그만큼 시작 위치가 내려가므로, 제목을 먼저 얹은 뒤
+    // "문항이 실제로 시작할 y"를 재서 판정한다(제목 높이를 빠뜨리면 규칙이 새어 나간다).
+    var hadContent = !isEmpty();
+    pendingSection.forEach(function (s) { inner.appendChild(s); });
+    if (hadContent && used() + GUARD_PX >= limitPx * START_LIMIT) {
+      pendingSection.forEach(function (s) {
+        if (s.parentNode === inner) { inner.removeChild(s); }
+      });
+      newPage(false);
+      pendingSection.forEach(function (s) { inner.appendChild(s); });
+    }
+    inner.appendChild(node);
+
+    // 규칙 (1): 페이지를 넘겨 쪼개지지 않게, 안 들어가면 통째로 다음 페이지로.
+    if (used() > limitPx) {
+      var moved = pendingSection;
+      inner.removeChild(node);
+      moved.forEach(function (s) {
+        if (s.parentNode === inner) { inner.removeChild(s); }
+      });
+      if (!isEmpty()) {                 // 빈 페이지를 새로 만들지 않는다
+        newPage(false);
+      }
+      moved.forEach(function (s) { inner.appendChild(s); });
+      inner.appendChild(node);
+      // 한 문항이 빈 페이지보다 큰 경우에만 넘침을 허용한다(쪼갤 수 없으므로).
+    }
+    pendingSection = [];
+  });
+
+  pendingSection.forEach(function (s) { inner.appendChild(s); });
+  src.remove();
+  document.getElementById('pagecount').textContent = pageNo;
+})();
+</script>
+</body></html>

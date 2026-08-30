@@ -46,9 +46,13 @@ Target cohort: **grade 1 (2026)** — update only when the workspace advances a 
   §5.1 ATTEMPT_LOG · §5.3 WEAK_LEDGER · §4.1-A fail_code
 
 ## Authoring rules
-1. **Never clone an original item.** Change at least **2 variation axes** from the
-   catalog entry (condition direction, target expression, figure kind, parameter
-   position, unknown count...). Changing only numbers = failure.
+1. **Never clone an original item.** Change at least **2 non-numeric variation axes** from
+   the catalog entry (condition direction, target expression, figure kind, parameter
+   position, unknown count...). A coefficient, coordinate, length, angle, count, sign, or
+   symbol-name substitution is only a numeric/cosmetic change even when two such values move;
+   changing only those values = failure. Preserve the type's mathematical invariant, but make
+   the condition-to-target route or case structure materially different from the nearest
+   catalog example and every coordinator-supplied prior set.
 2. **Respect the scope guard** (`curriculum_2022.md` 🚧). Unsure terminology → tag it
    `⚠️ 용어 검수`.
 3. **Hit the requested Tier exactly.** T3 solvable in one line = failure; T1 needing
@@ -62,12 +66,17 @@ Target cohort: **grade 1 (2026)** — update only when the workspace advances a 
    item that cannot stand without a figure.
 6. **Set frontmatter** must record `intended_use: practice | exam`
    (DATA_STANDARD §5.8) — it selects the review path (REV_GUIDE §3-b).
-7. **Run AUTHORING_GUIDE §1-B before returning.** Its 7 checks are yours alone — the
+7. **Run AUTHORING_GUIDE §1-B before returning.** Its 9 checks are yours alone — the
    pre-gate covers only #2 (descriptive grading criteria) and #3 (solution middle steps).
    #1 ⚠️ 범위 미확정 header · #4 table header separator rows · #5 consistent bold answers ·
    #6 `DFn · E코드` postfix notation (merging them corrupts the Tier rationale) ·
    #7 no duplicated `---` — #4~#7 historically broke at split-file seams, so sweep the
    merged set end to end and fix both the merged file and its parts.
+8. **Produce a novelty ledger before returning.** Write one row per item with
+   `item_id, type_id, invariant, non_numeric_axis_1, non_numeric_axis_2,
+   structural_difference, nearest_prior, verdict`. `verdict=PASS` is allowed only when both
+   named axes are evidenced in the item and `structural_difference` explains why the solving
+   route is not a number-swapped copy. Missing evidence or a numeric/cosmetic axis is `FAIL`.
 
 ## Weakness-remediation ladders (CLAUDE.md 흐름표 — 학생 오답 도착)
 When the coordinator hands you a wrong-answer analysis:
@@ -104,11 +113,14 @@ Next     : solve-back-verifier blind-solves <set path>
 
 ## Deliverables & ownership
 - Write sets to `output/<YYMMDD>/<YYMMDD>_<NN>_<name>.md`.
+- Write the matching novelty ledger to
+  `output/<YYMMDD>/<YYMMDD>_<NN>_<name>.novelty.tsv`; its body must contain exactly one
+  unique row for every set item and no extra item IDs.
 - You are the authoring owner of your sets: when reviewers' approved fixes arrive,
   apply them yourself, keep a short change note in the set history section, and let the
   coordinator update `_index.md` reflect_state.
 - Return value summary only: item count / typeID·Tier distribution / items dropped by
-  self-check / intended_use value / §1-B sweep result.
+  self-check / intended_use value / §1-B sweep result / novelty ledger coverage and FAIL count.
 
 ## Runtime protocol — slice checkpointing (260826)
 Work in bounded slices (e.g., ≤10 items or one chapter block per slice). After EACH
@@ -127,3 +139,14 @@ type bundle: `<set_id>_<bundle>` where set_id passes `docs/DATA_STANDARD.md` §1
 element, NOT part of the set_id; a set_id like `SET-260826-math2-40-I3` fails
 `import_grading.py`'s `RE_SET` and rejects the whole grading import). Never a generic
 `task`/`set`.
+
+## Continuity under exhaustion (CLAUDE.md 공통 실행 규격 ⑤, 260828)
+When remaining context drops to 60% or less, do not open a new slice: finish the bounded
+slice in hand, then record in your WIP the current stage, completed unit IDs, input/output
+hashes, verification output, exclusive writer, blocking conditions, `NEXT:`, and the next
+verification command. If usage quota or a rate limit is exhausted, never lower the model,
+fan out retries, or busy-wait: close the slice in hand, append the observed reset time,
+lane runtime identity, exclusive output paths, and the exact resume command, then stop with
+`HOLD — resource exhausted`. On the next turn begin with a `resume audit` — re-confirm fresh
+quota, frozen input and existing output hashes, exclusive write rights, absence of a
+conflicting writer, and the next verification command; any mismatch is `▲ blocked`, not a pass.

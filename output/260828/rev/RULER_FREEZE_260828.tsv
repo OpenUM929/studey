@@ -1,0 +1,13 @@
+frozen_by	frozen_at	role	path	bytes	sha256	note
+rev-audit-opus	260828	ruler:gate-code	output/260828/diagnostic/math2-method-comparison/codex-team/check_experiment.py	8437	325807caff872b5a52f33603eb7ec976d66ce34f80c2c0cb9f3432043ac2eb5f	F1 대상 - warnings=0 하드코딩 상태로 동결
+rev-audit-opus	260828	ruler:acceptance	output/260828/diagnostic/math2-method-comparison/codex-team/ACCEPTANCE_SCHEMA_260828.md	1530	b8edd69949470571e3006d6179f96350ffe58cfbb5beec208bae218817c46642	F2 대상 - 훼손 상태 그대로 동결(수리 전 원본 보존)
+rev-audit-opus	260828	ruler:expected-ids	output/260828/diagnostic/math2-method-comparison/codex-team/EXPECTED_ITEM_IDS_260828.tsv	1652	db0ff6e06641aba7f213b362b69317f2ce9c06f5cc66083319f12bdf7421cfe4	F2-b 대상 - W-04 44-48 교정 이후 상태
+rev-audit-opus	260828	ruler:preflight	output/260828/diagnostic/math2-method-comparison/codex-team/TEAM_PREFLIGHT_260828.md	4863	31d0ba52800f297ae594b89564b09e3c71341aab5eef6c8cf99e1c2292a32284	F2/F3 대상 - line 33-34 자인 포함
+rev-audit-opus	260828	ruler:input-manifest	output/260828/diagnostic/math2-method-comparison/codex-team/AUTHOR_INPUT_MANIFEST_260828.tsv	2115	6c006d9931ae77b34528bce50a8df8cccc7722feaef41aa5a9538cb2b7c9084e	17행 - 자 3종 미포함(F2 근거)
+rev-audit-opus	260828	ruler:input-delta	output/260828/diagnostic/math2-method-comparison/codex-team/INPUT_DELTA_FROM_OPUS_260828.tsv	3111	ca0dce47525f3e1c3d8113595747879a9e698c83984b2f2cf67f709578ba0f21	비교 비동일입력 근거
+rev-audit-opus	260828	ruler:opus-ref-manifest	output/260828/diagnostic/math2-method-comparison/codex-team/OPUS_REFERENCE_MANIFEST_260828.tsv	238	0bdf6476ac3fdffd208e4517256200cfc6fd46c6ac808c3a7216266d852cd671	비교 기준 산출물 지정
+rev-audit-opus	260828	lane:author	output/260828/diagnostic/math2-method-comparison/codex-team/author/items.tsv	15794	484cde845373a7a4ab68398ca185c74d0e8f3c76bfdc18f3b5bdf72de2957e07	revision 1
+rev-audit-opus	260828	lane:author	output/260828/diagnostic/math2-method-comparison/codex-team/author/types.tsv	8598	0db58644f823bb874dc797bc16ea5c432144a60b405822641072a80a5c6da359	revision 1
+rev-audit-opus	260828	lane:author	output/260828/diagnostic/math2-method-comparison/codex-team/author/AUTHOR_REPORT_260828.md	16068	291c490d4c498822bf0d2d87003257188f0c9a0abe931d4be3e7a03bfdacd08a	revision 1
+rev-audit-opus	260828	lane:audit	output/260828/diagnostic/math2-method-comparison/codex-team/audit/EVIDENCE_AUDIT_260828.md	20489	fd0ee99f3016540ef2205d11ed23e8adde4c42acc58f2f24842c155ad4dfcf2a	verdict REVISE - author v0 기준(F5 대상)
+rev-audit-opus	260828	lane:critique	output/260828/diagnostic/math2-method-comparison/codex-team/critique/ADVERSARIAL_CRITIQUE_260828.md	20356	a4f5b60808b153befc779f072b2e845cbea95c166535820a037301ec66f5cd04	verdict BLOCKED - author v0 기준(F5 대상)

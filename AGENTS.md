@@ -21,6 +21,7 @@ The user runs these roles in a separate Claude Code CLI session:
 - `rev-auditor`
 - `rev-arbiter`
 - `solve-back-verifier`
+- `item-quality-auditor`
 - `forecast-writer`
 - `forecast-arbiter`
 
@@ -55,7 +56,7 @@ Use this project-default assignment table unless the concrete task needs a docum
 | Repository inventory / narrow lookup | Codex/OMX **Luna** | Read-only, bounded fact gathering; reports findings to the leader. |
 | Tool/static verification | Codex/OMX **Sol** | Runs the exact gate and reports command, output, warnings, count, and exit code. |
 | Architecture, risk, or adversarial critique | Codex/OMX **Sol** | Advisory/review lane; has no product-write authority unless explicitly assigned. |
-| `type-proposer`, `rev-auditor`, `rev-arbiter`, `solve-back-verifier`, `forecast-writer`, `forecast-arbiter` | **external Claude Code CLI / Opus** | Never substitute a Codex model; issue a `[CC 회람]` package and wait for its local reply artifact. |
+| `type-proposer`, `rev-auditor`, `rev-arbiter`, `solve-back-verifier`, `item-quality-auditor`, `forecast-writer`, `forecast-arbiter` | **external Claude Code CLI / Opus** | Never substitute a Codex model; issue a `[CC 회람]` package and wait for its local reply artifact. |
 
 For a user-authorized, non-operational Opus-assurance experiment, use these local Codex-native lanes only after the hard start gate passes: `assessment-author-sol = Sol = highest runtime-supported depth`, `assessment-evidence-auditor-sol = Sol = highest runtime-supported depth`, `assessment-adversarial-critic-sol = Sol = highest runtime-supported depth`, and `assessment-gatekeeper-sol = Sol = highest runtime-supported depth`. Their definitions live in `.codex/agents/`; they are responsibilities, not claims to be external Opus roles. The staffing record must capture the observed model/depth from the running lane; a configuration label, a TOML file, or a leader assertion is not runtime evidence. For the current supported Sol configuration this is `gpt-5.6-sol / high`; do not label it `xhigh` unless the runtime itself exposes and records that exact depth.
 
@@ -112,6 +113,7 @@ Any completed experiment is advisory only: it cannot update canonical records or
 - Preserve append-only records and never invent IDs, counts, prefixes, or gate placeholders.
 - Respect exclusive write ownership and never run two writers against a shared ledger concurrently.
 - Keep review separate from fixes; apply only approved changes with the required trace rows.
+- Keep the ruler separate from the work (CLAUDE.md 원칙 12). Acceptance criteria, expected-identifier tables, and gate code are **consumed, never revised**, by the lane they measure. An unsatisfiable or self-contradictory criterion is a decision request to the user/`rev-arbiter`, never something to route around with placeholder rows. Expected-value tables are regenerated from the source by code and re-derived on every gate run; editing one by hand converts it from a ruler into an artifact. Any ruler change needs a second key — an audit-authority re-freeze row — and invalidates every verdict issued under the old ruler until re-measured.
 - A gate passes only with its command, expected output, zero warnings, expected count, and fresh evidence. Otherwise it is blocked.
 - Do not commit, reset, delete, or rewrite user changes unless explicitly requested.
 
@@ -143,3 +145,12 @@ For Codex/OMX-owned work, a model usage/session quota or rate-limit reset notice
 If the host can safely retain the run or schedule one continuation, wait until the reported reset time and perform exactly one **resume audit** before continuing. If the host cannot remain alive or schedule a wake-up, end the current turn without asking the user to restate or reapprove ordinary work; the next automatic or user continuation must begin with the same resume audit and continue from WIP `NEXT`, never redo completed slices. The resume audit verifies fresh quota availability, frozen input hashes, produced artifact hashes, exclusive-write ownership, no conflicting active writer, and the next validation command. Any mismatch is `▲ blocked`.
 
 This automatic-resume rule applies only to Codex/OMX-owned execution. External Claude Code Opus remains one main session and one pilot slice with no background agents, automatic continuation, or automatic retry; a later external run still requires the measured prior result and the user's explicit per-run approval.
+
+## 동반 갱신 목록 (CLAUDE.md 원칙 10)
+이 문서를 개정하면 **같은 작업에서** 아래를 함께 점검한다. 한쪽만 고치면
+"규정은 있는데 아무도 안 지키는" 구멍이 생긴다.
+
+- `CLAUDE.md`(같은 규정의 Claude Code 측 서술) · `tools/check_assurance_contract.py` TEXT_REQUIREMENTS · `tools/sync_global_continuity_guidance.py` · `README.md`
+
+목록 자체의 존재는 `tools/check_assurance_contract.py`가 검사한다.
+근거: 260828 시스템 감사 S3 — 원칙 10이 8개 정본 중 1개에만 구현돼 있었다.

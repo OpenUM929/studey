@@ -243,9 +243,15 @@ def main():
         body, warnings = build_mastery_body(attempt_path, index)
         out = student_dir / "MASTERY.tsv"
         out.write_text(body, encoding="utf-8-sig", newline="")
-        print(f"[OK] regenerated {out}")
+        # Principle 11: warnings precede the [OK] marker and are fail-closed, matching
+        # build_mastery.py.  A type absent from index.tsv means the appended attempt rows
+        # cannot be aggregated against the catalog — silent exit 0 would hide that.
         for w in warnings:
             print("[WARN]", w)
+        if warnings:
+            print(f"[FAIL] {len(warnings)} unknown type(s) in ATTEMPT_LOG — gate not passed")
+            rc = 1
+        print(f"[OK] regenerated {out}")
     if sandbox:
         # Evidence that the real ledgers were not touched (BF4 ②), printed either way.
         after = ledger_snapshot(student_dir)
