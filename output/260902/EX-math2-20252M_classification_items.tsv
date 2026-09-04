@@ -1,0 +1,23 @@
+﻿item_id	source_lines	rendered_evidence_status	assignment_or_BLOCKED	existing_type_or_decision_request	rationale	tier	tier_basis	observed_trap	confidence	generator_id
+EX-math2-20252M-S01	L31	no pNN (bindata 0)	SM2-08	SM2-08	수직 조건 — SM2-08	T1	catalog SM2-08 Tier	-	high	SM2-08
+EX-math2-20252M-S02	L35	no pNN (bindata 0)	SM2-15	SM2-15	지름 양 끝점 — SM2-15	T1	catalog SM2-15 Tier	-	high	SM2-15
+EX-math2-20252M-S03	L39	no pNN (bindata 0)	SM2-31	SM2-31	평행→대칭 합성 — SM2-31	T2	catalog SM2-31 Tier	-	high	SM2-31
+EX-math2-20252M-S04	L44	no pNN (bindata 0)	SM2-27	SM2-27	포물선 정점 평행 — SM2-27	T2	catalog SM2-27 Tier	-	high	SM2-27
+EX-math2-20252M-Q01	L52	no pNN (bindata 0)	SM2-03	SM2-03	내분점 — SM2-03	T1	catalog SM2-03 Tier	-	high	SM2-03
+EX-math2-20252M-Q02	L55	no pNN (bindata 0)	SM2-08	SM2-08	수직·평행 — SM2-08	T2	catalog SM2-08 Tier	-	high	SM2-08
+EX-math2-20252M-Q03	L60	no pNN (bindata 0)	SM2-26	SM2-26	점 평행 — SM2-26	T2	catalog SM2-26 Tier	-	high	SM2-26
+EX-math2-20252M-Q04	L65	no pNN (bindata 0)	SM2-09	SM2-09	수직+내분 — SM2-09	T2	catalog SM2-09 Tier	-	high	SM2-09
+EX-math2-20252M-Q05	L70	no pNN (bindata 0)	SM2-13	SM2-13	사분면 교점 — SM2-13	T2	catalog SM2-13 Tier	-	high	SM2-13
+EX-math2-20252M-Q06	L74	no pNN (bindata 0)	SM2-19	SM2-19	현 길이 — SM2-19	T2	catalog SM2-19 Tier	-	high	SM2-19
+EX-math2-20252M-Q07	L79	no pNN (bindata 0)	SM2-25	SM2-25	원 위 점 최대·최소 — SM2-25	T3	catalog SM2-25 Tier	-	medium	SM2-25
+EX-math2-20252M-Q08	L82	no pNN (bindata 0)	SM2-01	SM2-01	외심 — SM2-01	T2	catalog SM2-01 Tier	-	high	SM2-01
+EX-math2-20252M-Q09	L86	no pNN (bindata 0)	SM2-02	SM2-02	등거리 최소 — SM2-02	T2	catalog SM2-02 Tier	-	medium	SM2-02
+EX-math2-20252M-Q10	L89	no pNN (bindata 0)	SM2-33	SM2-33	두 축 대칭 최단 — SM2-33	T3	catalog SM2-33 Tier	-	high	SM2-33
+EX-math2-20252M-Q11	L94	no pNN (bindata 0)	SM2-11	SM2-11	접원 — SM2-11	T3	catalog SM2-11 Tier	-	high	SM2-11
+EX-math2-20252M-Q12	L97	no pNN (bindata 0)	SM2-33	SM2-33	대칭 최대 — SM2-33	T3	catalog SM2-33 Tier	-	high	SM2-33
+EX-math2-20252M-Q13	L101	no pNN (bindata 0)	SM2-14	SM2-14	정점 직선 — SM2-14	T3	catalog SM2-14 Tier	-	high	SM2-14
+EX-math2-20252M-Q14	L105	no pNN (bindata 0)	SM2-25	SM2-25	정수 개수 — SM2-25	T3	catalog SM2-25 Tier	-	medium	SM2-25
+EX-math2-20252M-Q15	L108	no pNN (bindata 3)	SM2-31	SM2-31	식 표현 — SM2-31	T3	catalog SM2-31 Tier	-	high	SM2-31
+EX-math2-20252M-Q16	L120	no pNN (bindata 0)	SM2-12	SM2-12	각이등분 — SM2-12	T3	catalog SM2-12 Tier	-	high	SM2-12
+EX-math2-20252M-Q17	L124	unreadable	BLOCKED	BLOCKED	f 정의 없음 — BLOCKED	TBD	TBD	-	low	BLOCKED-01
+EX-math2-20252M-Q18	L138	no pNN (bindata 0)	SM2-25	SM2-25	원 위 점 60도 — SM2-25	T4	catalog SM2-25 Tier	-	medium	SM2-25

@@ -1,0 +1,18 @@
+﻿group_id	member_item_ids	type_disposition	variation_axis_1	variation_axis_2	observed_trap	importance_source_axis	common_types_disposition	catalog_disposition	generator_id	row_kind
+SM2-08	EX-math2-20252M-Q02,EX-math2-20252M-S01	reusable	수직 m1·m2=-1 vs 평행 m1=m2	미지수 위치 a(기울기) vs b(절편)	수직·평행 혼동	★★	C-00 해당 없음	유지	SM2-08	reusable
+SM2-25	EX-math2-20252M-Q07,EX-math2-20252M-Q14,EX-math2-20252M-Q18	reusable	최대·최소 d+r vs d-r vs 개수 세기	원 위치 (0,0) vs (4,3) vs (10,0)	정수 경계 포함·배제	★★	C-09 해당 없음	유지	SM2-25	reusable
+SM2-33	EX-math2-20252M-Q10,EX-math2-20252M-Q12	reusable	대칭축 x축 vs y=x vs 합성 2축	목표 AD+DC+CB 최소 vs |PA-PB| 최대	순서 오류	★★★	C-09 해당 없음	유지	SM2-33	reusable
+SM2-31	EX-math2-20252M-S03,EX-math2-20252M-Q15	reusable	합성 평행→대칭 vs 대칭→평행	표현 f(x-5,y+3) vs f(y-2,x)	반대 부호	★★	C-09 해당 없음	유지	SM2-31	reusable
+SM2-01	EX-math2-20252M-Q08	singleton	-	-	-	★★	C-00 해당 없음	유지	SM2-01	singleton
+SM2-02	EX-math2-20252M-Q09	singleton	-	-	-	★★	C-00 해당 없음	유지	SM2-02	singleton
+SM2-03	EX-math2-20252M-Q01	singleton	-	-	-	★★	C-00 해당 없음	유지	SM2-03	singleton
+SM2-09	EX-math2-20252M-Q04	singleton	-	-	-	★★★	C-00 해당 없음	유지	SM2-09	singleton
+SM2-11	EX-math2-20252M-Q11	singleton	-	-	-	★★	C-00 해당 없음	유지	SM2-11	singleton
+SM2-12	EX-math2-20252M-Q16	singleton	-	-	-	★★	C-00 해당 없음	유지	SM2-12	singleton
+SM2-13	EX-math2-20252M-Q05	singleton	-	-	-	★★★	C-00 해당 없음	유지	SM2-13	singleton
+SM2-14	EX-math2-20252M-Q13	singleton	-	-	-	★★	C-00 해당 없음	유지	SM2-14	singleton
+SM2-15	EX-math2-20252M-S02	singleton	-	-	-	★★	C-00 해당 없음	유지	SM2-15	singleton
+SM2-19	EX-math2-20252M-Q06	singleton	-	-	-	★★	C-00 해당 없음	유지	SM2-19	singleton
+SM2-26	EX-math2-20252M-Q03	singleton	-	-	-	★★	C-00 해당 없음	유지	SM2-26	singleton
+SM2-27	EX-math2-20252M-S04	singleton	-	-	-	★★	C-00 해당 없음	유지	SM2-27	singleton
+BLOCKED-01	EX-math2-20252M-Q17	blocked	-	-	-	-	-	-	BLOCKED-01	blocked

@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DAQ 흐름도 목업 — 원천 → 정제 → 분류 → 카탈로그 (816문항)</title>
+<style>
+  :root{--bg:#0a0e14;--card:#111827;--border:#1f2937;--muted:#9ca3af;--accent:#38bdf8;--accent2:#a78bfa;--true:#34d399;--prov:#fbbf24}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:#e5e7eb;font-family: 'Pretendard','Inter',system-ui,-apple-system,sans-serif;overflow-x:hidden}
+  a{color:var(--accent)}
+  .wrap{max-width:1400px;margin:0 auto;padding:24px}
+  header{display:flex;flex-wrap:wrap;gap:16px;align-items:end;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:18px;margin-bottom:18px}
+  h1{font-size:22px;margin:0;letter-spacing:-.02em}
+  h1 span{color:var(--accent)}
+  .meta{color:var(--muted);font-size:13px;line-height:1.6}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+  .chip{background:#0f172a;border:1px solid var(--border);padding:6px 10px;border-radius:999px;font-size:12px;color:#cbd5e1}
+  .chip b{color:#fff}
+  .tabs{display:flex;gap:8px;margin:14px 0 12px}
+  .tab{padding:10px 14px;border-radius:10px;border:1px solid var(--border);background:#0f172a;color:#cbd5e1;cursor:pointer;font-weight:600}
+  .tab.active{background:linear-gradient(135deg,#0ea5e9,#7c3aed);color:white;border-color:transparent;box-shadow:0 6px 20px rgba(124,58,237,.35)}
+  .controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+  .controls input,.controls select{background:#0f172a;border:1px solid var(--border);color:#e5e7eb;padding:8px 10px;border-radius:10px;font-size:13px}
+  .grid{display:grid;grid-template-columns: 1fr 360px;gap:16px}
+  @media(max-width:1100px){.grid{grid-template-columns:1fr}}
+  .card{background:rgba(17,24,39,.8);border:1px solid var(--border);border-radius:16px;overflow:hidden;backdrop-filter: blur(8px)}
+  .card h3{margin:0;padding:14px 16px;border-bottom:1px solid var(--border);font-size:14px;letter-spacing:.02em;display:flex;justify-content:space-between;align-items:center}
+  .card h3 small{color:var(--muted);font-weight:500}
+  /* Flow */
+  .flow{position:relative;padding:20px 18px;overflow:auto;background:linear-gradient(180deg,#0b1220 0%, #070a12 100%)}
+  .flowCols{display:grid;grid-template-columns:0.95fr 1.1fr 1.1fr 1.1fr;gap:36px;min-width:1120px;position:relative;padding:0 8px}
+  .flowCols::before{content:'';position:absolute;left:0;right:0;top:34px;height:1px;background:linear-gradient(90deg,transparent,rgba(148,163,184,.12),transparent);pointer-events:none}
+  .col{position:relative}
+  .colHead{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+  .dot{width:8px;height:8px;border-radius:50%}
+  .colHead.origin .dot{background:#60a5fa}
+  .colHead.refine .dot{background:#34d399}
+  .colHead.classify .dot{background:#f472b6}
+  .colHead.catalog .dot{background:#a78bfa}
+  .nodes{display:flex;flex-direction:column;gap:8px}
+  .node{padding:10px 11px;border-radius:12px;border:1px solid var(--border);background:#0b1220;cursor:pointer;transition:.15s;position:relative}
+  .node:hover{transform:translateY(-1px);border-color:#334155;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+  .node.active{outline:2px solid var(--accent);border-color:var(--accent)}
+  .node .title{font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .node .sub{font-size:11px;color:var(--muted);margin-top:3px;display:flex;gap:6px;flex-wrap:wrap}
+  .badge{font-size:10px;padding:3px 6px;border-radius:999px;border:1px solid var(--border);background:#0f172a}
+  .badge.true{color:var(--true);border-color:rgba(52,211,153,.35);background:rgba(52,211,153,.08)}
+  .badge.prov{color:var(--prov);border-color:rgba(251,191,36,.35);background:rgba(251,191,36,.08)}
+  .node.catalog{background:linear-gradient(135deg,#1e1b4b,#0f172a);border-color:rgba(167,139,250,.5);box-shadow:0 4px 16px rgba(167,139,250,.15)}
+  .node.trueNode{border-color:rgba(52,211,153,.6) !important;background:linear-gradient(135deg,#064e3b,#0b1220) !important;box-shadow:0 4px 16px rgba(52,211,153,.2)}
+  .node.provNode{border-color:rgba(251,191,36,.45) !important;background:#0b1220}
+  .node.trueNode .title{color:#6ee7b7}
+  .flowSvg{position:absolute;inset:0;pointer-events:none}
+  /* Tree */
+  .tree{padding:14px}
+  .treeGroup{margin-bottom:14px}
+  .treeHead{display:flex;align-items:center;gap:8px;font-weight:800;font-size:13px;padding:8px 10px;background:#0f172a;border:1px solid var(--border);border-radius:10px}
+  .treeHead .count{margin-left:auto;color:var(--muted);font-weight:600}
+  .treeChildren{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px;margin-top:8px}
+  .mini{padding:10px;border:1px solid var(--border);border-radius:12px;background:#0b1220;position:relative}
+  .mini.isTrue{border-color:rgba(52,211,153,.55);background:linear-gradient(135deg,#064e3b 0%,#0b1220 60%);box-shadow:0 4px 16px rgba(52,211,153,.14)}
+  .mini.isProv{border-color:rgba(251,191,36,.35);background:#0b1220}
+  .mini .chain{font-size:11px;color:var(--muted);display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+  .chainArrow{opacity:.5}
+  .statusLegend{display:flex;gap:10px;align-items:center;padding:8px 12px;background:#0f172a;border:1px solid var(--border);border-radius:10px;margin-bottom:10px;font-size:12px}
+  .statusLegend .leg{width:10px;height:10px;border-radius:50%;display:inline-block}
+  .catChip{padding:8px 12px;border-radius:999px;border:1px solid var(--border);background:#0b1220;cursor:pointer;font-size:13px;font-weight:700;display:flex;align-items:center;gap:6px;transition:.15s}
+  .catChip.active{color:white;border-color:transparent;box-shadow:0 4px 14px rgba(0,0,0,.3);transform:translateY(-1px)}
+  .catChip .cnt{font-size:11px;opacity:.8;font-weight:600}
+  /* Network */
+  .netWrap{position:relative;height:620px;background:radial-gradient(600px 400px at 30% 20%, rgba(56,189,248,.12), transparent 60%), radial-gradient(500px 400px at 80% 80%, rgba(167,139,250,.12), transparent 60%), #070a12;border-radius:12px;overflow:hidden}
+  #netSvg{width:100%;height:100%;display:block}
+  .legend{display:flex;gap:8px;flex-wrap:wrap;padding:10px 12px;border-top:1px solid var(--border);background:#0f172a}
+  .legend span{font-size:11px;color:var(--muted);display:flex;align-items:center;gap:6px}
+  /* Detail panel */
+  .detail{position:sticky;top:16px;align-self:start}
+  .detailBody{padding:14px}
+  .kvs{display:grid;gap:8px}
+  .kv{display:flex;justify-content:space-between;gap:12px;font-size:13px;padding:8px 10px;background:#0f172a;border:1px solid var(--border);border-radius:10px}
+  .kv b{color:#fff}
+  .provenance{margin-top:10px;background:#0b1220;border:1px dashed #334155;border-radius:12px;padding:12px}
+  .provRow{display:flex;align-items:center;gap:8px;font-size:12px;padding:6px 0;border-bottom:1px dashed #1f2937}
+  .provRow:last-child{border-bottom:0}
+  .provRow .step{width:56px;font-weight:800;color:var(--accent)}
+  .provRow .path{color:#e5e7eb;word-break:break-all}
+  .hint{font-size:12px;color:var(--muted);line-height:1.6}
+  .cta{display:flex;gap:8px;margin-top:12px}
+  .btn{flex:1;padding:10px;border-radius:10px;border:1px solid var(--border);background:#0f172a;color:#e5e7eb;cursor:pointer;font-weight:700}
+  .btn.primary{background:linear-gradient(135deg,#0ea5e9,#7c3aed);border-color:transparent;color:white}
+  footer{margin-top:18px;color:var(--muted);font-size:12px;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>DAQ <span>신경망 흐름도</span> 목업 — 원천 → 1차 정제 → 1차 분류 → 유형 카탈로그</h1>
+      <div class="meta">웹 DAQ는 <b>매핑만으로</b> 흐름도를 그린다. 각 분류 노드는 <code>transcript.md:줄</code>로 원천 PNG/HWP 레코드까지 역추적 — <b>다른 AI가 근원을 찾는 경로가 최우선</b>이다. <br>총 27코퍼스 · 816문항 · 89노드 · 81엣지 · <code>daq_mapping.json</code> 단일 소스</div>
+      <div class="chips">
+        <div class="chip"><b>816</b> 문항</div>
+        <div class="chip"><b>27</b> 코퍼스 (SUP 1 + EX 26)</div>
+        <div class="chip" style="border-color:rgba(52,211,153,.4)"><span style="width:8px;height:8px;background:var(--true);border-radius:50%;display:inline-block"></span> <b>TRUE 1</b> — 검증완료·카탈로그 확정</div>
+        <div class="chip" style="border-color:rgba(251,191,36,.4)"><span style="width:8px;height:8px;background:var(--prov);border-radius:50%;display:inline-block"></span> <b>PROVISIONAL 26</b> — transcript까지 확정, 유형 회람 대기</div>
+        <div class="chip">provenance <b>origin → refine → classify → catalog</b></div>
+      </div>
+    </div>
+    <div class="meta" style="text-align:right">
+      generated_at 2026-09-02<br>
+      sources: <code>origin_data</code> · <code>corpus/_images</code> · <code>verify_log.tsv</code> · <code>meta.yml</code><br>
+      <span style="color:var(--true)">● 열면 원천 재현</span> <span style="color:var(--prov)">● 회람 대기</span>
+    </div>
+  </header>
+
+  <div class="tabs">
+    <button class="tab active" data-view="flow">① 흐름도 (Flow) — 카탈로그 중심 파이프라인</button>
+    <button class="tab" data-view="tree">② 트리 (Tree) — 과목 계층</button>
+    <button class="tab" data-view="network">③ 네트워크 (Network) — 관계망</button>
+  </div>
+
+  <div style="background:#0f172a;border:1px solid var(--border);border-radius:12px;padding:10px 12px;margin-bottom:12px">
+    <div style="font-size:11px;color:var(--muted);letter-spacing:.08em;margin-bottom:8px">카탈로그 중심 — 카드를 선택하면 흐름도가 해당 카탈로그로 포커스됩니다</div>
+    <div id="catalogChips" style="display:flex;gap:8px;flex-wrap:wrap"></div>
+  </div>
+
+  <div class="controls">
+    <input id="q" placeholder="검색: 코퍼스ID, 과목, 해시, 상태 (예: math1, 7183E60, PROVISIONAL)" style="flex:1;min-width:260px">
+    <select id="subject"><option value="">과목 전체</option><option>math1</option><option>math2</option><option>science</option><option>english</option><option>korean</option><option>social</option><option>history</option><option>info</option></select>
+    <select id="status"><option value="">상태 전체</option><option value="TRUE">TRUE만</option><option value="PROVISIONAL">PROVISIONAL만</option></select>
+    <button id="reset" class="tab" style="padding:8px 12px">초기화</button>
+  </div>
+
+  <div class="grid">
+    <div class="card" id="mainCard">
+      <h3 id="mainTitle">흐름도 — 4단계 파이프라인 <small>노드를 클릭하면 오른쪽에서 근원을 추적</small></h3>
+      <div id="viewFlow" class="flow"></div>
+      <div id="viewTree" class="tree" style="display:none"></div>
+      <div id="viewNetwork" style="display:none">
+        <div class="netWrap"><svg id="netSvg"></svg></div>
+        <div class="legend">
+          <span><i class="dot" style="background:#60a5fa"></i> origin</span>
+          <span><i class="dot" style="background:#34d399"></i> refine (transcript)</span>
+          <span><i class="dot" style="background:#f472b6"></i> classify</span>
+          <span><i class="dot" style="background:#a78bfa"></i> catalog</span>
+          <span>드래그로 이동 · 휠로 확대 · 노드 클릭으로 추적</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card detail">
+      <h3>근원 추적 패널 <small>다른 AI가 찾는 경로</small></h3>
+      <div class="detailBody" id="detail">
+        <div class="hint">왼쪽 노드를 클릭하면<br> <b>원천 → 정제 → 분류 → 카탈로그</b> 4층 체인이 여기에 표시됩니다.<br><br>
+        예: <b>SUP-math2-2026</b>을 클릭하면<br>
+        <code>스무년 고1-2.pdf p01~p18.png (dpi160)</code><br>
+        <code>transcript.md 239행 + verify_log 18행 + meta.yml items:93</code><br>
+        <code>260901_03_TRUE.md 266F0FE (SM2-01~33)</code>까지 한 번에 보입니다.
+        </div>
+        <div id="detailContent" style="display:none"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    목업 파일: <code>output/260902/daq_flow_mockup.html</code> · 소스: <code>analysis/daq_mapping.json</code> · 디자인 의도: 매핑만으로 그리는 신경망 — 데이터가 곧 화면이다.
+  </footer>
+</div>
+
+<script>
+// ---- data (embedded from daq_mapping.json, 816 items) ----
+const raw = {
+  "ids": ["SUP-math2-2026","EX-english-20242F","EX-english-20242M","EX-english-20252F","EX-english-20252M","EX-history-20242F","EX-history-20242M","EX-history-20252F","EX-history-20252M","EX-info-20252F","EX-info-20252M","EX-korean-20242F","EX-korean-20242M","EX-korean-20252F","EX-korean-20252M","EX-math1-20242F","EX-math1-20242M","EX-math2-20252F","EX-math2-20252M","EX-science-20242F","EX-science-20242M","EX-science-20252F","EX-science-20252M","EX-social-20242F","EX-social-20242M","EX-social-20252F","EX-social-20252M"],
+  "items": {"SUP-math2-2026":93,"EX-english-20242F":29,"EX-english-20242M":30,"EX-english-20252F":33,"EX-english-20252M":32,"EX-history-20242F":26,"EX-history-20242M":28,"EX-history-20252F":29,"EX-history-20252M":29,"EX-info-20252F":25,"EX-info-20252M":25,"EX-korean-20242F":30,"EX-korean-20242M":28,"EX-korean-20252F":31,"EX-korean-20252M":32,"EX-math1-20242F":22,"EX-math1-20242M":22,"EX-math2-20252F":23,"EX-math2-20252M":22,"EX-science-20242F":32,"EX-science-20242M":29,"EX-science-20252F":33,"EX-science-20252M":29,"EX-social-20242F":24,"EX-social-20242M":28,"EX-social-20252F":27,"EX-social-20252M":25},
+  "hash": {"SUP-math2-2026:refine":"AAA81BD","SUP-math2-2026:classify":"266F0FE","EX-english-20242F:refine":"43D7A0B","EX-english-20242F:classify":"00F11C0","EX-english-20242M:refine":"9867E48","EX-english-20242M:classify":"F7EE39F","EX-english-20252F:refine":"3C2464F","EX-english-20252F:classify":"934C576","EX-english-20252M:refine":"689AB51","EX-english-20252M:classify":"09DCEAD","EX-history-20242F:refine":"32D5864","EX-history-20242F:classify":"CEBEFC6","EX-history-20242M:refine":"61B00FC","EX-history-20242M:classify":"34AD321","EX-history-20252F:refine":"A5B61E2","EX-history-20252F:classify":"8EFF0F3","EX-history-20252M:refine":"B96CB00","EX-history-20252M:classify":"617029E","EX-info-20252F:refine":"01DB3EE","EX-info-20252F:classify":"57238B7","EX-info-20252M:refine":"EA58DEF","EX-info-20252M:classify":"FC554B1","EX-korean-20242F:refine":"5F2BC58","EX-korean-20242F:classify":"CEDA76A","EX-korean-20242M:refine":"210906B","EX-korean-20242M:classify":"A934759","EX-korean-20252F:refine":"2F8CBDC","EX-korean-20252F:classify":"61C7307","EX-korean-20252M:refine":"D5D8125","EX-korean-20252M:classify":"0B4B06B","EX-math1-20242F:refine":"973AA4B","EX-math1-20242F:classify":"7183E60","EX-math1-20242M:refine":"3F27974","EX-math1-20242M:classify":"446AD2D","EX-math2-20252F:refine":"6E14144","EX-math2-20252F:classify":"763C61D","EX-math2-20252M:refine":"9E2ED47","EX-math2-20252M:classify":"40410F0","EX-science-20242F:refine":"527E8E8","EX-science-20242F:classify":"82D783E","EX-science-20242M:refine":"A6CE24E","EX-science-20242M:classify":"10BA0E5","EX-science-20252F:refine":"8CF3A26","EX-science-20252F:classify":"8DB3527","EX-science-20252M:refine":"AE49901","EX-science-20252M:classify":"9AF5208","EX-social-20242F:refine":"49F7D25","EX-social-20242F:classify":"1823B83","EX-social-20242M:refine":"3E7FC67","EX-social-20242M:classify":"9436718","EX-social-20252F:refine":"5A07364","EX-social-20252F:classify":"DD003A9","EX-social-20252M:refine":"C5CC7D6","EX-social-20252M:classify":"9F5C07B"},
+  "status": {"SUP-math2-2026":"TRUE"},
+  "catalog": {"math2":["SUP-math2-2026","EX-math2-20252M","EX-math2-20252F"],"math1":["EX-math1-20242M","EX-math1-20242F"],"science":["EX-science-20242M","EX-science-20242F","EX-science-20252M","EX-science-20252F"],"english":["EX-english-20242M","EX-english-20242F","EX-english-20252M","EX-english-20252F"],"korean":["EX-korean-20242M","EX-korean-20242F","EX-korean-20252M","EX-korean-20252F"],"social":["EX-social-20242M","EX-social-20242F","EX-social-20252M","EX-social-20252F"],"history":["EX-history-20242M","EX-history-20242F","EX-history-20252M","EX-history-20252F"],"info":["EX-info-20252M","EX-info-20252F"]}
+};
+
+const catalogMeta = {
+  "math2":{label:"공통수학2", color:"#a78bfa", path:"analysis/catalog/math2.md", desc:"SM2-01~33"},
+  "math1":{label:"공통수학1", color:"#38bdf8", path:"analysis/catalog/math1.md", desc:"SM-01~18 (2026 기반)"},
+  "science":{label:"통합과학", color:"#34d399", path:"analysis/catalog/science.md", desc:"SCI-*"},
+  "english":{label:"영어", color:"#fbbf24", path:"analysis/catalog/english.md", desc:"EN-*"},
+  "korean":{label:"국어", color:"#f472b6", path:"analysis/catalog/korean.md", desc:"KO-*"},
+  "social":{label:"통합사회", color:"#f97316", path:"analysis/catalog/social.md", desc:"SO-*"},
+  "history":{label:"한국사", color:"#e879f9", path:"analysis/catalog/history.md", desc:"HI-*"},
+  "info":{label:"정보", color:"#94a3b8", path:"CODE_REGISTRY IN-nn", desc:"IN-nn 신설"},
+};
+
+let activeId = null;
+let filterQ="", filterSub="", filterSt="";
+
+function subjectOf(id){
+  if(id.startsWith("SUP")) return "math2";
+  return id.split("-")[1];
+}
+
+function matches(id){
+  const q = filterQ.toLowerCase();
+  const sub = subjectOf(id);
+  const st = (raw.status[id]||"PROVISIONAL");
+  if(filterSub && sub!==filterSub) return false;
+  if(filterSt && st!==filterSt) return false;
+  if(!q) return true;
+  const hay = [id, sub, raw.hash[id+":refine"]||"", raw.hash[id+":classify"]||"", st, String(raw.items[id])].join(" ").toLowerCase();
+  return hay.includes(q);
+}
+
+// ---- FLOW ----
+function renderFlow(){
+  const el = document.getElementById('viewFlow');
+  const ids = raw.ids.filter(matches);
+  const origins = ids.map(id=>({id, label:id, items:raw.items[id]}));
+  const refines = ids.map(id=>({id, label:id, items:raw.items[id], hash:raw.hash[id+":refine"]}));
+  const classifies = ids.map(id=>({id, label:id, items:raw.items[id], hash:raw.hash[id+":classify"], status: raw.status[id]||"PROVISIONAL"}));
+  const catalogs = Object.keys(catalogMeta);
+
+  el.innerHTML = `
+    <div class="flowCols">
+      <div class="col"><div class="colHead catalog"><span class="dot"></span> 카탈로그 catalog — 중심 <span style="margin-left:auto;color:#a78bfa">${catalogs.length}</span></div><div class="nodes" id="colCatalog"></div></div>
+      <div class="col"><div class="colHead classify"><span class="dot"></span> 1차 분류 classify <span style="margin-left:auto;color:#f472b6">${classifies.length}</span></div><div class="nodes" id="colClassify"></div></div>
+      <div class="col"><div class="colHead refine"><span class="dot"></span> 1차 정제 refine <span style="margin-left:auto;color:#34d399">${refines.length}</span></div><div class="nodes" id="colRefine"></div></div>
+      <div class="col"><div class="colHead origin"><span class="dot"></span> 원천 origin <span style="margin-left:auto;color:#60a5fa">${origins.length}</span></div><div class="nodes" id="colOrigin"></div></div>
+      <svg class="flowSvg" id="flowSvg"></svg>
+    </div>`;
+
+  const mkNode = (id, sub, hash, isClassify)=>{
+    const st = raw.status[id]||"PROVISIONAL";
+    const items = raw.items[id];
+    const subj = subjectOf(id);
+    const cls = st==='TRUE' ? 'trueNode' : 'provNode';
+    const icon = st==='TRUE' ? '✓' : '◷';
+    return `<div class="node ${isClassify? 'classify':''} ${cls} ${activeId===id?'active':''}" data-id="${id}" onclick="selectId('${id}')">
+      <div class="title">${icon} ${id}</div>
+      <div class="sub"><span class="badge">${subj}</span><span class="badge">${items}문항</span>${hash?`<span class="badge">${hash}</span>`:''}${isClassify?`<span class="badge ${st==='TRUE'?'true':'prov'}">${icon} ${st}</span>`:''}</div>
+    </div>`;
+  };
+  document.getElementById('colOrigin').innerHTML = origins.map(o=>mkNode(o.id,'', '', false)).join('') || '<div class="hint">필터 결과 없음</div>';
+  document.getElementById('colRefine').innerHTML = refines.map(r=>mkNode(r.id,'', r.hash, false)).join('');
+  document.getElementById('colClassify').innerHTML = classifies.map(c=>mkNode(c.id,'', c.hash, true)).join('');
+  document.getElementById('colCatalog').innerHTML = catalogs.map(cid=>{
+    const m=catalogMeta[cid]; const cnt=(raw.catalog[cid]||[]).filter(matches).length;
+    return `<div class="node catalog" onclick="highlightCatalog('${cid}')" style="border-color:${m.color}40">
+      <div class="title" style="color:${m.color}">${m.label} <span style="font-weight:600;color:var(--muted)">(${cid})</span></div>
+      <div class="sub"><span class="badge">${cnt}개 연결</span><span class="badge">${m.desc}</span></div>
+      <div class="sub" style="color:var(--muted)">${m.path}</div>
+    </div>`;
+  }).join('');
+
+  requestAnimationFrame(drawFlowLines);
+}
+
+function drawFlowLines(){
+  const svg = document.getElementById('flowSvg');
+  if(!svg) return;
+  const cols = document.querySelector('.flowCols');
+  svg.setAttribute('width', cols.scrollWidth);
+  svg.setAttribute('height', cols.scrollHeight);
+  svg.innerHTML='';
+  // arrow marker
+  const defs=document.createElementNS('http://www.w3.org/2000/svg','defs');
+  const mkMarker=(id,color)=>{
+    const m=document.createElementNS('http://www.w3.org/2000/svg','marker');
+    m.setAttribute('id',id); m.setAttribute('viewBox','0 0 10 10'); m.setAttribute('refX','9'); m.setAttribute('refY','5');
+    m.setAttribute('markerWidth','6'); m.setAttribute('markerHeight','6'); m.setAttribute('orient','auto-start-reverse');
+    const p=document.createElementNS('http://www.w3.org/2000/svg','path');
+    p.setAttribute('d','M 0 0 L 10 5 L 0 10 z'); p.setAttribute('fill',color);
+    m.appendChild(p); return m;
+  };
+  defs.appendChild(mkMarker('arr-blue','#60a5fa'));
+  defs.appendChild(mkMarker('arr-pink','#f472b6'));
+  Object.keys(catalogMeta).forEach(cid=> defs.appendChild(mkMarker('arr-'+cid, catalogMeta[cid].color)));
+  // marker 크기 키워서 화살표 공간 확보
+  svg.querySelectorAll('marker').forEach(m=>{ m.setAttribute('markerWidth','8'); m.setAttribute('markerHeight','8'); m.setAttribute('refX','9'); });
+  svg.appendChild(defs);
+  const mapPos = (colId)=>{
+    const col = document.getElementById(colId);
+    const rectCols = cols.getBoundingClientRect();
+    return [...col.querySelectorAll('.node')].map(n=>{
+      const r=n.getBoundingClientRect();
+      return {el:n, id:n.dataset.id||n.textContent.trim().split(' ')[0].replace('✓','').replace('◷','').trim(), x: r.left - rectCols.left + r.width, y: r.top - rectCols.top + r.height/2, cx: r.left - rectCols.left, cy: r.top - rectCols.top + r.height/2};
+    });
+  };
+  // 카탈로그 최좌측 — 중심 전개: catalog → classify → refine → origin (화살표 공간 확보)
+  const catPos = mapPos('colCatalog');
+  const cPos = mapPos('colClassify');
+  const rPos = mapPos('colRefine');
+  const oPos = mapPos('colOrigin');
+  const mkPath=(a,b,color,opacity,width,marker)=>{
+    const dx=Math.max(56, (b.cx - a.x)*0.42);
+    const d=`M ${a.x} ${a.y} C ${a.x+dx} ${a.y}, ${b.cx-dx} ${b.cy}, ${b.cx} ${b.cy}`;
+    const p=document.createElementNS('http://www.w3.org/2000/svg','path');
+    p.setAttribute('d',d); p.setAttribute('fill','none'); p.setAttribute('stroke',color); p.setAttribute('stroke-width',width); p.setAttribute('opacity',opacity); p.setAttribute('stroke-linecap','round'); p.setAttribute('stroke-linejoin','round');
+    if(marker) p.setAttribute('marker-end',`url(#${marker})`);
+    if(width>2) p.setAttribute('filter','drop-shadow(0 0 6px '+color+')');
+    svg.appendChild(p);
+    const hit=document.createElementNS('http://www.w3.org/2000/svg','path');
+    hit.setAttribute('d',d); hit.setAttribute('fill','none'); hit.setAttribute('stroke','transparent'); hit.setAttribute('stroke-width','16');
+    svg.appendChild(hit);
+  };
+  // 1) catalog → classify (가장 굵고 선명, 카탈로그 중심)
+  const catById={};
+  document.querySelectorAll('#colCatalog .node').forEach((n,i)=>{
+    const cid=Object.keys(catalogMeta)[i];
+    const r=n.getBoundingClientRect(); const rc=cols.getBoundingClientRect();
+    catById[cid]={x: r.left-rc.left + r.width, y: r.top-rc.top+r.height/2, cx:r.left-rc.left, cy:r.top-rc.top+r.height/2};
+  });
+  cPos.forEach(c=>{
+    let cid=subjectOf(c.id);
+    if(c.id.startsWith('SUP')) cid='math2';
+    const cat=catById[cid];
+    const st = raw.status[c.id]||'PROVISIONAL';
+    const isTrue = st==='TRUE';
+    const w = isTrue ? '3.0' : '2.4';
+    const op = activeId ? (activeId===c.id? '0.96':'0.14') : (filterSub && filterSub!==cid ? '0.10' : '0.74');
+    if(cat) mkPath(cat,c,catalogMeta[cid].color, op, w, 'arr-'+cid);
+  });
+  // 2) classify → refine (1:1)
+  const rById=Object.fromEntries(rPos.map(p=>[p.id,p]));
+  const cById=Object.fromEntries(cPos.map(p=>[p.id,p]));
+  cPos.forEach(c=>{
+    const r=rById[c.id];
+    if(r) mkPath(c,r,'#f472b6', activeId ? (activeId===c.id? '0.96':'0.14') : (filterSub && subjectOf(c.id)!==filterSub && !c.id.startsWith('SUP') ? '0.12':'0.58'), '1.9', 'arr-pink');
+  });
+  // 3) refine → origin (1:1)
+  const oById=Object.fromEntries(oPos.map(p=>[p.id,p]));
+  rPos.forEach(r=>{
+    const o=oById[r.id];
+    if(o) mkPath(r,o,'#60a5fa', activeId ? (activeId===r.id? '0.96':'0.14') : (filterSub && subjectOf(r.id)!==filterSub && !r.id.startsWith('SUP') ? '0.12':'0.58'), '1.9', 'arr-blue');
+  });
+}
+
+// ---- TREE ----
+function renderTree(){
+  const el=document.getElementById('viewTree');
+  const legend = `<div class="statusLegend">
+    <span><span class="leg" style="background:var(--true)"></span> <b>TRUE</b> — 검증완료·카탈로그 확정 (SUP-math2 93, SM2-01~33, 266F0FE)</span>
+    <span><span class="leg" style="background:var(--prov)"></span> <b>PROVISIONAL</b> — transcript까지 확정, 유형 회람 대기 (26개, GAP 포함)</span>
+    <span style="margin-left:auto;color:var(--muted)">클릭 → 오른쪽 근원 추적</span>
+  </div>`;
+  const html = Object.keys(catalogMeta).map(cid=>{
+    const m=catalogMeta[cid];
+    const members=(raw.catalog[cid]||[]).filter(matches);
+    if(members.length===0) return '';
+    const trueCnt = members.filter(id=> (raw.status[id]||'PROVISIONAL')==='TRUE').length;
+    const provCnt = members.length - trueCnt;
+    return `<div class="treeGroup">
+      <div class="treeHead" style="border-color:${m.color}40;cursor:pointer" onclick="highlightCatalog('${cid}')" title="클릭하면 흐름도가 이 카탈로그 중심으로 포커스됩니다"><span style="width:10px;height:10px;border-radius:50%;background:${m.color}"></span> ${m.label} <span style="color:var(--muted)">(${cid})</span> — ${m.path} <span class="count">${members.length}코퍼스 · ${members.reduce((s,id)=>s+raw.items[id],0)}문항 · <span style="color:var(--true)">TRUE ${trueCnt}</span> · <span style="color:var(--prov)">PROV ${provCnt}</span> → 흐름도 보기</span></div>
+      <div class="treeChildren">
+        ${members.map(id=>{
+          const st=raw.status[id]||'PROVISIONAL';
+          const isTrue = st==='TRUE';
+          return `<div class="mini ${isTrue?'isTrue':'isProv'} ${activeId===id?'active':''}" style="${activeId===id?'outline:2px solid var(--accent)':''}" onclick="selectId('${id}')">
+            <div style="font-weight:800;font-size:13px">${isTrue?'✓':'◷'} ${id} <span class="badge ${st==='TRUE'?'true':'prov'}" style="margin-left:6px">${isTrue?'✓ TRUE':'◷ PROVISIONAL'}</span></div>
+            <div class="chain"><span>${raw.items[id]}문항</span> <span class="chainArrow">→</span> <span>${raw.hash[id+':refine']}</span> <span class="chainArrow">→</span> <span>${raw.hash[id+':classify']}</span></div>
+            <div class="chain" style="margin-top:6px;color:${isTrue?'#a7f3d0':'var(--muted)'}"><span>origin</span><span class="chainArrow">→</span><span>corpus/${id}/transcript.md</span><span class="chainArrow">→</span><span>output/26090*/${id}_classification.md</span><span class="chainArrow">→</span><span style="color:${m.color};font-weight:800">${cid}</span></div>
+            ${isTrue ? `<div style="margin-top:6px;font-size:11px;color:#6ee7b7">✓ 외부 회람 불필요 — 카탈로그 SM2-01~33 직접 배정</div>` : `<div style="margin-top:6px;font-size:11px;color:#fcd34d">◷ 유형 배정은 PROVISIONAL — transcript는 확정, catalog 매핑은 회람 후 TRUE로 승격</div>`}
+          </div>`;
+        }).join('')}
+      </div>
+    </div>`;
+  }).join('');
+  el.innerHTML = legend + html || '<div class="hint" style="padding:16px">필터 결과 없음</div>';
+}
+
+// ---- NETWORK (simple SVG force) ----
+let netNodes=[], netLinks=[];
+function buildNet(){
+  const ids = raw.ids.filter(matches);
+  const idSet = new Set(ids);
+  netNodes=[];
+  netLinks=[];
+  // nodes
+  ids.forEach(id=>{
+    netNodes.push({id: id+":origin", label:id, kind:"origin", subject:subjectOf(id), r:8});
+    netNodes.push({id: id+":refine", label:id, kind:"refine", subject:subjectOf(id), r:9, hash: raw.hash[id+":refine"]});
+    netNodes.push({id: id+":classify", label:id, kind:"classify", subject:subjectOf(id), r:10, hash: raw.hash[id+":classify"], status: raw.status[id]||"PROVISIONAL"});
+  });
+  Object.keys(catalogMeta).forEach(cid=>{
+    const has = (raw.catalog[cid]||[]).some(id=>idSet.has(id));
+    if(!has) return;
+    netNodes.push({id:"catalog:"+cid, label:catalogMeta[cid].label, kind:"catalog", subject:cid, r:16, color: catalogMeta[cid].color});
+  });
+  // links
+  ids.forEach(id=>{
+    netLinks.push({source: id+":origin", target: id+":refine", kind:"refine"});
+    netLinks.push({source: id+":refine", target: id+":classify", kind:"classify"});
+    let cid=subjectOf(id); if(id.startsWith("SUP")) cid="math2";
+    if(idSet.has(id)) netLinks.push({source: id+":classify", target: "catalog:"+cid, kind:"map"});
+  });
+}
+
+let simRunning=false;
+function renderNetwork(){
+  buildNet();
+  const svg=document.getElementById('netSvg');
+  const W=svg.clientWidth, H=svg.clientHeight;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  svg.innerHTML='';
+  const g=document.createElementNS('http://www.w3.org/2000/svg','g');
+  svg.appendChild(g);
+
+  // init positions
+  const byKind={origin:0,refine:1,classify:2,catalog:3};
+  netNodes.forEach((n,i)=>{
+    const k=byKind[n.kind]||0;
+    n.x = 120 + k*(W-240)/3 + (Math.random()-0.5)*40;
+    n.y = 80 + Math.random()*(H-160);
+    n.vx=0; n.vy=0;
+  });
+  const linkEls = netLinks.map(l=>{
+    const e=document.createElementNS('http://www.w3.org/2000/svg','line');
+    e.setAttribute('stroke', l.kind==='map'? '#a78bfa' : l.kind==='refine'? '#60a5fa' : '#f472b6');
+    e.setAttribute('stroke-opacity','0.5'); e.setAttribute('stroke-width', l.kind==='map'? '1.4':'1');
+    g.appendChild(e); return {el:e, link:l};
+  });
+  const nodeEls = netNodes.map(n=>{
+    const cg=document.createElementNS('http://www.w3.org/2000/svg','g');
+    cg.style.cursor='pointer';
+    cg.addEventListener('click', ()=>{ const base=n.id.split(':')[0]; if(raw.ids.includes(base)) selectId(base); });
+    const c=document.createElementNS('http://www.w3.org/2000/svg','circle');
+    const color = n.kind==='origin'? '#60a5fa' : n.kind==='refine'? '#34d399' : n.kind==='classify'? (n.status==='TRUE'? '#34d399':'#f472b6') : n.color||'#a78bfa';
+    c.setAttribute('r', n.r); c.setAttribute('fill', color); c.setAttribute('stroke', n.kind==='catalog'? 'white':'#0a0e14'); c.setAttribute('stroke-width','1.5');
+    c.setAttribute('opacity', n.kind==='catalog'? '1':'0.95');
+    const t=document.createElementNS('http://www.w3.org/2000/svg','text');
+    t.textContent = n.kind==='catalog'? n.label : n.label.replace('EX-','').replace('SUP-','');
+    t.setAttribute('x', n.r+6); t.setAttribute('y', 4); t.setAttribute('font-size', n.kind==='catalog'? '11':'9'); t.setAttribute('fill', n.kind==='catalog'? 'white':'#cbd5e1'); t.setAttribute('font-weight', n.kind==='catalog'? '800':'600');
+    if(n.kind==='catalog') t.setAttribute('stroke','#0a0e14'), t.setAttribute('stroke-width','0.4');
+    cg.appendChild(c); cg.appendChild(t);
+    g.appendChild(cg);
+    return {g:cg, c, t, node:n};
+  });
+
+  let iter=0;
+  function tick(){
+    iter++;
+    // forces
+    for(let k=0;k<2;k++){
+      // link
+      linkEls.forEach(({link})=>{
+        const a=netNodes.find(n=>n.id===link.source), b=netNodes.find(n=>n.id===link.target);
+        if(!a||!b) return;
+        const dx=b.x-a.x, dy=b.y-a.y, d=Math.hypot(dx,dy)||1;
+        const f=(d-90)*0.02;
+        const fx=dx/d*f, fy=dy/d*f;
+        a.vx+=fx; a.vy+=fy; b.vx-=fx; b.vy-=fy;
+      });
+      // repulsion
+      for(let i=0;i<netNodes.length;i++) for(let j=i+1;j<netNodes.length;j++){
+        const a=netNodes[i], b=netNodes[j];
+        const dx=b.x-a.x, dy=b.y-a.y, d=Math.hypot(dx,dy)||1;
+        if(d<120){ const f=(120-d)*0.01; const fx=dx/d*f, fy=dy/d*f; a.vx-=fx; a.vy-=fy; b.vx+=fx; b.vy+=fy; }
+      }
+      netNodes.forEach(n=>{ n.vx*=0.92; n.vy*=0.92; n.x+=n.vx; n.y+=n.vy; n.x=Math.max(30,Math.min(W-30,n.x)); n.y=Math.max(30,Math.min(H-30,n.y)); });
+    }
+    linkEls.forEach(({el,link})=>{
+      const a=netNodes.find(n=>n.id===link.source), b=netNodes.find(n=>n.id===link.target);
+      el.setAttribute('x1',a.x); el.setAttribute('y1',a.y); el.setAttribute('x2',b.x); el.setAttribute('y2',b.y);
+      el.setAttribute('stroke-opacity', activeId ? ((a.id.startsWith(activeId)||b.id.startsWith(activeId))? '0.95':'0.12') : '0.5');
+    });
+    nodeEls.forEach(({g,node})=>{
+      g.setAttribute('transform',`translate(${node.x},${node.y})`);
+      g.style.opacity = activeId ? (node.id.startsWith(activeId)||node.id==='catalog:'+subjectOf(activeId)|| (activeId.startsWith('SUP')&&node.id==='catalog:math2') ? '1':'0.25') : '1';
+    });
+    if(iter<260) requestAnimationFrame(tick);
+  }
+  tick();
+
+  // pan/zoom via transform
+  let tx=0,ty=0,scale=1, dragging=false, sx=0,sy=0;
+  svg.addEventListener('wheel', e=>{
+    e.preventDefault();
+    const s = e.deltaY<0? 1.08 : 0.92;
+    scale = Math.max(0.5, Math.min(2, scale*s));
+    g.setAttribute('transform',`translate(${tx},${ty}) scale(${scale})`);
+  }, {passive:false});
+  svg.addEventListener('mousedown', e=>{ dragging=true; sx=e.clientX-tx; sy=e.clientY-ty; });
+  window.addEventListener('mouseup', ()=>dragging=false);
+  window.addEventListener('mousemove', e=>{
+    if(!dragging) return;
+    tx=e.clientX-sx; ty=e.clientY-sy;
+    g.setAttribute('transform',`translate(${tx},${ty}) scale(${scale})`);
+  });
+}
+
+// ---- detail panel ----
+function selectId(id){
+  activeId = (activeId===id? null : id);
+  document.querySelectorAll('.node').forEach(n=>n.classList.toggle('active', n.dataset&&n.dataset.id===activeId));
+  renderFlow(); renderTree(); renderNetwork();
+  const detail = document.getElementById('detail');
+  const box = document.getElementById('detailContent');
+  const hint = detail.querySelector('.hint');
+  if(!activeId){ hint.style.display='block'; box.style.display='none'; return; }
+  hint.style.display='none'; box.style.display='block';
+  const subj=subjectOf(activeId);
+  const m = catalogMeta[subj] || catalogMeta['info'];
+  const catLabel = activeId.startsWith('SUP')? 'math2' : subj;
+  const cat = catalogMeta[catLabel];
+  const items = raw.items[activeId];
+  const rh = raw.hash[activeId+":refine"], ch = raw.hash[activeId+":classify"];
+  const st = raw.status[activeId]||"PROVISIONAL";
+  const imgInfo = activeId.includes('science')||activeId.includes('SUP')||activeId.includes('social')? '_images/'+activeId+'/pNN.png (dpi160)' : '_images 0건 (HWP hwp2md)';
+  box.innerHTML = `
+    <div class="kvs">
+      <div class="kv"><span>코퍼스</span><b>${activeId}</b></div>
+      <div class="kv"><span>과목</span><b style="color:${cat.color}">${cat.label} (${catLabel})</b></div>
+      <div class="kv"><span>문항</span><b>${items}문항</b></div>
+      <div class="kv"><span>정제 해시</span><b>${rh}</b></div>
+      <div class="kv"><span>분류 해시</span><b>${ch}</b></div>
+      <div class="kv"><span>상태</span><b style="color:${st==='TRUE'?'var(--true)':'var(--prov)'}">${st}</b></div>
+    </div>
+    <div class="provenance">
+      <div style="font-weight:800;font-size:13px;margin-bottom:6px">Provenance — 다른 AI가 찾는 경로</div>
+      <div class="provRow"><span class="step">원천</span><span class="path">origin_data/${activeId} → 원본 HWP/PDF (EXTRACTION_LOG)</span></div>
+      <div class="provRow"><span class="step">정제</span><span class="path">corpus/${activeId}/transcript.md (${rh}) + meta.yml items:${items} + verify_log.tsv<br><span style="color:var(--muted)">${imgInfo}</span></span></div>
+      <div class="provRow"><span class="step">분류</span><span class="path">output/26090*/${activeId}_classification.md (${ch}) — transcript:줄로 역추적</span></div>
+      <div class="provRow"><span class="step">유형</span><span class="path" style="color:${cat.color}">${cat.path} — ${cat.desc} → CODE_REGISTRY</span></div>
+    </div>
+    <div class="hint" style="margin-top:10px">웹 DAQ는 이 4층 체인만으로 흐름도를 그린다. 그림은 노드 속성, 엣지는 매핑이다.</div>
+    <div class="cta">
+      <button class="btn" onclick="navigator.clipboard.writeText('${activeId}')">ID 복사</button>
+      <button class="btn primary" onclick="highlightCatalog('${catLabel}')">카탈로그 하이라이트</button>
+    </div>
+  `;
+}
+
+function highlightCatalog(cid){
+  // 카탈로그 중심: 선택 시 흐름도로 포커스 (사용자 제안 반영)
+  const isToggle = filterSub===cid;
+  filterSub = isToggle ? '' : cid;
+  document.getElementById('subject').value=filterSub;
+  // 흐름도 탭으로 전환
+  document.querySelectorAll('.tab[data-view]').forEach(b=>b.classList.remove('active'));
+  document.querySelector('[data-view="flow"]').classList.add('active');
+  document.getElementById('viewFlow').style.display='block';
+  document.getElementById('viewTree').style.display='none';
+  document.getElementById('viewNetwork').style.display='none';
+  document.getElementById('mainTitle').innerHTML = filterSub
+    ? `흐름도 — <span style="color:${catalogMeta[cid].color}">${catalogMeta[cid].label} (${cid})</span> 중심 · ${(raw.catalog[cid]||[]).length}코퍼스 · ${(raw.catalog[cid]||[]).reduce((s,id)=>s+raw.items[id],0)}문항 <small>카탈로그를 중심으로 흐름이 필터링됨 — 다시 클릭하면 전체 보기</small>`
+    : `흐름도 — 4단계 파이프라인 <small>카탈로그 카드를 클릭하면 해당 카탈로그 중심으로 흐름도가 포커스됩니다</small>`;
+  renderCatalogChips();
+  renderFlow(); renderTree(); renderNetwork();
+  if(filterSub) { drawFlowLines(); window.scrollTo({top: document.getElementById('mainCard').offsetTop - 12, behavior:'smooth'}); }
+}
+
+function renderCatalogChips(){
+  const el=document.getElementById('catalogChips');
+  if(!el) return;
+  el.innerHTML = Object.keys(catalogMeta).map(cid=>{
+    const m=catalogMeta[cid];
+    const cnt=(raw.catalog[cid]||[]).length;
+    const items=(raw.catalog[cid]||[]).reduce((s,id)=>s+raw.items[id],0);
+    const trueCnt=(raw.catalog[cid]||[]).filter(id=> (raw.status[id]||'PROVISIONAL')==='TRUE').length;
+    const isActive = filterSub===cid;
+    const bg = isActive ? `background:${m.color};color:white` : `background:#0b1220;color:${m.color};border-color:${m.color}40`;
+    return `<button class="catChip ${isActive?'active':''}" style="${bg}" onclick="highlightCatalog('${cid}')">
+      <span style="width:8px;height:8px;background:${isActive?'white':m.color};border-radius:50%;display:inline-block"></span>
+      ${m.label} <span class="cnt">${cnt}·${items}문항${trueCnt?` · ✓${trueCnt}`:''}</span>
+    </button>`;
+  }).join('') + `<button class="catChip ${!filterSub?'active':''}" style="${!filterSub?'background:linear-gradient(135deg,#0ea5e9,#7c3aed);color:white;border-color:transparent':'background:#0f172a;color:var(--muted)'}" onclick="highlightCatalog('')">전체 ${raw.ids.length}코퍼스</button>`;
+}
+
+// tabs
+document.querySelectorAll('.tab[data-view]').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.tab[data-view]').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const v=btn.dataset.view;
+    document.getElementById('viewFlow').style.display = v==='flow'? 'block':'none';
+    document.getElementById('viewTree').style.display = v==='tree'? 'block':'none';
+    document.getElementById('viewNetwork').style.display = v==='network'? 'block':'none';
+    document.getElementById('mainTitle').textContent = v==='flow'? '흐름도 — 4단계 파이프라인' : v==='tree'? '트리 — 과목 계층 (카탈로그 → 코퍼스)' : '네트워크 — 89노드 관계망 (드래그·줌)';
+    if(v==='network') renderNetwork();
+    if(v==='flow') requestAnimationFrame(drawFlowLines);
+  });
+});
+
+// search
+document.getElementById('q').addEventListener('input', e=>{ filterQ=e.target.value; renderCatalogChips(); renderFlow(); renderTree(); renderNetwork(); });
+document.getElementById('subject').addEventListener('change', e=>{ filterSub=e.target.value; renderCatalogChips(); renderFlow(); renderTree(); renderNetwork(); if(filterSub){ document.querySelectorAll('.tab[data-view]').forEach(b=>b.classList.remove('active')); document.querySelector('[data-view="flow"]').classList.add('active'); document.getElementById('viewFlow').style.display='block'; document.getElementById('viewTree').style.display='none'; document.getElementById('viewNetwork').style.display='none'; document.getElementById('mainTitle').innerHTML = `흐름도 — <span style="color:${catalogMeta[filterSub].color}">${catalogMeta[filterSub].label} (${filterSub})</span> 중심`; } });
+document.getElementById('status').addEventListener('change', e=>{ filterSt=e.target.value; renderCatalogChips(); renderFlow(); renderTree(); renderNetwork(); });
+document.getElementById('reset').addEventListener('click', ()=>{
+  filterQ=""; filterSub=""; filterSt=""; document.getElementById('q').value=""; document.getElementById('subject').value=""; document.getElementById('status').value="";
+  activeId=null; renderCatalogChips(); renderFlow(); renderTree(); renderNetwork();
+  document.getElementById('detail').querySelector('.hint').style.display='block';
+  document.getElementById('detailContent').style.display='none';
+  document.getElementById('mainTitle').innerHTML = `흐름도 — 4단계 파이프라인 <small>카탈로그 카드를 클릭하면 해당 카탈로그 중심으로 흐름도가 포커스됩니다</small>`;
+});
+
+// initial
+renderCatalogChips();
+renderFlow(); renderTree(); renderNetwork();
+window.addEventListener('resize', ()=>{ drawFlowLines(); });
+</script>
+</body>
+</html>
