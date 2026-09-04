@@ -35,6 +35,37 @@ Never write anywhere else through shell redirection (`analysis/REV_GUIDE.md` §5
   (260824 case: mock40 #38 — middle equation `q = 2p − 7` was wrong yet final
   `a+b+r = 4` matched and passed solve-back. Correct: `q = 2p + 2`.)
 
+## Coverage gate — RUN THIS FIRST (260902, fail-closed)
+
+**The denominator is the ORIGINAL, never the document you were handed.** A missing item cannot
+be wrong, so a truncated answer key passes every per-item check with `errors = 0`. This is not
+hypothetical: `SUP-math2-2026` v2 stopped at `#3-11` of 93 items and BOTH the author's
+self-check AND a solve-back pass reported `오류 0`.
+
+Before solving anything, measure both counts and print them:
+
+```
+N (original)   = grep -cE '^\*\*[0-9]+\.\*\*' corpus/<ID>/transcript.md
+M (answer key) = grep -c '^### ' <answer key>
+```
+
+- `N != M` → **stop. Report `▲ blocked` with both numbers.** Do not begin per-item solving; a
+  per-item verdict on a silently partial set is misleading however correct each item is.
+- Compare **per-unit** counts too. A matching total with a mismatched split is still a defect.
+- If the set declares `scope: partial`, measure `M` against that declared scope — an explicitly
+  partial key is legitimate; a *silently* partial one is the failure mode.
+- Put the coverage fraction in your report header. Never quote a script's raw counter
+  (`total=49`) without the union coverage beside it — that alone produced a user-facing
+  "why are there only 49 answers for 93 items?" incident.
+
+## Transcription is an assumption, not a verified input
+
+Your recomputation sits on top of `transcript.md`. If the transcript misread the original, a
+**correct calculation of the wrong problem** passes every check you run — you cannot reach this
+axis by solving. So state `meta.yml confidence` and the collation fraction
+(`collated_pages / total_pages`) as an explicit limit on your verdict, and never call a set
+"verified" while that fraction is below 1. Say "verified against the transcript".
+
 ## Per-item checklist
 | Check | Verdict |
 |------|---------|

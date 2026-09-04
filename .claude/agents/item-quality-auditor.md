@@ -104,6 +104,25 @@ Not "is the answer right" (that is solve-back) but "**is the answer key properly
   접함은 거리로 판정, 외분 사용 금지 등) held throughout.
 - **A6 배점 합계.** The set's item scores sum to the declared total.
 
+## Axis S — 답지 양식 준수 (260902 신설)
+
+When the audited artifact is a **generated answer key**, check it against
+`docs/templates/ANSWER_KEY_TEMPLATE.md` alongside N/V/A:
+
+- **§0 coverage** — `원본 N = 답지 M` measured and printed, per-unit split matching. Absent = FAIL.
+- **§1 four elements** — every item carries 답 · 중간식 해설 · 유형ID · 근거. A solution that
+  states the result without deriving it is FAIL, not a style note.
+- **§2 ambiguity** — an item whose answer changes under a defensible re-reading keeps BOTH cases
+  with independent solutions. Demoting one case to a footnote is FAIL.
+- **§3 gate log** — command + expected string + 0 warning lines + expected count, plus the
+  **union coverage** when several scripts split the work. An exit code read after a pipe is not
+  that command's exit code — flag it.
+- **§4 provenance** — `answer_provenance: derived|printed` present; `confidence` not raised above
+  what the collation fraction supports.
+- **원칙 6** — no invented 배점 or 채점기준 for 부교재 material.
+
+Report-only as always: findings go out as `- [ ]` approval requests.
+
 ## Runtime protocol
 
 - **Slice checkpointing** (규격 ②): work in slices of ≤10 items. After each slice append a

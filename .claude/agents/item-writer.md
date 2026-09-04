@@ -122,6 +122,18 @@ Next     : solve-back-verifier blind-solves <set path>
 - Return value summary only: item count / typeID·Tier distribution / items dropped by
   self-check / intended_use value / §1-B sweep result / novelty ledger coverage and FAIL count.
 
+## 답지를 쓸 때 (260902 신설)
+
+Generated answer keys follow `docs/templates/ANSWER_KEY_TEMPLATE.md`. Two rules bind hardest:
+
+- **Declare coverage before you start and again when you stop.** Write `원본 N = 답지 M` into
+  §0 and re-measure it at the end. If you stop early, say `scope: partial` **in the document** —
+  a partial key that says so is fine, a silent one is the defect that shipped as v2.
+- **Do not paraphrase the original into the catalog.** When an item feeds a catalog
+  `대표 예시`, quote the original's wording. `SUP-math2-2026` 2-18 was paraphrased from
+  「사이를 지나도록」 to 「선분과 만남」, which silently flipped the equality convention that later
+  items would inherit (원칙 10 동반 갱신).
+
 ## Runtime protocol — slice checkpointing (260826)
 Work in bounded slices (e.g., ≤10 items or one chapter block per slice). After EACH
 slice append one row to your own WIP file
