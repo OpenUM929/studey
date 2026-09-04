@@ -212,6 +212,51 @@ for relative in COMPANION_REQUIRED:
     if "동반 갱신 목록" not in path.read_text(encoding="utf-8"):
         fail(f"{relative}: no 동반 갱신 목록 section (CLAUDE.md 원칙 10)")
 
+# 6. Ruler gate (CLAUDE.md 원칙 12 / REV_GUIDE §5-a; ruling 260831_08 BF-R3·Q7).  The ruler
+#    cites values that only the measurer can produce.  Nothing ran that comparison on a
+#    schedule, so a ruler could go stale between rounds and every verdict issued from it
+#    would be stale too, silently.  This runs the gate.  A ruler change without a matching
+#    tool run is exactly the failure this catches, so there is no opt-out flag: 원칙 11
+#    forbids a warning channel with no failure channel.
+RULER_SUBJECTS = [
+    "analysis/catalog/DIFFICULTY_RUBRIC.md",
+    "tools/measure_score_bands.py",
+    "tools/regen_rubric_values.py",
+]
+for relative in RULER_SUBJECTS:
+    if not (ROOT / relative).exists():
+        fail(f"{relative}: two-key ruler subject missing (REV_GUIDE §5)")
+
+rev_five = rev_guide.split("## 5. Actors", 1)[-1].split("\n## 6.", 1)[0]
+for relative in RULER_SUBJECTS:
+    if relative not in rev_five:
+        fail(f"REV_GUIDE §5: two-key subject list does not name {relative}")
+
+# The gate runs even when earlier checks failed: gating it behind `failures == 0` would let
+# an unrelated pre-existing failure switch the ruler axis off silently (fail-open).
+if all((ROOT / r).exists() for r in RULER_SUBJECTS):
+    import subprocess
+
+    proc = subprocess.run(
+        [sys.executable, str(ROOT / "tools/regen_rubric_values.py")],
+        capture_output=True,
+        cwd=ROOT,
+    )
+    out = (proc.stdout + proc.stderr).decode("utf-8", "replace").replace("\r\n", "\n")
+    if proc.returncode != 0:
+        fail(f"ruler gate: regen_rubric_values.py exit={proc.returncode} (expected 0)")
+    if "[GATE 0 PASS] undetected=0" not in out:
+        fail("ruler gate: detector did not prove its own detection power (원칙 12-d)")
+    if "stale=0 lines=0 residual=0" not in out:
+        line = next((l for l in out.split("\n") if l.strip().startswith("stale=")), "?")
+        fail(f"ruler gate: ruler is stale -- {line.strip()}")
+    warn = [l for l in out.split("\n") if "[WARN]" in l]
+    if warn:
+        fail(f"ruler gate: {len(warn)} warning line(s), expected 0 -- {warn[0].strip()}")
+    findings = [l for l in out.split("\n") if l.startswith("  :")]
+    if findings:
+        fail(f"ruler gate: {len(findings)} finding line(s), expected 0 -- {findings[0].strip()}")
+
 if failures:
     print(f"assurance-contract: {failures} failure(s)")
     raise SystemExit(1)
