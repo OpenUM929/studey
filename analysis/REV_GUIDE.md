@@ -299,6 +299,39 @@ Codex 레인 중단으로 수행된 실질 감사 2건이 규정 밖 작업이 �
 결정요청으로 올리고, 자가 바뀌면 그 자로 내려진 판정은 전부 stale이 되어 재실행 전까지 인용할 수
 없다. 근거: 260828 감사 F2-b·F6·F9.
 
+**two-key 대상 목록 (260902 신설, 판정 `output/260831/rev/260831_08_arbiter_ruling_resign.md`
+BF-R4).** 위 문단은 원칙을 적었을 뿐 **어떤 파일이 자인지**를 적지 않아, 실행 레인이 「이건 자가
+아니라 도구」라고 스스로 판단할 여지가 남아 있었다. 아래가 그 목록이며 **이 표가 정본이다 —
+다른 문서는 재열거하지 말고 이곳을 가리킨다**(CLAUDE.md 원칙 9-c-ii).
+
+| 파일 | 무엇인가 | 왜 two-key인가 |
+|---|---|---|
+| `analysis/catalog/DIFFICULTY_RUBRIC.md` | 자 본체(수용기준·기대값 표) | 재는 대상이 자기 눈금을 고치면 F9가 재현된다 |
+| `tools/measure_score_bands.py` | 자의 근거 수치를 산출하는 측정기 | 출력이 곧 자의 내용이다 |
+| `tools/regen_rubric_values.py` | 자를 재생성·대조하는 게이트 | **읽기 전용이어도 대상이다** — 12-c가 보호하는 것은 자를 *바꾸는 행위*가 아니라 **자가 무엇인지 결정하는 권한**이고, 이 도구가 통과시키는 것이 곧 자의 내용이 된다. 자를 못 고쳐도 자를 재는 자를 고치면 F9는 그대로 성립한다 |
+
+- 두 열쇠 = **사용자 승인 + 감사권한자(`rev-arbiter`) 판정**. 어느 한쪽만으로는 성립하지 않으며,
+  반영 시 원장에 **bytes + sha256(16) 사슬** 재동결 행을 남긴다.
+- `tools/regen_rubric_values.py`의 **허용목록(ALLOW)에 자리를 추가하는 것도 이 표의 대상**이다 —
+  허용목록 한 줄이 곧 「이 자리는 안 봐도 된다」는 자의 개정이기 때문이다.
+- 이 세 파일 중 하나라도 바뀌면 그 자로 내려진 판정은 전부 stale이며 재실행 전까지 인용 금지다.
+- **실행 레인(Codex/OMX 포함)은 이 세 파일을 소비만 한다.** 문제를 발견하면 우회하지 말고
+  결정요청으로 올린다(원칙 12-a). 게이트 명령과 수용기준은 §5-a.
+
+**§5-a. 자 게이트 (260902 신설, 판정 BF-R3·Q7).** 자·측정기·재생성기 중 하나라도 바뀌면 아래를
+**파이프 없이** 실행하고 네 수치를 함께 인용한다. `exit 0` 하나로 끝내지 않는다(원칙 11).
+
+```
+python tools/measure_score_bands.py > /dev/null 2>&1 ; echo "exit=$?"     기대: exit=0
+python tools/regen_rubric_values.py > /dev/null 2>&1 ; echo "exit=$?"     기대: exit=0
+python tools/regen_rubric_values.py
+   기대 문자열: "[GATE 0 PASS] undetected=0" · "stale=0 lines=0 residual=0"
+   기대 카운트: ":" 로 시작하는 지적 행 0줄 · "[WARN]" 0줄
+```
+
+이 게이트는 `tools/check_assurance_contract.py` 구조 검사 6이 자동으로 돌린다 — 손으로 돌리는
+것을 잊어도 규정 도달 검사에서 걸린다.
+
 **WIP = `analysis/wip/<actor>_<YYMMDD>_<task>.md`** — the slice checkpoint mandated by CLAUDE.md
 「서브에이전트 공통 실행 규격」②. Exclusive ownership: an actor writes only its OWN WIP and never
 touches another's; only the user prunes finished files. **WIP is never cited as evidence** in a
@@ -370,6 +403,37 @@ the receiver does NOT return the relay — it proceeds and records the complaint
 spec had all three of its measured claims verified correct (ruling 260826_02 V12) — so returning
 over a cosmetic defect withholds a ruling the requester is entitled to.
 
+**측정 증거는 주장과 함께 이동한다 (260901 신설)** — (b)의 재검증 의무는 260826부터 있었는데도
+260831 한 라운드에서 **날조 주장 5건**이 그대로 발신됐다: 실재하지 않는 정본 경로
+`analysis/DIFFICULTY_RUBRIC.md`(정본은 `analysis/catalog/`) · 인용 파일에 존재하지 않는 「발견」 3건 ·
+`_index.md:18` 표 손상 보고(수신 측·판정자·발신자 재측정 **3중 반증**) · 잔여 9건이 살아 있는데
+「BF1~BF7 전건 반영 완료」. 규칙은 있었다. 없었던 것은 **검증된 주장과 날조된 주장이 회람문 위에서
+똑같이 보인다**는 사실에 대한 방어다. 그래서 (b)를 다음으로 조인다.
+
+- **(f) 인라인 증거** — 회람문의 모든 카운트·행번호·「알려진 결함」 주장은 **그 자리에 증거를 달고**
+  간다: 실행한 명령과 그 출력(또는 매칭 행 1줄 인용). 증거 없는 숫자는 기본값이 `⚠️미확인`이다.
+  - **(f-1) 기입 순서 (260902 신설 — 판정 `260831_06` E3·E3-C1 구속)** —
+    **기입할 값은 그 편집이 끝난 뒤 다시 측정한다.** 편집 전에 잰 값을 편집 후 문서에 옮겨 적으면
+    그것은 인용이 아니라 창작이다. 해시·바이트수·카운트는 **문서를 닫기 직전** 재측정한 값만 쓴다.
+    명령이 다르면 값도 다르다 — 동결된 값을 재확인할 때는 **동결 명령 그 자체**를 실행한다.
+    **모집단에 이 문서 자신이나 이 문서가 만들 원장 행이 포함되면, 숫자만 적지 말고 측정 경계를
+    함께 적는다** — `<명령> @ <시점·제외조건>` 형식으로, 예: 「이 문서와 이 라운드의 원장 행을
+    제외한 시점의 값」. 자기참조 모집단에서 맨 숫자는 재현되지 않는다(260902 실측 3/3 드리프트).
+    근거: 260901 오기 3종이 전부 「편집 완료 전 기입」 하나의 원인이었고(closure 2/32 + 모집단 밖
+    1건), 260902 라운드에서 자기참조 카운트 3건이 **전건 드리프트**했다(3/3) — 그 3건 중 하나가
+    이 조항을 요청한 패킷 자신의 숫자였다.
+- **(g) 범위는 전수 grep으로 못 박는다** — 「반영했다」고 적을 때는 파일명이 아니라 **전수 grep 명령과
+  그 출력 카운트**로 범위를 고정한다. 잔여 카운트 없는 「완료」는 상태 보고가 아니다.
+  (판정 측 대칭 의무: 260831_04 F1 — 구속수정도 파일 목록 또는 전수 grep으로 적용 범위를 못 박는다.)
+- **(h) 수신자 우선 조항** — 회람문은 다음 한 줄로 닫는다:
+  「이 지시문의 값이 원문과 어긋나면 지시가 아니라 **실측을 따르고 그 사실을 회신하라**.」
+  위 5건 중 `_index.md:18` 날조를 실제로 잡아낸 것이 이 경로였다(수신 측 `rev-writer`의 원문 대조 반박).
+
+> **동반 갱신 목록 (§6-b 개정 시)** — 이 규격을 고치면 같은 작업에서 함께 점검한다(CLAUDE.md 원칙 10):
+> `CLAUDE.md` 공통 실행 규격 ①·①-b · §6-c(역방향 대칭) · §6-d (1) 요청 패킷 필드 ·
+> `.claude/agents/` 중 §6-b를 인용하는 5종(`rev-writer` · `rev-arbiter` · `type-proposer` ·
+> `forecast-writer` · `forecast-arbiter`).
+
 ### §6-c Execution-order spec (Claude Code → Codex/OMX, 260826)
 
 §6-b covers only the Codex/OMX → Claude Code direction. The return leg had **no spec at all**,
@@ -388,6 +452,7 @@ Codex/OMX. Same prompt-engineer stance as §6-b (a)–(e), plus:
    executor must checkpoint per slice
 3. `<inputs>` — every path the executor reads, with **measured** counts/bytes/hashes taken
    immediately before printing. Unmeasurable values are `⚠️미확인`, never guessed
+   측정 시점과 자기참조 모집단의 취급은 **§6-b (f-1)** 을 따른다(260902 신설).
 4. `<outputs>` — exact paths to create, and the canonical spec each must satisfy (§ reference)
 5. `<gate>` — the PRD acceptance criterion **verbatim**, as `command + expected output string
    + 0 warning lines + expected count`. No placeholders (CLAUDE.md 원칙 9-c-iii). If it cannot
@@ -420,6 +485,9 @@ or was just fixed, say so with the measured evidence (e.g. `hwp2md.py` HWP image
    있거나 `<excluded>`에 사유와 함께 적혀야 한다. 어느 쪽에도 없으면 그 패킷은 불완전이다.
    (근거: F10 — 동결 목록을 피측정 레인이 작성하고, 자기 산출물이 `source_path` 열로 지목하는
    원천 3종을 빼서 "측정 불가"를 자기 판정으로 냈다.)
+   **표에 적는 bytes·sha256은 패킷을 닫기 직전 재측정한 값이어야 하고, 패킷 자신이나 이 라운드의
+   원장 행이 모집단에 드는 카운트에는 측정 경계를 병기한다 — §6-b (f-1)** (260902 신설, 판정
+   `260831_06` E3-C1: 260902 패킷의 자기참조 카운트 3건이 하루 안에 전건 드리프트했다).
 2. `<units>` — 판정 단위마다 고유 ID(`Q1`·`BF3` 등) + **판정 가능한 질문형** + `verdict enum`
    + `reproduce:` 재실행 명령 1줄. 산문 요청은 unit이 아니다.
 3. `<actor_grade>` — 요청받는 배우와 그 **권한 등급**을 요청 측이 미리 적는다(아래 (3)).
@@ -517,4 +585,18 @@ the relevant catalog type's forbidden/caution entries so the same mistake never 
   §6-c requires an `[OC 지시]` block with stage · executor+WIP path · measured inputs · outputs+spec refs ·
   verbatim gate (no placeholders) · constraints · report-back, plus mandatory disclosure of known/just-fixed
   tool defects. Mirrored into CLAUDE.md ①-c. Written by: main loop (user instruction).
-
+- 260901: **§6-b (f)(g)(h) 신설 — 측정 증거는 주장과 함께 이동한다.** (b)의 재검증 의무는
+  260826부터 있었으나 260831 한 라운드에서 날조 주장 5건이 발신됐다. 규칙 부재가 아니라 **검증
+  여부가 회람문 위에서 보이지 않는 것**이 원인이므로, (f) 인라인 증거(명령+출력) · (g) 범위는
+  전수 grep 카운트로 고정 · (h) 수신자 우선 조항을 추가했다. §6-b 동반 갱신 목록도 함께 신설.
+  근거: 판정 `output/260831/rev/260831_04_arbiter_ruling_K1.md` F1 + 메인 루프 자기 신고 5건.
+  Written by: main loop (user instruction).
+- 260902 (2nd) — tier-3 판정 `output/260831/rev/260831_08_arbiter_ruling_resign.md` 반영:
+  **§5 「two-key 대상 목록」 + §5-a 「자 게이트」 신설.** 종전 §5는 「자는 어떤 배우의 write
+  surface도 아니다」는 원칙만 적고 **어떤 파일이 자인지** 적지 않아, 실행 레인이 「이건 자가 아니라
+  도구」라고 스스로 판정할 여지가 남아 있었다. 판정 Q7이 그 구멍을 닫았다 — 읽기 전용 재생성기도
+  대상이며, 12-c가 보호하는 것은 자를 바꾸는 행위가 아니라 **자가 무엇인지 결정하는 권한**이다.
+  게이트는 `tools/check_assurance_contract.py` 구조 검사 6이 자동 실행하며, 검출력을 심은 결함
+  1건으로 실증했다(자 `(510행)` -> `(462행)` 주입 -> ruler gate FAIL 3줄, 복원 후 sha 동일).
+  동반 갱신: `CLAUDE.md` 원칙 12-c·동반 갱신 목록 · `AGENTS.md` Non-negotiable rules ·
+  `tools/check_assurance_contract.py`. Written by: main loop (user instruction).

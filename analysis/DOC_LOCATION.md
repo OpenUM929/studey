@@ -37,6 +37,21 @@
 | 원본 처리·추출 기록 | `analysis/EXTRACTION_LOG.md` | append-only 정본 |
 | 폴더·문서 구조 자체의 규칙 | `analysis/DOC_LOCATION.md` (이 파일) | 개정은 승인제 |
 
+## 3-1. 생성 파일 매핑 — 원본 풀이(생성 답지) 위치 (260901 신설)
+
+> **원칙**: 저장소의 **모든 생성 파일은 이 문서에서 위치를 찾을 수 있어야** 한다. 새 생성물을 만들기 전 이 절에서 자기 홈을 확인한다.
+
+| 생성물 | 정식 위치 | 사본/작업 위치 | 추적 수단 |
+|--------|-----------|---------------|-----------|
+| **1차 정제물(전사)** — PDF/HWP/DOC → 이미지 → md | `corpus/<코퍼스ID>/transcript.md` + `corpus/_images/<코퍼스ID>/pNN.png` + `corpus/<코퍼스ID>/verify_log.tsv` + `meta.yml` 4필드(`transcribed_at/render_dpi/render_tool/confidence`) | `origin_data/<ID>/`에 HWP/DOC PDF화본 병치(원본 훼손 금지) | `corpus/_README.md` 1차 정제 게이트, `DATA_STANDARD §5.7` 게이트 |
+| **원본 생성 답지(1차 풀이)** — `SUP-math2-2026` 등 부교재·기출 원문 1:1 풀이 | `corpus/<코퍼스ID>/generated_answer.md` (예: `corpus/SUP-math2-2026/generated_answer.md`) — `meta.yml`의 `answer_key`가 이 파일을 가리킨다 | `output/<YYMMDD>/` 산출물 사본(인쇄·배포용) — 파일명 `YYMMDD_NN_<corpusID>_ans.md` | `EXTRACTION_LOG.md` 비고 + `corpus/HARVEST_LOG.tsv` note + `meta.yml:answer_key` |
+| **변형 세트(모의고사) 문제·해설** | `output/<YYMMDD>/<YYMMDD>_NN_<subject>_<영문snake>.md` + `output/test2/<YYMMDD>/` 인쇄용 HTML 사본 | — | `DOC_LOCATION` §2 산출물 클래스 |
+
+- **1차 정제물은 분류의 전제 조건**이다 — `transcript.md`(도표 문항은 이미지 링크 포함) + `_images/pNN.png`(HWP/DOC는 PDF화 후 렌더) + `verify_log.tsv` transcribe 행 + `meta.yml` 4필드가 모두 채워져야 분류(PROPOSE) 진입 가능. 미충족 시 `▲ blocked`. 이후 모든 분류·검토·사실 검증은 **정제물로 수행**하고 원본 재열람은 3중 축 소급 증거로만 한정한다 — HWP 수식 유실은 `verify_log.tsv`에 `unreadable`로 기록.
+- 원본 생성 답지는 **코퍼스 유닛에 귀속**되므로 `corpus/<ID>/`를 정식으로 한다 — 원문이 `origin_data/<ID>/`에 영구 보존되는 것과 짝을 이룬다. `output/` 사본은 배포·검토용이며 정식이 아니다.
+- `corpus/<ID>/generated_answer.md`를 만들 때 같은 커밋에서 `meta.yml:answer_key`를 `generated_answer.md`로 갱신하고, `HARVEST_LOG.tsv`에 `note`를 append한다.
+- 이 절이 **생성 파일 매핑의 정본**이다. 새 종류의 생성물을 도입하면 이 표에 행을 먼저 추가한다.
+
 ## 4. 명명·참조 규칙
 
 - 검토서 파일명: `YYMMDD_NN_NAME.md` (NAME 영문 스네이크). 보고서도 같은 스타일 권장: `<YYMMDD>_<주제>.md`
@@ -54,6 +69,8 @@
 | 260825 | `output/260822/rev/*` (모의40 산출물 검토) | **이동하지 않음** — 대상이 output 산출물이라 현위치가 올바름 |
 
 ## 이력
+- 260901 §3-1 2차 개정 — 1차 정제물(HWP/DOC PDF화→이미지→md) 행 추가, 1차 정제 게이트(정제물 완성 전 분류 진입 금지·원본 재열람 방지) 명문화. 사용자 지시: "hwp, doc 문서일 경우 pdf화 과정" 및 "1차 정제와 분류 분리·원본 재열람 방지".
+- 260901 §3-1 신설 — 모든 생성 파일 매핑 원칙 명문화(사용자 지시: "모든 생성 파일에 대한 매핑을 우리는 가지고 있어야"). 원본 생성 답지의 정식 홈을 `corpus/<ID>/generated_answer.md`로 고정, `meta.yml:answer_key`·`HARVEST_LOG` 추적 규정.
 - 260825 신설. 계기: 사용자 지적 — 카탈로그 검토서가 output 회차 폴더에 저장됨. 정본·시스템 검토의 홈으로
   `analysis/rev/` 확립, 산출물 검토(`output/<YYMMDD>/rev/`)와 이원화. Shrimp Task Manager MCP 등록으로
   향후 세션 태스크 보드 병행 예정(데이터: `.shrimp/`, gitignore 처리).
@@ -62,7 +79,7 @@
 이 문서를 개정하면 **같은 작업에서** 아래를 함께 점검한다. 한쪽만 고치면
 "규정은 있는데 아무도 안 지키는" 구멍이 생긴다.
 
-- `analysis/REV_GUIDE.md` §1(위치·명명) · `.claude/agents/rev-writer.md` · `rev-auditor.md` · `forecast-reviewer.md` · `CLAUDE.md` 원칙 8
+- `analysis/REV_GUIDE.md` §1(위치·명명) · `docs/DATA_STANDARD.md` §1.5·§5.7(정답지·answer_key) · `README.md` 폴더 지도 · `corpus/_README.md` · `.claude/agents/rev-writer.md` · `rev-auditor.md` · `forecast-reviewer.md` · `CLAUDE.md` 원칙 8 · `tools/check_assurance_contract.py` TEXT_REQUIREMENTS
 
 목록 자체의 존재는 `tools/check_assurance_contract.py`가 검사한다.
 근거: 260828 시스템 감사 S3 — 원칙 10이 8개 정본 중 1개에만 구현돼 있었다.

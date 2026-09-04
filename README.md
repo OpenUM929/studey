@@ -9,7 +9,7 @@
 | 경로 | 무엇이 사는가 | 규칙·정본 문서 |
 |------|--------------|----------------|
 | `origin_data/` | 도착 원본 자료. 폴더명 = 코퍼스ID(`EX-`기출 ·`NY-`내신집 ·`SUP-`부교재 ·`PA-`수행 ·`CU-`교육과정) + `_inbox/`(신규 도착 대기) + `_archive/`(격리) | [docs/DATA_STANDARD.md](docs/DATA_STANDARD.md) §1.3 |
-| `corpus/` | **코퍼스 데이터 하우스** — 유닛 구조는 바로 아래 해부도, 구조 안내는 `corpus/_README.md`, 등록 원장은 `HARVEST_LOG.tsv` | [docs/DATA_STANDARD.md](docs/DATA_STANDARD.md) §5.7·§5.7-A |
+| `corpus/` | **코퍼스 데이터 하우스** — 유닛 구조는 바로 아래 해부도(원본 생성 답지 `generated_answer.md` 포함, DOC_LOCATION §3-1), 구조 안내는 `corpus/_README.md`, 등록 원장은 `HARVEST_LOG.tsv` | [docs/DATA_STANDARD.md](docs/DATA_STANDARD.md) §5.7·§5.7-A |
 | `extracted/` | **레거시 동결**(구 정제 창고). 신규 유입 금지 | [extracted/README.md](extracted/README.md) |
 | `raw/` | 보조 증거(2026 공식 정답지 스캔 4건) | [raw/README.md](raw/README.md) |
 | `analysis/catalog/` | **유형 카탈로그 = 출제의 정본** + 마스터(A~F 조합 엔진) + 난이도 루브릭(Tier·DF) + 코드 등록부 | [analysis/TYPE_CATALOG.md](analysis/TYPE_CATALOG.md), [catalog/CODE_REGISTRY.md](analysis/catalog/CODE_REGISTRY.md) |
@@ -84,8 +84,9 @@
 ```
 origin_data/<코퍼스ID>/               원본 PDF (영구 보존, 무변형)
 corpus/<코퍼스ID>/                    같은 ID의 작업 정제본
-  ├─ meta.yml                        등급·회차·렌더 파라미터·신뢰도
+  ├─ meta.yml                        등급·회차·렌더 파라미터·신뢰도 (+ answer_key → generated_answer.md)
   ├─ transcript.md                   문항 전사본 (type-extractor 산출)
+  ├─ generated_answer.md             원본 생성 답지 1:1 풀이 (DOC_LOCATION §3-1)
   └─ verify_log.tsv                  단계별 검증 원장 — 사유+근거 페이지 인용, append-only
 corpus/_images/<코퍼스ID>/pNN.png     판독 이미지 (PDF에서 재생성 가능 — git 미추적)
 ```

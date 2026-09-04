@@ -56,16 +56,19 @@ UTF-8. BOM은 TSV에만 붙인다(Windows Excel 호환). 셀 안 개행 금지 �
 
 저장값은 ASCII 코드, 화면 출력만 LABEL_MAP의 심볼·한글이다. 신규 enum은 이 문서에 코드표를 먼저 추가한 뒤 쓴다.
 
-### 1.5 정답지류(회차 공용 자료)의 취급 — v1.7 (A12 명문화)
+### 1.5 정답지류의 취급 — v1.7 (A12 명문화) + v1.9 생성 답지(260901)
 
-> 대상: 한 회차에 여러 과목의 정답을 함께 수록한 정답지·채점 기준지
+> 대상 A — **회차 공용 공식 정답지**: 한 회차에 여러 과목의 정답을 함께 수록한 정답지·채점 기준지
 > (예: `2025_1학기_1학년_중간` 폴더의 통합본 정답 파일, raw/정답/*.png 스캔).
+> 대상 B — **원본 생성 답지**: 부교재·기출 원문 1:1 풀이로 우리가 생성한 답지(`corpus/<ID>/generated_answer.md`, DOC_LOCATION §3-1).
 
-- **코퍼스ID를 발급하지 않는다** — §1.3 코퍼스ID 패턴은 subject_code가 성립하는 자료 전용이므로
-  회차 공용 자료는 패턴 전제가 불충족된다.
-- 추적처: 소속 회차 유닛의 `note`(HARVEST_LOG) + 동일 회차 개별 자료 meta.yml의 `answer_key`(§5.7).
-- `extracted/INDEX.md`에는 발견 사실로 등재하되 코퍼스ID 칸은 `-`를 유지한다.
-- 물리 위치는 발견 당시 위치를 유지한다(`raw/정답/*.png` 선례 — 분석 문서 인용 경로 보호).
+- **대상 A(공용 공식 정답지)는 코퍼스ID를 발급하지 않는다** — §1.3 패턴은 subject_code 전제이므로 불충족.
+  추적처: 소속 회차 유닛의 `note`(HARVEST_LOG) + 동일 회차 개별 자료 meta.yml의 `answer_key`(§5.7).
+  `extracted/INDEX.md`에는 발견 사실로 등재하되 코퍼스ID 칸은 `-`를 유지한다.
+  물리 위치는 발견 당시 위치를 유지한다(`raw/정답/*.png` 선례).
+- **대상 B(생성 답지)는 코퍼스 유닛에 귀속**된다 — 정식 위치 `corpus/<코퍼스ID>/generated_answer.md`,
+  `meta.yml:answer_key = "generated_answer.md"`로 추적, `HARVEST_LOG.tsv` note에 `generated_answer` 표기,
+  배포용 사본은 `output/<YYMMDD>/`에 둔다(DOC_LOCATION §3-1). 생성 답지는 원본 PDF가 `origin_data/<ID>/`에 영구 보존되는 것과 짝을 이룬다.
 
 ## 2. 문서 클래스 분류표
 
@@ -254,9 +257,9 @@ exam_code: "2026-1M"       # 회차코드(§4.6). 회차 없는 자료(부교재
 variant: master            # master=고사원안 | student=학생 응시본 — 별도 코퍼스ID로 분리 등록
 pages: 18
 items: 93
-render_dpi: 160            # 판독 이미지(corpus/_images/<id>/pNN.png) 렌더 파라미터 → 재생성 보장
-render_tool: "PyMuPDF"
-transcribed_at: null       # ISO 8601. null = 미전사
+render_dpi: 160            # 판독 이미지(corpus/_images/<id>/pNN.png) 렌더 파라미터 → 재생성 보장 (HWP/DOC 원본은 PDF화 후 동일 dpi로 렌더)
+render_tool: "PyMuPDF"     # HWP/DOC → PDF화 도구는 origin_data에 PDF화본 병치 후 동일 툴체인 사용
+transcribed_at: null       # ISO 8601. null = 미전사 — **1차 정제 게이트**: 이 값이 null이면 분류 진입 금지 (CLAUDE.md 작업 흐름표, corpus/_README.md)
 method: "PyMuPDF PNG(dpi130+) + LLM 판독"
 confidence: medium         # high|medium|low
 answer_key: null           # 동일 단위 내 정답지 파일명(answers.*). 없으면 null
@@ -265,6 +268,7 @@ catalog_ref: "analysis/catalog/math2.md"
 
 Writer: `type-extractor`, at transcription completion (its procedure already determines
 grade / exam_code). The main loop assigns the corpus ID and folder before extraction runs.
+**게이트**: `transcribed_at/render_dpi/render_tool`이 채워지고 `corpus/_images/<ID>/pNN.png` + `transcript.md`(도표 문항은 이미지 링크 포함) + `verify_log.tsv` transcribe 행이 모두 존재해야 **분류(PROPOSE) 진입 가능** — 미충족 시 `▲ blocked` (원본 재열람 방지, corpus/_README.md 1차 정제 게이트).
 
 ### 5.7-A verify_log.tsv (단계별 검증 원장, append-only — 260825 신설)
 
