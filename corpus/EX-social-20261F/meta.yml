@@ -1,0 +1,21 @@
+id: EX-social-20261F
+title: "1학년1학기_통합사회1_기말.pdf (2026학년도 1학기 통합사회1과 기말고사 문제지)"
+grade: 1                   # 기출(실제 응시본) — CLAUDE.md 원칙 6
+exam_code: "2026-1F"       # 2026년 1학기 기말고사
+variant: student            # 학생 응시본으로 보임(전 문항 선택지·<보기>에 연필/펜 표시 관측) — 필기는 전사 대상 아님
+pages: 8                    # 표지 인쇄 선언값 그대로("총 8 쪽"). 실제 렌더 이미지는 10장(표지 1 + 본문 8 + 인쇄내용 없는 여분 1쪽) — G1은 렌더 이미지 수 기준
+items: 27                   # 인쇄 선언 합계(선택형 24 + 단답형 3). 전사로 27문항 전건 완결 확인(아래 참고)
+render_dpi: 160
+render_tool: "PyMuPDF"
+transcribed_at: "2026-09-04"
+method: "PyMuPDF PNG(dpi160, 분모 기준본, 회전 미보정) + LLM vision 판독. 임베드 원본(4299x3035 jpeg, 계산 실효dpi=300)을 페이지별 실측 회전각(홀수쪽 PDF 페이지=-90도/짝수쪽=+90도, PIL Image.rotate 부호 기준)으로 정립한 native 렌더(corpus/_images/EX-social-20261F/native/pNN.png, 분할 없음 — 지면이 1장짜리 좌우 2열 인쇄이며 물리적으로 분할된 스캔이 아님)로 판독. 스캔 물리쪽 순서와 인쇄쪽 번호가 어긋남(예: PDF p04가 인쇄 '전체 8면 중 3면')을 전 10쪽 대조로 확인, 상세는 transcript.md 지면 구조 표 참조."
+confidence: high            # 27문항 전건 완결 판독(절단·미발견 0), 배점 표식 27/27 확인, 배점 합계 100.0점으로 내부 정합성까지 확인됨
+answer_key: null            # 2026-1 정답지 없음(EXTRACTION_LOG 선례)
+catalog_ref: null           # type-proposer가 채움(원칙 1)
+
+# --- 아래는 스키마 밖 참고 주석(집계 근거는 transcript.md "판독 상태 총괄" + verify_log.tsv) ---
+# 선택형: 완결 24(1~24) / 부분판독 0 / 미발견 0 = 24 (인쇄 선언 24와 차 0)
+# 단답형: 완결 3([단답형1],[단답형2],[단답형3]) / 부분판독 0 / 미발견 0 = 3 (인쇄 선언 3과 차 0)
+# 인쇄 선언(27) 대 전사 확인 문항(27) 사이 차 0 — EX-social-20261M과 달리 unreadable 행 0건
+# scope: partial 아님 — 발주문 F3-2 사전 여백 실측(좌 4.00%·우 4.14%, 판정선 3.71% 이상)이 그대로
+# 완결 전사로 이어짐. 참고: output/260903/rev/260903_06_arbiter_ruling_cycle1_f.md F1/F3
