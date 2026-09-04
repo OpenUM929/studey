@@ -1,12 +1,7 @@
-# 원본 기출 자료 및 중간 산출물 (재생성 가능) — 단 git 추적 중이던 자료는 유지(A14·F5)
-origin_data/*
-!origin_data/NY-math1-2021/
-!origin_data/NY-math1-2022/
-!origin_data/SUP-math2-2026/
-extracted/
-
-# 판독용 렌더 이미지 — 원본 PDF에서 결정론적으로 재생성 가능 (260825)
-corpus/_images/
+# 데이터 추적 정책 (260904~): 원본·렌더 이미지·정제물을 git 추적해
+# 다른 장소에서도 clone만으로 작업을 이어갈 수 있게 한다.
+# zip은 풀린 폴더와 내용이 중복되므로 제외
+*.zip
 
 # OS / 편집기
 Thumbs.db

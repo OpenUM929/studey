@@ -88,7 +88,7 @@ corpus/<코퍼스ID>/                    같은 ID의 작업 정제본
   ├─ transcript.md                   문항 전사본 (type-extractor 산출)
   ├─ generated_answer.md             원본 생성 답지 1:1 풀이 (DOC_LOCATION §3-1)
   └─ verify_log.tsv                  단계별 검증 원장 — 사유+근거 페이지 인용, append-only
-corpus/_images/<코퍼스ID>/pNN.png     판독 이미지 (PDF에서 재생성 가능 — git 미추적)
+corpus/_images/<코퍼스ID>/pNN.png     판독 이미지 (git 추적 — 260904~, zip 중복본만 제외)
 ```
 
 **검증 사료 3중 축**: 원본 → 판독 이미지 → verify_log.tsv. 어떤 주장("유형X=문항12번")이든 이 축으로 소급 검증한다.

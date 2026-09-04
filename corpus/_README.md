@@ -19,7 +19,7 @@ corpus/<코퍼스ID>/                   ← 같은 ID의 작업 정제본 (1차 
   ├─ transcript.md                  ← 문항 전사본 (type-extractor 산출 — 원문 계수 절대 보존, 도표 문항은 _images 링크 포함)
   ├─ generated_answer.md            ← 원본 생성 답지 1:1 풀이 (DOC_LOCATION §3-1, DATA_STANDARD §1.5) — meta.yml:answer_key로 추적
   └─ verify_log.tsv                 ← 단계별 검증 원장 (DATA_STANDARD §5.7-A)
-corpus/_images/<코퍼스ID>/pNN.png    ← 판독용 페이지 렌더 (meta.yml 파라미터로 재생성 가능 — git 미추적, HWP/DOC는 PDF화 후 렌더)
+corpus/_images/<코퍼스ID>/pNN.png    ← 판독용 페이지 렌더 (git 추적 — 260904~, zip 중복본만 제외. HWP/DOC는 PDF화 후 렌더)
 ```
 
 ## 1차 정제 게이트 (260901 신설 — 원본 재열람 방지)
