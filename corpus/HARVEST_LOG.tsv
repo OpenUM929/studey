@@ -36,3 +36,33 @@
 260825	EX-history-20261F	-	-	〃	〃	〃
 260825	NY-math1-2021	-	배점 실측(난이도 루브릭)	-	-	260825 루트 test/에서 이전(PRD A6, git 추적 파일) — 문제·답 pdf/txt 4건
 260825	NY-math1-2022	-	배점 실측(난이도 루브릭)	-	-	〃
+260901	SUP-math2-2026	-	-	-	-	generated_answer: 47제 1차 풀이 추가 (DOC_LOCATION §3-1, answer_key=generated_answer.md, output/260901 사본)
+260901	SUP-math2-2026	—	—	—	0	1차 분류 완료: 93문항 전건 SM2-01~33 배정 (G1 15+G2 8+G3 15+G4 9+G5 9+G6 6+G7 8+G8 23), pNN 100%, BLOCKED 0, v3 정본(5BD44C6) 대조 — output/260901/260901_02 (3D32EE4) 외부 type-proposer 회람 대기
+260901	SUP-math2-2026	—	—	—	—	[폐기] 260901_02 카탈로그 빈도 재인용 초안 폐기 — transcript 독립 미충족
+260901	SUP-math2-2026	—	—	—	0	[TRUE] 1차 분류 TRUE: 93문항 transcript 독립 배정 SM2-01~33 전건(15+23+32+23), pNN 100%, BLOCKED 0, v3(5BD44C6) 대조, output/260901_03 — 외부 type-proposer 재회람 대기
+260902	EX-math1-20242M	GAP 19 후보	—	—	0	[PROVISIONAL] 1차 분류: 22문항 transcript 독립 배정 — SM-04 1건 + GAP 19건(집합·명제·함수), sha 3f27974, output/260902 — 외부 type-proposer 회람 대기
+260902	EX-math1-20242F	SM-15·16 8건	—	—	0	[PROVISIONAL] 1차 분류: 22문항 중 SM-15 6+SM-16 2, GAP 13(유리·무리), output/260902 — 회람 대기
+260902	EX-science-20242M	SCI-* 임시	—	—	0	[PROVISIONAL] 1차 분류: 29문항 provenance-first, p01~p07, output/260902 — 회람 대기
+260902	EX-english-20242F	PROVISIONAL	—	—	0	[PROVISIONAL] 1차 분류: 29문항 provenance-first, output/260902/EX-english-20242F_classification.md (00F11C0) — 회람 대기
+260902	EX-english-20242M	PROVISIONAL	—	—	0	[PROVISIONAL] 1차 분류: 30문항 provenance-first, output/260902/EX-english-20242M_classification.md (F7EE39F) — 회람 대기
+260902	EX-english-20252F	PROVISIONAL	—	—	0	[PROVISIONAL] 1차 분류: 33문항 provenance-first, output/260902/EX-english-20252F_classification.md (934C576) — 회람 대기
+260902	EX-english-20252M	PROVISIONAL	—	—	0	[PROVISIONAL] 1차 분류: 32문항 provenance-first, output/260902/EX-english-20252M_classification.md (09DCEAD) — 회람 대기
+260902	EX-history-20242F	PROVISIONAL	—	—	0	[PROVISIONAL] 1차 분류: 26문항 provenance-first, output/260902/EX-history-20242F_classification.md (CEBEFC6) — 회람 대기
+260902	EX-history-20242M	PROVISIONAL	—	—	0	[PROVISIONAL] 1차 분류: 28문항 provenance-first, output/260902/EX-history-20242M_classification.md (34AD321) — 회람 대기
+260902	EX-history-20252F	PROVISIONAL	—	—	0	[PROVISIONAL] 1차 분류: 29문항 provenance-first, output/260902/EX-history-20252F_classification.md (8EFF0F3) — 회람 대기
+260902	EX-history-20252M	PROVISIONAL	—	—	0	[PROVISIONAL] 1차 분류: 29문항 provenance-first, output/260902/EX-history-20252M_classification.md (617029E) — 회람 대기
+260902	EX-info-20252F	PROVISIONAL	—	—	0	[PROVISIONAL] 1차 분류: 25문항 provenance-first, output/260902/EX-info-20252F_classification.md (57238B7) — 회람 대기
+260902	EX-info-20252M	PROVISIONAL	—	—	0	[PROVISIONAL] 1차 분류: 25문항 provenance-first, output/260902/EX-info-20252M_classification.md (FC554B1) — 회람 대기
+260902	EX-korean-20242F	PROVISIONAL	—	—	0	[PROVISIONAL] 1차 분류: 30문항 provenance-first, output/260902/EX-korean-20242F_classification.md (CEDA76A) — 회람 대기
+260902	EX-korean-20242M	PROVISIONAL	—	—	0	[PROVISIONAL] 1차 분류: 28문항 provenance-first, output/260902/EX-korean-20242M_classification.md (A934759) — 회람 대기
+260902	EX-korean-20252F	PROVISIONAL	—	—	0	[PROVISIONAL] 1차 분류: 31문항 provenance-first, output/260902/EX-korean-20252F_classification.md (61C7307) — 회람 대기
+260902	EX-korean-20252M	PROVISIONAL	—	—	0	[PROVISIONAL] 1차 분류: 32문항 provenance-first, output/260902/EX-korean-20252M_classification.md (0B4B06B) — 회람 대기
+260902	EX-math2-20252F	PROVISIONAL	—	—	0	[PROVISIONAL] 1차 분류: 23문항 provenance-first, output/260902/EX-math2-20252F_classification.md (763C61D) — 회람 대기
+260902	EX-math2-20252M	PROVISIONAL	—	—	0	[PROVISIONAL] 1차 분류: 22문항 provenance-first, output/260902/EX-math2-20252M_classification.md (40410F0) — 회람 대기
+260902	EX-science-20242F	PROVISIONAL	—	—	0	[PROVISIONAL] 1차 분류: 32문항 provenance-first, output/260902/EX-science-20242F_classification.md (82D783E) — 회람 대기
+260902	EX-science-20252F	PROVISIONAL	—	—	0	[PROVISIONAL] 1차 분류: 33문항 provenance-first, output/260902/EX-science-20252F_classification.md (8DB3527) — 회람 대기
+260902	EX-science-20252M	PROVISIONAL	—	—	0	[PROVISIONAL] 1차 분류: 29문항 provenance-first, output/260902/EX-science-20252M_classification.md (9AF5208) — 회람 대기
+260902	EX-social-20242F	PROVISIONAL	—	—	0	[PROVISIONAL] 1차 분류: 24문항 provenance-first, output/260902/EX-social-20242F_classification.md (1823B83) — 회람 대기
+260902	EX-social-20242M	PROVISIONAL	—	—	0	[PROVISIONAL] 1차 분류: 28문항 provenance-first, output/260902/EX-social-20242M_classification.md (9436718) — 회람 대기
+260902	EX-social-20252F	PROVISIONAL	—	—	0	[PROVISIONAL] 1차 분류: 27문항 provenance-first, output/260902/EX-social-20252F_classification.md (DD003A9) — 회람 대기
+260902	EX-social-20252M	PROVISIONAL	—	—	0	[PROVISIONAL] 1차 분류: 25문항 provenance-first, output/260902/EX-social-20252M_classification.md (9F5C07B) — 회람 대기

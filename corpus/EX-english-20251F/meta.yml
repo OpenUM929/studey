@@ -1,0 +1,14 @@
+id: EX-english-20251F
+title: "2025_1학기_기말_1학년_공통영어1_고사원안.hwp"
+grade: 1
+exam_code: "2025-1F"
+variant: master
+pages: 13
+items: 31
+render_dpi: null
+render_tool: "hwp2md.py"
+transcribed_at: 2026-09-02
+method: "hwp2md.py(hwp5html) 변환 텍스트 축자 보존 + build_corpus_unit.py 수율 대조"
+confidence: high
+answer_key: null
+catalog_ref: null

@@ -13,13 +13,28 @@
 ## 유닛 해부도 (origin_data와 1:1)
 
 ```
-origin_data/<코퍼스ID>/              ← 원본 PDF 등 (영구 보존, 무변형)
-corpus/<코퍼스ID>/                   ← 같은 ID의 작업 정제본
-  ├─ meta.yml                       ← 자료 등급·회차·렌더 파라미터·신뢰도 (DATA_STANDARD §5.7)
-  ├─ transcript.md                  ← 문항 전사본 (type-extractor 산출 — 원문 계수 절대 보존)
+origin_data/<코퍼스ID>/              ← 원본 (PDF/HWP/DOC 등 영구 보존, 무변형 — HWP/DOC는 PDF화본을 함께 보관, §1차 정제 참조)
+corpus/<코퍼스ID>/                   ← 같은 ID의 작업 정제본 (1차 정제 게이트 통과 후에만 분류 진입)
+  ├─ meta.yml                       ← 자료 등급·회차·렌더 파라미터·신뢰도 (DATA_STANDARD §5.7) — answer_key가 generated_answer.md를 가리킴
+  ├─ transcript.md                  ← 문항 전사본 (type-extractor 산출 — 원문 계수 절대 보존, 도표 문항은 _images 링크 포함)
+  ├─ generated_answer.md            ← 원본 생성 답지 1:1 풀이 (DOC_LOCATION §3-1, DATA_STANDARD §1.5) — meta.yml:answer_key로 추적
   └─ verify_log.tsv                 ← 단계별 검증 원장 (DATA_STANDARD §5.7-A)
-corpus/_images/<코퍼스ID>/pNN.png    ← 판독용 페이지 렌더 (meta.yml 파라미터로 재생성 가능 — git 미추적)
+corpus/_images/<코퍼스ID>/pNN.png    ← 판독용 페이지 렌더 (meta.yml 파라미터로 재생성 가능 — git 미추적, HWP/DOC는 PDF화 후 렌더)
 ```
+
+## 1차 정제 게이트 (260901 신설 — 원본 재열람 방지)
+
+**원칙**: 어떤 분류·유형 배정·사실 검증도 **1차 정제물이 완성되기 전에는 시작하지 않는다**. 원본을 매번 뜯으면 데이터 소모·context 낭비가 반복되므로, 정제물을 정본으로 쓴다.
+
+| 순서 | 입력 → 출력 | 도구·책임 | 산출물 |
+|------|-------------|-----------|--------|
+| 0 | HWP/DOC 등 비-PDF 원본 → **PDF화** | `tools/hwp2pdf` 등, `type-extractor` 준비 단계 | `origin_data/<ID>/`에 PDF화본 보관(원본과 병치, 무변형 원본 훼손 금지) — HWP 수식 유실 위험은 `verify_log.tsv`에 `unreadable`로 기록 |
+| 1 | PDF → 페이지 이미지 | `PyMuPDF` `dpi≥130` (권장 160), `type-extractor` | `corpus/_images/<ID>/pNN.png` |
+| 2 | 이미지 → 전사 | `type-extractor` (분류 판단 금지) | `corpus/<ID>/transcript.md` — 도표·그래프 문항은 `![](../_images/<ID>/pNN.png)` 이미지 링크 포함, 계수·좌표 byte-equal |
+| 3 | 전사 검증 | `type-extractor` | `verify_log.tsv` transcribe 행 + `meta.yml: transcribed_at/render_dpi/render_tool/confidence` 채움 |
+
+**게이트 조건**: `transcript.md` + `_images/pNN.png` + `verify_log.tsv` transcribe 행 + `meta.yml` 4필드가 모두 채워져야 **1차 분류(PROPOSE) 진입 가능** (`CLAUDE.md` 작업 흐름표 참조). 미충족 시 분류는 `▲ blocked`. 이후 분류·검토·생성은 **원본 PDF 재열람이 아니라 이 정제물**로 수행한다 — 원본은 3중 축 소급 증거로만 사용한다.
+> **⚠️ 1차 정제 ≠ 1차 분류 (260901):** 정제는 **전사만**(분류 판단 금지 — 유형ID·변형축·함정 한 글자도 적지 않는다, 산출물은 `corpus/<ID>/`에만), 분류는 **정제물을 다시 읽어 한 문항씩 유형에 배정**하는 작업(산출물은 `output/<YYMMDD>/`에만). 카탈로그 `출제 빈도`를 옮겨 적는 것은 분류가 아니다.
 
 ## 검증 사료 3중 축 (260825 신설)
 

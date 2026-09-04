@@ -5,10 +5,18 @@ exam_code: null             # 회차 없는 자료(부교재)
 variant: master             # 고사원안급 프린트 원본
 pages: 18
 items: 93
-render_dpi: null            # 초기 판독 이미지는 스크래치패드에서 유실 — 재판독 시 기입(corpus/_images/<id>/pNN.png)
+render_dpi: 160            # 1차 정제 260901 재생성 — corpus/_images/SUP-math2-2026/p01~p18.png (PyMuPDF dpi160, 1323x1871)
 render_tool: "PyMuPDF"
-transcribed_at: null        # null = 미전사 (HARVEST_LOG remaining 칸과 동일 사실)
-method: "PyMuPDF PNG(dpi130+) + LLM 판독"
-confidence: medium          # 판독 이미지 부재로 재검증 불가 — 재판독 시 갱신
-answer_key: null
+transcribed_at: "2026-09-01"        # 1차 정제 완료 — transcript.md 93문항 (verify_log 18행)
+method: "PyMuPDF PNG(dpi160) + Read vision 전사 (도표 문항 이미지 링크 포함)"
+confidence: medium        # 260901 하향. 전사 18장 판독은 완료됐으나, 종전 high의 근거였던 "generated_answer v3와 대조 완료"는
+                          # 반증됐다 — output/260901/rev/260901_02_SUP-math2-2026_answer_key_verify.md 가 v3에서
+                          # 차단급 오답 2건(1-10 요구량·2-15 최종값)과 미확정 1건(2-2)을 추가 적발했다.
+                          # 전사본 자체의 재대조(소유자 type-extractor) 전까지 medium 유지.
+answer_key: generated_answer.md  # v8 93문항 전수 (sha256[:16] 13f5ad2bf2d5544d, output/260901 사본과 동일 해시 동기화).
+                                 # 260902: solve-back-verifier 93제 독립 맹목 검증 반영. 최종답 92/93 일치,
+                                 # 2-18은 원문 경계 미명시로 -15/-21 양립(교사 판정 사안). 260902 v7에서
+                                 # 두 케이스를 각각의 해법·근거와 함께 보존했다(사용자 지시). 채점 정답 미확정.
+                                 # v4까지는 49문항(#3 12~32 · #4 전체 미작성)이었고 260901 v5에서 44문항 신규 작성.
+                                 # 실측: grep -c '^### [1234]-' = 93 (#1 15 / #2 23 / #3 32 / #4 23)
 catalog_ref: "analysis/catalog/math2.md"

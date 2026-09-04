@@ -1,0 +1,3 @@
+date	step	target	decision	evidence	reason	confidence	actor
+2026-09-02	transcribe	전체 문항(선언 선택형 None·서답형 23)	transcribed	origin_data/2024_1학기_1학년_기말/2024_1학기_기말_1학년_수학_고사원안.hwp → corpus/EX-math1-20241F/transcript.md	hwp2md.py(hwp5html)로 변환한 텍스트를 축자 보존해 전사했다. 배점 표식 실측 23건(참고값), 서답형 문두 0건, 이미지 참조 2회/고유 2건. 유형·정답 판단은 추가하지 않았다.	high	main-loop
+2026-09-02	transcribe	이미지 2회/2건	transcribed	corpus/_images/EX-math1-20241F/bindata (2파일)	본문 마커와 추출 파일을 대조했다. 이미지 내용 판단은 하지 않는다.	high	main-loop

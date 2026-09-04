@@ -1,0 +1,14 @@
+id: EX-korean-20241M
+title: "2024_1학기_중간_1학년_국어_고사원안.hwp"
+grade: 1
+exam_code: "2024-1M"
+variant: master
+pages: 11
+items: 27
+render_dpi: null
+render_tool: "hwp2md.py"
+transcribed_at: 2026-09-02
+method: "hwp2md.py(hwp5html) 변환 텍스트 축자 보존 + build_corpus_unit.py 수율 대조"
+confidence: high
+answer_key: null
+catalog_ref: null

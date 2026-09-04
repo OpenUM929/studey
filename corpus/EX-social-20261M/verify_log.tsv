@@ -1,0 +1,45 @@
+date	step	target	decision	evidence	reason	confidence	actor
+2026-09-04	transcribe	p01(표지)	transcribed	p01	인쇄 선언(총 7쪽·선택형24·서답3)·고사반영비율·유의사항 1~3 전부 확인, 하단 절단 없이 완결됨	high	type-extractor
+2026-09-04	transcribe	p02(1~4번)	transcribed	p02	1,3번은 지문·보기·선택지까지 완결. 2,4번은 좌/우단 하단에서 문항 스템만 보이고 절단됨	high	type-extractor
+2026-09-04	transcribe	p03(5,7번)	transcribed	p03	5,7번은 지문·흐름도까지는 보이나 <보기>·서술 후반이 하단에서 절단. 6번 문항 번호는 이 쪽에 없음	high	type-extractor
+2026-09-04	transcribe	p04(9~12번)	transcribed	p04	9,11번은 지도·선택지까지 완결. 10,12번은 하단에서 스템/자료만 보이고 절단. 8번 문항 번호는 이 쪽에 없음	high	type-extractor
+2026-09-04	transcribe	p05(13~15번)	transcribed	p05	13,15번 완결. 14번은 좌단 하단에서 스템만 보이고 절단	high	type-extractor
+2026-09-04	transcribe	p06(17,19,20번)	transcribed	p06	17,19,20번 전부 완결. 16,18번 문항 번호는 이 쪽에 없음(좌단 17번 이후 여백, 우단 19-20번 사이 여백 재확인)	high	type-extractor
+2026-09-04	transcribe	p07(22,24번)	transcribed	p07	22,24번 모두 지문·<보기>는 보이나 선택지 후반이 하단에서 절단. 21,23번 문항 번호는 이 쪽에 없음	high	type-extractor
+2026-09-04	transcribe	p08(단답형1,2)	transcribed	p08	[단답형1] 문화 변동 사례 4건은 완결이나 <문화 변동 분류표> 본문이 좌단 하단에서 절단. [단답형2] 지도+지문은 4번 빈칸 도입부에서 우단 하단 절단. 단답형3은 이 쪽에 없음(8쪽이 마지막 쪽)	high	type-extractor
+2026-09-04	transcribe	p02+p03+p04+p05+p06+p07+p08	transcribed	p02~p08	각 쪽이 90도 회전 스캔이며 회전 방향이 쪽마다 다름(p02·04·06·08=시계, p03·05·07=반시계)을 dpi160/260 두 배율로 대조 확인. 좌우 2단 구성이며 각 단 하단은 실제 지면 테두리 종결점(크롭 손실 아님, dpi260 재렌더로 확인)	high	type-extractor
+2026-09-04	transcribe	2번	unreadable	p02+좌단하단	"다음 자료에 대한 설명으로 옳은 것은? (단, A~C는 각각 문화"에서 절단. 자료 상자·선택지·배점 전부 확인 불가	high	type-extractor
+2026-09-04	transcribe	4번	unreadable	p02+우단하단	"(가), (나)에 대한 설명으로 가장 적절한 것은?[3.5점]"까지만 보이고 자료 상자·선택지 확인 불가	high	type-extractor
+2026-09-04	transcribe	5번	unreadable	p03+좌단하단	<보기> ㄱ 항목이 "직접전파에 해"에서 절단. ㄴ 이하 <보기>·선택지 확인 불가	high	type-extractor
+2026-09-04	transcribe	6번	unreadable	p02~p08 전체	문항 번호 6번을 8쪽 전체에서 발견하지 못함(dpi160 1차 판독 + dpi260 재확인 2회)	high	type-extractor
+2026-09-04	transcribe	7번	unreadable	p03+우단하단	학생 제출 답안 목록 4번이 "농업이"에서 절단. 5번(있다면)·점수 산정 종결부 확인 불가	high	type-extractor
+2026-09-04	transcribe	8번	unreadable	p02~p08 전체	문항 번호 8번을 8쪽 전체에서 발견하지 못함(dpi160 1차 판독 + dpi260 재확인 2회)	high	type-extractor
+2026-09-04	transcribe	10번	unreadable	p04+좌단하단	자료 본문이 "보행자를 배"에서 절단. 자료 후반부·선택지 확인 불가	high	type-extractor
+2026-09-04	transcribe	12번	unreadable	p04+우단하단	"(가)~(다) 기후 지역에 대한 설명으로 옳은 것은? (단,"에서 절단. 조건절·자료·선택지 확인 불가	high	type-extractor
+2026-09-04	transcribe	14번	unreadable	p05+좌단하단	"다음 자료는 두 지형의 관광 안내문 중 일부이다. ㉠, ㉡ 지형"에서 절단. 자료·선택지 확인 불가	high	type-extractor
+2026-09-04	transcribe	16번	unreadable	p02~p08 전체	문항 번호 16번을 8쪽 전체에서 발견하지 못함(dpi160 1차 판독 + dpi260 재확인 2회)	high	type-extractor
+2026-09-04	transcribe	18번	unreadable	p06	문항 번호 18번을 발견하지 못함. p06 좌단은 17번 선택지 ⑤로 끝나고 그 아래 여백, 우단은 19번 다음 곧바로 20번 — 18번이 들어갈 자리가 없음(dpi260 재확인)	high	type-extractor
+2026-09-04	transcribe	21번	unreadable	p02~p08 전체	문항 번호 21번을 8쪽 전체에서 발견하지 못함(dpi160 1차 판독 + dpi260 재확인 2회)	high	type-extractor
+2026-09-04	transcribe	22번	unreadable	p07+좌단하단	선택지 ④가 "판단하려는"에서 절단(잔여 글자 일부 보이나 판독 불가). ⑤ 선택지는 전혀 보이지 않음	high	type-extractor
+2026-09-04	transcribe	23번	unreadable	p02~p08 전체	문항 번호 23번을 8쪽 전체에서 발견하지 못함(dpi160 1차 판독 + dpi260 재확인 2회)	high	type-extractor
+2026-09-04	transcribe	24번	unreadable	p07+우단하단	<보기> ㄴ 항목이 "다양한 요소들이"에서 절단. ㄷ,ㄹ(있다면)·선택지 확인 불가	high	type-extractor
+2026-09-04	transcribe	단답형1	unreadable	p08+좌단하단	<문화 변동 사례> (가)~(라)는 완결이나 <문화 변동 분류표> 제목만 보이고 표 본문이 하단에서 절단	high	type-extractor
+2026-09-04	transcribe	단답형2	unreadable	p08+우단하단	빈칸 4번이 "4.("에서 절단. 4번 빈칸 설명 및 문항 종결부 확인 불가	high	type-extractor
+2026-09-04	transcribe	단답형3	unreadable	p02~p08 전체	[단답형3]을 8쪽 전체(마지막 쪽 p08 포함)에서 발견하지 못함. 인쇄 선언상 서답형 3문항이나 2문항([단답형1],[단답형2])만 확인됨	high	type-extractor
+2026-09-04	transcribe	p01~p08 재렌더(native)	corrected	corpus/_images/EX-social-20261M/native/p01.png,p02_L.png..p08_R.png	S1-R 재정제(판정 260903_04 A1~A4). 임베드 이미지 8쪽 전건 1개(2150x3035 jpeg) 확인 후 실효dpi=300(계산값 299.5356->round). 회전각 홀수쪽ANG=-90/짝수쪽ANG=+90(8쪽 육안 확인). p01=1단 무분할, p02~p08=2단(좌우 각 1개 실제 지면), 겹침OV=180px, 거터x 실측범위 1467~1576px(w//2=1517 기준, 상하 밴드 각각 측정, 스큐 확인). 기존 pNN.png 8장 및 기존 transcript.md §0~§4 무수정.	high	type-extractor
+2026-09-04	transcribe	문항 6,8,16,18,21,23	corrected	native/p03_L.png+p03_R.png+p06_L.png+p06_R.png+p07_L.png+p07_R.png	native 300dpi 좌우 분할본으로 8쪽 전체 재대조. 각 문항 번호가 들어갈 여백 자체가 없음을 재확인(해당 단이 인접 문항의 도표/서술로 이미 하단까지 채워짐). 재확인 결과 기존 '미발견' 판정과 동일, 신규 발견 없음.	high	type-extractor
+2026-09-04	transcribe	문항 2	corrected	native/p02_L.png	절단 지점 '...각각 문화' native 재확인, 기존과 동일. 하단은 지면 테두리이며 잘려나간 여백 없음.	high	type-extractor
+2026-09-04	transcribe	문항 4	corrected	native/p02_R.png	절단 지점 '...가장 적절한 것은?' native 재확인, 기존과 동일(배점 3.5점은 원본 절에 이미 있어 재기재 안 함).	high	type-extractor
+2026-09-04	transcribe	문항 5	corrected	native/p03_L.png	<보기> ㄱ 항목 절단 지점 '...직접전파에 해' 재대조. 그 아래 매우 흐린 필적 1획이 보이나 손글씨 체크표시와 겹쳐 인쇄 글자로 확정 판독 불가 - 추가 판독 보류(추측 금지).	medium	type-extractor
+2026-09-04	transcribe	문항 7	corrected	native/p03_R.png	<기후 구분 흐름도> 도형·텍스트 선명도 향상 확인(내용 변화 없음). 절단 지점 '...이동식 화전과 플랜테이션 농업이' 기존과 동일 - <보기> 5번·선택지 미확인. 발주문 전제(도표·<보기>·선택지까지 확인)와 달리, 전체쪽 비분할 재렌더와 L/R 분할 크롭 양쪽에서 동일하게 이 지점이 물리적 지면 최하단(테두리 완결, 잔여 여백 없음)임을 재확인 - 사실 기록.	high	type-extractor
+2026-09-04	transcribe	문항 10	corrected	native/p04_L.png	절단 지점 '...보행자를 배' native 재확인, 기존과 동일.	high	type-extractor
+2026-09-04	transcribe	문항 12	corrected	native/p04_R.png	기존 '(단,'까지 확인에서 추가로 다음 줄 일부가 시야에 들어옴 - 단 지면 최하단 경계에 걸려 글자 상단 획만 보이고 하단이 잘려 개별 기후 유형 명칭은 확정 판독 불가(추측 금지). 조건절이 3개 어절 나열 형태로 이어진다는 구조 사실만 추가. 배점은 조건절이 닫히는 지점 이후라 여전히 미확인.	medium	type-extractor
+2026-09-04	transcribe	문항 14	corrected	native/p05_L.png	절단 지점 '...㉠, ㉡ 지형' native 재확인, 기존과 동일.	high	type-extractor
+2026-09-04	transcribe	문항 22	corrected	native/p07_L.png	선택지 4번 절단 지점이 기존 '...판단하려는'에서 다음 줄 '윤리적 관점으로 해석할 수 있다.'까지 확인되어 4번 전체 문장 완결 확인(배점 4점은 원본 절에 이미 있어 재기재 안 함). 선택지 5번은 그 다음이 지면 물리적 하단이라 여전히 미확인.	high	type-extractor
+2026-09-04	transcribe	문항 24	corrected	native/p07_R.png	<보기> ㄴ 항목 절단 지점 '...다양한 요소들이' native 재확인, 기존과 동일.	high	type-extractor
+2026-09-04	transcribe	단답형1	corrected	native/p08_L.png	<문화 변동 분류표> 절단 지점 재대조. 표 제목 아래 가로 구분선과 세로 칸 경계선(3열 구성, 첫 칸 대각선 표시)까지 구조는 보이나 칸 내용은 상단 획만 보이고 하단 절단 - 표가 최소 3열 구성이라는 사실만 추가, 셀 내용은 기존과 동일하게 미확인.	medium	type-extractor
+2026-09-04	transcribe	단답형2	corrected	native/p08_R.png	절단 지점 '...동안이라는 4.(' 바로 다음에 닫는 괄호 ')' 윗부분 곡선이 지면 최하단에 걸쳐 있어 빈칸4가 짧은 채움형태라는 사실만 추가 - 이후 문장은 여전히 미확인.	medium	type-extractor
+2026-09-04	transcribe	단답형3	corrected	native/p02_L.png+..+p08_R.png	8쪽 전체(native 좌우 분할본) 재확인 결과 기존과 동일하게 미발견.	high	type-extractor
+2026-09-04	transcribe	문항 머리 보강(### 25~27)	corrected	corpus/EX-social-20261M/transcript.md#S1-R	C-A3-1/E1-1 요건 충족을 위해 '## 단답형' 갈래 전환 줄 1개 + ### 25.[단답형1]/### 26.[단답형2]/### 27.[단답형3] 정식 문항 머리를 재판독 절에 신규 추가(원본 절 내용은 무수정, 중복 기재 없음). item_heads 24->27.	high	type-extractor
+2026-09-04	transcribe	meta.yml:method	corrected	corpus/EX-social-20261M/meta.yml	old -> new: 'PyMuPDF PNG(dpi160, 보조로 dpi260 재렌더) + LLM vision 판독. 각 쪽이 90도 회전 스캔이며 방향이 쪽마다 달라(p02.04.06.08=시계, p03.05.07=반시계) 쪽별로 보정 후 판독' -> 위 값에 S1-R 재판독 절차(임베드 이미지 원본 추출, 쪽별 실측 회전 -90/+90도, 2단 분할 겹침180px, 실효dpi=300) 설명 추가. render_dpi(160)·items(27)·confidence(medium)·pages(7) 등 다른 필드는 무변경.	high	type-extractor
+2026-09-04	transcribe	meta.yml:confidence 주석	corrected	corpus/EX-social-20261M/meta.yml	old -> new: 값 자체(medium)는 무변경, 주석에 'S1-R 재판독 후에도 동일 - 완결/부분판독/미발견 분류 자체는 불변' 문구 추가.	high	type-extractor
