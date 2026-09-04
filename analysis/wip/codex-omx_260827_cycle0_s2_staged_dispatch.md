@@ -1,3 +1,11 @@
+---
+actor: Codex/OMX
+task: cycle0_S2_staged_dispatch
+target: 11 S1-complete 2025-2 corpus units / 315 items
+status: done
+updated: 2026-08-27
+---
+
 # Codex/OMX WIP — Cycle 0 S2 staged dispatch
 
 Owner: Codex/OMX coordinator (Sol)
@@ -29,3 +37,5 @@ Write ownership: this file only; external type-proposer owns its separate WIP.
 - Codex-only advisory operations / EX-social-20252F / 27 items: selected 1-22 and short-answer 1-5 in three bounded slices (10/10/7). Completed 27/27 coverage; 19 conditional F/D mappings pending 통합사회2 scope compatibility and 8 HOLD rows for population, migration, resource, and energy content lacking an approved axis; 0 new IDs, catalog edits, ledger rows, or answer claims. Evidence: `output/260827/benchmark/type-proposer-cycle0/codex-only/EX-social-20252F/`.
 
 - Codex-only advisory operations / EX-history-20252F / 29 items: selected 1-23 and short-answer 1-6 in three bounded slices (10/10/9). Completed 29/29 coverage; all 29 rows HOLD because the source is 한국사2 while the canonical catalog is 한국사1 and no 한국사2 curriculum range guard or approved taxonomy exists; 0 new IDs, catalog edits, ledger rows, or answer claims. Evidence: `output/260827/benchmark/type-proposer-cycle0/codex-only/EX-history-20252F/`.
+
+NEXT: S2 staged dispatch done — 11 units advisory coverage completed, 10 operational units conditional, 1 reserved isolated comparison HOLD. Next is S3 external Opus pilot gate verification.

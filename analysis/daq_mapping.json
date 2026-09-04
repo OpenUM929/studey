@@ -1,0 +1,994 @@
+﻿{
+    "generated_at":  "2026-09-02",
+    "note":  "웹 DAQ는 이 매핑만으로 신경망 흐름도를 그린다. 각 classify 노드는 transcript:줄로 원천까지 역추적 가능.",
+    "provenance":  "origin-\u003erefine-\u003eclassify-\u003ecatalog",
+    "edges":  [
+                  {
+                      "from":  "SUP-math2-2026:origin",
+                      "to":  "SUP-math2-2026:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "from":  "SUP-math2-2026:refine",
+                      "to":  "SUP-math2-2026:classify",
+                      "type":  "classify"
+                  },
+                  {
+                      "from":  "EX-english-20242F:origin",
+                      "to":  "EX-english-20242F:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "from":  "EX-english-20242F:refine",
+                      "to":  "EX-english-20242F:classify",
+                      "type":  "classify"
+                  },
+                  {
+                      "from":  "EX-english-20242M:origin",
+                      "to":  "EX-english-20242M:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "from":  "EX-english-20242M:refine",
+                      "to":  "EX-english-20242M:classify",
+                      "type":  "classify"
+                  },
+                  {
+                      "from":  "EX-english-20252F:origin",
+                      "to":  "EX-english-20252F:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "from":  "EX-english-20252F:refine",
+                      "to":  "EX-english-20252F:classify",
+                      "type":  "classify"
+                  },
+                  {
+                      "from":  "EX-english-20252M:origin",
+                      "to":  "EX-english-20252M:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "from":  "EX-english-20252M:refine",
+                      "to":  "EX-english-20252M:classify",
+                      "type":  "classify"
+                  },
+                  {
+                      "from":  "EX-history-20242F:origin",
+                      "to":  "EX-history-20242F:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "from":  "EX-history-20242F:refine",
+                      "to":  "EX-history-20242F:classify",
+                      "type":  "classify"
+                  },
+                  {
+                      "from":  "EX-history-20242M:origin",
+                      "to":  "EX-history-20242M:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "from":  "EX-history-20242M:refine",
+                      "to":  "EX-history-20242M:classify",
+                      "type":  "classify"
+                  },
+                  {
+                      "from":  "EX-history-20252F:origin",
+                      "to":  "EX-history-20252F:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "from":  "EX-history-20252F:refine",
+                      "to":  "EX-history-20252F:classify",
+                      "type":  "classify"
+                  },
+                  {
+                      "from":  "EX-history-20252M:origin",
+                      "to":  "EX-history-20252M:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "from":  "EX-history-20252M:refine",
+                      "to":  "EX-history-20252M:classify",
+                      "type":  "classify"
+                  },
+                  {
+                      "from":  "EX-info-20252F:origin",
+                      "to":  "EX-info-20252F:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "from":  "EX-info-20252F:refine",
+                      "to":  "EX-info-20252F:classify",
+                      "type":  "classify"
+                  },
+                  {
+                      "from":  "EX-info-20252M:origin",
+                      "to":  "EX-info-20252M:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "from":  "EX-info-20252M:refine",
+                      "to":  "EX-info-20252M:classify",
+                      "type":  "classify"
+                  },
+                  {
+                      "from":  "EX-korean-20242F:origin",
+                      "to":  "EX-korean-20242F:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "from":  "EX-korean-20242F:refine",
+                      "to":  "EX-korean-20242F:classify",
+                      "type":  "classify"
+                  },
+                  {
+                      "from":  "EX-korean-20242M:origin",
+                      "to":  "EX-korean-20242M:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "from":  "EX-korean-20242M:refine",
+                      "to":  "EX-korean-20242M:classify",
+                      "type":  "classify"
+                  },
+                  {
+                      "from":  "EX-korean-20252F:origin",
+                      "to":  "EX-korean-20252F:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "from":  "EX-korean-20252F:refine",
+                      "to":  "EX-korean-20252F:classify",
+                      "type":  "classify"
+                  },
+                  {
+                      "from":  "EX-korean-20252M:origin",
+                      "to":  "EX-korean-20252M:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "from":  "EX-korean-20252M:refine",
+                      "to":  "EX-korean-20252M:classify",
+                      "type":  "classify"
+                  },
+                  {
+                      "from":  "EX-math1-20242F:origin",
+                      "to":  "EX-math1-20242F:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "from":  "EX-math1-20242F:refine",
+                      "to":  "EX-math1-20242F:classify",
+                      "type":  "classify"
+                  },
+                  {
+                      "from":  "EX-math1-20242M:origin",
+                      "to":  "EX-math1-20242M:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "from":  "EX-math1-20242M:refine",
+                      "to":  "EX-math1-20242M:classify",
+                      "type":  "classify"
+                  },
+                  {
+                      "from":  "EX-math2-20252F:origin",
+                      "to":  "EX-math2-20252F:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "from":  "EX-math2-20252F:refine",
+                      "to":  "EX-math2-20252F:classify",
+                      "type":  "classify"
+                  },
+                  {
+                      "from":  "EX-math2-20252M:origin",
+                      "to":  "EX-math2-20252M:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "from":  "EX-math2-20252M:refine",
+                      "to":  "EX-math2-20252M:classify",
+                      "type":  "classify"
+                  },
+                  {
+                      "from":  "EX-science-20242F:origin",
+                      "to":  "EX-science-20242F:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "from":  "EX-science-20242F:refine",
+                      "to":  "EX-science-20242F:classify",
+                      "type":  "classify"
+                  },
+                  {
+                      "from":  "EX-science-20242M:origin",
+                      "to":  "EX-science-20242M:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "from":  "EX-science-20242M:refine",
+                      "to":  "EX-science-20242M:classify",
+                      "type":  "classify"
+                  },
+                  {
+                      "from":  "EX-science-20252F:origin",
+                      "to":  "EX-science-20252F:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "from":  "EX-science-20252F:refine",
+                      "to":  "EX-science-20252F:classify",
+                      "type":  "classify"
+                  },
+                  {
+                      "from":  "EX-science-20252M:origin",
+                      "to":  "EX-science-20252M:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "from":  "EX-science-20252M:refine",
+                      "to":  "EX-science-20252M:classify",
+                      "type":  "classify"
+                  },
+                  {
+                      "from":  "EX-social-20242F:origin",
+                      "to":  "EX-social-20242F:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "from":  "EX-social-20242F:refine",
+                      "to":  "EX-social-20242F:classify",
+                      "type":  "classify"
+                  },
+                  {
+                      "from":  "EX-social-20242M:origin",
+                      "to":  "EX-social-20242M:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "from":  "EX-social-20242M:refine",
+                      "to":  "EX-social-20242M:classify",
+                      "type":  "classify"
+                  },
+                  {
+                      "from":  "EX-social-20252F:origin",
+                      "to":  "EX-social-20252F:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "from":  "EX-social-20252F:refine",
+                      "to":  "EX-social-20252F:classify",
+                      "type":  "classify"
+                  },
+                  {
+                      "from":  "EX-social-20252M:origin",
+                      "to":  "EX-social-20252M:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "from":  "EX-social-20252M:refine",
+                      "to":  "EX-social-20252M:classify",
+                      "type":  "classify"
+                  },
+                  {
+                      "from":  "SUP-math2-2026:classify",
+                      "to":  "catalog:math2",
+                      "type":  "map"
+                  },
+                  {
+                      "from":  "EX-english-20242F:classify",
+                      "to":  "catalog:english",
+                      "type":  "map"
+                  },
+                  {
+                      "from":  "EX-english-20242M:classify",
+                      "to":  "catalog:english",
+                      "type":  "map"
+                  },
+                  {
+                      "from":  "EX-english-20252F:classify",
+                      "to":  "catalog:english",
+                      "type":  "map"
+                  },
+                  {
+                      "from":  "EX-english-20252M:classify",
+                      "to":  "catalog:english",
+                      "type":  "map"
+                  },
+                  {
+                      "from":  "EX-history-20242F:classify",
+                      "to":  "catalog:history",
+                      "type":  "map"
+                  },
+                  {
+                      "from":  "EX-history-20242M:classify",
+                      "to":  "catalog:history",
+                      "type":  "map"
+                  },
+                  {
+                      "from":  "EX-history-20252F:classify",
+                      "to":  "catalog:history",
+                      "type":  "map"
+                  },
+                  {
+                      "from":  "EX-history-20252M:classify",
+                      "to":  "catalog:history",
+                      "type":  "map"
+                  },
+                  {
+                      "from":  "EX-info-20252F:classify",
+                      "to":  "catalog:info",
+                      "type":  "map"
+                  },
+                  {
+                      "from":  "EX-info-20252M:classify",
+                      "to":  "catalog:info",
+                      "type":  "map"
+                  },
+                  {
+                      "from":  "EX-korean-20242F:classify",
+                      "to":  "catalog:korean",
+                      "type":  "map"
+                  },
+                  {
+                      "from":  "EX-korean-20242M:classify",
+                      "to":  "catalog:korean",
+                      "type":  "map"
+                  },
+                  {
+                      "from":  "EX-korean-20252F:classify",
+                      "to":  "catalog:korean",
+                      "type":  "map"
+                  },
+                  {
+                      "from":  "EX-korean-20252M:classify",
+                      "to":  "catalog:korean",
+                      "type":  "map"
+                  },
+                  {
+                      "from":  "EX-math1-20242F:classify",
+                      "to":  "catalog:math1",
+                      "type":  "map"
+                  },
+                  {
+                      "from":  "EX-math1-20242M:classify",
+                      "to":  "catalog:math1",
+                      "type":  "map"
+                  },
+                  {
+                      "from":  "EX-math2-20252F:classify",
+                      "to":  "catalog:math2",
+                      "type":  "map"
+                  },
+                  {
+                      "from":  "EX-math2-20252M:classify",
+                      "to":  "catalog:math2",
+                      "type":  "map"
+                  },
+                  {
+                      "from":  "EX-science-20242F:classify",
+                      "to":  "catalog:science",
+                      "type":  "map"
+                  },
+                  {
+                      "from":  "EX-science-20242M:classify",
+                      "to":  "catalog:science",
+                      "type":  "map"
+                  },
+                  {
+                      "from":  "EX-science-20252F:classify",
+                      "to":  "catalog:science",
+                      "type":  "map"
+                  },
+                  {
+                      "from":  "EX-science-20252M:classify",
+                      "to":  "catalog:science",
+                      "type":  "map"
+                  },
+                  {
+                      "from":  "EX-social-20242F:classify",
+                      "to":  "catalog:social",
+                      "type":  "map"
+                  },
+                  {
+                      "from":  "EX-social-20242M:classify",
+                      "to":  "catalog:social",
+                      "type":  "map"
+                  },
+                  {
+                      "from":  "EX-social-20252F:classify",
+                      "to":  "catalog:social",
+                      "type":  "map"
+                  },
+                  {
+                      "from":  "EX-social-20252M:classify",
+                      "to":  "catalog:social",
+                      "type":  "map"
+                  }
+              ],
+    "nodes":  [
+                  {
+                      "path":  "origin_data/SUP-math2-2026",
+                      "id":  "SUP-math2-2026:origin",
+                      "type":  "origin"
+                  },
+                  {
+                      "hash":  "AAA81BD",
+                      "path":  "corpus/SUP-math2-2026/transcript.md",
+                      "items":  93,
+                      "id":  "SUP-math2-2026:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "id":  "SUP-math2-2026:classify",
+                      "hash":  "266F0FE",
+                      "path":  "output/260901/260901_03_SUP-math2-2026_classification_TRUE.md",
+                      "type":  "classify",
+                      "items":  93,
+                      "status":  "TRUE"
+                  },
+                  {
+                      "path":  "origin_data/EX-english-20242F",
+                      "id":  "EX-english-20242F:origin",
+                      "type":  "origin"
+                  },
+                  {
+                      "hash":  "43D7A0B",
+                      "path":  "corpus/EX-english-20242F/transcript.md",
+                      "items":  29,
+                      "id":  "EX-english-20242F:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "id":  "EX-english-20242F:classify",
+                      "hash":  "00F11C0",
+                      "path":  "output/260902/EX-english-20242F_classification.md",
+                      "type":  "classify",
+                      "items":  29,
+                      "status":  "PROVISIONAL"
+                  },
+                  {
+                      "path":  "origin_data/EX-english-20242M",
+                      "id":  "EX-english-20242M:origin",
+                      "type":  "origin"
+                  },
+                  {
+                      "hash":  "9867E48",
+                      "path":  "corpus/EX-english-20242M/transcript.md",
+                      "items":  30,
+                      "id":  "EX-english-20242M:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "id":  "EX-english-20242M:classify",
+                      "hash":  "F7EE39F",
+                      "path":  "output/260902/EX-english-20242M_classification.md",
+                      "type":  "classify",
+                      "items":  30,
+                      "status":  "PROVISIONAL"
+                  },
+                  {
+                      "path":  "origin_data/EX-english-20252F",
+                      "id":  "EX-english-20252F:origin",
+                      "type":  "origin"
+                  },
+                  {
+                      "hash":  "3C2464F",
+                      "path":  "corpus/EX-english-20252F/transcript.md",
+                      "items":  33,
+                      "id":  "EX-english-20252F:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "id":  "EX-english-20252F:classify",
+                      "hash":  "934C576",
+                      "path":  "output/260902/EX-english-20252F_classification.md",
+                      "type":  "classify",
+                      "items":  33,
+                      "status":  "PROVISIONAL"
+                  },
+                  {
+                      "path":  "origin_data/EX-english-20252M",
+                      "id":  "EX-english-20252M:origin",
+                      "type":  "origin"
+                  },
+                  {
+                      "hash":  "689AB51",
+                      "path":  "corpus/EX-english-20252M/transcript.md",
+                      "items":  32,
+                      "id":  "EX-english-20252M:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "id":  "EX-english-20252M:classify",
+                      "hash":  "09DCEAD",
+                      "path":  "output/260902/EX-english-20252M_classification.md",
+                      "type":  "classify",
+                      "items":  32,
+                      "status":  "PROVISIONAL"
+                  },
+                  {
+                      "path":  "origin_data/EX-history-20242F",
+                      "id":  "EX-history-20242F:origin",
+                      "type":  "origin"
+                  },
+                  {
+                      "hash":  "32D5864",
+                      "path":  "corpus/EX-history-20242F/transcript.md",
+                      "items":  26,
+                      "id":  "EX-history-20242F:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "id":  "EX-history-20242F:classify",
+                      "hash":  "CEBEFC6",
+                      "path":  "output/260902/EX-history-20242F_classification.md",
+                      "type":  "classify",
+                      "items":  26,
+                      "status":  "PROVISIONAL"
+                  },
+                  {
+                      "path":  "origin_data/EX-history-20242M",
+                      "id":  "EX-history-20242M:origin",
+                      "type":  "origin"
+                  },
+                  {
+                      "hash":  "61B00FC",
+                      "path":  "corpus/EX-history-20242M/transcript.md",
+                      "items":  28,
+                      "id":  "EX-history-20242M:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "id":  "EX-history-20242M:classify",
+                      "hash":  "34AD321",
+                      "path":  "output/260902/EX-history-20242M_classification.md",
+                      "type":  "classify",
+                      "items":  28,
+                      "status":  "PROVISIONAL"
+                  },
+                  {
+                      "path":  "origin_data/EX-history-20252F",
+                      "id":  "EX-history-20252F:origin",
+                      "type":  "origin"
+                  },
+                  {
+                      "hash":  "A5B61E2",
+                      "path":  "corpus/EX-history-20252F/transcript.md",
+                      "items":  29,
+                      "id":  "EX-history-20252F:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "id":  "EX-history-20252F:classify",
+                      "hash":  "8EFF0F3",
+                      "path":  "output/260902/EX-history-20252F_classification.md",
+                      "type":  "classify",
+                      "items":  29,
+                      "status":  "PROVISIONAL"
+                  },
+                  {
+                      "path":  "origin_data/EX-history-20252M",
+                      "id":  "EX-history-20252M:origin",
+                      "type":  "origin"
+                  },
+                  {
+                      "hash":  "B96CB00",
+                      "path":  "corpus/EX-history-20252M/transcript.md",
+                      "items":  29,
+                      "id":  "EX-history-20252M:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "id":  "EX-history-20252M:classify",
+                      "hash":  "617029E",
+                      "path":  "output/260902/EX-history-20252M_classification.md",
+                      "type":  "classify",
+                      "items":  29,
+                      "status":  "PROVISIONAL"
+                  },
+                  {
+                      "path":  "origin_data/EX-info-20252F",
+                      "id":  "EX-info-20252F:origin",
+                      "type":  "origin"
+                  },
+                  {
+                      "hash":  "01DB3EE",
+                      "path":  "corpus/EX-info-20252F/transcript.md",
+                      "items":  25,
+                      "id":  "EX-info-20252F:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "id":  "EX-info-20252F:classify",
+                      "hash":  "57238B7",
+                      "path":  "output/260902/EX-info-20252F_classification.md",
+                      "type":  "classify",
+                      "items":  25,
+                      "status":  "PROVISIONAL"
+                  },
+                  {
+                      "path":  "origin_data/EX-info-20252M",
+                      "id":  "EX-info-20252M:origin",
+                      "type":  "origin"
+                  },
+                  {
+                      "hash":  "EA58DEF",
+                      "path":  "corpus/EX-info-20252M/transcript.md",
+                      "items":  25,
+                      "id":  "EX-info-20252M:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "id":  "EX-info-20252M:classify",
+                      "hash":  "FC554B1",
+                      "path":  "output/260902/EX-info-20252M_classification.md",
+                      "type":  "classify",
+                      "items":  25,
+                      "status":  "PROVISIONAL"
+                  },
+                  {
+                      "path":  "origin_data/EX-korean-20242F",
+                      "id":  "EX-korean-20242F:origin",
+                      "type":  "origin"
+                  },
+                  {
+                      "hash":  "5F2BC58",
+                      "path":  "corpus/EX-korean-20242F/transcript.md",
+                      "items":  30,
+                      "id":  "EX-korean-20242F:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "id":  "EX-korean-20242F:classify",
+                      "hash":  "CEDA76A",
+                      "path":  "output/260902/EX-korean-20242F_classification.md",
+                      "type":  "classify",
+                      "items":  30,
+                      "status":  "PROVISIONAL"
+                  },
+                  {
+                      "path":  "origin_data/EX-korean-20242M",
+                      "id":  "EX-korean-20242M:origin",
+                      "type":  "origin"
+                  },
+                  {
+                      "hash":  "210906B",
+                      "path":  "corpus/EX-korean-20242M/transcript.md",
+                      "items":  28,
+                      "id":  "EX-korean-20242M:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "id":  "EX-korean-20242M:classify",
+                      "hash":  "A934759",
+                      "path":  "output/260902/EX-korean-20242M_classification.md",
+                      "type":  "classify",
+                      "items":  28,
+                      "status":  "PROVISIONAL"
+                  },
+                  {
+                      "path":  "origin_data/EX-korean-20252F",
+                      "id":  "EX-korean-20252F:origin",
+                      "type":  "origin"
+                  },
+                  {
+                      "hash":  "2F8CBDC",
+                      "path":  "corpus/EX-korean-20252F/transcript.md",
+                      "items":  31,
+                      "id":  "EX-korean-20252F:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "id":  "EX-korean-20252F:classify",
+                      "hash":  "61C7307",
+                      "path":  "output/260902/EX-korean-20252F_classification.md",
+                      "type":  "classify",
+                      "items":  31,
+                      "status":  "PROVISIONAL"
+                  },
+                  {
+                      "path":  "origin_data/EX-korean-20252M",
+                      "id":  "EX-korean-20252M:origin",
+                      "type":  "origin"
+                  },
+                  {
+                      "hash":  "D5D8125",
+                      "path":  "corpus/EX-korean-20252M/transcript.md",
+                      "items":  32,
+                      "id":  "EX-korean-20252M:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "id":  "EX-korean-20252M:classify",
+                      "hash":  "0B4B06B",
+                      "path":  "output/260902/EX-korean-20252M_classification.md",
+                      "type":  "classify",
+                      "items":  32,
+                      "status":  "PROVISIONAL"
+                  },
+                  {
+                      "path":  "origin_data/EX-math1-20242F",
+                      "id":  "EX-math1-20242F:origin",
+                      "type":  "origin"
+                  },
+                  {
+                      "hash":  "973AA4B",
+                      "path":  "corpus/EX-math1-20242F/transcript.md",
+                      "items":  22,
+                      "id":  "EX-math1-20242F:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "id":  "EX-math1-20242F:classify",
+                      "hash":  "7183E60",
+                      "path":  "output/260902/EX-math1-20242F_classification.md",
+                      "type":  "classify",
+                      "items":  22,
+                      "status":  "PROVISIONAL"
+                  },
+                  {
+                      "path":  "origin_data/EX-math1-20242M",
+                      "id":  "EX-math1-20242M:origin",
+                      "type":  "origin"
+                  },
+                  {
+                      "hash":  "3F27974",
+                      "path":  "corpus/EX-math1-20242M/transcript.md",
+                      "items":  22,
+                      "id":  "EX-math1-20242M:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "id":  "EX-math1-20242M:classify",
+                      "hash":  "446AD2D",
+                      "path":  "output/260902/EX-math1-20242M_classification.md",
+                      "type":  "classify",
+                      "items":  22,
+                      "status":  "PROVISIONAL"
+                  },
+                  {
+                      "path":  "origin_data/EX-math2-20252F",
+                      "id":  "EX-math2-20252F:origin",
+                      "type":  "origin"
+                  },
+                  {
+                      "hash":  "6E14144",
+                      "path":  "corpus/EX-math2-20252F/transcript.md",
+                      "items":  23,
+                      "id":  "EX-math2-20252F:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "id":  "EX-math2-20252F:classify",
+                      "hash":  "763C61D",
+                      "path":  "output/260902/EX-math2-20252F_classification.md",
+                      "type":  "classify",
+                      "items":  23,
+                      "status":  "PROVISIONAL"
+                  },
+                  {
+                      "path":  "origin_data/EX-math2-20252M",
+                      "id":  "EX-math2-20252M:origin",
+                      "type":  "origin"
+                  },
+                  {
+                      "hash":  "9E2ED47",
+                      "path":  "corpus/EX-math2-20252M/transcript.md",
+                      "items":  22,
+                      "id":  "EX-math2-20252M:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "id":  "EX-math2-20252M:classify",
+                      "hash":  "40410F0",
+                      "path":  "output/260902/EX-math2-20252M_classification.md",
+                      "type":  "classify",
+                      "items":  22,
+                      "status":  "PROVISIONAL"
+                  },
+                  {
+                      "path":  "origin_data/EX-science-20242F",
+                      "id":  "EX-science-20242F:origin",
+                      "type":  "origin"
+                  },
+                  {
+                      "hash":  "527E8E8",
+                      "path":  "corpus/EX-science-20242F/transcript.md",
+                      "items":  32,
+                      "id":  "EX-science-20242F:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "id":  "EX-science-20242F:classify",
+                      "hash":  "82D783E",
+                      "path":  "output/260902/EX-science-20242F_classification.md",
+                      "type":  "classify",
+                      "items":  32,
+                      "status":  "PROVISIONAL"
+                  },
+                  {
+                      "path":  "origin_data/EX-science-20242M",
+                      "id":  "EX-science-20242M:origin",
+                      "type":  "origin"
+                  },
+                  {
+                      "hash":  "A6CE24E",
+                      "path":  "corpus/EX-science-20242M/transcript.md",
+                      "items":  29,
+                      "id":  "EX-science-20242M:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "id":  "EX-science-20242M:classify",
+                      "hash":  "10BA0E5",
+                      "path":  "output/260902/EX-science-20242M_classification.md",
+                      "type":  "classify",
+                      "items":  29,
+                      "status":  "PROVISIONAL"
+                  },
+                  {
+                      "path":  "origin_data/EX-science-20252F",
+                      "id":  "EX-science-20252F:origin",
+                      "type":  "origin"
+                  },
+                  {
+                      "hash":  "8CF3A26",
+                      "path":  "corpus/EX-science-20252F/transcript.md",
+                      "items":  33,
+                      "id":  "EX-science-20252F:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "id":  "EX-science-20252F:classify",
+                      "hash":  "8DB3527",
+                      "path":  "output/260902/EX-science-20252F_classification.md",
+                      "type":  "classify",
+                      "items":  33,
+                      "status":  "PROVISIONAL"
+                  },
+                  {
+                      "path":  "origin_data/EX-science-20252M",
+                      "id":  "EX-science-20252M:origin",
+                      "type":  "origin"
+                  },
+                  {
+                      "hash":  "AE49901",
+                      "path":  "corpus/EX-science-20252M/transcript.md",
+                      "items":  29,
+                      "id":  "EX-science-20252M:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "id":  "EX-science-20252M:classify",
+                      "hash":  "9AF5208",
+                      "path":  "output/260902/EX-science-20252M_classification.md",
+                      "type":  "classify",
+                      "items":  29,
+                      "status":  "PROVISIONAL"
+                  },
+                  {
+                      "path":  "origin_data/EX-social-20242F",
+                      "id":  "EX-social-20242F:origin",
+                      "type":  "origin"
+                  },
+                  {
+                      "hash":  "49F7D25",
+                      "path":  "corpus/EX-social-20242F/transcript.md",
+                      "items":  24,
+                      "id":  "EX-social-20242F:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "id":  "EX-social-20242F:classify",
+                      "hash":  "1823B83",
+                      "path":  "output/260902/EX-social-20242F_classification.md",
+                      "type":  "classify",
+                      "items":  24,
+                      "status":  "PROVISIONAL"
+                  },
+                  {
+                      "path":  "origin_data/EX-social-20242M",
+                      "id":  "EX-social-20242M:origin",
+                      "type":  "origin"
+                  },
+                  {
+                      "hash":  "3E7FC67",
+                      "path":  "corpus/EX-social-20242M/transcript.md",
+                      "items":  28,
+                      "id":  "EX-social-20242M:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "id":  "EX-social-20242M:classify",
+                      "hash":  "9436718",
+                      "path":  "output/260902/EX-social-20242M_classification.md",
+                      "type":  "classify",
+                      "items":  28,
+                      "status":  "PROVISIONAL"
+                  },
+                  {
+                      "path":  "origin_data/EX-social-20252F",
+                      "id":  "EX-social-20252F:origin",
+                      "type":  "origin"
+                  },
+                  {
+                      "hash":  "5A07364",
+                      "path":  "corpus/EX-social-20252F/transcript.md",
+                      "items":  27,
+                      "id":  "EX-social-20252F:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "id":  "EX-social-20252F:classify",
+                      "hash":  "DD003A9",
+                      "path":  "output/260902/EX-social-20252F_classification.md",
+                      "type":  "classify",
+                      "items":  27,
+                      "status":  "PROVISIONAL"
+                  },
+                  {
+                      "path":  "origin_data/EX-social-20252M",
+                      "id":  "EX-social-20252M:origin",
+                      "type":  "origin"
+                  },
+                  {
+                      "hash":  "C5CC7D6",
+                      "path":  "corpus/EX-social-20252M/transcript.md",
+                      "items":  25,
+                      "id":  "EX-social-20252M:refine",
+                      "type":  "refine"
+                  },
+                  {
+                      "id":  "EX-social-20252M:classify",
+                      "hash":  "9F5C07B",
+                      "path":  "output/260902/EX-social-20252M_classification.md",
+                      "type":  "classify",
+                      "items":  25,
+                      "status":  "PROVISIONAL"
+                  },
+                  {
+                      "path":  "analysis/catalog/math1.md",
+                      "id":  "catalog:math1",
+                      "type":  "catalog"
+                  },
+                  {
+                      "path":  "analysis/catalog/math2.md",
+                      "id":  "catalog:math2",
+                      "type":  "catalog"
+                  },
+                  {
+                      "path":  "analysis/catalog/science.md",
+                      "id":  "catalog:science",
+                      "type":  "catalog"
+                  },
+                  {
+                      "path":  "analysis/catalog/social.md",
+                      "id":  "catalog:social",
+                      "type":  "catalog"
+                  },
+                  {
+                      "path":  "analysis/catalog/history.md",
+                      "id":  "catalog:history",
+                      "type":  "catalog"
+                  },
+                  {
+                      "path":  "analysis/catalog/english.md",
+                      "id":  "catalog:english",
+                      "type":  "catalog"
+                  },
+                  {
+                      "path":  "analysis/catalog/korean.md",
+                      "id":  "catalog:korean",
+                      "type":  "catalog"
+                  },
+                  {
+                      "path":  "CODE_REGISTRY IN-nn",
+                      "id":  "catalog:info",
+                      "type":  "catalog"
+                  }
+              ]
+}

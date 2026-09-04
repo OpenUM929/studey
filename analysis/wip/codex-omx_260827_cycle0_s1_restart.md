@@ -2,7 +2,7 @@
 actor: Codex/OMX
 task: cycle0_S1_restart_and_evidence_baseline
 target: 2025-2학기 미완료 코퍼스 11개
-status: complete
+status: done
 updated: 2026-08-27
 ---
 
