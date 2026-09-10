@@ -1,0 +1,107 @@
+{
+  "executor": "Codex/OMX main loop",
+  "actual_model": "unexposed",
+  "release": "BLOCKED",
+  "changes": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 28084,
+      "sha256": "5901a8628913257a51b2928db61c5f33a97e0d52a3c25fa0d155c158d63b401c"
+    },
+    {
+      "path": "CLAUDE.md",
+      "bytes": 45832,
+      "sha256": "b8adc4e7c7e56f1e57027eb66d3920f8ef202a0c61411b9838d60e1d34465928"
+    },
+    {
+      "path": "analysis/REV_GUIDE.md",
+      "bytes": 48947,
+      "sha256": "371f3963c239d6463320c5cdde5a14f8b811493d33ed403c7e4413a88bca5ffb"
+    },
+    {
+      "path": "README.md",
+      "bytes": 12553,
+      "sha256": "8cd1ac6952d22e04430ed383d55ca3d4bbac2e399bd74d6e4dd990ce8afd6c51"
+    },
+    {
+      "path": "docs/CODEX_TEAM_ASSURANCE_GUIDE.md",
+      "bytes": 6875,
+      "sha256": "c12c97fa5737682b7a4cf84f8a9d03c3e4efb5b1a69b75df35b2f44249c9c63c"
+    },
+    {
+      "path": "docs/OPUS_ASSURANCE_TEAM.md",
+      "bytes": 4798,
+      "sha256": "a14c408ba16f53f1fad39513690851e38024d1a6d653055ae93d5769f1241fa5"
+    },
+    {
+      "path": ".claude/agents/forecast-arbiter.md",
+      "bytes": 6684,
+      "sha256": "fd4d2e599906be723923dfd7afbceb445257de677e0dac24d372c93da0680bb1"
+    },
+    {
+      "path": ".claude/agents/forecast-auditor.md",
+      "bytes": 5967,
+      "sha256": "1238d116227ea7175a7474d3944c737d85184e321caf1298eb4213ec0afb84c6"
+    },
+    {
+      "path": ".claude/agents/forecast-reviewer.md",
+      "bytes": 6302,
+      "sha256": "e19e49d460b898914c50788b630f4661b88c849a1436339d3e5e09fcf5626c96"
+    },
+    {
+      "path": ".claude/agents/forecast-writer.md",
+      "bytes": 6613,
+      "sha256": "963480615bdc81745470933409f8237d3ba57bc49b84780e6eefae3675924584"
+    },
+    {
+      "path": ".claude/agents/item-quality-auditor.md",
+      "bytes": 11852,
+      "sha256": "825669476b4c18a04e03b27be08c6ef68c4489c6d3b6af731bb69e917df526ff"
+    },
+    {
+      "path": ".claude/agents/item-writer.md",
+      "bytes": 12399,
+      "sha256": "8b3094f5ba113b467eda5ee8ce4be39354dbc00e59d78ff77b022d0a929ff9fe"
+    },
+    {
+      "path": ".claude/agents/rev-arbiter.md",
+      "bytes": 9239,
+      "sha256": "c7168c5eca9c56d6150044ca8b0f5a28526d6930048da74e8a059068b4eeb283"
+    },
+    {
+      "path": ".claude/agents/rev-auditor.md",
+      "bytes": 10282,
+      "sha256": "a4f78ef45e36f41398187cdf1bf643cfa3025a875a6a38fedcf741b02e5a2fb0"
+    },
+    {
+      "path": ".claude/agents/rev-writer.md",
+      "bytes": 10425,
+      "sha256": "831fa2893d7014345c20fe1bf2726767546030938b466e96f9149eab9cc513e8"
+    },
+    {
+      "path": ".claude/agents/set-release-manager.md",
+      "bytes": 26180,
+      "sha256": "e43b9b4ec12b46f2179b3522f1adac61390da919379a98d8350291c54c208c48"
+    },
+    {
+      "path": ".claude/agents/solve-back-verifier.md",
+      "bytes": 10278,
+      "sha256": "fbee6663ae716643f39945d692533f56f2e3697b7d49d0df4cc1f81251facb11"
+    },
+    {
+      "path": ".claude/agents/type-extractor.md",
+      "bytes": 13380,
+      "sha256": "06a456acc13a6f2710b7f36531f94ee4255e4bad1e5e95b7aef0734e316c3f1b"
+    },
+    {
+      "path": ".claude/agents/type-proposer.md",
+      "bytes": 11905,
+      "sha256": "863d816ed45e491459a8b7cc2e5af44e1fbb005ecd4b81244d69063e9141c7c5"
+    },
+    {
+      "path": "tools/check_assurance_contract.py",
+      "bytes": 11648,
+      "sha256": "45ed11661961ce1d7d46f5874db0d9b1b05ec724d577844bdf410228459c6802"
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "boundary": "analysis/output/docs/web .md .json .py plus README; excludes output/260907/** and own WIP; after implementation",
+  "count": 28,
+  "files": [
+    {
+      "path": "analysis/catalog/math2.md",
+      "disposition": "current_or_historical_reference_preserved",
+      "sha256": "1c78d93e2eaf9b82c0d75ae724ce7e8e79f7f071dd5fc1d27d116b680befafe6"
+    },
+    {
+      "path": "analysis/rev/260825_01_tag_pipeline_mismatch.md",
+      "disposition": "current_or_historical_reference_preserved",
+      "sha256": "fb91ac0bd93d70a0de60875c99a20d74ad1def6bd922037eb5bf45d0dc8c846e"
+    },
+    {
+      "path": "analysis/rev/260825_06_quiz_standard_update.md",
+      "disposition": "current_or_historical_reference_preserved",
+      "sha256": "7a2c763893cb62f53692a89d2cd816995227a8e3e71e0146a579f02bf87ecc85"
+    },
+    {
+      "path": "analysis/rev/260825_07_tag_pipeline_decision.md",
+      "disposition": "current_or_historical_reference_preserved",
+      "sha256": "19d6955cab4b3b0f98f24ccda25fcabe713ed8da8dd85fc766eb719abebcac58"
+    },
+    {
+      "path": "analysis/rev/260825_07_tag_pipeline_ruling.md",
+      "disposition": "current_or_historical_reference_preserved",
+      "sha256": "0eb09e387ab64591c5514cea26f67652b7e81505683bfb81bd8a8ee08f003fdd"
+    },
+    {
+      "path": "analysis/rev/260830_01_setid_and_axis_reuse_decision.md",
+      "disposition": "current_or_historical_reference_preserved",
+      "sha256": "2b6a1ddc20ea4a498dccd43920a2445c071edca763aa43c94f0dc16bb4a05d2b"
+    },
+    {
+      "path": "analysis/REV_LOG.md",
+      "disposition": "current_or_historical_reference_preserved",
+      "sha256": "1a0394fa334c5ae41f7d4d073b7f626ff1a9f64088ee9b5c49f50342d5fe4ae3"
+    },
+    {
+      "path": "analysis/wip/codex-omx_260830_math2_novel_40.md",
+      "disposition": "current_or_historical_reference_preserved",
+      "sha256": "85a337005bd5fdf115ab3af2b754726712c7f4a225dd47e1e6f8fbbaae5fa016"
+    },
+    {
+      "path": "analysis/wip/item-writer_260830_SET-260830-math2-40_P1_R1.md",
+      "disposition": "current_or_historical_reference_preserved",
+      "sha256": "d626e7b245d6a91d37e4a7d0c1af87974f055f16697b9c781d91813c6abefb64"
+    },
+    {
+      "path": "analysis/wip/item-writer_260830_SET-260830-math2-40_W1_I1.md",
+      "disposition": "current_or_historical_reference_preserved",
+      "sha256": "c2a046a783d521c4563db4a21f424037eb020f59c9d505065d6b129b2506269a"
+    },
+    {
+      "path": "analysis/wip/item-writer_260830_SET-260830-math2-40_W1_I2.md",
+      "disposition": "current_or_historical_reference_preserved",
+      "sha256": "3cffc63a849aae4ad41cd3a22d36ae7be51378a00cdb4ba665ac4a0eb4117376"
+    },
+    {
+      "path": "analysis/wip/item-writer_260830_SET-260830-math2-40_W1_I3A.md",
+      "disposition": "current_or_historical_reference_preserved",
+      "sha256": "89b4e1e922a21ca5b47b7b8bf502166c7fb2b1137ba3dbf53a7ea2631ebd5ff9"
+    },
+    {
+      "path": "analysis/wip/mainloop_260829_math2_comprehensive_25.md",
+      "disposition": "current_or_historical_reference_preserved",
+      "sha256": "36023a6bfba0edaca5771878d56ceb65965e3467cf21dea8819e6a6a568eed16"
+    },
+    {
+      "path": "analysis/wip/mainloop_260907_math2_regate.md",
+      "disposition": "current_or_historical_reference_preserved",
+      "sha256": "e30940bff5203421c0a96cc08b828b9e90f398286d4301c65c57c24863dd460e"
+    },
+    {
+      "path": "analysis/wip/solve-back-verifier_260830_SET-260822-math2-40.md",
+      "disposition": "current_or_historical_reference_preserved",
+      "sha256": "5710985c815e2ad063fb52ccb3f2da21fd92fe345c04bb11871acd57e645166d"
+    },
+    {
+      "path": "analysis/wip/solve-back-verifier_260830_SET-260829-math2-25.md",
+      "disposition": "current_or_historical_reference_preserved",
+      "sha256": "a244ac6e2adb67c0f4127f5ef451fead97dbd484f4c8575fc3413eb116afc3c7"
+    },
+    {
+      "path": "docs/PROMPT_math2.md",
+      "disposition": "current_or_historical_reference_preserved",
+      "sha256": "71159f097d892e5730483cf7434fdce365c6b29ef8f4b4c355f5bd9dbff103b0"
+    },
+    {
+      "path": "output/260822/rev/260824_01_p38_solution_error.md",
+      "disposition": "current_or_historical_reference_preserved",
+      "sha256": "13965b9ede0df015c943f7c58f1549aae4cc0c1325b09832cc4bcab8bfd70494"
+    },
+    {
+      "path": "output/260822/rev/260824_02_scope_and_rubric_gaps.md",
+      "disposition": "current_or_historical_reference_preserved",
+      "sha256": "3dcb1b51afe3e80d2004d5f800482656b35e9d4d321e19a045230f4d3b829a8d"
+    },
+    {
+      "path": "output/260822/rev/260824_03_notation_terms.md",
+      "disposition": "current_or_historical_reference_preserved",
+      "sha256": "aad8c24ddfd776e87425c389e761772ff293369bcaa7f7076a629b508654e83e"
+    },
+    {
+      "path": "output/260822/rev/HISTORY.md",
+      "disposition": "current_or_historical_reference_preserved",
+      "sha256": "b06ca8d99785689fd9e2f0cdbb58ee7053b81c223246e7f219d8eff53cc2649a"
+    },
+    {
+      "path": "output/260829/260829_02_math2_comprehensive_25.md",
+      "disposition": "current_or_historical_reference_preserved",
+      "sha256": "92fc702f282062c109c5f739881baf2c2b33a7fab96fa18c7a55ebae6e466272"
+    },
+    {
+      "path": "output/260830/rev/P1_ADVISORY_REVIEW.md",
+      "disposition": "current_or_historical_reference_preserved",
+      "sha256": "cf742760c978edec8144179a41f102c49a1a31495156cc8fffb107984095a8a1"
+    },
+    {
+      "path": "output/260830/rev/W1_I1_ADVISORY_REVIEW.md",
+      "disposition": "current_or_historical_reference_preserved",
+      "sha256": "1f05f0d2a8f1af67ac9ebdfe77ea2175bf2ccdbd58df35b01234644f1d4a31e1"
+    },
+    {
+      "path": "output/260830/rev/W1_I2_ADVISORY_REVIEW.md",
+      "disposition": "current_or_historical_reference_preserved",
+      "sha256": "d608b2221f5078caa75ec9ca0de072a8058f6f607eeebf3c26cffdb7b63d6be1"
+    },
+    {
+      "path": "output/_index.md",
+      "disposition": "current_or_historical_reference_preserved",
+      "sha256": "a11bcfae8859eac4d74b124fdf6dbd893edd7e27341c5a3e889c267c911ff403"
+    },
+    {
+      "path": "output/test2/260830/25제_종합평가_원본.md",
+      "disposition": "historical_print_not_current",
+      "sha256": "00be63d6486159319c7b505856f9a96526e21406eb41ac64b2083134ac83404b"
+    },
+    {
+      "path": "output/test2/260830/_build_print.py",
+      "disposition": "historical_print_not_current",
+      "sha256": "d3bcecbde68e4a762463c784d494756abb272330b1826c179d8ca14a144b71b9"
+    }
+  ]
+}

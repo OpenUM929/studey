@@ -1,0 +1,71 @@
+{
+  "grade": "author-self-check-only",
+  "calculations": {
+    "25:3": {
+      "answer": "4",
+      "unique": true,
+      "method": "two translation coordinate equations"
+    },
+    "25:4": {
+      "roots": [
+        "3/2 - sqrt(17)/2",
+        "3/2 + sqrt(17)/2"
+      ],
+      "answer": "34",
+      "points": 2,
+      "method": "explicit roots and determinant, independent of Vieta shortcut"
+    },
+    "25:6": {
+      "answer": "3",
+      "unique": true,
+      "method": "matrix powers 2025 and 2026"
+    },
+    "25:7": {
+      "C": "Point2D(4, 7)",
+      "answer": "18",
+      "method": "centroid inverse and determinant area"
+    },
+    "25:22": {
+      "part1": "no circle",
+      "part2_center": [
+        "25/4",
+        "0"
+      ],
+      "radius": "25/4",
+      "unique": true,
+      "method": "general circle coefficients, three point equations"
+    },
+    "25:25(1)": {
+      "all_height_candidates": [
+        "-9",
+        "3"
+      ],
+      "valid_height": "3",
+      "minimizer": "Point2D(4, 0)",
+      "minimum": "10",
+      "method": "reflection lower bound plus equality intersection; b>0 removes -9"
+    },
+    "40:28": {
+      "canonical": "12",
+      "equivalent": "sqrt(144)",
+      "equal": true
+    },
+    "40:29": {
+      "canonical": "8",
+      "equivalent": "sqrt(64)",
+      "equal": true
+    },
+    "40:30": {
+      "canonical": [
+        "8",
+        "12*sqrt(2)"
+      ],
+      "equivalent": [
+        "sqrt(64)",
+        "sqrt(288)"
+      ],
+      "equal": true
+    }
+  },
+  "external_blind_solve": "NOT_RUN"
+}

@@ -1,0 +1,86 @@
+{
+  "stage": "자체 검산 부분 완료; 유사성 입력 ▲ blocked",
+  "owner": "Codex/OMX 메인 루프",
+  "runtime_identity": "/root",
+  "model_depth": "미노출",
+  "independent": false,
+  "source_manifest": "output\\260908\\rev\\260908_04_math2_64_manifest.json",
+  "manifest_sha256": "abfbd1d6971977c086776f7667e3d8a977e04c5691bc35d3b1a634eb19bb7f68",
+  "input_changes": [
+    {
+      "path": "output/260829/260829_02_math2_comprehensive_25.md",
+      "old_bytes": 38377,
+      "old_sha256": "e8199569ec1886c746f0f05cb64d79f8cb261a9cacf2b382e9af116b7b77fe25",
+      "current_bytes": 39318,
+      "current_sha256": "9b1187b1829675ad20c4411ab1866cfc7cb5b701bc7dff02ac859a0f1a9c26bc"
+    },
+    {
+      "path": "output/260822/공통수학2_도형의방정식_모의40.md",
+      "old_bytes": 53172,
+      "old_sha256": "5f976ce596ef8a90e1d7eb56fddbbe331cb924cdd5de1b04806f6cca13259663",
+      "current_bytes": 56503,
+      "current_sha256": "f715032ec06f2f849fea6e49aa79c9ca32e80e5a74999df6c2593af6e1753cb6"
+    }
+  ],
+  "completed_units": [
+    "32u/A1",
+    "32u/A2",
+    "32u/A3",
+    "32u/A4",
+    "32u/A5",
+    "32u/A6",
+    "32u/B1",
+    "32u/B2",
+    "32u/B3",
+    "32u/B4",
+    "32u/B5",
+    "32u/B6",
+    "32u/B7",
+    "32u/B8",
+    "32u/B9",
+    "32u/C1",
+    "32u/C2",
+    "32u/C3",
+    "32u/C4",
+    "32u/C5",
+    "32u/C6",
+    "32u/C7",
+    "32u/C8",
+    "32u/C9",
+    "32u/C10",
+    "32u/D1",
+    "32u/D2",
+    "32u/D3",
+    "32u/D4",
+    "32u/D5",
+    "32u/D6",
+    "32u/D7"
+  ],
+  "artifacts": [
+    {
+      "path": "output\\260908\\rev\\260909_01_math2_32u_self_review.md",
+      "sha256": "ca378c69f72c80376c15de7a41bbc1db6ce44b2ea98761e61a6258d3440e8c7b",
+      "bytes": 5374
+    },
+    {
+      "path": "output\\260908\\rev\\260908_07_math2_32u_selfcheck.py",
+      "sha256": "2b137fa0a59cf85473990b812d1b5a65081c5de35fff6f98bb4251b4568fa56b",
+      "bytes": 7211
+    },
+    {
+      "path": "output\\260908\\rev\\260908_07_math2_32u_selfcheck.json",
+      "sha256": "8fae9e1a95bcc231357d95fdbc429aeb5100f3c0345c14e8d82f91421bf95761",
+      "bytes": 9160
+    }
+  ],
+  "evidence": "32u 32/32 answer match; explanatory_warnings=1; missing/extra/duplicate=[]; exit=0",
+  "blockers": [
+    "25/40 input hash drift",
+    "32u ID ruling absent",
+    "external audit 0/64"
+  ],
+  "quota": "리소스 소진 공지 없음; 컨텍스트 체크포인트",
+  "next": "변경된25·40 버전/소유권 확인 후 별도 입력 재동결(기존 동결 보존); 남은32제 자체 계산과59문항 유사성 검수를 이어간다. 32u 완료 계산32개는 반복 작성하지 않는다.",
+  "next_validation": "python -X utf8 output/260908/rev/260908_07_math2_32u_selfcheck.py",
+  "exclusive_outputs": "이 보고서/계산 증거/메인루프 WIP; 원문 세트 및 기준 파일은 읽기 전용"
+}

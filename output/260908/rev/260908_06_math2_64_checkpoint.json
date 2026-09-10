@@ -1,0 +1,22 @@
+{
+  "stage": "standardization-and-similarity-partial",
+  "owner": "Codex/OMX main loop; actual model/depth not exposed",
+  "completed_units": [
+    "32/A1",
+    "32/C6",
+    "32/C7",
+    "32u/B2",
+    "32u/D7"
+  ],
+  "source_manifest": "output/260908/rev/260908_04_math2_64_manifest.json",
+  "manifest_sha256": "abfbd1d6971977c086776f7667e3d8a977e04c5691bc35d3b1a634eb19bb7f68",
+  "validation": "STRUCTURAL_COPY_OK: sources=5 unchanged; questions=64 answers=64 copies=4 content_equal=4; warnings=0",
+  "blockers": [
+    "32u naming ruling pending",
+    "external independent audit not run",
+    "review/fix separation"
+  ],
+  "next": "Resume audit source/copy hashes; complete remaining59 item comparisons including9 candidates; record proposed changes before owner-authoring stage. Do not regenerate completed5 evidence units.",
+  "next_validation": "python -X utf8 output/260908/rev/260908_04_math2_64_review_prepare.py",
+  "quota": "No resource-exhaustion/reset notice observed; context checkpoint only"
+}

@@ -1,0 +1,26 @@
+﻿item_id	type_id	invariant	non_numeric_axis_1	non_numeric_axis_2	structural_difference	nearest_prior	verdict
+1	SM2-01	Retained item; novelty not re-evaluated				output/260907/260907_02_math2_revision_baseline.json#1	BLOCKED
+2	SM2-03	Retained item; novelty not re-evaluated				output/260907/260907_02_math2_revision_baseline.json#2	BLOCKED
+3	SM2-26	same translation displacement for corresponding points	inverse reconstruction instead of forward image	unknown components distributed across two point pairs	Extract horizontal displacement from one pair and vertical displacement from the other; recover missing source and image components, rather than transporting a fully given third point.	output/260907/260907_02_math2_revision_baseline.json#3	PASS
+4	SM2-07	collinearity imposes a quadratic; use symmetric root relations	one parametrized moving point instead of two separately parametrized vertices	separation of feasible points instead of sum of parameters	Recover the fixed line first, impose the quadratic locus, then turn squared root difference into the squared separation along the line.	output/260907/260907_02_math2_revision_baseline.json#4	PASS
+5	SM2-16	Retained item; novelty not re-evaluated				output/260907/260907_02_math2_revision_baseline.json#5	BLOCKED
+6	SM2-29	ordered reflection composition has period four	reverse reconstruction from late observations instead of forward iteration	two successive partial observations instead of a complete starting point	Two observed x-components determine different unknown starting components after index offsets; reversing the order alone is not claimed as novelty.	output/260907/260907_02_math2_revision_baseline.json#6	PASS
+7	SM2-06	centroid coordinate average and three equal subareas	given centroid replaces given side length	general coordinate triangle and unknown vertex replace regular triangle	Infer the missing vertex from the centroid and obtain full triangle area; alternatively recover the whole area from ABG with known base and centroid height.	output/260907/260907_02_math2_revision_baseline.json#7	PASS
+8	SM2-08	Retained item; novelty not re-evaluated				output/260907/260907_02_math2_revision_baseline.json#8	BLOCKED
+9	SM2-19	Retained item; novelty not re-evaluated				output/260907/260907_02_math2_revision_baseline.json#9	BLOCKED
+10	SM2-18	Retained item; novelty not re-evaluated				output/260907/260907_02_math2_revision_baseline.json#10	BLOCKED
+11	SM2-14	Retained item; novelty not re-evaluated				output/260907/260907_02_math2_revision_baseline.json#11	BLOCKED
+12	SM2-20	Retained item; novelty not re-evaluated				output/260907/260907_02_math2_revision_baseline.json#12	BLOCKED
+13	SM2-28	Retained item; novelty not re-evaluated				output/260907/260907_02_math2_revision_baseline.json#13	BLOCKED
+14	SM2-05	Retained item; novelty not re-evaluated				output/260907/260907_02_math2_revision_baseline.json#14	BLOCKED
+15	SM2-09	Retained item; novelty not re-evaluated				output/260907/260907_02_math2_revision_baseline.json#15	BLOCKED
+16	SM2-17	Retained item; novelty not re-evaluated				output/260907/260907_02_math2_revision_baseline.json#16	BLOCKED
+17	SM2-22	Retained item; novelty not re-evaluated				output/260907/260907_02_math2_revision_baseline.json#17	BLOCKED
+18	SM2-13	Retained item; novelty not re-evaluated				output/260907/260907_02_math2_revision_baseline.json#18	BLOCKED
+19	SM2-27	Retained item; novelty not re-evaluated				output/260907/260907_02_math2_revision_baseline.json#19	BLOCKED
+20	SM2-12	Retained item; novelty not re-evaluated				output/260907/260907_02_math2_revision_baseline.json#20	BLOCKED
+21	SM2-04	Retained item; novelty not re-evaluated				output/260907/260907_02_math2_revision_baseline.json#21	BLOCKED
+22	SM2-23	common chord elimination and circle pencil	impossible third-point case before possible case	center and radius as output instead of two equations	Detect three collinear points as an impossible circle, then reconstruct the circle through the origin and read its center and radius.	output/260907/260907_02_math2_revision_baseline.json#22	PASS
+23	SM2-25	Retained item; novelty not re-evaluated				output/260907/260907_02_math2_revision_baseline.json#23	BLOCKED
+24	SM2-24	Retained item; novelty not re-evaluated				output/260907/260907_02_math2_revision_baseline.json#24	BLOCKED
+25	SM2-33	reflection straightens the path; equality determines minimizing point	known minimum determines unknown endpoint height	minimizer and parameter replace minimum value as target	Use a lower bound with equality, invert the minimum to two height candidates, reject the negative candidate and locate the minimizing point; parts 2 and 3 unchanged.	output/260907/260907_02_math2_revision_baseline.json#25	PASS

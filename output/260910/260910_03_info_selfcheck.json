@@ -1,0 +1,559 @@
+{
+  "author": "메인 루프",
+  "executor": "Codex/OMX",
+  "grade": "proposal",
+  "command": "python -X utf8 analysis/wip/260910_info_composite_author.py --write",
+  "expected_ids": [
+    "A/1",
+    "A/2",
+    "A/3",
+    "A/4",
+    "A/5",
+    "A/6",
+    "A/7",
+    "A/8",
+    "A/9",
+    "A/10",
+    "A/11",
+    "A/12",
+    "A/13",
+    "A/14",
+    "A/15",
+    "A/16",
+    "A/17",
+    "A/18",
+    "A/19",
+    "A/20",
+    "A/21",
+    "A/22",
+    "A/23",
+    "A/24",
+    "A/25",
+    "B/1",
+    "B/2",
+    "B/3",
+    "B/4",
+    "B/5",
+    "B/6",
+    "B/7",
+    "B/8",
+    "B/9",
+    "B/10",
+    "B/11",
+    "B/12",
+    "B/13",
+    "B/14",
+    "B/15",
+    "B/16",
+    "B/17",
+    "B/18",
+    "B/19",
+    "B/20",
+    "B/21",
+    "B/22",
+    "B/23",
+    "B/24",
+    "B/25"
+  ],
+  "observed_ids": [
+    "A/1",
+    "A/2",
+    "A/3",
+    "A/4",
+    "A/5",
+    "A/6",
+    "A/7",
+    "A/8",
+    "A/9",
+    "A/10",
+    "A/11",
+    "A/12",
+    "A/13",
+    "A/14",
+    "A/15",
+    "A/16",
+    "A/17",
+    "A/18",
+    "A/19",
+    "A/20",
+    "A/21",
+    "A/22",
+    "A/23",
+    "A/24",
+    "A/25",
+    "B/1",
+    "B/2",
+    "B/3",
+    "B/4",
+    "B/5",
+    "B/6",
+    "B/7",
+    "B/8",
+    "B/9",
+    "B/10",
+    "B/11",
+    "B/12",
+    "B/13",
+    "B/14",
+    "B/15",
+    "B/16",
+    "B/17",
+    "B/18",
+    "B/19",
+    "B/20",
+    "B/21",
+    "B/22",
+    "B/23",
+    "B/24",
+    "B/25"
+  ],
+  "missing": [],
+  "extra": [],
+  "duplicates": [],
+  "answer_mismatches": [],
+  "warnings": [
+    "external_review_pending",
+    "novelty_review_pending",
+    "student_errors_missing",
+    "textbook_refinement_pending",
+    "set_id_unissued",
+    "tier_unconfirmed"
+  ],
+  "release": "BLOCKED",
+  "results": [
+    {
+      "item": "A/1",
+      "expected": "2",
+      "observed": "2",
+      "match": true
+    },
+    {
+      "item": "A/2",
+      "expected": "[2, 7, 8, 12]",
+      "observed": "[2, 7, 8, 12]",
+      "match": true
+    },
+    {
+      "item": "A/3",
+      "expected": "[1, 3, 2, 4] [3, 2, 4, 1]",
+      "observed": "[1, 3, 2, 4] [3, 2, 4, 1]",
+      "match": true
+    },
+    {
+      "item": "A/4",
+      "expected": "11",
+      "observed": "11",
+      "match": true
+    },
+    {
+      "item": "A/5",
+      "expected": "AC",
+      "observed": "AC",
+      "match": true
+    },
+    {
+      "item": "A/6",
+      "expected": "2 7",
+      "observed": "2 7",
+      "match": true
+    },
+    {
+      "item": "A/7",
+      "expected": "[8]",
+      "observed": "[8]",
+      "match": true
+    },
+    {
+      "item": "A/8",
+      "expected": "[2, 3, 1]",
+      "observed": "[2, 3, 1]",
+      "match": true
+    },
+    {
+      "item": "A/9",
+      "expected": "3",
+      "observed": "3",
+      "match": true
+    },
+    {
+      "item": "A/10",
+      "expected": "[3, 1, 4, 2] [1, 3]",
+      "observed": "[3, 1, 4, 2] [1, 3]",
+      "match": true
+    },
+    {
+      "item": "A/11",
+      "expected": "12 3",
+      "observed": "12 3",
+      "match": true
+    },
+    {
+      "item": "A/12",
+      "expected": "3 4 [4, 1, 3]",
+      "observed": "3 4 [4, 1, 3]",
+      "match": true
+    },
+    {
+      "item": "A/13",
+      "expected": "10 4",
+      "observed": "10 4",
+      "match": true
+    },
+    {
+      "item": "A/14",
+      "expected": "CBC 2",
+      "observed": "CBC 2",
+      "match": true
+    },
+    {
+      "item": "A/15",
+      "expected": "3 10",
+      "observed": "3 10",
+      "match": true
+    },
+    {
+      "item": "A/16",
+      "expected": "5 7 12",
+      "observed": "5 7 12",
+      "match": true
+    },
+    {
+      "item": "A/17",
+      "expected": "[[0, 2], [1, 1]]",
+      "observed": "[[0, 2], [1, 1]]",
+      "match": true
+    },
+    {
+      "item": "A/18",
+      "expected": "14 5",
+      "observed": "14 5",
+      "match": true
+    },
+    {
+      "item": "A/19",
+      "expected": "[4, 5, 1, 2, 3]",
+      "observed": "[4, 5, 1, 2, 3]",
+      "match": true
+    },
+    {
+      "item": "A/20",
+      "expected": "[3, 5]",
+      "observed": "[3, 5]",
+      "match": true
+    },
+    {
+      "item": "A/21",
+      "expected": "3 4",
+      "observed": "3 4",
+      "match": true
+    },
+    {
+      "item": "A/22",
+      "expected": "[3]",
+      "observed": "[3]",
+      "match": true
+    },
+    {
+      "item": "A/23",
+      "expected": "3 20",
+      "observed": "3 20",
+      "match": true
+    },
+    {
+      "item": "A/24",
+      "expected": "2 0",
+      "observed": "2 0",
+      "match": true
+    },
+    {
+      "item": "A/25",
+      "expected": "0 6",
+      "observed": "0 6",
+      "match": true
+    },
+    {
+      "item": "B/1",
+      "expected": "[2, 3, 4, 5]\n[2, 5, 9, 14]",
+      "observed": "[2, 3, 4, 5]\n[2, 5, 9, 14]",
+      "match": true
+    },
+    {
+      "item": "B/2",
+      "expected": "[2, 2, 0, 0]",
+      "observed": "[2, 2, 0, 0]",
+      "match": true
+    },
+    {
+      "item": "B/3",
+      "expected": "7 0",
+      "observed": "7 0",
+      "match": true
+    },
+    {
+      "item": "B/4",
+      "expected": "[11, 15] 15",
+      "observed": "[11, 15] 15",
+      "match": true
+    },
+    {
+      "item": "B/5",
+      "expected": "CBC",
+      "observed": "CBC",
+      "match": true
+    },
+    {
+      "item": "B/6",
+      "expected": "0 2 1",
+      "observed": "0 2 1",
+      "match": true
+    },
+    {
+      "item": "B/7",
+      "expected": "0 [4, 2, 1]",
+      "observed": "0 [4, 2, 1]",
+      "match": true
+    },
+    {
+      "item": "B/8",
+      "expected": "[7, 2] [9, 5]",
+      "observed": "[7, 2] [9, 5]",
+      "match": true
+    },
+    {
+      "item": "B/9",
+      "expected": "[0, 2, 4] True",
+      "observed": "[0, 2, 4] True",
+      "match": true
+    },
+    {
+      "item": "B/10",
+      "expected": "3 [2, 5, 5, 5, 9]",
+      "observed": "3 [2, 5, 5, 5, 9]",
+      "match": true
+    },
+    {
+      "item": "B/11",
+      "expected": "[0, 1, 1, 0] [3, 3]",
+      "observed": "[0, 1, 1, 0] [3, 3]",
+      "match": true
+    },
+    {
+      "item": "B/12",
+      "expected": "2 [0, 0, 3]",
+      "observed": "2 [0, 0, 3]",
+      "match": true
+    },
+    {
+      "item": "B/13",
+      "expected": "0 8",
+      "observed": "0 8",
+      "match": true
+    },
+    {
+      "item": "B/14",
+      "expected": "CDEAB XYZ",
+      "observed": "CDEAB XYZ",
+      "match": true
+    },
+    {
+      "item": "B/15",
+      "expected": "3 -1",
+      "observed": "3 -1",
+      "match": true
+    },
+    {
+      "item": "B/16",
+      "expected": "13 [9, 8]",
+      "observed": "13 [9, 8]",
+      "match": true
+    },
+    {
+      "item": "B/17",
+      "expected": "True [0, 1, 3, 4]",
+      "observed": "True [0, 1, 3, 4]",
+      "match": true
+    },
+    {
+      "item": "B/18",
+      "expected": "[0, 1, 3] 6",
+      "observed": "[0, 1, 3] 6",
+      "match": true
+    },
+    {
+      "item": "B/19",
+      "expected": "3 -1",
+      "observed": "3 -1",
+      "match": true
+    },
+    {
+      "item": "B/20",
+      "expected": "2",
+      "observed": "2",
+      "match": true
+    },
+    {
+      "item": "B/21",
+      "expected": "[0, 2] [[2, 5, 7], [4, 1, 5], [3, 3, 6]]",
+      "observed": "[0, 2] [[2, 5, 7], [4, 1, 5], [3, 3, 6]]",
+      "match": true
+    },
+    {
+      "item": "B/22",
+      "expected": "[3, 2] [8, 8] 5",
+      "observed": "[3, 2] [8, 8] 5",
+      "match": true
+    },
+    {
+      "item": "B/23",
+      "expected": "2 2",
+      "observed": "2 2",
+      "match": true
+    },
+    {
+      "item": "B/24",
+      "expected": "[1, 2, 4, 4] [] [4, 5]",
+      "observed": "[1, 2, 4, 4] [] [4, 5]",
+      "match": true
+    },
+    {
+      "item": "B/25",
+      "expected": "0 16 [1, 1, 1]",
+      "observed": "0 16 [1, 1, 1]",
+      "match": true
+    }
+  ],
+  "inputs": [
+    {
+      "path": "analysis/wip/260910_info_composite_author.py",
+      "bytes": 52250,
+      "sha256": "961b963dc73e3b7eaaaa0f6d98354975fa876c0e3188e83cfc9f1b87a4554076"
+    },
+    {
+      "path": "analysis/catalog/info.md",
+      "bytes": 38377,
+      "sha256": "c50b7213416612f892330a7035e2b75e81a4e57b222748c4e9a022200d15cae3"
+    },
+    {
+      "path": "corpus/SUP-info-2026-01/transcript.md",
+      "bytes": 13134,
+      "sha256": "dd84f2cc5418763fe32caba91483901565d8345e1741c53f321dd357de8feb32"
+    },
+    {
+      "path": "output/260910/rev/260910_02_info_novelty_text_screen.json",
+      "bytes": 26769,
+      "sha256": "63e1e0c837a164eda89c8c22dc122eac62723df99b472a074aad5909b94904b2"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "output/260910/260910_01_info_composite_a.novelty.tsv",
+      "bytes": 11306,
+      "sha256": "95f012e7b409a00da72c68cb15becb3830e75da0b3c2087172af911eb95156bf"
+    },
+    {
+      "path": "output/260910/260910_01_info_composite_a_answers_review.html",
+      "bytes": 16625,
+      "sha256": "a9248b5f526ec0731d15ff58cb361690316794f7b0b7ef2b70a842a4496f61f0"
+    },
+    {
+      "path": "output/260910/260910_01_info_composite_a_answers_review.md",
+      "bytes": 31372,
+      "sha256": "70fa9e18eeae4c313d44f742e94ee9a946b195c95b9e25272c015a138463f109"
+    },
+    {
+      "path": "output/260910/260910_01_info_composite_a_questions_review.html",
+      "bytes": 18032,
+      "sha256": "be7d7724a0736bac253a9602095956c4cd7be881881fdf0e8d331640280afaf1"
+    },
+    {
+      "path": "output/260910/260910_01_info_composite_a_questions_review.md",
+      "bytes": 19401,
+      "sha256": "2017bcaea3eb7c49c65fcbc187596df1a79a5bfb9f2e7664ec2cd01c6c47a88d"
+    },
+    {
+      "path": "output/260910/260910_01_info_composite_a_review.md",
+      "bytes": 49224,
+      "sha256": "521c625c7971fb9f494a8763246303f497b6566aa1eaa40cdef370b5fa37dec7"
+    },
+    {
+      "path": "output/260910/260910_02_info_composite_b.novelty.tsv",
+      "bytes": 12908,
+      "sha256": "f7fed496492690a97f99e9b12bcb526d6b7c4cb8a8ab82a7cc74d8139875a7c2"
+    },
+    {
+      "path": "output/260910/260910_02_info_composite_b_answers_review.html",
+      "bytes": 17940,
+      "sha256": "f1eec0b4fc789de690dc9ce0b944c5e9fac3f7bfeef98100b80862fa6c97b489"
+    },
+    {
+      "path": "output/260910/260910_02_info_composite_b_answers_review.md",
+      "bytes": 33805,
+      "sha256": "dfa2387e3d5ffc9b124a3aa3cdd8bf218f6810bc822415fc610c3f0cae85a6bf"
+    },
+    {
+      "path": "output/260910/260910_02_info_composite_b_questions_review.html",
+      "bytes": 18812,
+      "sha256": "ac70c06e9fd67e03e227391f47293c15e2c47bd114371b92ae25ce28baffb103"
+    },
+    {
+      "path": "output/260910/260910_02_info_composite_b_questions_review.md",
+      "bytes": 20207,
+      "sha256": "a4dea5692f3c1a116fb2771ea628f0afaeef01602864de2040e05bd9bb13ccd6"
+    },
+    {
+      "path": "output/260910/260910_02_info_composite_b_review.md",
+      "bytes": 52463,
+      "sha256": "2f7bb0130508272508429796cc38b343086a9be9da1f4e31d3918efb04c55602"
+    }
+  ],
+  "revision1_replacements": [
+    "A/22",
+    "A/7",
+    "B/1",
+    "B/12",
+    "B/19",
+    "B/25",
+    "B/8"
+  ],
+  "revision2_replacements": [
+    "A/12",
+    "B/10",
+    "B/13",
+    "B/17"
+  ],
+  "revision3_replacements": [
+    "A/10",
+    "A/19",
+    "A/3",
+    "A/8",
+    "B/11",
+    "B/24",
+    "B/7"
+  ],
+  "revision4_replacements": [
+    "A/17",
+    "A/21",
+    "B/15",
+    "B/16",
+    "B/2",
+    "B/21",
+    "B/9"
+  ],
+  "first_pass_corrections": [
+    {
+      "item": "A/1",
+      "old": "7",
+      "new": "2"
+    },
+    {
+      "item": "A/13",
+      "old": "7 4",
+      "new": "10 4"
+    },
+    {
+      "item": "A/19",
+      "old": "15",
+      "new": "16"
+    }
+  ]
+}

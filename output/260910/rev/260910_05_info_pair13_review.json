@@ -1,0 +1,319 @@
+{
+  "author": "메인 루프",
+  "executor": "Codex/OMX",
+  "grade": "proposal",
+  "independent": false,
+  "scope": "직접 영향13개와 TSV에 지정된 기존26제 최근접 문항의 쌍별 재대조만",
+  "snapshots": [
+    {
+      "path": "analysis/wip/260910_info_composite_author.py",
+      "bytes": 40982,
+      "sha256": "2683eb4dc537f7a58ca3cc580b4e081df8fa521b01d4b0e7e189534a4902e9b6"
+    },
+    {
+      "path": "analysis/catalog/info.md",
+      "bytes": 38377,
+      "sha256": "c50b7213416612f892330a7035e2b75e81a4e57b222748c4e9a022200d15cae3"
+    },
+    {
+      "path": "corpus/SUP-info-2026-01/transcript.md",
+      "bytes": 13134,
+      "sha256": "dd84f2cc5418763fe32caba91483901565d8345e1741c53f321dd357de8feb32"
+    },
+    {
+      "path": "output/260910/rev/260910_02_info_novelty_text_screen.json",
+      "bytes": 26769,
+      "sha256": "63e1e0c837a164eda89c8c22dc122eac62723df99b472a074aad5909b94904b2"
+    },
+    {
+      "path": "output/260910/260910_01_info_composite_a.novelty.tsv",
+      "bytes": 10196,
+      "sha256": "5cdffcefb8694b24976d5a44a6244bf35053291baa3b41ad0bba0e00a3d4af73"
+    },
+    {
+      "path": "output/260910/260910_01_info_composite_a_answers_review.html",
+      "bytes": 15683,
+      "sha256": "78fa6c73496dfa670fdbf6bea34cb042d18ac15e61b8d6031184486718f2c376"
+    },
+    {
+      "path": "output/260910/260910_01_info_composite_a_answers_review.md",
+      "bytes": 29545,
+      "sha256": "fee230cdefe4abca4bde155f8b11768039ba6b5aa193ffedf4ea4d2aa2400b10"
+    },
+    {
+      "path": "output/260910/260910_01_info_composite_a_questions_review.html",
+      "bytes": 17388,
+      "sha256": "256c2abc87cf8b29e6cc6508be6573a403cab281435c4745b0c1951a5f529a0b"
+    },
+    {
+      "path": "output/260910/260910_01_info_composite_a_questions_review.md",
+      "bytes": 18734,
+      "sha256": "3a1918e56772a1ae0d4c7dc8f6fadcb39d33c82bf03b8f4a38d0ac485433c29c"
+    },
+    {
+      "path": "output/260910/260910_01_info_composite_a_review.md",
+      "bytes": 46757,
+      "sha256": "7cb3cd71dd06caed963cce76f087a70f2b485c0116dbac17c078276fea6d18eb"
+    },
+    {
+      "path": "output/260910/260910_02_info_composite_b.novelty.tsv",
+      "bytes": 11296,
+      "sha256": "f6d6bf3763e9010fc4d8701712228313d380e69d98c47cef47bebd54e8e2f45a"
+    },
+    {
+      "path": "output/260910/260910_02_info_composite_b_answers_review.html",
+      "bytes": 16511,
+      "sha256": "b245f19d4c56b5413e841e11129f944a63f7de75026c23f3cdbee65f1984879e"
+    },
+    {
+      "path": "output/260910/260910_02_info_composite_b_answers_review.md",
+      "bytes": 31081,
+      "sha256": "eb826e789f6915c8c6f38f3b98645c580c2995a37a1ebca942f9d78eb0593e1c"
+    },
+    {
+      "path": "output/260910/260910_02_info_composite_b_questions_review.html",
+      "bytes": 17862,
+      "sha256": "08d1a353b931f282d8fcef1f0e902dc8987e7f0025ce9a710160a8975275dab3"
+    },
+    {
+      "path": "output/260910/260910_02_info_composite_b_questions_review.md",
+      "bytes": 19214,
+      "sha256": "92c64efa8611706cea299ccb641b941bf987cbc07bbe3d71723d9eb3058b5633"
+    },
+    {
+      "path": "output/260910/260910_02_info_composite_b_review.md",
+      "bytes": 48773,
+      "sha256": "aaf49106a57578abd779b8968a9a731763cd11ed33801ca7840c588a2740b814"
+    },
+    {
+      "path": "output/260908/260908_04_info_midterm_26.md",
+      "bytes": 45287,
+      "sha256": "e635fdd5f27edc96e7a9c96cffa6a474058d835078ec174d344204884fe456ce"
+    }
+  ],
+  "expected": [
+    "A/1",
+    "A/3",
+    "A/5",
+    "A/6",
+    "A/9",
+    "A/10",
+    "A/13",
+    "A/15",
+    "A/18",
+    "A/21",
+    "A/23",
+    "B/7",
+    "B/21"
+  ],
+  "observed": [
+    "A/1",
+    "A/3",
+    "A/5",
+    "A/6",
+    "A/9",
+    "A/10",
+    "A/13",
+    "A/15",
+    "A/18",
+    "A/21",
+    "A/23",
+    "B/7",
+    "B/21"
+  ],
+  "missing": [],
+  "extra": [],
+  "duplicate": [],
+  "rows": [
+    {
+      "item": "A/1",
+      "path": "output/260910/260910_01_info_composite_a_questions_review.md",
+      "line": 24,
+      "prior": "output/260908/260908_04_info_midterm_26.md",
+      "prior_item": 20,
+      "prior_line": 466,
+      "observation": "구조 차이 관측",
+      "reason": "이전 문제는 임계치 이후 누적을 멈춘다. 새 문제는 잔액과 현재 요금의 비교로 더하기/빼기를 교대한다.",
+      "actual_output": "2",
+      "question_excerpt": "**1.** 조건에 따라 바뀌는 잔액 (4점)\n\n다음 파이썬 3 프로그램의 출력 전체를 줄 순서대로 정확히 쓰시오. 또한 **고정 조건 대신 직전 잔액에 의존하는 분기**에 해당하는 중간 상태나 분기 근거를 제시하여 결과를 설명하시오.\n\n```python\nbalance = 5\nfor fee in [3, 8, 2, 6]:\n    if balance >= fee:\n        balance -= fee\n    else:\n        balance += fee\nprint(balance)\n```\n\n[IN-04 + IN-06 + IN-02 · Tier 미확정 · DF1·DF7]\n\n출력: ______________________________________________\n\n과정: ______________________________________________\n\n____________________________________________________\n\n---\n\n",
+      "prior_excerpt": "**20.** 다음 프로그램의 실행 결과를 쓰시오. (4점) `[IN-06 · T3 · DF1·DF2·DF5 · E5]`\n\n```\ntotal = 0\ncnt = 0\nfor i in range(1, 13):\n    if total < 20:\n        total = total + i\n        cnt = cnt + 1\nprint(total, cnt)\n```\n\n> **채점 조건**: 4점, 부분 점수 없음. 두 값을 `total cnt` 순서로 모두 맞게 쓴 경우만 정답으로 한다.\n> 반복이 12번 도는 것과 누적이 일어난 횟수를 구별하지 못한 답은 오답이다.\n\n[근거: EX-info-20252M 선택 8·12·17, 단답 3(조건부 누적) · SUP-info-2026-01 p07 Quiz 1]\n\n---\n\n",
+      "novelty_verdict": "BLOCKED"
+    },
+    {
+      "item": "A/3",
+      "path": "output/260910/260910_01_info_composite_a_questions_review.md",
+      "line": 69,
+      "prior": "output/260908/260908_04_info_midterm_26.md",
+      "prior_item": 13,
+      "prior_line": 301,
+      "observation": "경미 변형 위험",
+      "reason": "기존13의 반환값 전달·중첩 호출 골격을 유지하고 함수 내부에 홀짝 분기를 추가했다. 조건 추가만으로 충분한 신규성이라고 확정할 수 없다.",
+      "actual_output": "4 3",
+      "question_excerpt": "**3.** 함수의 반환값이 다음 인수 (4점)\n\n다음 파이썬 3 프로그램의 출력 전체를 줄 순서대로 정확히 쓰시오. 또한 **호출 결과를 다른 호출의 인수로 사용**에 해당하는 중간 상태나 분기 근거를 제시하여 결과를 설명하시오.\n\n```python\ndef step(n):\n    if n % 2 == 0:\n        return n // 2\n    return n + 3\nx = 5\nprint(step(step(x)), step(x + 1))\n```\n\n[IN-19 + IN-04 + IN-01 · Tier 미확정 · DF1·DF7]\n\n출력: ______________________________________________\n\n과정: ______________________________________________\n\n____________________________________________________\n\n---\n\n",
+      "prior_excerpt": "**13.** 다음 프로그램의 실행 결과로 옳은 것은? (4.1점) `[IN-19 · T3 · DF1·DF2·DF4 · E7]`\n\n```\ndef half(n):\n    return n // 2\n\ndef add(a, b):\n    return a + b\n\nx = half(30)\ny = add(x, half(8))\nprint(add(y, half(x)))\n```\n\n① `22`  \n② `24`  \n③ `26`  \n④ `30`  \n⑤ `34`  \n\n[근거: SUP-info-2026-01 p03(함수 정의·호출·반환값) · p04(`sum(a, b)` 두 매개변수) · p08 Quiz 8]\n\n---\n\n",
+      "novelty_verdict": "BLOCKED"
+    },
+    {
+      "item": "A/5",
+      "path": "output/260910/260910_01_info_composite_a_questions_review.md",
+      "line": 115,
+      "prior": "output/260908/260908_04_info_midterm_26.md",
+      "prior_item": 7,
+      "prior_line": 180,
+      "observation": "구조 차이 관측",
+      "reason": "고정 리스트 두 조각의 합산에서 파생 문자열의 양끝·내부 관계로 출력 슬라이스를 결정하는 구조로 바뀐다.",
+      "actual_output": "AC",
+      "question_excerpt": "**5.** 잘라 낸 문자열로 조건 검사 (4점)\n\n다음 파이썬 3 프로그램의 출력 전체를 줄 순서대로 정확히 쓰시오. 또한 **슬라이스 결과의 내부 관계가 분기 결정**에 해당하는 중간 상태나 분기 근거를 제시하여 결과를 설명하시오.\n\n```python\nword = 'ABACBA'\npart = word[1:5]\nif part[0] == part[-1] and part[1] != part[2]:\n    print(part[1:3])\nelse:\n    print(word[:2])\n```\n\n[IN-14 + IN-03 + IN-04 · Tier 미확정 · DF1·DF7]\n\n출력: ______________________________________________\n\n과정: ______________________________________________\n\n____________________________________________________\n\n---\n\n",
+      "prior_excerpt": "**7.** 다음 프로그램의 실행 결과로 옳은 것은? (4.1점) `[IN-10 · T3 · DF1·DF2·DF4 · E5]`\n\n```\na = [4, 9, 1, 7, 5, 2]\nb = a[1:4]\nc = a[3:]\nprint(b[2] + c[0] + len(c))\n```\n\n① `11`  \n② `12`  \n③ `14`  \n④ `15`  \n⑤ `17`  \n\n[근거: EX-info-20252M 선택 13(`a[1:4]`) · SUP-info-2026-02 p01(`a[1:]` · `len` 함수표)]\n\n---\n\n",
+      "novelty_verdict": "BLOCKED"
+    },
+    {
+      "item": "A/6",
+      "path": "output/260910/260910_01_info_composite_a_questions_review.md",
+      "line": 138,
+      "prior": "output/260908/260908_04_info_midterm_26.md",
+      "prior_item": 20,
+      "prior_line": 466,
+      "observation": "구조 차이 관측",
+      "reason": "기존20은 누적 후 다음 회차에서 임계치를 검사한다. 새 문항은 다음 원소 수용 가능성을 선검사하고 반복 자체를 종료한다.",
+      "actual_output": "2 7",
+      "question_excerpt": "**6.** 종료 직전까지 담는 상자 (4점)\n\n다음 파이썬 3 프로그램의 출력 전체를 줄 순서대로 정확히 쓰시오. 또한 **반복 전 다음 원소의 수용 가능성 검사**에 해당하는 중간 상태나 분기 근거를 제시하여 결과를 설명하시오.\n\n```python\nsize = [4, 3, 5, 2]\nused = 0\ni = 0\nwhile i < len(size) and used + size[i] <= 10:\n    used += size[i]\n    i += 1\nprint(i, used)\n```\n\n[IN-08 + IN-09 + IN-02 · Tier 미확정 · DF1·DF7]\n\n출력: ______________________________________________\n\n과정: ______________________________________________\n\n____________________________________________________\n\n---\n\n",
+      "prior_excerpt": "**20.** 다음 프로그램의 실행 결과를 쓰시오. (4점) `[IN-06 · T3 · DF1·DF2·DF5 · E5]`\n\n```\ntotal = 0\ncnt = 0\nfor i in range(1, 13):\n    if total < 20:\n        total = total + i\n        cnt = cnt + 1\nprint(total, cnt)\n```\n\n> **채점 조건**: 4점, 부분 점수 없음. 두 값을 `total cnt` 순서로 모두 맞게 쓴 경우만 정답으로 한다.\n> 반복이 12번 도는 것과 누적이 일어난 횟수를 구별하지 못한 답은 오답이다.\n\n[근거: EX-info-20252M 선택 8·12·17, 단답 3(조건부 누적) · SUP-info-2026-01 p07 Quiz 1]\n\n---\n\n",
+      "novelty_verdict": "BLOCKED"
+    },
+    {
+      "item": "A/9",
+      "path": "output/260910/260910_01_info_composite_a_questions_review.md",
+      "line": 212,
+      "prior": "output/260908/260908_04_info_midterm_26.md",
+      "prior_item": 21,
+      "prior_line": 485,
+      "observation": "구조 차이 관측",
+      "reason": "기존21은 전체 순서쌍에 두 독립 조건을 가산한다. 새 문항은 i<j인 서로 다른 인덱스쌍을 원소 차이로 선별한다.",
+      "actual_output": "3",
+      "question_excerpt": "**9.** 가까운 두 기록의 차이 (4점)\n\n다음 파이썬 3 프로그램의 출력 전체를 줄 순서대로 정확히 쓰시오. 또한 **중복 없는 두 인덱스 조합 순회**에 해당하는 중간 상태나 분기 근거를 제시하여 결과를 설명하시오.\n\n```python\na = [1, 4, 6, 9]\ncount = 0\nfor i in range(len(a)):\n    for j in range(i+1, len(a)):\n        if a[j] - a[i] <= 4:\n            count += 1\nprint(count)\n```\n\n[IN-07 + IN-09 + IN-06 · Tier 미확정 · DF1·DF7]\n\n출력: ______________________________________________\n\n과정: ______________________________________________\n\n____________________________________________________\n\n---\n\n",
+      "prior_excerpt": "**21.** 다음 프로그램의 실행 결과를 쓰시오. (4점) `[IN-07 · T3 · DF1·DF2·DF5 · E5]`\n\n```\ncnt = 0\nfor i in range(1, 6):\n    for j in range(1, 6):\n        if i + j == 5:\n            cnt = cnt + 1\n        if i == j:\n            cnt = cnt + 2\nprint(cnt)\n```\n\n> **채점 조건**: 4점, 부분 점수 없음. 정수 하나만 쓴다. 두 조건 중 한쪽만 세어 `4` 또는 `10`으로 쓴 답,\n> 바깥 루프 1회분(3)을 세어 5를 곱한 `15`로 쓴 답은 오답이다.\n\n[근거: EX-info-20252M 단답 5(`for j in range(i,5)`) · 단답 7(이중 for + 조건) · SUP-info-2026-01 p07 Quiz 2·3]\n\n---\n\n",
+      "novelty_verdict": "BLOCKED"
+    },
+    {
+      "item": "A/10",
+      "path": "output/260910/260910_01_info_composite_a_questions_review.md",
+      "line": 236,
+      "prior": "output/260908/260908_04_info_midterm_26.md",
+      "prior_item": 22,
+      "prior_line": 505,
+      "observation": "경미 변형 위험",
+      "reason": "기존22의 중복값 첫 삭제 후 삽입이라는 핵심 순서를 그대로 쓴다. 삽입값을 현재 양끝 차이로 계산하고 합계를 추가한 정도여서 엄격한 요구에는 교체 검토가 필요하다.",
+      "actual_output": "[2, 5, 4, 7] 18",
+      "question_excerpt": "**10.** 한 번 삭제한 뒤의 검색 (4점)\n\n다음 파이썬 3 프로그램의 출력 전체를 줄 순서대로 정확히 쓰시오. 또한 **삭제 후 상태로 삽입할 값을 계산**에 해당하는 중간 상태나 분기 근거를 제시하여 결과를 설명하시오.\n\n```python\na = [4, 2, 4, 7]\na.remove(a[0])\na.insert(1, a[-1] - a[0])\nprint(a, sum(a))\n```\n\n[IN-12 + IN-11 + IN-09 · Tier 미확정 · DF1·DF7]\n\n출력: ______________________________________________\n\n과정: ______________________________________________\n\n____________________________________________________\n\n---\n\n",
+      "prior_excerpt": "**22.** 다음 프로그램의 실행 결과를 두 줄로 쓰시오. (4점) `[IN-11 · T3 · DF1·DF2·DF5 · E6]`\n\n```\na = [3, 5, 3, 8]\nb = [3, 5, 3, 8]\n\na.remove(3)\na.insert(1, 3)\n\nb.insert(1, 3)\nb.remove(3)\n\nprint(a)\nprint(b)\n```\n\n> **채점 조건**: 4점, 부분 점수 없음. 두 줄을 순서대로 모두 맞게 쓴 경우만 정답으로 한다. 대괄호와 쉼표를 포함해\n> 리스트 전체를 쓴다. 두 리스트를 같게 쓴 답은 오답이다.\n\n[근거: EX-info-20252M 선택 11(`insert`·`remove` 연속 조작) · 선택 15(중복값 `remove`) ·\nSUP-info-2026-02 p01(리스트 함수표)]\n\n---\n\n",
+      "novelty_verdict": "BLOCKED"
+    },
+    {
+      "item": "A/13",
+      "path": "output/260910/260910_01_info_composite_a_questions_review.md",
+      "line": 308,
+      "prior": "output/260908/260908_04_info_midterm_26.md",
+      "prior_item": 7,
+      "prior_line": 180,
+      "observation": "구조 차이 관측",
+      "reason": "기존7은 고정 슬라이스를 독립 생성한다. 새 문항은 양끝 비교로 제거 방향을 결정하고 결과에 다시 함수를 적용한다.",
+      "actual_output": "10 4",
+      "question_excerpt": "**13.** 함수가 고른 슬라이스 (4점)\n\n다음 파이썬 3 프로그램의 출력 전체를 줄 순서대로 정확히 쓰시오. 또한 **양끝 비교로 슬라이스 방향 결정**에 해당하는 중간 상태나 분기 근거를 제시하여 결과를 설명하시오.\n\n```python\ndef cut(a):\n    if a[0] < a[-1]:\n        return a[1:]\n    return a[:-1]\na = [8, 2, 5, 3]\nb = cut(a)\nprint(sum(cut(b)), len(a))\n```\n\n[IN-19 + IN-10 + IN-13 · Tier 미확정 · DF1·DF7]\n\n출력: ______________________________________________\n\n과정: ______________________________________________\n\n____________________________________________________\n\n---\n\n",
+      "prior_excerpt": "**7.** 다음 프로그램의 실행 결과로 옳은 것은? (4.1점) `[IN-10 · T3 · DF1·DF2·DF4 · E5]`\n\n```\na = [4, 9, 1, 7, 5, 2]\nb = a[1:4]\nc = a[3:]\nprint(b[2] + c[0] + len(c))\n```\n\n① `11`  \n② `12`  \n③ `14`  \n④ `15`  \n⑤ `17`  \n\n[근거: EX-info-20252M 선택 13(`a[1:4]`) · SUP-info-2026-02 p01(`a[1:]` · `len` 함수표)]\n\n---\n\n",
+      "novelty_verdict": "BLOCKED"
+    },
+    {
+      "item": "A/15",
+      "path": "output/260910/260910_01_info_composite_a_questions_review.md",
+      "line": 356,
+      "prior": "output/260908/260908_04_info_midterm_26.md",
+      "prior_item": 13,
+      "prior_line": 301,
+      "observation": "구조 차이 관측",
+      "reason": "기존13의 단일 호출 흐름과 달리 두 함수 합성 순서를 교환하여 조건 분기의 차이를 비교한다. A3과의 세트 내 중복 검토는 별도 필요하다.",
+      "actual_output": "3 10",
+      "question_excerpt": "**15.** 두 함수의 적용 순서 (4점)\n\n다음 파이썬 3 프로그램의 출력 전체를 줄 순서대로 정확히 쓰시오. 또한 **함수 순서를 교환한 두 경로 비교**에 해당하는 중간 상태나 분기 근거를 제시하여 결과를 설명하시오.\n\n```python\ndef f(x):\n    return x + 2\ndef g(x):\n    if x > 5:\n        return x - 3\n    return x * 2\nprint(g(f(4)), f(g(4)))\n```\n\n[IN-19 + IN-04 + IN-02 · Tier 미확정 · DF1·DF7]\n\n출력: ______________________________________________\n\n과정: ______________________________________________\n\n____________________________________________________\n\n---\n\n",
+      "prior_excerpt": "**13.** 다음 프로그램의 실행 결과로 옳은 것은? (4.1점) `[IN-19 · T3 · DF1·DF2·DF4 · E7]`\n\n```\ndef half(n):\n    return n // 2\n\ndef add(a, b):\n    return a + b\n\nx = half(30)\ny = add(x, half(8))\nprint(add(y, half(x)))\n```\n\n① `22`  \n② `24`  \n③ `26`  \n④ `30`  \n⑤ `34`  \n\n[근거: SUP-info-2026-01 p03(함수 정의·호출·반환값) · p04(`sum(a, b)` 두 매개변수) · p08 Quiz 8]\n\n---\n\n",
+      "novelty_verdict": "BLOCKED"
+    },
+    {
+      "item": "A/18",
+      "path": "output/260910/260910_01_info_composite_a_questions_review.md",
+      "line": 428,
+      "prior": "output/260908/260908_04_info_midterm_26.md",
+      "prior_item": 5,
+      "prior_line": 143,
+      "observation": "구조 차이 관측",
+      "reason": "기존5는 정수를 반복 반감해 횟수를 센다. 새 문항은 십진 자리수 합으로 축약하고 그 결과를 다시 축약한다.",
+      "actual_output": "14 5",
+      "question_excerpt": "**18.** 종료 후 다시 만드는 값 (4점)\n\n다음 파이썬 3 프로그램의 출력 전체를 줄 순서대로 정확히 쓰시오. 또한 **몫으로 입력 축소하며 나머지 누적**에 해당하는 중간 상태나 분기 근거를 제시하여 결과를 설명하시오.\n\n```python\ndef digits(n):\n    s = 0\n    while n > 0:\n        s += n % 10\n        n //= 10\n    return s\nx = digits(275)\nprint(x, digits(x))\n```\n\n[IN-08 + IN-01 + IN-19 · Tier 미확정 · DF1·DF7]\n\n출력: ______________________________________________\n\n과정: ______________________________________________\n\n____________________________________________________\n\n---\n\n",
+      "prior_excerpt": "**5.** 다음 프로그램의 실행 결과로 옳은 것은? (4.1점) `[IN-08 · T3 · DF1·DF2·DF5 · E5]`\n\n```\na = 100\ncnt = 0\nwhile a > 7:\n    a = a // 2\n    cnt = cnt + 1\nprint(a, cnt)\n```\n\n① `6 4`  \n② `6 5`  \n③ `3 5`  \n④ `12 3`  \n⑤ `7 4`  \n\n[근거: EX-info-20252M 선택 18(`while sum < n`) · 선택 16(`//`). **학습지 2종에 while은 없다**]\n\n---\n\n",
+      "novelty_verdict": "BLOCKED"
+    },
+    {
+      "item": "A/21",
+      "path": "output/260910/260910_01_info_composite_a_questions_review.md",
+      "line": 498,
+      "prior": "output/260908/260908_04_info_midterm_26.md",
+      "prior_item": 14,
+      "prior_line": 325,
+      "observation": "구조 차이 관측",
+      "reason": "기존14는 global 쓰기와 지역변수의 차이다. 새 문항은 동명 매개변수·분기·반환값 재투입을 추적하며 전역에 쓰지 않는다.",
+      "actual_output": "6 12 11",
+      "question_excerpt": "**21.** 지역 인수와 같은 이름 (4점)\n\n다음 파이썬 3 프로그램의 출력 전체를 줄 순서대로 정확히 쓰시오. 또한 **전역과 같은 이름의 매개변수에 가공 인수 전달**에 해당하는 중간 상태나 분기 근거를 제시하여 결과를 설명하시오.\n\n```python\nx = 6\ndef f(x):\n    if x < 5:\n        x += 10\n    return x - 1\ny = f(x - 3)\nprint(x, y, f(y))\n```\n\n[IN-20 + IN-19 + IN-04 · Tier 미확정 · DF1·DF7]\n\n출력: ______________________________________________\n\n과정: ______________________________________________\n\n____________________________________________________\n\n---\n\n",
+      "prior_excerpt": "**14.** 다음 프로그램의 실행 결과로 옳은 것은? (4.1점) `[IN-20 · T3 · DF1·DF2·DF4 · E4]`\n\n```\ncount = 5\n\ndef up():\n    count = 100\n    return count\n\ndef down():\n    global count\n    count = count - 2\n    return count\n\na = up()\nb = down()\nprint(count, a, b)\n```\n\n① `3 100 3`  \n② `5 100 3`  \n③ `3 5 3`  \n④ `98 100 98`  \n⑤ `5 5 3`  \n\n[근거: SUP-info-2026-01 p05(지역변수 · 전역변수 · `global`)]\n\n---\n\n",
+      "novelty_verdict": "BLOCKED"
+    },
+    {
+      "item": "A/23",
+      "path": "output/260910/260910_01_info_composite_a_questions_review.md",
+      "line": 546,
+      "prior": "output/260908/260908_04_info_midterm_26.md",
+      "prior_item": 20,
+      "prior_line": 466,
+      "observation": "구조 차이 관측",
+      "reason": "기존20은 임계치 이후 누적을 멈춘다. 새 문항은 누적을 끝까지 계속하면서 최초 임계치 통과 회차만 보존한다.",
+      "actual_output": "3 20",
+      "question_excerpt": "**23.** 기준을 넘은 순간의 회차 (4점)\n\n다음 파이썬 3 프로그램의 출력 전체를 줄 순서대로 정확히 쓰시오. 또한 **누적 중 최초 통과 회차를 별도 보존**에 해당하는 중간 상태나 분기 근거를 제시하여 결과를 설명하시오.\n\n```python\ns = 0\nfirst = 0\nfor i in range(1, 5):\n    s += i * 2\n    if s >= 10 and first == 0:\n        first = i\nprint(first, s)\n```\n\n[IN-06 + IN-26 + IN-04 · Tier 미확정 · DF1·DF7]\n\n출력: ______________________________________________\n\n과정: ______________________________________________\n\n____________________________________________________\n\n---\n\n",
+      "prior_excerpt": "**20.** 다음 프로그램의 실행 결과를 쓰시오. (4점) `[IN-06 · T3 · DF1·DF2·DF5 · E5]`\n\n```\ntotal = 0\ncnt = 0\nfor i in range(1, 13):\n    if total < 20:\n        total = total + i\n        cnt = cnt + 1\nprint(total, cnt)\n```\n\n> **채점 조건**: 4점, 부분 점수 없음. 두 값을 `total cnt` 순서로 모두 맞게 쓴 경우만 정답으로 한다.\n> 반복이 12번 도는 것과 누적이 일어난 횟수를 구별하지 못한 답은 오답이다.\n\n[근거: EX-info-20252M 선택 8·12·17, 단답 3(조건부 누적) · SUP-info-2026-01 p07 Quiz 1]\n\n---\n\n",
+      "novelty_verdict": "BLOCKED"
+    },
+    {
+      "item": "B/7",
+      "path": "output/260910/260910_02_info_composite_b_questions_review.md",
+      "line": 164,
+      "prior": "output/260908/260908_04_info_midterm_26.md",
+      "prior_item": 14,
+      "prior_line": 325,
+      "observation": "경미 변형 위험",
+      "reason": "기존14와 마찬가지로 전역 부작용과 지역 반환값을 따로 추적한다. 세 번 호출해 횟수와 반환값을 각각 더하는 확장이 충분한지 미확정이다.",
+      "actual_output": "12 3",
+      "question_excerpt": "**7.** 전역 횟수와 지역 계산값 (4점)\n\n다음 파이썬 3 프로그램의 출력 전체를 줄 순서대로 정확히 쓰시오. 또한 **계산 반환과 호출 횟수 부작용 분리**에 해당하는 중간 상태나 분기 근거를 제시하여 결과를 설명하시오.\n\n```python\ncalls = 0\ndef twice(x):\n    global calls\n    calls += 1\n    return x * 2\ntotal = 0\nfor n in [1, 3, 2]:\n    total += twice(n)\nprint(total, calls)\n```\n\n[IN-20 + IN-19 + IN-06 · Tier 미확정 · DF1·DF7]\n\n출력: ______________________________________________\n\n과정: ______________________________________________\n\n____________________________________________________\n\n---\n\n",
+      "prior_excerpt": "**14.** 다음 프로그램의 실행 결과로 옳은 것은? (4.1점) `[IN-20 · T3 · DF1·DF2·DF4 · E4]`\n\n```\ncount = 5\n\ndef up():\n    count = 100\n    return count\n\ndef down():\n    global count\n    count = count - 2\n    return count\n\na = up()\nb = down()\nprint(count, a, b)\n```\n\n① `3 100 3`  \n② `5 100 3`  \n③ `3 5 3`  \n④ `98 100 98`  \n⑤ `5 5 3`  \n\n[근거: SUP-info-2026-01 p05(지역변수 · 전역변수 · `global`)]\n\n---\n\n",
+      "novelty_verdict": "BLOCKED"
+    },
+    {
+      "item": "B/21",
+      "path": "output/260910/260910_02_info_composite_b_questions_review.md",
+      "line": 518,
+      "prior": "output/260908/260908_04_info_midterm_26.md",
+      "prior_item": 14,
+      "prior_line": 325,
+      "observation": "구조 차이 관측",
+      "reason": "기존14는 함수 내부 global 쓰기다. 새 문항은 외부에서 바뀐 전역을 같은 인수의 두 호출이 각각 읽어 서로 다른 논릿값을 반환한다.",
+      "actual_output": "True False",
+      "question_excerpt": "**21.** 기억하는 기준과 전달하는 인수 (4점)\n\n다음 파이썬 3 프로그램의 출력 전체를 줄 순서대로 정확히 쓰시오. 또한 **전역을 읽기만 하는 함수**에 해당하는 중간 상태나 분기 근거를 제시하여 결과를 설명하시오.\n\n```python\nlimit = 5\ndef test(x):\n    return x > limit\na = test(6)\nlimit = 8\nb = test(6)\nprint(a, b)\n```\n\n[IN-20 + IN-19 + IN-03 · Tier 미확정 · DF1·DF7]\n\n출력: ______________________________________________\n\n과정: ______________________________________________\n\n____________________________________________________\n\n---\n\n",
+      "prior_excerpt": "**14.** 다음 프로그램의 실행 결과로 옳은 것은? (4.1점) `[IN-20 · T3 · DF1·DF2·DF4 · E4]`\n\n```\ncount = 5\n\ndef up():\n    count = 100\n    return count\n\ndef down():\n    global count\n    count = count - 2\n    return count\n\na = up()\nb = down()\nprint(count, a, b)\n```\n\n① `3 100 3`  \n② `5 100 3`  \n③ `3 5 3`  \n④ `98 100 98`  \n⑤ `5 5 3`  \n\n[근거: SUP-info-2026-01 p05(지역변수 · 전역변수 · `global`)]\n\n---\n\n",
+      "novelty_verdict": "BLOCKED"
+    }
+  ],
+  "warnings": [
+    "not_independent",
+    "pairwise_only_not_full_corpus",
+    "owner_finalization_unconfirmed",
+    "release_blocked"
+  ],
+  "external_verified": 0,
+  "release": "BLOCKED"
+}

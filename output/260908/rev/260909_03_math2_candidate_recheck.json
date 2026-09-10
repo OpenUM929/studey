@@ -1,0 +1,207 @@
+{
+  "author": "메인 루프 (Codex/OMX)",
+  "grade": "proposal",
+  "source_baseline": "260909 latest inputs; old baseline preserved",
+  "source_records": [
+    {
+      "path": "output/260830/260830_01_math2_graded_new_forms_32.md",
+      "bytes": 33352,
+      "sha256": "69fe886f270065df93823e8de08f33b3c257d22744243f7522eb851af09ae02e"
+    },
+    {
+      "path": "output/260830/260830_02_math2_unused_axes_32.md",
+      "bytes": 32912,
+      "sha256": "1778f44daae30a730dae11dd0c564125b60fc9b70cc6d9f7ab1d8bde8d97cad2"
+    },
+    {
+      "path": "corpus/SUP-math2-2026/transcript.md",
+      "bytes": 25023,
+      "sha256": "aaa81bd584d566e1667faa3858788fc39204762f0d6725df7ef578ee24562bd1"
+    },
+    {
+      "path": "output/260829/260829_02_math2_comprehensive_25.md",
+      "bytes": 39318,
+      "sha256": "9b1187b1829675ad20c4411ab1866cfc7cb5b701bc7dff02ac859a0f1a9c26bc"
+    },
+    {
+      "path": "output/260822/공통수학2_도형의방정식_모의40.md",
+      "bytes": 56503,
+      "sha256": "f715032ec06f2f849fea6e49aa79c9ca32e80e5a74999df6c2593af6e1753cb6"
+    }
+  ],
+  "old_manifest_sha256": "abfbd1d6971977c086776f7667e3d8a977e04c5691bc35d3b1a634eb19bb7f68",
+  "ownership_evidence": "analysis/wip/mainloop_260908_math2_opus_audit.md: 작성 측 완료 NEXT 확인; 해당 파일 읽기 전용",
+  "rows": [
+    {
+      "item": "32/A2",
+      "nearest": "corpus/4-1",
+      "kind": "원상 역산",
+      "reason": "대응점으로 이동벡터를 구하고 목표점에서 뺀다. 좌표값과 최종 좌표합/좌표 요구만 바뀐다.",
+      "source_excerpt": "**1.** 점 $(1,1)$을 점 $(2,-3)$으로 옮기는 평행이동에 의하여 점 $(a,b)$가 점 $(-3,6)$으로 옮겨질 때, $a+b$의 값을 구하시오. (p15 좌상)\n\n",
+      "evidence": {
+        "path": "corpus/_images/SUP-math2-2026/p15.png",
+        "sha256": "03ec9bfd24122517288e2b89fe06e38b38ad28ad15235e186c3229282e741b59",
+        "visual_inspected": true
+      },
+      "calculation": {
+        "source_result": "원상(-4,10), 합6",
+        "target_result": "원상(-3,2)"
+      },
+      "status": "REUSE_REPRODUCED_PROPOSAL",
+      "replacement": "RECOMMENDED"
+    },
+    {
+      "item": "32/B2",
+      "nearest": "25/7",
+      "kind": "선행 풀이의 부분문제",
+      "reason": "둘 다 C=3G-A-B. 25제는 이어 넓이를 계산하지만 32제는 C에서 끝난다.",
+      "source_excerpt": "**7.** 삼각형 ABC에서 A(−2, 1), B(4, 1)이고 무게중심은 G(2, 3)이다.\r\n\r\n삼각형 ABC의 넓이를 구하시오. **[3점]**\r\n\r\n`[SM2-06 · T2 · 축=무게중심에서 제3의 꼭짓점을 역산]`\r\n> 260830 태그 정정(게이트) — 종전 `SM2-06 + SM2-05`. 이 문항에는 **사각형이 없으므로**\r\n> SM2-05(중점의 활용 — 사각형의 성질)는 허위 태그였다. 14번이 SM2-05를 실제로 담당한다.\r\n> **260908 복원** — 이 이력은 260907 교체 때 삭제됐으나 유형ID가 그대로이므로 정정 근거는\r\n> 지금도 유효하다(원칙 3 append-only, 감사 F-2).\r\n> 260907 교체 — 구본은 40제 5번과 동형(중점→무게중심)이었다.\r\n> 260908 외부 재게이트 — 맹목 풀이 일치(18). N축: 부교재 #1-12 대비 이탈.\r\n> ⚠️ **세트 간 중복 노출** — 40제 5번과 첫 단계(세 번째 꼭짓점의 역산)가 같다. 40제를 먼저\r\n> 푸는 설계이므로 이 문항의 진입 장벽이 미리 제거된다. T2 3점이라 치명적이지 않으나,\r\n> **두 세트를 연속으로 쓸 때는 이 문항을 변별 근거로 삼지 않는다.**\r\n\r\n",
+      "evidence": {
+        "path": "output/260829/260829_02_math2_comprehensive_25.md",
+        "sha256": "9b1187b1829675ad20c4411ab1866cfc7cb5b701bc7dff02ac859a0f1a9c26bc",
+        "item": "7"
+      },
+      "calculation": {
+        "source_result": "C=(4,7), 넓이18",
+        "target_result": "C=(3,6)"
+      },
+      "status": "REUSE_REPRODUCED_PROPOSAL",
+      "replacement": "RECOMMENDED"
+    },
+    {
+      "item": "32/B8",
+      "nearest": "corpus/2-12",
+      "kind": "분기 확대 1축",
+      "reason": "동일 법선인 두 평행선의 상수항 차의 절댓값으로 역산. 양수 제한 제거로 두 해를 쓰는 차이만 있다.",
+      "source_excerpt": "**12.** 평행한 두 직선 $x+y-2=0$, $x+y+m=0$ 사이의 거리가 $5\\sqrt{2}$일 때, 양수 $m$의 값을 구하시오. (p06 우하)\n\n",
+      "evidence": {
+        "path": "corpus/_images/SUP-math2-2026/p06.png",
+        "sha256": "d393d4dee8434d7e0bcaa3441dfe2ef1d9ae788ad7c67719dbcda10c2b5f6990",
+        "visual_inspected": true
+      },
+      "calculation": {
+        "source_result": "m=8",
+        "target_result": "k=-13,17"
+      },
+      "status": "REUSE_REPRODUCED_PROPOSAL",
+      "replacement": "RECOMMENDED"
+    },
+    {
+      "item": "32/C1",
+      "nearest": "corpus/1-1",
+      "kind": "최종 표현 변경",
+      "reason": "x축 위 두 거리제곱 합의 완전제곱. 원본은 최소점에서 k를 구하고 32제는 최소점과 최솟값을 묻는다.",
+      "source_excerpt": "**1.** 두 점 $A(1, 4)$, $B(6, 6)$과 $x$축 위의 한 점 $P$에 대하여 $\\overline{AP}^2 + \\overline{BP}^2$의 값이 최소가 되도록 하는 점 $P$는 직선 $y = -2x + k$ 위의 점이다. 상수 $k$의 값을 구하시오. (p01 좌상)\n\n",
+      "evidence": {
+        "path": "corpus/_images/SUP-math2-2026/p01.png",
+        "sha256": "21f883e1695b75a921f368644c94c3ccc418288f4c5d732beaf0d6c54ae52269",
+        "visual_inspected": true
+      },
+      "calculation": {
+        "source_result": "최소점 x=7/2, k=7",
+        "target_result": "최소점 x=4, 최소18"
+      },
+      "status": "REUSE_REPRODUCED_PROPOSAL",
+      "replacement": "RECOMMENDED"
+    },
+    {
+      "item": "32u/A6",
+      "nearest": "corpus/2-1",
+      "kind": "근의 합→곱",
+      "reason": "세 점 공선의 행렬식에서 이차식, 근과 계수. 합/곱만 바뀌어 두 비수치 축은 없다.",
+      "source_excerpt": "**1.** 세 점 $A(-3, 2)$, $B(3, k)$, $C(2k, k+1)$이 한 직선 위에 있도록 하는 모든 실수 $k$의 값의 합을 구하시오. (p05 좌상)\n\n",
+      "evidence": {
+        "path": "corpus/_images/SUP-math2-2026/p05.png",
+        "sha256": "5e3e8b2904ce8728e27e2540dad41bba927d8c364269ef6959f8eac7b8e5fd5d",
+        "visual_inspected": true
+      },
+      "calculation": {
+        "source_result": "근0,7/2, 합7/2",
+        "target_result": "근-2,5, 곱-10"
+      },
+      "status": "REUSE_REPRODUCED_PROPOSAL",
+      "replacement": "RECOMMENDED"
+    },
+    {
+      "item": "32u/B5",
+      "nearest": "corpus/3-18",
+      "kind": "결과식 및 부호 선별",
+      "reason": "원 위 접점의 접선과 주어진 직선의 수직 조건은 동일. 출력 a²b²→a+b, 양의 좌표 선별만 추가된다.",
+      "source_excerpt": "**18.** 원 $x^2+y^2=5$ 위의 점 $(a, b)$에서의 접선과 직선 $y=-\\frac12x+1$이 서로 수직일 때, $a^2b^2$의 값을 구하시오. (p12 좌상)\n\n",
+      "evidence": {
+        "path": "corpus/_images/SUP-math2-2026/p12.png",
+        "sha256": "2ac9b93dca8997a8c0afaa47fb424d0908145ca93c24b53b14a4f7b1ebe6759f",
+        "visual_inspected": true
+      },
+      "calculation": {
+        "source_result": "a²b²=4",
+        "target_result": "a+b=6"
+      },
+      "status": "REUSE_REPRODUCED_PROPOSAL",
+      "replacement": "RECOMMENDED"
+    },
+    {
+      "item": "32u/B7",
+      "nearest": "40/20",
+      "kind": "선행 풀이의 부분문제",
+      "reason": "거리비 제곱→아폴로니오스 원 완전제곱이 동일. 40제의 후속 넓이 계산을 생략하고 중심·반지름에서 끝난다.",
+      "source_excerpt": "**20.** 두 점 A(−2, 0), B(4, 0)에 대하여 PA : PB = 2 : 1 을 만족시키는 점 P가 그리는 도형을 C라 하자.\r\n\r\n점 P가 도형 C 위를 움직일 때, 삼각형 PAB의 넓이의 최댓값을 구하시오.\r\n\r\n[SM2-17 · T2 · DF1·DF7]\r\n\r\n",
+      "evidence": {
+        "path": "output/260822/공통수학2_도형의방정식_모의40.md",
+        "sha256": "f715032ec06f2f849fea6e49aa79c9ca32e80e5a74999df6c2593af6e1753cb6",
+        "item": "20"
+      },
+      "calculation": {
+        "source_result": "중심(6,0), 반지름4",
+        "target_result": "중심(9,0), 반지름3"
+      },
+      "status": "REUSE_REPRODUCED_PROPOSAL",
+      "replacement": "RECOMMENDED"
+    },
+    {
+      "item": "32u/C7",
+      "nearest": "40/27",
+      "kind": "극값 방향 변경",
+      "reason": "원 전체가 밑변 직선 한쪽에 있는 조건에서 높이 d±r. 최대→최소, 좌표 출력 생략으로 원본보다 풀이가 줄어든다.",
+      "source_excerpt": "**27.** (서술형) 두 점 A(−1, 2), B(3, −2)와 원 C : (x − 4)² + (y − 5)² = 8 위를 움직이는 점 P가 있다.\r\n\r\n삼각형 PAB의 넓이가 최대일 때, 점 P의 좌표와 그때의 넓이를 구하시오. **풀이 과정을 함께 쓰시오.**\r\n\r\n> 채점 조건\r\n> (1) 직선 AB의 방정식과 선분 AB의 길이를 구할 것\r\n> (2) 원의 중심에서 직선 AB까지의 거리와 반지름을 비교하여 높이의 최댓값을 구할 것\r\n> (3) 점 P의 좌표와 넓이를 모두 밝힐 것\r\n\r\n[SM2-25 · T4 · DF1·DF2·DF5]\r\n\r\n",
+      "evidence": {
+        "path": "output/260822/공통수학2_도형의방정식_모의40.md",
+        "sha256": "f715032ec06f2f849fea6e49aa79c9ca32e80e5a74999df6c2593af6e1753cb6",
+        "item": "27"
+      },
+      "calculation": {
+        "source_result": "최대 넓이24",
+        "target_result": "최소 넓이4-2√2"
+      },
+      "status": "REUSE_REPRODUCED_PROPOSAL",
+      "replacement": "RECOMMENDED"
+    },
+    {
+      "item": "32u/D3",
+      "nearest": "corpus/4-20",
+      "kind": "선행 풀이의 부분문제",
+      "reason": "대칭축=수직이등분선. 원본의 후속 절편 삼각형 넓이를 제거하고 축 방정식에서 끝난다.",
+      "source_excerpt": "**20.** 두 점 $A(2,3)$, $B(4,-1)$이 직선 $l$에 대하여 대칭일 때, 직선 $l$과 $x$축, $y$축으로 둘러싸인 부분의 넓이를 구하시오. (p18 좌하)\n\n",
+      "evidence": {
+        "path": "corpus/_images/SUP-math2-2026/p18.png",
+        "sha256": "c85c9e6185756e60f5923b1daae4444ee630ea42d93a356fd3131a24a1a13f09",
+        "visual_inspected": true
+      },
+      "calculation": {
+        "source_result": "대칭축 x-2y-1=0",
+        "target_result": "대칭축 2x+3y-14=0"
+      },
+      "status": "REUSE_REPRODUCED_PROPOSAL",
+      "replacement": "RECOMMENDED"
+    }
+  ],
+  "prior_reproduced": 5,
+  "new_reproduced": 9,
+  "total_reproduced": 14,
+  "remaining_unassessed": 50,
+  "release": "BLOCKED",
+  "limitations": [
+    "부분 신규성 검수; 외부 N 판정 아님",
+    "비수치 축의 명칭보다 실제 풀이 재사용을 근거로 한 교체 권고"
+  ]
+}

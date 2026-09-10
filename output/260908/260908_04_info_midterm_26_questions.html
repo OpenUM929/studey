@@ -1,0 +1,371 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><title>정보 2학기 중간고사 대비 26제 — 문제지</title><style>body{font:15px/1.7 "Malgun Gothic",sans-serif;max-width:860px;margin:32px auto;color:#111;padding:0 16px}h1{font-size:23px;margin-bottom:6px}h2{font-size:18px;border-bottom:2px solid #333;padding-bottom:4px;margin-top:34px}pre{font:14px/1.5 Consolas,monospace;background:#f4f4f4;border:1px solid #ddd;padding:11px;white-space:pre-wrap;margin:10px 0}code{font:0.93em Consolas,monospace;background:#f0f0f0;padding:1px 3px;border-radius:2px}.item{break-inside:avoid;margin:0 0 22px;padding-bottom:14px;border-bottom:1px solid #ccc}.opt{margin:2px 0 2px 6px}.blank{margin:14px 0;letter-spacing:.5px}.notice{border:2px solid #a60;background:#fffaf2;padding:11px 14px;margin:14px 0}.head{background:#f7f7f7;border:1px solid #ccc;padding:9px 12px}table{border-collapse:collapse;margin:10px 0;font-size:14px}th,td{border:1px solid #999;padding:5px 9px;text-align:left}th{background:#eee}.grid td{height:30px;width:52px;text-align:center}@page{size:A4;margin:14mm}@media print{body{margin:0;font-size:12.5px;max-width:none}pre{font-size:12px}.item{border-bottom:none}}</style>
+<h1>정보 2학기 중간고사 대비 26제 — 문제지</h1>
+<p class="notice"><b>시험범위 미확정 안내</b> — 2026학년도 정보 시험범위 공지·평가계획서를 확보하지 못했다. 이 문제지는 2025학년도 2학기 중간 기출 1회차와 수업 학습지 2종만을 분모로 구성한 <b>연습용</b>이며, 학교 공식 시험범위 확정본이 아니다.</p>
+<p><b>선택형 18문항(70점) + 서답형 8문항(30점) = 100점</b> · 파이썬 3 기준 · 리스트와 문자열의 인덱스는 <b>0부터</b> 센다.</p>
+<p class="blank">이름: ________________　　학번: ____________　　점수: __________</p>
+<h2>선택형  (18문항 · 70점)</h2>
+<div class="item"><p><b>1. <code>a</code>와 <code>b</code>가 다음과 같을 때, 계산 결과가 <b>가장 큰</b> 것은? (4.1점)</b></p>
+<pre>
+a = 24
+b = 7
+</pre>
+<p class="opt">① <code>a // b + a % b</code></p>
+<p class="opt">② <code>b ** 2 // a</code></p>
+<p class="opt">③ <code>(a - b) % b</code></p>
+<p class="opt">④ <code>a % (b - 4)</code></p>
+<p class="opt">⑤ <code>b % a</code></p>
+</div><div class="item"><p><b>2. 다음 프로그램의 실행 결과를 위에서부터 차례로 나열한 것은? (3.6점)</b></p>
+<pre>
+x = 15
+y = 4
+print(x % y &gt; y)
+print(x // y == 3 and y != 4)
+print(x &gt;= 15 and y &lt;= 4)
+</pre>
+<p class="opt">① True · False · True</p>
+<p class="opt">② False · False · True</p>
+<p class="opt">③ False · True · True</p>
+<p class="opt">④ False · False · False</p>
+<p class="opt">⑤ True · True · True</p>
+</div><div class="item"><p><b>3. 다음 프로그램의 실행 결과로 옳은 것은? (3.6점)</b></p>
+<pre>
+n = 74
+k = 0
+if n &gt;= 90:
+    k = 4
+elif n &gt;= 80:
+    k = 3
+elif n &gt;= 70:
+    k = 2
+else:
+    k = 1
+if k == 2:
+    n = n + k
+print(k, n)
+</pre>
+<p class="opt">① <code>2 74</code></p>
+<p class="opt">② <code>2 76</code></p>
+<p class="opt">③ <code>3 76</code></p>
+<p class="opt">④ <code>3 77</code></p>
+<p class="opt">⑤ <code>1 75</code></p>
+</div><div class="item"><p><b>4. 다음과 같이 출력하는 프로그램의 (가)에 들어갈 코드로 옳은 것은? (4.1점)</b></p>
+<pre>
+for i in (가):
+    print(i, end=&#x27; &#x27;)
+</pre>
+<pre>
+[출력]  9 7 5 3 1
+</pre>
+<p class="opt">① <code>range(9, 1, -2)</code></p>
+<p class="opt">② <code>range(9, 0, -2)</code></p>
+<p class="opt">③ <code>range(9, 1, 2)</code></p>
+<p class="opt">④ <code>range(1, 10, 2)</code></p>
+<p class="opt">⑤ <code>range(10, 0, -2)</code></p>
+</div><div class="item"><p><b>5. 다음 프로그램의 실행 결과로 옳은 것은? (4.1점)</b></p>
+<pre>
+a = 100
+cnt = 0
+while a &gt; 7:
+    a = a // 2
+    cnt = cnt + 1
+print(a, cnt)
+</pre>
+<p class="opt">① <code>6 4</code></p>
+<p class="opt">② <code>6 5</code></p>
+<p class="opt">③ <code>3 5</code></p>
+<p class="opt">④ <code>12 3</code></p>
+<p class="opt">⑤ <code>7 4</code></p>
+</div><div class="item"><p><b>6. 다음 리스트에 대하여 계산 결과가 <b>24</b>가 되는 것은? (3.6점)</b></p>
+<pre>
+w = [11, 14, 3, -21, 30]
+</pre>
+<p class="opt">① <code>w[2] + w[3]</code></p>
+<p class="opt">② <code>w[3] - w[4]</code></p>
+<p class="opt">③ <code>w[1] - w[3]</code></p>
+<p class="opt">④ <code>w[2] - w[3]</code></p>
+<p class="opt">⑤ <code>w[3] + w[4]</code></p>
+</div><div class="item"><p><b>7. 다음 프로그램의 실행 결과로 옳은 것은? (4.1점)</b></p>
+<pre>
+a = [4, 9, 1, 7, 5, 2]
+b = a[1:4]
+c = a[3:]
+print(b[2] + c[0] + len(c))
+</pre>
+<p class="opt">① <code>11</code></p>
+<p class="opt">② <code>12</code></p>
+<p class="opt">③ <code>14</code></p>
+<p class="opt">④ <code>15</code></p>
+<p class="opt">⑤ <code>17</code></p>
+</div><div class="item"><p><b>8. 다음은 어떤 코드를 실행하기 전과 후의 리스트 상태이다. (가)에 들어갈 코드로 옳은 것은? (3.6점)</b></p>
+<pre>
+subject = [&#x27;국어&#x27;, &#x27;수학&#x27;, &#x27;영어&#x27;]
+(가)
+print(subject)
+</pre>
+<pre>
+[실행 전]  [&#x27;국어&#x27;, &#x27;수학&#x27;, &#x27;영어&#x27;]
+[실행 후]  [&#x27;국어&#x27;, &#x27;정보&#x27;, &#x27;수학&#x27;, &#x27;영어&#x27;]
+</pre>
+<p class="opt">① <code>subject.append(&#x27;정보&#x27;)</code></p>
+<p class="opt">② <code>subject.insert(0, &#x27;정보&#x27;)</code></p>
+<p class="opt">③ <code>subject.insert(1, &#x27;정보&#x27;)</code></p>
+<p class="opt">④ <code>subject.insert(2, &#x27;정보&#x27;)</code></p>
+<p class="opt">⑤ <code>subject.remove(&#x27;정보&#x27;)</code></p>
+</div><div class="item"><p><b>9. 다음 프로그램의 실행 결과로 옳은 것은? (4.1점)</b></p>
+<pre>
+p = [8, 3, 15, 6]
+q = [11, 2, 9]
+print(sum(p) - max(q) * min(p) + len(q))
+</pre>
+<p class="opt">① <code>-8</code></p>
+<p class="opt">② <code>2</code></p>
+<p class="opt">③ <code>3</code></p>
+<p class="opt">④ <code>5</code></p>
+<p class="opt">⑤ <code>66</code></p>
+</div><div class="item"><p><b>10. 다음 중 파이썬에서 변수 이름으로 <b>사용할 수 있는</b> 것은? (3.2점)</b></p>
+<p class="opt">① <code>2score</code></p>
+<p class="opt">② <code>my score</code></p>
+<p class="opt">③ <code>total-sum</code></p>
+<p class="opt">④ <code>_last_2</code></p>
+<p class="opt">⑤ <code>score!</code></p>
+</div><div class="item"><p><b>11. 다음 (가)~(다)에 해당하는 정보 보안의 요소를 바르게 짝지은 것은? (3.6점)</b></p>
+<pre>
+(가) 권한이 없는 사람은 문서 내용을 볼 수 없도록 암호를 걸어 두었다.
+(나) 전송 도중 파일이 바뀌지 않았음을 확인하려고 검사값을 함께 보냈다.
+(다) 접속이 몰리는 시간에도 서비스가 끊기지 않도록 서버를 늘렸다.
+</pre>
+<p class="opt">① (가) 무결성 · (나) 기밀성 · (다) 가용성</p>
+<p class="opt">② (가) 기밀성 · (나) 가용성 · (다) 무결성</p>
+<p class="opt">③ (가) 기밀성 · (나) 무결성 · (다) 가용성</p>
+<p class="opt">④ (가) 가용성 · (나) 무결성 · (다) 기밀성</p>
+<p class="opt">⑤ (가) 무결성 · (나) 가용성 · (다) 기밀성</p>
+</div><div class="item"><p><b>12. 학생이 만든 영상을 다음 뜻으로 공개하려고 한다. 이에 해당하는 이용 허락 조건 표시로 옳은 것은? (3.6점)</b></p>
+<pre>
+&quot;출처만 밝히면 영리 목적으로도 누구나 자유롭게 가져다 쓸 수 있게 하겠다.
+ 다만 내용을 고치거나 다른 형태로 바꾸어 쓰는 것은 허용하지 않는다.&quot;
+</pre>
+<table>
+<tr><th>표시</th><th>뜻</th></tr>
+<tr><td><code>BY</code></td><td>저작자를 표시해야 한다</td></tr>
+<tr><td><code>ND</code></td><td>내용을 변경할 수 없다</td></tr>
+<tr><td><code>NC</code></td><td>상업적으로 이용할 수 없다</td></tr>
+<tr><td><code>SA</code></td><td>동일한 조건으로 배포해야 한다</td></tr>
+</table>
+<p class="opt">① BY</p>
+<p class="opt">② BY-ND</p>
+<p class="opt">③ BY-SA</p>
+<p class="opt">④ BY-NC</p>
+<p class="opt">⑤ BY-NC-ND</p>
+</div><div class="item"><p><b>13. 다음 프로그램의 실행 결과로 옳은 것은? (4.1점)</b></p>
+<pre>
+def half(n):
+    return n // 2
+
+def add(a, b):
+    return a + b
+
+x = half(30)
+y = add(x, half(8))
+print(add(y, half(x)))
+</pre>
+<p class="opt">① <code>22</code></p>
+<p class="opt">② <code>24</code></p>
+<p class="opt">③ <code>26</code></p>
+<p class="opt">④ <code>30</code></p>
+<p class="opt">⑤ <code>34</code></p>
+</div><div class="item"><p><b>14. 다음 프로그램의 실행 결과로 옳은 것은? (4.1점)</b></p>
+<pre>
+count = 5
+
+def up():
+    count = 100
+    return count
+
+def down():
+    global count
+    count = count - 2
+    return count
+
+a = up()
+b = down()
+print(count, a, b)
+</pre>
+<p class="opt">① <code>3 100 3</code></p>
+<p class="opt">② <code>5 100 3</code></p>
+<p class="opt">③ <code>3 5 3</code></p>
+<p class="opt">④ <code>98 100 98</code></p>
+<p class="opt">⑤ <code>5 5 3</code></p>
+</div><div class="item"><p><b>15. 다음 프로그램의 실행 결과로 옳은 것은? (4.4점)</b></p>
+<pre>
+def g(n):
+    if n &lt;= 1:
+        return 1
+    if n % 2 == 0:
+        return n + g(n - 1)
+    return g(n - 2)
+
+print(g(6))
+</pre>
+<p class="opt">① <code>7</code></p>
+<p class="opt">② <code>11</code></p>
+<p class="opt">③ <code>13</code></p>
+<p class="opt">④ <code>15</code></p>
+<p class="opt">⑤ <code>21</code></p>
+</div><div class="item"><p><b>16. 변수가 다음과 같을 때, 실행하면 <b>오류가 발생하는</b> 것은? (4.4점)</b></p>
+<pre>
+s = &quot;python&quot;
+a = [[1, 2, 3], [4, 5, 6]]
+</pre>
+<p class="opt">① <code>print(s[5])</code></p>
+<p class="opt">② <code>print(a[1][2])</code></p>
+<p class="opt">③ <code>print(s[0:6])</code></p>
+<p class="opt">④ <code>print(a[2][0])</code></p>
+<p class="opt">⑤ <code>print(len(s) + a[0][0])</code></p>
+</div><div class="item"><p><b>17. 다음 프로그램에 아래와 같이 입력했을 때, 출력 결과를 위에서부터 차례로 나열한 것은? (3.6점)</b></p>
+<pre>
+n = input().split()
+m = list(map(int, input().split()))
+print(n[1] + n[2])
+print(m[1] + m[2])
+</pre>
+<pre>
+[입력]
+7 8 9
+7 8 9
+</pre>
+<p class="opt">① <code>17</code> · <code>17</code></p>
+<p class="opt">② <code>89</code> · <code>17</code></p>
+<p class="opt">③ <code>17</code> · <code>89</code></p>
+<p class="opt">④ <code>89</code> · <code>89</code></p>
+<p class="opt">⑤ 오류가 발생한다</p>
+</div><div class="item"><p><b>18. 1부터 30까지의 수 중 4의 배수의 합을 구하는 프로그램이다. (가), (나)에 들어갈 코드로 옳은 것은? (4.1점)</b></p>
+<pre>
+total = 0
+for i in range(1, 31):
+    if (가):
+        total = (나)
+print(total)
+</pre>
+<pre>
+[출력]  112
+</pre>
+<p class="opt">① (가) <code>i % 4 == 0</code> · (나) <code>total + i</code></p>
+<p class="opt">② (가) <code>i % 4 == 0</code> · (나) <code>total + 4</code></p>
+<p class="opt">③ (가) <code>i / 4 == 0</code> · (나) <code>total + i</code></p>
+<p class="opt">④ (가) <code>i % 4 != 0</code> · (나) <code>total + i</code></p>
+<p class="opt">⑤ (가) <code>i % 4 == 1</code> · (나) <code>total + i</code></p>
+<h2>서답형  (8문항 · 30점)</h2>
+</div><div class="item"><p><b>19. 다음 프로그램의 실행 결과를 쓰시오. (3점)</b></p>
+<pre>
+a = 4
+b = 10
+a += b // 2
+b -= a
+a *= 2
+print(a, b)
+</pre>
+<p class="notice"><b>답안 작성</b>: 3점, 부분 점수 없음. 두 값을 <code>a b</code> 순서로 모두 맞게 쓴 경우만 정답으로 한다.</p>
+<p class="blank">답: ______________________________________________</p>
+</div><div class="item"><p><b>20. 다음 프로그램의 실행 결과를 쓰시오. (4점)</b></p>
+<pre>
+total = 0
+cnt = 0
+for i in range(1, 13):
+    if total &lt; 20:
+        total = total + i
+        cnt = cnt + 1
+print(total, cnt)
+</pre>
+<p class="notice"><b>답안 작성</b>: 4점, 부분 점수 없음. 두 값을 <code>total cnt</code> 순서로 모두 맞게 쓴 경우만 정답으로 한다.</p>
+<p class="blank">답: ______________________________________________</p>
+</div><div class="item"><p><b>21. 다음 프로그램의 실행 결과를 쓰시오. (4점)</b></p>
+<pre>
+cnt = 0
+for i in range(1, 6):
+    for j in range(1, 6):
+        if i + j == 5:
+            cnt = cnt + 1
+        if i == j:
+            cnt = cnt + 2
+print(cnt)
+</pre>
+<p class="notice"><b>답안 작성</b>: 4점, 부분 점수 없음. 정수 하나만 쓴다.</p>
+<p class="blank">답: ______________________________________________</p>
+</div><div class="item"><p><b>22. 다음 프로그램의 실행 결과를 두 줄로 쓰시오. (4점)</b></p>
+<pre>
+a = [3, 5, 3, 8]
+b = [3, 5, 3, 8]
+
+a.remove(3)
+a.insert(1, 3)
+
+b.insert(1, 3)
+b.remove(3)
+
+print(a)
+print(b)
+</pre>
+<p class="notice"><b>답안 작성</b>: 4점, 부분 점수 없음. 두 줄을 순서대로 모두 맞게 쓴 경우만 정답으로 한다. 대괄호와 쉼표를 포함해 리스트 전체를 쓴다.</p>
+<p class="blank">첫째 줄: ______________________________________________</p>
+<p class="blank">둘째 줄: ______________________________________________</p>
+</div><div class="item"><p><b>23. 문자열 <code>s</code>가 다음과 같을 때, <code>s[a:b]</code>의 결과가 <code>format</code>이 되도록 하는 <code>a</code>와 <code>b</code>의 값을 각각 쓰시오. (단, <code>a</code>와 <code>b</code>는 0 이상의 정수이다.) (4점)</b></p>
+<pre>
+s = &quot;information&quot;
+</pre>
+<p class="notice"><b>답안 작성</b>: 4점, 부분 점수 없음. <code>a</code>와 <code>b</code>를 모두 맞게 쓴 경우만 정답으로 한다.</p>
+<p class="blank">답: ______________________________________________</p>
+</div><div class="item"><p><b>24. 2차원 리스트 <code>m</code>이 다음과 같을 때, 물음에 답하시오. (3점)</b></p>
+<pre>
+m = [[3, 8, 1],
+     [6, 2, 9],
+     [4, 7, 5]]
+</pre>
+<p>(1) 값 <code>7</code>이 저장된 위치를 <code>m[행][열]</code> 형태로 쓰시오.</p>
+<p>(2) 첫째 행에 있는 세 값 중 <b>가장 큰 값</b>이 저장된 위치를 <code>m[행][열]</code> 형태로 쓰시오.</p>
+<p class="notice"><b>답안 작성</b>: (1) 2점, (2) 1점. 행과 열의 번호는 <b>0부터</b> 센다.</p>
+<p class="blank">(1) 답: ______________________________________________</p>
+<p class="blank">(2) 답: ______________________________________________</p>
+</div><div class="item"><p><b>25. 다음 프로그램의 실행 결과를 쓰시오. (4점)</b></p>
+<pre>
+a = [[2, 9, 4],
+     [7, 1, 8],
+     [5, 6, 3]]
+total = 0
+for i in range(3):
+    for j in range(3):
+        if i != j and a[i][j] % 2 == 1:
+            total = total + a[i][j]
+print(total)
+</pre>
+<p class="notice"><b>답안 작성</b>: 4점, 부분 점수 없음. 정수 하나만 쓴다.</p>
+<p class="blank">답: ______________________________________________</p>
+</div><div class="item"><p><b>26. 다음 프로그램이 실행되는 동안 변수 <code>i</code>와 <code>s</code>의 값 변화를 표로 정리한 것이다. 물음에 답하시오. (4점)</b></p>
+<pre>
+s = 1
+for i in range(2, 6):
+    if i % 2 == 0:
+        s = s * i
+    else:
+        s = s + i
+print(s)
+</pre>
+<table>
+<tr><th>반복 회차</th><th><code>i</code></th><th>반복이 끝난 뒤의 <code>s</code></th></tr>
+<tr><td>1회</td><td>2</td><td>2</td></tr>
+<tr><td>2회</td><td>3</td><td>(가)</td></tr>
+<tr><td>3회</td><td>4</td><td>(나)</td></tr>
+<tr><td>4회</td><td>5</td><td>(다)</td></tr>
+</table>
+<p>(1) (가), (나), (다)에 알맞은 값을 쓰시오.</p>
+<p>(2) <code>s</code>가 <b>곱셈으로 갱신된</b> 회차의 <code>i</code> 값을 모두 쓰시오.</p>
+<p class="notice"><b>답안 작성</b>: (가)·(나)·(다) 각 1점, (2) 1점. (2)는 두 값을 모두 써야 정답으로 한다.</p>
+<p class="blank">(1) 답: ______________________________________________</p>
+<p class="blank">(2) 답: ______________________________________________</p>
+<h3>답안 기입란 — 선택형</h3>
+<table class="grid">
+<tr><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th></tr>
+</table>
+<table class="grid">
+<tr><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th></tr>
+</table></div>
+</html>

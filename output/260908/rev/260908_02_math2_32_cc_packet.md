@@ -1,0 +1,8 @@
+# [CC 회람] 260908_02 — 신형 32제 pre-gate pilot (발주 미실행)
+
+<target> `output/260830/260830_01_math2_graded_new_forms_32.md`의 A1 1문항. 구조 점검·동결 해시는 `output/260908/rev/260908_01_math2_32_inventory.json`. 정답 고정 전에는 통합본의 `# 정답 · 해설 · 유형` 이후 및 감사 해설을 열지 않는다.
+<touched> Codex/OMX가 생성한 파일: `output/260908/rev/260908_01_math2_32_pre_audit.md`, 같은 접두사의 `_inventory.py`, `_inventory.json`, `_inventory_log.txt`, 이 패킷. 갱신: `analysis/REV_LOG.md`, `analysis/wip/mainloop_260907_math2_revision_release.md`. 문제 원본 두 개는 무변경이다.
+<executor> 외부 Claude Code CLI / Opus 본체 직접. `.claude/agents/solve-back-verifier.md`의 독립 풀이 책임을 적용하되 별도 배우를 호출한 것으로 표시하지 않는다. lane=external-pre-gate, model=Opus, depth=실행 시 관측값 기록. 동시1, pilot 1문항. Codex 측 잔여 예산은 측정 불가이며 발주하지 않았다. 외부 실행 직전 남은 context·사용량/reset·유사 작업 소요를 실측하고 충분한 경우에만 시작한다. 불충분/미측정이면 BLOCKED로 종료한다.
+<requests> Q1 A1 정답·유일성·조건·해설 중간식·Tier는 PASS/FAIL/BLOCKED인가? 본문만 읽어 풀이를 자기 WIP에 먼저 고정하고 Python/sympy로 재현한 후 답행을 대조한다. 카탈로그 `analysis/catalog/math2.md`, `analysis/catalog/DIFFICULTY_RUBRIC.md`, `analysis/curriculum_2022.md`를 기준으로 확인한다. 입력 해시와 원본 문항 식별자 A1을 재확인한다. 전체 범위는 32문항이나 이번 실행은 scope=partial A1/32, 전수 승인 불가. 32u·나머지31문항·25/40제·N/V/A 전수감사·명명 판정은 제외한다. 품질감사는 전수 pre-gate 통과 후 별도 진행한다.
+<reply> `.claude/agents/solve-back-verifier.md`의 own-WIP-only 제한에 따라 `analysis/wip/solve-back-verifier_260908_math2_32_pilot.md`에만 기록하고 채팅으로 같은 결과를 반환한다. 문항ID | 정답판정 | 해설판정 | 조건·범위판정 | 근거·재현 | 수정요청 | 미해결 표, 입력 해시·실제 모델/depth·예산 실측·독립 풀이 고정 시점·소요·NEXT 필수. 코디네이터가 로컬 WIP를 읽고 감사 보고에 반영한다.
+<constraints> 문제·답·카탈로그·기준·공유원장·도구·보고서 직접 수정 및 commit 금지. subagent/background/자동재시도/자동 다음 wave 금지. pilot 완료 또는 예산/근거 차단 시 종료; 후속 wave는 소요 검토와 사용자 per-run 승인 필요. 32u는 기존32제 이전 초안으로 단정하거나 삭제하지 않는다. 원본 경로·해시가 달라졌으면 멈추고 재동결을 요청한다. 본체 직접 검토를 독립 배우의 binding 판정으로 표시하지 않는다.

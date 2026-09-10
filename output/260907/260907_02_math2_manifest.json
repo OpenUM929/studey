@@ -1,0 +1,141 @@
+{
+  "_STALE_260908": {
+    "warning": "이 manifest는 260908 오전 시점의 해시 스냅숏이다. 그 뒤 (1) 감사 승인분 반영 (2) 원본 재현 표기 추가 (3) 파생본 4개의 이동·개명이 있었으므로 아래 bytes/sha256은 현행 파일과 일치하지 않는다. 검증 게이트의 기준선으로 인용하지 말 것.",
+    "moved_files": {
+      "output/260907/260907_02_math2_25_questions_review.md": "output/260829/260829_02_math2_comprehensive_25_questions.md",
+      "output/260907/260907_02_math2_25_answers_review.md": "output/260829/260829_02_math2_comprehensive_25_answers.md",
+      "output/260907/260907_02_math2_40_questions_review.md": "output/260822/260822_01_math2_mock40_questions.md",
+      "output/260907/260907_02_math2_40_answers_review.md": "output/260822/260822_01_math2_mock40_answers.md"
+    },
+    "reason": "DOC_LOCATION.md §3-2 — 완성본 홈은 세트 자신의 output/<YYMMDD>/",
+    "next": "기준선을 다시 동결하려면 파생본을 재생성한 뒤 manifest를 새로 산출한다."
+  },
+  "AGENTS.md": {
+    "bytes": 23840,
+    "sha256": "e6ee9cda18a910092043ac9e5eee2577eda087106487ee55262944e25b2bca62"
+  },
+  "analysis/catalog/AUTHORING_GUIDE.md": {
+    "bytes": 10990,
+    "sha256": "ea8be313d1be4cf5f66a153d2488e5e3ac71b21de693e4c194f3e47cae315768"
+  },
+  "analysis/DOC_LOCATION.md": {
+    "bytes": 9558,
+    "sha256": "ce1d8915f98bb9c3958a1d7d6f2251c5958bc0a7b43f56d0176ade26f0028662"
+  },
+  "analysis/REV_LOG.md": {
+    "bytes": 215635,
+    "sha256": "1a0394fa334c5ae41f7d4d073b7f626ff1a9f64088ee9b5c49f50342d5fe4ae3"
+  },
+  "analysis/wip/mainloop_260907_math2_revision_release.md": {
+    "bytes": 9705,
+    "sha256": "13dad5b6bd084136086ae005a98d9632e02b7db6c5ce4f69c2e2b58c0cf88e89"
+  },
+  "CLAUDE.md": {
+    "bytes": 40975,
+    "sha256": "55c3f08e22ce3e8ff38698a86f4b92fcbdf337a971c0b6a7b8b45dab2525ec25"
+  },
+  "output/260822/공통수학2_도형의방정식_모의40.md": {
+    "bytes": 52389,
+    "sha256": "f88a607e1b466ef10641f066149e19ea80865d86a8d6e25ec7879840bedc4ee0"
+  },
+  "output/260829/260829_02_math2_comprehensive_25.md": {
+    "bytes": 35121,
+    "sha256": "92fc702f282062c109c5f739881baf2c2b33a7fab96fa18c7a55ebae6e466272"
+  },
+  "output/260829/260829_02_math2_comprehensive_25.novelty.tsv": {
+    "bytes": 4733,
+    "sha256": "24a1775e1dd4a4f27597c4492b4a128b044e9a2b9636dd66a3a5c305d104c241"
+  },
+  "output/260907/260907_02_math2_25_answers_review.md": {
+    "bytes": 21223,
+    "sha256": "0f94f2e44c7f2b14b6157a4d1ef764070987eec4b140f34db13f1be1a370d645"
+  },
+  "output/260907/260907_02_math2_25_questions_review.md": {
+    "bytes": 6727,
+    "sha256": "7c7338c9fbe7c63d3e81485d52c5bc747e40733db8ea94683f5235eb1dac52f4"
+  },
+  "output/260907/260907_02_math2_40_answers_review.md": {
+    "bytes": 33290,
+    "sha256": "6abb9490de100e5f2fa5ac3d9a6efe88f7ba86a910526f24d3fe529f507966f0"
+  },
+  "output/260907/260907_02_math2_40_questions_review.md": {
+    "bytes": 13317,
+    "sha256": "f8ea0ec6584cf2bcf3401c7d380bacf6764ee58f8afa077d073b9a2cc0e071df"
+  },
+  "output/260907/260907_02_math2_apply_revision.py": {
+    "bytes": 6318,
+    "sha256": "12f6a1aa0d406360b042a7351b596c723eb33a8e8af54c44b9ced03f2885adba"
+  },
+  "output/260907/260907_02_math2_cc_audit_packet.md": {
+    "bytes": 3218,
+    "sha256": "cc73320b1972800253bd7ea3acf17e47d78f8dd95a1e35c4e55b43455558aad4"
+  },
+  "output/260907/260907_02_math2_close_slice.py": {
+    "bytes": 8256,
+    "sha256": "cf4a79b4fb7efb49ab74ac8106b53e9ef23fc23da8cf57cdd260d31f45dd1c96"
+  },
+  "output/260907/260907_02_math2_coverage.json": {
+    "bytes": 3561,
+    "sha256": "c42fd369bb13ff5bdcbb5b6e12d0a63a037b1bf5e7b7f85d2e0ee6e5690c7c2f"
+  },
+  "output/260907/260907_02_math2_novelty_notes.json": {
+    "bytes": 2756,
+    "sha256": "25c4c47284808d5df8eda63deed5d7b9b5755ff301a1f18d5b9df8f683fc5f51"
+  },
+  "output/260907/260907_02_math2_package.py": {
+    "bytes": 4579,
+    "sha256": "6bca2bddd0f687b76dde519fed81d9d22f598836363e9dec05da531a15f6c0a5"
+  },
+  "output/260907/260907_02_math2_persist_guidance.py": {
+    "bytes": 4460,
+    "sha256": "09f9b227ce94a2d8b26b486c83c174807deba22a26a0ef4da32812449e9c8a41"
+  },
+  "output/260907/260907_02_math2_reference_scan.json": {
+    "bytes": 6583,
+    "sha256": "c0b9a772750b94057d916c62a35092e32b4e92cfc97fb4792cbc20123897d5c8"
+  },
+  "output/260907/260907_02_math2_resume.md": {
+    "bytes": 1631,
+    "sha256": "8f98b64b0c44229b88f9067cdefbdd8084b514ed0d277bbbaf7db4a2d14caed3"
+  },
+  "output/260907/260907_02_math2_revision_baseline.json": {
+    "bytes": 197593,
+    "sha256": "7b45ffe229ce7daa7d5bf8a3de756f58f819a05f926578398056da1c435aea05"
+  },
+  "output/260907/260907_02_math2_selfcheck.json": {
+    "bytes": 1615,
+    "sha256": "778cc890e5b9b14c83e773f5f7576935e4c1032c4780d76c1fed7d483f63bf16"
+  },
+  "output/260907/260907_02_math2_selfcheck.py": {
+    "bytes": 3066,
+    "sha256": "453a6239cbddbb7c80ceb3bf37a98ceb384f7b3470a6ae39a2d25139713ecd10"
+  },
+  "output/260907/260907_02_math2_sync_documents.py": {
+    "bytes": 4763,
+    "sha256": "7da64cd3beb395cba9b8e7a924d374d673f4069c5c2dd62fe00cc2fc60f49c45"
+  },
+  "output/260907/260907_02_math2_validation_log.json": {
+    "bytes": 7301,
+    "sha256": "9175e024596f96d749c7184df61fa93e3f9d32dad7f6e1732afb74a6096609fa"
+  },
+  "output/260907/260907_02_math2_verify_artifacts.py": {
+    "bytes": 2761,
+    "sha256": "331d87cf7d011bebc0c8192e599929b4099a6308f6cff9a4efc15c6b3384f571"
+  },
+  "output/260907/rev/260907_01_item_quality_audit.md": {
+    "bytes": 36187,
+    "sha256": "e6fdcbed08aab09fbf5beb7465c94e4c9c1e2a0cbd1f2e8d241e8e5056093ec8"
+  },
+  "output/260907/rev/260907_02_math2_implementation_report.md": {
+    "bytes": 14698,
+    "sha256": "0f915966dee40bfb5cb15c5a21dbf5fb4de4a9e821c21d5be6e89189e57f832b"
+  },
+  "output/_index.md": {
+    "bytes": 23361,
+    "sha256": "a11bcfae8859eac4d74b124fdf6dbd893edd7e27341c5a3e889c267c911ff403"
+  },
+  "README.md": {
+    "bytes": 11762,
+    "sha256": "9806c3cc71bac9a3b4b9f21c11379e483f11885e14a5558f5f585407800a811a"
+  }
+}

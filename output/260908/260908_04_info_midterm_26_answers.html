@@ -1,0 +1,90 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><title>정보 2학기 중간고사 대비 26제 — 답지·해설 (교사용)</title><style>body{font:15px/1.7 "Malgun Gothic",sans-serif;max-width:860px;margin:32px auto;color:#111;padding:0 16px}h1{font-size:23px;margin-bottom:6px}h2{font-size:18px;border-bottom:2px solid #333;padding-bottom:4px;margin-top:34px}pre{font:14px/1.5 Consolas,monospace;background:#f4f4f4;border:1px solid #ddd;padding:11px;white-space:pre-wrap;margin:10px 0}code{font:0.93em Consolas,monospace;background:#f0f0f0;padding:1px 3px;border-radius:2px}.item{break-inside:avoid;margin:0 0 22px;padding-bottom:14px;border-bottom:1px solid #ccc}.opt{margin:2px 0 2px 6px}.blank{margin:14px 0;letter-spacing:.5px}.notice{border:2px solid #a60;background:#fffaf2;padding:11px 14px;margin:14px 0}.head{background:#f7f7f7;border:1px solid #ccc;padding:9px 12px}table{border-collapse:collapse;margin:10px 0;font-size:14px}th,td{border:1px solid #999;padding:5px 9px;text-align:left}th{background:#eee}.grid td{height:30px;width:52px;text-align:center}@page{size:A4;margin:14mm}@media print{body{margin:0;font-size:12.5px;max-width:none}pre{font-size:12px}.item{border-bottom:none}}</style>
+<h1>정보 2학기 중간고사 대비 26제 — 답지·해설 (교사용)</h1>
+<p class="notice"><b>학생 배부 금지.</b> 함정 기제·최다 오답 경로가 그대로 적혀 있다.</p>
+<h2>커버리지 게이트</h2>
+<table>
+<tr><th>항목</th><th>값</th></tr>
+<tr><td>통합본 문항 수 N</td><td>26</td></tr>
+<tr><td>문제지 문항 수 M</td><td>26 (선택형 18 · 서답형 8)</td></tr>
+<tr><td>답지 문항 수 K</td><td>26</td></tr>
+<tr><td>배점 합</td><td>선택형 70.0 + 서답형 30.0 = <b>100.0</b></td></tr>
+<tr><td>판정</td><td><b>N = M = K</b></td></tr>
+</table>
+<h2>빠른 정답</h2>
+<table>
+<tr><th>문항</th><th>정답</th><th>문항</th><th>정답</th></tr>
+<tr><td>1</td><td><b>⑤</b></td><td>14</td><td><b>①</b></td></tr>
+<tr><td>2</td><td><b>②</b></td><td>15</td><td><b>①</b></td></tr>
+<tr><td>3</td><td><b>②</b></td><td>16</td><td><b>④</b></td></tr>
+<tr><td>4</td><td><b>②</b></td><td>17</td><td><b>②</b></td></tr>
+<tr><td>5</td><td><b>①</b></td><td>18</td><td><b>①</b></td></tr>
+<tr><td>6</td><td><b>④</b></td><td>19</td><td><b><code>18 1</code></b></td></tr>
+<tr><td>7</td><td><b>⑤</b></td><td>20</td><td><b><code>21 6</code></b></td></tr>
+<tr><td>8</td><td><b>③</b></td><td>21</td><td><b><code>14</code></b></td></tr>
+<tr><td>9</td><td><b>②</b></td><td>22</td><td><b><code>[5, 3, 3, 8]</code> / <code>[3, 5, 3, 8]</code></b></td></tr>
+<tr><td>10</td><td><b>④</b></td><td>23</td><td><b><code>a = 2</code>, <code>b = 8</code></b></td></tr>
+<tr><td>11</td><td><b>③</b></td><td>24</td><td><b>(1) <code>m[2][1]</code> (2) <code>m[0][1]</code></b></td></tr>
+<tr><td>12</td><td><b>②</b></td><td>25</td><td><b><code>21</code></b></td></tr>
+<tr><td>13</td><td><b>③</b></td><td>26</td><td><b>(1) (가) 5 (나) 20 (다) 25 (2) <code>2</code>, <code>4</code></b></td></tr>
+</table>
+<h2>문항별 정답 · 유형 · 해설</h2>
+<table>
+<tr><th>문항</th><th>배점</th><th>정답</th><th>유형ID·Tier</th><th>해설 / 함정</th></tr>
+<tr><td>1</td><td>4.1점</td><td><b>⑤</b></td><td>IN-01·T3</td><td>① 3+3=6 ② 49//24=2 ③ 17%7=3 ④ 24%3=0 ⑤ 7%24=<b>7</b>. 작은 수를 큰 수로 나누면 0이라고 보는 것이 최다 오답(E6 좌우 뒤집기)</td></tr>
+<tr><td>2</td><td>3.6점</td><td><b>②</b></td><td>IN-03·T2</td><td><code>15%4=3</code>이라 <code>3&amp;gt;4</code>는 False / <code>15//4=3</code>으로 앞은 참이나 <code>4!=4</code>가 거짓이라 False / <code>15&amp;gt;=15</code>·<code>4&amp;lt;=4</code> 둘 다 참이라 True. 등호 포함을 놓치면 ④(E5)</td></tr>
+<tr><td>3</td><td>3.6점</td><td><b>②</b></td><td>IN-04·T2</td><td>74는 90·80 미만이고 70 이상이라 <code>k=2</code>. 이어지는 두 번째 <code>if</code>가 <code>n</code>을 76으로 바꾼다. 두 번째 <code>if</code>를 놓치면 ①(E3)</td></tr>
+<tr><td>4</td><td>4.1점</td><td><b>②</b></td><td>IN-05·T3</td><td>끝값은 포함되지 않으므로 1을 출력하려면 끝값이 0이어야 한다. ①은 9 7 5 3에서 멈추고(E5), ④는 증가 방향이라 1 3 5 7 9다(E6)</td></tr>
+<tr><td>5</td><td>4.1점</td><td><b>①</b></td><td>IN-08·T3</td><td>100→50→25→12→6으로 네 번 반복한 뒤 <code>6 &amp;gt; 7</code>이 거짓이라 종료. 반복 횟수를 5로 세는 것이 최다 오답(E5)</td></tr>
+<tr><td>6</td><td>3.6점</td><td><b>④</b></td><td>IN-09·T2</td><td><code>w[2]-w[3] = 3-(-21) = 24</code>. 나머지는 −18·−51·35·9다. <b>음수를 빼면 더해진다</b>는 것이 판정의 핵심이다. 부호를 무시해 <code>w[3]</code>을 21로 읽으면 ①이 <code>3+21 = 24</code>가 되어 정확히 걸리고(E1), 인덱스를 1부터 세면 ②가 <code>3-(-21) = 24</code>가 되어 또 한 번 걸린다(E5). 두 오독 모두 다른 선지로는 24를 만들지 못한다</td></tr>
+<tr><td>7</td><td>4.1점</td><td><b>⑤</b></td><td>IN-10·T3</td><td><code>b=[9,1,7]</code>, <code>c=[7,5,2]</code>이므로 <code>7+7+3=17</code>. <code>b[2]</code>를 1로 보면 ①, <code>c</code>를 <code>[5,2]</code>로 보면 ③, <code>c[0]</code>을 5로 보면 ④ — 전부 경계 오류(E5)</td></tr>
+<tr><td>8</td><td>3.6점</td><td><b>③</b></td><td>IN-12·T2</td><td>'정보'가 인덱스 1에 들어갔다. <code>append</code>는 맨 뒤(①), <code>insert(0, …)</code>은 맨 앞(②)이다(E5)</td></tr>
+<tr><td>9</td><td>4.1점</td><td><b>②</b></td><td>IN-13·T3</td><td><code>sum(p)=32</code>, <code>max(q)=11</code>, <code>min(p)=3</code>, <code>len(q)=3</code> → <code>32-33+3=2</code>. <code>max</code>·<code>min</code>의 소속 리스트를 뒤바꾸면 5(④), 곱셈을 먼저 하지 않으면 66(⑤)이다(E6)</td></tr>
+<tr><td>10</td><td>3.2점</td><td><b>④</b></td><td>IN-16·T1</td><td><code>_last_2</code>만 유효하다. ① 숫자로 시작 ② 공백 포함 ③ 하이픈 ⑤ 특수문자로 모두 불가. 밑줄 시작을 불가로 오해하는 것이 함정(E5)</td></tr>
+<tr><td>11</td><td>3.6점</td><td><b>③</b></td><td>IN-17·T2</td><td>열람 제한 = 기밀성, 내용이 바뀌지 않았음을 보장 = 무결성, 필요할 때 쓸 수 있음 = 가용성. 세 요소를 뒤섞는 것이 함정(E7)</td></tr>
+<tr><td>12</td><td>3.6점</td><td><b>②</b></td><td>IN-18·T2</td><td>문항이 제시한 뜻 표를 그대로 대입하면 출처 표시(BY) + 변경 금지(ND) → BY-ND. &quot;고칠 수 없다&quot;에서 변경을 전제하는 ①·③이, 영리 목적을 허용했으므로 NC가 붙은 ④·⑤가 각각 걸러진다. 세 조건을 동시에 만족하는 선지는 ② 하나뿐이다(E4)</td></tr>
+<tr><td>13</td><td>4.1점</td><td><b>③</b></td><td>IN-19·T3</td><td><code>x=15</code>, <code>half(8)=4</code>이므로 <code>y=19</code>, <code>half(15)=7</code> → <code>19+7=26</code>. <code>half(8)</code>을 빠뜨리면 22(①), <code>half(x)</code> 대신 <code>x</code>를 더하면 34(⑤)다(E7)</td></tr>
+<tr><td>14</td><td>4.1점</td><td><b>①</b></td><td>IN-20·T3</td><td><code>up()</code>의 <code>count</code>는 지역변수라 전역값을 바꾸지 못하고 100을 반환만 한다. <code>down()</code>은 <code>global</code> 선언이 있어 전역 <code>count</code>를 3으로 바꾼다. <code>up()</code>이 전역을 바꿨다고 믿으면 <code>down()</code>이 <code>100-2=98</code>을 만들어 ④에 정확히 착지한다(E4)</td></tr>
+<tr><td>15</td><td>4.4점</td><td><b>①</b></td><td>IN-21·T4</td><td><code>g(6)=6+g(5)</code>, <code>g(5)=g(3)</code>, <code>g(3)=g(1)=1</code> → 7. 홀수 갈래는 값을 더하지 않고 건너뛴다. 분기를 무시하고 전부 더하면 21(⑤), 홀수에서도 더하면 15(④)다(E4)</td></tr>
+<tr><td>16</td><td>4.4점</td><td><b>④</b></td><td>IN-23·T4</td><td><code>a</code>는 행이 2개뿐이라 <code>a[2]</code>가 오류다. <code>s[0:6]</code>은 끝값이 포함되지 않아 인덱스 0~5, 곧 <code>python</code> 전체를 준다 — 끝값 <code>6</code>을 없는 인덱스로 보고 오류라 판단하는 것이 최다 오답(E5). <code>s[5]</code>는 마지막 문자 <code>n</code>으로 유효하다</td></tr>
+<tr><td>17</td><td>3.6점</td><td><b>②</b></td><td>IN-24·T2</td><td><code>split()</code>은 값을 <b>문자열로</b> 저장하므로 <code>n[1]+n[2]</code>는 덧셈이 아니라 결합이라 <code>89</code>다. <code>map(int, …)</code>을 거친 <code>m</code>은 정수라 <code>17</code>. 둘 다 17로 보면 ①(E4)</td></tr>
+<tr><td>18</td><td>4.1점</td><td><b>①</b></td><td>IN-25·T3</td><td>4의 배수 판정은 나머지가 0인지 보고, 누적은 <code>total + i</code>다(4+8+…+28 = 112). <code>total + 4</code>는 7번 더해 28(②), <code>/</code>는 나눗셈이라 조건이 참이 되지 않는다(③, E9)</td></tr>
+<tr><td>19</td><td>3점</td><td><b><code>18 1</code></b></td><td>IN-02·T2</td><td><code>a = 4+5 = 9</code> → <code>b = 10-9 = 1</code> → <code>a = 18</code>. <code>b -= a</code>가 <b>갱신된 <code>a</code>(9)</b> 를 쓴다는 점이 핵심이다. 갱신 순서를 뒤집으면 값이 어긋난다(E5)</td></tr>
+<tr><td>20</td><td>4점</td><td><b><code>21 6</code></b></td><td>IN-06·T3</td><td>조건이 반복 변수가 아니라 <b>누적 변수 자신</b>에 걸린다. 1+2+3+4+5+6=21에서 <code>total &amp;lt; 20</code>이 거짓이 되어 이후 6번은 누적하지 않는다. 반복 횟수(12)와 누적 횟수(6)를 혼동하면 오답(E5)</td></tr>
+<tr><td>21</td><td>4점</td><td><b><code>14</code></b></td><td>IN-07·T3</td><td><code>i+j==5</code>가 4번(+4), <code>i==j</code>가 5번(+10) → 14. 두 조건을 동시에 만족하는 (i, j)는 없으므로 두 셈은 겹치지 않는다. <b>행별 기여가 <code>[3, 3, 3, 3, 2]</code>로 균일하지 않다</b> — <code>i=5</code>에는 <code>i+j==5</code>를 만족하는 <code>j</code>가 없기 때문이다. 바깥 루프 1회분(3)만 세어 5를 곱하면 15가 되어 갈라진다. 한쪽 조건만 세면 4 또는 10이다(E5)</td></tr>
+<tr><td>22</td><td>4점</td><td><b><code>[5, 3, 3, 8]</code> / <code>[3, 5, 3, 8]</code></b></td><td>IN-11·T3</td><td>같은 두 조작을 순서만 바꿨는데 결과가 다르다. <code>a</code>는 앞의 3을 지운 뒤 인덱스 1에 3을 넣어 <code>[5,3,3,8]</code>, <code>b</code>는 먼저 넣어 <code>[3,3,5,3,8]</code>이 된 뒤 앞의 3을 지워 <code>[3,5,3,8]</code>이다. <code>remove</code>는 <b>가장 앞의 값 하나만</b> 지운다(E6)</td></tr>
+<tr><td>23</td><td>4점</td><td><b><code>a = 2</code>, <code>b = 8</code></b></td><td>IN-14·T3</td><td><code>information</code>에서 <code>format</code>은 인덱스 2~7이고 슬라이싱의 끝값은 포함되지 않으므로 <code>b=8</code>이다. <code>b=7</code>로 쓰면 <code>forma</code>가 된다(E5)</td></tr>
+<tr><td>24</td><td>3점</td><td><b>(1) <code>m[2][1]</code> (2) <code>m[0][1]</code></b></td><td>IN-15·T2</td><td>7은 셋째 행 둘째 열이므로 <code>m[2][1]</code>이다. 첫째 행 <code>[3, 8, 1]</code>의 최댓값 8은 첫째 행 둘째 열이므로 <code>m[0][1]</code>이다. 두 물음 모두 값에서 위치를 되짚는 방향이며, 행과 열을 바꿔 쓰는 것이 최다 오답(E6)</td></tr>
+<tr><td>25</td><td>4점</td><td><b><code>21</code></b></td><td>IN-22·T4</td><td><code>i != j</code>인 여섯 칸(9·4·7·8·5·6) 중 홀수는 9·7·5 → 21. 위치 조건과 값 조건을 <b>동시에</b> 걸어야 한다(E5)</td></tr>
+<tr><td>26</td><td>4점</td><td><b>(1) (가) 5 (나) 20 (다) 25 (2) <code>2</code>, <code>4</code></b></td><td>IN-26·T3</td><td><code>s</code>는 1 →(×2) 2 →(+3) 5 →(×4) 20 →(+5) 25로 변한다. 짝수일 때 곱하고 홀수일 때 더하므로 곱셈이 일어난 회차의 <code>i</code>는 2와 4다. (가) 직전의 <code>s</code>는 2이므로 홀짝을 뒤바꿔 곱하면 6이 되는데, 이것이 최다 오답이다(E5)</td></tr>
+</table>
+<h2>서답형 채점 조건 (전문)</h2>
+<li><b>19번</b> (3점) — 3점, 부분 점수 없음. 두 값을 <code>a b</code> 순서로 모두 맞게 쓴 경우만 정답으로 한다.</li>
+<li><b>20번</b> (4점) — 4점, 부분 점수 없음. 두 값을 <code>total cnt</code> 순서로 모두 맞게 쓴 경우만 정답으로 한다. 반복이 12번 도는 것과 누적이 일어난 횟수를 구별하지 못한 답은 오답이다.</li>
+<li><b>21번</b> (4점) — 4점, 부분 점수 없음. 정수 하나만 쓴다. 두 조건 중 한쪽만 세어 <code>4</code> 또는 <code>10</code>으로 쓴 답, 바깥 루프 1회분(3)을 세어 5를 곱한 <code>15</code>로 쓴 답은 오답이다.</li>
+<li><b>22번</b> (4점) — 4점, 부분 점수 없음. 두 줄을 순서대로 모두 맞게 쓴 경우만 정답으로 한다. 대괄호와 쉼표를 포함해 리스트 전체를 쓴다. 두 리스트를 같게 쓴 답은 오답이다.</li>
+<li><b>23번</b> (4점) — 4점, 부분 점수 없음. <code>a</code>와 <code>b</code>를 모두 맞게 쓴 경우만 정답으로 한다. <code>b</code>를 7로 쓴 답은 오답이다 (슬라이싱의 끝값은 결과에 포함되지 않는다).</li>
+<li><b>24번</b> (3점) — (1) 2점, (2) 1점. 행과 열의 번호는 <b>0부터</b> 센다. (1)에서 행과 열을 바꿔 쓴 <code>m[1][2]</code>, 1부터 세어 쓴 <code>m[3][2]</code>는 오답으로 처리한다.</li>
+<li><b>25번</b> (4점) — 4점, 부분 점수 없음. 정수 하나만 쓴다. 대각선을 제외하는 조건과 홀수 조건 중 하나만 적용한 답은 오답이다.</li>
+<li><b>26번</b> (4점) — (가)·(나)·(다) 각 1점, (2) 1점. (2)는 두 값을 모두 써야 정답으로 한다. (가)에서 홀짝을 뒤바꿔 곱셈을 적용한 <code>6</code>은 오답이다.</li>
+<p class="notice">문제지에는 위 조건 중 <b>「…는 오답이다」 문장을 뺀 판</b>만 실었다. 그 문장들이 함정의 정답 방향을 그대로 알려 주기 때문이다. 학생용 문구는 배점·부분점수·답안 형식만 담는다.</p>
+<h2>알려진 잔여 결함 (배포 시 공개 의무)</h2>
+<li><b><code>scope_confirmed: false</code></b> — 학교 평가계획서를 확보하지 못했다. <code>intended_use</code>는 <code>exam</code>이 아니라 <code>practice</code>다.</li>
+<li><b>학습지 2종에 문면이 없는 요소를 쓰는 10문항</b>(1·2·5·9·10·11·12·13·19·25) — <code><b></code>·<code>//</code>·<code>and</code>·<code>while</code>·내장 <code>max/min/sum</code>·변수명 규칙·정보 보안 3요소·CCL. 전부 2025 2학기 중간 기출에 실제로 출제된 것이어서 사용자 판단으로 </b>그대로 두었다**. 올해 진도가 작년과 다르면 이 10문항이 가장 먼저 흔들린다(통합본 «범위 대조» 절).</li>
+<li><b>서답형 Tier는 잠정 표기다</b> — <code>DIFFICULTY_RUBRIC</code>의 서답형 밴드가 「미서명」이라 서명된 자로 잰 값이 아니다(S9 결정요청 D-1, 미해소).</li>
+<li><b>10·11·12·16·17번에 범위가드 ⚠️ 가 붙어 있다</b> — 수업 취급 여부 미확인. 문제지에는 학생에게 무의미한 공학 메모라 싣지 않았다. 통합본에서 확인한다.</li>
+<li><b>T4 비중 11.5%</b> — 루브릭 실측 22.8%의 절반이다(S9 4회차 §3-2). S8·S9가 근거를 대고 내린 Tier 하향의 결과이므로 문항 추가 설계 없이는 회복하지 않는다.</li>
+<li><b>26번 (2)는 1점이 사실상 무상 지급이다</b>(S8 6회차 A-3). 「곱셈으로 갱신된 회차의 <code>i</code>」는 코드의 <code>if i % 2 == 0</code>에서 추적 없이 즉독할 수 있어 실질 난이도가 T2에 가깝다. (2)는 S8 2회차에서 <b>문항 내부 누설을 없애려고</b> 이미 한 번 바꾼 자리라, 다시 손대면 게이트 두 종을 또 한 바퀴 돌려야 한다. 정답·유일성·조건충분은 흔들리지 않으므로 <b>고치지 않고 공개</b>한다. 부분 배점을 조정해 쓰실 경우 (1) 3점 / (2) 1점이 아니라 (1) 3.5 / (2) 0.5로 보는 편이 실측에 가깝다.</li>
+<li><b>16번의 Tier가 한 칸 높다 — S9 4회차 차단(V2).</b> T4 요건 DF5(발상)를 충족하지 못하는데 <code>T4·4.4점</code>으로 선언돼 있다. 결정적 반례가 세트 안에 있다: <b>1번이 동일 골격</b>(다섯 선지를 전부 계산·판정해 하나 고르기)인데 <code>T3·4.1점</code>이고 산술 계산량은 오히려 많다. <b>고치지 않고 공개한다</b> — 서명된 배점표가 {3.2·3.6·4.1·4.4} 네 값이라 16번만 T3로 내리면 선택형 합이 69.7이 되어 100점을 깬다. 18문항·70.0을 만족하는 Tier 조성은 <code>(T1,T2,T3,T4)=(1,7,8,2)</code>(현재)·<code>(4,1,12,1)</code>·<code>(2,4,12,0)</code> 셋뿐이고, 뒤의 둘은 12문항의 Tier를 한꺼번에 갈아엎는 것이라 「측정값을 총점에 맞춰 조작」이 된다. <b>채점에 미치는 영향</b>: 16번을 4.1점으로 매기고 싶다면 남는 0.3점을 어디에 둘지가 선생님 재량이다. 정답·유일성은 흔들리지 않는다.</li>
+<li><b>23번의 함정은 문제지에서만 살아 있다</b> — 채점 조건의 「(슬라이싱의 끝값은 결과에 포함되지 않는다)」가 이 문항의 유일한 함정을 미리 알려 주므로, 그 문장이 든 채점 조건은 <b>문제지에서 제거</b>했다(S8 6회차 §5-23 해소). 이 답지에는 채점자 근거로 남아 있으니 <b>학생에게 보이지 않게</b> 한다.</li>
+<li><b>3·9·11·15·18·26번은 오답 선지가 「등재되지 않은」 함정에 착지한다 — S9 4회차 차단 6건(V1).</b> 이 여섯 문항의 오답 선지에는 <b>실제로 작동하는 함정이 있고 반례도 실행으로 확인됐다</b>. 다만 그 함정이 <code>analysis/catalog/info.md</code>가 해당 유형에 등재해 둔 함정 목록 <b>밖</b>이다. 예: 9번은 <code>len</code>을 합계로 혼동한 값 21이 선지에 없고, 15번은 종료조건 반환을 빠뜨린 값 6이 선지에 없다. <b>원인은 기준 충돌이다</b> — 18번은 빈칸을 <code>range</code> 인자에서 조건식·누적식으로 옮긴 <b>신규성 확보 조치</b>가, 26번은 「표 행 수를 반복 횟수와 정확히 맞춘다」는 <b>카탈로그 자신의 금지·주의 준수</b>가 각각 등재 함정을 껐다. 카탈로그가 기출 1회차 + 학습지 2종에서만 귀납된 탓에, 변형 축을 크게 움직일수록 함정이 목록 밖으로 나간다(S9 결정요청 D-2). <b>학생 입장에서 달라지는 것은 없다</b> — 문항은 정상 작동하고 오답 선지도 유인력이 있다. 달라지는 것은 「이 문항이 카탈로그가 지목한 그 오개념을 겨냥했다」고 <b>문서상 주장할 수 없다</b>는 점이다. 오답 분석을 유형 통계로 집계하실 때 이 여섯 문항은 따로 본다.</li>
+<li><b>정답률·오답 분포를 성적 산출에 쓰지 않는다.</b> 위 9·7번 때문에 이 세트는 <code>검토필요</code> 등급이며 <code>배포가능</code>·<code>정본</code>이 아니다. 연습·진단·오답 지도에는 그대로 쓰되, <b>시험 성적이나 등급 산출의 근거로는 쓰지 않는다</b>(D-2 판정 + 평가계획서 확보 전까지).</li>
+<h2>검증 이력 요약</h2>
+<li><b>S8 독립 맹목 풀이</b>(<code>solve-back-verifier</code>, 정답표·근거·오답 힌트 제거 사본) — <b>6회차 <code>PASS</code></b>. 정답 26/26 일치 · 유일성 결함 0 · 조건 충분성 결함 0 · 차단 0건.</li>
+<li><b>S9 독립 품질감사</b>(<code>item-quality-auditor</code>, N/V/A축) — <b>4회차 <code>FAIL 7건</code></b>. 원장(<code>.novelty.tsv</code>)의 판정을 근거로 쓰지 않고 대조원 3종 원문 + 파이썬 전건 실행으로 재판정했다.</li>
+<p>  - <b>A축(정답구성) 결함 0</b> — 26/26 재계산 일치, 채점기준 8/8 배점 합치, 총점 100.0, 선택형 상대배점 <code>r</code> 전건 밴드 내부.</p>
+<p>  - <b>N축 수치변형 0/26</b> — 26문항 어느 것도 선행 문항과 「주어진 것·요구 행동·풀이 골격」이 전부 일치하지 않는다(신규 21 · 부분신규 4: 9·10·21·25).</p>
+<p>  - <b>V축 차단 7건</b> — 위 «알려진 잔여 결함» 7·9번이 그 전부다. <b>정답을 바꾸거나 문항을 못 풀게 만드는 것은 하나도 없다.</b></p>
+<p>  - 직전 3회차의 <code>PASS</code>는 V1 기준을 완화 적용한 산물임이 4회차에서 실측 적시됐다. 완화 권한은 감사자에게도 작성자에게도 없다(CLAUDE.md 원칙 12-a) — 그래서 <b>낮은 쪽 판정을 싣는다</b>.</p>
+<li><b><code>novelty-gate</code> 기계 검사</b> — <code>tools/check_novelty_ledger.py</code> 26행 <code>PASS</code>(경고 0). 이 검사는 260910까지 정보 세트에서 한 번도 돌지 않았다: 자의 <code>TYPE_RE</code>가 <code>SM2-\d{2}</code>로 하드코딩돼 <code>IN-</code> 유형ID 26행을 전건 <code>invalid_type_id</code>로 떨어뜨리고 있었다. <code>docs/DATA_STANDARD.md</code> §1.3의 서명 패턴 + <code>analysis/catalog/index.tsv</code> 등록제를 실제로 구현하도록 자를 고치고, 검출력을 실증한 뒤 돌린 결과다(원칙 12-b·12-d).</li>
+<li>회차별 지적과 반영 내역 전문: 통합본 «검증 이력» 절, 보고서 <code>analysis/wip/_gate_state/s8_report_r1~r6.md</code> · <code>s9_report_r1~r4.md</code>.</li></div>
+</html>

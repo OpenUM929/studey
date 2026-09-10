@@ -1,0 +1,320 @@
+{
+  "author": "메인 루프 (Codex/OMX)",
+  "grade": "proposal",
+  "independent": false,
+  "source": {
+    "path": "output/260830/260830_01_math2_graded_new_forms_32.md",
+    "bytes": 33352,
+    "sha256": "69fe886f270065df93823e8de08f33b3c257d22744243f7522eb851af09ae02e"
+  },
+  "coverage": {
+    "expected": [
+      "A1",
+      "A2",
+      "A3",
+      "A4",
+      "A5",
+      "A6",
+      "B1",
+      "B2",
+      "B3",
+      "B4",
+      "B5",
+      "B6",
+      "B7",
+      "B8",
+      "B9",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7",
+      "C8",
+      "C9",
+      "C10",
+      "D1",
+      "D2",
+      "D3",
+      "D4",
+      "D5",
+      "D6",
+      "D7"
+    ],
+    "observed": [
+      "A1",
+      "A2",
+      "A3",
+      "A4",
+      "A5",
+      "A6",
+      "B1",
+      "B2",
+      "B3",
+      "B4",
+      "B5",
+      "B6",
+      "B7",
+      "B8",
+      "B9",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7",
+      "C8",
+      "C9",
+      "C10",
+      "D1",
+      "D2",
+      "D3",
+      "D4",
+      "D5",
+      "D6",
+      "D7"
+    ],
+    "duplicate": [],
+    "missing": [],
+    "extra": []
+  },
+  "rows": [
+    {
+      "item": "A1",
+      "calculated": "2*x + y - 8",
+      "published_answer": "**2x + y − 8 = 0**",
+      "result": "SELF_CHECK_MATCH",
+      "evidence": "거리제곱 차=0; 나눔 상수4는 0 아님."
+    },
+    {
+      "item": "A2",
+      "calculated": "[-3, 2]",
+      "published_answer": "**(−3, 2)**",
+      "result": "SELF_CHECK_MATCH",
+      "evidence": "이동량(3,-2)의 역벡터."
+    },
+    {
+      "item": "A3",
+      "calculated": "2/3",
+      "published_answer": "**2 : 3**",
+      "result": "SELF_CHECK_MATCH",
+      "evidence": "m/n 비에서 n=1로 두어 6m=4n; 두 값 양수."
+    },
+    {
+      "item": "A4",
+      "calculated": "[3, 0]",
+      "published_answer": "**(1)** 한 직선 위에 있지 않다 **(2)** 4x − 3y + 8 = 0",
+      "result": "SELF_CHECK_MATCH",
+      "evidence": "행렬식3≠0 비공선. 법선(4,-3)은 AB=(3,4)에 수직이고 C를 지남."
+    },
+    {
+      "item": "A5",
+      "calculated": "[(-3, -3), (-3, 3), (3, -3), (3, 3)]",
+      "published_answer": "**4개** · (3, 3), (−3, 3), (−3, −3), (3, −3)",
+      "result": "SELF_CHECK_MATCH",
+      "evidence": "두 축까지 거리3을 동시에 만족하는 중심 전부."
+    },
+    {
+      "item": "A6",
+      "calculated": "Matrix([[-2], [-5]])",
+      "published_answer": "**(−2, −5)**",
+      "result": "SELF_CHECK_MATCH",
+      "evidence": "x축 대칭 후 y=x 대칭 합성의 역행렬."
+    },
+    {
+      "item": "B1",
+      "calculated": "[Point2D(4, 6), Point2D(4, 6)]",
+      "published_answer": "잘못: **변 AB·CD의 중점 일치를 판정 기준으로 삼음** (평행사변형 판정의 기준은 **대각선** AC·BD의 중점 일치다) — 사각형 ABCD의 대각선은 **AC와 BD**. 판정: **평행사변형이다.**",
+      "result": "SELF_CHECK_MATCH",
+      "evidence": "대각선 중점 일치. AB와 AD 행렬식20≠0이라 비퇴화."
+    },
+    {
+      "item": "B2",
+      "calculated": "Point2D(3, 6)",
+      "published_answer": "**C(3, 6)**",
+      "result": "SELF_CHECK_MATCH",
+      "evidence": "무게중심 방정식에서 세 번째 꼭짓점 유일."
+    },
+    {
+      "item": "B3",
+      "calculated": "-6",
+      "published_answer": "**−6**",
+      "result": "SELF_CHECK_MATCH",
+      "evidence": "법선 행렬식0; 두 근 모두 확대행렬 rank2이므로 일치 아님."
+    },
+    {
+      "item": "B4",
+      "calculated": "[0, 0]",
+      "published_answer": "**4x − 3y − 11 = 0**",
+      "result": "SELF_CHECK_MATCH",
+      "evidence": "중심(2,-1)과 외부점(5,3)을 지나는 유일 직선; 원 넓이 이등분."
+    },
+    {
+      "item": "B5",
+      "calculated": "[4, 12/5, 16/5]",
+      "published_answer": "**(1)** r = 4 **(2)** (12/5, 16/5)",
+      "result": "SELF_CHECK_MATCH",
+      "evidence": "원점의 직선상 정사영이 접점; 반지름은 거리."
+    },
+    {
+      "item": "B6",
+      "calculated": "x**2 - 6*x + 5",
+      "published_answer": "**y = (x − 3)² − 4**",
+      "result": "SELF_CHECK_MATCH",
+      "evidence": "최고차항1의 이차식이며 서로 다른 두 근1,5로 유일."
+    },
+    {
+      "item": "B7",
+      "calculated": "[1, 1, 0]",
+      "published_answer": "**x + 3y − 4 = 0**",
+      "result": "SELF_CHECK_MATCH",
+      "evidence": "교점(1,1); 기울기 -1/3은 주어진 기울기3과 수직."
+    },
+    {
+      "item": "B8",
+      "calculated": "[-13, 17]",
+      "published_answer": "**k = 17 또는 k = −13**",
+      "result": "SELF_CHECK_MATCH",
+      "evidence": "|k-2|/5=3의 두 실수해; 제곱 후 둘 다 원식 만족."
+    },
+    {
+      "item": "B9",
+      "calculated": "[-1, 2, 2]",
+      "published_answer": "중심 **(−1, 2)**, 반지름 **2**",
+      "result": "SELF_CHECK_MATCH",
+      "evidence": "원래 중심(1,-2), 원점 대칭, 반지름 불변."
+    },
+    {
+      "item": "C1",
+      "calculated": "18",
+      "published_answer": "최솟값 **18**, P(**4, 0**)",
+      "result": "SELF_CHECK_MATCH",
+      "evidence": "2(x-4)^2+18이므로 x=4에서 유일 최소18; y=0."
+    },
+    {
+      "item": "C2",
+      "calculated": "1/2",
+      "published_answer": "**1/2**",
+      "result": "SELF_CHECK_MATCH",
+      "evidence": "직선 매개변수 t=-1/2, 길이비 k=|t|; P=(-1/2,0)."
+    },
+    {
+      "item": "C3",
+      "calculated": "[5, 4]",
+      "published_answer": "**B(5, 4)**",
+      "result": "SELF_CHECK_MATCH",
+      "evidence": "중점이 대칭축 위이고 연결선이 축에 수직; A는 축 밖이라 B 유일."
+    },
+    {
+      "item": "C4",
+      "calculated": "3*(a - 4)**2/(2*(a - 2))",
+      "published_answer": "**12**",
+      "result": "SELF_CHECK_MATCH",
+      "evidence": "a>2에서 S-12=3(a-4)^2/[2(a-2)]≥0. a=4,b=6에서 달성. AM-GM 없이 가능."
+    },
+    {
+      "item": "C5",
+      "calculated": "2*k + 9",
+      "published_answer": "**k > −9/2**",
+      "result": "SELF_CHECK_MATCH",
+      "evidence": "완전제곱 우변2k+9>0; 등호는 원이 아니라 점."
+    },
+    {
+      "item": "C6",
+      "calculated": "5/12",
+      "published_answer": "**5/12**",
+      "result": "SELF_CHECK_MATCH",
+      "evidence": "12m²-24m+5=0 판별식336>0. x=4는 중심거리4>2로 접선 아님."
+    },
+    {
+      "item": "C7",
+      "calculated": "8*sqrt(2)/3",
+      "published_answer": "**8√2/3**",
+      "result": "SELF_CHECK_MATCH",
+      "evidence": "공통현 x=7/3; 반현 길이 sqrt(9-49/9)."
+    },
+    {
+      "item": "C8",
+      "calculated": "441",
+      "published_answer": "**441**",
+      "result": "SELF_CHECK_MATCH",
+      "evidence": "외부 고정점 거리 범위[3,7], 두 끝점 모두 중심선상 달성."
+    },
+    {
+      "item": "C9",
+      "calculated": "f(-x - 2)",
+      "published_answer": "**y = f(−x − 2)**",
+      "result": "SELF_CHECK_MATCH",
+      "evidence": "오른쪽2 평행이동한 그래프를 y축 대칭; 일반 함수로 확인."
+    },
+    {
+      "item": "C10",
+      "calculated": "[2, 4]",
+      "published_answer": "**(2, 4)**",
+      "result": "SELF_CHECK_MATCH",
+      "evidence": "k의 계수와 상수항을 동시에0; 정점(1,3), 내분비1:2."
+    },
+    {
+      "item": "D1",
+      "calculated": "8",
+      "published_answer": "**8**",
+      "result": "SELF_CHECK_MATCH",
+      "evidence": "a>0에서 현x>0, 길이6으로 x=4; 두 근4±√7 모두 교차 조건 만족."
+    },
+    {
+      "item": "D2",
+      "calculated": "32/5",
+      "published_answer": "**32/5**",
+      "result": "SELF_CHECK_MATCH",
+      "evidence": "대칭점(16/5,12/5), 밑변4×높이16/5÷2. 계산은 맞으나 범위 초과 유지."
+    },
+    {
+      "item": "D3",
+      "calculated": "6*sqrt(2)",
+      "published_answer": "**6√2**",
+      "result": "SELF_CHECK_MATCH",
+      "evidence": "대칭한 경로 길이는 직선거리 이상. A,P,Q,B 순서의 매개변수0,2/3,5/6,1로 등호 달성."
+    },
+    {
+      "item": "D4",
+      "calculated": "(a + 1)**2 + (b - 2)**2 - 9",
+      "published_answer": "**(p + 1)² + (q − 2)² = 9**",
+      "result": "SELF_CHECK_MATCH",
+      "evidence": "이동 중심(1+p,-2+q), 반지름2 불변; 외접 중심거리3, 역도 성립."
+    },
+    {
+      "item": "D5",
+      "calculated": "5",
+      "published_answer": "**5**",
+      "result": "SELF_CHECK_MATCH",
+      "evidence": "접선x+2y=5, 수직선y=2x; 꼭짓점 원점,(5,0),(1,2)."
+    },
+    {
+      "item": "D6",
+      "calculated": "[x - 8*y + 2, 32*x + 4*y - 1]",
+      "published_answer": "**x − 8y + 2 = 0**, **32x + 4y − 1 = 0**",
+      "result": "SELF_CHECK_MATCH",
+      "evidence": "정규화한 두 거리의 ±분기를 모두 풀어 두 이등분선 획득."
+    },
+    {
+      "item": "D7",
+      "calculated": "[0, 0, 0]",
+      "published_answer": "**x² + y² − 4x − 6y = 0**, 중심 **(2, 3)**",
+      "result": "SELF_CHECK_MATCH",
+      "evidence": "세 점 비공선. 직각삼각형 빗변 중점(2,3), 반지름√13; 세 점 모두 통과."
+    }
+  ],
+  "warnings": [
+    "D2 계산 일치와 별개로 교육과정 범위 초과 표시 유지",
+    "C8 form 대조표는 최대·최소의 합이라고 적지만 발문/답은 제곱값의 곱",
+    "C4 기존 AM-GM 선수개념 경고는 제곱식 증명으로 회피 가능하나 원문은 미수정"
+  ],
+  "warning_count": 3,
+  "release": "BLOCKED",
+  "limitations": [
+    "정답 계산 검산; 전수 신규성/태그/난이도 감사 아님",
+    "외부 Opus 검증 아님"
+  ]
+}
