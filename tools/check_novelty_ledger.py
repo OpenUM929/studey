@@ -28,7 +28,38 @@ HEADER = [
     "verdict",
 ]
 ITEM_RE = re.compile(r"^\*\*(\d+)\.\*\*", re.MULTILINE)
-TYPE_RE = re.compile(r"\b(SM2-\d{2})\b")
+
+# docs/DATA_STANDARD.md §1.3: 유형ID = `^[A-Z]{1,3}\d?-\d{2}$`, 접두어는 **등록제**.
+# 등록제의 실물 레지스트리는 산문 비고가 아니라 analysis/catalog/index.tsv다.
+# 여기를 `SM2-\d{2}`로 하드코딩해 두면 타과목 세트가 전건 invalid_type_id로 떨어지고,
+# 그 실패는 세트의 결함처럼 보인다 — 자가 과목 하나만 잴 수 있었던 것이다(원칙 12).
+CATALOG_INDEX = Path(__file__).resolve().parent.parent / "analysis" / "catalog" / "index.tsv"
+TYPE_ID_PATTERN = r"[A-Z]{1,3}\d?-\d{2}"
+
+
+def registered_prefixes(path: Path = CATALOG_INDEX) -> list[str]:
+    """등록된 유형ID 접두어를 레지스트리에서 읽는다. 없으면 fail-closed(빈 집합 금지)."""
+    if not path.exists():
+        raise SystemExit(f"type_id_registry_missing path={path}")
+    prefixes: set[str] = set()
+    with path.open("r", encoding="utf-8-sig", newline="") as handle:
+        for row in csv.reader(handle, delimiter="\t"):
+            if not row:
+                continue
+            type_id = row[0].strip()
+            if re.fullmatch(TYPE_ID_PATTERN, type_id):
+                prefixes.add(type_id.rsplit("-", 1)[0])
+    if not prefixes:
+        raise SystemExit(f"type_id_registry_empty path={path}")
+    return sorted(prefixes, key=lambda p: (-len(p), p))
+
+
+def build_type_re(prefixes: list[str] | None = None) -> re.Pattern[str]:
+    prefixes = prefixes if prefixes is not None else registered_prefixes()
+    return re.compile(r"\b((?:%s)-\d{2})\b" % "|".join(re.escape(p) for p in prefixes))
+
+
+TYPE_RE = build_type_re()
 COSMETIC_TOKEN_RE = re.compile(
     r"(?:숫자|수치|계수|좌표|길이|각도|개수|부호|문자명?|상수|값)"
     r"(?:\s*(?:변경|교체|조정|바꿈|치환))?",

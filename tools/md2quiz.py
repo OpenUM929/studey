@@ -26,6 +26,10 @@ SUBJECT_MAP = [
     (re.compile(r"통합과학|과학"), "science"),
     (re.compile(r"통합사회|사회"), "social"),
     (re.compile(r"한국사"), "history"),
+    # 260908 onboarding (CODE_REGISTRY sec.6 #7). Placed after 과학/사회/한국사 on purpose:
+    # "정보통신"(통합과학) and "정보화 사회"(통합사회) must keep matching their own subject,
+    # and the earlier patterns already claim them.
+    (re.compile(r"정보|파이썬|Python"), "info"),
     (re.compile(r"영어"), "english"),
     (re.compile(r"도형의\s*방정식|공통수학2"), "math2"),
     (re.compile(r"수학"), "math1"),

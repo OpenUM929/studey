@@ -14,7 +14,7 @@ Conventions (documented here because the standard shows an example, not a rule):
 - status_code mapping = DATA_STANDARD §4.4.
 - Expected per-prefix counts come from CODE_REGISTRY §1; mismatches are reported.
 
-Scope note: all 7 subject catalogs are indexed. The F-prefix collision
+Scope note: all 8 subject catalogs are indexed. The F-prefix collision
 (social/history) is safe here because subject_code is part of the join key
 (CODE_REGISTRY §2 requires exactly this scoping in ledgers).
 """
@@ -38,6 +38,7 @@ SUBJECT_FILES = {
     "social.md": "social",
     "history.md": "history",
     "korean.md": "korean",
+    "info.md": "info",          # 260908 onboarding (CODE_REGISTRY sec.6 #6)
 }
 
 # CODE_REGISTRY §1 — expected counts per prefix family (None = don't assert).
@@ -46,6 +47,7 @@ EXPECTED = {
     "F": None,  # dual-owner (social+history): assert per-file below
     "GB": None, "GT": None, "MC": None, "ER": None, "CH": None, "BI": None,
     "UN": None,  # science total asserted as sum == 37
+    "IN": 26,    # info (CODE_REGISTRY sec.1, registered 260908)
 }
 
 STATUS_MAP = {

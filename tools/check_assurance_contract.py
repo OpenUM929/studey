@@ -69,6 +69,22 @@ TEXT_REQUIREMENTS = {
     ],
 }
 
+
+# Current operational policy; legacy Sol TOMLs below are archival schema checks,
+# not permission to dispatch them for review/audit.
+for policy_target in ("AGENTS.md", "CLAUDE.md", "analysis/REV_GUIDE.md", "README.md"):
+    TEXT_REQUIREMENTS[policy_target] = TEXT_REQUIREMENTS.get(policy_target, []) + [
+        "docs/ASTRA_EXECUTION_POLICY.md", "Astra 전용이며 Sol 참여 금지"
+    ]
+TEXT_REQUIREMENTS["docs/ASTRA_EXECUTION_POLICY.md"] = [
+    "gpt-6-astra", "현재 미승인", "자기검산", "two-key", "전수 ID"
+]
+for policy_role in sorted((ROOT / ".claude/agents").glob("*.md")):
+    relative_role = policy_role.relative_to(ROOT).as_posix()
+    TEXT_REQUIREMENTS[relative_role] = TEXT_REQUIREMENTS.get(relative_role, []) + [
+        "docs/ASTRA_EXECUTION_POLICY.md", "Astra 전용이며 Sol 참여 금지"
+    ]
+
 ROLE_FILES = [
     ".codex/agents/assessment-author-sol.toml",
     ".codex/agents/assessment-evidence-auditor-sol.toml",
