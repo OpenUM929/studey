@@ -1,0 +1,5 @@
+﻿date	step	target	decision	evidence	reason	confidence	actor
+2026-09-07	transcribe	p01-p10	transcribed	corpus/_images/SUP-info-2026-01/p01.png..p10.png	전 10페이지를 실제로 열람해 축자 전사했다; 도표는 표 구조를 유지해 옮겼다	high	main-loop
+2026-09-07	transcribe	items=24	counted	p01 빈칸2 + p02 실습3 + p04 빈칸3 + p05 실행결과2 + p07~p10 Quiz14	items 정의 = 학생이 답을 적는 빈칸/결과란 1개 = 1문항; p03은 설명 전용이라 0	high	main-loop
+2026-09-07	transcribe	p05 표제	unreadable_inconsistency	corpus/_images/SUP-info-2026-01/p05.png 상단 표제	표 제목이 p04와 같은 「1부터 n까지의 합 & 곱」인데 표 내용은 지역변수/전역변수다; 원본의 오식으로 보이나 단정하지 않고 원문대로 전사했다	medium	main-loop
+2026-09-07	transcribe	render_dpi=150	derived	PNG IHDR 1239x1752 전 15페이지 동일	원본이 이미 래스터화된 상태로 도착해 렌더 파라미터 기록이 없다; A4 폭 8.27in 기준 1239/8.27=149.8로 역산했다	medium	main-loop

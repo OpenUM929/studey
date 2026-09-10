@@ -1,0 +1,23 @@
+date	step	target	decision	evidence	reason	confidence	actor
+2026-09-10	probe	origin_data/EX-science-20261M/1학년1학기_통합과학1_중간.pdf	measured	bytes=5671090 sha256[:16]=1d04c7726d4ab838 pages=8 textlen=0(전 쪽) img=4299x3035 jpeg	텍스트 레이어가 없어 vision 판독 필요. rect 1033.4x729.6로 임베드 이미지 실효dpi=300 산출	high	main-loop
+2026-09-10	observed	쪽별 회전각	measured	probe_minus90.png(8쪽 -90도 썸네일 대조 시트)	p01 -90 / p02 +90 / p03 -90 / p04 +90 / p05 -90 / p06 +90 / p07 -90 / p08 +90 — 홀짝 교대에 예외 없음. EX-math1-20261F에서 교대가 깨진 선례가 있어 전사 착수 전에 8쪽 전부 실측	high	main-loop
+2026-09-10	observed	물리쪽↔인쇄면 대응	measured	footers.png(정립 native 8쪽 하단 5% 띠 대조 시트)	꼬리말 실측 p01=꼬리말없음(표지) p02=1면 p03=2면 p04=3면 p05=4면 p06=5면 p07=6면 p08=7면 — 정순. EX-history-20261M의 전면 역순, EX-math1-20261F의 끝 2장 역순과 다름	high	main-loop
+2026-09-10	transcribe	p01(표지)	transcribed	native/p01.png · cover_full.png · cover_box.png	인쇄 선언(총 7쪽·선택형 24문항·단답형 5문항)·서답 답안 작성(OMR 카드 뒷면)·고사반영비율(중간30/기말30/수행40)·유의사항 1~5(5는 ①② 하위항 포함) 전부 확인, 절단 없이 완결	high	main-loop
+2026-09-10	observed	표지 선언 명칭과 유의사항 명칭 불일치	printed-as-is	native/p01.png(cover_box.png 확대)	표지는 '단답형 5문항'으로 선언하나 유의사항 1)은 '문항 수(선택형, 서답형)', 5)는 '서답형(서술형) 답안지 작성 관련 사항', 표지 셋째 줄은 '서답(서술) 답안 작성'이다. 본문에 서술형 절은 없다. 어느 명칭이 옳은지는 판단하지 않고 관측만 기록(원칙 1)	high	main-loop
+2026-09-10	transcribe	p02(1~5번, 인쇄1면)	transcribed	native/p02.png	'선택형 문항' 전환 박스 확인. 좌단 1~2번 / 우단 3~5번 완결. 배점 3.6/3.6/3.8/3.8/3.8. 5번 자극에 디지털 온도계 사진 1점	high	main-loop
+2026-09-10	transcribe	p03(6~9번, 인쇄2면)	transcribed	native/p03.png	좌단 6~7번 / 우단 8~9번 완결. 배점 4.0/4.0/3.4/3.8. 7·8·9번은 인쇄 그림 자극(각 1·2·3점)	high	main-loop
+2026-09-10	transcribe	p04(10~13번, 인쇄3면)	transcribed	native/p04.png	좌단 10~11번 / 우단 12~13번 완결. 배점 4.0/3.4/3.8/3.4. 네 문항 모두 인쇄 그림·그래프 자극	high	main-loop
+2026-09-10	transcribe	p05(14~17번, 인쇄4면)	transcribed	native/p05.png	좌단 14~15번 / 우단 16~17번 완결. 배점 3.8/3.8/3.4/3.8. 15번은 표 2종, 나머지는 그림·그래프	high	main-loop
+2026-09-10	observed	15번 표 (나) 인쇄 문자 위 필기 겹침	restored-by-zoom	zoom_p05_item15b.png(native 3배 확대)	학생 필기(단백질/DNA/탄수화물)가 인쇄 활자 B·C에 겹쳐 있었다. 확대 대조로 인쇄 문자열이 A/B/C, 개수 열이 2/1/㉠임을 확인	high	main-loop
+2026-09-10	observed	15번 표 (가) 인쇄 표기 '라이보솜'	printed-as-is	zoom_p05_item15.png · native/p05.png	일반 표기 '리보솜'과 다르나 인쇄 활자가 '라이보솜'이다. 원문 그대로 전사하고 표기 적부는 판단하지 않음(원칙 1)	high	main-loop
+2026-09-10	transcribe	p06(18~20번, 인쇄5면)	transcribed	native/p06.png	좌단 18번 / 우단 [19-20] 공유 자료 + 19~20번 완결. 배점 4.0/3.6/3.6. [19-20]은 그림 (가)~(다) + 벤 다이어그램 (라)	high	main-loop
+2026-09-10	observed	18번 탐구결과표 인쇄값 위 필기 겹침	restored-by-zoom	zoom_p06_item18.png · zoom_p06_item18b.png(native 3배 확대)	전 셀에 연필 필기가 겹쳐 있었다. 확대 대조로 인쇄값이 1/? · ?/1 · ⓐ/? · ⓑ/ⓒ 임을 확인	high	main-loop
+2026-09-10	transcribe	p07(21~23번, 인쇄6면)	transcribed	native/p07.png	좌단 21번 / 우단 22~23번 완결. 배점 4.0/4.0/3.6. 21번은 실험 그림 + 결과표, 22번은 충돌 그림, 23번은 사례 사진 3점	high	main-loop
+2026-09-10	observed	21번 [실험 결과] 표 (라)행 B열 인쇄 문자 부재	printed-as-is	zoom_p07_item21b.png(3배) · zoom_p07_cellB.png(자동대비 6배)	해당 칸에 인쇄 문자가 없다. 보이는 '8'은 회색 연필 필기이며 다른 인쇄 숫자(6·8·0.15)는 검정 활자다. 인쇄 공란인지 인쇄 누락인지는 판단하지 않고 관측만 기록(원칙 1)	high	main-loop
+2026-09-10	transcribe	p08(24번 + 단답형1~5, 인쇄7면)	transcribed	native/p08.png	좌단 24번 + '단답형 문항' 전환 박스 + 단답형1 / 우단 단답형2~3 + [단답형4-5] 공유 자료 + 단답형4~5 완결. 최하단 '● 수고하였습니다.'로 종료	high	main-loop
+2026-09-10	observed	선택형·단답형이 같은 인쇄면 공유	printed-as-is	native/p08.png	'단답형 문항' 전환 박스가 인쇄7면 좌단 하단에 있고 그 위 같은 단에 선택형 24번이 인쇄된다 — 면 단위로 분리되어 있지 않다	high	main-loop
+2026-09-10	observed	[단답형4-5] 공유 발문 배점 표기	printed-as-is	native/p08.png 우단	공유 발문 끝 [2.0점] + 단답형4 [1.0점] + 단답형5 [1.0점]. 1.0+1.0=2.0이므로 공유 발문 표기는 하위 합계이며 별도 배점이 아니다 — 합계 산정에서 중복 계상하지 않았다	high	main-loop
+2026-09-10	verify	선택형 배점 합계	90.0	transcript.md '판독 상태 총괄' 자체 열거식 + python 재계산 n=24 sum=90.0	3.6+3.6+3.8+3.8+3.8+4.0+4.0+3.4+3.8+4.0+3.4+3.8+3.4+3.8+3.8+3.4+3.8+4.0+3.6+3.6+4.0+4.0+3.6+4.0 = 90.0	high	main-loop
+2026-09-10	verify	단답형 배점 합계	10.0	transcript.md '판독 상태 총괄' 자체 열거식 + python 재계산 n=5 sum=10.0	4.0+2.0+2.0+1.0+1.0 = 10.0. 선택형 90.0 + 단답형 10.0 = 100.0	high	main-loop
+2026-09-10	verify	문항 수 대조	29	표지 인쇄 선언 '선택형 24문항, 단답형 5문항' 대 전사 문항 머리 실측	transcript.md '### ' 머리 31개 = 선택형 24 + 공유 자료 머리 2([19-20], [단답형4-5]) + 단답형 5. 실문항 24+5=29 = 인쇄 선언 29. 차 0, unreadable 행 0건	high	main-loop
+2026-09-10	observed	meta.yml: render_dpi 이중성(EX-science-20261M)	documented-not-decided	PyMuPDF page.rect + extract_image 실측 4299x3035 / rect 1033.4x729.6 -> round(w*72/W)=300, 전 쪽 uniform	분모 기준본 pNN.png는 dpi160 렌더, 판독 기준본 native/pNN.png는 계산 실효 dpi 300. 필드가 어느 쪽을 가리키는가에 대해 DATA_STANDARD §5.7(pNN.png 인자)과 260903_04 C-A1-3(native 실효 dpi)이 서로 다르게 규정하므로 실행 레인이 값을 바꾸지 않고 두 사실을 주석으로 병기했다(원칙 12-a 결정요청 상신). 값 변경 없음이므로 corrected 행이 아니다(260903_04 C-A4-iii)	high	main-loop

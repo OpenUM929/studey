@@ -1,0 +1,13 @@
+date	step	target	decision	evidence	reason	confidence	actor
+2026-09-09	transcribe	p08(표지)	transcribed	native/p08.png	인쇄 선언(총 7쪽·선택형25·서답형5)·고사반영비율·유의사항 1~5 전부 확인, 하단 절단 없이 완결됨. 회전각 -90	high	type-extractor
+2026-09-09	transcribe	p07(1~4번, 인쇄1면)	transcribed	native/p07.png	선택형 문항 안내 박스 확인. 1,2,3,4번 지문·자료(유물사진·지문·지도)·<보기>·선택지·배점 전부 완결. 회전각 -90, 인쇄쪽 '전체 7면 중 1면'	high	type-extractor
+2026-09-09	transcribe	p06(5~9번, 인쇄2면)	transcribed	native/p06.png	5,6,7,8,9번 지도·지문·<보기>·선택지·배점 전부 완결. 회전각 -90, 인쇄쪽 '전체 7면 중 2면'	high	type-extractor
+2026-09-09	transcribe	p05(10~13번, 인쇄3면)	transcribed	native/p05.png	10,11,12,13번 지문·<보기>·선택지·배점 전부 완결. 회전각 -90, 인쇄쪽 '전체 7면 중 3면'	high	type-extractor
+2026-09-09	transcribe	p04(14~18번, 인쇄4면)	transcribed	native/p04.png	14,15,16,17,18번 대화문·조직도·지문·표·<보기>·선택지·배점 전부 완결. 회전각 -90, 인쇄쪽 '전체 7면 중 4면'	high	type-extractor
+2026-09-09	transcribe	p03(19~23번, 인쇄5면)	transcribed	native/p03.png	19,20,21,22,23번 지문·선택지·배점 전부 완결. 회전각 -90, 인쇄쪽 '전체 7면 중 5면'	high	type-extractor
+2026-09-09	transcribe	p02(24~25번, 인쇄6면)	transcribed	native/p02.png	24,25번 지문·선택지·배점 완결. 우측 단은 "다음 장에 서술형 문항이 있습니다" 안내문만 인쇄(문항 없음, 절단 아님). 회전각 -90, 인쇄쪽 '전체 7면 중 6면'	high	type-extractor
+2026-09-09	transcribe	p01([서술형1]~[서술형5], 인쇄7면)	transcribed	native/p01.png	서술형 문항 안내 박스 확인. 서술형1~5 지문·빈칸(가)(나)(㉠)(㉡)·배점 전부 완결. 학생 답안 손글씨는 전사 대상 아님(별도 기록). 회전각 -90, 인쇄쪽 '전체 7면 중 7면'(마지막 쪽)	high	type-extractor
+2026-09-09	transcribe	전 8쪽 지면구조 실측	transcribed	p01~p08 native	임베드 이미지 전건 1개(4299x3035 jpeg), 계산 실효dpi=round(4299*72/1033.4)=300. 회전각이 전 8쪽 고정 -90(EX-social-2026 계열과 달리 홀짝 교대 없음, 전 8쪽 육안 대조). 정립 후 각 쪽은 물리적으로 분할되지 않은 좌우 2열 인쇄 1장(분할 크롭 불필요). 스캔 물리쪽 순서와 인쇄쪽 번호가 정확히 역순(PDF p01=인쇄7면 … p07=인쇄1면, p08=표지) — 대응표는 transcript.md에 기록	high	type-extractor
+2026-09-09	transcribe	배점 표식 30/30 정합성	transcribed	transcript.md 판독 상태 총괄	선택형 25문항 배점 합산(2.2+2.4+2.3+2.5+2.4+2.5+2.5+2.5+2.4+2.4+2.5+2.4+2.5+2.3+2.5+2.4+2.4+2.4+2.5+2.5+2.2+2.5+2.3+2.3+2.2=60.0) + 서술형 5문항 배점 합산(10+5+10+10+5=40.0) = 100.0으로 내부 정합. 판독 오류 가능성을 낮추는 교차 근거로 기록	high	type-extractor
+2026-09-09	transcribe	원본 여백 사전 실측(F3-2)	transcribed	발주문 인용값(발주 주체 실측)	발주 시점에 이미 측정된 값: min 3.91%(판정선 3.71% 이상 충족). 본 전사자는 이 값을 직접 재실측하지 않고 발주문을 인용만 함 — 결과(30/30 완결)가 이 사전 판단과 일치	high	main-loop
+2026-09-10	observed	meta.yml: render_dpi 이중성(EX-history-20261M)	documented-not-decided	PyMuPDF page.rect + extract_image 실측 4299x3035 / rect 1033.4x729.6 -> round(w*72/W)=300, 전 쪽 uniform	분모 기준본 pNN.png는 dpi160 렌더, 판독 기준본 native/pNN.png는 계산 실효 dpi 300. 필드가 어느 쪽을 가리키는가에 대해 DATA_STANDARD §5.7(pNN.png 인자)과 260903_04 C-A1-3(native 실효 dpi)이 서로 다르게 규정하므로 실행 레인이 값을 바꾸지 않고 두 사실을 주석으로 병기했다(원칙 12-a 결정요청 상신). 값 변경 없음이므로 corrected 행이 아니다(260903_04 C-A4-iii)	high	main-loop

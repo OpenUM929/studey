@@ -1,0 +1,19 @@
+id: SUP-info-2026-02
+title: "정보 수업 학습지 1. 파이썬과 친해지기 (변수·리스트·문자열·조건·2차원리스트, 5p)"
+grade: 2
+exam_code: null
+variant: master
+pages: 5
+items: 31
+render_dpi: 150
+render_tool: "upstream:unknown"
+transcribed_at: 2026-09-07
+method: "pre-rasterized PNG (upstream) + LLM verbatim page reading"
+confidence: high
+answer_key: null
+catalog_ref: "analysis/catalog/info.md"
+notes: >-
+  render_dpi 150 is derived, not recorded by the source: every page is 1239x1752 px and
+  1239 / 8.27in (A4 width) = 149.8. render_tool is unknown - the unit arrived already
+  rasterized (UUID.pdf-NNNN.png), so the PDF and its renderer were never delivered.
+  items counts answer blanks a student fills in; the counting rule is in verify_log.

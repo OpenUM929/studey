@@ -1,0 +1,19 @@
+date	step	target	decision	evidence	reason	confidence	actor
+2026-09-10	transcribe	p01(표지)	transcribed	native/p01.png	인쇄 선언(총 7쪽·단답형 23문항)·서답 답안 별도 답안지·고사반영비율(중간30/기말30/수행40)·유의사항 1~5 전부 확인, 절단 없이 완결. 회전각 -90	high	main-loop
+2026-09-10	transcribe	p02(1~5번, 인쇄1면)	transcribed	native/p02.png	안내 박스 '단답형 문항' 1회 인쇄 확인. 1~5번 발문·수식·배점 완결. 회전각 +90, 꼬리말 '전체 7면 중 1면'	high	main-loop
+2026-09-10	transcribe	p03(6~9번, 인쇄2면)	transcribed	native/p03.png	6~9번 발문·연립식 조판·배점 완결. 회전각 -90, 꼬리말 '전체 7면 중 2면'	high	main-loop
+2026-09-10	transcribe	p04(10~13번, 인쇄3면)	transcribed	native/p04.png	10~13번 완결. 11번 둘째 항이 분수 조판(분자 1, 분모 omega^100)임을 확인. 회전각 +90, 꼬리말 '전체 7면 중 3면'	high	main-loop
+2026-09-10	transcribe	p05(14~17번, 인쇄4면)	transcribed	native/p05.png	14~17번 완결. 15번 도형 그림(직각이등변삼각형 ABC + 내접 직사각형 PQRS) 관측 사실 기록. 회전각 -90, 꼬리말 '전체 7면 중 4면'	high	main-loop
+2026-09-10	transcribe	p06(18~19번, 인쇄5면)	transcribed	native/p06.png	18·19번 두 문항만 실려 있고 좌단·우단 하단은 여백. 19번 조건 박스((가)(나)) 축자 전사. 회전각 +90, 꼬리말 '전체 7면 중 5면'	high	main-loop
+2026-09-10	transcribe	p08(20~21번, 인쇄6면)	transcribed	native/p08.png	20·21번 완결. 20번 계단형 정사각형 6개 도형과 조건 박스 축자 전사. 회전각 -90, 꼬리말 '전체 7면 중 6면'	high	main-loop
+2026-09-10	transcribe	p07(22~23번, 인쇄7면)	transcribed	native/p07.png	22·23번 완결. 22번 원 7개 일렬 사슬 도형, 23번 연립부등식 조판 확인. 최하단 '수고하였습니다.'로 종료. 회전각 +90, 꼬리말 '전체 7면 중 7면'	high	main-loop
+2026-09-10	observed	물리쪽 순서와 인쇄면 번호 불일치	recorded-as-observed	native/p07.png·native/p08.png 꼬리말 + chk_p07/chk_p08 대조	꼬리말 실측 결과 p07='전체 7면 중 7면', p08='전체 7면 중 6면'이다. 마지막 두 장이 뒤바뀐 순서로 스캔되어 있다. 전사문은 인쇄면 번호 순(20·21 다음 22·23)으로 실었고 각 문항 머리에 물리쪽을 병기했다	high	main-loop
+2026-09-10	observed	회전각 홀짝 교대 파기	recorded-as-observed	쪽별 회전 실측(p01~p08)	p01~p06은 홀수 -90 / 짝수 +90 교대이나 p07=+90, p08=-90으로 교대가 깨진다. 회전각은 유닛 상수가 아니며 쪽별 실측이 필요하다(C-A1-3 재확인). page.rotation 은 전 쪽 0을 보고해 내용 회전과 불일치	high	main-loop
+2026-09-10	observed	표지 선언에 서술형 칸 부재	recorded-as-observed	native/p01.png 인쇄 선언 줄 + 본문 전수	표지는 '총( 7 )쪽, 단답형( 23 )문항'만 인쇄하고 서술형 문항 수 칸이 없다. 반면 유의사항 1)은 '문항 수(단답형, 서술형)', 5)는 '서답형 답안지 작성 관련 사항'이고 '서답 답안 작성: 별도의 답안지' 줄도 있다. 본문에는 서술형 절·문항 머리가 없다. 두 표기를 관측 사실로 병기하고 어느 쪽이 옳은지는 판단하지 않았다(원칙 1)	high	main-loop
+2026-09-10	observed	선택형 문항 부재	recorded-as-observed	본문 전수(native/p02~p08)	안내 박스는 인쇄1면의 '단답형 문항' 1개뿐이고 선택지 1~5가 인쇄된 문항이 없다. 수학은 서답형 100%라는 기존 관측과 일치한다(CLAUDE.md:13)	high	main-loop
+2026-09-10	observed	배점 표기 정밀도 혼재	printed-as-is	transcript.md 배점 자체 열거	같은 시험 안에 정수(4·5), 소수 첫째(4.1~4.4), 소수 둘째(4.51·4.55·4.56·4.72·4.81·4.85) 3종이 혼재해 인쇄되어 있다. 인쇄 문면 그대로 전사하고 판단하지 않았다(원칙 1)	high	main-loop
+2026-09-10	observed	3번·23번 인쇄 활자 위 필기 겹침	restored-by-zoom	zoom 크롭(native 300dpi 3배 확대) 대조	3번 발문 첫 'A'와 23번 발문 '합을 b라'의 'b'가 학생 풀이 필기에 덮여 있었다. 확대 대조로 인쇄 활자를 각각 A·이탤릭 b로 확정해 전사하고, 덧쓴 필기는 주석줄에 분리 기록했다. unreadable 행 불필요	high	main-loop
+2026-09-10	policy	수식 표기 방식	unicode-notation	transcript.md 머리 '수식 표기' 절 · corpus/EX-math1-20242M(EQD 계열) 대조	이 원본은 텍스트 레이어 0의 스캔본이라 HWP 수식 레코드(EQD)가 존재하지 않는다. 따라서 행렬 [[a,b],[c,d]]·지수 x^2·근호 sqrt3 형태의 유니코드 표기로 적고 원본 조판은 이미지 링크로 병치했다. 코퍼스 안 두 표기 계열 공존은 별건 결정 대상으로 WIP에 기록	high	main-loop
+2026-09-10	verify	단답형 배점 합계	100.0	transcript.md '판독 상태 총괄' 자체 열거식 + python 검산	4+4+4+4+4.1+4.1+4.1+4.2+4.2+4.2+4.3+4.3+4.3+4.4+4.4+4.4+4.51+4.55+4.56+4.72+4.81+4.85+5 = 100.0 (python n=23 sum=100.0). 선택형·서술형 버킷은 0	high	main-loop
+2026-09-10	verify	문항 수 대조	23	표지 인쇄 선언 '단답형( 23 )문항' 대 전사 문항 머리 실측	transcript.md 문항 머리 '### N.' 실측 23개 = 인쇄 선언 23. 차 0, unreadable 행 0건, 절단·미발견 0	high	main-loop
+2026-09-10	observed	meta.yml: render_dpi 이중성(EX-math1-20261F)	documented-not-decided	PyMuPDF page.rect + extract_image 실측 4299x3035 / rect 1033.4x729.6 -> round(w*72/W)=300, 전 쪽 uniform	분모 기준본 pNN.png는 dpi160 렌더, 판독 기준본 native/pNN.png는 계산 실효 dpi 300. 필드가 어느 쪽을 가리키는가에 대해 DATA_STANDARD §5.7(pNN.png 인자)과 260903_04 C-A1-3(native 실효 dpi)이 서로 다르게 규정하므로 실행 레인이 값을 바꾸지 않고 두 사실을 주석으로 병기했다(원칙 12-a 결정요청 상신). 값 변경 없음이므로 corrected 행이 아니다(260903_04 C-A4-iii)	high	main-loop

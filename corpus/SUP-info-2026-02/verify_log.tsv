@@ -1,0 +1,5 @@
+﻿date	step	target	decision	evidence	reason	confidence	actor
+2026-09-07	transcribe	p01-p05	transcribed	corpus/_images/SUP-info-2026-02/p01.png..p05.png	전 5페이지를 실제로 열람해 축자 전사했다	high	main-loop
+2026-09-07	transcribe	items=31	counted	p01 9 + p02 8 + p03 6 + p04 7 + p05 1	items 정의 = 학생이 답을 적는 빈칸/결과란 1개 = 1문항	high	main-loop
+2026-09-07	transcribe	Part6 Quiz4	split_across_pages	p04 하단 + p05 상단	한 문항의 코드가 페이지 경계에서 잘려 두 페이지에 걸쳐 있다; 두 조각을 이어 붙여 1문항으로 셌다	high	main-loop
+2026-09-07	transcribe	p03 Quiz5 좌	answer_preprinted	corpus/_images/SUP-info-2026-02/p03.png 하단	결과란에 「90점 이상입니다」가 이미 인쇄돼 있다; 빈칸은 조건식 쪽이므로 답란으로 세지 않고 조건식 빈칸만 셌다	high	main-loop
