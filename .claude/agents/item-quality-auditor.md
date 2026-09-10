@@ -78,9 +78,24 @@ Report N as `신규 | 부분신규 | 수치변형` with the evidence line for ea
 
 An item that is new but teaches nothing is still a bad item.
 
-- **V1 함정 적중.** Name at least one entry from the type's `함정 요소` that this item can
-  actually trigger. **함정을 하나도 유발하지 않으면 변별력 없음**으로 기록한다.
+- **V1 함정 적중 — 3치 판정** (260911 개정, `rev-arbiter` 판정 `output/260911/rev/260911_01_info_v1_criterion_ruling.md` BF1).
+  Name at least one entry from the type's `함정 요소` that this item can actually trigger.
+  Cross-type citation is forbidden: the entry must belong to the item's own 유형ID.
+  The verdict has **three** values, never two:
+  - **`발화`** — an entry is named, and committing that misreading lands on a real
+    distractor. Show the computed value; do not assert firing without running it.
+  - **`▲ ruler-gap`** — no entry fires, **but** the axis this item moved **is** registered
+    in that type's `변형 축` **and** that axis has corpus evidence. The defect is charged
+    to the **catalog, not the item**: report it, repair the catalog, re-measure.
+    **`▲` is not a pass** — it keeps blocking promotion (원칙 11 fail-closed).
+  - **`FAIL`** — no entry fires **and** the axis is either unregistered or registered
+    without corpus evidence. The item was written outside what the ruler can measure.
   (T1 기초 문항은 예외 — 대신 "개념 확인용"임을 명시한다.)
+  > 이 3치가 닫는 것은 **이중 독법**이다. 종전 문면은 첫 문장이 「등재 항목 지명」(엄격),
+  > 둘째 문장이 「함정을 하나도 유발하지 않으면」(느슨)이라 **같은 세트·같은 자에서** V1 FAIL이
+  > **0건(S9 3회차)과 7건(4·5회차)** 으로 갈렸다. 이는 감사자의 자의가 아니라 기준 문면의
+  > 결함이었다. 「미발화」를 「문항에 함정이 없다」와 「자에 그 함정이 적혀 있지 않다」로
+  > 분리하는 것이 그 0↔7 스윙의 수리다(원칙 12-d fixture).
 - **V2 Tier 정합.** Count the reasoning steps the item genuinely requires and compare with
   the declared Tier using `DIFFICULTY_RUBRIC.md`. Over- and under-declaration are both findings.
 - **V3 금지·주의 위반.** Check the type's `금지·주의` list and `curriculum_2022.md`. Any
