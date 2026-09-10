@@ -1,9 +1,10 @@
 {
-  "session_id": "omx-1787879548189-kwy3xs",
-  "started_at": "2026-08-28T01:12:28.244Z",
-  "launch_lineage_token": "33cf61df-322c-45b2-9184-15eda29ba2cd",
+  "session_id": "omx-1789010101984-llgw1l",
+  "native_session_id": "01a07b5e-0dc5-7c11-9de8-04fa94c29370",
+  "started_at": "2026-09-10T03:15:02.052Z",
+  "launch_lineage_token": "295a48c9-49fb-407f-9fb0-a706b0ce990e",
   "cwd": "C:\\dev\\study",
   "state_root": "C:\\dev\\study\\.omx\\state",
-  "pid": 30364,
+  "pid": 18316,
   "platform": "win32"
 }
