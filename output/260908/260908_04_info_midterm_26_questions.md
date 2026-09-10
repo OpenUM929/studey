@@ -7,7 +7,7 @@ released: 2026-09-10
 intended_use: practice
 scope_confirmed: false
 source_set: output/260908/260908_04_info_midterm_26.md
-gate_status: S8 독립 맹목 풀이 6회차 PASS(정답 26/26·유일성·조건충분 차단 0) · S9 독립 품질감사 4회차 FAIL 7건(전부 측정도구 정합성 축 — 정답·풀이에는 영향 없음). 연습용 배부 가능, 시험지 승격 불가
+gate_status: S8 독립 맹목 풀이 6회차 PASS(정답 26/26·유일성·조건충분 차단 0) · S9 독립 품질감사 5회차 미통과 — 260911 rev-arbiter 판정으로 V1 기준이 개정돼 1~5회차 V1 수치는 전건 stale, 6회차 재감사 진행 중(전부 측정도구 정합성 축 — 정답·풀이에는 영향 없음). 연습용 배부 가능, 시험지 승격 불가
 author: main-loop (set-release-manager 역할 수행)
 ---
 
