@@ -12,6 +12,8 @@ scope: partial              # ★ 명시적 부분 산출물 (원칙 11-a) — �
                             #   S3 분모는 27 이 아니라 **확인된 20** 으로 잡는다(F2-3).
                             #   미발견 7문항은 **미출제가 아니라 스캔이 잘라낸 것**이다.
 render_dpi: 300             # 판독 기준본(native/) 의 **계산된 실효 dpi** — C-A1-3(상수 금지, round(w*72/W))
+# 한편 corpus/_images/EX-social-20261M/pNN.png 8장은 PyMuPDF dpi=160 렌더본이다(분모 기준본). 이 유닛의 native 실효 dpi 300은 round(2150*72/516.8) — 반쪽 페이지 원본이라 가로 픽셀이 다른데도 같은 값이 나온다(상수 기입이 아님을 실증).
+# 필드 의미의 이중성은 결정요청으로 상신했다(원칙 12-a) — DATA_STANDARD §5.7은 pNN.png 인자로, 260903_04 C-A1-3은 native 실효 dpi로 규정한다.
                             #   보조본 corpus/_images/EX-social-20261M/pNN.png 는 dpi=160 이며
                             #   기존 evidence 인용의 대조본으로 무수정 보존한다(A2 (나)).
                             #   두 렌더가 공존하므로 어느 값인지 명시한다 — 판정 output/260903/rev/260903_06_arbiter_ruling_cycle1_f.md FF1.
