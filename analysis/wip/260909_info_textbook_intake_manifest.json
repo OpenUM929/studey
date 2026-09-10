@@ -1,0 +1,307 @@
+{
+  "executor": "Codex/OMX",
+  "grade": "proposal",
+  "purpose": "intake only; not transcription or classification",
+  "files": [
+    {
+      "path": "origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786.jpg",
+      "bytes": 1708457,
+      "sha256": "920f361e7f4fc67bacc4c2fea61441e6b59005cbcb62e125b53155f2d4ae956d",
+      "pixels": [
+        4000,
+        3000
+      ]
+    },
+    {
+      "path": "origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_01.jpg",
+      "bytes": 1888405,
+      "sha256": "03b628c6338f5d3d92d2c6ef2d3da42fe901aa5ca06d6a12a7e7171d37f44de8",
+      "pixels": [
+        4000,
+        3000
+      ]
+    },
+    {
+      "path": "origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_02.jpg",
+      "bytes": 1828093,
+      "sha256": "e94ac293793ab3b8f1e47db9e061906eed084790e3df9e7062a93f4b4934eb1c",
+      "pixels": [
+        4000,
+        3000
+      ]
+    },
+    {
+      "path": "origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_03.jpg",
+      "bytes": 1927297,
+      "sha256": "06c09bd2d77835ebf721c53f672889944b9242cb4778e258dfcbfd7a040526bf",
+      "pixels": [
+        4000,
+        3000
+      ]
+    },
+    {
+      "path": "origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_04.jpg",
+      "bytes": 1760120,
+      "sha256": "da186e948bef5434c89fe28f6fac565f4abe2e94d784172216782b050505f0cb",
+      "pixels": [
+        4000,
+        3000
+      ]
+    },
+    {
+      "path": "origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_05.jpg",
+      "bytes": 1858999,
+      "sha256": "2510d94daab090620d5bf885d5192a401fc034681117a6f760f763b1fb2c66f6",
+      "pixels": [
+        4000,
+        3000
+      ]
+    },
+    {
+      "path": "origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_06.jpg",
+      "bytes": 1788158,
+      "sha256": "66b1db30babafef299431ada399e477698083748c13f0ec2eecd3c4d0d7a6536",
+      "pixels": [
+        4000,
+        3000
+      ]
+    },
+    {
+      "path": "origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_07.jpg",
+      "bytes": 1744024,
+      "sha256": "e13ed6c41ae98c0a893f0765ccf822541801cf6f9357a7ad9f2365eb1444a79e",
+      "pixels": [
+        4000,
+        3000
+      ]
+    },
+    {
+      "path": "origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_08.jpg",
+      "bytes": 1762095,
+      "sha256": "260af6bfb5e60ab2f8f23b3374a9ca958270b87dd5d56bd3d97919ad50902067",
+      "pixels": [
+        4000,
+        3000
+      ]
+    },
+    {
+      "path": "origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_09.jpg",
+      "bytes": 1862835,
+      "sha256": "b55fcc3a05d02d8813f96ca029cb2c06efe326aa2e927ff765885c477dd20ac4",
+      "pixels": [
+        4000,
+        3000
+      ]
+    },
+    {
+      "path": "origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_10.jpg",
+      "bytes": 1827068,
+      "sha256": "9a24d2ff72c3234b52e5ec1406b532a140ad78c61a7df56c0d55be77fcb9d312",
+      "pixels": [
+        4000,
+        3000
+      ]
+    },
+    {
+      "path": "origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_11.jpg",
+      "bytes": 2094946,
+      "sha256": "1a23c58694927f2f4a711eb0c36e5c6b69f0e5bc403a9be3344c8f6d54be96d0",
+      "pixels": [
+        4000,
+        3000
+      ]
+    },
+    {
+      "path": "origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_12.jpg",
+      "bytes": 2238244,
+      "sha256": "8c449063dedbc6c0c0d3dffec8edcb2d74d16f1309cab5c6657067a1dc447af2",
+      "pixels": [
+        4000,
+        3000
+      ]
+    },
+    {
+      "path": "origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_13.jpg",
+      "bytes": 2077091,
+      "sha256": "b3aeed8458c862c9a16a188c4972ce51b86b461fc8a6b85bdb855fdafff96683",
+      "pixels": [
+        4000,
+        3000
+      ]
+    },
+    {
+      "path": "origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_14.jpg",
+      "bytes": 2066079,
+      "sha256": "92af090c227c4c5b348403d73f41093a82dd134ca11582eb6e8c6d780316c0ed",
+      "pixels": [
+        4000,
+        3000
+      ]
+    },
+    {
+      "path": "origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_15.jpg",
+      "bytes": 2104365,
+      "sha256": "c2eb49f443885ff2c4cc790f9b8d725b48bd62c6968c53299ada0b0338bf489a",
+      "pixels": [
+        4000,
+        3000
+      ]
+    },
+    {
+      "path": "origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_16.jpg",
+      "bytes": 2130888,
+      "sha256": "72ca494dea777dc0604ab9e42366c446a653e547e7b325d217ad94fdf393d31b",
+      "pixels": [
+        4000,
+        3000
+      ]
+    },
+    {
+      "path": "origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_17.jpg",
+      "bytes": 2145955,
+      "sha256": "d79a8c7fa15ef1bab95044a0c7a50cef5d47f140a537254be55add6e71e2b3ec",
+      "pixels": [
+        4000,
+        3000
+      ]
+    },
+    {
+      "path": "origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_18.jpg",
+      "bytes": 2102714,
+      "sha256": "f5be6ff6ddef2a6926ea465ee94c8fe5423eb74f1e45769f0f65fce75a701657",
+      "pixels": [
+        4000,
+        3000
+      ]
+    },
+    {
+      "path": "origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_19.jpg",
+      "bytes": 2048413,
+      "sha256": "bc1ad1c2a181c608cc48f0f404bf95739a5e72d07b786ab87c02fd06498fb9a9",
+      "pixels": [
+        4000,
+        3000
+      ]
+    },
+    {
+      "path": "origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_20.jpg",
+      "bytes": 2169288,
+      "sha256": "8ec17ba99b1be034ef325cf80a93de638029bdb919862195bbf9d534ed177430",
+      "pixels": [
+        4000,
+        3000
+      ]
+    },
+    {
+      "path": "origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_21.jpg",
+      "bytes": 2159361,
+      "sha256": "5ff800bc4dec8f2830de716e26bdec1c12c956eba1711eac479513ceb8fff398",
+      "pixels": [
+        4000,
+        3000
+      ]
+    },
+    {
+      "path": "origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_22.jpg",
+      "bytes": 2061305,
+      "sha256": "d27fd1a3d7c074c1ed9f068bba59a8b555fb7c83c87592a8539f619270499dad",
+      "pixels": [
+        4000,
+        3000
+      ]
+    },
+    {
+      "path": "origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_23.jpg",
+      "bytes": 2154254,
+      "sha256": "7f314d9906f60de1bb7d038c937bad1dc2180eacc9308cd88ffbbba31a9e1d47",
+      "pixels": [
+        4000,
+        3000
+      ]
+    },
+    {
+      "path": "origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_24.jpg",
+      "bytes": 2159221,
+      "sha256": "f1aca4fc3820a66d713115b3e2426035c1d6b9571b20d178aa7718dcaa973d1f",
+      "pixels": [
+        4000,
+        3000
+      ]
+    },
+    {
+      "path": "origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_25.jpg",
+      "bytes": 2258184,
+      "sha256": "ba54b25ec8b8f92741bd0516501b16e971e502a285345757cb53224e11017282",
+      "pixels": [
+        4000,
+        3000
+      ]
+    },
+    {
+      "path": "origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_26.jpg",
+      "bytes": 2169935,
+      "sha256": "694919325d2de039afffa2c86ce086f69fc34209b2f011509fbb8170a1df5ac9",
+      "pixels": [
+        4000,
+        3000
+      ]
+    },
+    {
+      "path": "origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_27.jpg",
+      "bytes": 2233140,
+      "sha256": "240050017cb3251cc0b624fdff91085d1efa216b94d3c3b43da2f5f77a66f4d6",
+      "pixels": [
+        4000,
+        3000
+      ]
+    },
+    {
+      "path": "origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_28.jpg",
+      "bytes": 2157279,
+      "sha256": "7167eeb4e64fb71dfeb03cc8a21c2cc7d3510a0ec4d6580565f2ccb9813c1254",
+      "pixels": [
+        4000,
+        3000
+      ]
+    },
+    {
+      "path": "origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_29.jpg",
+      "bytes": 2054631,
+      "sha256": "43f2252c07919ca81b6509b0338beabd2b7b85c754eaab7fb41a739559528408",
+      "pixels": [
+        4000,
+        3000
+      ]
+    },
+    {
+      "path": "origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173556739.jpg",
+      "bytes": 2324179,
+      "sha256": "1d381d1419a45ebd57e96335c34250c5161d7b50dc2def4376fc3ec23f62e0f7",
+      "pixels": [
+        4000,
+        3000
+      ]
+    },
+    {
+      "path": "origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173556739_01.jpg",
+      "bytes": 2138672,
+      "sha256": "b7f0cf647a379ade70bdd8d897b40e9baa64cda24e8fb90c70753c595250f412",
+      "pixels": [
+        4000,
+        3000
+      ]
+    },
+    {
+      "path": "origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173556739_02.jpg",
+      "bytes": 2223473,
+      "sha256": "ea7db22d6faa460c8ed7d5463684ffb0bb88e431922782bc5b1cfb9ead9ea449",
+      "pixels": [
+        4000,
+        3000
+      ]
+    }
+  ],
+  "count": 33,
+  "bytes": 67227168,
+  "content_review": "first image only"
+}

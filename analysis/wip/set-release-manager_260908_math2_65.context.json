@@ -1,0 +1,95 @@
+{
+  "_note": "260908 배포 라운드를 set-release-manager 스냅숏 형식으로 소급 기록한 것이다. 실제 수행자는 외부 Claude Code CLI(Opus 5) 본체 직접이며 이 배우를 호출하지 않았다 — 이름·등급을 도용하지 않는다(규격 ⑥-c-1). 다음 라운드의 인수인계 기준선이자 이 형식의 실제 예시로 쓴다.",
+
+  "actor": "메인 루프 (외부 Claude Code CLI · Opus 5) — set-release-manager 정의를 소비, 미호출",
+  "set_id": ["SET-260829-math2-25", "SET-260822-math2-40"],
+  "round": "260908",
+  "status": "done",
+
+  "budget_at_dispatch": {
+    "remaining_context": "⚠️미확인 — /context 조회 불가",
+    "rate_limit_reset": "⚠️미확인 — 관측 없음",
+    "prior_run_cost": "⚠️미확인 — 직전 동종 작업 실소요 미기록",
+    "verdict": "규격 ⑥-b fail-closed 「부족」 → 발주하지 않고 ⑥-c-1 직접 수행"
+  },
+
+  "frozen_inputs": {
+    "output/260907/rev/260907_01_item_quality_audit.md": {"role": "결정기록(§7-A) — G0의 입력"},
+    "output/260907/rev/260907_02_math2_implementation_report.md": {"role": "이행보고서(Codex/OMX)"},
+    "output/260907/rev/260907_03_opus_audit_reply.md": {"role": "감사회신 — 승인요청 A-1~A-8 / 결정요청 D-A~D-D"},
+    "corpus/SUP-math2-2026/transcript.md": {"role": "N축 분모(원본 93문항)"},
+    "output/260829/260829_02_math2_comprehensive_25.md": {"role": "통합본 25제"},
+    "output/260822/공통수학2_도형의방정식_모의40.md": {"role": "통합본 40제"}
+  },
+
+  "approvals_consumed": [
+    {"id": "사용자 지시", "source": "대화 2026-09-08", "verdict": "승인",
+     "text": "작업 완료해줘. 이젠 아이들에게 제공해야해 / 삭제를 하든 제거를 하든 주의를 남기든 해야하는것 아냐",
+     "termination_condition": "학생에게 낼 수 있는 상태 + 잔여를 미반영으로 남기지 않을 것", "met": true},
+    {"id": "N-2", "source": "260907_01_item_quality_audit.md#§7-A", "verdict": "승인(사용자, 260907)",
+     "termination_condition": "세트 표기 미반영 — 그 전에는 40제를 학생 배포 최종본으로 재표기하지 않는다",
+     "met": true,
+     "evidence": "40제 통합본에 원본 대응표 절 신설 + 문제지 머리말 학생용 안내 + 답지 9행 개별 태그. grep '원본 재현' 통합본 11 / 답지 11, 행 태그 9",
+     "⚠️": "1차 시도에서 이 종료 조건을 놓치고 표기 없이 배포가능으로 표기했다 — G0이 막아야 하는 바로 그 사고"},
+    {"id": "P-2", "source": "260907_01#§7-A", "verdict": "승인(사용자, 260907) · 상태 미반영",
+     "termination_condition": "AUTHORING_GUIDE 반영", "met": true,
+     "evidence": "analysis/catalog/AUTHORING_GUIDE.md §1-C-1 신설(7면 + N축 원본 재대조 + 원본 동형 표기 의무)"},
+    {"id": "A-1", "verdict": "승인", "met": true, "evidence": "grep -c '학생 확인용 답' -> 0; 30(2) 채점기준(12√2)과 정답란 일치"},
+    {"id": "A-2", "verdict": "승인", "met": true, "evidence": "grep -c '260830 태그 정정' -> 4 (baseline과 동수)"},
+    {"id": "A-3", "verdict": "승인", "met": true, "evidence": "gate_status에 '문항 본문 40/40 무변경' 병기"},
+    {"id": "A-4", "verdict": "승인(b안: DF 코드 제거)", "met": true, "evidence": "DF 태그 잔여 0"},
+    {"id": "A-5", "verdict": "승인", "met": true, "evidence": "novelty_notes.json 전면 재작성 — 분모를 원본 93문항으로 교정, 3번 axes 2->1"},
+    {"id": "A-6", "verdict": "승인", "met": true, "evidence": "이행보고서 §2 취소선 정정(삭제 아님)"},
+    {"id": "A-8", "verdict": "승인", "met": true, "evidence": "_index 예외 열 N-2 8행 / N-3 1행 / 카탈로그 의도 재현 3행 = 12"}
+  ],
+
+  "decisions_open": [
+    {"id": "D-A", "why_open": "25제 3번 — 원본 #4-1 대비 실질 변형축 1개(T1이라 허용 의견)", "who_decides": "사용자 / rev-arbiter", "mitigated_by": "③ 산출물 4곳 표기"},
+    {"id": "D-B", "why_open": "25제 22(2) — 원본 #3-21 골격 유지", "who_decides": "사용자 / rev-arbiter", "mitigated_by": "③ 산출물 4곳 표기"},
+    {"id": "D-D", "why_open": "25제7 ↔ 40제5 교차 노출", "who_decides": "사용자", "mitigated_by": "③ 양쪽 세트·답지 표기 + '변별 근거로 쓰지 말 것'"},
+    {"id": "N-3", "why_open": "증명 문항 N축 적용 기준 자체가 없음 — 면제된 것이 아니라 판정 대기", "who_decides": "rev-arbiter", "mitigated_by": "③ 3파일에 '면제 아님·판정 대기'로 정확히 표기"},
+    {"id": "P-1 / D-2", "why_open": "N축 자 개정 — 사용자 1차 키만 있고 2차 키 없음(원칙 12-c two-key)", "who_decides": "rev-arbiter", "mitigated_by": "자에 쓰지 않고 세트 표기로만 관리"}
+  ],
+
+  "gates": {
+    "G0": {"state": "done", "result": "승인 10건 소비. 종료조건 미충족 2건(N-2·P-2) 발견 → 둘 다 이행 완료"},
+    "G1": {"state": "done", "result": "25제 원본 N=25 / 외부검증 M=25 (미커버 19문항을 이번에 신규 맹목 풀이) 미커버=[] · 40제 N=40 / M=40 (260907 PASS + 본문 무변경 diff 실측)"},
+    "G2": {"state": "done", "result": "40제 원본 동형 9건(4·9·13·17·20·23·38·40 + 6(1)) 전건 표기 · 25제 부분 동형 2건(3·22(2)) 표기 · 교차 노출 1건 표기"},
+    "G3": {"state": "done", "result": "7면 전건. 채점기준↔정답란 모순 1건(30번) 해소"},
+    "G4": {"state": "done", "result": "문제지 25/25·40/40, 답지 25/25·40/40. 28~30 정답 셀 원본과 일치 실측"},
+    "G5": {"state": "done", "result": "파생본 4건을 감사 회차 폴더 → 세트 자신의 폴더로 이동·개명. 옛 경로 잔여 참조 0(아카이브 제외)"},
+    "G6": {"state": "done", "result": "_index 65행·10열·상태 전건 배포가능·정본 0. '배포가능≠정본' 머리말 명시"},
+    "G7": {"state": "done", "result": "package.py 재실행 금지 헤더(3사유) · manifest _STALE_260908 · apply_fixes.py 미실행 표기"},
+    "G8": {"state": "done", "result": "잔여 '미반영' 0건. ③경고로 닫은 것 5건, 불가 잔여 2건에 '왜·누가·명령' 부착"}
+  },
+
+  "ledger_state": {
+    "output/_index.md": {"rows": 65, "cols": 10, "status": "배포가능 65 / 정본 0"},
+    "analysis/REV_LOG.md": {"rows_appended": 3, "section": "## output/260907"},
+    "analysis/DOC_LOCATION.md": {"migration_row_appended": true}
+  },
+
+  "residuals": [
+    {"id": "A-7", "what": "타 배우 WIP(mainloop_260907_math2_revision_release.md)의 4회 중복 절 + status 오기",
+     "closed_by": "③경고",
+     "where": ["analysis/wip/mainloop_260908_math2_opus_audit.md", "analysis/REV_LOG.md"],
+     "blocked_reason": "규격 ②가 WIP 삭제·정리를 사용자 전용으로 못박음",
+     "who_can": "사용자",
+     "exact_command": "해당 파일에서 중복된 '## 260908 슬라이스 마감' 절 3개 삭제 후 frontmatter status: done 및 본문 STATUS: DONE 으로 변경"},
+    {"id": "P-1 / D-2", "what": "N축 자 개정(분모에 corpus 포함, practice/exam 기준 분리)",
+     "closed_by": "미해결 — 자는 어떤 배우의 write surface도 아님",
+     "blocked_reason": "원칙 12-c two-key — 사용자 1차 키만 있고 rev-arbiter 2차 키 없음",
+     "who_can": "rev-arbiter",
+     "exact_command": "REV_GUIDE §6-b 규격의 [CC 회람]으로 item-quality-auditor 자 개정안을 판정 요청"},
+    {"id": "gate-tool", "what": "python 실행이 이 세션에서 호스트 정책으로 차단됨",
+     "closed_by": "③경고 — ▲ blocked로 표기, grep 실측으로 대체",
+     "who_can": "사용자",
+     "exact_command": "! python -X utf8 output/260907/260907_02_math2_verify_artifacts.py  (단 coverage.json의 source_sha256이 현행과 불일치하므로 기준선 갱신이 선행되어야 하며, 지금 돌리면 해시 불일치로 실패하는 것이 정상)"}
+  ],
+
+  "next": {
+    "gate": "(완료)",
+    "action": "정본 승격 경로 — 3단계 검토 루프(REV_GUIDE §3-b) → rev-arbiter 승인 → 사용자 확인. 이번 반영은 검토 주체와 반영 주체가 같았으므로 그 반영 자체가 tier-1 입력으로 재투입되어야 한다.",
+    "verify_command": "grep -c '^| SET-' output/_index.md   기대: 65"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "claim": "proposal recorded; canonical ruler unchanged; not release approval",
+  "protected_unchanged": {
+    "analysis/catalog/DIFFICULTY_RUBRIC.md": {
+      "bytes": 20921,
+      "sha256": "07dab5d38c8da48a22ca01d2f4c2b75d71fdd421a6da5ad3fcdd1a3b81b1ad99"
+    },
+    "tools/measure_score_bands.py": {
+      "bytes": 21969,
+      "sha256": "0cf91284e2c1f7b1be4d94a09d641996614d65fa88fdf8444b9f9daa3958fe24"
+    },
+    "tools/regen_rubric_values.py": {
+      "bytes": 21129,
+      "sha256": "259bbfdfc3a6520efd7c2cf21c0d90ca1b24101e23db0d347300d9794a0ba975"
+    }
+  },
+  "proposal": {
+    "bytes": 8988,
+    "sha256": "0c1221eed66afa81b1875e736298d6c388dd7390fd638e6259515a547b29fba4"
+  },
+  "required_sections": 6,
+  "ledger_errors": []
+}
