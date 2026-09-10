@@ -278,6 +278,7 @@ Rows never deleted; status changes become NEW rows. Section comments per folder 
 | **Substantive review when the external lane is unavailable** (260828 신설) | main loop (Claude Code Opus) | own report under `analysis/rev/` or `output/<YYMMDD>/rev/` + own WIP. **tier 라벨(t1/t2/t3) 사용 금지** — `reviewer:` 는 `unset`, `author:` 에 "메인 세션"을 명시한다. `_index`·`REV_LOG` 기입은 허용하되 reviewer 열에 `main-loop`로 적는다 |
 | Pre-gate: blind solve of every set | `solve-back-verifier` | **own WIP only — no other files** (report-only otherwise); findings feed tier-1 |
 | Post-gate: novelty · achievement value · answer-key construction (260830 신설) | `item-quality-auditor` | own `*_item_quality_audit.md` under `output/<YYMMDD>/rev/` + own WIP. **공유 원장에는 기입하지 않는다** — 메인 루프가 대신 기입한다(동시 작성자 충돌 방지) |
+| **Release step: 승인분 반영 · 문제지/답지 생성 · 배포 등록** (260908 신설) | `set-release-manager` | 승인 범위 내 세트 통합본 + 그 세트 폴더의 문제지·답지 파생본 + `_index` rows + REV_LOG + own WIP + own `.context.json` 스냅숏. **승인을 만들지 않고 소비한다** — 승인 없는 수정 금지, `정본` 등급 부여 금지(`배포가능`까지). 자(ruler)는 대상 아님. 남의 WIP는 읽기만 한다 |
 | Forecast authoring (Claude Code Opus) | `forecast-writer` | own report under `analysis/forecast/` + own WIP |
 | Forecast tier-1 review | `forecast-reviewer` | own reports + `_index` rows + REV_LOG + own WIP |
 | Forecast tier-2 audit | `forecast-auditor` | own `*_second.md` + `_index` rows + REV_LOG + own WIP |
@@ -600,3 +601,12 @@ the relevant catalog type's forbidden/caution entries so the same mistake never 
   1건으로 실증했다(자 `(510행)` -> `(462행)` 주입 -> ruler gate FAIL 3줄, 복원 후 sha 동일).
   동반 갱신: `CLAUDE.md` 원칙 12-c·동반 갱신 목록 · `AGENTS.md` Non-negotiable rules ·
   `tools/check_assurance_contract.py`. Written by: main loop (user instruction).
+
+## 260910 사용자 우선 지침: Astra 단독 운영
+
+현재 모델/팀 운영은 `docs/ASTRA_EXECUTION_POLICY.md`를 우선 적용한다.
+`gpt-6-astra` 단독 실행; 기존 팀 발주·재개 중단; 검토·감사·맹목 풀이·최종 판정은 Astra 전용이며 Sol 참여 금지.
+Astra 팀장 + Sol 비감사 보조는 성능 부족 실측 후 사용자 결정으로만 검토 가능한 미승인 대안이다.
+이전 팀 필수·Sol 배정·외부 Opus 필수 서술은 현재 실행의 선행조건이 아니다.
+자기검산을 독립 감사로 표시하지 않으며 독립 단계는 깨끗한 Astra 컨텍스트에서 순차 수행한다.
+배포 증거·작성/감사 분리·append-only·two-key는 유지한다. 모델 지침 개정은 배포 승인이 아니다.

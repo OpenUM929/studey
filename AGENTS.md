@@ -30,10 +30,17 @@ When one is required, produce a self-contained `[CC 회람]` package conforming 
 ### Codex/OMX-owned work
 Codex/OMX performs all remaining work, including:
 - main-loop coordination, PRDs, handoff packages, approved-change application, and evidence capture
-- `type-extractor`, `item-writer`, `rev-writer`, `forecast-reviewer`, and `forecast-auditor` duties
+- `type-extractor`, `item-writer`, `rev-writer`, `forecast-reviewer`, `forecast-auditor`, and `set-release-manager` duties
 - tool execution, targeted tests, static checks, and fail-closed gate verification
 
 Role names are responsibilities, not identities: when documenting the work, name the actual executor as `Codex/OMX` rather than a Claude-only agent label.
+
+**`set-release-manager` 특칙 (260908 신설).** 이 배우는 승인분을 **반영**하는 단계라 Codex/OMX
+소유지만, 그 입력인 맹목 풀이·품질감사·arbiter 판정은 **외부 Opus 소유**다. 따라서 이 배우를
+돌릴 때 그 게이트 결과를 **자기 계산으로 대체하거나 추정하지 않는다** — 회신 파일이 로컬에
+존재하고 읽힌 뒤에만 통과로 취급한다. 세트 전수 커버리지가 안 되면 `▲ blocked`이고,
+「배포가능」 표기는 그 커버리지 실측(원본 N · 외부 검증 M 병기) 없이는 쓸 수 없다.
+정의는 `.claude/agents/set-release-manager.md`, 권한 경계는 `analysis/REV_GUIDE.md` §5.
 
 ## Codex/OMX persona and scope guard
 Codex/OMX is the accountable **coordinator, team lead, and verification gatekeeper**. It is not an assumed replacement for external Claude Code Opus. A single Sol response, a conservative abstention baseline, a role-shaped template, or a written team plan is never evidence that a Codex team performed an Opus-level responsibility.
@@ -48,7 +55,7 @@ Use this project-default assignment table unless the concrete task needs a docum
 | Responsibility / team lane | Executor and model | Assignment rule |
 |---|---|---|
 | Main-loop coordination, PRD, integration, gate evidence | Codex/OMX **Sol** | Leader owns sequencing and final verification; never concurrent-writes a shared ledger. |
-| Corpus refinement / factual transcription (`type-extractor`) | Codex/OMX **Sol** | **1차 정제 전담 — 전사만, 분류 아님**: HWP/DOC→PDF화→`PyMuPDF` 이미지(`corpus/_images/<ID>/pNN.png`)→`transcript.md`(도표 문항 이미지 링크 포함)→`verify_log.tsv`/`meta.yml` 채움. **분류 판단 금지 — 유형ID·변형축·함정 한 글자도 적지 않는다. 산출물은 `corpus/<ID>/`에만 둔다.** Gate: `transcript.md`+`_images`+`verify_log`+`meta.yml` 4필드 완성 전 **1차 분류 진입 금지**(one corpus unit per writer). **1차 정제 ≠ 1차 분류 — 정제물은 분류의 입력일 뿐 분류가 아니다.** |
+| Corpus refinement / factual transcription (`type-extractor`) | Codex/OMX **Sol** | **1차 정제 전담 — 전사만, 분류 아님**: HWP/DOC→PDF화→`PyMuPDF` 이미지(`corpus/_images/<ID>/pNN.png`)→`transcript.md`(도표 문항 이미지 링크 포함, 인용 산문 지문은 P-지문 예외 `corpus/_README.md` §2-a)→`verify_log.tsv`/`meta.yml` 채움. **분류 판단 금지 — 유형ID·변형축·함정 한 글자도 적지 않는다. 산출물은 `corpus/<ID>/`에만 둔다.** Gate: `transcript.md`+`_images`+`verify_log`+`meta.yml` 4필드 완성 전 **1차 분류 진입 금지**(one corpus unit per writer). **1차 정제 ≠ 1차 분류 — 정제물은 분류의 입력일 뿐 분류가 아니다.** |
 | Item authoring (`item-writer`) | Codex/OMX **Sol** | Uses approved catalog only; owns only its assigned set/WIP. |
 | Review report (`rev-writer`) | Codex/OMX **Sol** | Review-only; never directly fixes the reviewed artifact. |
 | Independent audit (`forecast-auditor`, data/gate audit) | Codex/OMX **Sol** | Separate context from the writer; sequential if it appends shared review ledgers. |
@@ -118,6 +125,7 @@ Any completed experiment is advisory only: it cannot update canonical records or
 - Keep the ruler separate from the work (CLAUDE.md 원칙 12). Acceptance criteria, expected-identifier tables, and gate code are **consumed, never revised**, by the lane they measure. An unsatisfiable or self-contradictory criterion is a decision request to the user/`rev-arbiter`, never something to route around with placeholder rows. Expected-value tables are regenerated from the source by code and re-derived on every gate run; editing one by hand converts it from a ruler into an artifact. Any ruler change needs a second key — an audit-authority re-freeze row — and invalidates every verdict issued under the old ruler until re-measured.
 - **Which files are the ruler is not a judgement call for the executing lane.** The canonical two-key subject list lives in `analysis/REV_GUIDE.md` §5 — read it there and do not re-enumerate it here (CLAUDE.md 원칙 9-c-ii); a copied list drifts from the original. The Codex/OMX lane **consumes those files read-only**, including the read-only regenerator: what that tool lets through becomes the ruler's content, so being unable to edit the ruler is no protection if the lane can edit the thing that measures it. Adding an entry to the regenerator's allowlist is itself a ruler change. Any change to a listed file arrives through the `[Codex/OMX 지시]` block after both keys (user approval + `rev-arbiter` ruling) and lands with a bytes + sha256(16) re-freeze row in the ledger.
 - **Label the actor you actually are.** When the main loop performs work directly under the §5 stand-in row, the artifact is `proposal` grade and carries `author: 메인 루프` — never another actor's tier label (`t1`/`t2`/`binding`). The same holds in reverse: Codex/OMX output is labelled as the Codex/OMX lane, not as the Claude Code lane that ordered it.
+- **Types and trends are the objective function; bare numbers are incidental** (CLAUDE.md 원칙 13, 260910). Transcribe every printed value as-is, but grade the *effort and the blocking condition*: stem-demanded action, stimulus presentation, **formula structure and notation**, `<조건>` boxes, choice structure, shared-stimulus grouping, score band, unit cues and trap wording must be exact — illegibility there is `▲ blocked`. A single coefficient, coordinate, or table cell is not type information: log it `unreadable`/`observed` and keep going, and never adjudicate whether it is a misprint. The exception is a number the item is built around (special angle, integer root, perfect-square discriminant), which is type information. Score-sum and item-count checks remain **omission detectors** (원칙 11-a) and this rule never reinterprets a ruler's acceptance criteria (원칙 12-a).
 - A gate passes only with its command, expected output, zero warnings, expected count, and fresh evidence. Otherwise it is blocked. The ruler gate itself is `analysis/REV_GUIDE.md` §5-a and runs automatically inside `tools/check_assurance_contract.py` structural check 6.
 - Do not commit, reset, delete, or rewrite user changes unless explicitly requested.
 
@@ -139,6 +147,14 @@ A Team line is mandatory even for solo work: state `mode=solo`, the actual execu
 Codex assurance-agent conformance: assessment-author-sol, assessment-evidence-auditor-sol, assessment-adversarial-critic-sol, and assessment-gatekeeper-sol must use this same four-line final-return contract. Their Team entries must identify their assigned persona (author / independent evidence auditor / adversarial critic / gatekeeper), `gpt-5.6-sol`, assigned reasoning depth, exclusive output path, and actual execution status.
 
 This implements `CLAUDE.md` ③ (progress-map relay) and `analysis/REV_GUIDE.md` §3 rule 5. A completion-only or test-only report is noncompliant because it hides the stage transition and next gate. Before switching away from a WIP's `NEXT`, record the dependency or bounded parallel-lane reason in that WIP; otherwise resume `NEXT` first.
+## 문제 정본 저장·인덱스 동기화 (260908)
+
+문항을 생성·교체·수정하면 `CLAUDE.md`의 「문제 완성본 관리」와
+`analysis/DOC_LOCATION.md` §3-1을 적용한다. 최종 게이트 통과 후 기존 output 날짜별 저장소의
+정본·별도 문제지·답지/해설과 `output/_index.md`를 같은 작업에서 갱신하고 감사 이력을 남긴다.
+미검증 문항은 `검토필요`로 기록하며 작성자 자기검산을 외부 Opus 독립검증으로 표시하지 않는다.
+문제 작성만으로 완료 선언하지 않는다. 기존 N축 예외와 two-key·write surface는 그대로 유지한다.
+
 ## Context-continuity checkpoint
 When remaining model context reaches 60% or less, the coordinator must not begin another slice. It first finishes the current bounded slice or records its exact WIP checkpoint, writes the same state through `omx state write` and `omx notepad notepad_write_working` when those runtime surfaces are available, then compacts before the next slice. The checkpoint must preserve: active PRD stage, completed evidence and validation output, immutable input/artifact hashes, WIP `NEXT`, exclusive-write owner, blockers, and the next verification command. If an explicit context meter or compaction command is unavailable, checkpoint after the bounded slice and allow the host's compaction/continuation mechanism; do not claim that compaction was manually executed. Compacting is not a reason to omit the mandatory four-line progress map, skip validation, or relabel an unfinished stage as complete.
 
@@ -158,3 +174,37 @@ This automatic-resume rule applies only to Codex/OMX-owned execution. External C
 
 목록 자체의 존재는 `tools/check_assurance_contract.py`가 검사한다.
 근거: 260828 시스템 감사 S3 — 원칙 10이 8개 정본 중 1개에만 구현돼 있었다.
+
+ ## 사용자 승인: Opus 불가 시 Astra 대체 특칙
+
+  이 특칙은 이 문서의 기존 외부 Opus 전용 규정, 모델 배정표,
+  대체 금지 및 비운영 실험 한정 규정보다 우선한다.
+
+  - 1차 분류(type-proposer)는 이미지화까지는 terra 모델을 사용한다. 
+    Opus를 사용할 수 없으면 해당 분류 단계를 terran로 수행한다.
+  - Opus를 사용할 수 없는 경우, 1차 분류를 제외한 작업·맹목 풀이·
+    품질감사·독립 검토·최종 판정은 Codex 네이티브 서브에이전트로
+    수행할 수 있다.
+  - 이 대체 경로의 모든 서브에이전트와 작업자 모델은 gpt-6-astra로
+    명시한다. 해당 모델을 실행할 수 없으면 다른 모델로 몰래 대체하지 않는다.
+  - 작성자·독립 감사자·판정자는 서로 다른 실행 컨텍스트로 분리한다.
+    맹목 풀이에는 문제와 허용 참고자료만 제공하고 정답·기존 해설·
+    작성자 결론은 전달하지 않는다.
+  - 별도 컨텍스트는 파일 접근 격리 자체를 보장하지 않으므로,
+    허용 입력과 금지 입력을 명시하고 실제 읽은 자료를 기록한다.
+  - 실제 실행 모델, 입력 및 산출물 해시, 문항 식별자 전수 커버리지,
+    감사 결과와 수정 후 재검증을 기록한다.
+  - 작성자 자기검산을 독립 감사로 표시하지 않는다.
+  - 기존 검증 기준, append-only, 작성·감사 분리 및 two-key 절차는 유지한다.
+    대체된 감사·판정 역할도 같은 절차를 따른다.
+  - 이 특칙 적용을 위해 CLAUDE.md, analysis/REV_GUIDE.md,
+    관련 역할 정의와 검사 규칙의 충돌 부분을 함께 개정한다.
+
+## 260910 사용자 우선 지침: Astra 단독 운영
+
+현재 모델/팀 운영은 `docs/ASTRA_EXECUTION_POLICY.md`를 우선 적용한다.
+`gpt-6-astra` 단독 실행; 기존 팀 발주·재개 중단; 검토·감사·맹목 풀이·최종 판정은 Astra 전용이며 Sol 참여 금지.
+Astra 팀장 + Sol 비감사 보조는 성능 부족 실측 후 사용자 결정으로만 검토 가능한 미승인 대안이다.
+이전 팀 필수·Sol 배정·외부 Opus 필수 서술은 현재 실행의 선행조건이 아니다.
+자기검산을 독립 감사로 표시하지 않으며 독립 단계는 깨끗한 Astra 컨텍스트에서 순차 수행한다.
+배포 증거·작성/감사 분리·append-only·two-key는 유지한다. 모델 지침 개정은 배포 승인이 아니다.

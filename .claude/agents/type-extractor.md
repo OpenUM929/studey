@@ -95,6 +95,37 @@ Header: `date	step	target	decision	evidence	reason	confidence	actor`
 2. Transcribe items **verbatim** — Unicode math (√, ², ≤, →). **Never alter
    coefficients, coordinates, signs, units.** Preserve original terminology even when
    it looks nonstandard.
+2-a. **인용 산문 지문 예외 (P-지문, 260909 신설 — 사용자 승인).** 전사 대상 중 **타 저작물에서
+   인용된 연속 산문 지문**(영어 독해 지문 등)은 본문을 전문 재생산하지 **않는다**. 대신
+   ① `![](../_images/<ID>/pNN.png)` 이미지 링크 ② 구조 사실(단락 수 · 대략 어휘 수 ·
+   첫 5어/마지막 5어 · 빈칸의 위치와 형태 · 지시문 원문) ③ 판독으로 확인한 사실을 적는다.
+   **학교가 작성한 문면 — 발문·선택지·`<조건>` 박스·배점 표기 — 는 종전대로 축자 전사한다.**
+   계수·좌표·부호·단위 보존 규칙(2항)은 변경되지 않는다.
+   근거: 260909 실측 — 출력측 재생산 필터가 `API Error: 400 Output blocked by content
+   filtering policy` 로 EX-english-20261M p07 전사를 **5회** 차단해 유닛 완성이 물리적으로
+   불가능했다(입력 이미지는 정상 수신, 차단은 항상 모델 출력 턴). 원본은 `origin_data/` 와
+   `corpus/_images/` 에 그대로 보존되므로 원칙 1의 **3중 축 소급 검증은 유지된다** —
+   지문 문면이 필요한 검증은 이미지 축에서 수행한다.
+2-b. **유형 우선 판독 순위 (260910 신설 — 사용자 지시, CLAUDE.md 원칙 13 · `corpus/_README.md` §2-b).**
+   What this pipeline harvests is the item's **type and the exam's trend**, not the individual
+   numbers. Transcribe everything as printed (never guess), but split *effort and blocking*:
+   - **Type information — MUST be exact.** The demanded action in the stem, how the stimulus is
+     presented, **the structure and notation of every formula** (√, exponents, fractions,
+     coordinates, inequality direction, `⟦EQD:…⟧` vs Unicode duality), `<조건>` boxes, choice
+     structure (5-way vs ㄱㄴㄷ combination), which items share one stimulus, the score **band**,
+     unit-attribution cues, candidate trap wording. If any of this is illegible, restore it by
+     zoom/re-render; failure to restore is `▲ blocked`, never a pass.
+   - **Individual numbers — incidental; observe only.** A coefficient, coordinate, statistic, or
+     table-cell digit does not define the type. If one cell is illegible or printed blank, log
+     that cell as `unreadable`/`observed` and **keep going — it does not block the unit**. Do not
+     spend repeated zoom passes on a single digit, and do not adjudicate whether it is a misprint
+     or an omission (원칙 1 — record the observation, leave the judgment to PROPOSE).
+   - **Exception**: a number that the item is built around (special angle, integer root,
+     perfect-square discriminant, unit conversion as the demanded action) is type information.
+     Test: "swap this number for another — is it still the same type of item?"
+   - Score-sum and item-count reconciliation stay in force as **omission detectors**, not as
+     number-matching goals (원칙 11-a). Ruler acceptance criteria are consumed, not reinterpreted
+     under this rule (원칙 12-a).
 3. For figure items: describe every marked element in words (axes, labels, lengths,
    angles, tangency points) and state whether the problem survives without the figure.
 4. Record FACTS only (no judgment):
@@ -149,3 +180,12 @@ lane runtime identity, exclusive output paths, and the exact resume command, the
 `HOLD — resource exhausted`. On the next turn begin with a `resume audit` — re-confirm fresh
 quota, frozen input and existing output hashes, exclusive write rights, absence of a
 conflicting writer, and the next verification command; any mismatch is `▲ blocked`, not a pass.
+
+## 260910 사용자 우선 지침: Astra 단독 운영
+
+현재 모델/팀 운영은 `docs/ASTRA_EXECUTION_POLICY.md`를 우선 적용한다.
+`gpt-6-astra` 단독 실행; 기존 팀 발주·재개 중단; 검토·감사·맹목 풀이·최종 판정은 Astra 전용이며 Sol 참여 금지.
+Astra 팀장 + Sol 비감사 보조는 성능 부족 실측 후 사용자 결정으로만 검토 가능한 미승인 대안이다.
+이전 팀 필수·Sol 배정·외부 Opus 필수 서술은 현재 실행의 선행조건이 아니다.
+자기검산을 독립 감사로 표시하지 않으며 독립 단계는 깨끗한 Astra 컨텍스트에서 순차 수행한다.
+배포 증거·작성/감사 분리·append-only·two-key는 유지한다. 모델 지침 개정은 배포 승인이 아니다.

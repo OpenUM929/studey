@@ -48,3 +48,7 @@
   ※ 당시 `260825_02_quiz_standard_update.md`로 표기됐던 링크는 실물 파일명 `260825_06`으로 바로잡았다(번호 충돌 해소 — NN은 홈별 도착 순번).
 - 260825 재번호 결정 기록 — **사용자 판정: 선착순 유지·후발 재번호.** quiz_standard_update는 동일 세션군 카탈로그
   검토서 02~05가 선행 등록됨에 따라 02→06으로 확정했다(위 ※ 주석의 근거). 검토서 본문 내용은 무변경.
+| [260909_01_material_scope_student_review.md](260909_01_material_scope_student_review.md) | 자료·범위·학생 표준 검토 | pending | 매핑 확장 제안; 학생 이력0·숙련도 재생성 불일치 | proposal |
+
+## 260910 ?? ??? ???
+- [260910_01_highest_difficulty_decision.md](260910_01_highest_difficulty_decision.md): ??? ??? ??? ?? ???. Codex/OMX ?? ?? proposal; ?? ? ???, ?? ?? ??.

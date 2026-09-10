@@ -38,7 +38,7 @@ UTF-8. BOM은 TSV에만 붙인다(Windows Excel 호환). 셀 안 개행 금지 �
 |----|-------------|-----|------|
 | 유형ID | `^[A-Z]{1,3}\d?-\d{2}$` | `SM2-14` | 접두어 등록제: `SM`=공통수학1, `SM2`=공통수학2. 타과목 카탈로그 정식화 시 여기에 등록 |
 | 세트ID | `^SET-\d{6}-[a-z0-9]+-\d+$` | `SET-260822-math2-40` | YYMMDD-과목코드(§5.8)-문항수 |
-| 코퍼스ID | `^[A-Z]{2,4}-[a-z0-9]{2,8}-\d{4}([12][MF]\|P\d{2})?$` | `EX-math2-20262M` | 자료성격(EX=기출, PA=수행평가, NY=내신기출집, SUP=부교재, CU=교육과정)-subject_code-연도+학기구분. **v2(260825)**: middle=subject_code 소문자 통일(세트ID와 조인), 회차 꼬리 허용 |
+| 코퍼스ID | `^[A-Z]{2,4}-[a-z0-9]{2,8}-\d{4}([12][MF]\|P\d{2})?(-\d{2})?$` | `EX-math2-20262M` | 자료성격(EX=기출, PA=수행평가, NY=내신기출집, SUP=부교재, CU=교육과정)-subject_code-연도+학기구분. **v2(260825)**: middle=subject_code 소문자 통일(세트ID와 조인), 회차 꼬리 허용. **v3(260907)**: 말미 `-NN` 일련번호 슬롯 추가 — 같은 자료성격·과목·연도의 자료가 둘 이상일 때만 붙이고, 하나뿐이면 붙이지 않는다(기존 ID 무영향, 소급 개명 금지). 예 `SUP-info-2026-01` |
 | 코퍼스 문항ID | `<코퍼스ID>-Q\d+` | `SUP-math2-2026-Q07` | |
 | 회차코드 | `^20\d{2}-[12](M\|F\|P\d{2})$` | `2026-1M` | 시험 식별자 ASCII 표준. M=중간, F=기말, Pnn=n차수 수행평가 — LABEL_MAP §4.6 |
 | 약점ID | `^WK-\d{2}$` | `WK-01` | 순차 부여, 재사용 금지 |
@@ -48,7 +48,7 @@ UTF-8. BOM은 TSV에만 붙인다(Windows Excel 호환). 셀 안 개행 금지 �
 
 > **디렉터리 불변식(260826)**: 코퍼스 유닛의 **폴더명은 코퍼스ID와 문자 단위로 일치**한다.
 > 검증(PowerShell, 출력 0행이어야 통과 — `_images`는 예약 디렉터리이므로 제외):
-> `Get-ChildItem corpus -Directory | Where-Object { $_.Name -ne '_images' -and $_.Name -notmatch '^[A-Z]{2,4}-[a-z0-9]{2,8}-\d{4}([12][MF]|P\d{2})?$' }`
+> `Get-ChildItem corpus -Directory | Where-Object { $_.Name -ne '_images' -and $_.Name -notmatch '^[A-Z]{2,4}-[a-z0-9]{2,8}-\d{4}([12][MF]|P\d{2})?(-\d{2})?$' }`
 > — 발단: 260825 골격 생성 시 같은 PRD 본문에 구경로 지시(`corpus/SUP-M2-2026/`)가 남아 실행돼
 > 폴더만 v1 명칭으로 생성됨(meta.yml·원장은 v2). 부분 갱신 사고 → CLAUDE.md 원칙 10 실증 사례.
 
@@ -268,7 +268,7 @@ catalog_ref: "analysis/catalog/math2.md"
 
 Writer: `type-extractor`, at transcription completion (its procedure already determines
 grade / exam_code). The main loop assigns the corpus ID and folder before extraction runs.
-**게이트**: `transcribed_at/render_dpi/render_tool`이 채워지고 `corpus/_images/<ID>/pNN.png` + `transcript.md`(도표 문항은 이미지 링크 포함) + `verify_log.tsv` transcribe 행이 모두 존재해야 **분류(PROPOSE) 진입 가능** — 미충족 시 `▲ blocked` (원본 재열람 방지, corpus/_README.md 1차 정제 게이트).
+**게이트**: `transcribed_at/render_dpi/render_tool`이 채워지고 `corpus/_images/<ID>/pNN.png` + `transcript.md`(도표 문항은 이미지 링크 포함, 인용 산문 지문은 P-지문 예외 `corpus/_README.md` §2-a) + `verify_log.tsv` transcribe 행이 모두 존재해야 **분류(PROPOSE) 진입 가능** — 미충족 시 `▲ blocked` (원본 재열람 방지, corpus/_README.md 1차 정제 게이트).
 
 ### 5.7-A verify_log.tsv (단계별 검증 원장, append-only — 260825 신설)
 
@@ -330,6 +330,10 @@ intended_use: practice     # practice=연습용(tier-1 경량 검토) | exam=실
 | docs/QUIZ_STANDARD.md 개정 | **해소(260825)** — 판정 07·12 반영: 네 슬롯 태그 표준형(ID·Tier·DF·함정E)+보조/포용 규칙, §5.8 과목 매핑 참조, 스키마 df[]·traps[]·auxTypes[]·tagExtra[]+세트 프론트매터 계약, 예시 ID는 등록 접두어(T/W) 유지+상호참조 |
 
 ## 이력
+- 260907 **v1.10** — 사용자 승인(260907 확정 D1): §1.3 코퍼스ID 패턴에 `(-\d{2})?` 일련번호 슬롯 추가(v3). 발단은 같은 자료성격·과목·연도의 수업 학습지 2종
+  (`SUP-info-2026-01` 문제해결과 프로그래밍 10p / `SUP-info-2026-02` 정보 수업 학습지 5p)이 구 패턴에서 **같은 ID로 충돌**한 것 — 패턴에 구분 슬롯이 없었다.
+  동반 갱신: §1.3 디렉터리 불변식 검증 명령 · `corpus/_README.md` 같은 명령 · `analysis/catalog/CODE_REGISTRY.md` 이력. **선행 등록**이므로 개명 실행 전에 기록했다(CLAUDE.md 원칙 9-a · CODE_REGISTRY §5-7).
+  ⚠ 미해소 발견: `tools/build_corpus_unit.py:68` `RE_ID`가 `^(?:EX|SUP|NY)-[a-z0-9_]+-\d{5}[MF]$`로 **본 표준보다 좁다** — 회차 없는 부교재ID(`SUP-math2-2026`)를 v3 이전부터 이미 거부했다. 본 개정과 무관한 선행 불일치이므로 이번 작업에서 고치지 않고 **확인 필요**로 남긴다.
 - 260826 **v1.8** — [OC 지시] 260826_03 P0 반영(사용자 승인): §5.8 subject_code에 `info`
   (정보) 추가(CODE_REGISTRY §3과 쌍 — 온보딩 #2·#3의 S1 착수 전 선행 등록, 나머지 6항목은 S4).
   §1.3에 **코퍼스 디렉터리 불변식**(폴더명==코퍼스ID + 검증 명령) 명문화 — 260825 골격 생성 시

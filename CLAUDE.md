@@ -132,18 +132,60 @@
    근거: 260828 감사 F1·F2-b·F3·F6·F9
    (`output/260828/rev/260828_01_codex_s2_capability_audit.md` §B·§E-3).
 
+13. **목적함수는 유형과 추세다 — 수치는 부수, 수식·구조는 정본** (260910 사용자 지시 신설) —
+   이 시스템이 기출에서 가져오려는 것은 **문항의 유형과 출제 추세**이지 개별 숫자가 아니다.
+   따라서 정제·분류·검토의 주의와 노력은 아래 우선순위로 배분한다.
+   (a) **유형 정보 = 최우선(정확성 필수).** 발문의 요구 행동 · 자극 제시 방식 · **수식과 식의
+   구조·표기 관행**(√·지수·분수·좌표·부등호 방향, `⟦EQD:…⟧`와 유니코드 표기의 이중성) ·
+   `<조건>` 박스 · 선택지 구조(5지선다인가 ㄱㄴㄷ 합답형인가) · 문항 간 자료 공유 구조 ·
+   배점**대**(구간) · 단원 귀속 단서 · 함정 후보 문면. 이것이 판독 불가면 확대·재렌더로 반드시
+   복원하고, 복원되지 않으면 통과가 아니라 `▲ blocked`다.
+   (b) **개별 수치 = 부수(관측만).** 계수·좌표·통계값·표 셀 숫자 그 자체는 유형을 규정하지
+   않는다. 한 칸이 판독 불가·인쇄 누락이면 그 칸만 `unreadable`/관측 행으로 남기고 유닛은
+   진행한다 — **유닛을 막지 않는다.** 값의 진위(오탈인지 누락인지)를 캐는 것도 정제의 일이
+   아니다(원칙 1 — 관측만 적는다). 보이는 수치는 종전대로 원문 그대로 적되(추측 금지), 그
+   한 칸에 확대·재판독을 반복 투입하지 않는다.
+   (c) **예외 — 수치가 유형을 규정할 때 그 수치는 유형 정보다.** 「그 숫자여야 성립하는」 설계
+   (특수각·정수해·판별식이 완전제곱·단위 환산이 요구 행동의 핵심·유효숫자 자체가 채점 대상)는
+   (a)로 취급한다. 판별 질문은 **「이 수를 다른 수로 바꿔도 같은 유형의 문항인가」** 다 —
+   그렇다면 (b), 아니라면 (a).
+   (d) **분류·생성 단계로의 귀결.** 변형 축은 구조를 움직여야 하며 **수치만 바꾼 것은 변형이
+   아니다** — 흐름표 `item-quality-auditor` N축의 `수치변형` FAIL과 같은 기준이다. 유형 배정
+   근거도 「숫자가 같다」가 아니라 `(주어진 것 · 요구 행동 · 풀이 골격)`으로 적는다.
+   (e) **이 원칙은 기존 게이트를 완화하지 않는다.** 배점 합계·문항 수 대조는 여전히 유효한
+   **누락 검출기**다 — 총점이 어긋나면 그것은 「숫자가 틀렸다」가 아니라 「문항이 빠졌다」는
+   신호이기 때문이다(원칙 11-a: 게이트의 분모는 원본이다). 이 원칙으로 자
+   (`analysis/REV_GUIDE.md` §5 two-key 목록)의 수용기준을 재해석·재범위화하지 않는다 —
+   어긋나면 결정요청으로 올린다(원칙 12-a).
+   근거: 260910 사용자 지시 — "문제에서 중요한 것은 숫자가 아니라 유형이다. 정제에서 문제의
+   유형과 추세를 가져오는 게 목적이므로 숫자는 중요하지 않지만, 수식이나 유형과 관련된 부분은
+   매우 중요하다."
+
+## 문제 완성본 관리 (260908 사용자 요청)
+
+문항 신규 생성·교체·수정 시 문제만 저장하고 종료하지 않는다. 기존 외부 solve-back·품질감사·
+arbiter·사용자 확인 게이트를 통과한 완성본은 기존 `output/<YYMMDD>/` 체계에 보존하고,
+`output/_index.md`에 현재 정본의 통합본·문제지·답지/해설 경로와 문항별 상태를 같은 작업에서 등록한다.
+미검증은 `검토필요`, 최종 승인분만 `정본`, 폐기 결정분은 `폐기`로 구분한다. 기존 정본은 새 판본 승인 전 제거하지 않는다.
+문항의 본문·태그·정답표·해설·채점기준·역검산표·요약표·이력과 관련 인쇄 사본의 현행 여부를 함께 대조한다.
+문제지와 답지는 동일 통합본에서 분리 생성하고 문항 ID의 누락·중복·추가 및 내용 일치를 검사한다.
+적용한 예외 규칙과 판정 근거, 작성자 검산과 독립 검증의 구별, 감사 이행 기록을 남긴다.
+경로 기준은 `analysis/DOC_LOCATION.md` §3-1, 검토·승인 권한은 기존 `analysis/REV_GUIDE.md`를 따른다.
+이 절은 저장·동기화 절차이며 N축 기준·난이도 자·외부 권한을 변경하거나 면제하지 않는다.
+
 ## 작업 흐름
 
 | 상황 | 절차 | 서브에이전트 |
 |------|------|-------------|
 | **신규 데이터 도착 — 운영 사이클 개시 게이트** | ① 메인 루프가 `output/<YYMMDD>/`에 **운영 PRD 작성**(데이터 명세·단계·게이트·수용기준) → ② 검토(둘 중 택일, **라벨을 실제 배우와 일치시킨다**): `rev-writer`⇄`rev-auditor`를 실제로 호출하거나, 작성 주체가 겸하면 원장 라벨도 `self-check(작성자)`로 적는다 — **에이전트 라벨(t1/t2) 도용 금지**. 어느 쪽이든 **수렴 선언은 작성자 측이 하지 않는다**(REV_GUIDE §3 rule 2, 종결권은 tier-3) → **Claude Code PRD 검토 라운드** 회람 → arbiter 판정(승인/수정요구/기각) → ③ 승인된 PRD가 그 사이클의 정본이 되고, 이후 아래 흐름표 행들(REFINE→PROPOSE→예측→생성→게이트→원장)은 PRD 단계표에 따라 실행. **PRD 미승인 상태로 데이터 가공 금지**. PRD 자체의 검토 기준은 REV_GUIDE §2-b E | 작성 메인 루프 · 검토 `rev-writer`⇄`rev-auditor` **또는** self-check(작성자 겸임) · 판정 `rev-arbiter`(Claude Code) |
-| 새 기출·부교재 도착 | **데이터 도착 게이트(윗행) 통과 선행** → EXTRACTION_LOG 중복 확인 → **① 1차 정제(REFINE, `type-extractor`, Codex/OMX)**: `corpus/<ID>/`(transcript·meta.yml·_images·verify_log) 산출 — **1차 정제 게이트**: `origin_data/<ID>/` 원본(HWP/DOC는 PDF화본 병치) → `corpus/_images/<ID>/pNN.png`(PyMuPDF dpi≥130) → `transcript.md`(도표 문항은 이미지 링크 포함, **분류 판단 금지 — 유형ID·변형축·함정 한 글자도 적지 않는다**) → `verify_log.tsv` transcribe 행 → `meta.yml: transcribed_at/render_dpi/render_tool` 채움. **산출물은 `corpus/<ID>/`에만 둔다.** **이 게이트 통과 전 ② 진입 금지** → **② 1차 분류(PROPOSE, `type-proposer`, 외부 Opus)**: **정제물(`transcript.md`+`pNN.png`)을 다시 읽어** 93문항을 **한 문항씩** 유형ID에 배정하고 변형축·함정·Tier·신규유형 여부를 판정 → `output/<YYMMDD>/` 제안서 작성(유형 배정표·카탈로그 갱신안·공통 패턴 후보). **카탈로그 `출제 빈도`를 옮겨 적는 것은 분류가 아니다.** → 3단계 검토 루프(REV_GUIDE §3-b) → arbiter 판정 → 메인 루프가 승인분을 카탈로그·HARVEST_LOG·EXTRACTION_LOG에 반영 | ① 정제 `type-extractor`(Codex/OMX) · ② 분류 `type-proposer`/`rev-arbiter`(외부 Opus) · 검토 `rev-writer`⇄`rev-auditor` |
+| 새 기출·부교재 도착 | **데이터 도착 게이트(윗행) 통과 선행** → EXTRACTION_LOG 중복 확인 → **① 1차 정제(REFINE, `type-extractor`, Codex/OMX)**: `corpus/<ID>/`(transcript·meta.yml·_images·verify_log) 산출 — **1차 정제 게이트**: `origin_data/<ID>/` 원본(HWP/DOC는 PDF화본 병치) → `corpus/_images/<ID>/pNN.png`(PyMuPDF dpi≥130) → `transcript.md`(도표 문항은 이미지 링크 포함, 인용 산문 지문은 P-지문 예외 `corpus/_README.md` §2-a, **분류 판단 금지 — 유형ID·변형축·함정 한 글자도 적지 않는다**) → `verify_log.tsv` transcribe 행 → `meta.yml: transcribed_at/render_dpi/render_tool` 채움. **산출물은 `corpus/<ID>/`에만 둔다.** **이 게이트 통과 전 ② 진입 금지** → **② 1차 분류(PROPOSE, `type-proposer`, 외부 Opus)**: **정제물(`transcript.md`+`pNN.png`)을 다시 읽어** 93문항을 **한 문항씩** 유형ID에 배정하고 변형축·함정·Tier·신규유형 여부를 판정 → `output/<YYMMDD>/` 제안서 작성(유형 배정표·카탈로그 갱신안·공통 패턴 후보). **카탈로그 `출제 빈도`를 옮겨 적는 것은 분류가 아니다.** → 3단계 검토 루프(REV_GUIDE §3-b) → arbiter 판정 → 메인 루프가 승인분을 카탈로그·HARVEST_LOG·EXTRACTION_LOG에 반영 | ① 정제 `type-extractor`(Codex/OMX) · ② 분류 `type-proposer`/`rev-arbiter`(외부 Opus) · 검토 `rev-writer`⇄`rev-auditor` |
 | **특정 회차 유형 예측** (중간/기말 대비) | ① 회차 **범위 확정**(공지 우선, 없으면 과거 분할 패턴 + ⚠️ 표시) → ② 기출·부교재를 **합쳐** 유형별 **A~E 등급** 산정 → ③ **사각지대(E)** 별도 명시 → ④ `analysis/forecast/`에 저장 → ⑤ 그 등급표로 문항 세트 배분. 절차: [`analysis/FORECAST_GUIDE.md`](analysis/FORECAST_GUIDE.md) | 작성 `forecast-writer` · 검토 범위 확실도별 차등(확정=t1 `forecast-reviewer` / 미확정=t1⇄t2 ≤5R) → 분쟁시 `forecast-arbiter`, 메인 루프 구동 |
 | **새 기출로 예측 채점** | 기존 예측 보고서를 열어 적중 여부를 **추가 기록**(삭제 금지) → 빗나간 축의 원인 한 줄 → 등급 기준 보정 | — |
 | 문제 생성 요청 | 과목 카탈로그 + `curriculum_2022.md` 범위 가드 로드 → 유형 ID 기반 생성, 세트 frontmatter에 `intended_use: practice\|exam` 기록 → `output/<YYMMDD>/`에 저장 | `item-writer` |
 | 생성 직후 (전 세트 필수 게이트) | `solve-back-verifier`가 맹목 풀이로 전 문항 검증 — 정답 유일성·조건 충분성·Tier 적합·해설 중간식 재유도. **게이트 통과 전 그 누구에게도 내놓지 않는다** | `solve-back-verifier` |
 | **맹목 풀이 통과 직후 (전 세트 필수 2차 게이트, 260830 신설)** | `item-quality-auditor`가 세 축으로 감사: **N 신규성**(카탈로그 `변형 축`을 실제로 움직였는가 — `(주어진 것·요구 행동·풀이 골격)`이 기존 문항과 같고 수치만 다르면 `수치변형` FAIL) · **V 성취기여**(`함정 요소` 적중·Tier 정합·`금지·주의` 위반 없음·세트 사다리) · **A 정답구성**(sympy 재계산·해설 유도력·정답+해설+유형ID 완비·서술형 채점기준 배점 합치·표기 관행). 축 하나라도 FAIL이면 `통과` 없음. 보고 전용 — 수정은 체크박스 승인 요청으로만 | `item-quality-auditor` |
 | 세트 검토·투입 허가 | practice 세트: tier-1 1회 통과(지적은 item-writer가 흔적 남겨 반영). exam 세트: 3단계 루프(REV_GUIDE §3-b) → arbiter 승인 + **사용자 확인** → 투입 허가. 미승인 세트는 미투입 표시 유지 | `rev-writer`⇄`rev-auditor`→`rev-arbiter`, 메인 루프 구동 |
+| **배포 (두 게이트 통과 + 결정 완료 후, 260908 신설)** | 승인분만 통합본에 반영 → 문제지·답지를 **세트 자신의 `output/<YYMMDD>/`** 에 생성하고 **내용까지** 대조 → 알려진 잔여 결함을 **산출물 본문에** 공개 → `output/_index.md`·`REV_LOG` 등록. **「미반영」은 종결 상태가 아니다** — 잔여는 ①고침 ②뺌 ③산출물 본문 경고 중 하나로 닫고, 못 하는 것만 「왜·누가·정확한 명령」 3줄과 함께 남긴다. **`정본` 등급은 이 단계가 부여하지 못한다**(`배포가능`까지). 착수 전 규격 ⑥-b 예산 실측, 게이트마다 `.context.json` 스냅숏 갱신 | `set-release-manager` |
 | **재검토에서 문제·의문 발견** | Three-tier loop (REV_GUIDE): tier-1 `rev-writer` review report + `_index.md` ledger row → tier-2 `rev-auditor` independent cross-check (≤5 rounds, duplicate-dispute escalation) → convergence → decision request → tier-3 `rev-arbiter` (Claude Code Opus, same repo) ruling approve/revise-required/reject → approved fixes applied by authoring owner with trace rows → REV_LOG update → catalog forbidden/caution entries. Spec: [`analysis/REV_GUIDE.md`](analysis/REV_GUIDE.md) | `rev-writer`→`rev-auditor`→`rev-arbiter`, main loop drives |
 | 검수 피드백 | 해당 유형의 금지·주의 항목에 기록 (원칙 4) | — |
 | **학생 오답 도착** | 유형ID·Tier·DF 축으로 교차 집계 → 취약 **축** 명명 → `analysis/student/`에 분석 기록 → 취약 축마다 T2→T3→T4 사다리로 유사 문제 생성 | `item-writer` |
@@ -335,8 +377,18 @@ PyMuPDF로 PNG를 렌더링한 뒤 그 PNG를 Read로 읽는다 (pymupdf·pillow
 "규정은 있는데 아무도 안 지키는" 구멍이 생긴다.
 
 - `tools/textpatch.py`(정본 편집·원장 append 기계화 — 손편집 금지)
+- `corpus/_README.md`(1차 정제 게이트 정본 — 원칙 1의 전사 규격·§2-a P-지문 예외·§2-b 유형 우선 판독)
 - `docs/templates/ANSWER_KEY_TEMPLATE.md`(답지 골격) · `docs/templates/CLASSIFICATION_TEMPLATE.md`(1차 분류 골격)
-- `.claude/agents/*.md` 12종 (공통 실행 규격 ①~⑥ · 페르소나 · 범위 가드) · `AGENTS.md`(Codex/OMX 측 대응 규정) · `analysis/REV_GUIDE.md` §5 배우 표 · `analysis/REV_GUIDE.md` §5 two-key 대상 목록·§5-a 자 게이트 · `analysis/REV_GUIDE.md` §6-b(회람문 규격 — 발주문의 잔여 실측 기입) · `tools/check_assurance_contract.py`(규정 도달 검사 — 구조 검사 6이 자 게이트를 실행한다)
+- `.claude/agents/*.md` 13종 (공통 실행 규격 ①~⑥ · 페르소나 · 범위 가드) · `AGENTS.md`(Codex/OMX 측 대응 규정) · `analysis/REV_GUIDE.md` §5 배우 표 · `analysis/REV_GUIDE.md` §5 two-key 대상 목록·§5-a 자 게이트 · `analysis/REV_GUIDE.md` §6-b(회람문 규격 — 발주문의 잔여 실측 기입) · `tools/check_assurance_contract.py`(규정 도달 검사 — 구조 검사 6이 자 게이트를 실행한다)
 
 목록 자체의 존재는 `tools/check_assurance_contract.py`가 검사한다.
 근거: 260828 시스템 감사 S3 — 원칙 10이 8개 정본 중 1개에만 구현돼 있었다.
+
+## 260910 사용자 우선 지침: Astra 단독 운영
+
+현재 모델/팀 운영은 `docs/ASTRA_EXECUTION_POLICY.md`를 우선 적용한다.
+`gpt-6-astra` 단독 실행; 기존 팀 발주·재개 중단; 검토·감사·맹목 풀이·최종 판정은 Astra 전용이며 Sol 참여 금지.
+Astra 팀장 + Sol 비감사 보조는 성능 부족 실측 후 사용자 결정으로만 검토 가능한 미승인 대안이다.
+이전 팀 필수·Sol 배정·외부 Opus 필수 서술은 현재 실행의 선행조건이 아니다.
+자기검산을 독립 감사로 표시하지 않으며 독립 단계는 깨끗한 Astra 컨텍스트에서 순차 수행한다.
+배포 증거·작성/감사 분리·append-only·two-key는 유지한다. 모델 지침 개정은 배포 승인이 아니다.

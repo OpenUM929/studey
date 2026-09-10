@@ -20,6 +20,7 @@
 | 통합사회1 | [catalog/social.md](catalog/social.md) | ✅ (24·25) |
 | 한국사1 | [catalog/history.md](catalog/history.md) | ✅ (24·25) |
 | 공통국어1 | [catalog/korean.md](catalog/korean.md) | ✅ (24·25) |
+| **정보 (2학기)** | [catalog/info.md](catalog/info.md) | ⚠ `scope: partial` (25 기출 1회차 + 학습지 2종 / IN-01~26, 기말 미분류) |
 
 - **특정 회차 시험 유형 예측(중간/기말 대비)**: [`FORECAST_GUIDE.md`](FORECAST_GUIDE.md) ⭐
   — 기출(1차)과 부교재(2차)를 **합쳐** 회차별 유형 **A~E 등급**을 산정하는 절차.

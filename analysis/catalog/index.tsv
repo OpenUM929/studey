@@ -23,6 +23,32 @@ F-05	history	-	-	★★	verified
 F-06	history	-	-	★★	verified
 F-07	history	-	-	★★★	verified
 F-08	history	-	-	★★★	verified
+IN-01	info	파이썬기초	> 연산자	★	verified
+IN-02	info	파이썬기초	> 변수와 대입	★	verified
+IN-03	info	파이썬기초	> 비교·논리 연산	★	verified
+IN-04	info	제어구조	> 조건 구조	★	verified
+IN-05	info	제어구조	> 반복 구조(range)	★	verified
+IN-06	info	제어구조	> 반복과 누적 변수	★	verified
+IN-07	info	제어구조	> 중첩 반복	★	verified
+IN-08	info	제어구조	> 조건 반복(while)	★	verified
+IN-09	info	자료	> 리스트 인덱싱	★	verified
+IN-10	info	자료	> 슬라이싱	★	verified
+IN-11	info	자료	> 리스트 조작	★	verified
+IN-12	info	자료	> 리스트 함수의 기능	★	verified
+IN-13	info	자료	> 리스트 내장 함수	★	verified
+IN-14	info	자료	> 문자열	★	verified
+IN-15	info	자료	> 2차원 리스트	★	verified
+IN-16	info	파이썬기초	> 변수 명명 규칙	★	verified
+IN-17	info	정보윤리	> 정보보안	★	verified
+IN-18	info	정보윤리	> 저작권(CCL)	★	verified
+IN-19	info	함수	> 정의·호출·반환값	★★★	verified_aux
+IN-20	info	함수	> 변수의 유효범위	★★	verified_aux
+IN-21	info	함수	> 재귀	★★★	verified_aux
+IN-22	info	자료	> 2차원 리스트 순회	★★★	verified_aux
+IN-23	info	자료	> 인덱스 범위와 실행 오류	★★	verified_aux
+IN-24	info	자료	> 표준 입력	★	verified_aux
+IN-25	info	제어구조	> 코드 완성	★★★	verified_aux
+IN-26	info	제어구조	> 반복 상태 추적	★★	verified_aux
 K-01	korean	-	-	★★★	verified
 K-02	korean	-	-	★★★	verified
 K-03	korean	-	-	★★★	verified

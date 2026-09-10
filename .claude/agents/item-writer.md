@@ -162,3 +162,12 @@ lane runtime identity, exclusive output paths, and the exact resume command, the
 `HOLD — resource exhausted`. On the next turn begin with a `resume audit` — re-confirm fresh
 quota, frozen input and existing output hashes, exclusive write rights, absence of a
 conflicting writer, and the next verification command; any mismatch is `▲ blocked`, not a pass.
+
+## 260910 사용자 우선 지침: Astra 단독 운영
+
+현재 모델/팀 운영은 `docs/ASTRA_EXECUTION_POLICY.md`를 우선 적용한다.
+`gpt-6-astra` 단독 실행; 기존 팀 발주·재개 중단; 검토·감사·맹목 풀이·최종 판정은 Astra 전용이며 Sol 참여 금지.
+Astra 팀장 + Sol 비감사 보조는 성능 부족 실측 후 사용자 결정으로만 검토 가능한 미승인 대안이다.
+이전 팀 필수·Sol 배정·외부 Opus 필수 서술은 현재 실행의 선행조건이 아니다.
+자기검산을 독립 감사로 표시하지 않으며 독립 단계는 깨끗한 Astra 컨텍스트에서 순차 수행한다.
+배포 증거·작성/감사 분리·append-only·two-key는 유지한다. 모델 지침 개정은 배포 승인이 아니다.
