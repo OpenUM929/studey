@@ -695,3 +695,141 @@ author: 메인 루프; executor: Codex/OMX; grade: proposal. 사용자 Astra 지
 최고 목표는 기존 최고 난이도의 기반을 유지하면서 추가 사고력 요구를 더하는 것으로 유지. 긴 추적/복수 구문만으로 최고 티어를 인증하지 않는다. 티어별 50행 잠정 결과(T2 성격32/T3 후보18/최고 충족 입증0)는 유지하며 정식 티어 확정 아님.
 NEXT: _16~_25 10장 실제 열람 → _26~_29와 173556739 계열3장 → 품질50행 최종 보고서. 정본·문제/답지·인덱스·공유 원장·자 변경 없음. 최종 감사/배포 승인 미완료.
 다음 검증: Python hashlib로 본 WIP 전체 및 첫26604bytes SHA256, A/B 문제지 동결 해시 일치 확인 후 _16부터 view_image.
+
+
+## 교과서 실물 대조 3차 슬라이스 — 2026-09-11
+
+author: 메인 루프; executor: Codex/OMX; grade: proposal; owner: /root. Astra 사용자 지정, 모델/깊이 호스트 미확인. 기존 WIP/prefix/A/B 해시 재확인 후 실제 view_image 10장 반환·판독.
+
+| ID | 원본 | 인쇄면 | bytes | SHA256 | 관찰 및 감사 적용 |
+|---|---|---|---|---|---|
+| IMAGE_16 | origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_16.jpg | p129 | 2130888 | 72ca494dea777dc0604ab9e42366c446a653e547e7b325d217ad94fdf393d31b | 실제 열람: 표준 input 문자열과 int/float 변환, print 쉼표 공백. 출력 표기 기초 근거. |
+| IMAGE_17 | origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_17.jpg | p128 | 2145955 | d79a8c7fa15ef1bab95044a0c7a50cef5d47f140a537254be55add6e71e2b3ec | 실제 열람: 입력-처리-출력과 표준/파일 입출력 개념. 시험 범위 확정 증거는 아님. |
+| IMAGE_18 | origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_18.jpg | p127 | 2102714 | f5be6ff6ddef2a6926ea465ee94c8fe5423eb74f1e45769f0f65fce75a701657 | 실제 열람: 화씨→섭씨 요소·알고리즘 생각하기와 식 조사 요구, 이후 예시 식 (ftemp-32)*5/9 제공. 탐구 제목과 실제 평가 요구를 분리해야 함. |
+| IMAGE_19 | origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_19.jpg | p126 | 2048413 | bc1ad1c2a181c608cc48f0f404bf95739a5e72d07b786ab87c02fd06498fb9a9 | 실제 열람: 주어진 연산을 명령어로 바꾸고 결과 쓰기: 거듭제곱·나머지·문자열 연결·반복·논리. 별도 과제의 병렬 나열. |
+| IMAGE_20 | origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_20.jpg | p125 | 2169288 | 8ec17ba99b1be034ef325cf80a93de638029bdb919862195bbf9d534ed177430 | 실제 열람: 비교·and/or/not·복합 대입 표와 직접 계산. A1/B5 등의 기본 구문 근거. |
+| IMAGE_21 | origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_21.jpg | p124 | 2159361 | 5ff800bc4dec8f2830de716e26bdec1c12c956eba1711eac479513ceb8fff398 | 실제 열람: 산술 우선순위·괄호·몫·나머지·거듭제곱 및 직접 계산. 길이나 연산 개수는 최고 난도 증거 아님. |
+| IMAGE_22 | origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_22.jpg | p123 | 2061305 | d27fd1a3d7c074c1ed9f068bba59a8b555fb7c83c87592a8539f619270499dad | 실제 열람: int/float/str/bool 및 문자열 연결·반복, 비교 결과. 자료형 기초. |
+| IMAGE_23 | origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_23.jpg | p122 | 2154254 | 7f314d9906f60de1bb7d038c937bad1dc2180eacc9308cd88ffbbba31a9e1d47 | 실제 열람: 변수 선언·이름 규칙·예약어. 해당 기본 개념은 원본에 존재하나 A/B의 전체 유형 포괄을 뜻하지 않음. |
+| IMAGE_24 | origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_24.jpg | p121 | 2159221 | f1aca4fc3820a66d713115b3e2426035c1d6b9571b20d178aa7718dcaa973d1f | 실제 열람: IDLE 저장·실행·별 출력 및 오류 점검. 작성 실습이며 A/B 추적의 새로운 사고 요구 근거는 아님. |
+| IMAGE_25 | origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_25.jpg | p120 | 2258184 | ba54b25ec8b8f92741bd0516501b16e971e502a285345757cb53224e11017282 | 실제 열람: IDLE와 turtle 별 그리기 코드, 모듈 소개. 예시를 따라 쓰는 활동; 모든 소개 모듈을 시험 범위로 확대하지 않음. |
+
+expected=IMAGE_16..IMAGE_25; observed=IMAGE_16..IMAGE_25; duplicate=[]; missing=[]; extra=[]; structural_warnings=0; exit=0. 누적26/33, 미열람7.
+NEXT: _26~_29 및 173556739 계열3장 실제 열람 후 품질50행 보고서. 제품·공유 원장·자 변경 없음.
+
+
+## 교과서 실물 대조 최종 슬라이스 — 2026-09-11
+
+author: 메인 루프; executor: Codex/OMX; grade: proposal; owner: /root. 실제 view_image 반환7장 판독. 병렬 호출 및 후속 _01 호출에서 fs sandbox helper 메시지 해석 오류가 있었으나 단독 재시도 성공. 실패 호출은 열람 수에 미포함.
+
+| ID | 원본 | 인쇄면 | bytes | SHA256 | 관찰 및 감사 적용 |
+|---|---|---|---|---|---|
+| IMAGE_173555786_26 | origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_26.jpg | 119 | 2169935 | 694919325d2de039afffa2c86ce086f69fc34209b2f011509fbb8170a1df5ac9 | 실제 열람: 셸/코드 창과 turtle 삼각형·print 자기소개. 실행 환경 소개, 추가 사고 요구 없음. |
+| IMAGE_173555786_27 | origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_27.jpg | 118 | 2233140 | 240050017cb3251cc0b624fdff91085d1efa216b94d3c3b43da2f5f77a66f4d6 | 실제 열람: Python 설치와 IDLE 실행 안내. 현재 환경 추천이 아닌 원본의 관찰 기록. |
+| IMAGE_173555786_28 | origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_28.jpg | 117 | 2157279 | 7167eeb4e64fb71dfeb03cc8a21c2cc7d3510a0ec4d6580565f2ccb9813c1254 | 실제 열람: 블록과 텍스트 반복 비교, IDE·번역기·디버거 및 두 정수 합. 난도 근거로 사용하지 않음. |
+| IMAGE_173555786_29 | origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173555786_29.jpg | 끝자리6만 온전히 보임; 전체 쪽수 미확인 | 2054631 | 43f2252c07919ca81b6509b0338beabd2b7b85c754eaab7fb41a739559528408 | 실제 열람: 프로그래밍 언어·블록/텍스트 구분과 Python 특징. 잘린 쪽수를 파일 순서에서 추정하지 않음. |
+| IMAGE_173556739 | origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173556739.jpg | 115 | 2324179 | 1d381d1419a45ebd57e96335c34250c5161d7b50dc2def4376fc3ec23f62e0f7 | 실제 열람: 프로그램과 프로그래밍, 생활 속 활용 예. 분석→알고리즘→프로그램의 과정 소개. |
+| IMAGE_173556739_01 | origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173556739_01.jpg | 101 | 2138672 | b7f0cf647a379ade70bdd8d897b40e9baa64cda24e8fb90c70753c595250f412 | 실제 열람: 자연어·의사 코드·순서도와 순차/반복/선택. 같은 방법의 표현 변환은 기초; 그 자체 최고 난도는 아님. |
+| IMAGE_173556739_02 | origin_data/25년_2학기_1학년_중간_정보교과서/KakaoTalk_20260909_173556739_02.jpg | 095 | 2223473 | ea7db22d6faa460c8ed7d5463684ffb0bb88e431922782bc5b1cfb9ead9ea449 | 실제 열람: 문제 분해·핵심 요소 모델링·추상화·알고리즘 설계·실행·평가 및 수정. 추가 사고력은 이 설계/평가 행동을 문항이 실제 요구하는지로 구분; 모든 추적을 설계로 간주하지 않음. |
+
+### 실물 열람 파일 식별자 게이트
+명령: Python pathlib glob으로 원본 파일 목록 재생성 후 실제 열람 파일 목록과 양방향 차집합·중복 비교. 쪽수 추정/본문 OCR 자동대체 없음.
+```json
+{
+  "expected": [
+    "KakaoTalk_20260909_173555786.jpg",
+    "KakaoTalk_20260909_173555786_01.jpg",
+    "KakaoTalk_20260909_173555786_02.jpg",
+    "KakaoTalk_20260909_173555786_03.jpg",
+    "KakaoTalk_20260909_173555786_04.jpg",
+    "KakaoTalk_20260909_173555786_05.jpg",
+    "KakaoTalk_20260909_173555786_06.jpg",
+    "KakaoTalk_20260909_173555786_07.jpg",
+    "KakaoTalk_20260909_173555786_08.jpg",
+    "KakaoTalk_20260909_173555786_09.jpg",
+    "KakaoTalk_20260909_173555786_10.jpg",
+    "KakaoTalk_20260909_173555786_11.jpg",
+    "KakaoTalk_20260909_173555786_12.jpg",
+    "KakaoTalk_20260909_173555786_13.jpg",
+    "KakaoTalk_20260909_173555786_14.jpg",
+    "KakaoTalk_20260909_173555786_15.jpg",
+    "KakaoTalk_20260909_173555786_16.jpg",
+    "KakaoTalk_20260909_173555786_17.jpg",
+    "KakaoTalk_20260909_173555786_18.jpg",
+    "KakaoTalk_20260909_173555786_19.jpg",
+    "KakaoTalk_20260909_173555786_20.jpg",
+    "KakaoTalk_20260909_173555786_21.jpg",
+    "KakaoTalk_20260909_173555786_22.jpg",
+    "KakaoTalk_20260909_173555786_23.jpg",
+    "KakaoTalk_20260909_173555786_24.jpg",
+    "KakaoTalk_20260909_173555786_25.jpg",
+    "KakaoTalk_20260909_173555786_26.jpg",
+    "KakaoTalk_20260909_173555786_27.jpg",
+    "KakaoTalk_20260909_173555786_28.jpg",
+    "KakaoTalk_20260909_173555786_29.jpg",
+    "KakaoTalk_20260909_173556739.jpg",
+    "KakaoTalk_20260909_173556739_01.jpg",
+    "KakaoTalk_20260909_173556739_02.jpg"
+  ],
+  "observed": [
+    "KakaoTalk_20260909_173555786.jpg",
+    "KakaoTalk_20260909_173555786_01.jpg",
+    "KakaoTalk_20260909_173555786_02.jpg",
+    "KakaoTalk_20260909_173555786_03.jpg",
+    "KakaoTalk_20260909_173555786_04.jpg",
+    "KakaoTalk_20260909_173555786_05.jpg",
+    "KakaoTalk_20260909_173555786_06.jpg",
+    "KakaoTalk_20260909_173555786_07.jpg",
+    "KakaoTalk_20260909_173555786_08.jpg",
+    "KakaoTalk_20260909_173555786_09.jpg",
+    "KakaoTalk_20260909_173555786_10.jpg",
+    "KakaoTalk_20260909_173555786_11.jpg",
+    "KakaoTalk_20260909_173555786_12.jpg",
+    "KakaoTalk_20260909_173555786_13.jpg",
+    "KakaoTalk_20260909_173555786_14.jpg",
+    "KakaoTalk_20260909_173555786_15.jpg",
+    "KakaoTalk_20260909_173555786_16.jpg",
+    "KakaoTalk_20260909_173555786_17.jpg",
+    "KakaoTalk_20260909_173555786_18.jpg",
+    "KakaoTalk_20260909_173555786_19.jpg",
+    "KakaoTalk_20260909_173555786_20.jpg",
+    "KakaoTalk_20260909_173555786_21.jpg",
+    "KakaoTalk_20260909_173555786_22.jpg",
+    "KakaoTalk_20260909_173555786_23.jpg",
+    "KakaoTalk_20260909_173555786_24.jpg",
+    "KakaoTalk_20260909_173555786_25.jpg",
+    "KakaoTalk_20260909_173555786_26.jpg",
+    "KakaoTalk_20260909_173555786_27.jpg",
+    "KakaoTalk_20260909_173555786_28.jpg",
+    "KakaoTalk_20260909_173555786_29.jpg",
+    "KakaoTalk_20260909_173556739.jpg",
+    "KakaoTalk_20260909_173556739_01.jpg",
+    "KakaoTalk_20260909_173556739_02.jpg"
+  ],
+  "duplicate": [],
+  "missing": [],
+  "extra": [],
+  "structural_warnings": 0,
+  "exit": 0
+}
+```
+누적 실제 열람33/33. _29 인쇄 쪽수 앞부분 잘림은 위치 메타데이터 제한이며 전체 파일명으로 인용한다. 기출 시험 이미지 자체는 미열람(전사만 읽음), 시험 범위 확정과 학생 오답 실증은 여전히 없음.
+
+## 재개 체크포인트 — 교과서 대조 종료
+완료: 맹목50/50 동결, 답/해설 대조50/50, 티어 구조50/50, 교과서 실제33/33. 최종 품질 보고서는 아직 미작성. 최고 기준: 기존 최고 수준 + 필수적인 추가 사고력. T2 성격32/T3 후보18은 잠정 의견이며 정식 티어 확정 아님.
+NEXT: 동결 해시 재확인 → 50문항 품질 전수표(최근접 원본·새로움·의존 복합성·범위·티어·태그·배점) 작성 → 질문/답지/통합본 일치·ID·해시 검증 → output/260910/rev/260910_14_item_quality_audit.md에 FAIL 또는 blocked와 수정 목록 기록. 감사자 제품 수정·인덱스 갱신 금지.
+소유자 /root 단독, 발주 없음. 모델/깊이 호스트 증빙 미노출; Astra 인증 감사/승인 주장 금지. 자원 고갈 통보 없음. 수동 compaction 도구 없음; 체크포인트 후 호스트 연속성 사용.
+
+
+## 배포 승인 검수 체크포인트 — 2026-09-11
+검수 보고서 output/260910/rev/260910_14_item_quality_audit.md bytes=26512 sha256=048d6d9e277e21fa2aabb35d0a8543b41a70a83a184aab149a2bc94fa8a6f2b7; 50행 ID 누락/중복/추가0, 제품6개 MD/자의/index 해시 재확인 exit0. 기존 답50/50·교과서33/33. 카탈로그 변경으로 기존 N/V 이월 금지, 모델/깊이 미확인. 배포 BLOCKED. owner=/root solo; writes=보고서+자기WIP only. NEXT=현행 자 two-key 재동결 이력 확인 후 A/B50 N/V 재측정; 최고=기존 최고+필수 추가 사고력; ID/인쇄/독립 모델 게이트 필요.
+보고서 저장은 감사 PASS 또는 배포 승인이 아니다.
+NEXT: 현행 자 재동결 이력 확인. 검증 명령: 보고서 JSON files/additional_hashes SHA256 재대조.
+
+
+## 재개 체크포인트 — 기준 게이트 검사 종료 2026-09-11
+owner=/root; writes=자기 WIP+품질 보고서; solo; 모델/깊이 호스트 증빙 미노출.
+제품6+추가해시4 일치. REV_LOG:178–179 카탈로그 반영 이력과 현재 63937bytes/171b7d8a671f39a9 일치 확인. 카탈로그 이력 미확인 단계를 완료함.
+measure_score_bands exit1/WARN40/GATE3 EX-social-20261M mismatch1; regen_rubric_values exit1/계층4행 없음; check_assurance_contract exit1/10 failures. 기준/타인 WIP 수정 금지. 배포 ▲ blocked.
+보고서 SHA256=5d5f659ef8583be686b59585fdcecf9b81f8677dca088f20c3ba2dd87f19dc59; bytes=30544. 이전 WIP 및 맹목 첫26604bytes 보존.
+NEXT: 기준 소유 단계의 실패 해소·재동결 후 python tools/measure_score_bands.py; python tools/regen_rubric_values.py; python tools/check_assurance_contract.py 순차 재검증. 성공 후 A/1–A/5 N/V 파일럿. 최고=기존 최고+필수 추가 사고력 유지. 자원 고갈 통보 없음.
