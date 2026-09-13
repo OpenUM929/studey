@@ -1,0 +1,134 @@
+--- a/output/260912/rev/260912_01_info_ab50_q1_integrated_candidate.py
++++ b/output/260912/rev/260912_05_info_ab50_q1_repaired_candidate.py
+@@ -96,6 +96,10 @@
+     return strata,report
+ 
+ 
++class SourceIncomplete(ValueError):
++    """Valid frozen input whose official population remains unresolved."""
++
++
+ def expected_strata(source_strata, dispositions):
+     """Every unit needs an independently supplied explicit statistical disposition.
+     partial/unresolved prevent official derivation; no quiet exclusions.
+@@ -104,7 +108,7 @@
+     if not all(s in ('eligible','not-applicable','partial','unresolved') for s in dispositions.values()):
+         raise ValueError('unknown disposition')
+     if any(s in ('partial','unresolved') for s in dispositions.values()):
+-        raise ValueError('official population unresolved')
++        raise SourceIncomplete('official population unresolved')
+     result=sorted({source_strata[u] for u,s in dispositions.items() if s=='eligible'})
+     if not result:
+         raise ValueError('empty eligible population')
+@@ -156,7 +160,7 @@
+                 for y, a in acc.items())
+ 
+ 
+-def derive(out, source_expected):
++def derive(out, source_expected, source_units):
+     """측정기 출력 -> 자가 인용하는 값 전체. 손으로 넣은 상수 0개."""
+     # Reject duplicate framing before single-match parsing can hide extra rows.
+     for pattern in (r'^ALL\s+n=', r'^--\s+outside band',
+@@ -204,7 +208,11 @@
+ 
+     dist = re.search(r'=== selective-score distribution ===' + NL + r'(.*?)' + NL * 2,
+                      out, re.S)
++    if dist is None:
++        raise ValueError('incomplete distribution section')
+     rows = [l for l in dist.group(1).split(NL)[1:] if l.strip()]
++    # Diagnostic ALL-unit output is not the eligible statistical population.
++    v['distribution_coverage'] = require_equal(source_units, [l.split()[0] for l in rows])
+     v['units_all'] = len(rows)
+     v['units_sel'] = sum(1 for l in rows if 'no selective' not in l)
+ 
+@@ -464,26 +472,46 @@
+     return 0
+ 
+ 
+-def main():
++def _main_impl():
+     # Input must be independently frozen; never synthesize eligibility from output.
+     try:
+         if len(sys.argv) != 3 or sys.argv[1] != '--source-contract':
+             raise ValueError('required: --source-contract approved-contract.json')
+         contract = json.loads(Path(sys.argv[2]).read_text(encoding='utf-8'))
+-        if set(contract) != {'snapshot', 'dispositions'}:
++        if not isinstance(contract, dict) or set(contract) != {'snapshot', 'dispositions'}:
+             raise ValueError('source contract schema mismatch')
++        if not isinstance(contract['snapshot'], dict):
++            raise ValueError('snapshot must be an object')
+         source, coverage = frozen_source('corpus', contract['snapshot'])
+-        source_expected = expected_strata(source, contract['dispositions'])
+-        print(json.dumps(coverage, sort_keys=True))
++        states = contract['dispositions']
++        if not isinstance(states, dict):
++            raise ValueError('dispositions must be an object')
++        require_equal(list(source), list(states))
++        if not all(s in ('eligible', 'not-applicable', 'partial', 'unresolved') for s in states.values()):
++            raise ValueError('unknown disposition')
++        state_units = {s: sorted(u for u in source if states[u] == s)
++                       for s in ('eligible', 'not-applicable', 'partial', 'unresolved')}
++        evidence_missing = {u: ['source completeness or eligibility evidence incomplete']
++                            for u in source if states[u] in ('partial', 'unresolved')}
++        report = dict(coverage=coverage, dispositions=states, state_units=state_units,
++                      evidence_missing=evidence_missing, diagnostic_units=sorted(source),
++                      statistical_units=state_units['eligible'])
++        try:
++            source_expected = expected_strata(source, states)
++        except SourceIncomplete:
++            report['downstream'] = {s: dict(status='not-run', reason='source-incomplete', exit=None)
++                                    for s in ('measurement', 'derivation', 'gate0', 'ruler-comparison')}
++            print(json.dumps(report, sort_keys=True))
++            print('[BLOCKED] source stage incomplete; downstream NOT RUN (not PASS)')
++            return 1
++        print(json.dumps(report, sort_keys=True))
+     except (OSError, ValueError, TypeError, KeyError) as exc:
+         print('[BLOCKED] source contract: %s' % exc)
+-        print('contract_exit=2')
+         return 2
+     try:
+         out, code = tool_output()
+     except OSError as exc:
+         print('[BLOCKED] measurement could not execute: %s' % exc)
+-        print('contract_exit=2')
+         return 2
+     # Proposal: preserve raw evidence; never derive a success from partial output.
+     if code not in (0, 1) or '[ABORT]' in out or '[GATE 0 FAIL]' in out:
+@@ -496,17 +524,16 @@
+         contract_exit = 2
+     else:
+         contract_exit = 0
+-    print('measurement_exit=%d contract_exit=%d' % (code, contract_exit))
++    print('measurement_exit=%d stage_measurement_exit=%d' % (code, contract_exit))
+     if contract_exit:
+         print(out, end='' if out.endswith(NL) else NL)
+         return contract_exit
+     try:
+-        v = derive(out, source_expected)
++        v = derive(out, source_expected, list(source))
+     except (ValueError, TypeError, KeyError, AttributeError, IndexError,
+             ZeroDivisionError, SystemExit) as exc:
+         print(out, end='' if out.endswith(NL) else NL)
+         print('[BLOCKED] measurement schema/invariants: %s' % exc)
+-        print('contract_exit=2')
+         return 2
+     rb = open(RUBRIC, 'rb').read()
+     txt = rb.decode('utf-8')
+@@ -599,6 +626,17 @@
+     return 1 if (keys or a or b) else 0
+ 
+ 
++def main():
++    # Single terminal marker after every required check or an explicit early stop.
++    try:
++        result = _main_impl()
++    except (OSError, UnicodeError, ValueError, TypeError, KeyError, AttributeError, IndexError) as exc:
++        print('[BLOCKED] input/execution failure: %s' % exc)
++        result = 2
++    print('contract_exit=%d' % result)
++    return result
++
++
+ # [FAIL] path: gate0() returns 1 on planted undetected, prints [GATE 0 FAIL] and exits 2
+ if __name__ == '__main__':
+     sys.exit(main())

@@ -392,3 +392,124 @@ Next: 현행 자 재동결 이력 확인 후50문항 N/V 재측정. 모델·품�
 ### 현재 결정 및 정확한 NEXT
 **배포 승인 ▲ blocked 유지.** 카탈로그 변경 추적 조회는 완료했으나 기준 게이트, A/B50 최근접 원본·N/V 전수표, 최고 사고력 요건, 정식 ID/인쇄 및 인증된 독립 단계가 남아 있다.
 NEXT: 기준 소유 단계에서 위 세 명령의 실패를 해소하고 같은 명령으로 재확인한다. 자 변경이 필요하면 사용자 승인+감사권한자 판정 및 재동결을 선행한다. 이 감사는 기준을 고치거나 성공 조건을 축소하지 않는다. 그 뒤 고정된 현행 입력으로 A/1–A/5 N/V 파일럿부터 전수 재측정한다. 기존 답 50/50 동결은 보존하고 다시 맹목이라고 표시하지 않는다.
+
+
+## ?? ?? ? 2026-09-11: ?? ?? ??? ???? ???
+
+author: ?? ?? (Codex/OMX); grade: proposal; ??/?? ??? ???. ?? ?? ? ??? ?? ???? ??? Astra ?? ?????? ???. ?? ??, ?? ??, ? WIP ??, ? ?? ??? ???? ???.
+
+### ??? ??? ??
+1. `tools/regen_rubric_values.py:82?85`? `len(strata) != 4`?? ????. ?? ?? ??? F/M ? 2024/2025/2026 = 6???? ??? ?? ?? ????. ?? 4?6 ??? ???? ???. ???? ?? ??? ???? ?????????????? ???? ??? two-key ?? ????.
+2. `corpus/EX-social-20261M/transcript.md:9?14`? scope: partial? ?? ?? 15/27? ????. `output/260903/rev/260903_06_arbiter_ruling_cycle1_f.md` F2-2? G2-a ??? FAIL? ???? ??? ????? ???. ??? ?? 24/15 ???? ? ?? ??? ????? ?? ??? ???? ? ??. ? ?? ??? Cycle-1 ?? ???? A/B50 ?? ?? ? ??? PASS? ???. ???? ??? ???? ?? ??? ???? ???.
+3. ?? ?? 10? ? 7?? ?? ? WIP? status/NEXT ???? ??? 3?? ??? ??? ?? ??? ???. ? WIP? ?? ??? ??? ??? ???.
+4. ?? ??? ???? ?? ????? ???? ???. ?? 26?? ??? ???? A/B50? ???? ???. ?? ??? ??? ?? ?? ?? + ?? ?? ???? ????.
+
+### ????? ?? (???, ???? ??)
+- [ ] ?? ???/?????: ?? 6?? ???? ???? ??? ??? ?? ?? ??? ????, ??? ?? ?? ??? ??? ????.
+- [ ] ?? ???/?????: F2-2? ?? ?? ??? ?? ??/? ???? ?? ???? ????? ??? ?? ????. ?? FAIL???? ???? A/B ???? ???? ???.
+- [ ] ? WIP ???: ??? ??? ? WIP? ?? ??? NEXT? ??? ?? ??? ????. ?? ??? ?? ????.
+
+?? ???? ??? ??/??/??, ?? ??, ?? ????? ????? ? ???, ??? ? ??, ??? ??? ???? ??. ? ???? ? ??? ???? ? ??? ???? ????? ?? ?? ??? ????.
+
+### ??? ?? ?? ? ?? ??
+```json
+{
+  "input_checks": [
+    {
+      "path": "output/260910/260910_01_info_composite_a_questions_review.md",
+      "match": true,
+      "sha256": "2017bcaea3eb7c49c65fcbc187596df1a79a5bfb9f2e7664ec2cd01c6c47a88d",
+      "bytes": 19401
+    },
+    {
+      "path": "output/260910/260910_01_info_composite_a_answers_review.md",
+      "match": true,
+      "sha256": "70fa9e18eeae4c313d44f742e94ee9a946b195c95b9e25272c015a138463f109",
+      "bytes": 31372
+    },
+    {
+      "path": "output/260910/260910_01_info_composite_a_review.md",
+      "match": true,
+      "sha256": "521c625c7971fb9f494a8763246303f497b6566aa1eaa40cdef370b5fa37dec7",
+      "bytes": 49224
+    },
+    {
+      "path": "output/260910/260910_02_info_composite_b_questions_review.md",
+      "match": true,
+      "sha256": "a4dea5692f3c1a116fb2771ea628f0afaeef01602864de2040e05bd9bb13ccd6",
+      "bytes": 20207
+    },
+    {
+      "path": "output/260910/260910_02_info_composite_b_answers_review.md",
+      "match": true,
+      "sha256": "dfa2387e3d5ffc9b124a3aa3cdd8bf218f6810bc822415fc610c3f0cae85a6bf",
+      "bytes": 33805
+    },
+    {
+      "path": "output/260910/260910_02_info_composite_b_review.md",
+      "match": true,
+      "sha256": "2f7bb0130508272508429796cc38b343086a9be9da1f4e31d3918efb04c55602",
+      "bytes": 52463
+    },
+    {
+      "path": "analysis/catalog/info.md",
+      "match": false,
+      "sha256": "48db904b1e4c8cfc5256e93ecd036f4ea19466720adbc55ee89e4c40d0dc1c64",
+      "bytes": 64517
+    },
+    {
+      "path": "analysis/catalog/DIFFICULTY_RUBRIC.md",
+      "match": true,
+      "sha256": "07dab5d38c8da48a22ca01d2f4c2b75d71fdd421a6da5ad3fcdd1a3b81b1ad99",
+      "bytes": 20921
+    },
+    {
+      "path": "analysis/catalog/TYPE_MASTER.md",
+      "match": true,
+      "sha256": "ff45bdf8f6f46689ccd68a5caa645e5c7be54bca456684f0483bee82db24bea9",
+      "bytes": 19399
+    },
+    {
+      "path": "output/_index.md",
+      "match": false,
+      "sha256": "527b917b9ef897923593a7bc25d5cabfc38ef93363d86ae654879bf312076151",
+      "bytes": 175118
+    }
+  ],
+  "runs": [
+    {
+      "command": "python tools/measure_score_bands.py",
+      "exit": 1,
+      "warn_lines": 40,
+      "output": "=== GATE 0 fixture: planted parser defects ===\r\nplanted=9 undetected=0\r\nplanted-state=6 undetected=0\r\n[GATE 0 PASS] undetected=0\r\n=== GATE 1 truth: reproduce tier-3 confirmed values ===\r\nEX-english-20252M    [body       ] got n=27  sum=70.0    want n=27  sum=70.0    OK\r\nEX-history-20252M    [body       ] got n=20  sum=40.0    want n=20  sum=40.0    OK\r\nEX-info-20252F       [body       ] got n=18  sum=70.0    want n=18  sum=70.0    OK\r\nEX-korean-20252M     [body       ] got n=29  sum=60.0    want n=29  sum=60.0    OK\r\nEX-math1-20242M      [body+math0 ] got n=0   sum=0.0     want n=0   sum=0.0     OK\r\nEX-math2-20252M      [body+math0 ] got n=0   sum=0.0     want n=0   sum=0.0     OK\r\nEX-science-20242F    [body       ] got n=24  sum=80.0    want n=24  sum=80.0    OK\r\nEX-science-20242M    [body       ] got n=24  sum=60.0    want n=24  sum=60.0    OK\r\nEX-science-20252M    [index      ] got n=23  sum=60.0    want n=23  sum=60.0    OK\r\nEX-social-20252M     [body       ] got n=20  sum=60.0    want n=20  sum=60.0    OK\r\nchecked=10 undetected=0 flagged=0 coverage=10/60\r\n[GATE 1 PASS] undetected=0\r\n\r\n=== GATE 2 dup: identical selective sequences ===\r\n[WARN] identical selective sequence (n=18): EX-info-20252F == EX-info-20252M\r\nduplicates=1 (warning only -- not excluded, see BF-K1-7a)\r\nGATE 2 false-positive rate to date: 1/1 -- EX-info-20252M vs EX-info-20252F are different exams that reuse one score-allocation table (ruling 260831_04 U3-a). Treat every firing as a candidate, never as a verdict.\r\n\r\n=== GATE 3 declared: printed declaration vs extraction ===\r\n[WARN] EX-social-20261M     declared n=24  extracted n=15 \r\nmismatches=1\r\n--- GATE 3b sum-axis coverage (BF3) ---\r\n[WARN] EX-english-20241F    self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-english-20241M    self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-english-20242F    self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-english-20242M    self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-english-20251F    self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-english-20251M    self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-english-20252F    self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-english-20252M    self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-history-20241F    self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-history-20241M    self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-history-20251F    self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-history-20251M    self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-history-20252F    self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-history-20252M    self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-history-20261F    self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-history-20261M    self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-korean-20241F     self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-korean-20241M     self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-korean-20242F     self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-korean-20242M     self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-korean-20251F     self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-korean-20251M     self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-korean-20252F     self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-korean-20252M     self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-science-20241F    self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-science-20241M    self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-science-20251F    self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-science-20251M    self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-science-20252F    self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-science-20252M    self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-social-20241F     self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-social-20241M     self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-social-20251F     self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-social-20251M     self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-social-20252F     self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-social-20252M     self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-social-20261F     self-enumerated selective total not found -- sum axis UNCOVERED\r\n[WARN] EX-social-20261M     self-enumerated selective total not found -- sum axis UNCOVERED\r\nsum-axis coverage=12/50 uncovered=38 mismatches=0\r\n\r\nexcluded from aggregate: EX-social-20261M\r\n\r\n=== selective-score distribution ===\r\nunit                 T  mode      n  decl      sum       range      band  4.0+\r\nEX-english-20241F    F  body     24    24     70.0     2.5~3.5   10/24       0\r\nEX-english-20241M    M  body     26    26     70.0     2.3~3.4    6/26       0\r\nEX-english-20242F    F  body     24    24     70.0     2.5~3.5   11/24       0\r\nEX-english-20242M    M  body     24    24     70.0     2.5~3.5   10/24       0\r\nEX-english-20251F    F  body     26    26     70.0     2.1~3.6    8/26       0\r\nEX-english-20251M    M  body     23    23     70.0     2.2~3.6   16/23       0\r\nEX-english-20252F    F  body     28    28     70.0     2.1~2.8    0/28       0\r\nEX-english-20252M    M  body     27    27     70.0     2.2~3.3    4/27       0\r\nEX-english-20261F    F  body     23    23     80.0     3.1~4.2   23/23       1\r\nEX-english-20261M    M  body     22    22     60.0     2.1~3.7    6/22       0\r\nEX-history-20241F    F  body     21    21     80.0     3.4~4.2   21/21       6\r\nEX-history-20241M    M  body     25    25     60.0     2.2~2.8    0/25       0\r\nEX-history-20242F    F  body     21    21     80.0     3.5~4.2   21/21       3\r\nEX-history-20242M    M  body     24    24     60.0     2.3~2.7    0/24       0\r\nEX-history-20251F    F  body     24    24     80.0     3.1~3.5   24/24       0\r\nEX-history-20251M    M  body     25    25     60.0     2.2~2.6    0/25       0\r\nEX-history-20252F    F  body     23    23     80.0     3.2~3.7   23/23       0\r\nEX-history-20252M    M  body     20    20     40.0     1.8~2.2    0/20       0\r\nEX-history-20261F    F  body     24    24     80.0     3.0~3.6   24/24       0\r\nEX-history-20261M    M  body     25    25     60.0     2.2~2.5    0/25       0\r\nEX-info-20252F       F  body     18    18     70.0     3.2~4.4   15/18      10\r\nEX-info-20252M       M  body     18    18     70.0     3.2~4.4   15/18      10\r\nEX-korean-20241F     F  body     24    24     80.0     3.0~3.7   24/24       0\r\nEX-korean-20241M     M  body     24    24     60.0     2.2~2.8    0/24       0\r\nEX-korean-20242F     F  body     24    24     80.0     3.0~3.6   24/24       0\r\nEX-korean-20242M     M  body     24    24     60.0     2.2~2.8    0/24       0\r\nEX-korean-20251F     F  body     26    26     80.0     2.0~4.0   18/26       1\r\nEX-korean-20251M     M  body     24    24     60.0     1.7~3.3    7/24       0\r\nEX-korean-20252F     F  body     25    25     80.0     2.3~4.0   18/25       1\r\nEX-korean-20252M     M  body     29    29     60.0     1.2~2.8    0/29       0\r\nEX-math1-20241F      F  body+math0    0     0        - no selective         -     -\r\nEX-math1-20241M      M  body+math0    0     0        - no selective         -     -\r\nEX-math1-20242F      F  body+math0    0     0        - no selective         -     -\r\nEX-math1-20242M      M  body+math0    0     0        - no selective         -     -\r\nEX-math1-20251F      F  body+math0    0     0        - no selective         -     -\r\nEX-math1-20251M      M  body+math0    0     0        - no selective         -     -\r\nEX-math1-20261F      F  body+math0    0     0        - no selective         -     -\r\nEX-math1-20261M      M  body+math0    0     0        - no selective         -     -\r\nEX-math2-20252F      F  body+math0    0     0        - no selective         -     -\r\nEX-math2-20252M      M  body+math0    0     0        - no selective         -     -\r\nEX-science-20241F    F  body     24    24     80.0     3.0~3.6   24/24       0\r\nEX-science-20241M    M  body     24    24     60.0     2.2~2.8    0/24       0\r\nEX-science-20242F    F  body     24    24     80.0     3.0~3.6   24/24       0\r\nEX-science-20242M    M  body     24    24     60.0     2.2~2.8    0/24       0\r\nEX-science-20251F    F  body     24    24     80.0     3.0~3.9   24/24       0\r\nEX-science-20251M    M  body     24    24     60.0     2.3~2.7    0/24       0\r\nEX-science-20252F    F  body     24    24     80.0     3.0~3.6   24/24       0\r\nEX-science-20252M    M  index    23    23     60.0     2.2~3.2    2/23       0\r\nEX-science-20261F    F  body     24    24     90.0     3.4~4.0   24/24       7\r\nEX-science-20261M    M  body     24    24     90.0     3.4~4.0   24/24       7\r\nEX-social-20241F     F  body     20    20     80.0     3.3~4.4   13/20      12\r\nEX-social-20241M     M  body     24    24     60.0     2.3~2.8    0/24       0\r\nEX-social-20242F     F  body     20    20     80.0     3.6~4.4   17/20      12\r\nEX-social-20242M     M  body     24    24     60.0     2.0~2.9    0/24       0\r\nEX-social-20251F     F  body     20    20     80.0     3.5~4.5   16/20      14\r\nEX-social-20251M     M  body     20    20     60.0     2.6~3.3   12/20       0\r\nEX-social-20252F     F  body     22    22     80.0     3.1~4.2   22/22       6\r\nEX-social-20252M     M  body     20    20     60.0     2.7~3.3   13/20       0\r\nEX-social-20261F     F  body     24    24     90.0     3.5~4.1   24/24       6\r\nEX-social-20261M     M  body     15    24     55.3     3.5~4.0   15/15       2 EXCL\r\n\r\n=== axis test: midterm(M) vs final(F) ===\r\nT  units      n     band         pct   4.0+ sel_total_avg\r\nM     24    567      115       20.3%     17        62.5\r\nF     25    581      476       81.9%     79        78.8\r\n\r\nmean unit price:  M=2.65  F=3.39\r\n\r\n=== signed relative band  r in [0.80, 1.20] ===\r\nALL   n=1148  fit=1101 = 95.9%  residual=47\r\n\r\n--- per stratum ---\r\nF-2024   n=226  fit=226   100.0%\r\nF-2025   n=260  fit=245    94.2%\r\nF-2026   n=95   fit=94     98.9%\r\nM-2024   n=243  fit=242    99.6%\r\nM-2025   n=253  fit=227    89.7%\r\nM-2026   n=71   fit=67     94.4%\r\n\r\n--- per unit (residual > 0 only) ---\r\nEX-english-20241M    n=26   residual=1\r\nEX-english-20251F    n=26   residual=3\r\nEX-english-20251M    n=23   residual=2\r\nEX-english-20252M    n=27   residual=2\r\nEX-english-20261F    n=23   residual=1\r\nEX-english-20261M    n=22   residual=4\r\nEX-korean-20251F     n=26   residual=8\r\nEX-korean-20251M     n=24   residual=6\r\nEX-korean-20252F     n=25   residual=4\r\nEX-korean-20252M     n=29   residual=15\r\nEX-science-20252M    n=23   residual=1\r\n\r\n--- Tier conversion share ---\r\nT1  [0.800,0.867)   48    4.2%\r\nT2  [0.867,0.967)  365   31.8%\r\nT3  [0.967,1.067)  460   40.1%\r\nT4  [1.067,1.200]  228   19.9%\r\n--  outside band        47    4.1%\r\n\r\n[FAIL] GATE 3 mismatches=1 -- EX-social-20261M\r\n       band figures above are usable but the run is NOT a pass. Locate the\r\n       defect before naming an owner: a count/sum that lands exactly on the\r\n       printed declaration once a parse rule is corrected is a parser defect\r\n       (M2/M3, fixed 260902), not a transcription defect. M5 remains one --\r\n       EX-science-20242F summary 78.8/21.2 vs enumerated 80.0/20.0.\r\n"
+    },
+    {
+      "command": "python tools/regen_rubric_values.py",
+      "exit": 1,
+      "warn_lines": 0,
+      "output": "계층 4행 없음: [('F-2024', '226', '226', '100.0'), ('F-2025', '260', '245', '94.2'), ('F-2026', '95', '94', '98.9'), ('M-2024', '243', '242', '99.6'), ('M-2025', '253', '227', '89.7'), ('M-2026', '71', '67', '94.4')]\r\n"
+    },
+    {
+      "command": "python tools/check_assurance_contract.py",
+      "exit": 1,
+      "warn_lines": 0,
+      "output": "FAIL analysis/wip/260910_astra_fallback_policy_proposal.md: status 'pending' outside ['blocked', 'done', 'in-progress']\r\nFAIL analysis/wip/260910_astra_fallback_policy_proposal.md: no NEXT: line — cannot be resumed\r\nFAIL analysis/wip/260910_info_astra_pilot_questions.md: no status: field (CLAUDE.md 규격 ②)\r\nFAIL analysis/wip/260910_info_astra_pilot_questions.md: no NEXT: line — cannot be resumed\r\nFAIL analysis/wip/mainloop_260907_info_onboarding.md: status 'active' outside ['blocked', 'done', 'in-progress']\r\nFAIL analysis/wip/RESUME.md: no status: field (CLAUDE.md 규격 ②)\r\nFAIL analysis/wip/RESUME.md: no NEXT: line — cannot be resumed\r\nFAIL ruler gate: regen_rubric_values.py exit=1 (expected 0)\r\nFAIL ruler gate: detector did not prove its own detection power (원칙 12-d)\r\nFAIL ruler gate: ruler is stale -- ?\r\nassurance-contract: 10 failure(s)\r\n"
+    }
+  ]
+}
+```
+
+
+### ?? ?? ?? ? ?? ?? ??
+?? ??? ??? **10? ? 8? ??**?. ?? 10/10 ??? ?? ??? ???? ???. ?? 6?? ????? `analysis/catalog/info.md`? 64,517 bytes / `48db904b1e4c8cfc5256e93ecd036f4ea19466720adbc55ee89e4c40d0dc1c64`, `output/_index.md`? 175,118 bytes / `527b917b9ef897923593a7bc25d5cabfc38ef93363d86ae654879bf312076151`? ?? ??? ???. ?? ?? ??????? ? ??? ??? ?? ?? ??? ????. ?? ????? ??? ?? ???? ???? ?? ??? ??? ???.
+NEXT ???? ??: ? ? ??? ?? ?? ?? ?? ??? ?? ??? ?? ????. ? ? ?? ??? two-key ??? ????, ??? ????? ?? N/V ??? ???? ???. ?? ? blocked.
+
+## 2026-09-11 재개 정정: 두 입력의 변경은 개행뿐
+- author: 메인 루프 (Codex/OMX); grade: proposal; 모델 호스트 미확인. 독립 감사 또는 배포 판정 아님.
+- git 저장본과 현재 파일을 바이트 해시 및 CRLF→LF 정규화 내용으로 각각 대조했다. 정규화는 비교 메모리에서만 수행했으며 제품/기준 파일은 변경하지 않았다.
+- analysis/catalog/info.md: commit 51b2702184e97e44d4a1d3bcfdcd17298670ffa4 저장본 63937 B/171b7d8a671f39a9 → 현재 64517 B/48db904b1e4c8cfc. 580행 전부 동일, 증가 580 B는 CRLF 개행에 대응한다.
+- output/_index.md: commit aed832b79a07731855c51a001be6b65e3a0779a8 저장본 174713 B/6d550bd60e16a9552c0085a40935c105217a3ad4c0fe24397329eec1ef04474d → 현재 175118 B/527b917b9ef89792. 405행 전부 동일, 증가 405 B는 CRLF 개행에 대응한다.
+- 검증: 두 파일 모두 NORMALIZED_EQUAL True, 내용 diff 없음, 명령 exit 0. 바이트 해시는 여전히 다르므로 기존 동결 해시와 일치했다고 기록하지 않는다. 다만 이번 두 해시 차이를 새로운 내용 변경/승인 누락으로 취급했던 추론은 철회한다. 이전 BF4/BF6 카탈로그 보강에 따른 N/V 재측정 필요는 별개로 유지한다.
+- 이전 체크포인트 일부에 실제 물음표로 저장된 한글 손상이 있어 이 UTF-8 부록을 유효한 최신 요약으로 사용한다. 과거 기록은 삭제/치환하지 않는다.
+- 남은 차단: 기준 재생성기의 4계층 조건과 실제 6계층 불일치에 대한 two-key 수리 판정, 전역 기준 실패, 정보 서답형 Tier/D5 미서명, 현행 기준하 A/B50 N/V 재측정 및 인증된 독립 감사/최종 판정. SET-260908-info-26 판정을 A/B50 승인으로 전용하지 않는다.
+- NEXT: 기준 소유자의 6계층 수리·재동결 판정을 확보하여 허용 범위 확인 → measure_score_bands / regen_rubric_values / check_assurance_contract 순차 통과 → A/1–A/5 파일럿 → A/B50 전수 재검증·독립 판정 → 승인분 배포. 사용자 진행 요청은 배포 기준 면제가 아니다.

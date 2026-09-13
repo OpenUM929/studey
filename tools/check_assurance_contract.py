@@ -17,7 +17,9 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 
 TEXT_REQUIREMENTS = {
+    "docs/ITEM_DELIVERY_WORKFLOW.md": ["2~3라운드", "독립", "정답", "신규성", "3라운드", "two-key"],
     "AGENTS.md": [
+        "docs/ITEM_DELIVERY_WORKFLOW.md",
         "runtime identity",
         "row count alone",
         "expected item identifiers",
@@ -28,6 +30,7 @@ TEXT_REQUIREMENTS = {
         "never busy-wait",
     ],
     "CLAUDE.md": [
+        "docs/ITEM_DELIVERY_WORKFLOW.md",
         "HOLD — resource exhausted",
         "resume audit",
         "remaining context is 60% or less",
@@ -84,6 +87,18 @@ for policy_role in sorted((ROOT / ".claude/agents").glob("*.md")):
     TEXT_REQUIREMENTS[relative_role] = TEXT_REQUIREMENTS.get(relative_role, []) + [
         "docs/ASTRA_EXECUTION_POLICY.md", "Astra 전용이며 Sol 참여 금지"
     ]
+
+# Session routing is an operational handoff rule, not a release-gate waiver.
+for target in ('AGENTS.md', 'CLAUDE.md', 'docs/ASTRA_EXECUTION_POLICY.md',
+               'analysis/REV_GUIDE.md', 'README.md'):
+    TEXT_REQUIREMENTS.setdefault(target, []).append('docs/SESSION_HANDOFF_GUIDE.md')
+TEXT_REQUIREMENTS['docs/SESSION_HANDOFF_GUIDE.md'] = [
+    'STAY', 'NEW-INDEPENDENT', 'RETURN-AUTHOR', 'NEW-CONTINUATION',
+    'Session:', 'two-key', 'NEXT',
+]
+TEXT_REQUIREMENTS['docs/GLOBAL_GUIDANCE_CONTINUITY.md'] += [
+    'STAY', 'NEW-INDEPENDENT', 'RETURN-AUTHOR', 'NEW-CONTINUATION',
+]
 
 ROLE_FILES = [
     ".codex/agents/assessment-author-sol.toml",

@@ -1,10 +1,15 @@
 {
-  "session_id": "omx-1789010101984-llgw1l",
-  "native_session_id": "01a07b5e-0dc5-7c11-9de8-04fa94c29370",
-  "started_at": "2026-09-10T03:15:02.052Z",
-  "launch_lineage_token": "295a48c9-49fb-407f-9fb0-a706b0ce990e",
+  "session_id": "omx-1789263542145-134lz2",
+  "native_session_id": "01a095f9-6ee7-7eb2-82e1-7e419a709b36",
+  "started_at": "2026-09-13T01:39:05.347Z",
+  "launch_lineage_token": "194d6fb1-9b35-4309-9f5f-183d4e3cb13e",
   "cwd": "C:\\dev\\study",
   "state_root": "C:\\dev\\study\\.omx\\state",
-  "pid": 18316,
-  "platform": "win32"
+  "pid": 19944,
+  "platform": "win32",
+  "identity_schema_version": 2,
+  "process_identity": {
+    "platform": "win32",
+    "birth": "134337371462414890"
+  }
 }

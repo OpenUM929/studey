@@ -1,0 +1,95 @@
+{
+  "before": {
+    "docs/ITEM_DELIVERY_WORKFLOW.md": {
+      "bytes": 6321,
+      "sha256": "36a7846309a253cf4c2a9543ea486617caa7c6fbd526e4ae81a260c448b18467"
+    },
+    "CLAUDE.md": {
+      "bytes": 46586,
+      "sha256": "d17aa111b042c3ade4775b9bc51f04ab17a6aa7705dcb6c6593b4428c06dfcbc"
+    },
+    "AGENTS.md": {
+      "bytes": 28838,
+      "sha256": "e8e4cf646214e24aa31e1c93ec0cb811d9c5a752e53a9e7f62be6f95fc06fb10"
+    },
+    "analysis/REV_GUIDE.md": {
+      "bytes": 49701,
+      "sha256": "240dc9b34a59bc24111a06658a96c50468729510336e0ac2da41dd6b4a111fcb"
+    },
+    "README.md": {
+      "bytes": 13307,
+      "sha256": "ca43c2fe73ec0229bb5b397d3408f2a4528902d03c15a33fcd1ed07c157da97f"
+    },
+    ".claude/agents/item-writer.md": {
+      "bytes": 12787,
+      "sha256": "14a2c77a741ba0277d9ac31128fc20bcf7e163c63f5dd9083334d37b8537025e"
+    },
+    ".claude/agents/solve-back-verifier.md": {
+      "bytes": 10666,
+      "sha256": "ab3f3d1538456ac045a066a50c45f9b242150cef388e51483f454a6e38d76331"
+    },
+    ".claude/agents/item-quality-auditor.md": {
+      "bytes": 13693,
+      "sha256": "1fed9a9b9152fdf6fb7605de9b7edf429aa41de19c92276f2047d8d6164fc8cb"
+    },
+    ".claude/agents/set-release-manager.md": {
+      "bytes": 26981,
+      "sha256": "469a6e2eb25ecd187b9782c4e48d77d4d0cd57679dc3e2ceb4a2e32924a6f081"
+    },
+    "tools/check_assurance_contract.py": {
+      "bytes": 12444,
+      "sha256": "2b78e741f2b2ec6203065f819e66cd464e5cba6f30eeca6a0ce47b06096adea2"
+    },
+    "analysis/catalog/DIFFICULTY_RUBRIC.md": {
+      "bytes": 20921,
+      "sha256": "07dab5d38c8da48a22ca01d2f4c2b75d71fdd421a6da5ad3fcdd1a3b81b1ad99"
+    },
+    "tools/measure_score_bands.py": {
+      "bytes": 21969,
+      "sha256": "0cf91284e2c1f7b1be4d94a09d641996614d65fa88fdf8444b9f9daa3958fe24"
+    },
+    "tools/regen_rubric_values.py": {
+      "bytes": 21594,
+      "sha256": "599fbdef489fa1475dfba5dad76c3cd7eb0b133150359902c1b0590aa9ae11d1"
+    }
+  },
+  "protected": [
+    "analysis/catalog/DIFFICULTY_RUBRIC.md",
+    "tools/measure_score_bands.py",
+    "tools/regen_rubric_values.py"
+  ],
+  "linked_documents": [
+    "CLAUDE.md",
+    "AGENTS.md",
+    "analysis/REV_GUIDE.md",
+    "README.md",
+    ".claude/agents/item-writer.md",
+    ".claude/agents/solve-back-verifier.md",
+    ".claude/agents/item-quality-auditor.md",
+    ".claude/agents/set-release-manager.md"
+  ],
+  "kind": "document revision baseline; not assessment ruler",
+  "review_status": "unavailable; Sol response excluded, Astra capacity failure",
+  "after": {
+    "path": "docs/ITEM_DELIVERY_WORKFLOW.md",
+    "bytes": 8536,
+    "sha256": "da4763b638d21f620851018f6612381dff5ff4532518497f847e4c37ebb666e1"
+  },
+  "checks": {
+    "protected_unchanged": 3,
+    "companion_links": 8,
+    "new_section": 1,
+    "other_baseline_files_unchanged": 12,
+    "content_gate_approval": false,
+    "independent_review": "blocked-capacity",
+    "selftest": "seeded=10 undetected=0 exit=0",
+    "normalization": {
+      "crlf": 0,
+      "lf": 37,
+      "cr": 0,
+      "bom": false
+    },
+    "operational_warnings": 0,
+    "exit_code": 0
+  }
+}

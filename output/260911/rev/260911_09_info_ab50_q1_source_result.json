@@ -1,0 +1,237 @@
+{
+  "tests": [
+    {
+      "case": "normal",
+      "passed": true
+    },
+    {
+      "case": "missing",
+      "rejected": true
+    },
+    {
+      "case": "duplicate",
+      "rejected": true
+    },
+    {
+      "case": "same_count_replacement",
+      "rejected": true
+    },
+    {
+      "case": "extra",
+      "rejected": true
+    },
+    {
+      "case": "sum",
+      "rejected": true
+    },
+    {
+      "case": "fit_above_n",
+      "rejected": true
+    },
+    {
+      "case": "negative",
+      "rejected": true
+    },
+    {
+      "case": "noninteger",
+      "rejected": true
+    },
+    {
+      "case": "residual",
+      "rejected": true
+    },
+    {
+      "case": "tier_total",
+      "rejected": true
+    },
+    {
+      "case": "tier_duplicate",
+      "rejected": true
+    },
+    {
+      "case": "outside",
+      "rejected": true
+    },
+    {
+      "case": "zero_fit",
+      "rejected": true
+    },
+    {
+      "case": "partial",
+      "rejected": true
+    },
+    {
+      "case": "unresolved",
+      "rejected": true
+    },
+    {
+      "case": "invented",
+      "rejected": true
+    },
+    {
+      "case": "missing_disposition",
+      "rejected": true
+    },
+    {
+      "case": "all_nonapplicable",
+      "rejected": true
+    },
+    {
+      "case": "source_drift",
+      "rejected": true
+    },
+    {
+      "case": "source_added",
+      "rejected": true
+    },
+    {
+      "case": "source_missing",
+      "rejected": true
+    },
+    {
+      "case": "live_unresolved_not_pass",
+      "rejected": true
+    }
+  ],
+  "failures": 0,
+  "live_source_coverage": {
+    "expected": [
+      "EX-english-20241F",
+      "EX-english-20241M",
+      "EX-english-20242F",
+      "EX-english-20242M",
+      "EX-english-20251F",
+      "EX-english-20251M",
+      "EX-english-20252F",
+      "EX-english-20252M",
+      "EX-english-20261F",
+      "EX-english-20261M",
+      "EX-history-20241F",
+      "EX-history-20241M",
+      "EX-history-20242F",
+      "EX-history-20242M",
+      "EX-history-20251F",
+      "EX-history-20251M",
+      "EX-history-20252F",
+      "EX-history-20252M",
+      "EX-history-20261F",
+      "EX-history-20261M",
+      "EX-info-20252F",
+      "EX-info-20252M",
+      "EX-korean-20241F",
+      "EX-korean-20241M",
+      "EX-korean-20242F",
+      "EX-korean-20242M",
+      "EX-korean-20251F",
+      "EX-korean-20251M",
+      "EX-korean-20252F",
+      "EX-korean-20252M",
+      "EX-math1-20241F",
+      "EX-math1-20241M",
+      "EX-math1-20242F",
+      "EX-math1-20242M",
+      "EX-math1-20251F",
+      "EX-math1-20251M",
+      "EX-math1-20261F",
+      "EX-math1-20261M",
+      "EX-math2-20252F",
+      "EX-math2-20252M",
+      "EX-science-20241F",
+      "EX-science-20241M",
+      "EX-science-20242F",
+      "EX-science-20242M",
+      "EX-science-20251F",
+      "EX-science-20251M",
+      "EX-science-20252F",
+      "EX-science-20252M",
+      "EX-science-20261F",
+      "EX-science-20261M",
+      "EX-social-20241F",
+      "EX-social-20241M",
+      "EX-social-20242F",
+      "EX-social-20242M",
+      "EX-social-20251F",
+      "EX-social-20251M",
+      "EX-social-20252F",
+      "EX-social-20252M",
+      "EX-social-20261F",
+      "EX-social-20261M"
+    ],
+    "observed": [
+      "EX-english-20241F",
+      "EX-english-20241M",
+      "EX-english-20242F",
+      "EX-english-20242M",
+      "EX-english-20251F",
+      "EX-english-20251M",
+      "EX-english-20252F",
+      "EX-english-20252M",
+      "EX-english-20261F",
+      "EX-english-20261M",
+      "EX-history-20241F",
+      "EX-history-20241M",
+      "EX-history-20242F",
+      "EX-history-20242M",
+      "EX-history-20251F",
+      "EX-history-20251M",
+      "EX-history-20252F",
+      "EX-history-20252M",
+      "EX-history-20261F",
+      "EX-history-20261M",
+      "EX-info-20252F",
+      "EX-info-20252M",
+      "EX-korean-20241F",
+      "EX-korean-20241M",
+      "EX-korean-20242F",
+      "EX-korean-20242M",
+      "EX-korean-20251F",
+      "EX-korean-20251M",
+      "EX-korean-20252F",
+      "EX-korean-20252M",
+      "EX-math1-20241F",
+      "EX-math1-20241M",
+      "EX-math1-20242F",
+      "EX-math1-20242M",
+      "EX-math1-20251F",
+      "EX-math1-20251M",
+      "EX-math1-20261F",
+      "EX-math1-20261M",
+      "EX-math2-20252F",
+      "EX-math2-20252M",
+      "EX-science-20241F",
+      "EX-science-20241M",
+      "EX-science-20242F",
+      "EX-science-20242M",
+      "EX-science-20251F",
+      "EX-science-20251M",
+      "EX-science-20252F",
+      "EX-science-20252M",
+      "EX-science-20261F",
+      "EX-science-20261M",
+      "EX-social-20241F",
+      "EX-social-20241M",
+      "EX-social-20242F",
+      "EX-social-20242M",
+      "EX-social-20251F",
+      "EX-social-20251M",
+      "EX-social-20252F",
+      "EX-social-20252M",
+      "EX-social-20261F",
+      "EX-social-20261M"
+    ],
+    "duplicates": [],
+    "expected_duplicates": [],
+    "missing": [],
+    "extra": []
+  },
+  "source_metadata_strata": [
+    "F-2024",
+    "F-2025",
+    "F-2026",
+    "M-2024",
+    "M-2025",
+    "M-2026"
+  ],
+  "files_checked": 120,
+  "official_eligibility": "UNRESOLVED; no dispositions signed here"
+}

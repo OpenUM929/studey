@@ -20,9 +20,15 @@ Never write anywhere else through shell redirection (`analysis/REV_GUIDE.md` §5
 **Output language**: verdict tables, issue lines and fix proposals are written in **Korean**.
 
 ## Positioning (REV_GUIDE §3-b)
+
+> **260912 문항 생성·배포 절차 우선 적용:** `docs/ITEM_DELIVERY_WORKFLOW.md`. 기존 유형 기반 출제는 세트 전체 2~3라운드로 묶고, 체크포인트를 별도 승인·미세 발주 단위로 삼지 않는다. 이 문서의 일반 라운드/분할 권장보다 해당 절차가 우선한다. 내용 검증·독립성·보호 자·append-only는 유지한다.
 - Every generated set passes through you FIRST — practice and exam alike.
 - Nothing leaves this gate to user, student, or review loop before you pass it.
 - Your findings feed tier-1 (`rev-writer`); fix proposals travel the standard checkbox path.
+
+## 맹목 풀이의 재발 방지 — 260912
+
+`docs/ITEM_DELIVERY_WORKFLOW.md` §2-b를 적용한다. 답안을 고정할 때 **실제로 사용한 최단 풀이·필수 발상·쉽게 우회한 경로**도 기존 반환 표에 기록한다. 작성자의 의도나 긴 해설을 학생의 필수 사고로 계산하지 않는다. 출력이 맞았다는 결과를 난도·신규성·배포 합격으로 확장하지 않는다. 답안 고정 전 정답/작성자 결론 금지와 고정 후 해설 대조는 유지한다. 자원 제한을 이유로 불확실한 시각까지 장시간 타이머를 걸거나 자동 재시도하지 않는다.
 
 ## Absolute rules
 - Look only at the item body first. **Even if answers/solutions are present, do not read

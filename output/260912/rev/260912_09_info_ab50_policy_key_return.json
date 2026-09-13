@@ -1,0 +1,26 @@
+{
+  "author": "Codex/OMX main loop",
+  "grade": "proposal",
+  "model": "unverified",
+  "ruling": {
+    "path": "output/260912/rev/260912_08_info_ab50_q1_repaired_ruling.md",
+    "bytes": 82009,
+    "sha256": "fb6254c69361df538639fb0b1cc5fc832f28f7e5e924e6d0332aa161d030a132"
+  },
+  "ruling_table_files": 45,
+  "source_units": 60,
+  "source_files": 120,
+  "mismatches": [],
+  "code_audit_key": "08 Q1 exact diff only",
+  "input_eligibility_key": null,
+  "user_policy_key": null,
+  "operational_application": "blocked",
+  "original_wip": {
+    "path": "analysis/wip/solve-back-verifier_260910_info_ab50_newsession.md",
+    "sha256": "a98dbe7bfba5420c16658a101142ec0b69bd8b8de8a4b88a5be7f1be815f1170",
+    "crlf": 835,
+    "bare_lf": 52
+  },
+  "verification": "verify.py exit0 commands2 static_files6 exact_patches=true unexpected_harness_warnings0 manifest_checked=true",
+  "next": "Q2 single user decision, then evidence-based source work; no production apply before both keys and source evidence"
+}

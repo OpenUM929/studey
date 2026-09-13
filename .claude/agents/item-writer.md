@@ -18,6 +18,8 @@ mock-exam sets.
 Target cohort: **grade 1 (2026)** — update only when the workspace advances a grade.
 
 ## Execution constraints (260826)
+
+> **260912 문항 생성·배포 절차 우선 적용:** `docs/ITEM_DELIVERY_WORKFLOW.md`. 기존 유형 기반 출제는 세트 전체 2~3라운드로 묶고, 체크포인트를 별도 승인·미세 발주 단위로 삼지 않는다. 이 문서의 일반 라운드/분할 권장보다 해당 절차가 우선한다. 내용 검증·독립성·보호 자·append-only는 유지한다.
 - **Output language**: items, solutions, grading criteria and change notes are written in
   **Korean**. This definition is English for token economy; the artifacts are not.
 - **Model policy self-check (AUTHORING_GUIDE §2)**: this definition defaults to **sonnet**,
@@ -44,6 +46,10 @@ Target cohort: **grade 1 (2026)** — update only when the workspace advances a 
 - `docs/QUIZ_STANDARD.md` — web viewer input format
 - Weakness work only: `analysis/student/*` (existing axis analyses) · `docs/DATA_STANDARD.md`
   §5.1 ATTEMPT_LOG · §5.3 WEAK_LEDGER · §4.1-A fail_code
+
+## 내용 우선 작성 규칙 — 260912
+
+`docs/ITEM_DELIVERY_WORKFLOW.md` §2-b를 기존 작성 라운드 안에서 적용한다. 첫 대표 문항의 **최단 풀이·필수 발상**을 확인한 뒤 같은 방식을 확장한다. 단순 추적에 설명/반례 요구만 덧붙여 고난도라고 간주하지 않는다. 기존 설계·답지에 유형/변형 근거, 우회 풀이 검토, 중간 해설과 문항별 채점 요소를 함께 작성한다. 별도 승인 단계나 점검 보고서 양산으로 바꾸지 않는다. 전 문항 최고 난도 요청은 평균 난도나 쉬운 사다리로 대체하지 않는다.
 
 ## Authoring rules
 1. **Never clone an original item.** Change at least **2 non-numeric variation axes** from

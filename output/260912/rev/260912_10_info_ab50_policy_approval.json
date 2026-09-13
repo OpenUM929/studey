@@ -1,0 +1,24 @@
+{
+  "author": "Codex/OMX main loop",
+  "record_type": "user policy decision receipt",
+  "user_message": "??",
+  "decision": "approved",
+  "request_path": "output/260912/rev/260912_09_info_ab50_policy_key_return.md",
+  "request_sha256": "c4e5e3233c1d7ed5733643573fc2c686492b1259701e8344f61f07658ad38e7f",
+  "scope": [
+    "evidence-derived population/stratum re-signing",
+    "260911_06 section3 contract_exit operational contract",
+    "08-approved exact caller diff",
+    "analysis/info_ab50_source_contract.json fixed supply"
+  ],
+  "code_audit_ruling": "output/260912/rev/260912_08_info_ab50_q1_repaired_ruling.md",
+  "code_audit_sha256": "fb6254c69361df538639fb0b1cc5fc832f28f7e5e924e6d0332aa161d030a132",
+  "exclusions": [
+    "source eligibility approval",
+    "WARN waiver",
+    "immediate product application",
+    "release approval"
+  ],
+  "source_eligibility_key": null,
+  "release": "blocked"
+}

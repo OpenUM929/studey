@@ -1,0 +1,90 @@
+{
+  "scope": "Q1 propagation pilot ONLY; not full Q1 or release gate",
+  "fixtures": [
+    {
+      "name": "clean_reaches_derive_not_global_pass",
+      "expected": "derive",
+      "actual": "derive",
+      "baseline": "derive"
+    },
+    {
+      "name": "child_exit1",
+      "expected": 1,
+      "actual": 1,
+      "baseline": "derive"
+    },
+    {
+      "name": "warning_only",
+      "expected": 1,
+      "actual": 1,
+      "baseline": "derive"
+    },
+    {
+      "name": "failure_text_exit0",
+      "expected": 1,
+      "actual": 1,
+      "baseline": "derive"
+    },
+    {
+      "name": "partial_historical_permission_not_override",
+      "expected": 1,
+      "actual": 1,
+      "baseline": "derive"
+    },
+    {
+      "name": "infrastructure_exit2",
+      "expected": 2,
+      "actual": 2,
+      "baseline": "derive"
+    },
+    {
+      "name": "signal_exit",
+      "expected": 2,
+      "actual": 2,
+      "baseline": "derive"
+    },
+    {
+      "name": "fixture_abort",
+      "expected": 2,
+      "actual": 2,
+      "baseline": "derive"
+    },
+    {
+      "name": "gate0_failure",
+      "expected": 2,
+      "actual": 2,
+      "baseline": "derive"
+    },
+    {
+      "name": "empty_output",
+      "expected": 2,
+      "actual": 2,
+      "baseline": "derive"
+    },
+    {
+      "name": "missing_gate1",
+      "expected": 2,
+      "actual": 2,
+      "baseline": "derive"
+    },
+    {
+      "name": "execution_unavailable",
+      "expected": 2,
+      "actual": 2,
+      "baseline": "uncaught"
+    }
+  ],
+  "fixture_count": 12,
+  "fixture_failures": 0,
+  "live": {
+    "child_exit": 1,
+    "contract_exit": 1,
+    "warnings": 40,
+    "output_sha256": "72ab7765bfb905e6be80317ab39778e57072fef21803e9552441e08fcf950349"
+  },
+  "protected": {
+    "tools\\regen_rubric_values.py": "599fbdef489fa1475dfba5dad76c3cd7eb0b133150359902c1b0590aa9ae11d1",
+    "tools\\measure_score_bands.py": "0cf91284e2c1f7b1be4d94a09d641996614d65fa88fdf8444b9f9daa3958fe24",
+    "analysis\\catalog\\DIFFICULTY_RUBRIC.md": "07dab5d38c8da48a22ca01d2f4c2b75d71fdd421a6da5ad3fcdd1a3b81b1ad99"
+  }
+}

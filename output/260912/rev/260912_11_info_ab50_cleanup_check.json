@@ -1,0 +1,29 @@
+{
+  "product_files_unchanged": 4,
+  "old_manifest_matched": 41,
+  "old_manifest_drift": [
+    {
+      "path": "AGENTS.md",
+      "expected_sha256": "e517756f2ceaa1cc9ff947465ad8666f2038796af53178da09dee07b7ef9694f",
+      "observed_sha256": "e8e4cf646214e24aa31e1c93ec0cb811d9c5a752e53a9e7f62be6f95fc06fb10"
+    },
+    {
+      "path": "analysis/REV_GUIDE.md",
+      "expected_sha256": "62641c9f517bb4b4b2aa1b7ab489f46b2753e375c19d0ee0f40d6be25cdee1fe",
+      "observed_sha256": "240dc9b34a59bc24111a06658a96c50468729510336e0ac2da41dd6b4a111fcb"
+    },
+    {
+      "path": "CLAUDE.md",
+      "expected_sha256": "d01a29a7b00e3fcd226e6c1cee602dda693ed5a80d5bedb29995908581748841",
+      "observed_sha256": "d17aa111b042c3ade4775b9bc51f04ab17a6aa7705dcb6c6593b4428c06dfcbc"
+    },
+    {
+      "path": "tools/check_assurance_contract.py",
+      "expected_sha256": "85db02a7bd8b191a18bf0b88ec0b4d9ef3b69c1d08342823d9e50dfeb8d21223",
+      "observed_sha256": "2b78e741f2b2ec6203065f819e66cd464e5cba6f30eeca6a0ce47b06096adea2"
+    }
+  ],
+  "full_gate_pass": false,
+  "note": "No drifted file edited in this turn; exact caller patch application blocked pending provenance. Do not expand current task into unrelated repairs.",
+  "english_pdf_created": false
+}

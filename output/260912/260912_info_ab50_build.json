@@ -1,0 +1,102 @@
+{
+  "author": "Codex/OMX",
+  "status": "review-required",
+  "expected": [
+    "A/1",
+    "A/2",
+    "A/3",
+    "A/4",
+    "A/5",
+    "A/6",
+    "A/7",
+    "A/8",
+    "A/9",
+    "A/10",
+    "A/11",
+    "A/12",
+    "A/13",
+    "A/14",
+    "A/15",
+    "A/16",
+    "A/17",
+    "A/18",
+    "A/19",
+    "A/20",
+    "A/21",
+    "A/22",
+    "A/23",
+    "A/24",
+    "A/25",
+    "B/1",
+    "B/2",
+    "B/3",
+    "B/4",
+    "B/5",
+    "B/6",
+    "B/7",
+    "B/8",
+    "B/9",
+    "B/10",
+    "B/11",
+    "B/12",
+    "B/13",
+    "B/14",
+    "B/15",
+    "B/16",
+    "B/17",
+    "B/18",
+    "B/19",
+    "B/20",
+    "B/21",
+    "B/22",
+    "B/23",
+    "B/24",
+    "B/25"
+  ],
+  "artifacts": [
+    {
+      "path": "output/260912/260912_14_info_a_reasoning_proposal_questions.md",
+      "bytes": 19969,
+      "sha256": "986ed7c1885b2a34e73e27c2b14acb626b5ca096114040946de5f41c83afe3c7"
+    },
+    {
+      "path": "output/260912/260912_14_info_a_reasoning_proposal_answers.md",
+      "bytes": 33184,
+      "sha256": "b45e45f5628c5ec19051d17e305eba51be00013c9b16c9cbdc671ff9381dff02"
+    },
+    {
+      "path": "output/260912/260912_14_info_a_reasoning_proposal.md",
+      "bytes": 51730,
+      "sha256": "9d1fe0258d60dc7f5a4286b2ceeb8642a482548b7762adff9974f563c86afc20"
+    },
+    {
+      "path": "output/260912/260912_14_info_a_reasoning_proposal.novelty.tsv",
+      "bytes": 13753,
+      "sha256": "48232d37330bb26baa562c728045eb9495e9228f4af8e1b02038d6bb51621554"
+    },
+    {
+      "path": "output/260912/260912_15_info_b_reasoning_proposal_questions.md",
+      "bytes": 21478,
+      "sha256": "917d40b6fc4844d5e8bcd3b2a2fb2a572282c4680009d14b7fd1ca70cdc414f9"
+    },
+    {
+      "path": "output/260912/260912_15_info_b_reasoning_proposal_answers.md",
+      "bytes": 33814,
+      "sha256": "d35c53804b2a510f7b8c09b0609ef6dbd601614eb3923f8b62311fc7dd7ab7a5"
+    },
+    {
+      "path": "output/260912/260912_15_info_b_reasoning_proposal.md",
+      "bytes": 53869,
+      "sha256": "1f461571ab3ca6638a224d0ab2a8e5085a1054599912578064e7384a664b6ca4"
+    },
+    {
+      "path": "output/260912/260912_15_info_b_reasoning_proposal.novelty.tsv",
+      "bytes": 14554,
+      "sha256": "69b367062fcf7b6aa6ae127cc1e1ab6009ab12f3459f22d772fb3d3d07b87cc5"
+    }
+  ],
+  "independent_review": false,
+  "novelty": "50 rows REVIEW, not PASS",
+  "warnings": [],
+  "exit_code": 0
+}

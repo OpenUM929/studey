@@ -833,3 +833,55 @@ owner=/root; writes=자기 WIP+품질 보고서; solo; 모델/깊이 호스트 �
 measure_score_bands exit1/WARN40/GATE3 EX-social-20261M mismatch1; regen_rubric_values exit1/계층4행 없음; check_assurance_contract exit1/10 failures. 기준/타인 WIP 수정 금지. 배포 ▲ blocked.
 보고서 SHA256=5d5f659ef8583be686b59585fdcecf9b81f8677dca088f20c3ba2dd87f19dc59; bytes=30544. 이전 WIP 및 맹목 첫26604bytes 보존.
 NEXT: 기준 소유 단계의 실패 해소·재동결 후 python tools/measure_score_bands.py; python tools/regen_rubric_values.py; python tools/check_assurance_contract.py 순차 재검증. 성공 후 A/1–A/5 N/V 파일럿. 최고=기존 최고+필수 추가 사고력 유지. 자원 고갈 통보 없음.
+
+
+## ?? ????? ? ?? ??? ???? ??? 2026-09-11
+owner=/root; status: blocked; writes=?? ???+?? WIP; ??/?? ???; ?? ??.
+4?? ??? ??6?? ?? ??. F2-2? FAIL ?? ???? ?? PASS ??. ??/?/?WIP ???.
+??? bytes=48237 sha256=d0113d6fc6b6f65b22565c54bd77867cf1005e72afc02588d1bbe125daa79b86
+NEXT: ?? ??? two-key ??(6?? ??????? ?? ?? ??) ??. ?? ? ?? ?? ? A/1?A/5 N/V ??? ??. ?? ? python tools/measure_score_bands.py; python tools/regen_rubric_values.py; python tools/check_assurance_contract.py ?? ??. ? ??? ?? ? ??? ??. ?? ??+?? ?? ??? ??.
+
+?? ?? ??: 10? ?8 ??, info.md? output/_index.md ???. ??6 ??.
+NEXT: info.md 48db904b1e4c8cfc / output/_index.md 527b917b9ef89792 ?? ????? ?? ??? ????. ?? ?? two-key ?? ??. ?? ? blocked.
+??? sha256=29d7c311253fa07bd13302998a0a0d4f96500a85a21fd5572f9be20fa84dd350
+
+
+## 2026-09-11 재개 체크포인트: 개행 차이 확인
+owner=/root; status: blocked; 모델 호스트 미확인; writes=자기 보고서+자기 WIP.
+두 입력 내용 동일(각 580/405행); 바이트 차이는 CRLF. 추가 내용 변경 의심은 해소. 기준 실패와 독립 판정 부재는 유지. 보고서 sha256=bea97c7de546a707c55dcaa6d5621569e1d6fa516a1d99f9467ab0143002ab05
+NEXT: 기준 소유자의 6계층 수리 two-key 판정·재동결 확보 후 기준 검사 3종, A/1–A/5 N/V 파일럿. 승인 전 배포 금지.
+
+## 2026-09-11 결정요청 작성
+owner=/root; status: blocked; 제품/기준 무수정. 결정요청=output/260911/rev/260911_02_info_ab50_ruler_decision.md SHA256=1f25f1e8f468a26a733427008d7c0833f18646ff3d748eea7940383212acc188. 독립 판정 미실행; dispatch 예산 미노출; 발주 없음.
+NEXT: output/260911/rev/260911_03_info_ab50_ruler_ruling.md 수령·모델/독립성·허용범위 검증. 회신 전 수리/배포 금지.
+
+## 배포 요청 후 수리 명세 준비
+owner=/root; status: blocked. 사용자 요청: 이제 배포좀 해보자. 수리안 작성/독립 판정 진행으로 접수; 배포 게이트 면제 아님.
+회신 수령 완료; 명세=output/260911/rev/260911_04_info_ab50_repair_spec.md; sha256=8ee9a46ecbd57ae9826bdf1c8f1b7a93939fa4ce500645421b0e86d309b64249; 원천 60개 transcript/meta 실측; 보호 기준3개 무변경.
+NEXT: 명세 Q2 계약의 독립 판정 및 Q1 정확한 패치 감사, Q3 별도 서명. 패치/배포 미실행. 같은 승인 재질문 금지.
+
+## 2026-09-11 BF1 명세 소유자 보완
+owner=/root; status: blocked; 독립 판정 05 회신을 읽음. 수정 요구 BF1: 적용 단계/분모/종료 코드/잔여/재검증 명시.
+보완안: output/260911/rev/260911_06_info_ab50_state_contract_spec.md; sha256=93f75d1a4c0fc6af7df62dbf7e4b3799a62fa5e8ed74b0cb9cc6d87caf7aca22.
+검증: 원천60유닛/120파일 bytes/hash 일치, duplicates/missing/extra/mismatches=[], 보호 기준3/3 무변경. 제품/정본/판정/원장 변경 없음. 독립 감사·계약 전수 적용·코드 테스트 실행 아님.
+NEXT: 06 §5 BF1 구체성의 별도 Astra 판정 및 contract_exit 변경 사용자 키 확인. 승인 전 구현/배포 금지. 이 계약은 전역 미통과 유지안이며 부분 자료를 허용해 배포를 통과시키는 예외가 아님. Q1 exact diff/Q3 서명 미결. 같은 배포 승인 재질문 금지.
+
+## 2026-09-11 Q1 실패 전파 후보 파일럿
+owner=/root; status: partial; 07 BF1 approve 수령(완결성 한정). 정본 무수정.
+artifact=output/260911/rev/260911_08_info_ab50_q1_pilot.md; sha256=ff6788f7c6878caf9982c1e79525880fe616b6e077c57d44ce3ad3c18483b95f
+검증: python output/260911/rev/260911_08_info_ab50_q1_fixture.py exit0, fixtures12/failed0; live child_exit1/WARN40/contract_exit1. 보호3개 기존해시 일치. 작성자 시험이지 독립 감사 아님.
+NEXT: Q1 manifest/메타 계층/ID·합계 불변식 후보 준비 및 기존 fixture 통합. 08 파일럿만 승인받는 별도 라운드 추가 금지. 전체 후보 준비 후 two-key 판정. Q3/문항 재검증/배포 미결.
+
+
+## 세션 안내 개선 및 Q1 원천 후보
+owner=/root; status: in-progress; Session: STAY.
+artifact=output/260911/rev/260911_09_info_ab50_q1_progress.md; sha256=56ceafb829eecd4b6146800cfed95e78f7b1d641dac1ae726dda3d2f5291e0bb
+검증: 지침 TEXT_REQUIREMENTS missing0/AST/diff-check 통과; 전체 assurance 기존10실패 유지. source 후보23시험 통과, 원천120파일 일치, 보호3개 불변. 전역홈 미동기화(저장소만 반영).
+NEXT: 08+09 후보 통합·파싱 경계·기존 fixture/개별 score/r/Tier 회귀. 실제 eligibility는 별도 근거 필요; 부분 결과마다 감사/세션 전환 요청 금지. 현재 과업 미완료.
+
+
+## 2026-09-12 Q1 통합 후보 체크포인트
+owner=/root; status: blocked; Session: NEW-INDEPENDENT (미실행, 프롬프트 준비).
+후보/패치/시험/결과=output/260912/rev/260912_01_info_ab50_q1_*; 검토 묶음=output/260912/rev/260912_02_info_ab50_q1_review_package.md; sha256=1399b0711166ed455d612197567680c631e96e0800cd2e84df3ba1031d8f6885.
+검증: 통합15시험 실패0, 기존gate0 planted11/undetected0, 원천120파일 일치, 측정 per-item1148행 두 실행 바이트 동일. 실제exit1/WARN40 보존; 보호3개 불변. 운영적격성/인쇄ID/전역호출 통합 미완료, 배포blocked.
+NEXT: output/260912/rev/260912_04_info_ab50_q1_independent_ruling.md 수령 확인, 정확 승인 범위만 적용. 사용자 정책키·적격성 입력 없이는 만들지 않음. 새 세션 프롬프트=output/260912/rev/260912_03_info_ab50_q1_session_prompt.md; 완료 후 본 작성 세션 복귀.

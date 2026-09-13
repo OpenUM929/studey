@@ -1,0 +1,31 @@
+--- a/tools/regen_rubric_values.py
++++ b/tools/regen_rubric_values.py
+@@ -367,7 +367,27 @@
+ 
+ 
+ def main():
+-    out, code = tool_output()
++    try:
++        out, code = tool_output()
++    except OSError as exc:
++        print('[BLOCKED] measurement could not execute: %s' % exc)
++        print('contract_exit=2')
++        return 2
++    # Proposal: preserve raw evidence; never derive a success from partial output.
++    if code not in (0, 1) or '[ABORT]' in out or '[GATE 0 FAIL]' in out:
++        contract_exit = 2
++    elif code != 0 or '[WARN]' in out or '[FAIL]' in out:
++        contract_exit = 1
++    elif ('[GATE 0 PASS] undetected=0' not in out
++          or '[GATE 1 PASS] undetected=0' not in out
++          or '[OK] GATE 1 undetected=0 / GATE 3 mismatches=0' not in out):
++        contract_exit = 2
++    else:
++        contract_exit = 0
++    print('measurement_exit=%d contract_exit=%d' % (code, contract_exit))
++    if contract_exit:
++        print(out, end='' if out.endswith(NL) else NL)
++        return contract_exit
+     v = derive(out)
+     rb = open(RUBRIC, 'rb').read()
+     txt = rb.decode('utf-8')

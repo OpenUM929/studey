@@ -1,0 +1,41 @@
+{
+  "baseline": "output\\260912\\rev\\260912_01_science_question_baseline_cd097a46.md",
+  "unchanged_1_7": [
+    {
+      "item_id": 1,
+      "unchanged": true,
+      "sha256": "442feebf2d097d22b8d04fcda0e1a4f345deea95f90e7e47548fa05aae7679ab"
+    },
+    {
+      "item_id": 2,
+      "unchanged": true,
+      "sha256": "0caf628bee36e02411068bdc38107891c1ff349aee7e0a8e3631c361d8dbdc3b"
+    },
+    {
+      "item_id": 3,
+      "unchanged": true,
+      "sha256": "43834c0a582d793f7c6b918626392bcca536be3618023753deac868ae3b1c38b"
+    },
+    {
+      "item_id": 4,
+      "unchanged": true,
+      "sha256": "de5c4ce31aaa4b72b4ae33e44736224c93b11175e2820e1b1ed6553136f392c1"
+    },
+    {
+      "item_id": 5,
+      "unchanged": true,
+      "sha256": "a2024f296f0205fdec10e147e96ffdac0cb0ef4dc6057999899b58f34085a932"
+    },
+    {
+      "item_id": 6,
+      "unchanged": true,
+      "sha256": "fd4169db9061bee84943959d8311daba6c8d2af7503f126b96ab6abe058b20e2"
+    },
+    {
+      "item_id": 7,
+      "unchanged": true,
+      "sha256": "51064ded2224984a0ec769930206304cb053b82b6ba9079696fa11af860780c6"
+    }
+  ],
+  "middle_9_16_hash": "d749daf0c6f314dcd1861722e1597c318fe6a44bf0489579f75de7746b5a57e4"
+}

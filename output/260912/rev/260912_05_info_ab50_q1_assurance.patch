@@ -1,0 +1,12 @@
+--- a/tools/check_assurance_contract.py
++++ b/tools/check_assurance_contract.py
+@@ -266,7 +266,8 @@
+     import subprocess
+ 
+     proc = subprocess.run(
+-        [sys.executable, str(ROOT / "tools/regen_rubric_values.py")],
++        [sys.executable, str(ROOT / "tools/regen_rubric_values.py"),
++         "--source-contract", str(ROOT / "analysis/info_ab50_source_contract.json")],
+         capture_output=True,
+         cwd=ROOT,
+     )

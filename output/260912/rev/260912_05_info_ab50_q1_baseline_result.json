@@ -1,0 +1,2528 @@
+{
+  "scope": "author-only regression; not independent or release approval",
+  "baseline": true,
+  "candidate": {
+    "path": "output\\260912\\rev\\260912_01_info_ab50_q1_integrated_candidate.py",
+    "bytes": 27749,
+    "sha256": "cdaf9e1d1670e3ffb21846554c39a5e65bc9b7e5e4da424225480d1e8f48b7fb"
+  },
+  "source_coverage": {
+    "expected": [
+      "EX-english-20241F",
+      "EX-english-20241M",
+      "EX-english-20242F",
+      "EX-english-20242M",
+      "EX-english-20251F",
+      "EX-english-20251M",
+      "EX-english-20252F",
+      "EX-english-20252M",
+      "EX-english-20261F",
+      "EX-english-20261M",
+      "EX-history-20241F",
+      "EX-history-20241M",
+      "EX-history-20242F",
+      "EX-history-20242M",
+      "EX-history-20251F",
+      "EX-history-20251M",
+      "EX-history-20252F",
+      "EX-history-20252M",
+      "EX-history-20261F",
+      "EX-history-20261M",
+      "EX-info-20252F",
+      "EX-info-20252M",
+      "EX-korean-20241F",
+      "EX-korean-20241M",
+      "EX-korean-20242F",
+      "EX-korean-20242M",
+      "EX-korean-20251F",
+      "EX-korean-20251M",
+      "EX-korean-20252F",
+      "EX-korean-20252M",
+      "EX-math1-20241F",
+      "EX-math1-20241M",
+      "EX-math1-20242F",
+      "EX-math1-20242M",
+      "EX-math1-20251F",
+      "EX-math1-20251M",
+      "EX-math1-20261F",
+      "EX-math1-20261M",
+      "EX-math2-20252F",
+      "EX-math2-20252M",
+      "EX-science-20241F",
+      "EX-science-20241M",
+      "EX-science-20242F",
+      "EX-science-20242M",
+      "EX-science-20251F",
+      "EX-science-20251M",
+      "EX-science-20252F",
+      "EX-science-20252M",
+      "EX-science-20261F",
+      "EX-science-20261M",
+      "EX-social-20241F",
+      "EX-social-20241M",
+      "EX-social-20242F",
+      "EX-social-20242M",
+      "EX-social-20251F",
+      "EX-social-20251M",
+      "EX-social-20252F",
+      "EX-social-20252M",
+      "EX-social-20261F",
+      "EX-social-20261M"
+    ],
+    "observed": [
+      "EX-english-20241F",
+      "EX-english-20241M",
+      "EX-english-20242F",
+      "EX-english-20242M",
+      "EX-english-20251F",
+      "EX-english-20251M",
+      "EX-english-20252F",
+      "EX-english-20252M",
+      "EX-english-20261F",
+      "EX-english-20261M",
+      "EX-history-20241F",
+      "EX-history-20241M",
+      "EX-history-20242F",
+      "EX-history-20242M",
+      "EX-history-20251F",
+      "EX-history-20251M",
+      "EX-history-20252F",
+      "EX-history-20252M",
+      "EX-history-20261F",
+      "EX-history-20261M",
+      "EX-info-20252F",
+      "EX-info-20252M",
+      "EX-korean-20241F",
+      "EX-korean-20241M",
+      "EX-korean-20242F",
+      "EX-korean-20242M",
+      "EX-korean-20251F",
+      "EX-korean-20251M",
+      "EX-korean-20252F",
+      "EX-korean-20252M",
+      "EX-math1-20241F",
+      "EX-math1-20241M",
+      "EX-math1-20242F",
+      "EX-math1-20242M",
+      "EX-math1-20251F",
+      "EX-math1-20251M",
+      "EX-math1-20261F",
+      "EX-math1-20261M",
+      "EX-math2-20252F",
+      "EX-math2-20252M",
+      "EX-science-20241F",
+      "EX-science-20241M",
+      "EX-science-20242F",
+      "EX-science-20242M",
+      "EX-science-20251F",
+      "EX-science-20251M",
+      "EX-science-20252F",
+      "EX-science-20252M",
+      "EX-science-20261F",
+      "EX-science-20261M",
+      "EX-social-20241F",
+      "EX-social-20241M",
+      "EX-social-20242F",
+      "EX-social-20242M",
+      "EX-social-20251F",
+      "EX-social-20251M",
+      "EX-social-20252F",
+      "EX-social-20252M",
+      "EX-social-20261F",
+      "EX-social-20261M"
+    ],
+    "duplicates": [],
+    "expected_duplicates": [],
+    "missing": [],
+    "extra": []
+  },
+  "case_coverage": {
+    "expected": [
+      "distribution/delete/EX-english-20241F",
+      "distribution/delete/EX-english-20241M",
+      "distribution/delete/EX-english-20242F",
+      "distribution/delete/EX-english-20242M",
+      "distribution/delete/EX-english-20251F",
+      "distribution/delete/EX-english-20251M",
+      "distribution/delete/EX-english-20252F",
+      "distribution/delete/EX-english-20252M",
+      "distribution/delete/EX-english-20261F",
+      "distribution/delete/EX-english-20261M",
+      "distribution/delete/EX-history-20241F",
+      "distribution/delete/EX-history-20241M",
+      "distribution/delete/EX-history-20242F",
+      "distribution/delete/EX-history-20242M",
+      "distribution/delete/EX-history-20251F",
+      "distribution/delete/EX-history-20251M",
+      "distribution/delete/EX-history-20252F",
+      "distribution/delete/EX-history-20252M",
+      "distribution/delete/EX-history-20261F",
+      "distribution/delete/EX-history-20261M",
+      "distribution/delete/EX-info-20252F",
+      "distribution/delete/EX-info-20252M",
+      "distribution/delete/EX-korean-20241F",
+      "distribution/delete/EX-korean-20241M",
+      "distribution/delete/EX-korean-20242F",
+      "distribution/delete/EX-korean-20242M",
+      "distribution/delete/EX-korean-20251F",
+      "distribution/delete/EX-korean-20251M",
+      "distribution/delete/EX-korean-20252F",
+      "distribution/delete/EX-korean-20252M",
+      "distribution/delete/EX-math1-20241F",
+      "distribution/delete/EX-math1-20241M",
+      "distribution/delete/EX-math1-20242F",
+      "distribution/delete/EX-math1-20242M",
+      "distribution/delete/EX-math1-20251F",
+      "distribution/delete/EX-math1-20251M",
+      "distribution/delete/EX-math1-20261F",
+      "distribution/delete/EX-math1-20261M",
+      "distribution/delete/EX-math2-20252F",
+      "distribution/delete/EX-math2-20252M",
+      "distribution/delete/EX-science-20241F",
+      "distribution/delete/EX-science-20241M",
+      "distribution/delete/EX-science-20242F",
+      "distribution/delete/EX-science-20242M",
+      "distribution/delete/EX-science-20251F",
+      "distribution/delete/EX-science-20251M",
+      "distribution/delete/EX-science-20252F",
+      "distribution/delete/EX-science-20252M",
+      "distribution/delete/EX-science-20261F",
+      "distribution/delete/EX-science-20261M",
+      "distribution/delete/EX-social-20241F",
+      "distribution/delete/EX-social-20241M",
+      "distribution/delete/EX-social-20242F",
+      "distribution/delete/EX-social-20242M",
+      "distribution/delete/EX-social-20251F",
+      "distribution/delete/EX-social-20251M",
+      "distribution/delete/EX-social-20252F",
+      "distribution/delete/EX-social-20252M",
+      "distribution/delete/EX-social-20261F",
+      "distribution/delete/EX-social-20261M",
+      "distribution/duplicate/EX-english-20241F",
+      "distribution/duplicate/EX-english-20241M",
+      "distribution/duplicate/EX-english-20242F",
+      "distribution/duplicate/EX-english-20242M",
+      "distribution/duplicate/EX-english-20251F",
+      "distribution/duplicate/EX-english-20251M",
+      "distribution/duplicate/EX-english-20252F",
+      "distribution/duplicate/EX-english-20252M",
+      "distribution/duplicate/EX-english-20261F",
+      "distribution/duplicate/EX-english-20261M",
+      "distribution/duplicate/EX-history-20241F",
+      "distribution/duplicate/EX-history-20241M",
+      "distribution/duplicate/EX-history-20242F",
+      "distribution/duplicate/EX-history-20242M",
+      "distribution/duplicate/EX-history-20251F",
+      "distribution/duplicate/EX-history-20251M",
+      "distribution/duplicate/EX-history-20252F",
+      "distribution/duplicate/EX-history-20252M",
+      "distribution/duplicate/EX-history-20261F",
+      "distribution/duplicate/EX-history-20261M",
+      "distribution/duplicate/EX-info-20252F",
+      "distribution/duplicate/EX-info-20252M",
+      "distribution/duplicate/EX-korean-20241F",
+      "distribution/duplicate/EX-korean-20241M",
+      "distribution/duplicate/EX-korean-20242F",
+      "distribution/duplicate/EX-korean-20242M",
+      "distribution/duplicate/EX-korean-20251F",
+      "distribution/duplicate/EX-korean-20251M",
+      "distribution/duplicate/EX-korean-20252F",
+      "distribution/duplicate/EX-korean-20252M",
+      "distribution/duplicate/EX-math1-20241F",
+      "distribution/duplicate/EX-math1-20241M",
+      "distribution/duplicate/EX-math1-20242F",
+      "distribution/duplicate/EX-math1-20242M",
+      "distribution/duplicate/EX-math1-20251F",
+      "distribution/duplicate/EX-math1-20251M",
+      "distribution/duplicate/EX-math1-20261F",
+      "distribution/duplicate/EX-math1-20261M",
+      "distribution/duplicate/EX-math2-20252F",
+      "distribution/duplicate/EX-math2-20252M",
+      "distribution/duplicate/EX-science-20241F",
+      "distribution/duplicate/EX-science-20241M",
+      "distribution/duplicate/EX-science-20242F",
+      "distribution/duplicate/EX-science-20242M",
+      "distribution/duplicate/EX-science-20251F",
+      "distribution/duplicate/EX-science-20251M",
+      "distribution/duplicate/EX-science-20252F",
+      "distribution/duplicate/EX-science-20252M",
+      "distribution/duplicate/EX-science-20261F",
+      "distribution/duplicate/EX-science-20261M",
+      "distribution/duplicate/EX-social-20241F",
+      "distribution/duplicate/EX-social-20241M",
+      "distribution/duplicate/EX-social-20242F",
+      "distribution/duplicate/EX-social-20242M",
+      "distribution/duplicate/EX-social-20251F",
+      "distribution/duplicate/EX-social-20251M",
+      "distribution/duplicate/EX-social-20252F",
+      "distribution/duplicate/EX-social-20252M",
+      "distribution/duplicate/EX-social-20261F",
+      "distribution/duplicate/EX-social-20261M",
+      "distribution/same_count_replace/EX-english-20241F",
+      "distribution/same_count_replace/EX-english-20241M",
+      "distribution/same_count_replace/EX-english-20242F",
+      "distribution/same_count_replace/EX-english-20242M",
+      "distribution/same_count_replace/EX-english-20251F",
+      "distribution/same_count_replace/EX-english-20251M",
+      "distribution/same_count_replace/EX-english-20252F",
+      "distribution/same_count_replace/EX-english-20252M",
+      "distribution/same_count_replace/EX-english-20261F",
+      "distribution/same_count_replace/EX-english-20261M",
+      "distribution/same_count_replace/EX-history-20241F",
+      "distribution/same_count_replace/EX-history-20241M",
+      "distribution/same_count_replace/EX-history-20242F",
+      "distribution/same_count_replace/EX-history-20242M",
+      "distribution/same_count_replace/EX-history-20251F",
+      "distribution/same_count_replace/EX-history-20251M",
+      "distribution/same_count_replace/EX-history-20252F",
+      "distribution/same_count_replace/EX-history-20252M",
+      "distribution/same_count_replace/EX-history-20261F",
+      "distribution/same_count_replace/EX-history-20261M",
+      "distribution/same_count_replace/EX-info-20252F",
+      "distribution/same_count_replace/EX-info-20252M",
+      "distribution/same_count_replace/EX-korean-20241F",
+      "distribution/same_count_replace/EX-korean-20241M",
+      "distribution/same_count_replace/EX-korean-20242F",
+      "distribution/same_count_replace/EX-korean-20242M",
+      "distribution/same_count_replace/EX-korean-20251F",
+      "distribution/same_count_replace/EX-korean-20251M",
+      "distribution/same_count_replace/EX-korean-20252F",
+      "distribution/same_count_replace/EX-korean-20252M",
+      "distribution/same_count_replace/EX-math1-20241F",
+      "distribution/same_count_replace/EX-math1-20241M",
+      "distribution/same_count_replace/EX-math1-20242F",
+      "distribution/same_count_replace/EX-math1-20242M",
+      "distribution/same_count_replace/EX-math1-20251F",
+      "distribution/same_count_replace/EX-math1-20251M",
+      "distribution/same_count_replace/EX-math1-20261F",
+      "distribution/same_count_replace/EX-math1-20261M",
+      "distribution/same_count_replace/EX-math2-20252F",
+      "distribution/same_count_replace/EX-math2-20252M",
+      "distribution/same_count_replace/EX-science-20241F",
+      "distribution/same_count_replace/EX-science-20241M",
+      "distribution/same_count_replace/EX-science-20242F",
+      "distribution/same_count_replace/EX-science-20242M",
+      "distribution/same_count_replace/EX-science-20251F",
+      "distribution/same_count_replace/EX-science-20251M",
+      "distribution/same_count_replace/EX-science-20252F",
+      "distribution/same_count_replace/EX-science-20252M",
+      "distribution/same_count_replace/EX-science-20261F",
+      "distribution/same_count_replace/EX-science-20261M",
+      "distribution/same_count_replace/EX-social-20241F",
+      "distribution/same_count_replace/EX-social-20241M",
+      "distribution/same_count_replace/EX-social-20242F",
+      "distribution/same_count_replace/EX-social-20242M",
+      "distribution/same_count_replace/EX-social-20251F",
+      "distribution/same_count_replace/EX-social-20251M",
+      "distribution/same_count_replace/EX-social-20252F",
+      "distribution/same_count_replace/EX-social-20252M",
+      "distribution/same_count_replace/EX-social-20261F",
+      "distribution/same_count_replace/EX-social-20261M",
+      "state/partial/EX-english-20241F",
+      "state/partial/EX-english-20241M",
+      "state/partial/EX-english-20242F",
+      "state/partial/EX-english-20242M",
+      "state/partial/EX-english-20251F",
+      "state/partial/EX-english-20251M",
+      "state/partial/EX-english-20252F",
+      "state/partial/EX-english-20252M",
+      "state/partial/EX-english-20261F",
+      "state/partial/EX-english-20261M",
+      "state/partial/EX-history-20241F",
+      "state/partial/EX-history-20241M",
+      "state/partial/EX-history-20242F",
+      "state/partial/EX-history-20242M",
+      "state/partial/EX-history-20251F",
+      "state/partial/EX-history-20251M",
+      "state/partial/EX-history-20252F",
+      "state/partial/EX-history-20252M",
+      "state/partial/EX-history-20261F",
+      "state/partial/EX-history-20261M",
+      "state/partial/EX-info-20252F",
+      "state/partial/EX-info-20252M",
+      "state/partial/EX-korean-20241F",
+      "state/partial/EX-korean-20241M",
+      "state/partial/EX-korean-20242F",
+      "state/partial/EX-korean-20242M",
+      "state/partial/EX-korean-20251F",
+      "state/partial/EX-korean-20251M",
+      "state/partial/EX-korean-20252F",
+      "state/partial/EX-korean-20252M",
+      "state/partial/EX-math1-20241F",
+      "state/partial/EX-math1-20241M",
+      "state/partial/EX-math1-20242F",
+      "state/partial/EX-math1-20242M",
+      "state/partial/EX-math1-20251F",
+      "state/partial/EX-math1-20251M",
+      "state/partial/EX-math1-20261F",
+      "state/partial/EX-math1-20261M",
+      "state/partial/EX-math2-20252F",
+      "state/partial/EX-math2-20252M",
+      "state/partial/EX-science-20241F",
+      "state/partial/EX-science-20241M",
+      "state/partial/EX-science-20242F",
+      "state/partial/EX-science-20242M",
+      "state/partial/EX-science-20251F",
+      "state/partial/EX-science-20251M",
+      "state/partial/EX-science-20252F",
+      "state/partial/EX-science-20252M",
+      "state/partial/EX-science-20261F",
+      "state/partial/EX-science-20261M",
+      "state/partial/EX-social-20241F",
+      "state/partial/EX-social-20241M",
+      "state/partial/EX-social-20242F",
+      "state/partial/EX-social-20242M",
+      "state/partial/EX-social-20251F",
+      "state/partial/EX-social-20251M",
+      "state/partial/EX-social-20252F",
+      "state/partial/EX-social-20252M",
+      "state/partial/EX-social-20261F",
+      "state/partial/EX-social-20261M",
+      "state/unresolved/EX-english-20241F",
+      "state/unresolved/EX-english-20241M",
+      "state/unresolved/EX-english-20242F",
+      "state/unresolved/EX-english-20242M",
+      "state/unresolved/EX-english-20251F",
+      "state/unresolved/EX-english-20251M",
+      "state/unresolved/EX-english-20252F",
+      "state/unresolved/EX-english-20252M",
+      "state/unresolved/EX-english-20261F",
+      "state/unresolved/EX-english-20261M",
+      "state/unresolved/EX-history-20241F",
+      "state/unresolved/EX-history-20241M",
+      "state/unresolved/EX-history-20242F",
+      "state/unresolved/EX-history-20242M",
+      "state/unresolved/EX-history-20251F",
+      "state/unresolved/EX-history-20251M",
+      "state/unresolved/EX-history-20252F",
+      "state/unresolved/EX-history-20252M",
+      "state/unresolved/EX-history-20261F",
+      "state/unresolved/EX-history-20261M",
+      "state/unresolved/EX-info-20252F",
+      "state/unresolved/EX-info-20252M",
+      "state/unresolved/EX-korean-20241F",
+      "state/unresolved/EX-korean-20241M",
+      "state/unresolved/EX-korean-20242F",
+      "state/unresolved/EX-korean-20242M",
+      "state/unresolved/EX-korean-20251F",
+      "state/unresolved/EX-korean-20251M",
+      "state/unresolved/EX-korean-20252F",
+      "state/unresolved/EX-korean-20252M",
+      "state/unresolved/EX-math1-20241F",
+      "state/unresolved/EX-math1-20241M",
+      "state/unresolved/EX-math1-20242F",
+      "state/unresolved/EX-math1-20242M",
+      "state/unresolved/EX-math1-20251F",
+      "state/unresolved/EX-math1-20251M",
+      "state/unresolved/EX-math1-20261F",
+      "state/unresolved/EX-math1-20261M",
+      "state/unresolved/EX-math2-20252F",
+      "state/unresolved/EX-math2-20252M",
+      "state/unresolved/EX-science-20241F",
+      "state/unresolved/EX-science-20241M",
+      "state/unresolved/EX-science-20242F",
+      "state/unresolved/EX-science-20242M",
+      "state/unresolved/EX-science-20251F",
+      "state/unresolved/EX-science-20251M",
+      "state/unresolved/EX-science-20252F",
+      "state/unresolved/EX-science-20252M",
+      "state/unresolved/EX-science-20261F",
+      "state/unresolved/EX-science-20261M",
+      "state/unresolved/EX-social-20241F",
+      "state/unresolved/EX-social-20241M",
+      "state/unresolved/EX-social-20242F",
+      "state/unresolved/EX-social-20242M",
+      "state/unresolved/EX-social-20251F",
+      "state/unresolved/EX-social-20251M",
+      "state/unresolved/EX-social-20252F",
+      "state/unresolved/EX-social-20252M",
+      "state/unresolved/EX-social-20261F",
+      "state/unresolved/EX-social-20261M",
+      "terminal/local_fixture_failed",
+      "terminal/ruler_stale",
+      "terminal/synthetic_clean"
+    ],
+    "observed": [
+      "distribution/delete/EX-english-20241F",
+      "distribution/delete/EX-english-20241M",
+      "distribution/delete/EX-english-20242F",
+      "distribution/delete/EX-english-20242M",
+      "distribution/delete/EX-english-20251F",
+      "distribution/delete/EX-english-20251M",
+      "distribution/delete/EX-english-20252F",
+      "distribution/delete/EX-english-20252M",
+      "distribution/delete/EX-english-20261F",
+      "distribution/delete/EX-english-20261M",
+      "distribution/delete/EX-history-20241F",
+      "distribution/delete/EX-history-20241M",
+      "distribution/delete/EX-history-20242F",
+      "distribution/delete/EX-history-20242M",
+      "distribution/delete/EX-history-20251F",
+      "distribution/delete/EX-history-20251M",
+      "distribution/delete/EX-history-20252F",
+      "distribution/delete/EX-history-20252M",
+      "distribution/delete/EX-history-20261F",
+      "distribution/delete/EX-history-20261M",
+      "distribution/delete/EX-info-20252F",
+      "distribution/delete/EX-info-20252M",
+      "distribution/delete/EX-korean-20241F",
+      "distribution/delete/EX-korean-20241M",
+      "distribution/delete/EX-korean-20242F",
+      "distribution/delete/EX-korean-20242M",
+      "distribution/delete/EX-korean-20251F",
+      "distribution/delete/EX-korean-20251M",
+      "distribution/delete/EX-korean-20252F",
+      "distribution/delete/EX-korean-20252M",
+      "distribution/delete/EX-math1-20241F",
+      "distribution/delete/EX-math1-20241M",
+      "distribution/delete/EX-math1-20242F",
+      "distribution/delete/EX-math1-20242M",
+      "distribution/delete/EX-math1-20251F",
+      "distribution/delete/EX-math1-20251M",
+      "distribution/delete/EX-math1-20261F",
+      "distribution/delete/EX-math1-20261M",
+      "distribution/delete/EX-math2-20252F",
+      "distribution/delete/EX-math2-20252M",
+      "distribution/delete/EX-science-20241F",
+      "distribution/delete/EX-science-20241M",
+      "distribution/delete/EX-science-20242F",
+      "distribution/delete/EX-science-20242M",
+      "distribution/delete/EX-science-20251F",
+      "distribution/delete/EX-science-20251M",
+      "distribution/delete/EX-science-20252F",
+      "distribution/delete/EX-science-20252M",
+      "distribution/delete/EX-science-20261F",
+      "distribution/delete/EX-science-20261M",
+      "distribution/delete/EX-social-20241F",
+      "distribution/delete/EX-social-20241M",
+      "distribution/delete/EX-social-20242F",
+      "distribution/delete/EX-social-20242M",
+      "distribution/delete/EX-social-20251F",
+      "distribution/delete/EX-social-20251M",
+      "distribution/delete/EX-social-20252F",
+      "distribution/delete/EX-social-20252M",
+      "distribution/delete/EX-social-20261F",
+      "distribution/delete/EX-social-20261M",
+      "distribution/duplicate/EX-english-20241F",
+      "distribution/duplicate/EX-english-20241M",
+      "distribution/duplicate/EX-english-20242F",
+      "distribution/duplicate/EX-english-20242M",
+      "distribution/duplicate/EX-english-20251F",
+      "distribution/duplicate/EX-english-20251M",
+      "distribution/duplicate/EX-english-20252F",
+      "distribution/duplicate/EX-english-20252M",
+      "distribution/duplicate/EX-english-20261F",
+      "distribution/duplicate/EX-english-20261M",
+      "distribution/duplicate/EX-history-20241F",
+      "distribution/duplicate/EX-history-20241M",
+      "distribution/duplicate/EX-history-20242F",
+      "distribution/duplicate/EX-history-20242M",
+      "distribution/duplicate/EX-history-20251F",
+      "distribution/duplicate/EX-history-20251M",
+      "distribution/duplicate/EX-history-20252F",
+      "distribution/duplicate/EX-history-20252M",
+      "distribution/duplicate/EX-history-20261F",
+      "distribution/duplicate/EX-history-20261M",
+      "distribution/duplicate/EX-info-20252F",
+      "distribution/duplicate/EX-info-20252M",
+      "distribution/duplicate/EX-korean-20241F",
+      "distribution/duplicate/EX-korean-20241M",
+      "distribution/duplicate/EX-korean-20242F",
+      "distribution/duplicate/EX-korean-20242M",
+      "distribution/duplicate/EX-korean-20251F",
+      "distribution/duplicate/EX-korean-20251M",
+      "distribution/duplicate/EX-korean-20252F",
+      "distribution/duplicate/EX-korean-20252M",
+      "distribution/duplicate/EX-math1-20241F",
+      "distribution/duplicate/EX-math1-20241M",
+      "distribution/duplicate/EX-math1-20242F",
+      "distribution/duplicate/EX-math1-20242M",
+      "distribution/duplicate/EX-math1-20251F",
+      "distribution/duplicate/EX-math1-20251M",
+      "distribution/duplicate/EX-math1-20261F",
+      "distribution/duplicate/EX-math1-20261M",
+      "distribution/duplicate/EX-math2-20252F",
+      "distribution/duplicate/EX-math2-20252M",
+      "distribution/duplicate/EX-science-20241F",
+      "distribution/duplicate/EX-science-20241M",
+      "distribution/duplicate/EX-science-20242F",
+      "distribution/duplicate/EX-science-20242M",
+      "distribution/duplicate/EX-science-20251F",
+      "distribution/duplicate/EX-science-20251M",
+      "distribution/duplicate/EX-science-20252F",
+      "distribution/duplicate/EX-science-20252M",
+      "distribution/duplicate/EX-science-20261F",
+      "distribution/duplicate/EX-science-20261M",
+      "distribution/duplicate/EX-social-20241F",
+      "distribution/duplicate/EX-social-20241M",
+      "distribution/duplicate/EX-social-20242F",
+      "distribution/duplicate/EX-social-20242M",
+      "distribution/duplicate/EX-social-20251F",
+      "distribution/duplicate/EX-social-20251M",
+      "distribution/duplicate/EX-social-20252F",
+      "distribution/duplicate/EX-social-20252M",
+      "distribution/duplicate/EX-social-20261F",
+      "distribution/duplicate/EX-social-20261M",
+      "distribution/same_count_replace/EX-english-20241F",
+      "distribution/same_count_replace/EX-english-20241M",
+      "distribution/same_count_replace/EX-english-20242F",
+      "distribution/same_count_replace/EX-english-20242M",
+      "distribution/same_count_replace/EX-english-20251F",
+      "distribution/same_count_replace/EX-english-20251M",
+      "distribution/same_count_replace/EX-english-20252F",
+      "distribution/same_count_replace/EX-english-20252M",
+      "distribution/same_count_replace/EX-english-20261F",
+      "distribution/same_count_replace/EX-english-20261M",
+      "distribution/same_count_replace/EX-history-20241F",
+      "distribution/same_count_replace/EX-history-20241M",
+      "distribution/same_count_replace/EX-history-20242F",
+      "distribution/same_count_replace/EX-history-20242M",
+      "distribution/same_count_replace/EX-history-20251F",
+      "distribution/same_count_replace/EX-history-20251M",
+      "distribution/same_count_replace/EX-history-20252F",
+      "distribution/same_count_replace/EX-history-20252M",
+      "distribution/same_count_replace/EX-history-20261F",
+      "distribution/same_count_replace/EX-history-20261M",
+      "distribution/same_count_replace/EX-info-20252F",
+      "distribution/same_count_replace/EX-info-20252M",
+      "distribution/same_count_replace/EX-korean-20241F",
+      "distribution/same_count_replace/EX-korean-20241M",
+      "distribution/same_count_replace/EX-korean-20242F",
+      "distribution/same_count_replace/EX-korean-20242M",
+      "distribution/same_count_replace/EX-korean-20251F",
+      "distribution/same_count_replace/EX-korean-20251M",
+      "distribution/same_count_replace/EX-korean-20252F",
+      "distribution/same_count_replace/EX-korean-20252M",
+      "distribution/same_count_replace/EX-math1-20241F",
+      "distribution/same_count_replace/EX-math1-20241M",
+      "distribution/same_count_replace/EX-math1-20242F",
+      "distribution/same_count_replace/EX-math1-20242M",
+      "distribution/same_count_replace/EX-math1-20251F",
+      "distribution/same_count_replace/EX-math1-20251M",
+      "distribution/same_count_replace/EX-math1-20261F",
+      "distribution/same_count_replace/EX-math1-20261M",
+      "distribution/same_count_replace/EX-math2-20252F",
+      "distribution/same_count_replace/EX-math2-20252M",
+      "distribution/same_count_replace/EX-science-20241F",
+      "distribution/same_count_replace/EX-science-20241M",
+      "distribution/same_count_replace/EX-science-20242F",
+      "distribution/same_count_replace/EX-science-20242M",
+      "distribution/same_count_replace/EX-science-20251F",
+      "distribution/same_count_replace/EX-science-20251M",
+      "distribution/same_count_replace/EX-science-20252F",
+      "distribution/same_count_replace/EX-science-20252M",
+      "distribution/same_count_replace/EX-science-20261F",
+      "distribution/same_count_replace/EX-science-20261M",
+      "distribution/same_count_replace/EX-social-20241F",
+      "distribution/same_count_replace/EX-social-20241M",
+      "distribution/same_count_replace/EX-social-20242F",
+      "distribution/same_count_replace/EX-social-20242M",
+      "distribution/same_count_replace/EX-social-20251F",
+      "distribution/same_count_replace/EX-social-20251M",
+      "distribution/same_count_replace/EX-social-20252F",
+      "distribution/same_count_replace/EX-social-20252M",
+      "distribution/same_count_replace/EX-social-20261F",
+      "distribution/same_count_replace/EX-social-20261M",
+      "state/partial/EX-english-20241F",
+      "state/partial/EX-english-20241M",
+      "state/partial/EX-english-20242F",
+      "state/partial/EX-english-20242M",
+      "state/partial/EX-english-20251F",
+      "state/partial/EX-english-20251M",
+      "state/partial/EX-english-20252F",
+      "state/partial/EX-english-20252M",
+      "state/partial/EX-english-20261F",
+      "state/partial/EX-english-20261M",
+      "state/partial/EX-history-20241F",
+      "state/partial/EX-history-20241M",
+      "state/partial/EX-history-20242F",
+      "state/partial/EX-history-20242M",
+      "state/partial/EX-history-20251F",
+      "state/partial/EX-history-20251M",
+      "state/partial/EX-history-20252F",
+      "state/partial/EX-history-20252M",
+      "state/partial/EX-history-20261F",
+      "state/partial/EX-history-20261M",
+      "state/partial/EX-info-20252F",
+      "state/partial/EX-info-20252M",
+      "state/partial/EX-korean-20241F",
+      "state/partial/EX-korean-20241M",
+      "state/partial/EX-korean-20242F",
+      "state/partial/EX-korean-20242M",
+      "state/partial/EX-korean-20251F",
+      "state/partial/EX-korean-20251M",
+      "state/partial/EX-korean-20252F",
+      "state/partial/EX-korean-20252M",
+      "state/partial/EX-math1-20241F",
+      "state/partial/EX-math1-20241M",
+      "state/partial/EX-math1-20242F",
+      "state/partial/EX-math1-20242M",
+      "state/partial/EX-math1-20251F",
+      "state/partial/EX-math1-20251M",
+      "state/partial/EX-math1-20261F",
+      "state/partial/EX-math1-20261M",
+      "state/partial/EX-math2-20252F",
+      "state/partial/EX-math2-20252M",
+      "state/partial/EX-science-20241F",
+      "state/partial/EX-science-20241M",
+      "state/partial/EX-science-20242F",
+      "state/partial/EX-science-20242M",
+      "state/partial/EX-science-20251F",
+      "state/partial/EX-science-20251M",
+      "state/partial/EX-science-20252F",
+      "state/partial/EX-science-20252M",
+      "state/partial/EX-science-20261F",
+      "state/partial/EX-science-20261M",
+      "state/partial/EX-social-20241F",
+      "state/partial/EX-social-20241M",
+      "state/partial/EX-social-20242F",
+      "state/partial/EX-social-20242M",
+      "state/partial/EX-social-20251F",
+      "state/partial/EX-social-20251M",
+      "state/partial/EX-social-20252F",
+      "state/partial/EX-social-20252M",
+      "state/partial/EX-social-20261F",
+      "state/partial/EX-social-20261M",
+      "state/unresolved/EX-english-20241F",
+      "state/unresolved/EX-english-20241M",
+      "state/unresolved/EX-english-20242F",
+      "state/unresolved/EX-english-20242M",
+      "state/unresolved/EX-english-20251F",
+      "state/unresolved/EX-english-20251M",
+      "state/unresolved/EX-english-20252F",
+      "state/unresolved/EX-english-20252M",
+      "state/unresolved/EX-english-20261F",
+      "state/unresolved/EX-english-20261M",
+      "state/unresolved/EX-history-20241F",
+      "state/unresolved/EX-history-20241M",
+      "state/unresolved/EX-history-20242F",
+      "state/unresolved/EX-history-20242M",
+      "state/unresolved/EX-history-20251F",
+      "state/unresolved/EX-history-20251M",
+      "state/unresolved/EX-history-20252F",
+      "state/unresolved/EX-history-20252M",
+      "state/unresolved/EX-history-20261F",
+      "state/unresolved/EX-history-20261M",
+      "state/unresolved/EX-info-20252F",
+      "state/unresolved/EX-info-20252M",
+      "state/unresolved/EX-korean-20241F",
+      "state/unresolved/EX-korean-20241M",
+      "state/unresolved/EX-korean-20242F",
+      "state/unresolved/EX-korean-20242M",
+      "state/unresolved/EX-korean-20251F",
+      "state/unresolved/EX-korean-20251M",
+      "state/unresolved/EX-korean-20252F",
+      "state/unresolved/EX-korean-20252M",
+      "state/unresolved/EX-math1-20241F",
+      "state/unresolved/EX-math1-20241M",
+      "state/unresolved/EX-math1-20242F",
+      "state/unresolved/EX-math1-20242M",
+      "state/unresolved/EX-math1-20251F",
+      "state/unresolved/EX-math1-20251M",
+      "state/unresolved/EX-math1-20261F",
+      "state/unresolved/EX-math1-20261M",
+      "state/unresolved/EX-math2-20252F",
+      "state/unresolved/EX-math2-20252M",
+      "state/unresolved/EX-science-20241F",
+      "state/unresolved/EX-science-20241M",
+      "state/unresolved/EX-science-20242F",
+      "state/unresolved/EX-science-20242M",
+      "state/unresolved/EX-science-20251F",
+      "state/unresolved/EX-science-20251M",
+      "state/unresolved/EX-science-20252F",
+      "state/unresolved/EX-science-20252M",
+      "state/unresolved/EX-science-20261F",
+      "state/unresolved/EX-science-20261M",
+      "state/unresolved/EX-social-20241F",
+      "state/unresolved/EX-social-20241M",
+      "state/unresolved/EX-social-20242F",
+      "state/unresolved/EX-social-20242M",
+      "state/unresolved/EX-social-20251F",
+      "state/unresolved/EX-social-20251M",
+      "state/unresolved/EX-social-20252F",
+      "state/unresolved/EX-social-20252M",
+      "state/unresolved/EX-social-20261F",
+      "state/unresolved/EX-social-20261M",
+      "terminal/local_fixture_failed",
+      "terminal/ruler_stale",
+      "terminal/synthetic_clean"
+    ],
+    "duplicates": [],
+    "expected_duplicates": [],
+    "missing": [],
+    "extra": []
+  },
+  "cases": [
+    {
+      "id": "state/partial/EX-english-20241F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-english-20241M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-english-20242F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-english-20242M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-english-20251F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-english-20251M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-english-20252F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-english-20252M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-english-20261F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-english-20261M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-history-20241F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-history-20241M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-history-20242F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-history-20242M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-history-20251F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-history-20251M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-history-20252F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-history-20252M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-history-20261F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-history-20261M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-info-20252F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-info-20252M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-korean-20241F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-korean-20241M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-korean-20242F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-korean-20242M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-korean-20251F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-korean-20251M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-korean-20252F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-korean-20252M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-math1-20241F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-math1-20241M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-math1-20242F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-math1-20242M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-math1-20251F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-math1-20251M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-math1-20261F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-math1-20261M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-math2-20252F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-math2-20252M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-science-20241F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-science-20241M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-science-20242F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-science-20242M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-science-20251F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-science-20251M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-science-20252F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-science-20252M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-science-20261F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-science-20261M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-social-20241F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-social-20241M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-social-20242F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-social-20242M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-social-20251F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-social-20251M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-social-20252F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-social-20252M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-social-20261F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/partial/EX-social-20261M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-english-20241F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-english-20241M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-english-20242F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-english-20242M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-english-20251F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-english-20251M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-english-20252F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-english-20252M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-english-20261F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-english-20261M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-history-20241F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-history-20241M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-history-20242F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-history-20242M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-history-20251F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-history-20251M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-history-20252F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-history-20252M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-history-20261F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-history-20261M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-info-20252F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-info-20252M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-korean-20241F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-korean-20241M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-korean-20242F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-korean-20242M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-korean-20251F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-korean-20251M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-korean-20252F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-korean-20252M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-math1-20241F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-math1-20241M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-math1-20242F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-math1-20242M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-math1-20251F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-math1-20251M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-math1-20261F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-math1-20261M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-math2-20252F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-math2-20252M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-science-20241F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-science-20241M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-science-20242F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-science-20242M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-science-20251F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-science-20251M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-science-20252F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-science-20252M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-science-20261F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-science-20261M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-social-20241F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-social-20241M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-social-20242F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-social-20242M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-social-20251F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-social-20251M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-social-20252F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-social-20252M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-social-20261F",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "state/unresolved/EX-social-20261M",
+      "actual": 2,
+      "passed": false,
+      "evidence_preserved": false
+    },
+    {
+      "id": "distribution/delete/EX-english-20241F",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-english-20241M",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-english-20242F",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-english-20242M",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-english-20251F",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-english-20251M",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-english-20252F",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-english-20252M",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-english-20261F",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-english-20261M",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-history-20241F",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-history-20241M",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-history-20242F",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-history-20242M",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-history-20251F",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-history-20251M",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-history-20252F",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-history-20252M",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-history-20261F",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-history-20261M",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-info-20252F",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-info-20252M",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-korean-20241F",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-korean-20241M",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-korean-20242F",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-korean-20242M",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-korean-20251F",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-korean-20251M",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-korean-20252F",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-korean-20252M",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-math1-20241F",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-math1-20241M",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-math1-20242F",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-math1-20242M",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-math1-20251F",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-math1-20251M",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-math1-20261F",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-math1-20261M",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-math2-20252F",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-math2-20252M",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-science-20241F",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-science-20241M",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-science-20242F",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-science-20242M",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-science-20251F",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-science-20251M",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-science-20252F",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-science-20252M",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-science-20261F",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-science-20261M",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-social-20241F",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-social-20241M",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-social-20242F",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-social-20242M",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-social-20251F",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-social-20251M",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-social-20252F",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-social-20252M",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-social-20261F",
+      "passed": false
+    },
+    {
+      "id": "distribution/delete/EX-social-20261M",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-english-20241F",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-english-20241M",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-english-20242F",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-english-20242M",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-english-20251F",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-english-20251M",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-english-20252F",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-english-20252M",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-english-20261F",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-english-20261M",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-history-20241F",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-history-20241M",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-history-20242F",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-history-20242M",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-history-20251F",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-history-20251M",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-history-20252F",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-history-20252M",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-history-20261F",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-history-20261M",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-info-20252F",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-info-20252M",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-korean-20241F",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-korean-20241M",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-korean-20242F",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-korean-20242M",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-korean-20251F",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-korean-20251M",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-korean-20252F",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-korean-20252M",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-math1-20241F",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-math1-20241M",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-math1-20242F",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-math1-20242M",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-math1-20251F",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-math1-20251M",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-math1-20261F",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-math1-20261M",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-math2-20252F",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-math2-20252M",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-science-20241F",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-science-20241M",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-science-20242F",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-science-20242M",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-science-20251F",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-science-20251M",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-science-20252F",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-science-20252M",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-science-20261F",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-science-20261M",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-social-20241F",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-social-20241M",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-social-20242F",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-social-20242M",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-social-20251F",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-social-20251M",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-social-20252F",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-social-20252M",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-social-20261F",
+      "passed": false
+    },
+    {
+      "id": "distribution/duplicate/EX-social-20261M",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-english-20241F",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-english-20241M",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-english-20242F",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-english-20242M",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-english-20251F",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-english-20251M",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-english-20252F",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-english-20252M",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-english-20261F",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-english-20261M",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-history-20241F",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-history-20241M",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-history-20242F",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-history-20242M",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-history-20251F",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-history-20251M",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-history-20252F",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-history-20252M",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-history-20261F",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-history-20261M",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-info-20252F",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-info-20252M",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-korean-20241F",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-korean-20241M",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-korean-20242F",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-korean-20242M",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-korean-20251F",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-korean-20251M",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-korean-20252F",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-korean-20252M",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-math1-20241F",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-math1-20241M",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-math1-20242F",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-math1-20242M",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-math1-20251F",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-math1-20251M",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-math1-20261F",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-math1-20261M",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-math2-20252F",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-math2-20252M",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-science-20241F",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-science-20241M",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-science-20242F",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-science-20242M",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-science-20251F",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-science-20251M",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-science-20252F",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-science-20252M",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-science-20261F",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-science-20261M",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-social-20241F",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-social-20241M",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-social-20242F",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-social-20242M",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-social-20251F",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-social-20251M",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-social-20252F",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-social-20252M",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-social-20261F",
+      "passed": false
+    },
+    {
+      "id": "distribution/same_count_replace/EX-social-20261M",
+      "passed": false
+    },
+    {
+      "id": "terminal/ruler_stale",
+      "actual": 1,
+      "markers": [
+        "0"
+      ],
+      "passed": false
+    },
+    {
+      "id": "terminal/local_fixture_failed",
+      "actual": 2,
+      "markers": [
+        "0"
+      ],
+      "passed": false
+    },
+    {
+      "id": "terminal/synthetic_clean",
+      "actual": 0,
+      "markers": [
+        "0"
+      ],
+      "passed": true
+    }
+  ],
+  "failed": [
+    "state/partial/EX-english-20241F",
+    "state/partial/EX-english-20241M",
+    "state/partial/EX-english-20242F",
+    "state/partial/EX-english-20242M",
+    "state/partial/EX-english-20251F",
+    "state/partial/EX-english-20251M",
+    "state/partial/EX-english-20252F",
+    "state/partial/EX-english-20252M",
+    "state/partial/EX-english-20261F",
+    "state/partial/EX-english-20261M",
+    "state/partial/EX-history-20241F",
+    "state/partial/EX-history-20241M",
+    "state/partial/EX-history-20242F",
+    "state/partial/EX-history-20242M",
+    "state/partial/EX-history-20251F",
+    "state/partial/EX-history-20251M",
+    "state/partial/EX-history-20252F",
+    "state/partial/EX-history-20252M",
+    "state/partial/EX-history-20261F",
+    "state/partial/EX-history-20261M",
+    "state/partial/EX-info-20252F",
+    "state/partial/EX-info-20252M",
+    "state/partial/EX-korean-20241F",
+    "state/partial/EX-korean-20241M",
+    "state/partial/EX-korean-20242F",
+    "state/partial/EX-korean-20242M",
+    "state/partial/EX-korean-20251F",
+    "state/partial/EX-korean-20251M",
+    "state/partial/EX-korean-20252F",
+    "state/partial/EX-korean-20252M",
+    "state/partial/EX-math1-20241F",
+    "state/partial/EX-math1-20241M",
+    "state/partial/EX-math1-20242F",
+    "state/partial/EX-math1-20242M",
+    "state/partial/EX-math1-20251F",
+    "state/partial/EX-math1-20251M",
+    "state/partial/EX-math1-20261F",
+    "state/partial/EX-math1-20261M",
+    "state/partial/EX-math2-20252F",
+    "state/partial/EX-math2-20252M",
+    "state/partial/EX-science-20241F",
+    "state/partial/EX-science-20241M",
+    "state/partial/EX-science-20242F",
+    "state/partial/EX-science-20242M",
+    "state/partial/EX-science-20251F",
+    "state/partial/EX-science-20251M",
+    "state/partial/EX-science-20252F",
+    "state/partial/EX-science-20252M",
+    "state/partial/EX-science-20261F",
+    "state/partial/EX-science-20261M",
+    "state/partial/EX-social-20241F",
+    "state/partial/EX-social-20241M",
+    "state/partial/EX-social-20242F",
+    "state/partial/EX-social-20242M",
+    "state/partial/EX-social-20251F",
+    "state/partial/EX-social-20251M",
+    "state/partial/EX-social-20252F",
+    "state/partial/EX-social-20252M",
+    "state/partial/EX-social-20261F",
+    "state/partial/EX-social-20261M",
+    "state/unresolved/EX-english-20241F",
+    "state/unresolved/EX-english-20241M",
+    "state/unresolved/EX-english-20242F",
+    "state/unresolved/EX-english-20242M",
+    "state/unresolved/EX-english-20251F",
+    "state/unresolved/EX-english-20251M",
+    "state/unresolved/EX-english-20252F",
+    "state/unresolved/EX-english-20252M",
+    "state/unresolved/EX-english-20261F",
+    "state/unresolved/EX-english-20261M",
+    "state/unresolved/EX-history-20241F",
+    "state/unresolved/EX-history-20241M",
+    "state/unresolved/EX-history-20242F",
+    "state/unresolved/EX-history-20242M",
+    "state/unresolved/EX-history-20251F",
+    "state/unresolved/EX-history-20251M",
+    "state/unresolved/EX-history-20252F",
+    "state/unresolved/EX-history-20252M",
+    "state/unresolved/EX-history-20261F",
+    "state/unresolved/EX-history-20261M",
+    "state/unresolved/EX-info-20252F",
+    "state/unresolved/EX-info-20252M",
+    "state/unresolved/EX-korean-20241F",
+    "state/unresolved/EX-korean-20241M",
+    "state/unresolved/EX-korean-20242F",
+    "state/unresolved/EX-korean-20242M",
+    "state/unresolved/EX-korean-20251F",
+    "state/unresolved/EX-korean-20251M",
+    "state/unresolved/EX-korean-20252F",
+    "state/unresolved/EX-korean-20252M",
+    "state/unresolved/EX-math1-20241F",
+    "state/unresolved/EX-math1-20241M",
+    "state/unresolved/EX-math1-20242F",
+    "state/unresolved/EX-math1-20242M",
+    "state/unresolved/EX-math1-20251F",
+    "state/unresolved/EX-math1-20251M",
+    "state/unresolved/EX-math1-20261F",
+    "state/unresolved/EX-math1-20261M",
+    "state/unresolved/EX-math2-20252F",
+    "state/unresolved/EX-math2-20252M",
+    "state/unresolved/EX-science-20241F",
+    "state/unresolved/EX-science-20241M",
+    "state/unresolved/EX-science-20242F",
+    "state/unresolved/EX-science-20242M",
+    "state/unresolved/EX-science-20251F",
+    "state/unresolved/EX-science-20251M",
+    "state/unresolved/EX-science-20252F",
+    "state/unresolved/EX-science-20252M",
+    "state/unresolved/EX-science-20261F",
+    "state/unresolved/EX-science-20261M",
+    "state/unresolved/EX-social-20241F",
+    "state/unresolved/EX-social-20241M",
+    "state/unresolved/EX-social-20242F",
+    "state/unresolved/EX-social-20242M",
+    "state/unresolved/EX-social-20251F",
+    "state/unresolved/EX-social-20251M",
+    "state/unresolved/EX-social-20252F",
+    "state/unresolved/EX-social-20252M",
+    "state/unresolved/EX-social-20261F",
+    "state/unresolved/EX-social-20261M",
+    "distribution/delete/EX-english-20241F",
+    "distribution/delete/EX-english-20241M",
+    "distribution/delete/EX-english-20242F",
+    "distribution/delete/EX-english-20242M",
+    "distribution/delete/EX-english-20251F",
+    "distribution/delete/EX-english-20251M",
+    "distribution/delete/EX-english-20252F",
+    "distribution/delete/EX-english-20252M",
+    "distribution/delete/EX-english-20261F",
+    "distribution/delete/EX-english-20261M",
+    "distribution/delete/EX-history-20241F",
+    "distribution/delete/EX-history-20241M",
+    "distribution/delete/EX-history-20242F",
+    "distribution/delete/EX-history-20242M",
+    "distribution/delete/EX-history-20251F",
+    "distribution/delete/EX-history-20251M",
+    "distribution/delete/EX-history-20252F",
+    "distribution/delete/EX-history-20252M",
+    "distribution/delete/EX-history-20261F",
+    "distribution/delete/EX-history-20261M",
+    "distribution/delete/EX-info-20252F",
+    "distribution/delete/EX-info-20252M",
+    "distribution/delete/EX-korean-20241F",
+    "distribution/delete/EX-korean-20241M",
+    "distribution/delete/EX-korean-20242F",
+    "distribution/delete/EX-korean-20242M",
+    "distribution/delete/EX-korean-20251F",
+    "distribution/delete/EX-korean-20251M",
+    "distribution/delete/EX-korean-20252F",
+    "distribution/delete/EX-korean-20252M",
+    "distribution/delete/EX-math1-20241F",
+    "distribution/delete/EX-math1-20241M",
+    "distribution/delete/EX-math1-20242F",
+    "distribution/delete/EX-math1-20242M",
+    "distribution/delete/EX-math1-20251F",
+    "distribution/delete/EX-math1-20251M",
+    "distribution/delete/EX-math1-20261F",
+    "distribution/delete/EX-math1-20261M",
+    "distribution/delete/EX-math2-20252F",
+    "distribution/delete/EX-math2-20252M",
+    "distribution/delete/EX-science-20241F",
+    "distribution/delete/EX-science-20241M",
+    "distribution/delete/EX-science-20242F",
+    "distribution/delete/EX-science-20242M",
+    "distribution/delete/EX-science-20251F",
+    "distribution/delete/EX-science-20251M",
+    "distribution/delete/EX-science-20252F",
+    "distribution/delete/EX-science-20252M",
+    "distribution/delete/EX-science-20261F",
+    "distribution/delete/EX-science-20261M",
+    "distribution/delete/EX-social-20241F",
+    "distribution/delete/EX-social-20241M",
+    "distribution/delete/EX-social-20242F",
+    "distribution/delete/EX-social-20242M",
+    "distribution/delete/EX-social-20251F",
+    "distribution/delete/EX-social-20251M",
+    "distribution/delete/EX-social-20252F",
+    "distribution/delete/EX-social-20252M",
+    "distribution/delete/EX-social-20261F",
+    "distribution/delete/EX-social-20261M",
+    "distribution/duplicate/EX-english-20241F",
+    "distribution/duplicate/EX-english-20241M",
+    "distribution/duplicate/EX-english-20242F",
+    "distribution/duplicate/EX-english-20242M",
+    "distribution/duplicate/EX-english-20251F",
+    "distribution/duplicate/EX-english-20251M",
+    "distribution/duplicate/EX-english-20252F",
+    "distribution/duplicate/EX-english-20252M",
+    "distribution/duplicate/EX-english-20261F",
+    "distribution/duplicate/EX-english-20261M",
+    "distribution/duplicate/EX-history-20241F",
+    "distribution/duplicate/EX-history-20241M",
+    "distribution/duplicate/EX-history-20242F",
+    "distribution/duplicate/EX-history-20242M",
+    "distribution/duplicate/EX-history-20251F",
+    "distribution/duplicate/EX-history-20251M",
+    "distribution/duplicate/EX-history-20252F",
+    "distribution/duplicate/EX-history-20252M",
+    "distribution/duplicate/EX-history-20261F",
+    "distribution/duplicate/EX-history-20261M",
+    "distribution/duplicate/EX-info-20252F",
+    "distribution/duplicate/EX-info-20252M",
+    "distribution/duplicate/EX-korean-20241F",
+    "distribution/duplicate/EX-korean-20241M",
+    "distribution/duplicate/EX-korean-20242F",
+    "distribution/duplicate/EX-korean-20242M",
+    "distribution/duplicate/EX-korean-20251F",
+    "distribution/duplicate/EX-korean-20251M",
+    "distribution/duplicate/EX-korean-20252F",
+    "distribution/duplicate/EX-korean-20252M",
+    "distribution/duplicate/EX-math1-20241F",
+    "distribution/duplicate/EX-math1-20241M",
+    "distribution/duplicate/EX-math1-20242F",
+    "distribution/duplicate/EX-math1-20242M",
+    "distribution/duplicate/EX-math1-20251F",
+    "distribution/duplicate/EX-math1-20251M",
+    "distribution/duplicate/EX-math1-20261F",
+    "distribution/duplicate/EX-math1-20261M",
+    "distribution/duplicate/EX-math2-20252F",
+    "distribution/duplicate/EX-math2-20252M",
+    "distribution/duplicate/EX-science-20241F",
+    "distribution/duplicate/EX-science-20241M",
+    "distribution/duplicate/EX-science-20242F",
+    "distribution/duplicate/EX-science-20242M",
+    "distribution/duplicate/EX-science-20251F",
+    "distribution/duplicate/EX-science-20251M",
+    "distribution/duplicate/EX-science-20252F",
+    "distribution/duplicate/EX-science-20252M",
+    "distribution/duplicate/EX-science-20261F",
+    "distribution/duplicate/EX-science-20261M",
+    "distribution/duplicate/EX-social-20241F",
+    "distribution/duplicate/EX-social-20241M",
+    "distribution/duplicate/EX-social-20242F",
+    "distribution/duplicate/EX-social-20242M",
+    "distribution/duplicate/EX-social-20251F",
+    "distribution/duplicate/EX-social-20251M",
+    "distribution/duplicate/EX-social-20252F",
+    "distribution/duplicate/EX-social-20252M",
+    "distribution/duplicate/EX-social-20261F",
+    "distribution/duplicate/EX-social-20261M",
+    "distribution/same_count_replace/EX-english-20241F",
+    "distribution/same_count_replace/EX-english-20241M",
+    "distribution/same_count_replace/EX-english-20242F",
+    "distribution/same_count_replace/EX-english-20242M",
+    "distribution/same_count_replace/EX-english-20251F",
+    "distribution/same_count_replace/EX-english-20251M",
+    "distribution/same_count_replace/EX-english-20252F",
+    "distribution/same_count_replace/EX-english-20252M",
+    "distribution/same_count_replace/EX-english-20261F",
+    "distribution/same_count_replace/EX-english-20261M",
+    "distribution/same_count_replace/EX-history-20241F",
+    "distribution/same_count_replace/EX-history-20241M",
+    "distribution/same_count_replace/EX-history-20242F",
+    "distribution/same_count_replace/EX-history-20242M",
+    "distribution/same_count_replace/EX-history-20251F",
+    "distribution/same_count_replace/EX-history-20251M",
+    "distribution/same_count_replace/EX-history-20252F",
+    "distribution/same_count_replace/EX-history-20252M",
+    "distribution/same_count_replace/EX-history-20261F",
+    "distribution/same_count_replace/EX-history-20261M",
+    "distribution/same_count_replace/EX-info-20252F",
+    "distribution/same_count_replace/EX-info-20252M",
+    "distribution/same_count_replace/EX-korean-20241F",
+    "distribution/same_count_replace/EX-korean-20241M",
+    "distribution/same_count_replace/EX-korean-20242F",
+    "distribution/same_count_replace/EX-korean-20242M",
+    "distribution/same_count_replace/EX-korean-20251F",
+    "distribution/same_count_replace/EX-korean-20251M",
+    "distribution/same_count_replace/EX-korean-20252F",
+    "distribution/same_count_replace/EX-korean-20252M",
+    "distribution/same_count_replace/EX-math1-20241F",
+    "distribution/same_count_replace/EX-math1-20241M",
+    "distribution/same_count_replace/EX-math1-20242F",
+    "distribution/same_count_replace/EX-math1-20242M",
+    "distribution/same_count_replace/EX-math1-20251F",
+    "distribution/same_count_replace/EX-math1-20251M",
+    "distribution/same_count_replace/EX-math1-20261F",
+    "distribution/same_count_replace/EX-math1-20261M",
+    "distribution/same_count_replace/EX-math2-20252F",
+    "distribution/same_count_replace/EX-math2-20252M",
+    "distribution/same_count_replace/EX-science-20241F",
+    "distribution/same_count_replace/EX-science-20241M",
+    "distribution/same_count_replace/EX-science-20242F",
+    "distribution/same_count_replace/EX-science-20242M",
+    "distribution/same_count_replace/EX-science-20251F",
+    "distribution/same_count_replace/EX-science-20251M",
+    "distribution/same_count_replace/EX-science-20252F",
+    "distribution/same_count_replace/EX-science-20252M",
+    "distribution/same_count_replace/EX-science-20261F",
+    "distribution/same_count_replace/EX-science-20261M",
+    "distribution/same_count_replace/EX-social-20241F",
+    "distribution/same_count_replace/EX-social-20241M",
+    "distribution/same_count_replace/EX-social-20242F",
+    "distribution/same_count_replace/EX-social-20242M",
+    "distribution/same_count_replace/EX-social-20251F",
+    "distribution/same_count_replace/EX-social-20251M",
+    "distribution/same_count_replace/EX-social-20252F",
+    "distribution/same_count_replace/EX-social-20252M",
+    "distribution/same_count_replace/EX-social-20261F",
+    "distribution/same_count_replace/EX-social-20261M",
+    "terminal/ruler_stale",
+    "terminal/local_fixture_failed"
+  ],
+  "normal_control": true,
+  "legacy": null,
+  "protected_and_previous_unchanged": true
+}

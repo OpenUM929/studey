@@ -1,0 +1,1211 @@
+{
+  "author": "Codex/OMX main loop",
+  "grade": "proposal",
+  "scope": "source availability only; NOT printed-ID or eligibility audit",
+  "expected": [
+    "EX-english-20241F",
+    "EX-english-20241M",
+    "EX-english-20242F",
+    "EX-english-20242M",
+    "EX-english-20251F",
+    "EX-english-20251M",
+    "EX-english-20252F",
+    "EX-english-20252M",
+    "EX-english-20261F",
+    "EX-english-20261M",
+    "EX-history-20241F",
+    "EX-history-20241M",
+    "EX-history-20242F",
+    "EX-history-20242M",
+    "EX-history-20251F",
+    "EX-history-20251M",
+    "EX-history-20252F",
+    "EX-history-20252M",
+    "EX-history-20261F",
+    "EX-history-20261M",
+    "EX-info-20252F",
+    "EX-info-20252M",
+    "EX-korean-20241F",
+    "EX-korean-20241M",
+    "EX-korean-20242F",
+    "EX-korean-20242M",
+    "EX-korean-20251F",
+    "EX-korean-20251M",
+    "EX-korean-20252F",
+    "EX-korean-20252M",
+    "EX-math1-20241F",
+    "EX-math1-20241M",
+    "EX-math1-20242F",
+    "EX-math1-20242M",
+    "EX-math1-20251F",
+    "EX-math1-20251M",
+    "EX-math1-20261F",
+    "EX-math1-20261M",
+    "EX-math2-20252F",
+    "EX-math2-20252M",
+    "EX-science-20241F",
+    "EX-science-20241M",
+    "EX-science-20242F",
+    "EX-science-20242M",
+    "EX-science-20251F",
+    "EX-science-20251M",
+    "EX-science-20252F",
+    "EX-science-20252M",
+    "EX-science-20261F",
+    "EX-science-20261M",
+    "EX-social-20241F",
+    "EX-social-20241M",
+    "EX-social-20242F",
+    "EX-social-20242M",
+    "EX-social-20251F",
+    "EX-social-20251M",
+    "EX-social-20252F",
+    "EX-social-20252M",
+    "EX-social-20261F",
+    "EX-social-20261M"
+  ],
+  "observed": [
+    "EX-english-20241F",
+    "EX-english-20241M",
+    "EX-english-20242F",
+    "EX-english-20242M",
+    "EX-english-20251F",
+    "EX-english-20251M",
+    "EX-english-20252F",
+    "EX-english-20252M",
+    "EX-english-20261F",
+    "EX-english-20261M",
+    "EX-history-20241F",
+    "EX-history-20241M",
+    "EX-history-20242F",
+    "EX-history-20242M",
+    "EX-history-20251F",
+    "EX-history-20251M",
+    "EX-history-20252F",
+    "EX-history-20252M",
+    "EX-history-20261F",
+    "EX-history-20261M",
+    "EX-info-20252F",
+    "EX-info-20252M",
+    "EX-korean-20241F",
+    "EX-korean-20241M",
+    "EX-korean-20242F",
+    "EX-korean-20242M",
+    "EX-korean-20251F",
+    "EX-korean-20251M",
+    "EX-korean-20252F",
+    "EX-korean-20252M",
+    "EX-math1-20241F",
+    "EX-math1-20241M",
+    "EX-math1-20242F",
+    "EX-math1-20242M",
+    "EX-math1-20251F",
+    "EX-math1-20251M",
+    "EX-math1-20261F",
+    "EX-math1-20261M",
+    "EX-math2-20252F",
+    "EX-math2-20252M",
+    "EX-science-20241F",
+    "EX-science-20241M",
+    "EX-science-20242F",
+    "EX-science-20242M",
+    "EX-science-20251F",
+    "EX-science-20251M",
+    "EX-science-20252F",
+    "EX-science-20252M",
+    "EX-science-20261F",
+    "EX-science-20261M",
+    "EX-social-20241F",
+    "EX-social-20241M",
+    "EX-social-20242F",
+    "EX-social-20242M",
+    "EX-social-20251F",
+    "EX-social-20251M",
+    "EX-social-20252F",
+    "EX-social-20252M",
+    "EX-social-20261F",
+    "EX-social-20261M"
+  ],
+  "duplicates": [],
+  "missing": [],
+  "extra": [],
+  "source_files_hash_checked": 120,
+  "units": [
+    {
+      "id": "EX-english-20241F",
+      "source_path": "origin_data/2024_1학기_1학년_기말/2024_1학기_기말_1학년_영어_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-english-20241M",
+      "source_path": "origin_data/2024_1학기_1학년_중간/2024_1학기_중간_1학년_영어_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-english-20242F",
+      "source_path": "origin_data/2024_2학기_1학년_기말/2024_2학기_기말_1학년_영어_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-english-20242M",
+      "source_path": "origin_data/2024_2학기_1학년_중간/2024_2학기_중간_1학년_영어_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-english-20251F",
+      "source_path": "origin_data/2025_1학기_1학년_기말/2025_1학기_기말_1학년_공통영어1_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-english-20251M",
+      "source_path": "origin_data/2025_1학기_1학년_중간/2025_1학기_중간_1학년_공통영어1_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-english-20252F",
+      "source_path": "origin_data/2025_2학기_1학년_기말/2025_2학기_기말_1학년_공통영어2_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-english-20252M",
+      "source_path": "origin_data/2025_2학기_1학년_중간/2025_2학기_중간_1학년_공통영어2_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-english-20261F",
+      "source_path": "origin_data/EX-english-20261F/1학년1학기_공통영어1_기말.pdf",
+      "source_exists": true,
+      "rendered_pages": [
+        {
+          "path": "corpus/_images/EX-english-20261F/p01.png",
+          "bytes": 983995,
+          "sha256": "82697332773b479dd08b064610423aa4bfe7cb34d77f21a18fad21d2a44289fb"
+        },
+        {
+          "path": "corpus/_images/EX-english-20261F/p02.png",
+          "bytes": 1613425,
+          "sha256": "d4533c9419eba12ac5f889ab188467e855f603e0fe37eea8ba9db2da0c6e0690"
+        },
+        {
+          "path": "corpus/_images/EX-english-20261F/p03.png",
+          "bytes": 2092361,
+          "sha256": "2f05d9d5c815105295a4f3d769f88fd3a4e74380fc8f07661590024c6eef4392"
+        },
+        {
+          "path": "corpus/_images/EX-english-20261F/p04.png",
+          "bytes": 1671870,
+          "sha256": "289408abcb33b796e60a4df9bae8c47d283b9199153d027d2a3e811c0bd71680"
+        },
+        {
+          "path": "corpus/_images/EX-english-20261F/p05.png",
+          "bytes": 1906160,
+          "sha256": "24542470f2ecefc4eabf686728b6fffbec9d1fdbb61e07aa010575e29e42e990"
+        },
+        {
+          "path": "corpus/_images/EX-english-20261F/p06.png",
+          "bytes": 1670604,
+          "sha256": "8d27605355b1ad76edeea6f297c9b259949b7e14e049342faeacfb26fe0f4fc0"
+        },
+        {
+          "path": "corpus/_images/EX-english-20261F/p07.png",
+          "bytes": 1968379,
+          "sha256": "b146e1ef8d5382a501a5a3403c167e0c0c90f49046f998c62e6ebe0b90ede548"
+        },
+        {
+          "path": "corpus/_images/EX-english-20261F/p08.png",
+          "bytes": 1607303,
+          "sha256": "b49b16552730a39f56ad69b285ce950d6cfb6853177e24143f18cdb632f76bb0"
+        },
+        {
+          "path": "corpus/_images/EX-english-20261F/p09.png",
+          "bytes": 1602842,
+          "sha256": "54d78d91e6d0308616100e2436016cffed619fb3814a402f4b288bf1ed15e0a3"
+        },
+        {
+          "path": "corpus/_images/EX-english-20261F/p10.png",
+          "bytes": 1710145,
+          "sha256": "beb6aa7fdff5c6d2d1e94da010b13c3b42befe657b9f0ffd578ba48354f7a2c2"
+        }
+      ],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "not-reviewed"
+    },
+    {
+      "id": "EX-english-20261M",
+      "source_path": "origin_data/EX-english-20261M/1학년1학기_공통영어1_중간.pdf",
+      "source_exists": true,
+      "rendered_pages": [
+        {
+          "path": "corpus/_images/EX-english-20261M/p01.png",
+          "bytes": 1025260,
+          "sha256": "69916bccb3960d2480543653c00884a60944f7ce87937d54b5fe8357456a2793"
+        },
+        {
+          "path": "corpus/_images/EX-english-20261M/p02.png",
+          "bytes": 1581658,
+          "sha256": "9729a881b1ba0975b7c79235b28198601e8571f5c4c1b4688f10ed7dd4989844"
+        },
+        {
+          "path": "corpus/_images/EX-english-20261M/p03.png",
+          "bytes": 1647043,
+          "sha256": "04ac7ed22cea27dd7e3911f47c640fe3220105c18bb8bc67b6342e1aeb3430ef"
+        },
+        {
+          "path": "corpus/_images/EX-english-20261M/p04.png",
+          "bytes": 1735170,
+          "sha256": "b296f3c38d20e6233267c57e6f2ab8c1b668a7f53713a76e32ea328166bbff8f"
+        },
+        {
+          "path": "corpus/_images/EX-english-20261M/p05.png",
+          "bytes": 1618443,
+          "sha256": "2ba0e87b1cfa96e9fbe6d6429e0dbe610955909ccf72a1d831b4551fd73a712b"
+        },
+        {
+          "path": "corpus/_images/EX-english-20261M/p06.png",
+          "bytes": 1684741,
+          "sha256": "8976f827222ff067e34e0304ca22b3adbfe00e9af8b6bfe0214f5aa3c45e95a3"
+        },
+        {
+          "path": "corpus/_images/EX-english-20261M/p07.png",
+          "bytes": 1568495,
+          "sha256": "365fe3f1fd7b0498ca1cf23914b6f66fd177475350780e9c55182154ac751301"
+        },
+        {
+          "path": "corpus/_images/EX-english-20261M/p08.png",
+          "bytes": 1798247,
+          "sha256": "266494fc1dc8eff6b276abf7c3b579e7038ddccdfa33eee77f8f566ad590bf32"
+        },
+        {
+          "path": "corpus/_images/EX-english-20261M/p09.png",
+          "bytes": 1637594,
+          "sha256": "fa93f8641e883aa828bad7be64764fe989b88556eb171498fa7a6e3f5d4f8804"
+        },
+        {
+          "path": "corpus/_images/EX-english-20261M/p10.png",
+          "bytes": 1611691,
+          "sha256": "2470fd41c790c7e7065d167355a982f3c1e7c304c6de48bff36623daf5e9480e"
+        }
+      ],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "not-reviewed"
+    },
+    {
+      "id": "EX-history-20241F",
+      "source_path": "origin_data/2024_1학기_1학년_기말/2024_1학기_기말_1학년_한국사_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-history-20241M",
+      "source_path": "origin_data/2024_1학기_1학년_중간/2024_1학기_중간_1학년_한국사_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-history-20242F",
+      "source_path": "origin_data/2024_2학기_1학년_기말/2024_2학기_기말_1학년_한국사_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-history-20242M",
+      "source_path": "origin_data/2024_2학기_1학년_중간/2024_2학기_중간_1학년_한국사_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-history-20251F",
+      "source_path": "origin_data/2025_1학기_1학년_기말/2025_1학기_기말_1학년_한국사1_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-history-20251M",
+      "source_path": "origin_data/2025_1학기_1학년_중간/2025_1학기_중간_1학년_한국사1_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-history-20252F",
+      "source_path": "origin_data/2025_2학기_1학년_기말/2025_2학기_기말_1학년_한국사2_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-history-20252M",
+      "source_path": "origin_data/2025_2학기_1학년_중간/2025_2학기_중간_1학년_한국사2_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-history-20261F",
+      "source_path": "origin_data/EX-history-20261F/1학년1학기_한국사1_기말.pdf",
+      "source_exists": true,
+      "rendered_pages": [
+        {
+          "path": "corpus/_images/EX-history-20261F/p01.png",
+          "bytes": 1008892,
+          "sha256": "1371b20e2df9ffc8a3511d17e390a46fde184e27fc08fba6b36950bd97fc3be2"
+        },
+        {
+          "path": "corpus/_images/EX-history-20261F/p02.png",
+          "bytes": 1412438,
+          "sha256": "6fd6e199072dc6e0ef377a71a0ed3e66b6e61a092b65321bac699f8cf673a1d3"
+        },
+        {
+          "path": "corpus/_images/EX-history-20261F/p03.png",
+          "bytes": 1384534,
+          "sha256": "d7475f4b43d7e0a8b15ed20393693494a3cdca0af4043d02d670c46750130cab"
+        },
+        {
+          "path": "corpus/_images/EX-history-20261F/p04.png",
+          "bytes": 1476634,
+          "sha256": "079f13d378ecfbb4a34ecdcfed3b8984971ef0d910fbd0ec5e8373c39a0c5c39"
+        },
+        {
+          "path": "corpus/_images/EX-history-20261F/p05.png",
+          "bytes": 1217197,
+          "sha256": "9fea702acd3f6121b21935a48ba5d955bff535473dce739e6f0a593d03b0fdb1"
+        },
+        {
+          "path": "corpus/_images/EX-history-20261F/p06.png",
+          "bytes": 1343347,
+          "sha256": "de0f305a0107f1a5ea17355bc24720195a7988132a4e3318a2df66f8551ffffe"
+        },
+        {
+          "path": "corpus/_images/EX-history-20261F/p07.png",
+          "bytes": 902025,
+          "sha256": "85ea6c5238a9964ac93b23dbbe0a141a8137c1ef66ef3b49afb611072023c485"
+        },
+        {
+          "path": "corpus/_images/EX-history-20261F/p08.png",
+          "bytes": 1279904,
+          "sha256": "eab9b989a378735413a4e47b20955dcadfbb8883d66e68e383b1ea4f4dd6781d"
+        }
+      ],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "not-reviewed"
+    },
+    {
+      "id": "EX-history-20261M",
+      "source_path": "origin_data/EX-history-20261M/1학년1학기_한국사1_중간.pdf",
+      "source_exists": true,
+      "rendered_pages": [
+        {
+          "path": "corpus/_images/EX-history-20261M/p01.png",
+          "bytes": 1383338,
+          "sha256": "9f9df5d1de1432ba00a03e9a8a7bf2e913f8467f3b28825acf0dcc74acfe4a95"
+        },
+        {
+          "path": "corpus/_images/EX-history-20261M/p02.png",
+          "bytes": 961526,
+          "sha256": "1c859889be8501d5f6d587b11980e42ba00b74d8894b723803c2ea93f5193e3e"
+        },
+        {
+          "path": "corpus/_images/EX-history-20261M/p03.png",
+          "bytes": 1566772,
+          "sha256": "163673a26e2d7e88e77a8532c038573ec766346bf764202f77c9990be7f6fd7d"
+        },
+        {
+          "path": "corpus/_images/EX-history-20261M/p04.png",
+          "bytes": 1745342,
+          "sha256": "a0fce0061602b0d307a05f1562fd7110534d34c794f7bf47b6353df90203fba4"
+        },
+        {
+          "path": "corpus/_images/EX-history-20261M/p05.png",
+          "bytes": 1402452,
+          "sha256": "12edbb1972b3f75f9a615da6e11e1f2154270597d26097c9ae88f396e583aea4"
+        },
+        {
+          "path": "corpus/_images/EX-history-20261M/p06.png",
+          "bytes": 1607162,
+          "sha256": "97af822e8b035f99ddf1abb912b5c8e10b62b778f21fa924de118ef13faedd91"
+        },
+        {
+          "path": "corpus/_images/EX-history-20261M/p07.png",
+          "bytes": 1390686,
+          "sha256": "c43b89b414246136f52e1de90685313528390c9ee8ad549f4e41d4a5dc248d49"
+        },
+        {
+          "path": "corpus/_images/EX-history-20261M/p08.png",
+          "bytes": 980851,
+          "sha256": "faece30e086bb318a11ada20259e427a8cdf2e94f8ee855b236baa528e06a9c9"
+        }
+      ],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "not-reviewed"
+    },
+    {
+      "id": "EX-info-20252F",
+      "source_path": "origin_data/2025_2학기_1학년_기말/2025_2학기_기말_1학년_정보_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-info-20252M",
+      "source_path": "origin_data/2025_2학기_1학년_중간/2025_2학기_중간_1학년_정보_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-korean-20241F",
+      "source_path": "origin_data/2024_1학기_1학년_기말/2024_1학기_기말_1학년_국어_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-korean-20241M",
+      "source_path": "origin_data/2024_1학기_1학년_중간/2024_1학기_중간_1학년_국어_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-korean-20242F",
+      "source_path": null,
+      "source_exists": false,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-korean-20242M",
+      "source_path": "origin_data/2024_2학기_1학년_중간/2024_2학기_중간_1학년_국어_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-korean-20251F",
+      "source_path": "origin_data/2025_1학기_1학년_기말/2025_1학기_기말_1학년_공통국어1_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-korean-20251M",
+      "source_path": "origin_data/2025_1학기_1학년_중간/2025_1학기_중간_1학년_공통국어1_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-korean-20252F",
+      "source_path": "origin_data/2025_2학기_1학년_기말/2025_2학기_기말_1학년_공통국어2_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-korean-20252M",
+      "source_path": "origin_data/2025_2학기_1학년_중간/2025_2학기_중간_1학년_공통국어2_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-math1-20241F",
+      "source_path": "origin_data/2024_1학기_1학년_기말/2024_1학기_기말_1학년_수학_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-math1-20241M",
+      "source_path": "origin_data/2024_1학기_1학년_중간/2024_1학기_중간_1학년_수학_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-math1-20242F",
+      "source_path": "origin_data/2024_2학기_1학년_기말/2024_2학기_기말_1학년_수학_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-math1-20242M",
+      "source_path": null,
+      "source_exists": false,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-math1-20251F",
+      "source_path": "origin_data/2025_1학기_1학년_기말/2025_1학기_기말_1학년_공통수학1_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-math1-20251M",
+      "source_path": "origin_data/2025_1학기_1학년_중간/2025_1학기_중간_1학년_공통수학1_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-math1-20261F",
+      "source_path": "origin_data/EX-math1-20261F/1학년1학기_공통수학1_기말.pdf",
+      "source_exists": true,
+      "rendered_pages": [
+        {
+          "path": "corpus/_images/EX-math1-20261F/p01.png",
+          "bytes": 973701,
+          "sha256": "d9756e2f885fa3971cd78377c95f29e17f60a48c4430cbcec16ef0a1a859d177"
+        },
+        {
+          "path": "corpus/_images/EX-math1-20261F/p02.png",
+          "bytes": 872380,
+          "sha256": "707384ed8f8bec202944167827413f0f7caffe0e12decf7f24285f9464daf633"
+        },
+        {
+          "path": "corpus/_images/EX-math1-20261F/p03.png",
+          "bytes": 771474,
+          "sha256": "def8f53bcf6873d2069d2fa3dd116b0de73cb6db27c7f7b46ef753a4a98db00a"
+        },
+        {
+          "path": "corpus/_images/EX-math1-20261F/p04.png",
+          "bytes": 749685,
+          "sha256": "88e58b949892351722a91d1993cf3ce769d865c3576e48e969ee641e12781913"
+        },
+        {
+          "path": "corpus/_images/EX-math1-20261F/p05.png",
+          "bytes": 1052762,
+          "sha256": "20a461eb4841d7eaffe636c07fff4bd1aa0af009d690d774b54a506dc4cff787"
+        },
+        {
+          "path": "corpus/_images/EX-math1-20261F/p06.png",
+          "bytes": 703177,
+          "sha256": "aab1bb89df8fbac0e0b05ecc0734e40b7b9602bf965660467b2807cbbbdc8471"
+        },
+        {
+          "path": "corpus/_images/EX-math1-20261F/p07.png",
+          "bytes": 816672,
+          "sha256": "4975ecf7c8ae186fb409decce2a4474b62067257cbae9c6b9a31fbf48bc8e05d"
+        },
+        {
+          "path": "corpus/_images/EX-math1-20261F/p08.png",
+          "bytes": 766457,
+          "sha256": "ed01ccf5d7d626631884d496379f1b92cb29c2110e84f3c5b9db9950686dac8c"
+        }
+      ],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "not-reviewed"
+    },
+    {
+      "id": "EX-math1-20261M",
+      "source_path": "origin_data/EX-math1-20261M/1학년1학기_공통수학1_중간.pdf",
+      "source_exists": true,
+      "rendered_pages": [
+        {
+          "path": "corpus/_images/EX-math1-20261M/p01.png",
+          "bytes": 1048135,
+          "sha256": "493e52f0c8985c8f344a021a74a7f68e1e5f127dc7d5321ddfff31c6dfb6a406"
+        },
+        {
+          "path": "corpus/_images/EX-math1-20261M/p02.png",
+          "bytes": 1147637,
+          "sha256": "21452092f0ed0956ca36d155a5626bcba8bbe2c2ea62998891eb689890e2ef0a"
+        },
+        {
+          "path": "corpus/_images/EX-math1-20261M/p03.png",
+          "bytes": 1103683,
+          "sha256": "5a69af22d8fd879c782cbe6bdff4958f0b57d2f191a7d3424388a23d4f199433"
+        },
+        {
+          "path": "corpus/_images/EX-math1-20261M/p04.png",
+          "bytes": 1136131,
+          "sha256": "da827d690caf1b2ba8ac884b35e2feeffd5c6f7a3cea9bc553dde3c437d1ec6d"
+        },
+        {
+          "path": "corpus/_images/EX-math1-20261M/p05.png",
+          "bytes": 993902,
+          "sha256": "3adcb09df5f7a7b4d194f24224ffd91e3d94c8336a39b264f386549d5551458e"
+        },
+        {
+          "path": "corpus/_images/EX-math1-20261M/p06.png",
+          "bytes": 978484,
+          "sha256": "18cdfd1132bee78e88e537086e0a339e9594f68db9ca7e3d5bec7fc96ed28944"
+        },
+        {
+          "path": "corpus/_images/EX-math1-20261M/p07.png",
+          "bytes": 799872,
+          "sha256": "243b9ed9d4ed67dd082a76259d9e93c8561a7c9d8ee219c838f4bd4c8fd47e36"
+        },
+        {
+          "path": "corpus/_images/EX-math1-20261M/p08.png",
+          "bytes": 735903,
+          "sha256": "21c02019e3e49cbbbe012d876fe8894b77a0498184038ac4b0a7712add41daf6"
+        }
+      ],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "not-reviewed"
+    },
+    {
+      "id": "EX-math2-20252F",
+      "source_path": null,
+      "source_exists": false,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-math2-20252M",
+      "source_path": null,
+      "source_exists": false,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-science-20241F",
+      "source_path": "origin_data/2024_1학기_1학년_기말/2024_1학기_기말_1학년_통합과학_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-science-20241M",
+      "source_path": "origin_data/2024_1학기_1학년_중간/2024_1학기_중간_1학년_통합과학_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-science-20242F",
+      "source_path": "origin_data/2024_2학기_1학년_기말/2024_2학기_기말_1학년_통합과학_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-science-20242M",
+      "source_path": null,
+      "source_exists": false,
+      "rendered_pages": [
+        {
+          "path": "corpus/_images/EX-science-20242M/p01.png",
+          "bytes": 167666,
+          "sha256": "835949c05f9a1a524eed6c3f9fb5f7594c3ad2d2521c401bf7f26d6f72c074cb"
+        },
+        {
+          "path": "corpus/_images/EX-science-20242M/p02.png",
+          "bytes": 436476,
+          "sha256": "3922dd2040e42f92c73cf16612bd1b1cf58bfb7fc34c7c4cbf4747ce704662ae"
+        },
+        {
+          "path": "corpus/_images/EX-science-20242M/p03.png",
+          "bytes": 467483,
+          "sha256": "e4b94105d6ad41c4eec2507b0809b8037648336fa7d2ecaabf5cc76c8a75d47e"
+        },
+        {
+          "path": "corpus/_images/EX-science-20242M/p04.png",
+          "bytes": 417678,
+          "sha256": "a86557489aa129d84f9697a54f06405f5f4f445b68897fa0c3104492e8982ac9"
+        },
+        {
+          "path": "corpus/_images/EX-science-20242M/p05.png",
+          "bytes": 893910,
+          "sha256": "a377bd116453a8754b0187ebea86ee69d6c0500900d99ae0174c40258b12bc28"
+        },
+        {
+          "path": "corpus/_images/EX-science-20242M/p06.png",
+          "bytes": 1046416,
+          "sha256": "1d361439469c65773f04deff359c118f04af272cce18b8e241857427ab7a3668"
+        },
+        {
+          "path": "corpus/_images/EX-science-20242M/p07.png",
+          "bytes": 639078,
+          "sha256": "8d76daa0fcdc15ee0151f96ae6138180bf5486e818a9bdd17df0cbe50c806e24"
+        }
+      ],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "not-reviewed"
+    },
+    {
+      "id": "EX-science-20251F",
+      "source_path": "origin_data/2025_1학기_1학년_기말/2025_1학기_기말_1학년_통합과학1_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-science-20251M",
+      "source_path": "origin_data/2025_1학기_1학년_중간/2025_1학기_중간_1학년_통합과학1_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-science-20252F",
+      "source_path": "origin_data/2025_2학기_1학년_기말/2025_2학기_기말_1학년_통합과학2_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-science-20252M",
+      "source_path": "origin_data/2025_2학기_1학년_중간/2025_2학기_중간_1학년_통합과학2_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-science-20261F",
+      "source_path": "origin_data/EX-science-20261F/1학년1학기_통합과학1_기말.pdf",
+      "source_exists": true,
+      "rendered_pages": [
+        {
+          "path": "corpus/_images/EX-science-20261F/p01.png",
+          "bytes": 959150,
+          "sha256": "9e64628e4108931da32fa3aea5af8a5b6732b2cd9d2a4a0f3194f8a53bfa575a"
+        },
+        {
+          "path": "corpus/_images/EX-science-20261F/p02.png",
+          "bytes": 1445604,
+          "sha256": "e7fe72547da35cb3d416b29aef7d709fb96c76f562fd2bb4a0f1f42881493293"
+        },
+        {
+          "path": "corpus/_images/EX-science-20261F/p03.png",
+          "bytes": 1836775,
+          "sha256": "42704a5205509dad2dbb46b5fb4fa5a49bdd214827e289ba817e189dd16ccb23"
+        },
+        {
+          "path": "corpus/_images/EX-science-20261F/p04.png",
+          "bytes": 1278035,
+          "sha256": "2e3d888fcd579bef7f3259b368feaa4c0e2d25576bfb20385e74353d5a9fa79f"
+        },
+        {
+          "path": "corpus/_images/EX-science-20261F/p05.png",
+          "bytes": 1904264,
+          "sha256": "1f2e9d942af28a3a622eee88055036af87869cc054907339829b255eb21e3945"
+        },
+        {
+          "path": "corpus/_images/EX-science-20261F/p06.png",
+          "bytes": 1277417,
+          "sha256": "afb3e1c48c7dda832c30084be7778b9b9ced6e25ba017ba0928c4ae8c890fd1e"
+        },
+        {
+          "path": "corpus/_images/EX-science-20261F/p07.png",
+          "bytes": 1506086,
+          "sha256": "4e5d2020e827bee260eb381a65e6dd336a2122b2ee3b6d495914317739b041df"
+        },
+        {
+          "path": "corpus/_images/EX-science-20261F/p08.png",
+          "bytes": 160584,
+          "sha256": "aff1d0031454c79555153d31138a5195abf7822872ff74ccc4bd1455f1dbc988"
+        }
+      ],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "not-reviewed"
+    },
+    {
+      "id": "EX-science-20261M",
+      "source_path": "origin_data/EX-science-20261M/1학년1학기_통합과학1_중간.pdf",
+      "source_exists": true,
+      "rendered_pages": [
+        {
+          "path": "corpus/_images/EX-science-20261M/p01.png",
+          "bytes": 1014690,
+          "sha256": "a4fc2c132c8c8ef7704730014bb3cd010defbd6d43ab2ea0bdf501f3a62efbf4"
+        },
+        {
+          "path": "corpus/_images/EX-science-20261M/p02.png",
+          "bytes": 1386528,
+          "sha256": "73e49b6ba0c40c60688408ac33a8b130de19cd359eaee310c7ba80937a4b4d45"
+        },
+        {
+          "path": "corpus/_images/EX-science-20261M/p03.png",
+          "bytes": 1522382,
+          "sha256": "736f8a0928b8a9b11d12eb94a11db34995ba673f895d3321c03da60314d3157f"
+        },
+        {
+          "path": "corpus/_images/EX-science-20261M/p04.png",
+          "bytes": 1441558,
+          "sha256": "f3e7047e0891a3a318a345cdbd21214ccd22c4f835489c8e6cf34e7185db40c3"
+        },
+        {
+          "path": "corpus/_images/EX-science-20261M/p05.png",
+          "bytes": 1318774,
+          "sha256": "260439533752f657fdb53b0ba2ed81dd6b09a0327940517be21242ed0a3a243e"
+        },
+        {
+          "path": "corpus/_images/EX-science-20261M/p06.png",
+          "bytes": 1265910,
+          "sha256": "3c6ed711786524776688c41318686d2cfb6707a6ec420976c67cf50f0d6ad5ed"
+        },
+        {
+          "path": "corpus/_images/EX-science-20261M/p07.png",
+          "bytes": 1366722,
+          "sha256": "6da55b5bce5d9515d85eb889c62c9ff76bfeed50f8bd701eec2b173072d8e0da"
+        },
+        {
+          "path": "corpus/_images/EX-science-20261M/p08.png",
+          "bytes": 1496827,
+          "sha256": "b2c635547c8054d6dec0eba78f5e4348ce290b3bcc9c5fb1407a2f04637f2c28"
+        }
+      ],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "not-reviewed"
+    },
+    {
+      "id": "EX-social-20241F",
+      "source_path": "origin_data/2024_1학기_1학년_기말/2024_1학기_기말_1학년_통합사회_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-social-20241M",
+      "source_path": "origin_data/2024_1학기_1학년_중간/2024_1학기_중간_1학년_통합사회_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-social-20242F",
+      "source_path": "origin_data/2024_2학기_1학년_기말/2024_2학기_기말_1학년_통합사회_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-social-20242M",
+      "source_path": "origin_data/2024_2학기_1학년_중간/2024_2학기_중간_1학년_통합사회_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-social-20251F",
+      "source_path": "origin_data/2025_1학기_1학년_기말/2025_1학기_기말_1학년_통합사회1_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-social-20251M",
+      "source_path": "origin_data/2025_1학기_1학년_중간/2025_1학기_중간_1학년_통합사회1_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-social-20252F",
+      "source_path": "origin_data/2025_2학기_1학년_기말/2025_2학기_기말_1학년_통합사회2_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-social-20252M",
+      "source_path": "origin_data/2025_2학기_1학년_중간/2025_2학기_중간_1학년_통합사회2_고사원안.hwp",
+      "source_exists": true,
+      "rendered_pages": [],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "blocked-no-rendered-pages"
+    },
+    {
+      "id": "EX-social-20261F",
+      "source_path": "origin_data/EX-social-20261F/1학년1학기_통합사회1_기말.pdf",
+      "source_exists": true,
+      "rendered_pages": [
+        {
+          "path": "corpus/_images/EX-social-20261F/p01.png",
+          "bytes": 889725,
+          "sha256": "9b8698e350fa006019ce6fc045eb5d368410a8ba10396dffa9f7134380a1f907"
+        },
+        {
+          "path": "corpus/_images/EX-social-20261F/p02.png",
+          "bytes": 1695484,
+          "sha256": "3bfdbf601430376004791e24f0d523b3f8c421b6b2b186ecb6d0c483f210495e"
+        },
+        {
+          "path": "corpus/_images/EX-social-20261F/p03.png",
+          "bytes": 1594648,
+          "sha256": "02655146e0b71e003395474d95c65a0c8e3d2902b97981d451598522679c96fc"
+        },
+        {
+          "path": "corpus/_images/EX-social-20261F/p04.png",
+          "bytes": 1744296,
+          "sha256": "de821f854beb33fb188a41c7dde709667daa856f49468e1031b52fd871775f11"
+        },
+        {
+          "path": "corpus/_images/EX-social-20261F/p05.png",
+          "bytes": 1909924,
+          "sha256": "8757a2f288fbca60783e4e08d7e8c401a929dedeb8cdae5552ee72308fcadb16"
+        },
+        {
+          "path": "corpus/_images/EX-social-20261F/p06.png",
+          "bytes": 1927840,
+          "sha256": "058edbdee3fdd831e68a32105088ec4fc2884550c83ed7d6ad90311ffbed5268"
+        },
+        {
+          "path": "corpus/_images/EX-social-20261F/p07.png",
+          "bytes": 1934364,
+          "sha256": "d609f13becb786cd9a9cf6801a3c9d54e4fb4d768620ea80e4596811d682ac0a"
+        },
+        {
+          "path": "corpus/_images/EX-social-20261F/p08.png",
+          "bytes": 1689630,
+          "sha256": "5946c2818f44e91d1fe6bfe081c424851b5ac49fd3209d23847d1db6ecdf88bf"
+        },
+        {
+          "path": "corpus/_images/EX-social-20261F/p09.png",
+          "bytes": 1230637,
+          "sha256": "87d04194ecb446dd90a8754c9e8f866e0f4a1f3b60ff5b91db488800f2c7986d"
+        },
+        {
+          "path": "corpus/_images/EX-social-20261F/p10.png",
+          "bytes": 303059,
+          "sha256": "63e9b876f2129bad3e9dca9f9ad40928310c713ac4d56c5ef75c4c7d8ec81ef5"
+        }
+      ],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "not-reviewed"
+    },
+    {
+      "id": "EX-social-20261M",
+      "source_path": "origin_data/EX-social-20261M/1학년1학기_통합사회1_중간.pdf",
+      "source_exists": true,
+      "rendered_pages": [
+        {
+          "path": "corpus/_images/EX-social-20261M/p01.png",
+          "bytes": 459554,
+          "sha256": "ccaacc30525335abc2c1c75a9d6fdcd28a882450b548dee4d1b861ad6f3e16ca"
+        },
+        {
+          "path": "corpus/_images/EX-social-20261M/p02.png",
+          "bytes": 868453,
+          "sha256": "ee4394807768fa1d1b5b6febab492eda0cc69d3e54190e2345c8f701e3b94a08"
+        },
+        {
+          "path": "corpus/_images/EX-social-20261M/p03.png",
+          "bytes": 797450,
+          "sha256": "8a23e583e0904cdca4d8762ac7b188bb449c8d3630a80aed8d0e57d5a73aaee5"
+        },
+        {
+          "path": "corpus/_images/EX-social-20261M/p04.png",
+          "bytes": 838773,
+          "sha256": "90f04e00d7a427282c8aeb2c48f763a12523982990ffc91734170feb463ce3db"
+        },
+        {
+          "path": "corpus/_images/EX-social-20261M/p05.png",
+          "bytes": 754671,
+          "sha256": "9a5154dd4d0912e0e9249d6698c96e6a38eeb23e742545489f659c71c5ed0820"
+        },
+        {
+          "path": "corpus/_images/EX-social-20261M/p06.png",
+          "bytes": 869372,
+          "sha256": "989afc734a0fecdf8fdd4df80f3c4d1c6aa9c50bceb4982e4d7f05c002ed3115"
+        },
+        {
+          "path": "corpus/_images/EX-social-20261M/p07.png",
+          "bytes": 953759,
+          "sha256": "77395699b57f533574742c92148795ffbc8fc541d53aa768a9fb759ecdc9087a"
+        },
+        {
+          "path": "corpus/_images/EX-social-20261M/p08.png",
+          "bytes": 916752,
+          "sha256": "e6bc46ac9652d896cf8292c2252ad969e08bc8eefcfab74cd7634652860f861d"
+        }
+      ],
+      "verify_log_exists": true,
+      "printed_id_coverage": null,
+      "eligibility": null,
+      "status": "not-reviewed"
+    }
+  ]
+}

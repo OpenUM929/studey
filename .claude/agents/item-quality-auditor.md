@@ -22,6 +22,8 @@ You ask "**is this problem worth giving, and is its answer key properly built?**
 
 ## Absolute rules
 
+> **260912 문항 생성·배포 절차 우선 적용:** `docs/ITEM_DELIVERY_WORKFLOW.md`. 기존 유형 기반 출제는 세트 전체 2~3라운드로 묶고, 체크포인트를 별도 승인·미세 발주 단위로 삼지 않는다. 이 문서의 일반 라운드/분할 권장보다 해당 절차가 우선한다. 내용 검증·독립성·보호 자·append-only는 유지한다.
+
 - **You never edit anything you did not write** (CLAUDE.md 원칙 8). No fixes to sets,
   catalogs, logs, or another actor's WIP. Findings become **checkbox 승인 요청**
   (`- [ ]`) that the authoring owner applies.
@@ -40,6 +42,10 @@ You ask "**is this problem worth giving, and is its answer key properly built?**
   is not evidence; mark it `⚠️미확인` or do not write it.
 - **Fail-closed** (원칙 11). If you cannot run a check, the verdict is `▲ blocked`,
   never "통과".
+
+## 최단 풀이와 합격 상태 구분 — 260912
+
+`docs/ITEM_DELIVERY_WORKFLOW.md` §2-b를 적용한다. 작성자의 긴 해설에 기대지 말고 학생이 쓸 수 있는 **최단 풀이·우회 경로**로 실제 난도를 판단한다. 설명/증명/반례라는 발문 형식, 조건 수, 실행량은 그 자체로 고난도 증거가 아니다. 기존 전수 표 안에서 정답·해설·채점·신규성·난도 각각을 판정하고, 전 문항 최고 요구의 미달/미확인을 평균으로 상쇄하지 않는다. 출력 일치나 감사 수행 완료를 품질 합격·배포 승인으로 보고하지 않는다. 잠정 결함의 정정은 최종 결과에 반영하고, 변경된 파일을 과거 버전 결함과 혼동하지 않는다. 전체 지적은 한 수정 목록으로 반환하며 별도 미세 승인 루프를 만들지 않는다.
 
 ## Inputs you must load
 

@@ -1,0 +1,1227 @@
+{
+  "author": "Codex/OMX",
+  "model": "gpt-6-astra",
+  "effort": "medium",
+  "host_session": "01a095f9-6ee7-7eb2-82e1-7e419a709b36",
+  "host_turn": "01a09981-e220-7e32-9dff-cba26f13cd13",
+  "round": 2,
+  "scope": "partial",
+  "expected": [
+    "A/1",
+    "A/2",
+    "A/3",
+    "A/4",
+    "A/5",
+    "A/6",
+    "A/7",
+    "A/8",
+    "A/9",
+    "A/10",
+    "A/11",
+    "A/12",
+    "A/13",
+    "A/14",
+    "A/15",
+    "A/16",
+    "A/17",
+    "A/18",
+    "A/19",
+    "A/20",
+    "A/21",
+    "A/22",
+    "A/23",
+    "A/24",
+    "A/25",
+    "B/1",
+    "B/2",
+    "B/3",
+    "B/4",
+    "B/5",
+    "B/6",
+    "B/7",
+    "B/8",
+    "B/9",
+    "B/10",
+    "B/11",
+    "B/12",
+    "B/13",
+    "B/14",
+    "B/15",
+    "B/16",
+    "B/17",
+    "B/18",
+    "B/19",
+    "B/20",
+    "B/21",
+    "B/22",
+    "B/23",
+    "B/24",
+    "B/25"
+  ],
+  "observed": [
+    "A/20",
+    "A/22",
+    "B/7",
+    "B/11",
+    "B/13",
+    "B/18",
+    "A/1",
+    "A/2",
+    "A/3",
+    "A/4",
+    "A/5",
+    "A/6",
+    "A/7",
+    "A/8",
+    "A/9",
+    "A/10",
+    "A/11",
+    "A/12",
+    "A/13",
+    "A/14",
+    "A/15",
+    "A/16",
+    "A/17",
+    "A/18",
+    "A/19"
+  ],
+  "missing": [
+    "A/21",
+    "A/23",
+    "A/24",
+    "A/25",
+    "B/1",
+    "B/2",
+    "B/3",
+    "B/4",
+    "B/5",
+    "B/6",
+    "B/8",
+    "B/9",
+    "B/10",
+    "B/12",
+    "B/14",
+    "B/15",
+    "B/16",
+    "B/17",
+    "B/19",
+    "B/20",
+    "B/21",
+    "B/22",
+    "B/23",
+    "B/24",
+    "B/25"
+  ],
+  "extra": [],
+  "duplicates": [],
+  "author_check_warnings": [],
+  "author_checks": {
+    "A/20": {
+      "tested_inputs": 495,
+      "best": 90,
+      "winners": [
+        [
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0
+        ]
+      ],
+      "analytical_proof": "gap contributions, bounded integer equality, 3 cases",
+      "independent": false,
+      "highest_difficulty_certified": false
+    },
+    "A/22": {
+      "tested_inputs": 210,
+      "answers": [
+        "ABAACCBA"
+      ],
+      "without_top": [
+        "ABAACCBA",
+        "ABCCAABA",
+        "ACAABBCA",
+        "ACBBAACA"
+      ]
+    },
+    "B/7": {
+      "tested_inputs": 3480,
+      "answers": [
+        [
+          28,
+          [
+            "E",
+            "B",
+            "C",
+            "A",
+            "D"
+          ],
+          5
+        ],
+        [
+          28,
+          [
+            "E",
+            "B",
+            "C",
+            "D",
+            "A"
+          ],
+          5
+        ],
+        [
+          28,
+          [
+            "B",
+            "E",
+            "C",
+            "A",
+            "D"
+          ],
+          5
+        ],
+        [
+          28,
+          [
+            "B",
+            "E",
+            "C",
+            "D",
+            "A"
+          ],
+          5
+        ]
+      ]
+    },
+    "B/11": {
+      "tested_parameters": 100,
+      "tested_assignments": 1600,
+      "failures": [
+        [
+          3,
+          10,
+          9,
+          1
+        ],
+        [
+          4,
+          11,
+          9,
+          2
+        ],
+        [
+          5,
+          12,
+          9,
+          3
+        ]
+      ],
+      "general_proof": "answer document, not finite-test inference"
+    },
+    "B/13": {
+      "first_triples_tested": 216,
+      "answers": [
+        [
+          2,
+          5,
+          1,
+          4,
+          3,
+          6,
+          2,
+          4
+        ]
+      ],
+      "missing_checksum_candidates": [
+        [
+          [
+            1,
+            6,
+            1,
+            3,
+            4,
+            6,
+            1,
+            5
+          ],
+          1
+        ],
+        [
+          [
+            2,
+            5,
+            1,
+            4,
+            3,
+            6,
+            2,
+            4
+          ],
+          3
+        ],
+        [
+          [
+            3,
+            4,
+            1,
+            5,
+            2,
+            6,
+            3,
+            3
+          ],
+          0
+        ],
+        [
+          [
+            4,
+            3,
+            1,
+            6,
+            1,
+            6,
+            4,
+            2
+          ],
+          2
+        ]
+      ],
+      "enumeration_completeness": "first triple fixes every next cell by its window sum"
+    },
+    "B/18": {
+      "tested_inputs": 252,
+      "answers": [
+        [
+          2,
+          2,
+          2,
+          2,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    "A/1": {
+      "tested_integers": 900000,
+      "answers": [
+        156798,
+        193428,
+        523461
+      ],
+      "redundant_guard": "distinct digits removes no additional solution for this target; not counted as independent difficulty"
+    },
+    "A/2": {
+      "tested_inputs": 12870,
+      "answer": 0,
+      "termination_histogram": {
+        "9": 256,
+        "15": 6400,
+        "14": 3200,
+        "12": 832,
+        "13": 1536,
+        "11": 384,
+        "10": 192,
+        "5": 16,
+        "7": 32,
+        "6": 16,
+        "3": 4,
+        "2": 2
+      },
+      "removed_count_constraint_witness_steps": 8
+    },
+    "A/3": {
+      "tested_orders": 720,
+      "answer": 302,
+      "recurrence_rows": [
+        [
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          4,
+          1
+        ],
+        [
+          1,
+          11,
+          11,
+          1
+        ],
+        [
+          1,
+          26,
+          66,
+          26,
+          1
+        ],
+        [
+          1,
+          57,
+          302,
+          302,
+          57,
+          1
+        ]
+      ]
+    },
+    "A/4": {
+      "reachable_states": 14328,
+      "terminal_answers": [
+        "B",
+        "BAB",
+        "BABAB",
+        "BABABAB",
+        "BABABABAB",
+        "BABABABABAB",
+        "BABABABABABAB"
+      ],
+      "all_candidate_constructions": [
+        {
+          "t": 0,
+          "choices": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "output": [
+            "B"
+          ]
+        },
+        {
+          "t": 1,
+          "choices": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            2
+          ],
+          "output": [
+            "B",
+            "A",
+            "B"
+          ]
+        },
+        {
+          "t": 2,
+          "choices": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            2,
+            4
+          ],
+          "output": [
+            "B",
+            "A",
+            "B",
+            "A",
+            "B"
+          ]
+        },
+        {
+          "t": 3,
+          "choices": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            2,
+            4,
+            6
+          ],
+          "output": [
+            "B",
+            "A",
+            "B",
+            "A",
+            "B",
+            "A",
+            "B"
+          ]
+        },
+        {
+          "t": 4,
+          "choices": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            2,
+            4,
+            6,
+            8
+          ],
+          "output": [
+            "B",
+            "A",
+            "B",
+            "A",
+            "B",
+            "A",
+            "B",
+            "A",
+            "B"
+          ]
+        },
+        {
+          "t": 5,
+          "choices": [
+            0,
+            1,
+            0,
+            0,
+            2,
+            4,
+            6,
+            8,
+            10
+          ],
+          "output": [
+            "B",
+            "A",
+            "B",
+            "A",
+            "B",
+            "A",
+            "B",
+            "A",
+            "B",
+            "A",
+            "B"
+          ]
+        },
+        {
+          "t": 6,
+          "choices": [
+            0,
+            2,
+            4,
+            6,
+            8,
+            10,
+            12
+          ],
+          "output": [
+            "B",
+            "A",
+            "B",
+            "A",
+            "B",
+            "A",
+            "B",
+            "A",
+            "B",
+            "A",
+            "B",
+            "A",
+            "B"
+          ]
+        }
+      ]
+    },
+    "A/5": {
+      "answer": [
+        0,
+        60,
+        72,
+        75,
+        76,
+        77
+      ],
+      "minimum": 77,
+      "bounded_gap_solutions": [
+        [
+          0,
+          60,
+          72,
+          75,
+          76,
+          77
+        ]
+      ],
+      "direct_small_domain_tests": 8568,
+      "general_minimality": "answer proof; finite tests are not the proof"
+    },
+    "A/6": {
+      "tested_valid_inputs": 216,
+      "answers": [
+        [
+          6,
+          3,
+          5,
+          2
+        ]
+      ],
+      "without_capacity_one": [
+        [
+          1,
+          8,
+          5,
+          2
+        ],
+        [
+          6,
+          3,
+          5,
+          2
+        ],
+        [
+          8,
+          1,
+          5,
+          2
+        ]
+      ],
+      "without_capacity_six": [
+        [
+          3,
+          6,
+          5,
+          2
+        ],
+        [
+          6,
+          3,
+          5,
+          2
+        ]
+      ]
+    },
+    "A/7": {
+      "tested_column_assignments": 1296,
+      "valid_inputs": 28,
+      "minimum": 10,
+      "minimizer_count": 24,
+      "examples": [
+        [
+          [
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "A/8": {
+      "tested_strings": 19683,
+      "answer": 72,
+      "unique_local_order_signatures": 72,
+      "example": "AABACBBCCA"
+    },
+    "A/9": {
+      "tested_inputs": 165,
+      "possible_lengths": [
+        2
+      ],
+      "example_indices": [
+        1,
+        5
+      ],
+      "universal_claim": "proved in answer; tested every specified input as additional check"
+    },
+    "A/10": {
+      "tested_valid_inputs": 2177,
+      "maximum": 9,
+      "all_maximizers": [
+        [
+          2,
+          4,
+          1,
+          6,
+          3,
+          8,
+          5,
+          10,
+          7,
+          9
+        ],
+        [
+          3,
+          1,
+          5,
+          2,
+          7,
+          4,
+          9,
+          6,
+          10,
+          8
+        ]
+      ],
+      "cycle_formula_checked": true
+    },
+    "A/11": {
+      "tested_inputs": 15,
+      "fixed_tests": [
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "all_observation_vectors": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          2
+        ]
+      ],
+      "adaptive_depth_three_possible": false,
+      "adaptive_states_tested": 207,
+      "allowed_test_subsets": 64,
+      "minimum_fixed_and_adaptive": 4
+    },
+    "A/12": {
+      "tested_inputs": 362880,
+      "compatible_inputs": 630,
+      "direct_code_checks": 1260,
+      "constructive_candidate_set_equal": true,
+      "possible_reverse_outputs": [
+        [
+          3,
+          3,
+          4,
+          4,
+          1,
+          2,
+          2,
+          3,
+          3,
+          2
+        ]
+      ],
+      "remaining_after_reverse": 630
+    },
+    "A/13": {
+      "tested_inputs": 252252,
+      "constrained_inputs": 2926,
+      "maximum": 24,
+      "optimal_strings": 162,
+      "optimal_signatures": 7,
+      "cases": [
+        {
+          "a": [
+            1,
+            3,
+            3,
+            3
+          ],
+          "c": [
+            3,
+            3,
+            2,
+            2
+          ],
+          "strings": 18
+        },
+        {
+          "a": [
+            1,
+            3,
+            3,
+            3
+          ],
+          "c": [
+            3,
+            3,
+            3,
+            1
+          ],
+          "strings": 9
+        },
+        {
+          "a": [
+            2,
+            2,
+            2,
+            4
+          ],
+          "c": [
+            3,
+            3,
+            2,
+            2
+          ],
+          "strings": 18
+        },
+        {
+          "a": [
+            2,
+            2,
+            2,
+            4
+          ],
+          "c": [
+            4,
+            2,
+            2,
+            2
+          ],
+          "strings": 9
+        },
+        {
+          "a": [
+            2,
+            2,
+            3,
+            3
+          ],
+          "c": [
+            3,
+            3,
+            2,
+            2
+          ],
+          "strings": 72
+        },
+        {
+          "a": [
+            2,
+            2,
+            3,
+            3
+          ],
+          "c": [
+            3,
+            3,
+            3,
+            1
+          ],
+          "strings": 18
+        },
+        {
+          "a": [
+            2,
+            2,
+            3,
+            3
+          ],
+          "c": [
+            4,
+            2,
+            2,
+            2
+          ],
+          "strings": 18
+        }
+      ],
+      "witness": "AACBCCBBAABACC",
+      "example": "AACCBBACBBAACC"
+    },
+    "A/14": {
+      "tested_inputs": 924,
+      "constrained_inputs": 58,
+      "time_distribution": {
+        "6": 25,
+        "7": 31,
+        "8": 2
+      },
+      "minimum": 6,
+      "minimum_inputs": 25,
+      "maximum": 8,
+      "maximum_inputs": 2,
+      "constructed_minimum_set_equal": true,
+      "formula_matches_all_inputs": true
+    },
+    "A/15": {
+      "tested_inputs": 12870,
+      "periodic_inputs": 2,
+      "maximum_total_changes": 42,
+      "optimal_inputs": 32,
+      "optimal_rounds": 6,
+      "constructed_optimal_set_equal": true,
+      "frozen_interval_formula_matches_all_terminating_inputs": true
+    },
+    "A/16": {
+      "tested_commuting_maps": 1944,
+      "compatible_inputs": 208,
+      "class_counts": {
+        "(1, 1, 1, 1)": 1,
+        "(1, 1, 2)": 18,
+        "(2, 2)": 27,
+        "(4,)": 162
+      },
+      "guaranteed_return_steps": 12,
+      "witness": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        1,
+        2,
+        0
+      ],
+      "completeness_basis": "commutation proof in author solution; not enumeration of all 12! permutations"
+    },
+    "A/17": {
+      "optimum": 60,
+      "optimal_inputs": 185,
+      "tested_optimal_deletions": 12210,
+      "reduced_inputs": 1688,
+      "reduced_deletions": 27006,
+      "reduced_test_bounds": "length 3..7, sorted values 1..6; explicit subset sums",
+      "counterexample": [
+        1,
+        1,
+        1,
+        2,
+        3,
+        4,
+        6,
+        9,
+        13,
+        19,
+        29,
+        41
+      ],
+      "counterexample_returns": [
+        60,
+        28
+      ],
+      "unbounded_completeness": "analytical prefix bound and equality proof in author solution",
+      "independent": false,
+      "highest_difficulty_certified": false
+    },
+    "A/18": {
+      "full_domain_count": 7884600938,
+      "minimum": 100000000999899999,
+      "class_counts": [
+        7881440712,
+        3160010,
+        216
+      ],
+      "reduced_actual_code_tests": 9999,
+      "verification": "digit-state DP over all 18-digit inputs vs run-class coefficient count; 9999 actual-code carry checks",
+      "independent": false,
+      "highest_difficulty_certified": false
+    },
+    "A/19": {
+      "minimum_cost": 4,
+      "optimal_keep_count": 51,
+      "keep_subsets_checked": 4096,
+      "optimal_constructive_code_tests": 663,
+      "containing_zero": 17,
+      "reduced_order_tests": 49920,
+      "closure_table": [
+        [
+          12,
+          4,
+          12
+        ],
+        [
+          12,
+          4,
+          4
+        ],
+        [
+          12,
+          12,
+          12
+        ],
+        [
+          12,
+          5,
+          12
+        ],
+        [
+          12,
+          4,
+          4
+        ],
+        [
+          5,
+          5,
+          4
+        ],
+        [
+          12,
+          5,
+          12
+        ],
+        [
+          12,
+          12,
+          12
+        ],
+        [
+          12,
+          12,
+          12
+        ]
+      ],
+      "independent": false,
+      "highest_difficulty_certified": false
+    }
+  },
+  "whole_set_status": "BLOCKED: 25 slots not redesigned; independent review and release absent",
+  "highest_difficulty": "UNVERIFIED for all 25",
+  "independent_review": false,
+  "source_sha256": "5cd2732719ef91b665b7e06629d751944b025ecab6abca02fa6af3d5294a4526",
+  "artifacts": [
+    {
+      "path": "output/260912/260912_18_info_a_redesign_partial_questions.md",
+      "bytes": 22978,
+      "sha256": "d1b3ebab861177b99710827f8738528508cc012db833a39c96b1f62da1a2aab0"
+    },
+    {
+      "path": "output/260912/260912_18_info_a_redesign_partial_answers.md",
+      "bytes": 101661,
+      "sha256": "bcfedcfbd721edb17ccff362af0cbb9d57d08094c7450ba150058163fdaa5f18"
+    },
+    {
+      "path": "output/260912/260912_18_info_a_redesign_partial.md",
+      "bytes": 123357,
+      "sha256": "7f628ffcc09582957517bbd3755d95f592e58910945e28b72f306c86d1d2fb06"
+    },
+    {
+      "path": "output/260912/260912_18_info_a_redesign_partial.novelty.tsv",
+      "bytes": 23104,
+      "sha256": "dcb73594c952641e5563ff5139db3cfdc9257873c4380507f8847814314095f5"
+    },
+    {
+      "path": "output/260912/260912_19_info_b_redesign_partial_questions.md",
+      "bytes": 5100,
+      "sha256": "6806c6b32db7f187fdda1a581014b371adaaf212b601ab93eebda4a4bc6652a2"
+    },
+    {
+      "path": "output/260912/260912_19_info_b_redesign_partial_answers.md",
+      "bytes": 12595,
+      "sha256": "6871373891aef88dd73c7cd42be1c7262680830251257a633d06b145f22016d3"
+    },
+    {
+      "path": "output/260912/260912_19_info_b_redesign_partial.md",
+      "bytes": 16414,
+      "sha256": "0b97506aedfd4934ed5388ccd7f4aa20587a774407fe8fe2dd9d1e0a7d570063"
+    },
+    {
+      "path": "output/260912/260912_19_info_b_redesign_partial.novelty.tsv",
+      "bytes": 2767,
+      "sha256": "0694d71225c487b103ca405f7147d725254756df4141221d995ef68656ea4705"
+    }
+  ]
+}
